@@ -189,6 +189,7 @@ function resolveHttpTransportConfig(
   };
 }
 
+/** Resolve MCP transport config, preferring HTTP when URLs are present. */
 export function resolveMcpTransportConfig(
   serverName: string,
   rawServer: unknown,

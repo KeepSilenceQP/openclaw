@@ -1,3 +1,4 @@
+// infra/outbound message action runner helpers and runtime behavior.
 import { resolveSendableOutboundReplyParts } from "openclaw/plugin-sdk/reply-payload";
 import { stripPlainTextToolCallBlocks } from "../../../packages/tool-call-repair/src/index.js";
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
@@ -89,6 +90,7 @@ import { normalizeTargetForProvider } from "./target-normalization.js";
 import { resolveChannelTarget, type ResolvedMessagingTarget } from "./target-resolver.js";
 import { extractToolPayload } from "./tool-payload.js";
 
+/** Shared type for Message Action Runner Gateway in src/infra/outbound. */
 export type MessageActionRunnerGateway = {
   url?: string;
   token?: string;
@@ -107,6 +109,7 @@ function loadMessageActionGatewayRuntime() {
   return messageActionGatewayRuntimePromise;
 }
 
+/** Shared type for Run Message Action Params in src/infra/outbound. */
 export type RunMessageActionParams = {
   cfg: OpenClawConfig;
   action: ChannelMessageActionName;
@@ -131,6 +134,7 @@ export type RunMessageActionParams = {
   abortSignal?: AbortSignal;
 };
 
+/** Shared type for Message Action Run Result in src/infra/outbound. */
 export type MessageActionRunResult =
   | {
       kind: "send";
@@ -180,6 +184,7 @@ export type MessageActionRunResult =
       dryRun: boolean;
     };
 
+/** Reused helper for get Tool Result behavior in src/infra/outbound. */
 export function getToolResult(
   result: MessageActionRunResult,
 ): AgentToolResult<unknown> | undefined {
@@ -1292,6 +1297,7 @@ async function handlePluginAction(ctx: ResolvedActionContext): Promise<MessageAc
   };
 }
 
+/** Reused helper for run Message Action behavior in src/infra/outbound. */
 export async function runMessageAction(
   input: RunMessageActionParams,
 ): Promise<MessageActionRunResult> {

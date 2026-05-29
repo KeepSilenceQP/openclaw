@@ -1,3 +1,4 @@
+/** Code-mode tool runtime that executes sandboxed JS/TS and bridges catalog tools. */
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
@@ -45,6 +46,7 @@ import {
   ToolInputError,
   type AnyAgentTool,
 } from "./tools/common.js";
+/** Re-exported API for src/agents. */
 export {
   CODE_MODE_EXEC_TOOL_NAME,
   CODE_MODE_WAIT_TOOL_NAME,
@@ -63,6 +65,7 @@ const MAX_ACTIVE_CODE_MODE_RUNS = 64;
 
 type CodeModeLanguage = "javascript" | "typescript";
 
+/** Resolved code-mode limits and feature flags for one agent. */
 export type CodeModeConfig = {
   enabled: boolean;
   runtime: "quickjs-wasi";
@@ -189,6 +192,7 @@ function readLanguages(value: unknown): CodeModeLanguage[] {
   return languages.length > 0 ? uniqueValues(languages) : ["javascript", "typescript"];
 }
 
+/** Resolve per-agent code-mode configuration with bounded runtime limits. */
 export function resolveCodeModeConfig(config?: OpenClawConfig, agentId?: string): CodeModeConfig {
   const raw = readCodeModeRawConfig(config, agentId);
   const maxSearchLimit = clampInteger(
@@ -968,6 +972,7 @@ async function runWait(params: {
   }
 }
 
+/** Create the visible exec/wait tools for code mode. */
 export function createCodeModeTools(ctx: CodeModeToolContext): AnyAgentTool[] {
   const execTool = markCodeModeControlTool({
     name: CODE_MODE_EXEC_TOOL_NAME,
@@ -1035,6 +1040,7 @@ export function createCodeModeTools(ctx: CodeModeToolContext): AnyAgentTool[] {
   return [execTool, waitTool];
 }
 
+/** Apply code-mode catalog compaction and hide raw catalog plumbing from the model. */
 export function applyCodeModeCatalog(params: {
   tools: AnyAgentTool[];
   config?: OpenClawConfig;
@@ -1088,6 +1094,7 @@ export function applyCodeModeCatalog(params: {
   return compacted;
 }
 
+/** Add client-provided tools to the code-mode catalog when code mode is enabled. */
 export function addClientToolsToCodeModeCatalog(params: {
   tools: ToolDefinition[];
   config?: OpenClawConfig;
@@ -1103,6 +1110,7 @@ export function addClientToolsToCodeModeCatalog(params: {
   });
 }
 
+/** Test hooks for code-mode active runs and runtime overrides. */
 export const testing = {
   activeRuns,
   resumingRunIds,
@@ -1116,4 +1124,5 @@ export const testing = {
     typescriptRuntimeForTest = runtime;
   },
 };
+/** Re-exported API for src/agents, starting with testing. */
 export { testing as __testing };

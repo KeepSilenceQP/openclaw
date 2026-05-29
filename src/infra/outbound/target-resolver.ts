@@ -1,3 +1,4 @@
+// infra/outbound target resolver helpers and runtime behavior.
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type {
   ChannelDirectoryEntry,
@@ -19,10 +20,13 @@ import {
   resolveNormalizedTargetInput,
 } from "./target-normalization.js";
 
+/** Shared type for Target Resolve Kind in src/infra/outbound. */
 export type TargetResolveKind = ChannelDirectoryEntryKind | "channel";
 
+/** Shared type for Resolve Ambiguous Mode in src/infra/outbound. */
 export type ResolveAmbiguousMode = "error" | "best" | "first";
 
+/** Shared type for Resolved Messaging Target in src/infra/outbound. */
 export type ResolvedMessagingTarget = {
   to: string;
   kind: TargetResolveKind;
@@ -31,6 +35,7 @@ export type ResolvedMessagingTarget = {
   resolutionSource: "plugin" | "directory" | "normalized";
 };
 
+/** Shared type for Resolve Messaging Target Result in src/infra/outbound. */
 export type ResolveMessagingTargetResult =
   | { ok: true; target: ResolvedMessagingTarget }
   | { ok: false; error: Error; candidates?: ChannelDirectoryEntry[] };
@@ -41,8 +46,10 @@ function asResolvedMessagingTarget(
   return target;
 }
 
+/** Re-exported API for src/infra/outbound, starting with maybe Resolve Id Like Target. */
 export { maybeResolveIdLikeTarget } from "./target-id-resolution.js";
 
+/** Reused helper for resolve Channel Target behavior in src/infra/outbound. */
 export async function resolveChannelTarget(params: {
   cfg: OpenClawConfig;
   channel: ChannelId;
@@ -59,6 +66,7 @@ export async function resolveChannelTarget(params: {
 const CACHE_TTL_MS = 30 * 60 * 1000;
 const directoryCache = new DirectoryCache<ChannelDirectoryEntry[]>(CACHE_TTL_MS);
 
+/** Reused helper for reset Directory Cache behavior in src/infra/outbound. */
 export function resetDirectoryCache(params?: { channel?: ChannelId; accountId?: string | null }) {
   if (!params?.channel) {
     directoryCache.clear();
@@ -88,6 +96,7 @@ function stripTargetPrefixes(value: string): string {
     .trim();
 }
 
+/** Reused helper for format Target Display behavior in src/infra/outbound. */
 export function formatTargetDisplay(params: {
   channel: ChannelId;
   target: string;
@@ -339,6 +348,7 @@ function pickAmbiguousMatch(
   return best ?? entries[0] ?? null;
 }
 
+/** Reused helper for resolve Messaging Target behavior in src/infra/outbound. */
 export async function resolveMessagingTarget(params: {
   cfg: OpenClawConfig;
   channel: ChannelId;
@@ -461,6 +471,7 @@ export async function resolveMessagingTarget(params: {
   };
 }
 
+/** Reused helper for lookup Directory Display behavior in src/infra/outbound. */
 export async function lookupDirectoryDisplay(params: {
   cfg: OpenClawConfig;
   channel: ChannelId;

@@ -1,3 +1,4 @@
+// extensions/browser/src/browser/routes agent act hooks helpers and runtime behavior.
 import { formatErrorMessage } from "../../infra/errors.js";
 import { evaluateChromeMcpScript, uploadChromeMcpFile } from "../chrome-mcp.js";
 import { resolveExistingUploadPaths } from "../paths.js";

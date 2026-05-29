@@ -1,7 +1,9 @@
+// infra/outbound target id resolution helpers and runtime behavior.
 import type { ChannelDirectoryEntryKind, ChannelId } from "../../channels/plugins/types.public.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { maybeResolvePluginMessagingTarget } from "./target-normalization.js";
 
+/** Shared type for Resolved Id Like Target in src/infra/outbound. */
 export type ResolvedIdLikeTarget = {
   to: string;
   kind: ChannelDirectoryEntryKind | "channel";
@@ -10,6 +12,7 @@ export type ResolvedIdLikeTarget = {
   resolutionSource: "plugin";
 };
 
+/** Reused helper for maybe Resolve Id Like Target behavior in src/infra/outbound. */
 export async function maybeResolveIdLikeTarget(params: {
   cfg: OpenClawConfig;
   channel: ChannelId;

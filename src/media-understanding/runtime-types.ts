@@ -1,3 +1,4 @@
+// media-understanding runtime types helpers and runtime behavior.
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.js";
 import type { ActiveMediaModel } from "./active-model.types.js";
@@ -8,6 +9,7 @@ import type {
   StructuredExtractionInput,
 } from "./types.js";
 
+/** Shared type for Run Media Understanding File Params in src/media-understanding. */
 export type RunMediaUnderstandingFileParams = {
   capability: "image" | "audio" | "video";
   filePath: string;
@@ -28,6 +30,7 @@ export type MediaUnderstandingScopeContext = {
   chatType?: string;
 };
 
+/** Shared type for Run Media Understanding File Result in src/media-understanding. */
 export type RunMediaUnderstandingFileResult = {
   text: string | undefined;
   provider?: string;
@@ -36,6 +39,7 @@ export type RunMediaUnderstandingFileResult = {
   decision?: MediaUnderstandingDecision;
 };
 
+/** Shared type for Describe Image File Params in src/media-understanding. */
 export type DescribeImageFileParams = {
   filePath: string;
   mediaUrl?: string;
@@ -49,6 +53,7 @@ export type DescribeImageFileParams = {
   scopeContext?: MediaUnderstandingScopeContext;
 };
 
+/** Shared type for Describe Image File With Model Params in src/media-understanding. */
 export type DescribeImageFileWithModelParams = {
   filePath: string;
   mediaUrl?: string;
@@ -67,6 +72,7 @@ type DescribeImageFileWithModelResult = Awaited<
   ReturnType<NonNullable<MediaUnderstandingProvider["describeImage"]>>
 >;
 
+/** Shared type for Extract Structured With Model Params in src/media-understanding. */
 export type ExtractStructuredWithModelParams = {
   /** At least one image input is required; text inputs provide supplemental context. */
   input: StructuredExtractionInput[];
@@ -88,6 +94,7 @@ type ExtractStructuredWithModelResult = Awaited<
   ReturnType<NonNullable<MediaUnderstandingProvider["extractStructured"]>>
 >;
 
+/** Shared type for Describe Video File Params in src/media-understanding. */
 export type DescribeVideoFileParams = {
   filePath: string;
   cfg: OpenClawConfig;
@@ -97,6 +104,7 @@ export type DescribeVideoFileParams = {
   activeModel?: ActiveMediaModel;
 };
 
+/** Shared type for Transcribe Audio File Params in src/media-understanding. */
 export type TranscribeAudioFileParams = {
   filePath: string;
   cfg: OpenClawConfig;
@@ -108,6 +116,7 @@ export type TranscribeAudioFileParams = {
   prompt?: string;
 };
 
+/** Shared type for Media Understanding Runtime in src/media-understanding. */
 export type MediaUnderstandingRuntime = {
   runMediaUnderstandingFile: (
     params: RunMediaUnderstandingFileParams,

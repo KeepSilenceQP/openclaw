@@ -1,4 +1,6 @@
+/** Runtime SDK barrel for doctor/runtime config diagnostics. */
 export { collectProviderDangerousNameMatchingScopes } from "../config/dangerous-name-matching.js";
+/** Re-exported API for src/plugin-sdk. */
 export {
   asObjectRecord,
   hasLegacyAccountStreamingAliases,
@@ -7,11 +9,13 @@ export {
   normalizeLegacyDmAliases,
   normalizeLegacyStreamingAliases,
 } from "../config/channel-compat-normalization.js";
+/** Re-exported API for src/plugin-sdk. */
 export type {
   CompatMutationResult,
   LegacyStreamingAliasOptions,
   NormalizeLegacyChannelAccountParams,
 } from "../config/channel-compat-normalization.js";
+/** Re-exported API for src/plugin-sdk. */
 export {
   detectPluginInstallPathIssue,
   formatPluginInstallPathIssue,

@@ -1,3 +1,4 @@
+/** Starts MCP transports and exposes client/session cleanup helpers. */
 import {
   SSEClientTransport,
   type SSEClientTransportOptions,
@@ -195,6 +196,7 @@ function buildSseEventSourceFetch(
   };
 }
 
+/** Resolve and start a transport for one MCP server config. */
 export function resolveMcpTransport(
   serverName: string,
   rawServer: unknown,

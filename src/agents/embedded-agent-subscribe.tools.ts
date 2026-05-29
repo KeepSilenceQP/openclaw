@@ -1,3 +1,4 @@
+/** Extracts and sanitizes tool results, errors, media, and messaging sends. */
 import { getChannelPlugin, normalizeChannelId } from "../channels/plugins/index.js";
 import { normalizeTargetForProvider } from "../infra/outbound/target-normalization.js";
 import { redactSensitiveFieldValue, redactToolPayloadText } from "../logging/redact.js";
@@ -144,6 +145,7 @@ function extractDirectErrorCodeField(value: unknown): string | undefined {
   );
 }
 
+/** Build a normalized tool-result payload for lifecycle errors. */
 export function buildToolLifecycleErrorResult(error: unknown): {
   details: Record<string, unknown>;
 } {
@@ -199,10 +201,12 @@ function redactStringsDeep(value: unknown, seen = new WeakSet<object>()): unknow
   return value;
 }
 
+/** Redact sensitive tool arguments before diagnostics or events. */
 export function sanitizeToolArgs(args: unknown): unknown {
   return redactStringsDeep(args);
 }
 
+/** Redact sensitive tool results before diagnostics or events. */
 export function sanitizeToolResult(result: unknown): unknown {
   if (typeof result === "string") {
     return redactToolPayloadText(result);
@@ -254,6 +258,7 @@ export function sanitizeToolResult(result: unknown): unknown {
   return out;
 }
 
+/** Extract displayable text from a tool result. */
 export function extractToolResultText(result: unknown): string | undefined {
   if (!result || typeof result !== "object") {
     return undefined;
@@ -306,6 +311,7 @@ const TRUSTED_TOOL_RESULT_MEDIA = new Set([
 ]);
 const HTTP_URL_RE = /^https?:\/\//i;
 
+/** Return whether a core tool name may emit trusted local media paths. */
 export function isCoreToolResultMediaTrustedName(toolName?: string): boolean {
   if (!toolName) {
     return false;
@@ -336,6 +342,7 @@ function isExternalToolResult(result: unknown): boolean {
   return typeof details.mcpServer === "string" || typeof details.mcpTool === "string";
 }
 
+/** Return whether media emitted by a tool result should be treated as trusted. */
 export function isToolResultMediaTrusted(
   toolName?: string,
   result?: unknown,
@@ -370,6 +377,7 @@ function isTrustedOwnedTtsLocalMedia(
   return (media as Record<string, unknown>).trustedLocalMedia === true;
 }
 
+/** Filter tool-result media URLs by trust and sensitivity rules. */
 export function filterToolResultMediaUrls(
   toolName: string | undefined,
   mediaUrls: string[],
@@ -493,6 +501,7 @@ function hasImageContentBlock(content: unknown[]): boolean {
   return false;
 }
 
+/** Extract the first generated media artifact from a tool result. */
 export function extractToolResultMediaArtifact(
   result: unknown,
 ): ToolResultMediaArtifact | undefined {
@@ -533,10 +542,12 @@ export function extractToolResultMediaArtifact(
   return undefined;
 }
 
+/** Extract media paths or URLs from a tool result. */
 export function extractToolResultMediaPaths(result: unknown): string[] {
   return extractToolResultMediaArtifact(result)?.mediaUrls ?? [];
 }
 
+/** Return whether a tool result represents an error. */
 export function isToolResultError(result: unknown): boolean {
   const normalized = readToolResultStatus(result);
   if (!normalized) {
@@ -545,6 +556,7 @@ export function isToolResultError(result: unknown): boolean {
   return normalized === "error" || normalized === "timeout";
 }
 
+/** Extract a structured tool error code when present. */
 export function extractToolErrorCode(result: unknown): string | undefined {
   if (!result || typeof result !== "object") {
     return undefined;
@@ -553,6 +565,7 @@ export function extractToolErrorCode(result: unknown): string | undefined {
   return extractDirectErrorCodeField(record.details) ?? extractDirectErrorCodeField(record);
 }
 
+/** Return whether a tool result indicates timeout. */
 export function isToolResultTimedOut(result: unknown): boolean {
   const normalizedStatus = readToolResultStatus(result);
   if (normalizedStatus === "timeout") {
@@ -561,6 +574,7 @@ export function isToolResultTimedOut(result: unknown): boolean {
   return readToolResultDetails(result)?.timedOut === true;
 }
 
+/** Extract a short tool error message for user-facing progress. */
 export function extractToolErrorMessage(result: unknown): string | undefined {
   if (!result || typeof result !== "object") {
     return undefined;
@@ -609,6 +623,7 @@ function resolveMessageToolTarget(args: Record<string, unknown>): string | undef
   return readStringValue(args.target);
 }
 
+/** Extract normalized messaging-send details from a tool invocation/result. */
 export function extractMessagingToolSend(
   toolName: string,
   args: Record<string, unknown>,

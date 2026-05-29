@@ -1,3 +1,4 @@
+// config/sessions skill prompt blobs helpers and runtime behavior.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -17,12 +18,14 @@ type PersistedSessionStore = {
   changed: boolean;
 };
 
+/** Shared type for Session Skill Prompt Blob Projection in src/config/sessions. */
 export type SessionSkillPromptBlobProjection = {
   ref: SessionSkillPromptRef;
   path: string | null;
   prompt: string;
 };
 
+/** Shared type for Session Store Persistence Projection in src/config/sessions. */
 export type SessionStorePersistenceProjection = PersistedSessionStore & {
   promptBlobs: Map<string, SessionSkillPromptBlobProjection>;
 };
@@ -34,11 +37,13 @@ function hashPrompt(prompt: string): string {
   return crypto.createHash(PROMPT_BLOB_ALGORITHM).update(prompt).digest("hex");
 }
 
+/** Reused helper for clear Session Skill Prompt Ref Cache behavior in src/config/sessions. */
 export function clearSessionSkillPromptRefCache(): void {
   promptRefCache.clear();
   validPromptBlobCache.clear();
 }
 
+/** Reused helper for get Session Skill Prompt Ref Cache Stats For Test behavior in src/config/sessions. */
 export function getSessionSkillPromptRefCacheStatsForTest(): {
   entries: number;
   maxEntries: number;
@@ -63,6 +68,7 @@ function isSha256Hex(value: string): boolean {
   return /^[a-f0-9]{64}$/u.test(value);
 }
 
+/** Reused helper for resolve Session Skill Prompt Blob Path behavior in src/config/sessions. */
 export function resolveSessionSkillPromptBlobPath(storePath: string, hash: string): string | null {
   if (!isSha256Hex(hash)) {
     return null;
@@ -200,6 +206,7 @@ function stripPromptForPersistence(entry: SessionEntry, ref: SessionSkillPromptR
   };
 }
 
+/** Reused helper for project Session Store For Persistence behavior in src/config/sessions. */
 export function projectSessionStoreForPersistence(params: {
   storePath: string;
   store: Record<string, SessionEntry>;
@@ -227,6 +234,7 @@ export function projectSessionStoreForPersistence(params: {
   return { store: persisted, changed, promptBlobs };
 }
 
+/** Reused helper for ensure Session Store Prompt Blobs For Persistence behavior in src/config/sessions. */
 export async function ensureSessionStorePromptBlobsForPersistence(params: {
   storePath: string;
   promptBlobs: Iterable<SessionSkillPromptBlobProjection>;
@@ -254,6 +262,7 @@ function parsePromptRef(value: unknown): SessionSkillPromptRef | null {
     : null;
 }
 
+/** Reused helper for hydrate Session Store Skill Prompt Refs behavior in src/config/sessions. */
 export function hydrateSessionStoreSkillPromptRefs(params: {
   storePath: string;
   store: Record<string, unknown>;

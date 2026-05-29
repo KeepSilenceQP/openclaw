@@ -1,3 +1,4 @@
+/** Tests tool media handling in embedded-agent subscription handlers. */
 import { describe, expect, it, vi } from "vitest";
 import {
   handleToolExecutionEnd,

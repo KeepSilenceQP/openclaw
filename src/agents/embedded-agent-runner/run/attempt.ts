@@ -1,3 +1,4 @@
+/** Executes one embedded-agent attempt, including setup, streaming, and cleanup. */
 import fs from "node:fs/promises";
 import os from "node:os";
 import { isAcpRuntimeSpawnAvailable } from "../../../acp/runtime/availability.js";
@@ -292,6 +293,7 @@ import {
   isPrimaryBootstrapRun,
   remapInjectedContextFilesToWorkspace,
 } from "./attempt.bootstrap-context.js";
+/** Re-exported API for src/agents/embedded-agent-runner, starting with build Context Engine Prompt Cache Info. */
 export { buildContextEnginePromptCacheInfo } from "./attempt.context-engine-helpers.js";
 import {
   rotateTranscriptAfterCompaction,
@@ -428,11 +430,13 @@ import {
 } from "./runtime-context-prompt.js";
 import type { EmbeddedRunAttemptParams, EmbeddedRunAttemptResult } from "./types.js";
 
+/** Re-exported API for src/agents/embedded-agent-runner. */
 export {
   appendAttemptCacheTtlIfNeeded,
   composeSystemPromptWithHookContext,
   resolveAttemptSpawnWorkspaceDir,
 } from "./attempt.thread-helpers.js";
+/** Re-exported API for src/agents/embedded-agent-runner. */
 export {
   buildAfterTurnRuntimeContext,
   buildAfterTurnRuntimeContextFromUsage,
@@ -445,20 +449,24 @@ export {
   shouldWarnOnOrphanedUserRepair,
   shouldInjectHeartbeatPrompt,
 } from "./attempt.prompt-helpers.js";
+/** Re-exported API for src/agents/embedded-agent-runner. */
 export {
   persistSessionsYieldContextMessage,
   queueSessionsYieldInterruptMessage,
   stripSessionsYieldArtifacts,
 } from "./attempt.sessions-yield.js";
+/** Re-exported API for src/agents/embedded-agent-runner. */
 export {
   decodeHtmlEntitiesInObject,
   wrapStreamFnRepairMalformedToolCallArguments,
 } from "./attempt.tool-call-argument-repair.js";
+/** Re-exported API for src/agents/embedded-agent-runner. */
 export {
   wrapStreamFnPromoteStandaloneTextToolCalls,
   wrapStreamFnSanitizeMalformedToolCalls,
   wrapStreamFnTrimToolCallNames,
 } from "./attempt.tool-call-normalization.js";
+/** Re-exported API for src/agents/embedded-agent-runner. */
 export {
   resetEmbeddedAgentBaseStreamFnCacheForTest,
   resolveEmbeddedAgentBaseStreamFn,
@@ -713,6 +721,7 @@ function collectAttemptExplicitToolAllowlistSources(params: {
   ]);
 }
 
+/** Runs a single provider/model attempt and returns normalized attempt metadata. */
 export async function runEmbeddedAttempt(
   params: EmbeddedRunAttemptParams,
 ): Promise<EmbeddedRunAttemptResult> {

@@ -1,3 +1,4 @@
+/** Session-scoped MCP runtime manager for embedded agent bundle servers. */
 import crypto from "node:crypto";
 import { Client } from "@modelcontextprotocol/sdk/client/index.js";
 import { StreamableHTTPClientTransport } from "@modelcontextprotocol/sdk/client/streamableHttp.js";
@@ -151,6 +152,7 @@ function stripJsonSchemaFormats(schema: unknown): unknown {
   );
 }
 
+/** Create the MCP JSON-schema validator with draft-2020-12 normalization. */
 export function createBundleMcpJsonSchemaValidator(): jsonSchemaValidator {
   const defaultValidator = new AjvJsonSchemaValidator();
 
@@ -447,6 +449,7 @@ function resolveSessionMcpRuntimeIdleTtlMs(cfg?: OpenClawConfig): number {
   return DEFAULT_SESSION_MCP_RUNTIME_IDLE_TTL_MS;
 }
 
+/** Create a session-scoped MCP runtime that lazily connects configured servers. */
 export function createSessionMcpRuntime(params: {
   sessionId: string;
   sessionKey?: string;
@@ -1033,10 +1036,12 @@ function createSessionMcpRuntimeManager(
   };
 }
 
+/** Return the process-global session MCP runtime manager. */
 export function getSessionMcpRuntimeManager(): SessionMcpRuntimeManager {
   return resolveGlobalSingleton(SESSION_MCP_RUNTIME_MANAGER_KEY, createSessionMcpRuntimeManager);
 }
 
+/** Get or create a session MCP runtime for the given session/workspace. */
 export async function getOrCreateSessionMcpRuntime(params: {
   sessionId: string;
   sessionKey?: string;
@@ -1047,6 +1052,7 @@ export async function getOrCreateSessionMcpRuntime(params: {
 }
 
 /** Looks up an existing session MCP runtime without creating it or connecting transports. */
+/** Lookup an existing session MCP runtime without creating or connecting one. */
 export function peekSessionMcpRuntime(params: {
   sessionId?: string | null;
   sessionKey?: string | null;
@@ -1059,10 +1065,12 @@ export function peekSessionMcpRuntime(params: {
   });
 }
 
+/** Dispose one session MCP runtime by session id. */
 export async function disposeSessionMcpRuntime(sessionId: string): Promise<void> {
   await getSessionMcpRuntimeManager().disposeSession(sessionId);
 }
 
+/** Retire a session MCP runtime if its config fingerprint no longer matches. */
 export async function retireSessionMcpRuntime(params: {
   sessionId?: string | null;
   reason: string;
@@ -1081,6 +1089,7 @@ export async function retireSessionMcpRuntime(params: {
   }
 }
 
+/** Retire a session MCP runtime resolved from a session key when config changed. */
 export async function retireSessionMcpRuntimeForSessionKey(params: {
   sessionKey?: string | null;
   reason: string;
@@ -1098,10 +1107,12 @@ export async function retireSessionMcpRuntimeForSessionKey(params: {
   });
 }
 
+/** Dispose all session MCP runtimes in the process-global manager. */
 export async function disposeAllSessionMcpRuntimes(): Promise<void> {
   await getSessionMcpRuntimeManager().disposeAll();
 }
 
+/** Reused constant for testing behavior in src/agents. */
 export const testing = {
   createSessionMcpRuntimeManager,
   async resetSessionMcpRuntimeManager() {
@@ -1112,4 +1123,5 @@ export const testing = {
   },
   resolveSessionMcpRuntimeIdleTtlMs,
 };
+/** Re-exported API for src/agents, starting with testing. */
 export { testing as __testing };

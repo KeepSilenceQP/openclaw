@@ -31,6 +31,7 @@ type ConfigMcpWriteResult =
     }
   | { ok: false; path: string; error: string };
 
+/** Include/exclude tool filter update for a configured MCP server. */
 export type McpServerToolSelection = {
   include?: string[];
   exclude?: string[];
@@ -46,6 +47,7 @@ function normalizeToolSelectionList(value: readonly string[] | undefined): strin
   return normalized.length > 0 ? normalized : undefined;
 }
 
+/** Reads configured MCP servers from the source config file. */
 export async function listConfiguredMcpServers(): Promise<ConfigMcpReadResult> {
   const snapshot = await readSourceConfigSnapshot();
   if (!snapshot.valid) {
@@ -65,6 +67,7 @@ export async function listConfiguredMcpServers(): Promise<ConfigMcpReadResult> {
   };
 }
 
+/** Updates the configured include/exclude tool filters for one MCP server. */
 export async function updateConfiguredMcpServerTools(params: {
   name: string;
   tools: McpServerToolSelection | null;
@@ -232,6 +235,7 @@ export async function setConfiguredMcpServer(params: {
   };
 }
 
+/** Removes one configured MCP server from config. */
 export async function unsetConfiguredMcpServer(params: {
   name: string;
 }): Promise<ConfigMcpWriteResult> {

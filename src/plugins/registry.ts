@@ -1,3 +1,4 @@
+// plugins registry helpers and runtime behavior.
 import path from "node:path";
 import { clearCodeModeNamespacesForPlugin } from "../agents/code-mode-namespaces.js";
 import {
@@ -131,6 +132,7 @@ import type {
   PluginSessionActionRegistryRegistration,
   PluginTextTransformsRegistration,
 } from "./registry-types.js";
+/** Re-exported API for src/plugins. */
 export type {
   PluginReloadRegistration,
   PluginRuntimeLifecycleRegistryRegistration,
@@ -199,6 +201,7 @@ import type {
   WebSearchProviderPlugin,
 } from "./types.js";
 
+/** Shared type for Plugin Http Route Registration in src/plugins. */
 export type PluginHttpRouteRegistration = RegistryTypesPluginHttpRouteRegistration & {
   gatewayRuntimeScopeSurface?: OpenClawPluginGatewayRuntimeScopeSurface;
 };
@@ -240,6 +243,7 @@ type PluginOwnedProviderRegistration<T extends { id: string }> = {
   rootDir?: string;
 };
 
+/** Re-exported API for src/plugins. */
 export type {
   PluginChannelRegistration,
   PluginChannelSetupRegistration,
@@ -312,8 +316,10 @@ const constrainLegacyPromptInjectionHook = (
   };
 };
 
+/** Re-exported API for src/plugins, starting with create Empty Plugin Registry. */
 export { createEmptyPluginRegistry } from "./registry-empty.js";
 
+/** Reused helper for resolve Plugin Path behavior in src/plugins. */
 export function resolvePluginPath(input: string, rootDir: string | undefined): string {
   const trimmed = input.trim();
   if (!trimmed || path.isAbsolute(trimmed) || trimmed.startsWith("~")) {
@@ -397,6 +403,7 @@ function adaptPluginGatewayMethodHandler(handler: GatewayRequestHandler): Gatewa
   };
 }
 
+/** Reused helper for create Plugin Registry behavior in src/plugins. */
 export function createPluginRegistry(registryParams: PluginRegistryParams) {
   const registry = createEmptyPluginRegistry();
   const coreGatewayMethodNames = Array.from(
