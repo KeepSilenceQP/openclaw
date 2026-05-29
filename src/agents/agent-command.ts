@@ -2015,6 +2015,7 @@ async function agentCommandInternal(
   }
 }
 
+/** Exported API contract used by runtime callers and tests. */
 export async function agentCommand(
   opts: AgentCommandOpts,
   runtime: RuntimeEnv = defaultRuntime,
@@ -2043,6 +2044,7 @@ export async function agentCommand(
   );
 }
 
+/** Exported API contract used by runtime callers and tests. */
 export async function agentCommandFromIngress(
   opts: AgentCommandIngressOpts,
   runtime: RuntimeEnv = defaultRuntime,
@@ -2058,6 +2060,7 @@ export async function agentCommandFromIngress(
   );
 }
 
+/** Exported API contract used by runtime callers and tests. */
 export const testing = {
   resolveAgentRuntimeConfig,
   prepareAgentCommandExecution,
