@@ -1,4 +1,3 @@
-// extensions/discord/src components modal helpers and runtime behavior.
 import {
   buildDiscordModalCustomId as buildDiscordModalCustomIdImpl,
   parseDiscordModalCustomIdForInteraction as parseDiscordModalCustomIdForInteractionImpl,

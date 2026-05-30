@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor typing helpers and runtime behavior.
 import { sendChannelTyping, type RequestClient } from "../internal/discord.js";
 import { raceWithTimeout } from "./timeouts.js";
 

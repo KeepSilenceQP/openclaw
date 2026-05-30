@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor allow list helpers and runtime behavior.
 import type { AllowlistMatch } from "openclaw/plugin-sdk/allow-from";
 import {
   buildChannelKeyCandidates,

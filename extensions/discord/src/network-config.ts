@@ -1,4 +1,3 @@
-// extensions/discord/src network config helpers and runtime behavior.
 import * as dns from "node:dns";
 import type { LookupFunction } from "node:net";
 

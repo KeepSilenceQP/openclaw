@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor thread bindings helpers and runtime behavior.
 export type {
   ThreadBindingManager,
   ThreadBindingRecord,

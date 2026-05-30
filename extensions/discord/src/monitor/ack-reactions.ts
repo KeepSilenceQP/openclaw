@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor ack reactions helpers and runtime behavior.
 import {
   createStatusReactionController,
   logAckFailure,

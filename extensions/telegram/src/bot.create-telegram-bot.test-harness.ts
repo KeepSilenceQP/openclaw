@@ -1,4 +1,3 @@
-// extensions/telegram/src bot create telegram bot test harness helpers and runtime behavior.
 import { existsSync, readdirSync, rmSync } from "node:fs";
 import path from "node:path";
 import { buildChannelInboundEventContext } from "openclaw/plugin-sdk/channel-inbound";

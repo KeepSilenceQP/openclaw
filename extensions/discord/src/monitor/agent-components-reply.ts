@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor agent components reply helpers and runtime behavior.
 import type { AgentComponentInteraction } from "./agent-components.types.js";
 
 export async function replySilently(

@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor agent components dispatch helpers and runtime behavior.
 import { resolveHumanDelayConfig } from "openclaw/plugin-sdk/agent-runtime";
 import {
   formatInboundEnvelope,

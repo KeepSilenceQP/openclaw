@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor presence helpers and runtime behavior.
 import type { DiscordAccountConfig } from "openclaw/plugin-sdk/config-contracts";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { Activity, UpdatePresenceData } from "../internal/gateway.js";

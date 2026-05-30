@@ -1,4 +1,3 @@
-// extensions/discord/src proxy request client helpers and runtime behavior.
 import { RequestClient, type RequestClientOptions } from "./internal/discord.js";
 
 type ProxyRequestClientOptions = RequestClientOptions;

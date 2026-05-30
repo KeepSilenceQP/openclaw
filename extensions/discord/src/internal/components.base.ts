@@ -1,4 +1,3 @@
-// extensions/discord/src/internal components base helpers and runtime behavior.
 import type { BaseComponentInteraction } from "./interactions.js";
 
 export type ComponentParserResult = {

@@ -1,4 +1,3 @@
-// extensions/discord/src/internal gateway rate limit helpers and runtime behavior.
 const GATEWAY_SEND_LIMIT = 120;
 const GATEWAY_SEND_WINDOW_MS = 60_000;
 

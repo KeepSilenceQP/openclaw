@@ -1,4 +1,3 @@
-// extensions/discord/src api helpers and runtime behavior.
 import { resolveFetch } from "openclaw/plugin-sdk/fetch-runtime";
 import { resolveTimerTimeoutMs } from "openclaw/plugin-sdk/number-runtime";
 import {

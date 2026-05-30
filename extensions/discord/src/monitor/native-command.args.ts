@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor native command args helpers and runtime behavior.
 import {
   type ChatCommandDefinition,
   type CommandArgDefinition,

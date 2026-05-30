@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler preflight logging helpers and runtime behavior.
 import { logDebug } from "openclaw/plugin-sdk/logging-core";
 import { logVerbose, shouldLogVerbose } from "openclaw/plugin-sdk/runtime-env";
 import type { DiscordChannelConfigResolved } from "./allow-list.js";

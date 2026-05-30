@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message utils helpers and runtime behavior.
 export {
   resetDiscordChannelInfoCacheForTest,
   resolveDiscordChannelInfo,

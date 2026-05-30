@@ -1,4 +1,3 @@
-// extensions/discord/src send test harness helpers and runtime behavior.
 import type { MockFn } from "openclaw/plugin-sdk/plugin-test-runtime";
 import { vi } from "vitest";
 

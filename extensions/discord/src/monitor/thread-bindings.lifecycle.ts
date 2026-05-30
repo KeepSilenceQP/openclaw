@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor thread bindings lifecycle helpers and runtime behavior.
 import { readAcpSessionEntry, type AcpSessionStoreEntry } from "openclaw/plugin-sdk/acp-runtime";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {

@@ -1,4 +1,3 @@
-// extensions/openai realtime voice provider helpers and runtime behavior.
 import { execFileSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import {

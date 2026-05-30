@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor provider allowlist helpers and runtime behavior.
 import {
   addAllowlistUserEntriesFromConfigEntry,
   buildAllowlistResolutionSummary,

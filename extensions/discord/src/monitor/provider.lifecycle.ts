@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor provider lifecycle helpers and runtime behavior.
 import {
   createConnectedChannelStatusPatch,
   createTransportActivityStatusPatch,

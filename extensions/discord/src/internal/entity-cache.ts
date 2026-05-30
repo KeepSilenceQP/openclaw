@@ -1,4 +1,3 @@
-// extensions/discord/src/internal entity cache helpers and runtime behavior.
 import { GatewayDispatchEvents } from "discord-api-types/v10";
 import {
   asDateTimestampMs,

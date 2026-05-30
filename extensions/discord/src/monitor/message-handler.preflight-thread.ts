@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler preflight thread helpers and runtime behavior.
 import type { ChannelType } from "../internal/discord.js";
 import {
   isPreflightAborted,

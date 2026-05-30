@@ -1,4 +1,3 @@
-// extensions/discord/src setup adapter helpers and runtime behavior.
 import {
   createEnvPatchedAccountSetupAdapter,
   type ChannelSetupAdapter,

@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor provider deploy errors helpers and runtime behavior.
 import { inspect } from "node:util";
 import {
   parseStrictFiniteNumber,

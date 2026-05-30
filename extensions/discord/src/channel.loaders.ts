@@ -1,4 +1,3 @@
-// extensions/discord/src channel loaders helpers and runtime behavior.
 import { createLazyRuntimeModule } from "openclaw/plugin-sdk/lazy-runtime";
 
 let discordProviderRuntimePromise:

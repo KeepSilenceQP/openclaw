@@ -1,4 +1,3 @@
-// extensions/discord/src guilds helpers and runtime behavior.
 import { fetchDiscord } from "./api.js";
 import { normalizeDiscordSlug } from "./monitor/allow-list.js";
 

@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler preflight helpers and runtime behavior.
 import { formatAllowlistMatchMeta } from "openclaw/plugin-sdk/allow-from";
 import { recordChannelActivity } from "openclaw/plugin-sdk/channel-activity-runtime";
 import {

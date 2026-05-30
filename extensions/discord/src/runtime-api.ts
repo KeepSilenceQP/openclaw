@@ -1,4 +1,3 @@
-// extensions/discord/src runtime api helpers and runtime behavior.
 /** Re-exported discord plugin public API. */
 export {
   buildComputedAccountStatusSnapshot,

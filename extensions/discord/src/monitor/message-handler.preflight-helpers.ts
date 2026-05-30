@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler preflight helpers helpers and runtime behavior.
 import {
   implicitMentionKindWhen,
   matchesMentionWithExplicit,
