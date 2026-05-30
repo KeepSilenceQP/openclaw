@@ -67,7 +67,6 @@ type QaBusEventSeed =
       senderId: string;
     };
 
-/** Creates an in-memory QA bus state container with mutation and query helpers. */
 export function createQaBusState() {
   const conversations = new Map<string, QaBusConversation>();
   const threads = new Map<string, QaBusThread>();
@@ -301,5 +300,4 @@ export function createQaBusState() {
   };
 }
 
-/** In-memory QA bus state API returned by `createQaBusState`. */
 export type QaBusState = ReturnType<typeof createQaBusState>;

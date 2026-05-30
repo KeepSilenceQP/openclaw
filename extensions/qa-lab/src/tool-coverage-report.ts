@@ -22,7 +22,6 @@ type QaToolCoverageSuiteScenario = {
   runtimeParity?: RuntimeParityResult;
 };
 
-/** Suite summary subset consumed by the tool coverage report. */
 export type QaToolCoverageSuiteSummary = {
   scenarios: QaToolCoverageSuiteScenario[];
   run?: {
@@ -30,14 +29,10 @@ export type QaToolCoverageSuiteSummary = {
   };
 };
 
-/** Per-runtime coverage status for one tool row. */
 export type QaToolCoverageStatus = "pass" | "fail" | "missing" | "not-run";
-/** Drift status reported for one tool row. */
 export type QaToolCoverageDrift = RuntimeParityDrift | "not-run";
-/** Tool coverage bucket label. */
 export type QaToolCoverageBucket = QaRuntimeToolBucket;
 
-/** One tool coverage report row. */
 export type QaToolCoverageRow = {
   tool: string;
   runtimeToolName?: string;
@@ -60,7 +55,6 @@ export type QaToolCoverageRow = {
   details?: string;
 };
 
-/** Aggregated tool coverage report. */
 export type QaToolCoverageReport = {
   runtimePair: [RuntimeId, RuntimeId];
   generatedAt: string;

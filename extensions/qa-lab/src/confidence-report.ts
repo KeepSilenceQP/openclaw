@@ -21,7 +21,6 @@ import {
 } from "./runtime-parity.js";
 import { buildTokenEfficiencyReport } from "./token-efficiency-report.js";
 
-/** Verdicts used by QA confidence lane classification. */
 export const QA_CONFIDENCE_VERDICTS = [
   "pass",
   "product-bug",
@@ -32,10 +31,8 @@ export const QA_CONFIDENCE_VERDICTS = [
   "environment-blocked",
 ] as const;
 
-/** QA confidence verdict label. */
 export type QaConfidenceVerdict = (typeof QA_CONFIDENCE_VERDICTS)[number];
 
-/** Supported confidence manifest lane artifact kinds. */
 export type QaConfidenceLaneKind =
   | "qa-suite-summary"
   | "runtime-parity-summary"
@@ -45,7 +42,6 @@ export type QaConfidenceLaneKind =
   | "self-test-summary"
   | "generic-pass-summary";
 
-/** One lane entry in a QA confidence manifest. */
 export type QaConfidenceManifestLane = {
   id: string;
   title: string;
@@ -64,17 +60,14 @@ export type QaConfidenceManifestLane = {
   labels?: string[];
 };
 
-/** QA confidence manifest describing all evaluated lanes. */
 export type QaConfidenceManifest = {
   version: 1;
   profile: string;
   lanes: QaConfidenceManifestLane[];
 };
 
-/** Runtime status assigned to an evaluated confidence lane. */
 export type QaConfidenceLaneStatus = "pass" | "fail" | "blocked" | "missing" | "unknown";
 
-/** Evaluated confidence lane result. */
 export type QaConfidenceLaneResult = {
   id: string;
   title: string;
@@ -95,7 +88,6 @@ export type QaConfidenceLaneResult = {
   skipBackfilled?: boolean;
 };
 
-/** Aggregated QA confidence report. */
 export type QaConfidenceReport = {
   generatedAt: string;
   profile: string;
@@ -116,7 +108,6 @@ export type QaConfidenceReport = {
   lanes: QaConfidenceLaneResult[];
 };
 
-/** Synthetic canary used by the confidence self-test. */
 export type QaConfidenceSelfTestCanary = {
   id: string;
   category:
@@ -132,7 +123,6 @@ export type QaConfidenceSelfTestCanary = {
   details: string;
 };
 
-/** Summary of confidence self-test canary detection. */
 export type QaConfidenceSelfTestSummary = {
   generatedAt: string;
   pass: boolean;
@@ -301,7 +291,6 @@ function normalizeManifestLane(value: unknown): QaConfidenceManifestLane {
   };
 }
 
-/** Normalizes and validates an unknown confidence manifest payload. */
 export function normalizeQaConfidenceManifest(value: unknown): QaConfidenceManifest {
   if (!isRecord(value)) {
     throw new Error("confidence manifest must be an object");
@@ -331,7 +320,6 @@ export function normalizeQaConfidenceManifest(value: unknown): QaConfidenceManif
   };
 }
 
-/** Reads a confidence manifest JSON file from disk. */
 export async function readQaConfidenceManifestFile(
   filePath: string,
 ): Promise<QaConfidenceManifest> {
@@ -857,7 +845,6 @@ function globalFailuresForLaneResults(lanes: readonly QaConfidenceLaneResult[]):
   });
 }
 
-/** Builds a QA confidence report by evaluating manifest lanes under an artifact root. */
 export async function buildQaConfidenceReport(params: {
   manifest: QaConfidenceManifest;
   artifactRoot: string;
@@ -904,7 +891,6 @@ function escapeTableCell(value: string): string {
   return value.replace(/\|/gu, "\\|").replace(/\s+/gu, " ").trim();
 }
 
-/** Renders a QA confidence report as Markdown. */
 export function renderQaConfidenceMarkdownReport(report: QaConfidenceReport): string {
   const lines = [
     `# OpenClaw QA Confidence Report - ${report.profile}`,
@@ -1084,7 +1070,6 @@ function detectJsonlReplayDrift(): boolean {
   }).passed;
 }
 
-/** Builds the synthetic canary self-test summary for confidence classification. */
 export async function buildQaConfidenceSelfTestSummary(
   generatedAt = new Date().toISOString(),
 ): Promise<QaConfidenceSelfTestSummary> {
@@ -1218,7 +1203,6 @@ export async function buildQaConfidenceSelfTestSummary(
   };
 }
 
-/** Renders the confidence self-test summary as Markdown. */
 export function renderQaConfidenceSelfTestMarkdownReport(
   summary: QaConfidenceSelfTestSummary,
 ): string {
@@ -1239,7 +1223,6 @@ export function renderQaConfidenceSelfTestMarkdownReport(
   return `${lines.join("\n")}\n`;
 }
 
-/** Writes confidence self-test Markdown and JSON artifacts. */
 export async function writeQaConfidenceSelfTestArtifacts(params: {
   outputDir: string;
   generatedAt?: string;

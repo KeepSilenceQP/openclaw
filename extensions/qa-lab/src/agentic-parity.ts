@@ -65,18 +65,14 @@ const QA_AGENTIC_PARITY_SCENARIOS = [
   },
 ] as const;
 
-/** Scenario ids included when `--parity-pack agentic` expands the requested run. */
 export const QA_AGENTIC_PARITY_SCENARIO_IDS = QA_AGENTIC_PARITY_SCENARIOS.map(({ id }) => id);
-/** Human-readable scenario titles for agentic parity reports. */
 export const QA_AGENTIC_PARITY_SCENARIO_TITLES = QA_AGENTIC_PARITY_SCENARIOS.map(
   ({ title }) => title,
 );
-/** Scenario titles whose outcomes count toward the valid tool-call parity rate. */
 export const QA_AGENTIC_PARITY_TOOL_BACKED_SCENARIO_TITLES = QA_AGENTIC_PARITY_SCENARIOS.filter(
   ({ countsTowardValidToolCallRate }) => countsTowardValidToolCallRate,
 ).map(({ title }) => title);
 
-/** Expands a named parity pack into explicit scenario ids while preserving user selections. */
 export function resolveQaParityPackScenarioIds(params: {
   parityPack?: string;
   scenarioIds?: string[];

@@ -23,7 +23,6 @@ import type {
 const QA_HTTP_JSON_MAX_BODY_BYTES = 1024 * 1024;
 const QA_HTTP_JSON_BODY_TIMEOUT_MS = 5_000;
 
-/** Reads a bounded JSON request body from a QA bus HTTP request. */
 export async function readQaJsonBody(req: IncomingMessage): Promise<unknown> {
   const text = (
     await readRequestBodyWithLimit(req, {
@@ -34,7 +33,6 @@ export async function readQaJsonBody(req: IncomingMessage): Promise<unknown> {
   return text ? (JSON.parse(text) as unknown) : {};
 }
 
-/** Writes a JSON response for QA bus handlers. */
 export function writeJson(res: ServerResponse, statusCode: number, body: unknown) {
   const payload = JSON.stringify(body);
   res.writeHead(statusCode, {
@@ -44,14 +42,12 @@ export function writeJson(res: ServerResponse, statusCode: number, body: unknown
   res.end(payload);
 }
 
-/** Writes a formatted JSON error response for QA bus handlers. */
 export function writeError(res: ServerResponse, statusCode: number, error: unknown) {
   writeJson(res, statusCode, {
     error: formatErrorMessage(error),
   });
 }
 
-/** Writes request body limit errors and reports whether the error was handled. */
 export function writeQaRequestBodyLimitError(res: ServerResponse, error: unknown): boolean {
   if (!isRequestBodyLimitError(error)) {
     return false;
@@ -60,7 +56,6 @@ export function writeQaRequestBodyLimitError(res: ServerResponse, error: unknown
   return true;
 }
 
-/** Closes a QA HTTP server and force-closes idle connections after a short grace period. */
 export async function closeQaHttpServer(server: Server): Promise<void> {
   let forceCloseTimer: NodeJS.Timeout | undefined;
   try {
@@ -79,7 +74,6 @@ export async function closeQaHttpServer(server: Server): Promise<void> {
   }
 }
 
-/** Handles one QA bus HTTP request against the in-memory bus state. */
 export async function handleQaBusRequest(params: {
   req: IncomingMessage;
   res: ServerResponse;
@@ -200,7 +194,6 @@ export async function handleQaBusRequest(params: {
   }
 }
 
-/** Creates a local HTTP server backed by the given QA bus state. */
 export function createQaBusServer(state: QaBusState): Server {
   return createServer(async (req, res) => {
     const handled = await handleQaBusRequest({ req, res, state });
@@ -210,7 +203,6 @@ export function createQaBusServer(state: QaBusState): Server {
   });
 }
 
-/** Starts the QA bus HTTP server and returns its loopback base URL. */
 export async function startQaBusServer(params: { state: QaBusState; port?: number }) {
   const server = createQaBusServer(params.state);
   await new Promise<void>((resolve, reject) => {

@@ -108,7 +108,6 @@ function resolveBrowserTimeoutMs(timeoutMs: number | undefined, fallbackMs: numb
   return Math.max(1, Math.floor(timeoutMs));
 }
 
-/** Calls the browser-control gateway method with normalized query and timeout values. */
 export async function callQaBrowserRequest<T = unknown>(
   env: QaBrowserEnv,
   params: QaBrowserRequestParams,
@@ -128,7 +127,6 @@ export async function callQaBrowserRequest<T = unknown>(
   return payload as T;
 }
 
-/** Opens a browser tab through the QA gateway browser-control surface. */
 export async function qaBrowserOpenTab<T = unknown>(
   env: QaBrowserEnv,
   params: QaBrowserOpenTabParams,
@@ -142,7 +140,6 @@ export async function qaBrowserOpenTab<T = unknown>(
   });
 }
 
-/** Reads an AI/ARIA browser snapshot through the QA gateway browser-control surface. */
 export async function qaBrowserSnapshot<T = unknown>(
   env: QaBrowserEnv,
   params: QaBrowserSnapshotParams = {},
@@ -168,7 +165,6 @@ export async function qaBrowserSnapshot<T = unknown>(
   });
 }
 
-/** Performs a browser action through the QA gateway browser-control surface. */
 export async function qaBrowserAct<T = unknown>(
   env: QaBrowserEnv,
   params: QaBrowserActParams,
@@ -186,7 +182,6 @@ function isQaBrowserReady(status: QaBrowserStatus | null | undefined) {
   return status?.enabled === true && status?.running === true && status?.cdpReady === true;
 }
 
-/** Polls browser-control status until the browser process and CDP are ready. */
 export async function waitForQaBrowserReady<T extends QaBrowserStatus = QaBrowserStatus>(
   env: QaBrowserEnv,
   params: QaBrowserReadyParams = {},

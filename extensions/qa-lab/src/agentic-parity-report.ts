@@ -11,7 +11,6 @@ type QaParityReportStep = {
   details?: string;
 };
 
-/** Scenario summary row consumed by QA parity report builders. */
 export type QaParityReportScenario = {
   name: string;
   status: "pass" | "fail" | "skip";
@@ -35,7 +34,6 @@ type QaParityRunBlock = {
   runtimePair?: [RuntimeId, RuntimeId] | null;
 };
 
-/** Suite summary payload produced by QA Lab runs. */
 export type QaParitySuiteSummary = {
   scenarios: QaParityReportScenario[];
   counts?: {
@@ -51,7 +49,6 @@ type QaRuntimeParitySuiteScenario = QaParityReportScenario & {
   runtimeParity?: RuntimeParityResult;
 };
 
-/** QA suite summary variant carrying runtime parity captures per scenario. */
 export type QaRuntimeParitySuiteSummary = Omit<QaParitySuiteSummary, "scenarios"> & {
   scenarios: QaRuntimeParitySuiteScenario[];
 };
@@ -69,7 +66,6 @@ type QaRuntimeParityScenarioReport = {
   codexToolCalls: number;
 };
 
-/** Renderable runtime parity report with aggregate drift metrics. */
 export type QaRuntimeParityReport = {
   runtimePair: [RuntimeId, RuntimeId];
   comparedAt: string;
@@ -170,7 +166,6 @@ function scenarioHasPattern(
   return text.length > 0 && patterns.some((pattern) => pattern.test(text));
 }
 
-/** Computes aggregate agentic parity metrics from a QA suite summary. */
 export function computeQaAgenticParityMetrics(
   summary: QaParitySuiteSummary,
 ): QaAgenticParityMetrics {
@@ -376,7 +371,6 @@ function verifySummaryLabelMatch(params: {
   });
 }
 
-/** Error thrown when a structured summary label disagrees with run metadata. */
 export class QaParityLabelMismatchError extends Error {
   readonly role: "candidate" | "baseline";
   readonly label: string;
@@ -401,7 +395,6 @@ export class QaParityLabelMismatchError extends Error {
   }
 }
 
-/** Builds an agentic parity comparison between candidate and baseline summaries. */
 export function buildQaAgenticParityComparison(params: {
   candidateLabel: string;
   baselineLabel: string;
@@ -569,7 +562,6 @@ export function buildQaAgenticParityComparison(params: {
   };
 }
 
-/** Renders an agentic parity comparison as Markdown. */
 export function renderQaAgenticParityMarkdownReport(comparison: QaAgenticParityComparison): string {
   // Title is parametrized from the candidate / baseline labels so reports
   // for any candidate/baseline pair (not only gpt-5.5 vs opus 4.6) render
@@ -626,7 +618,6 @@ export function renderQaAgenticParityMarkdownReport(comparison: QaAgenticParityC
   return lines.join("\n");
 }
 
-/** Builds a runtime parity report from a QA runtime parity suite summary. */
 export function buildQaRuntimeParityReport(params: {
   summary: QaRuntimeParitySuiteSummary;
   comparedAt?: string;
@@ -709,7 +700,6 @@ export function buildQaRuntimeParityReport(params: {
   };
 }
 
-/** Renders a runtime parity report as Markdown. */
 export function renderQaRuntimeParityMarkdownReport(report: QaRuntimeParityReport): string {
   const lines = [
     `# OpenClaw Runtime Parity Report — ${report.runtimePair[0]} vs ${report.runtimePair[1]}`,
