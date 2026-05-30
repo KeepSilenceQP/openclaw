@@ -1,4 +1,3 @@
-// extensions/discord/src/internal test builders test support helpers and runtime behavior.
 import { ComponentType, InteractionType } from "discord-api-types/v10";
 import { vi, type Mock } from "vitest";
 import { Client, type ClientOptions } from "./client.js";

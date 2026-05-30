@@ -9,7 +9,6 @@ import type {
 type SetupTextInputParams = Parameters<NonNullable<ChannelSetupWizardTextInput["currentValue"]>>[0];
 type SetupStatusParams = Parameters<NonNullable<ChannelSetupWizardStatus["resolveStatusLines"]>>[0];
 
-/** Reused helper for create Detected Binary Status behavior in src/channels/plugins. */
 export function createDetectedBinaryStatus(params: {
   channelLabel: string;
   binaryLabel: string;
@@ -71,7 +70,6 @@ export function createDetectedBinaryStatus(params: {
   };
 }
 
-/** Reused helper for create Cli Path Text Input behavior in src/channels/plugins. */
 export function createCliPathTextInput(params: {
   inputKey: ChannelSetupWizardTextInput["inputKey"];
   message: string;
@@ -93,7 +91,6 @@ export function createCliPathTextInput(params: {
   };
 }
 
-/** Reused helper for create Delegated Setup Wizard Status Resolvers behavior in src/channels/plugins. */
 export function createDelegatedSetupWizardStatusResolvers(
   loadWizard: () => Promise<ChannelSetupWizard>,
 ): Pick<
@@ -113,7 +110,6 @@ export function createDelegatedSetupWizardStatusResolvers(
   };
 }
 
-/** Reused helper for create Delegated Text Input Should Prompt behavior in src/channels/plugins. */
 export function createDelegatedTextInputShouldPrompt(params: {
   loadWizard: () => Promise<ChannelSetupWizard>;
   inputKey: ChannelSetupWizardTextInput["inputKey"];

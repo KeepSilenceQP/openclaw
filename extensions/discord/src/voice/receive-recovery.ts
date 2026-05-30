@@ -1,4 +1,3 @@
-// extensions/discord/src/voice receive recovery helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/ssrf-runtime";
 
 const DECRYPT_FAILURE_WINDOW_MS = 30_000;

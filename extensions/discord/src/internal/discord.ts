@@ -1,4 +1,3 @@
-// extensions/discord/src/internal discord helpers and runtime behavior.
 export * from "discord-api-types/v10";
 export * from "./api.js";
 export * from "./client.js";

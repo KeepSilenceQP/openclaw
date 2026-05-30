@@ -1,4 +1,3 @@
-// extensions/discord/src/internal client helpers and runtime behavior.
 import type { APIApplicationCommand, APIInteraction } from "discord-api-types/v10";
 import { DiscordCommandDeployer, type DeployCommandOptions } from "./command-deploy.js";
 import type { BaseCommand } from "./commands.js";

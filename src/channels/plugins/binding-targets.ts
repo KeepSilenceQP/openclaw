@@ -10,7 +10,6 @@ import {
   resolveStatefulBindingTargetBySessionKey,
 } from "./stateful-target-drivers.js";
 
-/** Reused helper for ensure Configured Binding Target Ready behavior in src/channels/plugins. */
 export async function ensureConfiguredBindingTargetReady(params: {
   cfg: OpenClawConfig;
   bindingResolution: ConfiguredBindingResolution | null;
@@ -36,7 +35,6 @@ export async function ensureConfiguredBindingTargetReady(params: {
   });
 }
 
-/** Reused helper for reset Configured Binding Target In Place behavior in src/channels/plugins. */
 export async function resetConfiguredBindingTargetInPlace(params: {
   cfg: OpenClawConfig;
   sessionKey: string;
@@ -66,7 +64,6 @@ export async function resetConfiguredBindingTargetInPlace(params: {
   });
 }
 
-/** Reused helper for ensure Configured Binding Target Session behavior in src/channels/plugins. */
 export async function ensureConfiguredBindingTargetSession(params: {
   cfg: OpenClawConfig;
   bindingResolution: ConfiguredBindingResolution;

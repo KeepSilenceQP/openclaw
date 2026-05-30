@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor native command reply helpers and runtime behavior.
 import type { ReplyPayload } from "openclaw/plugin-sdk/reply-dispatch-runtime";
 import {
   resolveSendableOutboundReplyParts,

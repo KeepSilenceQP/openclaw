@@ -1,4 +1,3 @@
-// extensions/discord/src/internal listeners helpers and runtime behavior.
 import {
   GatewayDispatchEvents,
   type APIMessage,

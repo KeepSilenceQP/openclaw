@@ -1,4 +1,3 @@
-// extensions/discord/src/internal api users helpers and runtime behavior.
 import { Routes, type APIChannel, type APIUser } from "discord-api-types/v10";
 import type { RequestClient } from "./rest.js";
 

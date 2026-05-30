@@ -1,4 +1,3 @@
-// extensions/discord/src/internal rest errors helpers and runtime behavior.
 import { parseStrictNonNegativeInteger } from "openclaw/plugin-sdk/number-runtime";
 import { parseDiscordRetryAfterBodySeconds, parseRetryAfterHeaderSeconds } from "../retry-after.js";
 

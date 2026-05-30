@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler preflight context helpers and runtime behavior.
 import type {
   DiscordMessagePreflightContext,
   DiscordMessagePreflightParams,

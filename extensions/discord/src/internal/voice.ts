@@ -1,4 +1,3 @@
-// extensions/discord/src/internal voice helpers and runtime behavior.
 import type {
   DiscordGatewayAdapterCreator,
   DiscordGatewayAdapterLibraryMethods,

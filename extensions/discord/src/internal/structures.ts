@@ -1,4 +1,3 @@
-// extensions/discord/src/internal structures helpers and runtime behavior.
 import {
   type APIChannel,
   type APIEmbed,

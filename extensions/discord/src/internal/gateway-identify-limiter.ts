@@ -1,4 +1,3 @@
-// extensions/discord/src/internal gateway identify limiter helpers and runtime behavior.
 import { parseFiniteNumber } from "openclaw/plugin-sdk/number-runtime";
 
 const IDENTIFY_WINDOW_MS = 5_000;

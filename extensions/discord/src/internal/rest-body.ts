@@ -1,4 +1,3 @@
-// extensions/discord/src/internal rest body helpers and runtime behavior.
 type RequestData = {
   body?: unknown;
   multipartStyle?: "message" | "form";

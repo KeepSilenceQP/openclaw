@@ -1,4 +1,3 @@
-// extensions/discord/src/internal gateway helpers and runtime behavior.
 import { EventEmitter } from "node:events";
 import {
   GatewayCloseCodes,

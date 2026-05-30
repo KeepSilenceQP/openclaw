@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor gateway metadata helpers and runtime behavior.
 import type { APIGatewayBotInfo } from "discord-api-types/v10";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import { parseStrictPositiveInteger } from "openclaw/plugin-sdk/number-runtime";

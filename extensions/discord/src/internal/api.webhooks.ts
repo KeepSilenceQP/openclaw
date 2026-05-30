@@ -1,4 +1,3 @@
-// extensions/discord/src/internal api webhooks helpers and runtime behavior.
 import { Routes } from "discord-api-types/v10";
 import type { RequestClient, RequestData } from "./rest.js";
 

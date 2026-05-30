@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor agent components helpers and runtime behavior.
 import { Modal, type BaseMessageInteractiveComponent } from "../internal/discord.js";
 import type { AgentComponentContext } from "./agent-components-helpers.js";
 import { discordComponentControlHandlers } from "./agent-components.handlers.js";

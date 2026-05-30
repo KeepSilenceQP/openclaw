@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler draft preview helpers and runtime behavior.
 import { EmbeddedBlockChunker } from "openclaw/plugin-sdk/agent-runtime";
 import {
   createChannelProgressDraftGate,

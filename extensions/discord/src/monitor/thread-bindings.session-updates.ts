@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor thread bindings session updates helpers and runtime behavior.
 import {
   normalizeNonNegativeMs,
   resolveBindingIdsForTargetSession,

@@ -6,13 +6,11 @@ import { getActivePluginChannelRegistryFromState } from "../../plugins/runtime-c
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import { CHAT_CHANNEL_ORDER } from "../registry.js";
 
-/** Shared type for Loaded Channel Plugin in src/channels/plugins. */
 export type LoadedChannelPlugin = ActiveChannelPluginRuntimeShape & {
   id: string;
   meta: NonNullable<ActiveChannelPluginRuntimeShape["meta"]>;
 };
 
-/** Shared type for Loaded Channel Plugin Entry in src/channels/plugins. */
 export type LoadedChannelPluginEntry = ActivePluginChannelRegistration & {
   plugin: LoadedChannelPlugin;
 };
@@ -93,12 +91,10 @@ function resolveChannelPlugins(): ChannelPluginView {
   };
 }
 
-/** Reused helper for list Loaded Channel Plugins behavior in src/channels/plugins. */
 export function listLoadedChannelPlugins(): LoadedChannelPlugin[] {
   return resolveChannelPlugins().sorted.slice();
 }
 
-/** Reused helper for get Loaded Channel Plugin By Id behavior in src/channels/plugins. */
 export function getLoadedChannelPluginById(id: string): LoadedChannelPlugin | undefined {
   const resolvedId = normalizeOptionalString(id) ?? "";
   if (!resolvedId) {
@@ -107,7 +103,6 @@ export function getLoadedChannelPluginById(id: string): LoadedChannelPlugin | un
   return resolveChannelPlugins().byId.get(resolvedId);
 }
 
-/** Reused helper for get Loaded Channel Plugin Entry By Id behavior in src/channels/plugins. */
 export function getLoadedChannelPluginEntryById(id: string): LoadedChannelPluginEntry | undefined {
   const resolvedId = normalizeOptionalString(id) ?? "";
   if (!resolvedId) {

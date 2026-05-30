@@ -1,4 +1,3 @@
-// extensions/discord/src/internal interactions helpers and runtime behavior.
 import {
   ComponentType,
   InteractionResponseType,

@@ -1,4 +1,3 @@
-// extensions/discord/src/internal api helpers and runtime behavior.
 /** Re-exported discord plugin public API. */
 export {
   createApplicationCommand,

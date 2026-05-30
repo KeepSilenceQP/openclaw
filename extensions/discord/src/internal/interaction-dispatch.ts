@@ -1,4 +1,3 @@
-// extensions/discord/src/internal interaction dispatch helpers and runtime behavior.
 import { InteractionType, type APIInteraction } from "discord-api-types/v10";
 import {
   type BaseCommand,

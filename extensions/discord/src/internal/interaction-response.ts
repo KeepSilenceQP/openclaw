@@ -1,4 +1,3 @@
-// extensions/discord/src/internal interaction response helpers and runtime behavior.
 import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
 
 export type InteractionResponseState =

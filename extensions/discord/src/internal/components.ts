@@ -1,4 +1,3 @@
-// extensions/discord/src/internal components helpers and runtime behavior.
 export {
   BaseComponent,
   BaseMessageInteractiveComponent,
