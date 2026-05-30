@@ -6,7 +6,6 @@ import {
 
 export type { QaProviderMode, QaProviderModeInput } from "./providers/index.js";
 
-/** Primary and alternate model refs used by parity and fast-mode checks. */
 export type QaModelSelection = {
   primaryModel: string;
   alternateModel: string;
@@ -14,7 +13,6 @@ export type QaModelSelection = {
 
 export { normalizeQaProviderMode } from "./providers/index.js";
 
-/** Returns the default model for a QA provider mode and optional alternate lane. */
 export function defaultQaModelForMode(
   mode: QaProviderModeInput,
   options?: {
@@ -25,7 +23,6 @@ export function defaultQaModelForMode(
   return getQaProvider(mode).defaultModel(options);
 }
 
-/** Splits `provider/model` refs into provider and model parts, or null for bare refs. */
 export function splitQaModelRef(ref: string) {
   const slash = ref.indexOf("/");
   if (slash <= 0 || slash === ref.length - 1) {
@@ -37,12 +34,10 @@ export function splitQaModelRef(ref: string) {
   };
 }
 
-/** Checks whether a model ref uses the default live provider's fast-mode behavior. */
 export function isQaFastModeModelRef(ref: string) {
   return getQaProvider(DEFAULT_QA_LIVE_PROVIDER_MODE).usesFastModeByDefault(ref);
 }
 
-/** Checks whether either selected model enables fast-mode runtime behavior. */
 export function isQaFastModeEnabled(selection: QaModelSelection) {
   return (
     isQaFastModeModelRef(selection.primaryModel) || isQaFastModeModelRef(selection.alternateModel)
