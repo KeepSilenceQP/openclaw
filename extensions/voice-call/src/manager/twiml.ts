@@ -1,6 +1,5 @@
 import { escapeXml } from "../voice-mapping.js";
 
-/** Generate TwiML that speaks one notification message and hangs up. */
 export function generateNotifyTwiml(message: string, voice: string): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
@@ -9,7 +8,6 @@ export function generateNotifyTwiml(message: string, voice: string): string {
 </Response>`;
 }
 
-/** Generate TwiML that plays DTMF digits before redirecting to the call webhook. */
 export function generateDtmfRedirectTwiml(digits: string, webhookUrl: string): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <Response>

@@ -8,7 +8,6 @@ import {
   MOONSHOT_CN_BASE_URL,
   MOONSHOT_DEFAULT_MODEL_ID,
 } from "./provider-catalog.js";
-/** Default provider/model ref selected by Moonshot onboarding. */
 export const MOONSHOT_DEFAULT_MODEL_REF = `moonshot/${MOONSHOT_DEFAULT_MODEL_ID}`;
 
 const moonshotPresetAppliers = createDefaultModelPresetAppliers<[string]>({
@@ -30,12 +29,10 @@ const moonshotPresetAppliers = createDefaultModelPresetAppliers<[string]>({
   },
 });
 
-/** Applies the global Moonshot API preset to config. */
 export function applyMoonshotConfig(cfg: OpenClawConfig): OpenClawConfig {
   return moonshotPresetAppliers.applyConfig(cfg, MOONSHOT_BASE_URL);
 }
 
-/** Applies the mainland China Moonshot API preset to config. */
 export function applyMoonshotConfigCn(cfg: OpenClawConfig): OpenClawConfig {
   return moonshotPresetAppliers.applyConfig(cfg, MOONSHOT_CN_BASE_URL);
 }

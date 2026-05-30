@@ -2,7 +2,6 @@ import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 
 const noopAuth = async () => ({ profiles: [] });
 
-/** Builds the Moonshot provider contract without executing runtime auth. */
 export function createMoonshotProvider(): ProviderPlugin {
   return {
     id: "moonshot",
