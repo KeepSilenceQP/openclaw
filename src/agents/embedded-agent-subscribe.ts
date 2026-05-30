@@ -1,3 +1,4 @@
+/** Subscribes embedded-agent sessions to stream events and reply delivery. */
 import type { InlineCodeState } from "../../packages/markdown-core/src/code-spans.js";
 import {
   buildCodeSpanIndex,
@@ -150,7 +151,7 @@ function collectPendingMediaFromInternalEvents(
   return pending;
 }
 
-/** Re-exported API for src/agents, starting with Subscribe Embedded Agent Session Params. */
+/** Embedded-agent subscription parameters shared with lifecycle handlers. */
 export type { SubscribeEmbeddedAgentSessionParams } from "./embedded-agent-subscribe.types.js";
 
 /** Attach reply/event handlers to an embedded-agent session stream. */
