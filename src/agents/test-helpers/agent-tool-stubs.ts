@@ -1,7 +1,6 @@
 import { Type } from "typebox";
 import type { AgentTool, AgentToolResult } from "../runtime/index.js";
 
-/** Creates a no-op tool with a stable name. */
 export function createStubTool(name: string): AgentTool {
   return {
     name,
