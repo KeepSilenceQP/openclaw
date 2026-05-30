@@ -1,4 +1,3 @@
-// extensions/memory-core/src test helpers helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { resolvePreferredOpenClawTmpDir } from "openclaw/plugin-sdk/temp-path";

@@ -1,4 +1,3 @@
-// extensions/memory-core/src tools shared helpers and runtime behavior.
 import { optionalFiniteNumberSchema, stringEnum } from "openclaw/plugin-sdk/channel-actions";
 import {
   listMemoryCorpusSupplements,

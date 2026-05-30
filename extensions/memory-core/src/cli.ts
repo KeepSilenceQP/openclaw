@@ -1,4 +1,3 @@
-// extensions/memory-core/src cli helpers and runtime behavior.
 import type { Command } from "commander";
 import {
   formatDocsLink,
