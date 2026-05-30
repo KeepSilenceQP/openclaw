@@ -22,7 +22,7 @@ import {
   resolveMentionTargets,
   resolveOwnerList,
 } from "./mentions.js";
-import type { WebInboundMsg } from "./types.js";
+import type { NormalizedWebInboundMsg } from "./types.js";
 import { elide, isLikelyWhatsAppCryptoError } from "./util.js";
 
 function acceptedSendResult(kind: "media" | "text", id: string): WhatsAppSendResult {
@@ -34,21 +34,60 @@ function acceptedSendResult(kind: "media" | "text", id: string): WhatsAppSendRes
   };
 }
 
-const makeMsg = (overrides: Partial<WebInboundMsg>): WebInboundMsg =>
-  ({
-    id: "m1",
+type TestMessageOverrides = Partial<NormalizedWebInboundMsg> & {
+  body?: string;
+  mentionedJids?: string[];
+  selfE164?: string;
+  selfJid?: string;
+  selfLid?: string;
+};
+
+const makeMsg = (overrides: TestMessageOverrides): NormalizedWebInboundMsg => {
+  const {
+    body,
+    mentionedJids,
+    selfE164,
+    selfJid,
+    selfLid,
+    event,
+    payload,
+    platform,
+    group,
+    ...messageOverrides
+  } = overrides;
+  return {
+    event: {
+      id: "m1",
+      ...event,
+    },
+    payload: {
+      body: body ?? "",
+      ...payload,
+    },
+    platform: {
+      chatJid: "120363401234567890@g.us",
+      recipientJid: "15551234567@s.whatsapp.net",
+      selfE164,
+      selfJid,
+      selfLid,
+      sendComposing: async () => {},
+      reply: async () => acceptedSendResult("text", "r1"),
+      sendMedia: async () => acceptedSendResult("media", "m1"),
+      ...platform,
+    },
     from: "120363401234567890@g.us",
     conversationId: "120363401234567890@g.us",
-    to: "15551234567@s.whatsapp.net",
     accountId: "default",
-    body: "",
     chatType: "group",
-    chatId: "120363401234567890@g.us",
-    sendComposing: async () => {},
-    reply: async () => acceptedSendResult("text", "r1"),
-    sendMedia: async () => acceptedSendResult("media", "m1"),
-    ...overrides,
-  }) as WebInboundMsg;
+    group: {
+      mentions: {
+        jids: mentionedJids,
+      },
+      ...group,
+    },
+    ...messageOverrides,
+  } as NormalizedWebInboundMsg;
+};
 
 function getSessionSnapshotForTest(
   cfg: OpenClawConfig,
@@ -108,7 +147,7 @@ describe("isBotMentionedFromTargets", () => {
   const mentionCfg = { mentionRegexes: [/\bopenclaw\b/i] };
 
   function expectMentioned(
-    msg: WebInboundMsg,
+    msg: NormalizedWebInboundMsg,
     cfg: { mentionRegexes: RegExp[]; allowFrom?: Array<string | number>; isSelfChat?: boolean },
     expected: boolean,
   ) {
