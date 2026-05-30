@@ -1,4 +1,3 @@
-// secrets configure helpers and runtime behavior.
 import path from "node:path";
 import { isDeepStrictEqual } from "node:util";
 import { confirm, select, text } from "@clack/prompts";
@@ -48,7 +47,6 @@ import { resolveSecretRefValue } from "./resolve.js";
 import { assertExpectedResolvedSecretValue } from "./secret-value.js";
 import { isRecord } from "./shared.js";
 
-/** Shared type for Secrets Configure Result in src/secrets. */
 export type SecretsConfigureResult = {
   plan: SecretsApplyPlan;
   preflight: SecretsApplyResult;
@@ -816,7 +814,6 @@ async function configureProvidersInteractive(
   }
 }
 
-/** Reused helper for run Secrets Configure Interactive behavior in src/secrets. */
 export async function runSecretsConfigureInteractive(
   params: {
     env?: NodeJS.ProcessEnv;

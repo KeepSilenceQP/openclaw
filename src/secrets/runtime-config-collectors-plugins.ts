@@ -1,4 +1,3 @@
-// secrets runtime config collectors plugins helpers and runtime behavior.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {

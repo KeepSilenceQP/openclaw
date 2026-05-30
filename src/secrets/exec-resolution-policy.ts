@@ -1,9 +1,7 @@
-// secrets exec resolution policy helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { SecretRef } from "../config/types.secrets.js";
 import { formatExecSecretRefIdValidationMessage, isValidExecSecretRefId } from "./ref-contract.js";
 
-/** Reused helper for select Refs For Exec Policy behavior in src/secrets. */
 export function selectRefsForExecPolicy(params: { refs: SecretRef[]; allowExec: boolean }): {
   refsToResolve: SecretRef[];
   skippedExecRefs: SecretRef[];
@@ -20,7 +18,6 @@ export function selectRefsForExecPolicy(params: { refs: SecretRef[]; allowExec: 
   return { refsToResolve, skippedExecRefs };
 }
 
-/** Reused helper for get Skipped Exec Ref Static Error behavior in src/secrets. */
 export function getSkippedExecRefStaticError(params: {
   ref: SecretRef;
   config: OpenClawConfig;

@@ -1,9 +1,7 @@
-// secrets runtime auth integration test helpers helpers and runtime behavior.
 import { vi } from "vitest";
 import { clearConfigCache, clearRuntimeConfigSnapshot } from "../config/config.js";
 import { captureEnv } from "../test-utils/env.js";
 import type { SecretsRuntimeEnvSnapshot } from "./runtime-openai-file-fixture.test-helper.js";
-/** Re-exported API for src/secrets. */
 export {
   asConfig,
   createOpenAIFileRuntimeConfig,
@@ -14,7 +12,6 @@ export {
   OPENAI_ENV_KEY_REF,
   OPENAI_FILE_KEY_REF,
 } from "./runtime-openai-file-fixture.test-helper.js";
-/** Re-exported API for src/secrets, starting with Secrets Runtime Env Snapshot. */
 export type { SecretsRuntimeEnvSnapshot } from "./runtime-openai-file-fixture.test-helper.js";
 import { clearSecretsRuntimeSnapshot } from "./runtime.js";
 
@@ -32,7 +29,6 @@ vi.mock("../plugins/provider-runtime.js", () => ({
     secretsRuntimePluginMocks.resolveExternalAuthProfilesWithPluginsMock,
 }));
 
-/** Reused helper for begin Secrets Runtime Isolation For Test behavior in src/secrets. */
 export function beginSecretsRuntimeIsolationForTest(): SecretsRuntimeEnvSnapshot {
   secretsRuntimePluginMocks.resolveExternalAuthProfilesWithPluginsMock.mockReset();
   secretsRuntimePluginMocks.resolveExternalAuthProfilesWithPluginsMock.mockReturnValue([]);
@@ -48,7 +44,6 @@ export function beginSecretsRuntimeIsolationForTest(): SecretsRuntimeEnvSnapshot
   return envSnapshot;
 }
 
-/** Reused helper for end Secrets Runtime Isolation For Test behavior in src/secrets. */
 export function endSecretsRuntimeIsolationForTest(envSnapshot: SecretsRuntimeEnvSnapshot) {
   vi.restoreAllMocks();
   envSnapshot.restore();
