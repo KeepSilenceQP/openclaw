@@ -3,10 +3,10 @@ import { createCipheriv, createDecipheriv, hash } from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
+import { isRecord } from "@openclaw/normalization-core/record-coerce";
+import { uniqueStrings } from "@openclaw/normalization-core/string-normalization";
 import { resolveOAuthDir, resolveStateDir } from "../../config/paths.js";
 import { loadJsonFile } from "../../infra/json-file.js";
-import { isRecord } from "../../shared/record-coerce.js";
-import { uniqueStrings } from "../../shared/string-normalization.js";
 import { log } from "./constants.js";
 
 const LEGACY_OAUTH_REF_SOURCE = "openclaw-credentials";

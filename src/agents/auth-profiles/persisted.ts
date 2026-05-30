@@ -1,10 +1,10 @@
 import { createHash } from "node:crypto";
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
+import { isRecord } from "@openclaw/normalization-core/record-coerce";
+import { uniqueStrings } from "@openclaw/normalization-core/string-normalization";
 import { resolveOAuthPath } from "../../config/paths.js";
 import { coerceSecretRef } from "../../config/types.secrets.js";
 import { loadJsonFile } from "../../infra/json-file.js";
-import { isRecord } from "../../shared/record-coerce.js";
-import { uniqueStrings } from "../../shared/string-normalization.js";
 import { asBoolean } from "../../utils/boolean.js";
 import { AUTH_STORE_VERSION, log } from "./constants.js";
 import {

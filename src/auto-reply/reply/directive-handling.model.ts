@@ -1,3 +1,7 @@
+import {
+  normalizeLowercaseStringOrEmpty,
+  normalizeOptionalString,
+} from "@openclaw/normalization-core/string-coerce";
 import { resolveAuthStorePathForDisplay } from "../../agents/auth-profiles.js";
 import { resolveAgentHarnessPolicy } from "../../agents/harness/selection.js";
 import {
@@ -12,10 +16,6 @@ import { buildAgentRuntimeAuthPlan } from "../../agents/runtime-plan/auth.js";
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type { SessionEntry } from "../../config/sessions.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
-import {
-  normalizeLowercaseStringOrEmpty,
-  normalizeOptionalString,
-} from "../../shared/string-coerce.js";
 import { shortenHomePath } from "../../utils.js";
 import { resolveSelectedAndActiveModel } from "../model-runtime.js";
 import type { ReplyPayload } from "../types.js";

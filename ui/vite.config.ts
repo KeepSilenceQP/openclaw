@@ -121,9 +121,13 @@ export default defineConfig(() => {
       ],
     },
     resolve: {
-      alias: {
-        json5: json5EsmPath,
-      },
+      alias: [
+        {
+          find: /^@openclaw\/normalization-core\/(.+)$/u,
+          replacement: path.resolve(repoRoot, "packages/normalization-core/src/$1"),
+        },
+        { find: "json5", replacement: json5EsmPath },
+      ],
     },
     build: {
       outDir,
