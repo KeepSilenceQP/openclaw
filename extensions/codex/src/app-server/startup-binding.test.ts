@@ -37,7 +37,6 @@ describe("Codex app-server startup binding", () => {
       path.join(path.dirname(sessionFile), "sessions.json"),
       JSON.stringify({
         "agent:main:session-1": {
-          sessionFile,
           ...record,
         },
       }),
@@ -59,7 +58,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -89,7 +87,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -121,7 +118,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       codexHome,
       config: {
@@ -168,7 +164,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -214,7 +209,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -269,7 +263,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -314,7 +307,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -347,7 +339,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {
@@ -379,7 +370,6 @@ describe("Codex app-server startup binding", () => {
 
     const binding = await rotateOversizedCodexAppServerStartupBinding({
       binding: await readCodexAppServerBinding(sessionFile),
-      sessionFile,
       agentDir,
       config: {
         agents: {

@@ -210,7 +210,6 @@ function hasContextEngineThreadBootstrapProjection(binding: CodexAppServerThread
 export async function rotateOversizedCodexAppServerStartupBinding(params: {
   binding: CodexAppServerThreadBinding | undefined;
   bindingIdentity?: CodexAppServerBindingIdentity;
-  sessionFile?: string;
   agentDir: string;
   codexHome?: string;
   config: EmbeddedRunAttemptParams["config"] | undefined;
@@ -220,7 +219,7 @@ export async function rotateOversizedCodexAppServerStartupBinding(params: {
   if (!binding?.threadId) {
     return binding;
   }
-  const clearIdentity = params.bindingIdentity ?? params.sessionFile ?? binding.sessionId;
+  const clearIdentity = params.bindingIdentity ?? binding.sessionId;
   if (params.config?.agents?.defaults?.compaction?.rotateAfterCompaction !== true) {
     return binding;
   }

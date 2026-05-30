@@ -440,7 +440,6 @@ export async function runCodexAppServerAttempt(
   startupBinding = await rotateOversizedCodexAppServerStartupBinding({
     binding: startupBinding,
     bindingIdentity,
-    sessionFile: params.sessionFile,
     agentDir,
     codexHome: appServer.start.env?.CODEX_HOME,
     config: params.config,
