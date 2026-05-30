@@ -1,4 +1,3 @@
-// extensions/diffs-language-pack/src plugin helpers and runtime behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { OpenClawPluginApi } from "../api.js";
 import { VIEWER_ASSET_PREFIX, getServedViewerAsset } from "./viewer-assets.js";

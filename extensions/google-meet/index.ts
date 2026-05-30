@@ -1,4 +1,3 @@
-// extensions/google-meet index helpers and runtime behavior.
 import {
   optionalPositiveIntegerSchema,
   readPositiveIntegerParam,

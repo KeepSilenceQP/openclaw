@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime state files helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";

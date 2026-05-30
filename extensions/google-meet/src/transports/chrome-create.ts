@@ -1,4 +1,3 @@
-// extensions/google-meet/src/transports chrome create helpers and runtime behavior.
 import type { PluginRuntime } from "openclaw/plugin-sdk/plugin-runtime";
 import { sleep } from "openclaw/plugin-sdk/runtime-env";
 import type { GoogleMeetConfig } from "../config.js";

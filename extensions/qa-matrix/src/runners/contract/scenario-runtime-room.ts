@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime room helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import { writeFile } from "node:fs/promises";
 import path from "node:path";

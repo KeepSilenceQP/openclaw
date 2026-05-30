@@ -1,4 +1,3 @@
-// extensions/google-meet/src config compat helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   asNullableRecord as asRecord,

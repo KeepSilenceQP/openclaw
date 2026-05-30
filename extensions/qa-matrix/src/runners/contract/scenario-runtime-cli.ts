@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime cli helpers and runtime behavior.
 import { spawn as startOpenClawCliProcess } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { existsSync } from "node:fs";

@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario media fixtures helpers and runtime behavior.
 export const MATRIX_QA_IMAGE_ATTACHMENT_FILENAME = "red-top-blue-bottom.png";
 
 type MatrixQaMediaTypeCoverageCase = {
