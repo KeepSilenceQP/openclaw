@@ -1,6 +1,3 @@
-/**
- * Stable connected iOS node fixture used by CLI node tests.
- */
 export const IOS_NODE = {
   nodeId: "ios-node",
   displayName: "iOS Node",

@@ -1,6 +1,3 @@
-/**
- * Shared CLI option bag for nodes status, pairing, invoke, media, and notification commands.
- */
 export type NodesRpcOpts = {
   url?: string;
   token?: string;

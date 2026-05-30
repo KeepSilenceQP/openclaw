@@ -1,6 +1,3 @@
-/**
- * Input mode recorded for config-set dry-run summaries.
- */
 export type ConfigSetDryRunInputMode = "value" | "json" | "builder" | "unset";
 
 /** Structured dry-run failure for path, schema, or secret-resolvability checks. */
