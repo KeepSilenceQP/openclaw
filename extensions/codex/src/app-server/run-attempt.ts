@@ -931,7 +931,8 @@ export async function runCodexAppServerAttempt(
     throw error;
   }
   trajectoryRecorder?.recordEvent("session.started", {
-    sessionFile: params.sessionFile,
+    sessionId: params.sessionId,
+    sessionKey: params.sessionKey,
     threadId: thread.threadId,
     authProfileId: startupAuthProfileId,
     workspaceDir: effectiveWorkspace,
