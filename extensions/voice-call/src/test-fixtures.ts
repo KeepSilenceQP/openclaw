@@ -1,7 +1,6 @@
 import type { VoiceCallConfig } from "./config.js";
 import { DEFAULT_VOICE_CALL_REALTIME_INSTRUCTIONS } from "./realtime-defaults.js";
 
-/** Create a complete voice-call config fixture with optional provider/tunnel overrides. */
 export function createVoiceCallBaseConfig(params?: {
   provider?: "telnyx" | "twilio" | "plivo" | "mock";
   tunnelProvider?: "none" | "ngrok";

@@ -1,7 +1,6 @@
 import type { VoiceCallConfig } from "./config.js";
 import type { CoreAgentDeps } from "./core-bridge.js";
 
-/** Resolve provider/model fields for voice-call response generation. */
 export function resolveVoiceResponseModel(params: {
   voiceConfig: VoiceCallConfig;
   agentRuntime: CoreAgentDeps;

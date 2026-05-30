@@ -1,7 +1,6 @@
 import os from "node:os";
 import path from "node:path";
 
-/** Resolves a possibly tilde-prefixed user path to an absolute path. */
 export function resolveUserPath(input: string): string {
   const trimmed = input.trim();
   if (!trimmed) {

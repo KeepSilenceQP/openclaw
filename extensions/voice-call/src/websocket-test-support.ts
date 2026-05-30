@@ -2,7 +2,6 @@ import { once } from "node:events";
 import http from "node:http";
 import { WebSocket } from "ws";
 
-/** Races a promise against a timeout used by WebSocket tests. */
 export const withTimeout = async <T>(promise: Promise<T>, timeoutMs = 2000): Promise<T> => {
   let timer: ReturnType<typeof setTimeout> | null = null;
   const timeout = new Promise<never>((_, reject) => {
@@ -54,7 +53,6 @@ export const startUpgradeWsServer = async (params: {
   };
 };
 
-/** Connects a WebSocket and waits for the open event. */
 export const connectWs = async (url: string): Promise<WebSocket> => {
   const ws = new WebSocket(url);
   await withTimeout(once(ws, "open") as Promise<[unknown]>);
