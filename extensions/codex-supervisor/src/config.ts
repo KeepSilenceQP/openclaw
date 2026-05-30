@@ -1,4 +1,3 @@
-// extensions/codex-supervisor/src config helpers and runtime behavior.
 import { Type, type Static } from "typebox";
 import type { CodexSupervisorEndpoint } from "./types.js";
 

@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime dm helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import {
   MATRIX_QA_DRIVER_DM_ROOM_KEY,

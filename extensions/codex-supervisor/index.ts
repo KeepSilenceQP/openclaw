@@ -1,4 +1,3 @@
-// extensions/codex-supervisor index helpers and runtime behavior.
 import { buildJsonPluginConfigSchema, definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import {
   CodexSupervisorPluginConfigSchema,
