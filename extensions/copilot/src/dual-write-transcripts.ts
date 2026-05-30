@@ -17,7 +17,7 @@
  * (extensions/codex/src/app-server/transcript-mirror.ts). Both writers
  * cooperate via idempotency-key dedupe: each mirrored entry carries a
  * stable `${idempotencyScope}:${identity}` key, and we skip any key
- * already present in the transcript on disk before appending. Both
+ * already present in the SQLite transcript before appending. Both
  * attempt-execution's untagged entries (no idempotencyKey) and our
  * tagged mirror entries can coexist; attempt-execution dedupes its own
  * final-assistant append via `embeddedAssistantGapFill` content match.
@@ -92,7 +92,6 @@ function buildMirrorDedupeIdentity(message: MirroredAgentMessage): string {
 }
 
 export interface MirrorCopilotTranscriptParams {
-  sessionFile: string;
   sessionKey?: string;
   agentId?: string;
   sessionId?: string;
@@ -203,11 +202,10 @@ function readTranscriptMirrorState(params: { agentId: string; sessionId: string 
 
 /**
  * Caller-side wrapper that swallows mirror failures. attempt.ts uses
- * this so that a transient transcript-mirror failure (lock contention,
- * disk full, etc.) never breaks an otherwise-successful attempt. The
- * SDK's own session file remains the source of truth in that case;
- * the OpenClaw audit trail just misses the intermediate messages for
- * this turn.
+ * this so that a transient transcript-mirror failure never breaks an
+ * otherwise-successful attempt. The SDK's own session storage remains
+ * the source of truth in that case; the OpenClaw audit trail just
+ * misses the intermediate messages for this turn.
  */
 export async function dualWriteCopilotTranscriptBestEffort(
   params: MirrorCopilotTranscriptParams,

@@ -49,11 +49,10 @@ afterEach(async () => {
   }
 });
 
-async function createTempSessionFile() {
+async function createTempStateDir() {
   const dir = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-copilot-mirror-"));
   tempDirs.push(dir);
   vi.stubEnv("OPENCLAW_STATE_DIR", dir);
-  return path.join(dir, "session.jsonl");
 }
 
 async function makeRoot(prefix: string): Promise<string> {
@@ -98,7 +97,7 @@ function parseJsonLines<T>(raw: string): T[] {
 
 describe("mirrorCopilotTranscript", () => {
   it("mirrors user, assistant, and tool result messages into the OpenClaw transcript", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const userMessage = makeAgentUserMessage({
       content: [{ type: "text", text: "hello" }],
       timestamp: Date.now(),
@@ -122,7 +121,6 @@ describe("mirrorCopilotTranscript", () => {
     }) as MirroredAgentMessage;
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [userMessage, assistantMessage, toolResultMessage],
       idempotencyScope: "copilot:session-1",
@@ -144,12 +142,10 @@ describe("mirrorCopilotTranscript", () => {
     );
   });
 
-  it("creates the transcript directory on first mirror", async () => {
-    const root = await makeRoot("openclaw-copilot-mirror-missing-dir-");
-    const sessionFile = path.join(root, "nested", "sessions", "session.jsonl");
+  it("creates the transcript rows on first mirror", async () => {
+    await makeRoot("openclaw-copilot-mirror-state-");
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [
         makeAgentAssistantMessage({
@@ -166,7 +162,7 @@ describe("mirrorCopilotTranscript", () => {
   });
 
   it("deduplicates re-emits by idempotency scope", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const messages = [
       makeAgentUserMessage({
         content: [{ type: "text", text: "hello" }],
@@ -179,13 +175,11 @@ describe("mirrorCopilotTranscript", () => {
     ] as const;
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [...messages],
       idempotencyScope: "copilot:session-1",
     });
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [...messages],
       idempotencyScope: "copilot:session-1",
@@ -214,14 +208,13 @@ describe("mirrorCopilotTranscript", () => {
         },
       ]),
     );
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const sourceMessage = makeAgentAssistantMessage({
       content: [{ type: "text", text: "hello" }],
       timestamp: Date.now(),
     });
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [sourceMessage],
       idempotencyScope: "copilot:session-1",
@@ -243,10 +236,9 @@ describe("mirrorCopilotTranscript", () => {
         },
       ]),
     );
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [
         makeAgentAssistantMessage({
@@ -257,31 +249,29 @@ describe("mirrorCopilotTranscript", () => {
       idempotencyScope: "copilot:session-1",
     });
 
-    await expect(fs.readFile(sessionFile, "utf8")).rejects.toHaveProperty("code", "ENOENT");
+    expect(loadTranscriptEvents()).toHaveLength(0);
   });
 
   it("is a no-op when no mirrorable messages are present", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       sessionKey: "session-1",
       messages: [],
       idempotencyScope: "copilot:session-1",
     });
 
-    await expect(fs.readFile(sessionFile, "utf8")).rejects.toHaveProperty("code", "ENOENT");
+    expect(loadTranscriptEvents()).toHaveLength(0);
   });
 
   it("uses content fingerprint when no explicit mirror identity is attached", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const message = makeAgentAssistantMessage({
       content: [{ type: "text", text: "fp" }],
       timestamp: Date.now(),
     });
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       messages: [message],
       idempotencyScope: "scope-fp",
     });
@@ -291,7 +281,7 @@ describe("mirrorCopilotTranscript", () => {
   });
 
   it("uses attached identity instead of content fingerprint when provided", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const baseMessage = makeAgentAssistantMessage({
       content: [{ type: "text", text: "explicit" }],
       timestamp: Date.now(),
@@ -299,7 +289,6 @@ describe("mirrorCopilotTranscript", () => {
     const tagged = attachCopilotMirrorIdentity(baseMessage, "sdk-session-1:assistant:0");
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       messages: [tagged],
       idempotencyScope: "copilot:openclaw-session-1",
     });
@@ -312,10 +301,9 @@ describe("mirrorCopilotTranscript", () => {
   });
 
   it("omits idempotencyKey when no idempotencyScope is provided", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       messages: [
         makeAgentAssistantMessage({
           content: [{ type: "text", text: "no scope" }],
@@ -330,7 +318,7 @@ describe("mirrorCopilotTranscript", () => {
   });
 
   it("filters out non-mirrorable roles", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const userMessage = makeAgentUserMessage({
       content: [{ type: "text", text: "u" }],
       timestamp: Date.now(),
@@ -342,7 +330,6 @@ describe("mirrorCopilotTranscript", () => {
     });
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       messages: [userMessage, systemLike],
       idempotencyScope: "scope",
     });
@@ -353,7 +340,7 @@ describe("mirrorCopilotTranscript", () => {
   });
 
   it("preserves explicit identity across attachCopilotMirrorIdentity overrides", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     const base = makeAgentAssistantMessage({
       content: [{ type: "text", text: "x" }],
       timestamp: Date.now(),
@@ -362,7 +349,6 @@ describe("mirrorCopilotTranscript", () => {
     const second = attachCopilotMirrorIdentity(first, "id-2");
 
     await mirrorTestCopilotTranscript({
-      sessionFile,
       messages: [second],
       idempotencyScope: "scope",
     });
@@ -375,10 +361,9 @@ describe("mirrorCopilotTranscript", () => {
 
 describe("dualWriteCopilotTranscriptBestEffort", () => {
   it("returns normally when mirror succeeds", async () => {
-    const sessionFile = await createTempSessionFile();
+    await createTempStateDir();
     await expect(
       dualWriteCopilotTranscriptBestEffort({
-        sessionFile,
         agentId: TEST_AGENT_ID,
         sessionId: TEST_SESSION_ID,
         messages: [
@@ -395,14 +380,8 @@ describe("dualWriteCopilotTranscriptBestEffort", () => {
   });
 
   it("swallows infrastructure failures and never rejects", async () => {
-    // Pointing sessionFile at a path under a non-existent root with an
-    // empty-string segment can fail differently on different platforms;
-    // instead force failure by passing an invalid type and asserting
-    // that the wrapper itself does not reject. Use any-cast for the
-    // bad input shape since we are testing the wrapper's catch.
     await expect(
       dualWriteCopilotTranscriptBestEffort({
-        sessionFile: "" as unknown as string,
         messages: [
           makeAgentAssistantMessage({
             content: [{ type: "text", text: "should-not-throw" }],
