@@ -45,7 +45,6 @@ export function getModelRefStatus(
   });
 }
 
-/** Resolve a raw model ref to an allowed provider/model or error. */
 export function resolveAllowedModelRef(
   params: {
     cfg: OpenClawConfig;

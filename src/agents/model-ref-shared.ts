@@ -36,7 +36,6 @@ export type ManifestModelIdNormalizationRecord = {
   };
 };
 
-/** Build canonical provider/model key. */
 export function modelKey(provider: string, model: string): string {
   const providerId = provider.trim();
   const modelId = model.trim();
@@ -119,7 +118,6 @@ function parseStaticModelRef(raw: string, defaultProvider: string): StaticModelR
   };
 }
 
-/** Resolve canonical allowlist key for a model ref. */
 export function resolveStaticAllowlistModelKey(
   raw: string,
   defaultProvider: string,

@@ -207,7 +207,6 @@ export function normalizeStoredOverrideModel(params: {
   };
 }
 
-/** Resolve canonical allowlist key for a model ref. */
 export function resolveAllowlistModelKey(
   raw: string,
   defaultProvider: string,
@@ -455,7 +454,6 @@ function getModelRefStatusForResolve(
   });
 }
 
-/** Resolve a raw model ref to an allowed provider/model or error. */
 export function resolveAllowedModelRef(
   params: {
     cfg: OpenClawConfig;

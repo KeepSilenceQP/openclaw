@@ -20,7 +20,6 @@ export type ModelManifestNormalizationContext = {
   manifestPlugins?: readonly Pick<PluginManifestRecord, "modelIdNormalization">[];
 };
 
-/** Build canonical provider/model key. */
 export function modelKey(provider: string, model: string) {
   return sharedModelKey(provider, model);
 }

@@ -204,8 +204,6 @@ export function syncPersistedExternalCliAuthProfiles(
 }
 
 // Compat aliases while file/function naming catches up.
-/** Compatibility alias for callers using the older OAuth-specific name. */
 export const overlayExternalOAuthProfiles = overlayExternalAuthProfiles;
-/** Compatibility alias for callers using the older OAuth-specific name. */
 export const shouldPersistExternalOAuthProfile = shouldPersistExternalAuthProfile;
 export { testing as __testing };

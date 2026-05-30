@@ -37,7 +37,6 @@ export function isVoiceMessageCompatibleAudio(opts: {
   return VOICE_MESSAGE_AUDIO_EXTENSIONS.has(ext);
 }
 
-/** Compatibility alias for callers that only need generic voice audio classification. */
 export function isVoiceCompatibleAudio(opts: {
   contentType?: string | null;
   fileName?: string | null;
