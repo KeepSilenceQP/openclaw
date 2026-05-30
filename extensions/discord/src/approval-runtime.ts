@@ -1,4 +1,3 @@
-// extensions/discord/src approval runtime helpers and runtime behavior.
 export {
   isChannelExecApprovalClientEnabledFromConfig,
   matchesApprovalRequestFilters,

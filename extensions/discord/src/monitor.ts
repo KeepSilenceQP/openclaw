@@ -1,4 +1,3 @@
-// extensions/discord/src monitor helpers and runtime behavior.
 export type {
   DiscordAllowList,
   DiscordChannelConfigResolved,

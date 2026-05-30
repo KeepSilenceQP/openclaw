@@ -1,5 +1,3 @@
-// extensions/discord runtime api helpers and runtime behavior.
-/** Re-exported discord plugin public API. */
 export {
   discordMessageActions,
   handleDiscordAction,
@@ -13,7 +11,6 @@ export {
   type DiscordModerationAction,
   type DiscordModerationCommand,
 } from "./runtime-api.actions.js";
-/** Re-exported discord plugin public API. */
 export {
   auditDiscordChannelPermissions,
   collectDiscordAuditChannelIds,
@@ -34,7 +31,6 @@ export {
   type DiscordProbe,
   type DiscordUserResolution,
 } from "./runtime-api.lookup.js";
-/** Re-exported discord plugin public API. */
 export {
   DISCORD_ATTACHMENT_IDLE_TIMEOUT_MS,
   DISCORD_ATTACHMENT_TOTAL_TIMEOUT_MS,
@@ -77,7 +73,6 @@ export {
   type DiscordMessageHandler,
   type MonitorDiscordOpts,
 } from "./runtime-api.monitor.js";
-/** Re-exported discord plugin public API. */
 export {
   DiscordSendError,
   addRoleDiscord,
@@ -153,7 +148,6 @@ export {
   type DiscordTimeoutTarget,
   type ResolveDiscordOutboundSessionRouteParams,
 } from "./runtime-api.send.js";
-/** Re-exported discord plugin public API. */
 export {
   testing as __testing,
   testing,

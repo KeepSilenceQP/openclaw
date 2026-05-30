@@ -1,4 +1,3 @@
-// extensions/discord/src components registry helpers and runtime behavior.
 import { resolveGlobalMap } from "openclaw/plugin-sdk/global-singleton";
 import {
   asDateTimestampMs,

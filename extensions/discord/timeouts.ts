@@ -1,4 +1,3 @@
-// extensions/discord timeouts helpers and runtime behavior.
 export {
   DISCORD_ATTACHMENT_IDLE_TIMEOUT_MS,
   DISCORD_ATTACHMENT_TOTAL_TIMEOUT_MS,

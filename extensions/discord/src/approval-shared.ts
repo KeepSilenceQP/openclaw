@@ -1,4 +1,3 @@
-// extensions/discord/src approval shared helpers and runtime behavior.
 import { doesApprovalRequestMatchChannelAccount } from "openclaw/plugin-sdk/approval-native-runtime";
 import type {
   ExecApprovalRequest,
