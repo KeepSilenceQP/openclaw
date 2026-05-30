@@ -51,6 +51,7 @@ import {
 } from "../../skills/runtime/remote.js";
 import { createKnownNodeCatalog, getKnownNode, listKnownNodes } from "../node-catalog.js";
 import {
+  formatNodeCommandRejection,
   isForegroundRestrictedPluginNodeCommand,
   isNodeCommandAllowed,
   normalizeDeclaredNodeCommands,
@@ -1222,7 +1223,7 @@ export const nodeHandlers: GatewayRequestHandlers = {
         allowlist,
       });
       if (!allowed.ok) {
-        const hint = buildNodeCommandRejectionHint(allowed.reason, command, nodeSession);
+        const hint = formatNodeCommandRejection(allowed.reason, command, nodeSession);
         respond(
           false,
           undefined,
@@ -1438,24 +1439,3 @@ export const nodeHandlers: GatewayRequestHandlers = {
     });
   },
 };
-
-function buildNodeCommandRejectionHint(
-  reason: string,
-  command: string,
-  node: { platform?: string } | undefined,
-): string {
-  const platform = node?.platform ?? "unknown";
-  if (reason === "command not declared by node") {
-    return `node command not allowed: the node (platform: ${platform}) does not support "${command}"`;
-  }
-  if (reason === "command not allowlisted") {
-    if (command.startsWith("talk.")) {
-      return `node command not allowed: "${command}" requires a trusted Talk-capable node`;
-    }
-    return `node command not allowed: "${command}" is not in the allowlist for platform "${platform}"`;
-  }
-  if (reason === "node did not declare commands") {
-    return `node command not allowed: the node did not declare any supported commands`;
-  }
-  return `node command not allowed: ${reason}`;
-}

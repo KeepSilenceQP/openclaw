@@ -419,3 +419,24 @@ export function isNodeCommandAllowed(params: {
   }
   return { ok: true };
 }
+
+export function formatNodeCommandRejection(
+  reason: string,
+  command: string,
+  node: { platform?: string } | undefined,
+): string {
+  const platform = node?.platform ?? "unknown";
+  if (reason === "command not declared by node") {
+    return `node command not allowed: the node (platform: ${platform}) does not support "${command}"`;
+  }
+  if (reason === "command not allowlisted") {
+    if (command.startsWith("talk.")) {
+      return `node command not allowed: "${command}" requires a trusted Talk-capable node`;
+    }
+    return `node command not allowed: "${command}" is not in the allowlist for platform "${platform}"`;
+  }
+  if (reason === "node did not declare commands") {
+    return `node command not allowed: the node did not declare any supported commands`;
+  }
+  return `node command not allowed: ${reason}`;
+}
