@@ -1,4 +1,3 @@
-// extensions/feishu/src app registration helpers and runtime behavior.
 import { finiteSecondsToTimerSafeMilliseconds } from "openclaw/plugin-sdk/number-runtime";
 /**
  * Feishu app registration via OAuth device-code flow.

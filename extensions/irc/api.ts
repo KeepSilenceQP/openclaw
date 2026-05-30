@@ -1,4 +1,3 @@
-// extensions/irc api helpers and runtime behavior.
 /** Re-exported irc plugin public API, starting with irc Plugin. */
 export { ircPlugin } from "./src/channel.js";
 /** Re-exported irc plugin public API, starting with set Irc Runtime. */

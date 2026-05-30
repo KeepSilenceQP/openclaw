@@ -1,4 +1,3 @@
-// extensions/minimax music generation provider helpers and runtime behavior.
 import { extensionForMime } from "openclaw/plugin-sdk/media-mime";
 import type {
   GeneratedMusicAsset,

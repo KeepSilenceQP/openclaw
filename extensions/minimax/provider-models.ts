@@ -1,4 +1,3 @@
-// extensions/minimax provider models helpers and runtime behavior.
 import { matchesExactOrPrefix } from "openclaw/plugin-sdk/provider-model-shared";
 
 export const MINIMAX_DEFAULT_MODEL_ID = "MiniMax-M2.7";

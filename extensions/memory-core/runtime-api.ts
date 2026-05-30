@@ -1,4 +1,3 @@
-// extensions/memory-core runtime api helpers and runtime behavior.
 /** Re-exported memory-core plugin public API, starting with get Memory Search Manager. */
 export { getMemorySearchManager, MemoryIndexManager } from "./src/memory/index.js";
 /** Re-exported memory-core plugin public API, starting with memory Runtime. */

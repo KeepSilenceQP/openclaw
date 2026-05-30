@@ -1,4 +1,3 @@
-// extensions/diagnostics-prometheus api helpers and runtime behavior.
 /** Re-exported diagnostics-prometheus plugin public API. */
 export type {
   DiagnosticEventMetadata,

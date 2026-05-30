@@ -1,4 +1,3 @@
-// extensions/feishu/src docx types helpers and runtime behavior.
 type FeishuBlockText = {
   elements?: Array<{
     text_run?: {

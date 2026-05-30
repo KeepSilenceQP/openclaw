@@ -1,4 +1,3 @@
-// extensions/memory-core index helpers and runtime behavior.
 import {
   jsonResult,
   resolveMemorySearchConfig,

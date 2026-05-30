@@ -1,4 +1,3 @@
-// extensions/codex/src/migration plan helpers and runtime behavior.
 import path from "node:path";
 import {
   createMigrationItem,

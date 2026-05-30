@@ -1,4 +1,3 @@
-// extensions/irc/src config schema helpers and runtime behavior.
 import {
   DmPolicySchema,
   GroupPolicySchema,

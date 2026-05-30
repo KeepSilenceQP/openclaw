@@ -1,4 +1,3 @@
-// extensions/msteams/src graph chat helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { DriveItemProperties } from "./graph-upload.js";
 

@@ -1,4 +1,3 @@
-// extensions/msteams/src/attachments download helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,

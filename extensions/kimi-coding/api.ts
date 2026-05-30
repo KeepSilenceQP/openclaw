@@ -1,4 +1,3 @@
-// extensions/kimi-coding api helpers and runtime behavior.
 /** Re-exported kimi-coding plugin public API. */
 export {
   buildKimiCodingProvider,

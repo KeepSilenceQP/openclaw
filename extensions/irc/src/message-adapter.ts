@@ -1,4 +1,3 @@
-// extensions/irc/src message adapter helpers and runtime behavior.
 import { defineChannelMessageAdapter } from "openclaw/plugin-sdk/channel-outbound";
 import { sendMessageIrc } from "./send.js";
 import type { CoreConfig } from "./types.js";

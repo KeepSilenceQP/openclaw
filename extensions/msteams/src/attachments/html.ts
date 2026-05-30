@@ -1,4 +1,3 @@
-// extensions/msteams/src/attachments html helpers and runtime behavior.
 import {
   ATTACHMENT_TAG_RE,
   extractHtmlFromAttachment,

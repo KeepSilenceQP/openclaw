@@ -1,4 +1,3 @@
-// extensions/diagnostics-prometheus/src service helpers and runtime behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type {
   DiagnosticEventMetadata,

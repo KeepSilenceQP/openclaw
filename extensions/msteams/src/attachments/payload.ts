@@ -1,4 +1,3 @@
-// extensions/msteams/src/attachments payload helpers and runtime behavior.
 import { buildMediaPayload } from "../../runtime-api.js";
 
 export function buildMSTeamsMediaPayload(

@@ -12,12 +12,10 @@ const loadOutboundAdapterFromRegistry = createChannelRegistryLoader<ChannelOutbo
   (entry) => entry.plugin.outbound,
 );
 
-/** Reused helper for load Channel Outbound Adapter behavior in src/channels/plugins. */
 export async function loadChannelOutboundAdapter(
   id: ChannelId,
 ): Promise<ChannelOutboundAdapter | undefined> {
   return loadOutboundAdapterFromRegistry(id);
 }
 
-/** Re-exported API for src/channels/plugins, starting with Load Channel Outbound Adapter. */
 export type { LoadChannelOutboundAdapter };

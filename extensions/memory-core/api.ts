@@ -1,4 +1,3 @@
-// extensions/memory-core api helpers and runtime behavior.
 /** Re-exported memory-core plugin public API, starting with Open Claw Config. */
 export type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 /** Re-exported memory-core plugin public API. */

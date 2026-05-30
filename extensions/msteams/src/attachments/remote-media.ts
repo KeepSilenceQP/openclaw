@@ -1,4 +1,3 @@
-// extensions/msteams/src/attachments remote media helpers and runtime behavior.
 import { saveResponseMedia, type SavedRemoteMedia } from "openclaw/plugin-sdk/media-runtime";
 import type { SsrFPolicy } from "../../runtime-api.js";
 import { getMSTeamsRuntime } from "../runtime.js";

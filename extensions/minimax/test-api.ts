@@ -1,4 +1,3 @@
-// extensions/minimax test api helpers and runtime behavior.
 export {
   buildMinimaxImageGenerationProvider,
   buildMinimaxPortalImageGenerationProvider,

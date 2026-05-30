@@ -1,4 +1,3 @@
-// extensions/feishu/src monitor transport helpers and runtime behavior.
 import crypto from "node:crypto";
 import * as http from "node:http";
 import * as Lark from "@larksuiteoapi/node-sdk";

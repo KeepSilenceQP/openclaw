@@ -1,5 +1,4 @@
 import type { InteractiveReply, InteractiveReplyBlock } from "../../../interactive/payload.js";
-/** Re-exported API for src/channels/plugins. */
 export {
   adaptMessagePresentationForChannel,
   applyPresentationActionLimits,

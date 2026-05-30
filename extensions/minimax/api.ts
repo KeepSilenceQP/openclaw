@@ -1,4 +1,3 @@
-// extensions/minimax api helpers and runtime behavior.
 /** Re-exported minimax plugin public API, starting with build Minimax Portal Provider. */
 export { buildMinimaxPortalProvider, buildMinimaxProvider } from "./provider-catalog.js";
 /** Re-exported minimax plugin public API. */

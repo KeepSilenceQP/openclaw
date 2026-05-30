@@ -1,4 +1,3 @@
-// extensions/feishu/src wiki schema helpers and runtime behavior.
 import { Type, type Static } from "typebox";
 
 const WIKI_SPACE_ID_DESCRIPTION =

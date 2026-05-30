@@ -1,4 +1,3 @@
-// extensions/irc/src control chars helpers and runtime behavior.
 export function isIrcControlChar(charCode: number): boolean {
   return charCode <= 0x1f || charCode === 0x7f;
 }

@@ -1,4 +1,3 @@
-// extensions/minimax oauth helpers and runtime behavior.
 import { randomBytes, randomUUID } from "node:crypto";
 import {
   MAX_DATE_TIMESTAMP_MS,

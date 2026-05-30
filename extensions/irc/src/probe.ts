@@ -1,4 +1,3 @@
-// extensions/irc/src probe helpers and runtime behavior.
 import { resolveIrcAccount } from "./accounts.js";
 import { connectIrcClient } from "./client.js";
 import { buildIrcConnectOptions } from "./connect-options.js";

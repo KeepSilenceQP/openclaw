@@ -1,4 +1,3 @@
-// extensions/msteams/src setup surface helpers and runtime behavior.
 import {
   createTopLevelChannelAllowFromSetter,
   createTopLevelChannelDmPolicy,

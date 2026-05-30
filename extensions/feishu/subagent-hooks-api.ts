@@ -1,4 +1,3 @@
-// extensions/feishu subagent hooks api helpers and runtime behavior.
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk/channel-entry-contract";
 
 type FeishuSubagentHooksModule = typeof import("./src/subagent-hooks.js");
