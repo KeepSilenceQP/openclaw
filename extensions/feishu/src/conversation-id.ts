@@ -1,4 +1,3 @@
-// extensions/feishu/src conversation id helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 export type FeishuGroupSessionScope =

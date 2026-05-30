@@ -1,4 +1,3 @@
-// extensions/copilot index helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { createCopilotAgentHarness, type CopilotSessionBinding } from "./harness.js";
 

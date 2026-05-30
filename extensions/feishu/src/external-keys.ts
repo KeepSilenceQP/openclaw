@@ -1,4 +1,3 @@
-// extensions/feishu/src external keys helpers and runtime behavior.
 const CONTROL_CHARS_RE = /\p{Cc}/u;
 const MAX_EXTERNAL_KEY_LENGTH = 512;
 

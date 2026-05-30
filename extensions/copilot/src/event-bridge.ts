@@ -1,4 +1,3 @@
-// extensions/copilot/src event bridge helpers and runtime behavior.
 import type { MessageOptions, SessionEvent, SessionEventType } from "@github/copilot-sdk";
 import type { AgentMessage } from "openclaw/plugin-sdk/agent-harness-runtime";
 import {

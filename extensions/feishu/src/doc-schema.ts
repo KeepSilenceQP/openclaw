@@ -1,4 +1,3 @@
-// extensions/feishu/src doc schema helpers and runtime behavior.
 import { Type, type Static } from "typebox";
 
 const tableCreationProperties = {

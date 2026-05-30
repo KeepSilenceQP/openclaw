@@ -1,4 +1,3 @@
-// extensions/feishu/src outbound helpers and runtime behavior.
 import path from "node:path";
 import {
   attachChannelToResult,

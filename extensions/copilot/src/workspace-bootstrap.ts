@@ -1,4 +1,3 @@
-// extensions/copilot/src workspace bootstrap helpers and runtime behavior.
 import path from "node:path";
 import type {
   AgentHarnessAttemptParams,

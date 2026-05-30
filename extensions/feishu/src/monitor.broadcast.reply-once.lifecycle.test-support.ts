@@ -1,4 +1,3 @@
-// extensions/feishu/src monitor broadcast reply once lifecycle test support helpers and runtime behavior.
 import "./lifecycle.test-support.js";
 import { createNonExitingRuntimeEnv } from "openclaw/plugin-sdk/plugin-test-runtime";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

@@ -1,4 +1,3 @@
-// extensions/copilot/src attempt helpers and runtime behavior.
 import fsp from "node:fs/promises";
 import type { MessageOptions, SessionConfig, Tool as SdkTool } from "@github/copilot-sdk";
 import type {

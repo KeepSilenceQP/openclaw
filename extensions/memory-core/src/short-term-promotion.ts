@@ -1,4 +1,3 @@
-// extensions/memory-core/src short term promotion helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

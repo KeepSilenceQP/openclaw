@@ -1,4 +1,3 @@
-// extensions/openrouter models helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 const OPENROUTER_MISTRAL_MODEL_PREFIXES = [

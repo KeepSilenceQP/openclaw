@@ -1,4 +1,3 @@
-// extensions/openrouter media understanding provider helpers and runtime behavior.
 import path from "node:path";
 import {
   describeImageWithModel,

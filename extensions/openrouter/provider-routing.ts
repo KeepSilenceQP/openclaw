@@ -1,4 +1,3 @@
-// extensions/openrouter provider routing helpers and runtime behavior.
 type OpenRouterExtraParamsContext = {
   config?: {
     models?: {

@@ -1,4 +1,3 @@
-// extensions/copilot/src usage bridge helpers and runtime behavior.
 import type { AgentMessage, NormalizedUsage } from "openclaw/plugin-sdk/agent-harness-runtime";
 
 type AssistantMessage = Extract<AgentMessage, { role: "assistant" }>;

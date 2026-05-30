@@ -1,4 +1,3 @@
-// extensions/feishu api helpers and runtime behavior.
 /** Re-exported feishu plugin public API, starting with feishu Plugin. */
 export { feishuPlugin } from "./src/channel.js";
 /** Re-exported feishu plugin public API, starting with register Feishu Doc Tools. */

@@ -1,4 +1,3 @@
-// extensions/openrouter thinking policy helpers and runtime behavior.
 import type { ProviderThinkingProfile } from "openclaw/plugin-sdk/plugin-entry";
 import { isOpenRouterDeepSeekV4ModelId } from "./models.js";
 

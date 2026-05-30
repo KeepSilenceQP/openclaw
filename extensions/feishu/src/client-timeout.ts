@@ -1,4 +1,3 @@
-// extensions/feishu/src client timeout helpers and runtime behavior.
 import { parseStrictPositiveInteger } from "openclaw/plugin-sdk/number-runtime";
 import type { FeishuConfig } from "./types.js";
 

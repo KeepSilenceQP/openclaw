@@ -1,4 +1,3 @@
-// extensions/irc/src secret contract helpers and runtime behavior.
 import {
   collectNestedChannelFieldAssignments,
   collectSimpleChannelFieldAssignments,

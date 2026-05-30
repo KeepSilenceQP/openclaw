@@ -1,4 +1,3 @@
-// extensions/openrouter index helpers and runtime behavior.
 import {
   definePluginEntry,
   type ProviderReplayPolicy,

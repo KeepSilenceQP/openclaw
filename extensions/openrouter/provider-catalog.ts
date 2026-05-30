@@ -1,4 +1,3 @@
-// extensions/openrouter provider catalog helpers and runtime behavior.
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 
 export const OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1";

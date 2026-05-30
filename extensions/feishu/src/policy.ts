@@ -1,4 +1,3 @@
-// extensions/feishu/src policy helpers and runtime behavior.
 import {
   normalizeAccountId,
   resolveMergedAccountConfig,

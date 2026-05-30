@@ -1,4 +1,3 @@
-// extensions/feishu/src event types helpers and runtime behavior.
 export type FeishuMessageEvent = {
   sender: {
     sender_id: {

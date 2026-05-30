@@ -1,4 +1,3 @@
-// extensions/feishu/src tool factory test harness helpers and runtime behavior.
 import type { OpenClawPluginApi } from "../runtime-api.js";
 
 type ToolContextLike = {

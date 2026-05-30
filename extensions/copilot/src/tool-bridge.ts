@@ -1,4 +1,3 @@
-// extensions/copilot/src tool bridge helpers and runtime behavior.
 import type { Tool as SdkTool, ToolInvocation, ToolResultObject } from "@github/copilot-sdk";
 import type {
   AnyAgentTool,

@@ -1,4 +1,3 @@
-// extensions/memory-core/src public artifacts helpers and runtime behavior.
 import {
   listMemoryHostPublicArtifacts,
   type MemoryPluginPublicArtifact,

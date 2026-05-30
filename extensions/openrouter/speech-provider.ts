@@ -1,4 +1,3 @@
-// extensions/openrouter speech provider helpers and runtime behavior.
 import {
   asObject,
   createOpenAiCompatibleSpeechProvider,
