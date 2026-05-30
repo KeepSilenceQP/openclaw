@@ -9,7 +9,6 @@ export function makeTempRepoRoot(tempDirs: string[], prefix: string): string {
   return repoRoot;
 }
 
-/** Write a formatted JSON fixture, creating parent directories first. */
 export function writeJsonFile(filePath: string, value: unknown): void {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, `${JSON.stringify(value, null, 2)}\n`, "utf8");

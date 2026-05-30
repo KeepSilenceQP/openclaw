@@ -11,7 +11,6 @@ const SDK_CLIENT_STDIO_PATH = require.resolve("@modelcontextprotocol/sdk/client/
 
 export { writeBundleProbeMcpServer, writeClaudeBundle };
 
-/** Write a fake live Claude CLI that exercises bundle MCP config. */
 export async function writeFakeClaudeLiveCli(params: {
   filePath: string;
   pidPath?: string;
@@ -113,7 +112,6 @@ try {
   );
 }
 
-/** Write a fake Claude CLI that connects to the configured bundle MCP server. */
 export async function writeFakeClaudeCli(filePath: string): Promise<void> {
   await writeExecutable(
     filePath,

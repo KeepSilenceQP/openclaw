@@ -54,7 +54,6 @@ export function createCronStoreHarness(options?: { prefix?: string }) {
   return { makeStorePath };
 }
 
-/** Writes a versioned cron store snapshot for load/reload tests. */
 export async function writeCronStoreSnapshot(params: { storePath: string; jobs: CronJob[] }) {
   await saveCronStore(params.storePath, {
     version: 1,

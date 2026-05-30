@@ -20,7 +20,6 @@ export function createTempPluginDir(
   return dir;
 }
 
-/** Writes a temporary plugin manifest and optional entry file. */
 export function writeTempPlugin(params: {
   dir: string;
   id: string;

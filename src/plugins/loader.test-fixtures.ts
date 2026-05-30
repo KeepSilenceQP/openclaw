@@ -83,7 +83,6 @@ export function makeTempDir() {
   return dir;
 }
 
-/** Writes a plugin source file plus `openclaw.plugin.json` manifest. */
 export function writePlugin(params: {
   id: string;
   body: string;

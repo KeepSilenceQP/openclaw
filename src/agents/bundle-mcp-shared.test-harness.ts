@@ -6,13 +6,11 @@ const require = createRequire(import.meta.url);
 const SDK_SERVER_MCP_PATH = require.resolve("@modelcontextprotocol/sdk/server/mcp.js");
 const SDK_SERVER_STDIO_PATH = require.resolve("@modelcontextprotocol/sdk/server/stdio.js");
 
-/** Write an executable test helper script. */
 export async function writeExecutable(filePath: string, content: string): Promise<void> {
   await fs.mkdir(path.dirname(filePath), { recursive: true });
   await fs.writeFile(filePath, content, { encoding: "utf-8", mode: 0o755 });
 }
 
-/** Write an MCP server fixture that exposes a bundle_probe tool. */
 export async function writeBundleProbeMcpServer(
   filePath: string,
   params: {
@@ -68,7 +66,6 @@ await server.connect(new StdioServerTransport());
   );
 }
 
-/** Write a minimal Claude bundle fixture with MCP config. */
 export async function writeClaudeBundle(params: {
   pluginRoot: string;
   serverScriptPath: string;

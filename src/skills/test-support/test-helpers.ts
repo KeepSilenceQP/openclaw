@@ -3,7 +3,6 @@ import path from "node:path";
 import { createSyntheticSourceInfo, type Skill } from "../loading/skill-contract.js";
 import type { SkillEntry } from "../types.js";
 
-/** Writes a minimal SKILL.md fixture into a named skill directory. */
 export async function writeSkill(params: {
   dir: string;
   name: string;

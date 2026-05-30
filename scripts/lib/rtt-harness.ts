@@ -301,7 +301,6 @@ export async function readTelegramSummary(summaryPath: string) {
   return JSON.parse(await fs.readFile(summaryPath, "utf8")) as TelegramQaSummary;
 }
 
-/** Writes pretty JSON, creating parent directories as needed. */
 export async function writeJson(pathname: string, value: unknown) {
   await fs.mkdir(path.dirname(pathname), { recursive: true });
   await fs.writeFile(pathname, `${JSON.stringify(value, null, 2)}\n`);
