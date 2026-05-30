@@ -2,7 +2,6 @@
 import { pathToFileURL } from "node:url";
 import { writePackageDistInventory } from "../src/infra/package-dist-inventory.ts";
 
-/** Write the package dist inventory for the current repository root. */
 export async function writeCurrentPackageDistInventory(): Promise<void> {
   await writePackageDistInventory(process.cwd());
 }

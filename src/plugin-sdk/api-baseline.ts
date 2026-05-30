@@ -532,7 +532,6 @@ function validateMetadata(): void {
   }
 }
 
-/** Write or check Plugin SDK API baseline artifacts, including the tracked hash file. */
 export async function writePluginSdkApiBaselineStatefile(params?: {
   repoRoot?: string;
   check?: boolean;

@@ -480,7 +480,6 @@ export async function assertNoLegacyPluginDependencyStagingDebris(
   );
 }
 
-/** Write the generated package dist inventory and return its sorted entries. */
 export async function writePackageDistInventory(packageRoot: string): Promise<string[]> {
   await assertNoLegacyPluginDependencyStagingDebris(packageRoot);
   const inventory = sortUniqueStrings(await collectPackageDistInventory(packageRoot));

@@ -289,7 +289,6 @@ export async function collectBundledChannelConfigMetadata(params?: { repoRoot?: 
   return entries.toSorted((left, right) => left.channelId.localeCompare(right.channelId));
 }
 
-/** Write or check the generated bundled channel config metadata module. */
 export async function writeBundledChannelConfigMetadataModule(params?: {
   repoRoot?: string;
   outputPath?: string;

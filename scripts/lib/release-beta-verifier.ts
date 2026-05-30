@@ -32,7 +32,6 @@ export type ReleaseVerifyBetaArgs = {
   };
 };
 
-/** npm metadata fields required to verify a published package version. */
 export type NpmViewFields = {
   version?: string;
   distTagVersion?: string;

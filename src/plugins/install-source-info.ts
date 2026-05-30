@@ -15,7 +15,6 @@ export type PluginInstallSourceWarning =
   | "npm-spec-missing-integrity"
   | "npm-spec-package-name-mismatch";
 
-/** npm install pinning/integrity state derived from manifest metadata. */
 export type PluginInstallNpmPinState =
   | "exact-with-integrity"
   | "exact-without-integrity"

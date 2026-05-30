@@ -647,7 +647,6 @@ function resolveBaselineArtifactPaths(
   };
 }
 
-/** Write or check config docs baseline artifacts plus their tracked hash file. */
 export async function writeConfigDocBaselineArtifacts(params?: {
   repoRoot?: string;
   check?: boolean;

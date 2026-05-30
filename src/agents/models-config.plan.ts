@@ -34,7 +34,6 @@ export type ResolveImplicitProvidersForModelsJson = (params: {
   providerDiscoveryEntriesOnly?: boolean;
 }) => Promise<Record<string, ProviderConfig>>;
 
-/** Write/noop/skip decision for root and plugin generated model catalogs. */
 export type ModelsJsonPlan =
   | {
       action: "skip";

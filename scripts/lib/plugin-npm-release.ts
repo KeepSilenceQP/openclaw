@@ -39,7 +39,6 @@ export type PluginPackageJson = {
   };
 };
 
-/** npm-publishable plugin package metadata derived from extension package manifests. */
 export type PublishablePluginPackage = {
   extensionId: string;
   packageDir: string;

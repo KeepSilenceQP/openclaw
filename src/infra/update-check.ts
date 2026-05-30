@@ -40,14 +40,12 @@ export type RegistryStatus = {
   error?: string;
 };
 
-/** npm dist-tag lookup result. */
 export type NpmTagStatus = {
   tag: string;
   version: string | null;
   error?: string;
 };
 
-/** npm package target lookup result including engines.node metadata. */
 export type NpmPackageTargetStatus = {
   target: string;
   version: string | null;
