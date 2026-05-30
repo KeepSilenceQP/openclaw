@@ -5,7 +5,6 @@ import { buildEmbeddedRunPayloads } from "./payloads.js";
 export type BuildPayloadParams = Parameters<typeof buildEmbeddedRunPayloads>[0];
 type RunPayloads = ReturnType<typeof buildEmbeddedRunPayloads>;
 
-/** Builds payloads with default successful attempt metadata for tests. */
 export function buildPayloads(overrides: Partial<BuildPayloadParams> = {}) {
   return buildEmbeddedRunPayloads({
     assistantTexts: [],

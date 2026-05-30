@@ -3,7 +3,6 @@ import type { ModelDefinitionConfig } from "../../config/types.js";
 
 type DiscoverModelsMock = typeof import("../agent-model-discovery.js").discoverModels;
 
-/** Build the smallest model definition needed for resolution tests. */
 export const makeModel = (id: string): ModelDefinitionConfig => ({
   id,
   name: id,

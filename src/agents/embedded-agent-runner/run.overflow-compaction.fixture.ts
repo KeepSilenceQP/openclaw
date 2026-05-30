@@ -32,7 +32,6 @@ export function makeCompactionSuccess(params: {
   };
 }
 
-/** Build a complete attempt result while letting tests override only relevant fields. */
 export function makeAttemptResult(
   overrides: Partial<EmbeddedRunAttemptResult> = {},
 ): EmbeddedRunAttemptResult {
