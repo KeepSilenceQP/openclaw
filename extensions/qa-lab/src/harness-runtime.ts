@@ -12,7 +12,6 @@ type SessionRecord = {
   body: string;
 };
 
-/** Create the lightweight runtime facade used by QA runner harness tests. */
 export function createQaRunnerRuntime(): PluginRuntime {
   const sessions = new Map<string, SessionRecord>();
   return {

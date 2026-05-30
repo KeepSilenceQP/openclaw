@@ -131,7 +131,6 @@ function findQaBundledPluginDirsByManifestId(params: {
   return candidates;
 }
 
-/** Resolves owning plugin ids for provider ids used by QA runtime config. */
 export async function resolveQaOwnerPluginIdsForProviderIds(params: {
   repoRoot: string;
   providerIds: readonly string[];
@@ -346,7 +345,6 @@ async function seedQaStagedBuiltTreeRoots(params: {
   }
 }
 
-/** Resolves the minimum host version required by staged QA bundled plugins. */
 export async function resolveQaRuntimeHostVersion(params: {
   repoRoot: string;
   allowedPluginIds: readonly string[];

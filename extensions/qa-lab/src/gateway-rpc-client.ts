@@ -26,7 +26,6 @@ function runQueuedQaGatewayRpc<T>(queue: Promise<void>, task: () => Promise<T>) 
   return { run, nextQueue };
 }
 
-/** Starts a queued JSON-RPC client for a QA child gateway WebSocket endpoint. */
 export async function startQaGatewayRpcClient(params: {
   wsUrl: string;
   token: string;

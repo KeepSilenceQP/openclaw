@@ -13,7 +13,6 @@ type QaCronRunsPage = {
   entries?: QaCronRunLogEntry[];
 };
 
-/** Waits until a cron run after the given timestamp reaches a terminal status. */
 export async function waitForCronRunCompletion(params: {
   callGateway: (
     method: string,

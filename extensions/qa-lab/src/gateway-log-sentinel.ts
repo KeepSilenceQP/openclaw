@@ -3,7 +3,6 @@ import {
   normalizeOptionalString as readNonEmptyString,
 } from "openclaw/plugin-sdk/string-coerce-runtime";
 
-/** Sentinel kinds detected in gateway logs or transcripts. */
 export type GatewayLogSentinelKind =
   | "plugin-hook-failure"
   | "plugin-contract-error"
@@ -13,14 +12,12 @@ export type GatewayLogSentinelKind =
   | "cron-model-allowlist"
   | "live-quota-or-subscription";
 
-/** QA verdict assigned to a sentinel finding. */
 export type GatewayLogSentinelVerdict =
   | "product-bug"
   | "qa-harness-bug"
   | "fixture-bug"
   | "environment-blocked";
 
-/** Owning surface assigned to a sentinel finding. */
 export type GatewayLogSentinelOwner =
   | "plugin"
   | "openclaw-routing"
@@ -28,7 +25,6 @@ export type GatewayLogSentinelOwner =
   | "openclaw-cron"
   | "environment";
 
-/** One classified sentinel finding. */
 export type GatewayLogSentinelFinding = {
   kind: GatewayLogSentinelKind;
   verdict: GatewayLogSentinelVerdict;
@@ -39,14 +35,12 @@ export type GatewayLogSentinelFinding = {
   text: string;
 };
 
-/** Options for filtering gateway log sentinel scans. */
 export type GatewayLogSentinelScanOptions = {
   since?: number;
   kinds?: readonly GatewayLogSentinelKind[];
   ignoreKinds?: readonly GatewayLogSentinelKind[];
 };
 
-/** Options for assertion-style sentinel checks. */
 export type GatewayLogSentinelAssertOptions = GatewayLogSentinelScanOptions & {
   allowEnvironmentBlocked?: boolean;
 };
@@ -288,7 +282,6 @@ function transcriptHasDirectReplySelfMessage(transcriptBytes: string) {
   );
 }
 
-/** Scans gateway logs for classified sentinel patterns. */
 export function scanGatewayLogSentinels(
   logs: string | undefined,
   options?: GatewayLogSentinelScanOptions,

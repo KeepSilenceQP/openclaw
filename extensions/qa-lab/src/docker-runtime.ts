@@ -11,7 +11,6 @@ const dockerRuntime = createQaDockerRuntime({
   commandTimeoutMs: null,
 });
 
-/** Shared Docker command, port, URL, and health-check helpers. */
 export const {
   execCommand,
   fetchHealthUrl,

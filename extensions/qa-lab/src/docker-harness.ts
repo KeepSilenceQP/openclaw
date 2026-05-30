@@ -209,7 +209,6 @@ kill the container by detaching a replacement child.
 `;
 }
 
-/** Writes a Docker Compose QA harness scaffold and seeded workspace files. */
 export async function writeQaDockerHarnessFiles(params: {
   outputDir: string;
   repoRoot: string;
@@ -317,7 +316,6 @@ export async function writeQaDockerHarnessFiles(params: {
   };
 }
 
-/** Builds the local Docker image used by the QA harness. */
 export async function buildQaDockerHarnessImage(
   params: {
     repoRoot: string;

@@ -17,7 +17,6 @@ type QaStartupProbeStatus = {
   error?: string;
 };
 
-/** Checks whether a debug proxy query preset is one of the QA-supported names. */
 export function isCaptureQueryPreset(
   value: string,
 ): value is Parameters<
@@ -48,7 +47,6 @@ function readCaptureMetaString(
   return typeof value === "string" && value.trim().length > 0 ? value.trim() : undefined;
 }
 
-/** Normalizes a raw proxy-capture row into the shape consumed by QA reports. */
 export function mapCaptureEventForQa(row: Record<string, unknown>) {
   const meta = parseCaptureMeta(row.metaJson);
   return {
@@ -71,7 +69,6 @@ function defaultPortForProtocol(protocol: string): number {
   return 0;
 }
 
-/** Probes whether a lab server URL has a reachable TCP listener before a run starts. */
 export async function probeTcpReachability(
   rawUrl: string,
   timeoutMs = 700,
