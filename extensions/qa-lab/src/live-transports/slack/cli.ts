@@ -16,7 +16,6 @@ async function runQaSlack(opts: LiveTransportQaCommandOptions) {
   await runtime.runQaSlackCommand(opts);
 }
 
-/** CLI registration for the Slack live QA lane. */
 export const slackQaCliRegistration: LiveTransportQaCliRegistration =
   createLiveTransportQaCliRegistration({
     commandName: "slack",

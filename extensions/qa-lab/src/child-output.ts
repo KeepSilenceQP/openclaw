@@ -1,8 +1,6 @@
 export const QA_CHILD_STDOUT_MAX_BYTES = 1024 * 1024;
-/** Maximum retained stderr tail bytes for QA child processes. */
 export const QA_CHILD_STDERR_TAIL_BYTES = 64 * 1024;
 
-/** Bounded full-output capture for child stdout. */
 export type QaChildOutputCapture = {
   chunks: Buffer[];
   bytes: number;
@@ -10,7 +8,6 @@ export type QaChildOutputCapture = {
   maxBytes: number;
 };
 
-/** Bounded rolling tail capture for child stderr. */
 export type QaChildOutputTail = {
   buffer: Buffer;
   maxBytes: number;
@@ -21,7 +18,6 @@ function toBuffer(chunk: unknown): Buffer {
   return Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk));
 }
 
-/** Creates an empty bounded child-output capture. */
 export function createQaChildOutputCapture(maxBytes = QA_CHILD_STDOUT_MAX_BYTES) {
   return {
     chunks: [],
@@ -31,7 +27,6 @@ export function createQaChildOutputCapture(maxBytes = QA_CHILD_STDOUT_MAX_BYTES)
   } satisfies QaChildOutputCapture;
 }
 
-/** Appends a chunk to a bounded child-output capture. */
 export function appendQaChildOutput(capture: QaChildOutputCapture, chunk: unknown) {
   if (capture.exceeded) {
     return;
@@ -50,12 +45,10 @@ export function appendQaChildOutput(capture: QaChildOutputCapture, chunk: unknow
   capture.bytes += buffer.byteLength;
 }
 
-/** Reads a bounded child-output capture as UTF-8 text. */
 export function readQaChildOutput(capture: QaChildOutputCapture) {
   return Buffer.concat(capture.chunks, capture.bytes).toString("utf8");
 }
 
-/** Creates an empty rolling child-output tail. */
 export function createQaChildOutputTail(maxBytes = QA_CHILD_STDERR_TAIL_BYTES) {
   return {
     buffer: Buffer.alloc(0),
@@ -64,7 +57,6 @@ export function createQaChildOutputTail(maxBytes = QA_CHILD_STDERR_TAIL_BYTES) {
   } satisfies QaChildOutputTail;
 }
 
-/** Appends a chunk while keeping only the latest tail bytes. */
 export function appendQaChildOutputTail(tail: QaChildOutputTail, chunk: unknown) {
   const buffer = toBuffer(chunk);
   if (buffer.byteLength >= tail.maxBytes) {
@@ -81,7 +73,6 @@ export function appendQaChildOutputTail(tail: QaChildOutputTail, chunk: unknown)
   tail.truncated = true;
 }
 
-/** Formats a child-output tail with a truncation marker when needed. */
 export function formatQaChildOutputTail(tail: QaChildOutputTail, label: string) {
   const text = tail.buffer.toString("utf8").trim();
   if (!text) {

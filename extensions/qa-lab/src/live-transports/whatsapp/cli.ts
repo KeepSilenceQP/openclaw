@@ -16,7 +16,6 @@ async function runQaWhatsApp(opts: LiveTransportQaCommandOptions) {
   await runtime.runQaWhatsAppCommand(opts);
 }
 
-/** CLI registration for the WhatsApp live QA lane. */
 export const whatsappQaCliRegistration: LiveTransportQaCliRegistration =
   createLiveTransportQaCliRegistration({
     commandName: "whatsapp",

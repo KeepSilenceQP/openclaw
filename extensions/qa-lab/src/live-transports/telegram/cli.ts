@@ -16,7 +16,6 @@ async function runQaTelegram(opts: LiveTransportQaCommandOptions) {
   await runtime.runQaTelegramCommand(opts);
 }
 
-/** CLI registration for the Telegram live QA lane. */
 export const telegramQaCliRegistration: LiveTransportQaCliRegistration =
   createLiveTransportQaCliRegistration({
     commandName: "telegram",

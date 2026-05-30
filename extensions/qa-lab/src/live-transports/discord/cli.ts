@@ -16,7 +16,6 @@ async function runQaDiscord(opts: LiveTransportQaCommandOptions) {
   await runtime.runQaDiscordCommand(opts);
 }
 
-/** CLI registration for the Discord live QA lane. */
 export const discordQaCliRegistration: LiveTransportQaCliRegistration =
   createLiveTransportQaCliRegistration({
     commandName: "discord",

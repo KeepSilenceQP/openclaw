@@ -47,7 +47,6 @@ const LIVE_TRANSPORT_QA_CLI_REGISTRATIONS: readonly LiveTransportQaCliRegistrati
   whatsappQaCliRegistration,
 ];
 
-/** Lists all live-transport QA CLI registrations available in the current runtime. */
 export function listLiveTransportQaCliRegistrations(): readonly LiveTransportQaCliRegistration[] {
   const liveRegistrations = [...LIVE_TRANSPORT_QA_CLI_REGISTRATIONS];
   const discoveredRunners = listQaRunnerCliContributions();
