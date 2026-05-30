@@ -1,10 +1,8 @@
 // Shared number coercion helpers for finite and safe integer config values.
-/** Exported API contract used by runtime callers and tests. */
 export function asFiniteNumber(value: unknown): number | undefined {
   return typeof value === "number" && Number.isFinite(value) ? value : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function asFiniteNumberInRange(
   value: unknown,
   range: {
@@ -31,7 +29,6 @@ export function asFiniteNumberInRange(
   return number;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function asSafeIntegerInRange(
   value: unknown,
   range: {
@@ -56,7 +53,6 @@ function normalizeNumericString(value: string): string | undefined {
   return trimmed ? trimmed : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function parseFiniteNumber(value: unknown): number | undefined {
   if (typeof value === "number") {
     return Number.isFinite(value) ? value : undefined;
@@ -64,7 +60,6 @@ export function parseFiniteNumber(value: unknown): number | undefined {
   return parseStrictFiniteNumber(value);
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function parseStrictInteger(value: unknown): number | undefined {
   if (typeof value === "number") {
     return Number.isSafeInteger(value) ? value : undefined;
@@ -80,7 +75,6 @@ export function parseStrictInteger(value: unknown): number | undefined {
   return Number.isSafeInteger(parsed) ? parsed : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function parseStrictFiniteNumber(value: unknown): number | undefined {
   if (typeof value === "number") {
     return Number.isFinite(value) ? value : undefined;
@@ -96,14 +90,11 @@ export function parseStrictFiniteNumber(value: unknown): number | undefined {
   return Number.isFinite(parsed) ? parsed : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function asPositiveSafeInteger(value: unknown): number | undefined {
   return typeof value === "number" && Number.isSafeInteger(value) && value > 0 ? value : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export const MAX_TIMER_TIMEOUT_MS = 2_147_000_000;
-/** Exported API contract used by runtime callers and tests. */
 export const MAX_TIMER_TIMEOUT_SECONDS = Math.floor(MAX_TIMER_TIMEOUT_MS / 1000);
 export const MAX_DATE_TIMESTAMP_MS = 8_640_000_000_000_000;
 export const UNIX_EPOCH_ISO_STRING = "1970-01-01T00:00:00.000Z";
@@ -152,7 +143,6 @@ export function timestampMsToIsoFileStamp(
   return resolveTimestampMsToIsoString(value, fallbackValue).replaceAll(":", "-");
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function clampTimerTimeoutMs(valueMs: unknown, minMs = 1): number | undefined {
   const value = asFiniteNumber(valueMs);
   if (value === undefined) {
@@ -209,7 +199,6 @@ export function finiteSecondsToTimerSafeMilliseconds(
   return Math.min(milliseconds, MAX_TIMER_TIMEOUT_MS);
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function resolveIntegerOption(
   value: unknown,
   fallback: number,
@@ -224,7 +213,6 @@ export function resolveIntegerOption(
   return range.max === undefined ? minBounded : Math.min(range.max, minBounded);
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function resolveOptionalIntegerOption(
   value: unknown,
   range: {
@@ -238,24 +226,20 @@ export function resolveOptionalIntegerOption(
   return resolveIntegerOption(value, value, range);
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function resolveNonNegativeIntegerOption(value: unknown, fallback: number): number {
   return resolveIntegerOption(value, fallback, { min: 0 });
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function parseStrictPositiveInteger(value: unknown): number | undefined {
   const parsed = parseStrictInteger(value);
   return parsed !== undefined && parsed > 0 ? parsed : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function parseStrictNonNegativeInteger(value: unknown): number | undefined {
   const parsed = parseStrictInteger(value);
   return parsed !== undefined && parsed >= 0 ? parsed : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function positiveSecondsToSafeMilliseconds(value: unknown): number | undefined {
   const seconds = parseStrictPositiveInteger(value);
   if (seconds === undefined) {
@@ -265,7 +249,6 @@ export function positiveSecondsToSafeMilliseconds(value: unknown): number | unde
   return Number.isSafeInteger(milliseconds) ? milliseconds : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function nonNegativeSecondsToSafeMilliseconds(value: unknown): number | undefined {
   const seconds = parseStrictNonNegativeInteger(value);
   if (seconds === undefined) {
@@ -311,7 +294,6 @@ export function resolveExpiresAtMsFromDurationSeconds(
   return durationMs === undefined ? undefined : resolveExpiresAtMsFromDurationMs(durationMs, opts);
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function resolveExpiresAtMsFromEpochSeconds(
   value: unknown,
   opts: { bufferMs?: number; maxMs?: number } = {},
@@ -334,7 +316,6 @@ export function resolveExpiresAtMsFromEpochSeconds(
   return maxMs === undefined || expiresAt <= maxMs ? expiresAt : undefined;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function resolveExpiresAtMsFromDurationOrEpoch(
   value: unknown,
   opts: {

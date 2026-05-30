@@ -7,11 +7,8 @@ import {
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { isHuggingfaceModelDiscoveryTestEnvironment } from "./model-discovery-env.js";
 
-/** Exported API contract used by runtime callers and tests. */
 export const HUGGINGFACE_BASE_URL = "https://router.huggingface.co/v1";
-/** Exported API contract used by runtime callers and tests. */
 export const HUGGINGFACE_POLICY_SUFFIXES = ["cheapest", "fastest"] as const;
-/** Exported API contract used by runtime callers and tests. */
 export const HUGGINGFACE_DISCOVERY_TIMEOUT_MS = 30_000;
 
 const HUGGINGFACE_DEFAULT_COST = {
@@ -42,7 +39,6 @@ type OpenAIListModelsResponse = {
   data?: HFModelEntry[];
 };
 
-/** Exported API contract used by runtime callers and tests. */
 export const HUGGINGFACE_MODEL_CATALOG: ModelDefinitionConfig[] = [
   {
     id: "deepseek-ai/DeepSeek-R1",
@@ -82,13 +78,11 @@ export const HUGGINGFACE_MODEL_CATALOG: ModelDefinitionConfig[] = [
   },
 ];
 
-/** Exported API contract used by runtime callers and tests. */
 export function isHuggingfacePolicyLocked(modelRef: string): boolean {
   const ref = modelRef.trim();
   return HUGGINGFACE_POLICY_SUFFIXES.some((suffix) => ref.endsWith(`:${suffix}`) || ref === suffix);
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function buildHuggingfaceModelDefinition(
   model: (typeof HUGGINGFACE_MODEL_CATALOG)[number],
 ): ModelDefinitionConfig {
@@ -137,7 +131,6 @@ function displayNameFromApiEntry(entry: HFModelEntry, inferredName: string): str
   return inferredName;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export async function discoverHuggingfaceModels(
   apiKey: string,
   timeoutMs = HUGGINGFACE_DISCOVERY_TIMEOUT_MS,

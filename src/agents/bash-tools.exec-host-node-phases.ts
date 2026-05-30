@@ -131,7 +131,6 @@ function extractPreparedNodeShellPayload(argv: readonly string[]): string | null
   return null;
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function shouldSkipNodeApprovalPrepare(params: {
   hostSecurity: ExecSecurity;
   hostAsk: ExecAsk;
@@ -142,7 +141,6 @@ export function shouldSkipNodeApprovalPrepare(params: {
   );
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function formatNodeRunToolResult(params: {
   raw: unknown;
   startedAt: number;
@@ -176,7 +174,6 @@ export function formatNodeRunToolResult(params: {
   };
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export async function resolveNodeExecutionTarget(
   params: ExecuteNodeHostCommandParams,
 ): Promise<NodeExecutionTarget> {
@@ -228,7 +225,6 @@ export async function resolveNodeExecutionTarget(
   };
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export function buildNodeSystemRunInvoke(params: {
   target: NodeExecutionTarget;
   command: string[];
@@ -279,7 +275,6 @@ export function buildNodeSystemRunInvoke(params: {
   };
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export async function invokeNodeSystemRunDirect(params: {
   request: ExecuteNodeHostCommandParams;
   target: NodeExecutionTarget;
@@ -301,7 +296,6 @@ export async function invokeNodeSystemRunDirect(params: {
   return formatNodeRunToolResult({ raw, startedAt, cwd: params.request.workdir });
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export async function prepareNodeSystemRun(params: {
   request: ExecuteNodeHostCommandParams;
   target: NodeExecutionTarget;
@@ -377,7 +371,6 @@ function buildLocalPreparedNodeRun(params: {
   };
 }
 
-/** Exported API contract used by runtime callers and tests. */
 export async function analyzeNodeApprovalRequirement(params: {
   request: ExecuteNodeHostCommandParams;
   target: NodeExecutionTarget;

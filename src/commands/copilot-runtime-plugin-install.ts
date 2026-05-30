@@ -5,7 +5,6 @@ import {
   type RuntimePluginInstallResult,
 } from "./runtime-plugin-install.js";
 
-/** Exported API contract used by runtime callers and tests. */
 export const COPILOT_RUNTIME_PLUGIN_ID = "copilot";
 const COPILOT_RUNTIME_PLUGIN_LABEL = "GitHub Copilot agent runtime";
 const COPILOT_RUNTIME_PLUGIN_NPM_SPEC = "@openclaw/copilot";
