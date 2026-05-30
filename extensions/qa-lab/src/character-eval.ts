@@ -29,7 +29,6 @@ const DEFAULT_JUDGE_MODEL_OPTIONS: Readonly<Record<string, QaCharacterModelOptio
 
 type QaCharacterRunStatus = "pass" | "fail";
 
-/** Per-model runtime overrides for character evaluation candidates and judges. */
 export type QaCharacterModelOptions = {
   thinkingDefault?: QaThinkingLevel;
   fastMode?: boolean;
@@ -54,7 +53,6 @@ type QaCharacterEvalRun = {
   error?: string;
 };
 
-/** Normalized ranking returned by a character evaluation judge model. */
 export type QaCharacterEvalJudgment = {
   model: string;
   rank: number;
@@ -105,7 +103,6 @@ type RunJudgeFn = (params: {
   timeoutMs: number;
 }) => Promise<string | null>;
 
-/** Options controlling candidate runs, judge runs, and character-eval artifacts. */
 export type QaCharacterEvalParams = {
   repoRoot?: string;
   outputDir?: string;
@@ -507,7 +504,6 @@ function renderCharacterEvalReport(params: {
   return `${lines.join("\n")}\n`;
 }
 
-/** Runs the character evaluation matrix and writes Markdown/JSON artifacts. */
 export async function runQaCharacterEval(params: QaCharacterEvalParams) {
   const startedAt = new Date();
   const repoRoot = path.resolve(params.repoRoot ?? process.cwd());

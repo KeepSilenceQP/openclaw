@@ -139,7 +139,6 @@ function summarizeScenarioSearchMatch(scenario: QaSeedScenarioWithSource): QaSce
   };
 }
 
-/** Searches QA scenarios by freeform query tokens. */
 export function findQaScenarioMatches(
   scenarios: readonly QaSeedScenarioWithSource[],
   query: string,
@@ -191,7 +190,6 @@ function buildScenarioPackSummaries(
   }).toSorted((left, right) => left.id.localeCompare(right.id));
 }
 
-/** Builds scenario coverage inventory grouped by coverage id, theme, surface, and pack. */
 export function buildQaCoverageInventory(
   scenarios: readonly QaSeedScenarioWithSource[],
 ): QaCoverageInventory {
@@ -311,7 +309,6 @@ function pushScenarioPackLines(lines: string[], packs: readonly QaCoverageScenar
   }
 }
 
-/** Renders a QA coverage inventory as Markdown. */
 export function renderQaCoverageMarkdownReport(inventory: QaCoverageInventory): string {
   const lines: string[] = [
     "# QA Coverage Inventory",
@@ -380,7 +377,6 @@ function formatOptionalScenarioMetadata(match: QaScenarioSearchMatch) {
   return metadata.length > 0 ? metadata.join("; ") : "none";
 }
 
-/** Renders scenario search results as Markdown. */
 export function renderQaScenarioMatchesMarkdownReport(params: {
   query: string;
   matches: readonly QaScenarioSearchMatch[];

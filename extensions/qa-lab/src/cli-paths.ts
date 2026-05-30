@@ -2,7 +2,6 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { assertNoSymlinkParents, pathScope } from "openclaw/plugin-sdk/security-runtime";
 
-/** Resolves a relative output directory inside the repo root. */
 export function resolveRepoRelativeOutputDir(repoRoot: string, outputDir?: string) {
   if (!outputDir) {
     return undefined;
@@ -60,7 +59,6 @@ async function assertNoSymlinkSegments(repoRoot: string, targetPath: string, lab
   }
 }
 
-/** Verifies a path stays inside the repo and does not traverse symlink parents. */
 export async function assertRepoBoundPath(repoRoot: string, targetPath: string, label: string) {
   const repoRootResolved = path.resolve(repoRoot);
   const targetResolved = path.resolve(targetPath);
@@ -73,7 +71,6 @@ export async function assertRepoBoundPath(repoRoot: string, targetPath: string, 
   return targetResolved;
 }
 
-/** Creates a directory after proving it remains inside the repo boundary. */
 export async function ensureRepoBoundDirectory(
   repoRoot: string,
   targetDir: string,

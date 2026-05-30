@@ -69,7 +69,6 @@ function isQaOpenAiResponsesProviderConfig(config: ModelProviderConfig) {
   );
 }
 
-/** Resolves the source directory for a bundled plugin id in source or built trees. */
 export function resolveQaBundledPluginSourceDir(params: { repoRoot: string; pluginId: string }) {
   assertSafeQaBundledPluginId(params.pluginId);
   const candidates = [
@@ -389,7 +388,6 @@ export async function resolveQaRuntimeHostVersion(params: {
   return selected?.label;
 }
 
-/** Creates a temporary staged bundled-plugin tree for QA runtime processes. */
 export async function createQaBundledPluginsDir(params: {
   repoRoot: string;
   tempRoot: string;

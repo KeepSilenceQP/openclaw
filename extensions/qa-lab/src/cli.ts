@@ -271,7 +271,6 @@ async function runQaProviderServer(
   await runtime.runQaProviderServerCommand(providerMode, opts);
 }
 
-/** Reports whether the QA scenario pack is available in this checkout. */
 export function isQaLabCliAvailable(): boolean {
   return hasQaScenarioPack();
 }
@@ -282,7 +281,6 @@ function assertNoQaSubcommandCollision(qa: Command, commandName: string) {
   }
 }
 
-/** Registers all QA Lab commands on a Commander program. */
 export function registerQaLabCli(program: Command) {
   const qa = program
     .command("qa")

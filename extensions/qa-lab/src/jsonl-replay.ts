@@ -8,14 +8,12 @@ import {
   type RuntimeParityScenarioExecution,
 } from "./runtime-parity.js";
 
-/** Input configuration for a JSONL replay run. */
 export type JsonlReplayInput = {
   directory: string;
   runtimePair: ["openclaw", "codex"];
   providerMode: "mock-openai" | "live-frontier";
 };
 
-/** One user turn extracted from a JSONL transcript. */
 export type JsonlReplayTurn = {
   turn: number;
   lineNumber: number;
@@ -23,7 +21,6 @@ export type JsonlReplayTurn = {
   transcriptPrefix: string;
 };
 
-/** Runtime cell runner used to replay one transcript turn. */
 export type JsonlReplayCellRunner = (params: {
   runtime: RuntimeId;
   transcriptPath: string;
@@ -32,7 +29,6 @@ export type JsonlReplayCellRunner = (params: {
   providerMode: JsonlReplayInput["providerMode"];
 }) => Promise<RuntimeParityScenarioExecution>;
 
-/** Aggregated JSONL replay result across transcript files. */
 export type JsonlReplayResult = {
   transcripts: Array<{
     transcriptPath: string;
@@ -43,12 +39,10 @@ export type JsonlReplayResult = {
   }>;
 };
 
-/** Optional dependencies for JSONL replay execution. */
 export type JsonlReplayOptions = {
   runCell?: JsonlReplayCellRunner;
 };
 
-/** Input payload for rendering a JSONL replay Markdown report. */
 export type JsonlReplayMarkdownReport = {
   generatedAt: string;
   providerMode: JsonlReplayInput["providerMode"];
@@ -113,7 +107,6 @@ function extractTextContent(content: unknown): string {
   return parts.join("\n").trim();
 }
 
-/** Extracts replayable user turns and transcript prefixes from JSONL bytes. */
 export function extractJsonlReplayUserTurns(transcriptBytes: string): JsonlReplayTurn[] {
   const turns: JsonlReplayTurn[] = [];
   const acceptedLines: string[] = [];
@@ -178,7 +171,6 @@ function assertSupportedRuntimePair(runtimePair: JsonlReplayInput["runtimePair"]
   }
 }
 
-/** Creates a deterministic mock cell runner for JSONL replay tests. */
 export function createMockJsonlReplayCellRunner(): JsonlReplayCellRunner {
   return async ({ runtime, turn }) => ({
     scenarioStatus: "pass",
@@ -198,7 +190,6 @@ export function createMockJsonlReplayCellRunner(): JsonlReplayCellRunner {
   });
 }
 
-/** Runs runtime parity replay across all JSONL transcripts in a directory. */
 export async function runJsonlReplay(
   input: JsonlReplayInput,
   options: JsonlReplayOptions = {},
@@ -251,7 +242,6 @@ export async function runJsonlReplay(
   return { transcripts };
 }
 
-/** Renders a JSONL replay result as Markdown. */
 export function renderJsonlReplayMarkdownReport(report: JsonlReplayMarkdownReport): string {
   const totalTurns = report.transcripts.reduce((sum, entry) => sum + entry.userTurnCount, 0);
   const driftedTranscripts = report.transcripts.filter(
