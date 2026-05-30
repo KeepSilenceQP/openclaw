@@ -1,4 +1,3 @@
-// extensions/feishu/src send result helpers and runtime behavior.
 import {
   createMessageReceiptFromOutboundResults,
   type MessageReceipt,

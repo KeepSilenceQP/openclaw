@@ -1,4 +1,3 @@
-// extensions/zalo/src session route helpers and runtime behavior.
 import {
   buildChannelOutboundSessionRoute,
   stripChannelTargetPrefix,

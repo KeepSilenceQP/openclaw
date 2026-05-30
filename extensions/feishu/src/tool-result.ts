@@ -1,4 +1,3 @@
-// extensions/feishu/src tool result helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 
 export function jsonToolResult(data: unknown) {

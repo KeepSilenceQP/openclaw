@@ -1,4 +1,3 @@
-// extensions/feishu/src comment dispatcher helpers and runtime behavior.
 import { resolveSendableOutboundReplyParts } from "openclaw/plugin-sdk/reply-payload";
 import { resolveFeishuRuntimeAccount } from "./accounts.js";
 import { createFeishuClient } from "./client.js";

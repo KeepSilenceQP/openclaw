@@ -1,4 +1,3 @@
-// extensions/zalo/src setup surface helpers and runtime behavior.
 import {
   buildSingleChannelSecretPromptState,
   createStandardChannelSetupStatus,

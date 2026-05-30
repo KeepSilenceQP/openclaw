@@ -1,4 +1,3 @@
-// extensions/feishu/src card ux approval helpers and runtime behavior.
 import { createFeishuCardInteractionEnvelope } from "./card-interaction.js";
 import { buildFeishuCardButton, buildFeishuCardInteractionContext } from "./card-ux-shared.js";
 

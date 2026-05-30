@@ -1,4 +1,3 @@
-// extensions/feishu/src monitor comment helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import { asBoolean as readBoolean } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { ClawdbotConfig } from "../runtime-api.js";

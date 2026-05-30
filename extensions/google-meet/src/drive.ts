@@ -1,4 +1,3 @@
-// extensions/google-meet/src drive helpers and runtime behavior.
 import { fetchWithSsrFGuard } from "openclaw/plugin-sdk/ssrf-runtime";
 import { googleApiError } from "./google-api-errors.js";
 

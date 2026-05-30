@@ -1,4 +1,3 @@
-// extensions/feishu/src targets helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { FeishuIdType } from "./types.js";
 

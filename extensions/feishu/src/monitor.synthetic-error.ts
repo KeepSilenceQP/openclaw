@@ -1,4 +1,3 @@
-// extensions/feishu/src monitor synthetic error helpers and runtime behavior.
 export class FeishuRetryableSyntheticEventError extends Error {
   constructor(message: string, options?: ErrorOptions) {
     super(message, options);

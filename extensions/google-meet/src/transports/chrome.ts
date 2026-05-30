@@ -1,4 +1,3 @@
-// extensions/google-meet/src/transports chrome helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { callGatewayFromCli } from "openclaw/plugin-sdk/gateway-runtime";
 import { addTimerTimeoutGraceMs } from "openclaw/plugin-sdk/number-runtime";
