@@ -1,4 +1,3 @@
-// extensions/zalo/src setup core helpers and runtime behavior.
 import {
   addWildcardAllowFrom,
   createDelegatedSetupWizardProxy,

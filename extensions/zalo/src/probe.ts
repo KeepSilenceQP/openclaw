@@ -1,4 +1,3 @@
-// extensions/zalo/src probe helpers and runtime behavior.
 import type { BaseProbeResult } from "openclaw/plugin-sdk/channel-contract";
 import { getMe, ZaloApiError, type ZaloBotInfo, type ZaloFetch } from "./api.js";
 

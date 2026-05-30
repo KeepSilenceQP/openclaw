@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/substrate topology helpers and runtime behavior.
 export type MatrixQaParticipantRole = "driver" | "observer" | "sut";
 
 type MatrixQaRoomKind = "dm" | "group";

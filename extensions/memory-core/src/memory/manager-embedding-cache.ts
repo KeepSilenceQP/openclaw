@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager embedding cache helpers and runtime behavior.
 import type { DatabaseSync, SQLInputValue } from "node:sqlite";
 import {
   parseEmbedding,

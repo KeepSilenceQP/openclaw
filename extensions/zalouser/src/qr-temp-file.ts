@@ -1,4 +1,3 @@
-// extensions/zalouser/src qr temp file helpers and runtime behavior.
 import fsp from "node:fs/promises";
 import path from "node:path";
 import { resolvePreferredOpenClawTmpDir } from "openclaw/plugin-sdk/temp-path";

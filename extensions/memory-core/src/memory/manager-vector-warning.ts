@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager vector warning helpers and runtime behavior.
 export function formatMemoryVectorDegradedWriteReason(loadError?: string): string {
   return loadError
     ? `sqlite-vec unavailable: ${loadError}`

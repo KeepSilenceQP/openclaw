@@ -1,4 +1,3 @@
-// extensions/discord/src resolve users helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalString,

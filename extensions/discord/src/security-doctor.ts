@@ -1,4 +1,3 @@
-// extensions/discord/src security doctor helpers and runtime behavior.
 export function isDiscordMutableAllowEntry(raw: string): boolean {
   const text = raw.trim();
   if (!text || text === "*") {

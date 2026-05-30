@@ -1,4 +1,3 @@
-// extensions/feishu/src channel helpers and runtime behavior.
 import { describeAccountSnapshot } from "openclaw/plugin-sdk/account-helpers";
 import { formatAllowFromLowercase } from "openclaw/plugin-sdk/allow-from";
 import {

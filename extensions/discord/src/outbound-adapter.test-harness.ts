@@ -1,4 +1,3 @@
-// extensions/discord/src outbound adapter test harness helpers and runtime behavior.
 import { expect, vi, type Mock } from "vitest";
 
 type UnknownMock = Mock<(...args: unknown[]) => unknown>;

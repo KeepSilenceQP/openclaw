@@ -1,4 +1,3 @@
-// extensions/feishu/src reply dispatcher helpers and runtime behavior.
 import { formatReasoningMessage } from "openclaw/plugin-sdk/agent-runtime";
 import { logTypingFailure } from "openclaw/plugin-sdk/channel-feedback";
 import { createChannelMessageReplyPipeline } from "openclaw/plugin-sdk/channel-outbound";

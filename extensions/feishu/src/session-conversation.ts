@@ -1,4 +1,3 @@
-// extensions/feishu/src session conversation helpers and runtime behavior.
 import { buildFeishuConversationId, parseFeishuConversationId } from "./conversation-id.js";
 
 function resolveFeishuParentConversationCandidates(rawId: string): string[] {

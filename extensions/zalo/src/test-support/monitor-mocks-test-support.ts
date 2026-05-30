@@ -1,4 +1,3 @@
-// extensions/zalo/src/test-support monitor mocks test support helpers and runtime behavior.
 import { createPluginRuntimeMock } from "openclaw/plugin-sdk/channel-test-helpers";
 import {
   createEmptyPluginRegistry,

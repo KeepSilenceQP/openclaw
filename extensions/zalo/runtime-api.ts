@@ -1,4 +1,3 @@
-// extensions/zalo runtime api helpers and runtime behavior.
 /** Re-exported zalo plugin public API. */
 export {
   addWildcardAllowFrom,

@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager async state helpers and runtime behavior.
 export function startAsyncSearchSync(params: {
   enabled: boolean;
   dirty: boolean;

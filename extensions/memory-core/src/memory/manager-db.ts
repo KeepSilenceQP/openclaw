@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager db helpers and runtime behavior.
 import path from "node:path";
 import type { DatabaseSync } from "node:sqlite";
 import {

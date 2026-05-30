@@ -1,4 +1,3 @@
-// extensions/zalouser/src group policy helpers and runtime behavior.
 import { normalizeOptionalLowercaseString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { ZalouserGroupConfig } from "./types.js";
 

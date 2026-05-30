@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager embedding policy helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 
 type MemoryEmbeddingTextPart = {

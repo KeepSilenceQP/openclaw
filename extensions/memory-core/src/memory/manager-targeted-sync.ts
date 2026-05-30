@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager targeted sync helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import type { MemorySyncProgressUpdate } from "openclaw/plugin-sdk/memory-core-host-engine-storage";
 

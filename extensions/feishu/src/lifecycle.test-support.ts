@@ -1,4 +1,3 @@
-// extensions/feishu/src lifecycle test support helpers and runtime behavior.
 import { vi, type Mock } from "vitest";
 
 type BoundConversation = {

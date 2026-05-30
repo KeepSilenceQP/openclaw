@@ -1,4 +1,3 @@
-// extensions/zalo setup api helpers and runtime behavior.
 import { loadBundledEntryExportSync } from "openclaw/plugin-sdk/channel-entry-contract";
 
 type SetupSurfaceModule = typeof import("./src/setup-surface.js");

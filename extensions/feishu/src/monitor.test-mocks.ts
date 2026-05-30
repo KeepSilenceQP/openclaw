@@ -1,4 +1,3 @@
-// extensions/feishu/src monitor test mocks helpers and runtime behavior.
 import { vi } from "vitest";
 
 export function createFeishuClientMockModule(): {

@@ -1,4 +1,3 @@
-// extensions/discord/src shared interactive helpers and runtime behavior.
 import { reduceInteractiveReply } from "openclaw/plugin-sdk/interactive-runtime";
 import type {
   InteractiveButtonStyle,

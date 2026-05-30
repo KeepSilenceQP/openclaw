@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager session reindex helpers and runtime behavior.
 export function shouldSyncSessionsForReindex(params: {
   hasSessionSource: boolean;
   sessionsDirty: boolean;

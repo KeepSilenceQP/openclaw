@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory qmd compat helpers and runtime behavior.
 export type QmdCollectionPatternFlag = "--glob" | "--mask";
 
 export function resolveQmdCollectionPatternFlags(

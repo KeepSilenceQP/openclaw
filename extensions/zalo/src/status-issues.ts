@@ -1,4 +1,3 @@
-// extensions/zalo/src status issues helpers and runtime behavior.
 import type {
   ChannelAccountSnapshot,
   ChannelStatusIssue,

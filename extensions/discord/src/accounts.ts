@@ -1,4 +1,3 @@
-// extensions/discord/src accounts helpers and runtime behavior.
 import {
   createAccountActionGate,
   createAccountListHelpers,

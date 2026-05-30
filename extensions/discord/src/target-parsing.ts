@@ -1,4 +1,3 @@
-// extensions/discord/src target parsing helpers and runtime behavior.
 import {
   buildMessagingTarget,
   parseMentionPrefixOrAtUserTarget,

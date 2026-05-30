@@ -1,4 +1,3 @@
-// extensions/discord/src/test-support component runtime helpers and runtime behavior.
 import {
   parsePluginBindingApprovalCustomId,
   resolvePinnedMainDmOwnerFromAllowlist,

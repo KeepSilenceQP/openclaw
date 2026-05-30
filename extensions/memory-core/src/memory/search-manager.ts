@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory search manager helpers and runtime behavior.
 import fs from "node:fs/promises";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import {

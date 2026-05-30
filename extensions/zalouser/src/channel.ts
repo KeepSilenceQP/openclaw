@@ -1,4 +1,3 @@
-// extensions/zalouser/src channel helpers and runtime behavior.
 import { createChatChannelPlugin } from "openclaw/plugin-sdk/channel-core";
 import { createAccountStatusSink } from "openclaw/plugin-sdk/channel-outbound";
 import { buildPassiveProbedChannelStatusSummary } from "openclaw/plugin-sdk/extension-shared";

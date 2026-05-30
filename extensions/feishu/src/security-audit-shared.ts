@@ -1,4 +1,3 @@
-// extensions/feishu/src security audit shared helpers and runtime behavior.
 import { hasConfiguredSecretInput } from "openclaw/plugin-sdk/secret-input";
 import type { OpenClawConfig } from "../runtime-api.js";
 
