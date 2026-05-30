@@ -1,4 +1,3 @@
-// extensions/msteams/src send context helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {
   resolveChannelMediaMaxBytes,

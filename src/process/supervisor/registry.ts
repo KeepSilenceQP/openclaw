@@ -1,4 +1,3 @@
-// process/supervisor registry helpers and runtime behavior.
 import type { RunRecord, RunState, TerminationReason } from "./types.js";
 
 function nowMs() {
@@ -14,7 +13,6 @@ function resolveMaxExitedRecords(value?: number): number {
   return Math.max(1, Math.floor(value));
 }
 
-/** Shared type for Run Registry in src/process/supervisor. */
 export type RunRegistry = {
   add: (record: RunRecord) => void;
   get: (runId: string) => RunRecord | undefined;
@@ -37,7 +35,6 @@ export type RunRegistry = {
   delete: (runId: string) => void;
 };
 
-/** Reused helper for create Run Registry behavior in src/process/supervisor. */
 export function createRunRegistry(options?: { maxExitedRecords?: number }): RunRegistry {
   const records = new Map<string, RunRecord>();
   const maxExitedRecords = resolveMaxExitedRecords(options?.maxExitedRecords);

@@ -1,4 +1,3 @@
-// extensions/msteams/src webhook timeouts helpers and runtime behavior.
 import type { Server } from "node:http";
 
 const MSTEAMS_WEBHOOK_INACTIVITY_TIMEOUT_MS = 30_000;

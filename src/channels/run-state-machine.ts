@@ -4,7 +4,6 @@ type RunStateStatusPatch = {
   lastRunActivityAt?: number | null;
 };
 
-/** Shared type for Run State Status Sink in src/channels. */
 export type RunStateStatusSink = (patch: RunStateStatusPatch) => void;
 
 type RunStateMachineParams = {
@@ -16,7 +15,6 @@ type RunStateMachineParams = {
 
 const DEFAULT_RUN_ACTIVITY_HEARTBEAT_MS = 60_000;
 
-/** Reused helper for create Run State Machine behavior in src/channels. */
 export function createRunStateMachine(params: RunStateMachineParams) {
   const heartbeatMs = params.heartbeatMs ?? DEFAULT_RUN_ACTIVITY_HEARTBEAT_MS;
   const now = params.now ?? Date.now;

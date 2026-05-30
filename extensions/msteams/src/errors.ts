@@ -1,4 +1,3 @@
-// extensions/msteams/src errors helpers and runtime behavior.
 import { asFiniteNumberInRange, parseStrictFiniteNumber } from "openclaw/plugin-sdk/number-runtime";
 import { isRecord } from "openclaw/plugin-sdk/string-coerce-runtime";
 

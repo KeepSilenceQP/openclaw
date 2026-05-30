@@ -1,4 +1,3 @@
-// extensions/msteams/src inbound helpers and runtime behavior.
 type MSTeamsQuoteInfo = {
   sender: string;
   body: string;

@@ -1,8 +1,6 @@
-// process child process bridge helpers and runtime behavior.
 import type { ChildProcess } from "node:child_process";
 import process from "node:process";
 
-/** Shared type for Child Process Bridge Options in src/process. */
 export type ChildProcessBridgeOptions = {
   signals?: NodeJS.Signals[];
   onSignal?: (signal: NodeJS.Signals) => void;
@@ -13,7 +11,6 @@ const defaultSignals: NodeJS.Signals[] =
     ? ["SIGTERM", "SIGINT", "SIGBREAK"]
     : ["SIGTERM", "SIGINT", "SIGHUP", "SIGQUIT"];
 
-/** Reused helper for attach Child Process Bridge behavior in src/process. */
 export function attachChildProcessBridge(
   child: ChildProcess,
   { signals = defaultSignals, onSignal }: ChildProcessBridgeOptions = {},

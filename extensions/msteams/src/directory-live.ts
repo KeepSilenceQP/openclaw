@@ -1,4 +1,3 @@
-// extensions/msteams/src directory live helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeStringEntries,

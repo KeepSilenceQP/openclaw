@@ -17,7 +17,6 @@ function coerceLoadedChannelPlugin(
   return plugin as ChannelPlugin;
 }
 
-/** Reused helper for get Loaded Channel Plugin For Read behavior in src/channels/plugins. */
 export function getLoadedChannelPluginForRead(id: ChannelId): ChannelPlugin | undefined {
   const resolvedId = normalizeOptionalString(id) ?? "";
   if (!resolvedId) {

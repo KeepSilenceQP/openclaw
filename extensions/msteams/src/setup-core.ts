@@ -1,4 +1,3 @@
-// extensions/msteams/src setup core helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   createStandardChannelSetupStatus,

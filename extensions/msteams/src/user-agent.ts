@@ -1,4 +1,3 @@
-// extensions/msteams/src user agent helpers and runtime behavior.
 import { createRequire } from "node:module";
 import { getMSTeamsRuntime } from "./runtime.js";
 

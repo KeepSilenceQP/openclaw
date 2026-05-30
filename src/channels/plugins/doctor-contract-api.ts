@@ -37,7 +37,6 @@ function loadBundledChannelPublicArtifact(
   return undefined;
 }
 
-/** Reused helper for load Bundled Channel Doctor Contract Api behavior in src/channels/plugins. */
 export function loadBundledChannelDoctorContractApi(
   channelId: string,
 ): BundledChannelDoctorContractApi | undefined {

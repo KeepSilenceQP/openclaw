@@ -1,4 +1,3 @@
-// extensions/msteams/src graph users helpers and runtime behavior.
 import { escapeOData, fetchGraphJson, type GraphResponse, type GraphUser } from "./graph.js";
 
 export async function searchGraphUsers(params: {

@@ -32,7 +32,6 @@ type ChannelPackageStateMetadata = {
   };
 };
 
-/** Shared type for Channel Package State Metadata Key in src/channels/plugins. */
 export type ChannelPackageStateMetadataKey = "configuredState" | "persistedAuthState";
 
 const log = createSubsystemLogger("channels");
@@ -230,7 +229,6 @@ function resolvePackageStateChannelId(entry: PluginChannelCatalogEntry): string 
   return normalizeOptionalString(entry.channel.id);
 }
 
-/** Reused helper for list Bundled Channel Ids For Package State behavior in src/channels/plugins. */
 export function listBundledChannelIdsForPackageState(
   metadataKey: ChannelPackageStateMetadataKey,
   discovery?: PluginDiscoveryResult,
@@ -241,7 +239,6 @@ export function listBundledChannelIdsForPackageState(
     .toSorted((left, right) => left.localeCompare(right));
 }
 
-/** Reused helper for has Bundled Channel Package State behavior in src/channels/plugins. */
 export function hasBundledChannelPackageState(params: {
   metadataKey: ChannelPackageStateMetadataKey;
   channelId: string;

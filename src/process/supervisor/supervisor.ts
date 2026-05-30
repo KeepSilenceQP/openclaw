@@ -1,4 +1,3 @@
-// process/supervisor supervisor helpers and runtime behavior.
 import crypto from "node:crypto";
 import { getShellConfig } from "../../agents/shell-utils.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
@@ -64,7 +63,6 @@ function isTimeoutReason(reason: TerminationReason) {
   return reason === "overall-timeout" || reason === "no-output-timeout";
 }
 
-/** Reused helper for create Process Supervisor behavior in src/process/supervisor. */
 export function createProcessSupervisor(): ProcessSupervisor {
   const registry = createRunRegistry();
   const active = new Map<string, ActiveRun>();

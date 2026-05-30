@@ -145,7 +145,6 @@ function buildAcpTargetFactory(params: {
   };
 }
 
-/** Reused constant for acp Configured Binding Consumer behavior in src/channels/plugins. */
 export const acpConfiguredBindingConsumer: ConfiguredBindingConsumer = {
   id: "acp",
   supports: (binding) => binding.type === "acp",

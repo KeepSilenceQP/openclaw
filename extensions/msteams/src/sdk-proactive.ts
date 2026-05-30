@@ -1,4 +1,3 @@
-// extensions/msteams/src sdk proactive helpers and runtime behavior.
 import { normalizeBotFrameworkServiceUrl } from "./bot-framework-service-url.js";
 import {
   validateMSTeamsProactiveServiceUrlBoundary,

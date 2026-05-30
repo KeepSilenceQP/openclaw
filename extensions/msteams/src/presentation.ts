@@ -1,4 +1,3 @@
-// extensions/msteams/src presentation helpers and runtime behavior.
 import {
   adaptMessagePresentationForChannel,
   type MessagePresentation,

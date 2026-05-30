@@ -7,7 +7,6 @@ type TypingKeepaliveLoop = {
   isRunning: () => boolean;
 };
 
-/** Reused helper for create Typing Keepalive Loop behavior in src/channels. */
 export function createTypingKeepaliveLoop(params: {
   intervalMs: number;
   onTick: AsyncTick;

@@ -1,4 +1,3 @@
-// extensions/vllm api helpers and runtime behavior.
 /** Re-exported vllm plugin public API. */
 export {
   VLLM_DEFAULT_API_KEY_ENV_VAR,

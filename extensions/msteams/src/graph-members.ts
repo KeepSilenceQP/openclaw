@@ -1,4 +1,3 @@
-// extensions/msteams/src graph members helpers and runtime behavior.
 import type { OpenClawConfig } from "../runtime-api.js";
 import { fetchGraphJson, resolveGraphToken } from "./graph.js";
 

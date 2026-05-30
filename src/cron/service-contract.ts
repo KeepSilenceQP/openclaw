@@ -1,4 +1,3 @@
-// cron service contract helpers and runtime behavior.
 import type { CronListPageOptions, CronListPageResult } from "./service/list-page-types.js";
 import type {
   CronAddInput,
@@ -16,10 +15,8 @@ import type { CronJob } from "./types.js";
 
 type CronWakeResult = { ok: true } | { ok: false; reason?: "unwakeable-session-key" };
 
-/** Shared type for Cron Service Run Result in src/cron. */
 export type CronServiceRunResult = CronRunResult | { ok: true; ran: false; reason: "invalid-spec" };
 
-/** Shared type for Cron Service Contract in src/cron. */
 export interface CronServiceContract {
   start(): Promise<void>;
   stop(): void;

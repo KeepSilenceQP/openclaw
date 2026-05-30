@@ -1,4 +1,3 @@
-// extensions/groq api helpers and runtime behavior.
 import type { ModelCompatConfig } from "openclaw/plugin-sdk/provider-model-shared";
 
 const GROQ_QWEN3_32B_ID = "qwen/qwen3-32b";
