@@ -19,7 +19,6 @@ export function createTimestamp(): string {
   return new Date().toISOString();
 }
 
-/** Wrap raw session storage in the high-level Session facade. */
 export function toSession<TMetadata extends SessionMetadata>(
   storage: SessionStorage<TMetadata>,
 ): Session<TMetadata> {

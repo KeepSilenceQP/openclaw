@@ -154,12 +154,10 @@ function buildRuntimeContextMessageContent(params: {
   ].join("\n");
 }
 
-/** Wraps next-turn runtime context as system context text. */
 export function buildRuntimeContextSystemContext(runtimeContext: string): string {
   return buildRuntimeContextMessageContent({ runtimeContext, kind: "next-turn" });
 }
 
-/** Wraps current event runtime context as system context text. */
 export function buildRuntimeEventSystemContext(runtimeContext: string): string {
   return buildRuntimeContextMessageContent({ runtimeContext, kind: "runtime-event" });
 }

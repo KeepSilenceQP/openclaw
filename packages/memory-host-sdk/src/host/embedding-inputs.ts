@@ -19,7 +19,6 @@ export type EmbeddingInput = {
   parts?: EmbeddingInputPart[];
 };
 
-/** Wraps plain text in the structured embedding input shape. */
 export function buildTextEmbeddingInput(text: string): EmbeddingInput {
   return { text };
 }

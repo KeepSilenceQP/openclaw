@@ -24,7 +24,6 @@ export function wrapToolDefinition<
 }
 
 /** Wrap multiple ToolDefinitions into AgentTools for the core runtime. */
-/** Wraps multiple extension tool definitions for the core runtime. */
 export function wrapToolDefinitions(
   definitions: ToolDefinition[],
   ctxFactory?: () => ExtensionContext,
