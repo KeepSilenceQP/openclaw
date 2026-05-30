@@ -128,18 +128,6 @@ export function listSessionEntries(
   });
 }
 
-export function loadSessionStore(
-  _storePath?: string,
-  _options?: { skipCache?: boolean },
-): Record<string, SessionEntry> {
-  return Object.fromEntries(
-    listSessionEntries({ agentId: DEFAULT_AGENT_ID }).map(({ sessionKey, entry }) => [
-      `agent:${DEFAULT_AGENT_ID}:${sessionKey}`,
-      entry,
-    ]),
-  );
-}
-
 export function upsertSessionEntry(
   options: SessionEntryRowOptions & {
     sessionKey: string;
