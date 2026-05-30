@@ -384,6 +384,58 @@ function mergeReplyDirectiveResults(
   };
 }
 
+function parseFullStreamingReplyText(text: string): string {
+  return parseReplyDirectives(splitTrailingDirective(text).text).text;
+}
+
+function resolveIncrementalStreamingReplyText(params: {
+  evtType: "text_delta" | "text_start" | "text_end";
+  next: string;
+  previousRawText: string;
+  previousCleaned: string;
+  visibleDelta: string;
+  parsedStreamDirectives: ReplyDirectiveParseResult | null;
+  shouldUsePhaseAwareBlockReply: boolean;
+}): string | undefined {
+  if (
+    params.evtType === "text_end" ||
+    !params.parsedStreamDirectives ||
+    params.parsedStreamDirectives.isSilent ||
+    hasReplyDirectiveMetadata(params.parsedStreamDirectives) ||
+    params.parsedStreamDirectives.text !== params.visibleDelta
+  ) {
+    return undefined;
+  }
+
+  if (
+    !params.shouldUsePhaseAwareBlockReply &&
+    params.previousCleaned === params.previousRawText.trim()
+  ) {
+    return params.next;
+  }
+
+  const cleanedCandidate = `${params.previousCleaned}${params.parsedStreamDirectives.text}`.trim();
+  return cleanedCandidate === params.next ? cleanedCandidate : undefined;
+}
+
+function resolveStreamingReplyText(params: {
+  evtType: "text_delta" | "text_start" | "text_end";
+  next: string;
+  previousRawText: string;
+  previousCleaned: string;
+  visibleDelta: string;
+  parsedStreamDirectives: ReplyDirectiveParseResult | null;
+  shouldUsePhaseAwareBlockReply: boolean;
+}): string {
+  if (!params.parsedStreamDirectives) {
+    return params.evtType === "text_delta"
+      ? params.previousCleaned
+      : parseFullStreamingReplyText(params.next);
+  }
+
+  return resolveIncrementalStreamingReplyText(params) ?? parseFullStreamingReplyText(params.next);
+}
+
 export function recordPendingAssistantReplyDirectives(
   state: Pick<EmbeddedAgentSubscribeState, "pendingAssistantReplyDirectives">,
   parsed: ReplyDirectiveParseResult | null | undefined,
@@ -671,11 +723,18 @@ export function handleMessageUpdate(
     if (shouldUsePhaseAwareBlockReply) {
       recordPendingAssistantReplyDirectives(ctx.state, parsedStreamDirectives);
     }
-    const parsedFull = parseReplyDirectives(splitTrailingDirective(next).text);
-    const cleanedText = parsedFull.text;
+    const previousCleaned = ctx.state.lastStreamedAssistantCleaned ?? "";
+    const cleanedText = resolveStreamingReplyText({
+      evtType,
+      next,
+      previousRawText: ctx.state.lastStreamedAssistant ?? "",
+      previousCleaned,
+      visibleDelta,
+      parsedStreamDirectives,
+      shouldUsePhaseAwareBlockReply,
+    });
     const { mediaUrls, hasMedia } = resolveSendableOutboundReplyParts(parsedStreamDirectives ?? {});
     const hasAudio = Boolean(parsedStreamDirectives?.audioAsVoice);
-    const previousCleaned = ctx.state.lastStreamedAssistantCleaned ?? "";
 
     let shouldEmit = false;
     let deltaText = "";
