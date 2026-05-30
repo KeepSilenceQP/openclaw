@@ -1,4 +1,3 @@
-// daemon/test-helpers schtasks base mocks helpers and runtime behavior.
 import { vi } from "vitest";
 import {
   inspectPortUsage,

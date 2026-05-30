@@ -1,4 +1,3 @@
-// plugins embedding provider runtime helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   getRuntimeEmbeddingProviderAdapter,
@@ -15,15 +14,12 @@ import {
 const OPENAI_COMPATIBLE_EMBEDDING_PROVIDER_ID = "openai-compatible";
 const OPENAI_COMPATIBLE_MODEL_APIS = new Set(["openai-completions", "openai-responses"]);
 
-/** Re-exported API for src/plugins, starting with list Registered Embedding Providers. */
 export { listRegisteredEmbeddingProviders };
 
-/** Reused helper for list Registered Embedding Provider Adapters behavior in src/plugins. */
 export function listRegisteredEmbeddingProviderAdapters(): EmbeddingProviderAdapter[] {
   return listRegisteredEmbeddingProviders().map((entry) => entry.adapter);
 }
 
-/** Reused helper for list Embedding Providers behavior in src/plugins. */
 export function listEmbeddingProviders(cfg?: OpenClawConfig): EmbeddingProviderAdapter[] {
   return listRuntimeEmbeddingProviderAdapters({
     key: "embeddingProviders",
@@ -56,7 +52,6 @@ function resolveEmbeddingProviderLookupIds(id: string, cfg?: OpenClawConfig): st
   });
 }
 
-/** Reused helper for get Embedding Provider behavior in src/plugins. */
 export function getEmbeddingProvider(
   id: string,
   cfg?: OpenClawConfig,
@@ -69,7 +64,6 @@ export function getEmbeddingProvider(
   });
 }
 
-/** Re-exported API for src/plugins. */
 export type {
   EmbeddingInput,
   EmbeddingProvider,

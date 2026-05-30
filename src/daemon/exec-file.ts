@@ -1,9 +1,7 @@
-// daemon exec file helpers and runtime behavior.
 import { execFile, type ExecFileOptionsWithStringEncoding } from "node:child_process";
 
 type ExecResult = { stdout: string; stderr: string; code: number };
 
-/** Reused helper for exec File Utf8 behavior in src/daemon. */
 export async function execFileUtf8(
   command: string,
   args: string[],

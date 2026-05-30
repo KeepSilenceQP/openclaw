@@ -1,4 +1,3 @@
-// plugins provider validation helpers and runtime behavior.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { normalizeUniqueTrimmedStringList } from "../shared/string-normalization.js";
 import type { PluginDiagnostic } from "./manifest-types.js";
@@ -310,7 +309,6 @@ function normalizeProviderWizard(params: {
   };
 }
 
-/** Reused helper for normalize Registered Provider behavior in src/plugins. */
 export function normalizeRegisteredProvider(params: {
   pluginId: string;
   source: string;

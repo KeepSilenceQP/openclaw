@@ -1,4 +1,3 @@
-// daemon systemd linger helpers and runtime behavior.
 import os from "node:os";
 import { formatErrorMessage } from "../infra/errors.js";
 import { runCommandWithTimeout, runExec } from "../process/exec.js";
@@ -24,7 +23,6 @@ type SystemdUserLingerStatus = {
   linger: "yes" | "no";
 };
 
-/** Reused helper for read Systemd User Linger Status behavior in src/daemon. */
 export async function readSystemdUserLingerStatus(
   env: Record<string, string | undefined>,
 ): Promise<SystemdUserLingerStatus | null> {
@@ -50,7 +48,6 @@ export async function readSystemdUserLingerStatus(
   return null;
 }
 
-/** Reused helper for enable Systemd User Linger behavior in src/daemon. */
 export async function enableSystemdUserLinger(params: {
   env: Record<string, string | undefined>;
   user?: string;

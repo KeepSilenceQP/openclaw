@@ -1,4 +1,3 @@
-// plugins discovery helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import type { PluginInstallRecord } from "../config/types.plugins.js";
@@ -64,7 +63,6 @@ const packageManifestProcessCache = new Map<
   { mtimeMs: number; size: number; manifest: PackageManifest | null }
 >();
 
-/** Shared type for Plugin Candidate in src/plugins. */
 export type PluginCandidate = {
   idHint: string;
   source: string;
@@ -89,7 +87,6 @@ export type PluginCandidate = {
   rawPackageManifest?: PackageManifest;
 };
 
-/** Shared type for Plugin Discovery Result in src/plugins. */
 export type PluginDiscoveryResult = {
   candidates: PluginCandidate[];
   diagnostics: PluginDiagnostic[];
@@ -108,7 +105,6 @@ function currentUid(overrideUid?: number | null): number | null {
   return process.getuid();
 }
 
-/** Shared type for Candidate Block Reason in src/plugins. */
 export type CandidateBlockReason =
   | "source_escapes_root"
   | "path_stat_failed"
@@ -1428,7 +1424,6 @@ function discoverFromPath(params: {
   }
 }
 
-/** Reused helper for discover Open Claw Plugins behavior in src/plugins. */
 export function discoverOpenClawPlugins(params: {
   workspaceDir?: string;
   extraPaths?: string[];

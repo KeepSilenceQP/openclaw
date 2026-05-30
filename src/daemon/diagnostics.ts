@@ -1,4 +1,3 @@
-// daemon diagnostics helpers and runtime behavior.
 import fs from "node:fs/promises";
 import { resolveGatewayLogPaths, resolveGatewaySupervisorLogPaths } from "./restart-logs.js";
 
@@ -25,7 +24,6 @@ async function readLastLogLine(filePath: string): Promise<string | null> {
   }
 }
 
-/** Reused helper for read Last Gateway Error Line behavior in src/daemon. */
 export async function readLastGatewayErrorLine(
   env: NodeJS.ProcessEnv,
   options?: { platform?: NodeJS.Platform },

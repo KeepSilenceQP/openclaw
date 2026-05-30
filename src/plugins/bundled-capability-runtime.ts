@@ -1,4 +1,3 @@
-// plugins bundled capability runtime helpers and runtime behavior.
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { openRootFileSync } from "../infra/boundary-file-read.js";
@@ -52,7 +51,6 @@ const CAPABILITY_VITEST_SHIM_ALIASES = [
   },
 ] as const;
 
-/** Reused helper for build Vitest Capability Shim Alias Map behavior in src/plugins. */
 export function buildVitestCapabilityShimAliasMap(): Record<string, string> {
   return Object.fromEntries(
     CAPABILITY_VITEST_SHIM_ALIASES.flatMap(({ subpath, target }) => {
@@ -95,7 +93,6 @@ function shouldApplyVitestCapabilityAliasOverrides(params: {
   return Boolean(params.env?.VITEST && params.pluginSdkResolution === "dist");
 }
 
-/** Reused helper for build Bundled Capability Runtime Config behavior in src/plugins. */
 export function buildBundledCapabilityRuntimeConfig(
   pluginIds: readonly string[],
   env?: PluginLoadOptions["env"],
@@ -197,7 +194,6 @@ function recordCapabilityLoadError(
   log.error(`[plugins] ${record.id} failed to load from ${record.source}: ${message}`);
 }
 
-/** Reused helper for load Bundled Capability Runtime Registry behavior in src/plugins. */
 export function loadBundledCapabilityRuntimeRegistry(params: {
   pluginIds: readonly string[];
   env?: PluginLoadOptions["env"];

@@ -1,4 +1,3 @@
-// plugins installed plugin index record builder helpers and runtime behavior.
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.js";
 import { normalizeSortedUniqueStringEntries } from "../shared/string-normalization.js";
@@ -35,7 +34,6 @@ function buildStartupInfo(record: PluginManifestRecord): InstalledPluginStartupI
   };
 }
 
-/** Reused helper for collect Plugin Manifest Compat Codes behavior in src/plugins. */
 export function collectPluginManifestCompatCodes(
   record: PluginManifestRecord,
 ): readonly PluginCompatCode[] {
@@ -211,7 +209,6 @@ function buildCandidateLookup(
   return byRootDir;
 }
 
-/** Reused helper for build Installed Plugin Index Records behavior in src/plugins. */
 export function buildInstalledPluginIndexRecords(params: {
   candidates: readonly PluginCandidate[];
   registry: PluginManifestRegistry;

@@ -1,4 +1,3 @@
-// daemon future config guard helpers and runtime behavior.
 import { readConfigFileSnapshot } from "../config/config.js";
 import {
   formatFutureConfigActionBlock,
@@ -17,7 +16,6 @@ async function readFutureConfigActionBlock(
   }
 }
 
-/** Reused helper for assert Future Config Action Allowed behavior in src/daemon. */
 export async function assertFutureConfigActionAllowed(action: string): Promise<void> {
   const block = await readFutureConfigActionBlock(action);
   if (block) {

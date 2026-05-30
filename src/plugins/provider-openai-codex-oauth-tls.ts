@@ -1,4 +1,3 @@
-// plugins provider openai codex oauth tls helpers and runtime behavior.
 import path from "node:path";
 import { note } from "../../packages/terminal-core/src/note.js";
 import { formatCliCommand } from "../cli/command-format.js";
@@ -27,7 +26,6 @@ const OPENAI_AUTH_PROBE_URL =
 
 type PreflightFailureKind = "tls-cert" | "network";
 
-/** Shared type for Open AIOAuth Tls Preflight Result in src/plugins. */
 export type OpenAIOAuthTlsPreflightResult =
   | { ok: true }
   | {
@@ -91,7 +89,6 @@ function hasOpenAICodexOAuthProfile(cfg: OpenClawConfig): boolean {
   );
 }
 
-/** Reused helper for should Run Open AIOAuth Tls Prerequisites behavior in src/plugins. */
 export function shouldRunOpenAIOAuthTlsPrerequisites(params: {
   cfg: OpenClawConfig;
   deep?: boolean;
@@ -102,7 +99,6 @@ export function shouldRunOpenAIOAuthTlsPrerequisites(params: {
   return hasOpenAICodexOAuthProfile(params.cfg);
 }
 
-/** Reused helper for run Open AIOAuth Tls Preflight behavior in src/plugins. */
 export async function runOpenAIOAuthTlsPreflight(options?: {
   timeoutMs?: number;
   fetchImpl?: typeof fetch;
@@ -127,7 +123,6 @@ export async function runOpenAIOAuthTlsPreflight(options?: {
   }
 }
 
-/** Reused helper for format Open AIOAuth Tls Preflight Fix behavior in src/plugins. */
 export function formatOpenAIOAuthTlsPreflightFix(
   result: Exclude<OpenAIOAuthTlsPreflightResult, { ok: true }>,
 ): string {
@@ -154,7 +149,6 @@ export function formatOpenAIOAuthTlsPreflightFix(
   return lines.join("\n");
 }
 
-/** Reused helper for note Open AIOAuth Tls Prerequisites behavior in src/plugins. */
 export async function noteOpenAIOAuthTlsPrerequisites(params: {
   cfg: OpenClawConfig;
   deep?: boolean;

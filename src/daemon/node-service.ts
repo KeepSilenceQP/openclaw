@@ -1,4 +1,3 @@
-// daemon node service helpers and runtime behavior.
 import {
   NODE_SERVICE_KIND,
   NODE_SERVICE_MARKER,
@@ -44,7 +43,6 @@ function withNodeInstallEnv(args: GatewayServiceInstallArgs): GatewayServiceInst
   };
 }
 
-/** Reused helper for resolve Node Service behavior in src/daemon. */
 export function resolveNodeService(): GatewayService {
   const base = resolveGatewayService();
   return {
