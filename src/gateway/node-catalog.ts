@@ -183,11 +183,7 @@ export function createKnownNodeCatalog(params: {
     (params.pairedNodes ?? []).map((entry) => [entry.nodeId, buildApprovedNodeSource(entry)]),
   );
   const liveById = new Map(params.connectedNodes.map((entry) => [entry.nodeId, entry]));
-  const nodeIds = new Set<string>([
-    ...devicePairingById.keys(),
-    ...nodePairingById.keys(),
-    ...liveById.keys(),
-  ]);
+  const nodeIds = new Set<string>([...nodePairingById.keys(), ...liveById.keys()]);
   const entriesById = new Map<string, KnownNodeEntry>();
   for (const nodeId of nodeIds) {
     const devicePairing = devicePairingById.get(nodeId);

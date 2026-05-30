@@ -7,7 +7,7 @@ import {
 } from "./node-catalog.js";
 
 describe("gateway/node-catalog", () => {
-  it("filters paired nodes by active node token instead of sticky historical roles", () => {
+  it("does not surface offline device-only pairings as commandless nodes", () => {
     const catalog = createKnownNodeCatalog({
       pairedDevices: [
         {
@@ -52,7 +52,73 @@ describe("gateway/node-catalog", () => {
       connectedNodes: [],
     });
 
-    expect(listKnownNodes(catalog).map((node) => node.nodeId)).toEqual(["current-mac"]);
+    expect(listKnownNodes(catalog)).toEqual([]);
+  });
+
+  it("still uses active device-token roles as metadata for live nodes", () => {
+    const catalog = createKnownNodeCatalog({
+      pairedDevices: [
+        {
+          deviceId: "legacy-mac",
+          publicKey: "legacy-public-key",
+          displayName: "Peter's Mac Studio",
+          clientId: "clawdbot-macos",
+          role: "node",
+          roles: ["node"],
+          tokens: {
+            node: {
+              token: "legacy-token",
+              role: "node",
+              scopes: [],
+              createdAtMs: 1,
+              revokedAtMs: 2,
+            },
+          },
+          createdAtMs: 1,
+          approvedAtMs: 1,
+        },
+        {
+          deviceId: "current-mac",
+          publicKey: "current-public-key",
+          displayName: "Peter's Mac Studio",
+          clientId: "openclaw-macos",
+          clientMode: "node",
+          role: "node",
+          roles: ["node"],
+          tokens: {
+            node: {
+              token: "current-token",
+              role: "node",
+              scopes: [],
+              createdAtMs: 1,
+            },
+          },
+          createdAtMs: 1,
+          approvedAtMs: 1,
+        },
+      ],
+      pairedNodes: [],
+      connectedNodes: [
+        {
+          nodeId: "current-mac",
+          connId: "conn-1",
+          client: {} as never,
+          displayName: "Live Mac",
+          platform: "macos",
+          declaredCaps: ["screen"],
+          caps: ["screen"],
+          declaredCommands: ["screen.snapshot"],
+          commands: ["screen.snapshot"],
+          connectedAtMs: 123,
+        },
+      ],
+    });
+
+    const nodes = listKnownNodes(catalog);
+    expect(nodes.map((node) => node.nodeId)).toEqual(["current-mac"]);
+    expect(nodes[0]?.clientId).toBe("openclaw-macos");
+    expect(nodes[0]?.paired).toBe(true);
+    expect(nodes[0]?.connected).toBe(true);
   });
 
   it("builds one merged node view for paired and live state", () => {
