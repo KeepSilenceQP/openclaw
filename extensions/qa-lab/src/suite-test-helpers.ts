@@ -2,7 +2,6 @@ import { readQaBootstrapScenarioCatalog } from "./scenario-catalog.js";
 
 type QaSuiteTestScenario = ReturnType<typeof readQaBootstrapScenarioCatalog>["scenarios"][number];
 
-/** Build a minimal QA suite scenario with optional runtime/config overrides. */
 export function makeQaSuiteTestScenario(
   id: string,
   params: {

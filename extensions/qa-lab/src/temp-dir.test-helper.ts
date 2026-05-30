@@ -4,7 +4,6 @@ import {
   type TempWorkspace,
 } from "openclaw/plugin-sdk/temp-path";
 
-/** Creates a test harness for allocating and cleaning temporary directories. */
 export function createTempDirHarness() {
   const tempDirs: TempWorkspace[] = [];
 

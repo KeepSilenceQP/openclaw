@@ -94,7 +94,6 @@ function createMockAnthropicMessagesProvider(baseUrl: string): ModelProviderConf
   };
 }
 
-/** Creates OpenAI and Anthropic-compatible provider configs pointed at a mock base URL. */
 export function createMockProviderMap(primaryProviderId: string, providerBaseUrl: string) {
   const primaryProvider = createMockOpenAiResponsesProvider(providerBaseUrl);
   return {

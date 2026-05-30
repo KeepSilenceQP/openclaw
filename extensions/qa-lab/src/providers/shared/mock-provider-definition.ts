@@ -13,7 +13,6 @@ function mockModelRef(providerId: string, alternate?: boolean) {
   return `${providerId}/${alternate ? "gpt-5.5-alt" : "gpt-5.5"}`;
 }
 
-/** Builds a QA provider definition backed by the local deterministic mock server. */
 export function createMockQaProviderDefinition(
   params: MockQaProviderDefinitionParams,
 ): QaProviderDefinition {

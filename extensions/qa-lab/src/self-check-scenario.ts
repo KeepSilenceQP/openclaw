@@ -1,7 +1,6 @@
 import { extractQaToolPayload } from "./extract-tool-payload.js";
 import type { QaScenarioDefinition } from "./scenario.js";
 
-/** Creates the synthetic self-check scenario run by the QA Lab smoke command. */
 export function createQaSelfCheckScenario(options?: {
   waitTimeoutMs?: number;
 }): QaScenarioDefinition {
