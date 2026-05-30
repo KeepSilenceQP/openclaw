@@ -1,4 +1,3 @@
-// extensions/zalouser/src test helpers helpers and runtime behavior.
 import type { RuntimeEnv } from "../runtime-api.js";
 import type { ResolvedZalouserAccount } from "./types.js";
 

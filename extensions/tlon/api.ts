@@ -1,4 +1,3 @@
-// extensions/tlon api helpers and runtime behavior.
 /** Re-exported tlon plugin public API. */
 export {
   createDedupeCache,

@@ -1,4 +1,3 @@
-// extensions/lmstudio memory embedding adapter helpers and runtime behavior.
 import {
   sanitizeEmbeddingCacheHeaders,
   type MemoryEmbeddingProviderAdapter,

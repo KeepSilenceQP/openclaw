@@ -1,4 +1,3 @@
-// extensions/tlon/src/monitor history helpers and runtime behavior.
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime";
 import { asRecord, extractMessageText, formatErrorMessage } from "./utils.js";
 

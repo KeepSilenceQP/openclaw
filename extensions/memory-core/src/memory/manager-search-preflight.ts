@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager search preflight helpers and runtime behavior.
 export function resolveMemorySearchPreflight(params: {
   query: string;
   hasIndexedContent: boolean;

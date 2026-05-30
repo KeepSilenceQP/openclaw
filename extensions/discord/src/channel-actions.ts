@@ -1,4 +1,3 @@
-// extensions/discord/src channel actions helpers and runtime behavior.
 import { createUnionActionGate } from "openclaw/plugin-sdk/channel-actions";
 import type {
   ChannelMessageActionAdapter,

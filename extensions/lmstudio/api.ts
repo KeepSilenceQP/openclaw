@@ -1,4 +1,3 @@
-// extensions/lmstudio api helpers and runtime behavior.
 /** Re-exported lmstudio plugin public API. */
 export {
   buildLmstudioAuthHeaders,

@@ -1,4 +1,3 @@
-// extensions/tlon/src/monitor cites helpers and runtime behavior.
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime";
 import { asRecord, extractCites, extractMessageText, type ParsedCite } from "./utils.js";
 

@@ -1,4 +1,3 @@
-// extensions/lmstudio/src embedding provider helpers and runtime behavior.
 import { createSubsystemLogger } from "openclaw/plugin-sdk/logging-core";
 import {
   buildRemoteBaseUrlPolicy,

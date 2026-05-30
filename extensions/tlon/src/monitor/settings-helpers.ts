@@ -1,4 +1,3 @@
-// extensions/tlon/src/monitor settings helpers helpers and runtime behavior.
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { PendingApproval, TlonSettingsStore } from "../settings.js";
 import { normalizeShip } from "../targets.js";

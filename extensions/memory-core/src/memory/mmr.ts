@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory mmr helpers and runtime behavior.
 import { jaccardSimilarity, textSimilarity, tokenize } from "./tokenize.js";
 
 /**

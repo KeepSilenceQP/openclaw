@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory provider adapters helpers and runtime behavior.
 import fsSync from "node:fs";
 import {
   createLocalEmbeddingProvider,

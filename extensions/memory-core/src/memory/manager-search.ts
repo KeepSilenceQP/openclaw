@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager search helpers and runtime behavior.
 import type { DatabaseSync } from "node:sqlite";
 import { truncateUtf16Safe } from "openclaw/plugin-sdk/memory-core-host-engine-foundation";
 import {

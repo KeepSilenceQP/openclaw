@@ -1,4 +1,3 @@
-// extensions/minimax onboard helpers and runtime behavior.
 import {
   applyAgentDefaultModelPrimary,
   applyOnboardAuthAgentModelsAndProviders,

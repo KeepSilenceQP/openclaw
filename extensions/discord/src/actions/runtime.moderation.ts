@@ -1,4 +1,3 @@
-// extensions/discord/src/actions runtime moderation helpers and runtime behavior.
 import type { AgentToolResult } from "openclaw/plugin-sdk/agent-core";
 import {
   type ActionGate,

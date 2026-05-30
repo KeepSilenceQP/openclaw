@@ -1,4 +1,3 @@
-// extensions/discord/src/actions runtime presence helpers and runtime behavior.
 import type { AgentToolResult } from "openclaw/plugin-sdk/agent-core";
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { Activity, UpdatePresenceData } from "../internal/gateway.js";

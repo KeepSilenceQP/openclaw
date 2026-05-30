@@ -1,4 +1,3 @@
-// extensions/discord runtime api monitor helpers and runtime behavior.
 export {
   allowListMatches,
   buildDiscordMediaPayload,

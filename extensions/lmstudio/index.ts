@@ -1,4 +1,3 @@
-// extensions/lmstudio index helpers and runtime behavior.
 import {
   definePluginEntry,
   type OpenClawPluginApi,

@@ -1,4 +1,3 @@
-// extensions/discord/src send messages helpers and runtime behavior.
 import type { APIChannel, APIMessage } from "discord-api-types/v10";
 import { ChannelType } from "discord-api-types/v10";
 import {

@@ -39,7 +39,6 @@ function getBundledChannelSetupPromotionSurface(
   return asPromotionSurface(getBundledChannelPlugin(channelKey)?.setup);
 }
 
-/** Reused helper for should Move Single Account Channel Key behavior in src/channels/plugins. */
 export function shouldMoveSingleAccountChannelKey(params: {
   channelKey: string;
   key: string;
@@ -62,7 +61,6 @@ export function shouldMoveSingleAccountChannelKey(params: {
   return false;
 }
 
-/** Reused helper for resolve Single Account Keys To Move behavior in src/channels/plugins. */
 export function resolveSingleAccountKeysToMove(params: {
   channelKey: string;
   channel: Record<string, unknown>;
@@ -105,7 +103,6 @@ export function resolveSingleAccountKeysToMove(params: {
   return keysToMove.filter((key) => namedAccountPromotionKeys.includes(key));
 }
 
-/** Reused helper for resolve Single Account Promotion Target behavior in src/channels/plugins. */
 export function resolveSingleAccountPromotionTarget(params: {
   channelKey: string;
   channel: ChannelSectionBase;

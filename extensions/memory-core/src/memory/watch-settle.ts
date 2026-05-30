@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory watch settle helpers and runtime behavior.
 import fsSync from "node:fs";
 import path from "node:path";
 

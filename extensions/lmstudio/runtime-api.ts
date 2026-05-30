@@ -1,4 +1,3 @@
-// extensions/lmstudio runtime api helpers and runtime behavior.
 /** Re-exported lmstudio plugin public API. */
 export {
   LMSTUDIO_DEFAULT_API_KEY_ENV_VAR,

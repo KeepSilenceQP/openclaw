@@ -1,4 +1,3 @@
-// extensions/discord/src/actions runtime messaging messages helpers and runtime behavior.
 import {
   jsonResult,
   readPositiveIntegerParam,

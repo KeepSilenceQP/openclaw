@@ -1,4 +1,3 @@
-// extensions/discord/src outbound components helpers and runtime behavior.
 import type { ChannelOutboundAdapter } from "openclaw/plugin-sdk/channel-send-result";
 import { readDiscordComponentSpec, type DiscordComponentMessageSpec } from "./components.js";
 

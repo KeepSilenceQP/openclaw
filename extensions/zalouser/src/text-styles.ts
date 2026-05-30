@@ -1,4 +1,3 @@
-// extensions/zalouser/src text styles helpers and runtime behavior.
 import { TextStyle, type Style } from "./zca-constants.js";
 
 const ESCAPE_SENTINEL_START = "\u0001";

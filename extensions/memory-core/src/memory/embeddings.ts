@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory embeddings helpers and runtime behavior.
 import {
   getEmbeddingProvider,
   type EmbeddingProviderAdapter,

@@ -1,4 +1,3 @@
-// extensions/discord/src normalize helpers and runtime behavior.
 import { parseDiscordTarget } from "./target-parsing.js";
 
 export function normalizeDiscordMessagingTarget(raw: string): string | undefined {

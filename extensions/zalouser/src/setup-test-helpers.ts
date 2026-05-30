@@ -1,4 +1,3 @@
-// extensions/zalouser/src setup test helpers helpers and runtime behavior.
 import { createScopedDmSecurityResolver } from "openclaw/plugin-sdk/channel-config-helpers";
 import type { OpenClawConfig } from "../runtime-api.js";
 import {
