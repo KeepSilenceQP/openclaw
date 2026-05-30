@@ -1,4 +1,3 @@
-// CLI respawn planner that applies required Node flags and startup TLS env once.
 import { spawn, type ChildProcess } from "node:child_process";
 import path from "node:path";
 import { resolveNodeStartupTlsEnvironment } from "./bootstrap/node-startup-env.js";

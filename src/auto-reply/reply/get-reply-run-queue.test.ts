@@ -1,4 +1,3 @@
-// Coverage for queued get-reply run behavior.
 import { describe, expect, it, vi } from "vitest";
 import { resolvePreparedReplyQueueState } from "./get-reply-run-queue.js";
 

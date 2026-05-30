@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor gateway plugin test behavior.
 import { EventEmitter } from "node:events";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 import { DISCORD_GATEWAY_TRANSPORT_ACTIVITY_EVENT } from "./gateway-handle.js";

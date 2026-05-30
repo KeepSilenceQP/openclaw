@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor reply context test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createMatrixReplyContextResolver, summarizeMatrixReplyEvent } from "./reply-context.js";
 import { createPollStartEvent } from "./test-events.js";

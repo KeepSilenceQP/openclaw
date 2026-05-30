@@ -1,4 +1,3 @@
-// Maintains an in-memory view of known gateways/nodes for local presence UIs.
 import { spawnSync } from "node:child_process";
 import os from "node:os";
 import {

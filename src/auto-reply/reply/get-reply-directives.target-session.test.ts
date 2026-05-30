@@ -1,4 +1,3 @@
-// Coverage for target session directive behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { SessionEntry } from "../../config/sessions.js";
 import type { TemplateContext } from "../templating.js";

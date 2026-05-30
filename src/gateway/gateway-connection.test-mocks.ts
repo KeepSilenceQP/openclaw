@@ -1,4 +1,3 @@
-// Shared Vitest mocks for gateway connection tests.
 import { vi, type Mock } from "vitest";
 
 type TestMock<TArgs extends unknown[] = unknown[], TResult = unknown> = Mock<

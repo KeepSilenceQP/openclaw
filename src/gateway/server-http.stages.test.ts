@@ -1,4 +1,3 @@
-// Tests gateway server http stages test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { runGatewayHttpRequestStages } from "./server-http.js";
 

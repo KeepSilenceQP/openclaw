@@ -1,4 +1,3 @@
-// Tests ui/src/ui/e2e chat flow e2e test behavior.
 import { chromium, type Browser } from "playwright";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import {

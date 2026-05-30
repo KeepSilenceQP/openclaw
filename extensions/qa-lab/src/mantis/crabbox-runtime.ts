@@ -1,4 +1,3 @@
-// extensions/qa-lab/src/mantis crabbox runtime helpers and runtime behavior.
 import { spawn, type SpawnOptions } from "node:child_process";
 import path from "node:path";
 import { pathExists } from "openclaw/plugin-sdk/security-runtime";

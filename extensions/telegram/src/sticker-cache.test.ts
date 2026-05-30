@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src sticker cache test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as stickerCache from "./sticker-cache-store.js";
 

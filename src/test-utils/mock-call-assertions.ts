@@ -1,4 +1,3 @@
-// Vitest mock call inspection helpers with clearer assertion failures.
 import { expect } from "vitest";
 
 /** Returns a mock call by index or throws an explicit missing-call error. */

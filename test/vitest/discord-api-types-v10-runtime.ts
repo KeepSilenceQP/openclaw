@@ -1,4 +1,3 @@
-// Discord API runtime facade exposes CJS enum constants to ESM tests.
 import { createRequire } from "node:module";
 import type * as DiscordApiTypes from "discord-api-types/v10";
 

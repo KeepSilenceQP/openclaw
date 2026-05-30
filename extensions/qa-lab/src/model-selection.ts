@@ -1,11 +1,9 @@
-// QA Lab model-selection helpers normalize provider mode and model references.
 import {
   DEFAULT_QA_LIVE_PROVIDER_MODE,
   getQaProvider,
   type QaProviderModeInput,
 } from "./providers/index.js";
 
-/** QA provider mode types shared by CLI options and suite runtime selection. */
 export type { QaProviderMode, QaProviderModeInput } from "./providers/index.js";
 
 /** Primary and alternate model refs used by parity and fast-mode checks. */
@@ -14,7 +12,6 @@ export type QaModelSelection = {
   alternateModel: string;
 };
 
-/** Provider-mode normalizer re-exported for QA Lab commands. */
 export { normalizeQaProviderMode } from "./providers/index.js";
 
 /** Returns the default model for a QA provider mode and optional alternate lane. */

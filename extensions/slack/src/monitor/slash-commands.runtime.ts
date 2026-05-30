@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/slack/src/monitor slash commands runtime behavior.
 import {
   buildCommandTextFromArgs as buildCommandTextFromArgsImpl,
   findCommandByNativeName as findCommandByNativeNameImpl,

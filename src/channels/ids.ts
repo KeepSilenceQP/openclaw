@@ -1,4 +1,3 @@
-// Canonical chat channel ids and aliases from bundled channel metadata.
 import { GENERATED_BUNDLED_CHANNEL_CONFIG_METADATA } from "../config/bundled-channel-config-metadata.generated.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { listBundledChannelCatalogEntries } from "./bundled-channel-catalog-read.js";

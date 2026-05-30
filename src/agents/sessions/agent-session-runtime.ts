@@ -432,7 +432,6 @@ export async function createAgentSessionRuntime(
   );
 }
 
-/** Runtime construction types re-exported with the AgentSession runtime factory. */
 export {
   type AgentSessionRuntimeDiagnostic,
   type AgentSessionServices,

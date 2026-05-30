@@ -1,5 +1,4 @@
 // Executes individual media-understanding model entries, covering provider
-// calls, CLI commands, auth resolution, and decision summaries.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

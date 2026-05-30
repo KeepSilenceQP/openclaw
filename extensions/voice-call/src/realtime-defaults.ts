@@ -1,4 +1,3 @@
-// Default realtime voice-call instructions keep phone replies short and route deeper work to the agent.
 import { REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME } from "openclaw/plugin-sdk/realtime-voice";
 
 /** Baseline system prompt for the phone-call realtime voice interface. */

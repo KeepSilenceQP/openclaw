@@ -1,5 +1,3 @@
-// Telephony audio helpers adapt realtime voice PCM into Twilio-sized mu-law frames.
-/** Re-export SDK audio conversion helpers used by the voice-call transport. */
 export { convertPcmToMulaw8k, resamplePcmTo8k } from "openclaw/plugin-sdk/realtime-voice";
 
 /**

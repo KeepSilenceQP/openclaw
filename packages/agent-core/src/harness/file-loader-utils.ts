@@ -1,4 +1,3 @@
-// Shared helpers for loading harness files from abstract execution environments.
 import { parse } from "yaml";
 import { type ExecutionEnv, type FileInfo, type Result, toError } from "./types.js";
 

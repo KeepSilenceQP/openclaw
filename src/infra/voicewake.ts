@@ -1,4 +1,3 @@
-// Stores voice wake trigger words in state settings.
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";

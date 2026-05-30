@@ -1,4 +1,3 @@
-// Pairing store callback types shared by channel plugins and pairing commands.
 import type { ChannelId } from "../channels/plugins/channel-id.types.js";
 import type { ChannelPairingAdapter } from "../channels/plugins/pairing.types.js";
 

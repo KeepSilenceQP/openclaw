@@ -1,4 +1,3 @@
-// Temporary fixture-suite directory manager for tests that create case folders.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

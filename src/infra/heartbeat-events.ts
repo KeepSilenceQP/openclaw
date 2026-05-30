@@ -1,5 +1,4 @@
 // Process-wide heartbeat event state.
-// UI/status listeners use this singleton to observe the latest heartbeat outcome.
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import { notifyListeners, registerListener } from "../shared/listeners.js";
 

@@ -1,4 +1,3 @@
-// Produces stable redacted hashes for identifiers that should not be logged raw.
 import crypto from "node:crypto";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

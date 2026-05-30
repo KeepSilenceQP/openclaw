@@ -1,4 +1,3 @@
-// Tests extensions/bonjour/src errors test behavior.
 import { describe, expect, it } from "vitest";
 import { formatBonjourError } from "./errors.js";
 

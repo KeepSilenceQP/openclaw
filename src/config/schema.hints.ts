@@ -1,4 +1,3 @@
-// Config UI hint generation, sensitivity tagging, and schema path traversal.
 import {
   isSensitiveUrlConfigPath,
   SENSITIVE_URL_HINT_TAG,
@@ -21,7 +20,6 @@ function getLog(): ReturnType<typeof createSubsystemLogger> {
   return log;
 }
 
-/** Public config hint shapes consumed by UI and docs surfaces. */
 export type { ConfigUiHint, ConfigUiHints } from "../shared/config-ui-hints-types.js";
 
 const GROUP_LABELS: Record<string, string> = {
@@ -114,7 +112,6 @@ export function isPluginOwnedChannelHintPath(path: string): boolean {
   return !isKernelOwnedChannelHintPath(path);
 }
 
-/** Re-export sensitive-path detection for config hint callers. */
 export { isSensitiveConfigPath };
 
 /** Builds static labels, help text, placeholders, and derived tags for config paths. */
@@ -320,5 +317,4 @@ export const testApi = {
   collectMatchingSchemaPaths,
   mapSensitivePaths,
 };
-/** Test-only access to schema traversal helpers. */
 export { testApi as __test__ };

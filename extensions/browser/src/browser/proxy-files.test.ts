@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser proxy files test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { MEDIA_MAX_BYTES } from "openclaw/plugin-sdk/media-runtime";

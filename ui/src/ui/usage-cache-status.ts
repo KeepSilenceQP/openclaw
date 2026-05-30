@@ -1,4 +1,3 @@
-// Usage-cache status copy helpers for the usage tab refresh indicator.
 import { t } from "../i18n/index.ts";
 import type { SessionsUsageResult } from "./usage-types.ts";
 

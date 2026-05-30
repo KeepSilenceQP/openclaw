@@ -1,4 +1,3 @@
-// Tests packages/agent-core/src/harness/session jsonl storage test behavior.
 import { describe, expect, it } from "vitest";
 import { ok, type FileSystem } from "../types.js";
 import { JsonlSessionStorage, loadJsonlSessionMetadata } from "./jsonl-storage.js";

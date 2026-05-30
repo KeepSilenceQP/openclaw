@@ -1,5 +1,4 @@
 // Plugin activation input assembly. This keeps raw config, auto-enabled config,
-// normalized plugin state, and bundled compat overrides in one load-time shape.
 import { applyPluginAutoEnable } from "../config/plugin-auto-enable.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {

@@ -1,4 +1,3 @@
-// Runtime boundary for plugin-provided web content extractors.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { createConfigScopedPromiseLoader } from "../plugins/plugin-cache-primitives.js";
 import type {

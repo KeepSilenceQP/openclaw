@@ -1,4 +1,3 @@
-// Moonshot provider discovery descriptor used by static catalog probing.
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 import { buildMoonshotProvider } from "./provider-catalog.js";
 

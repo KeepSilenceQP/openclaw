@@ -1,4 +1,3 @@
-// Resolves media references from model/tool payloads into safe local paths or sandbox-relative paths.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { safeFileURLToPath } from "../infra/local-file-access.js";

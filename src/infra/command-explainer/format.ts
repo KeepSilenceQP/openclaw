@@ -1,4 +1,3 @@
-// Formats parsed command explanations into exec approval span metadata.
 import type { ExecApprovalCommandSpan } from "../exec-approvals.js";
 import { normalizeExecutableToken } from "../exec-wrapper-tokens.js";
 import {

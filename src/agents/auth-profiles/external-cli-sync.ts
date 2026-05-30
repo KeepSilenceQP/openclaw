@@ -19,7 +19,6 @@ import {
 } from "./oauth-shared.js";
 import type { AuthProfileStore, OAuthCredential } from "./types.js";
 
-/** OAuth adoption and comparison helpers shared with external CLI sync. */
 export {
   areOAuthCredentialsEquivalent,
   hasUsableOAuthCredential,

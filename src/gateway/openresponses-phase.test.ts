@@ -1,4 +1,3 @@
-// Tests gateway openresponses phase test behavior.
 import { describe, expect, it } from "vitest";
 import { CreateResponseBodySchema, OutputItemSchema } from "./open-responses.schema.js";
 import { buildAgentPrompt } from "./openresponses-prompt.js";

@@ -1,4 +1,3 @@
-// Tests security audit probe failure test behavior.
 import { describe, expect, it } from "vitest";
 import { collectDeepProbeFindings } from "./audit-deep-probe-findings.js";
 

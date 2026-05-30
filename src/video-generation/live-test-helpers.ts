@@ -1,4 +1,3 @@
-// Live-test helpers for selecting video models, auth stores, and provider-specific lanes.
 import type { OpenClawConfig } from "../config/types.js";
 import {
   parseLiveCsvFilter,
@@ -9,7 +8,6 @@ import {
 } from "../media-generation/live-test-helpers.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
-/** Re-export shared live-test parsers so video tests use the same env syntax as media generation. */
 export { parseProviderModelMap, redactLiveApiKey };
 
 /** Default provider/model refs used when live video tests are enabled without explicit overrides. */

@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src topic name cache test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   clearTopicNameCache,

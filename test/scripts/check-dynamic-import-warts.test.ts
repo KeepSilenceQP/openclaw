@@ -1,4 +1,3 @@
-// Tests test/scripts check dynamic import warts test behavior.
 import { describe, expect, it } from "vitest";
 import { findDynamicImportAdvisories } from "../../scripts/check-dynamic-import-warts.mjs";
 

@@ -1,4 +1,3 @@
-// Tests extensions/openai realtime transcription provider test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildOpenAIRealtimeTranscriptionProvider } from "./realtime-transcription-provider.js";
 

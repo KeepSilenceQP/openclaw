@@ -1,4 +1,3 @@
-// Tests model-catalog manifest planner test behavior.
 import { describe, expect, it } from "vitest";
 import { planManifestModelCatalogRows, planManifestModelCatalogSuppressions } from "./index.js";
 

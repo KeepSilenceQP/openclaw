@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra surface model catalogs test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { resetDeepInfraModelCacheForTest } from "./provider-models.js";
 import {

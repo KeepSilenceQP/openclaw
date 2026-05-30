@@ -1,4 +1,3 @@
-// Tests extensions/anthropic index test behavior.
 import type {
   ProviderResolveDynamicModelContext,
   ProviderRuntimeModel,

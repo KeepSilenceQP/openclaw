@@ -1,4 +1,3 @@
-// Tests gateway handshake timeouts test behavior.
 import { describe, expect, test } from "vitest";
 import { MAX_SAFE_TIMEOUT_DELAY_MS } from "../utils/timer-delay.js";
 import {

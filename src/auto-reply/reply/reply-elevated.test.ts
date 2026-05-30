@@ -1,4 +1,3 @@
-// Coverage for elevated reply command handling.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import type { MsgContext } from "../templating.js";

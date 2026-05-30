@@ -1,4 +1,3 @@
-// Tests extensions/zalouser/src tool test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { sendImageZalouser, sendLinkZalouser, sendMessageZalouser } from "./send.js";
 import { createZalouserTool, executeZalouserTool } from "./tool.js";

@@ -1,4 +1,3 @@
-// Shared test harness for sandbox media staging scenarios.
 import { join } from "node:path";
 import { withTempHome as withTempHomeBase } from "openclaw/plugin-sdk/test-env";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

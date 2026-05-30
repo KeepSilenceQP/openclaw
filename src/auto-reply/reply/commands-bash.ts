@@ -1,4 +1,3 @@
-// Chat command handler for shell command execution.
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import { handleBashChatCommand } from "./bash-command.js";
 import { rejectUnauthorizedCommand } from "./command-gates.js";

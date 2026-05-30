@@ -1,4 +1,3 @@
-// QA Lab harness parity helpers compare prompt, transcript, and tool-call drift.
 import { createHash } from "node:crypto";
 import type {
   RuntimeId,

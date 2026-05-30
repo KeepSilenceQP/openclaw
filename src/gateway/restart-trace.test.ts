@@ -1,4 +1,3 @@
-// Tests gateway restart trace test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectGatewayProcessMemoryUsageMb,

@@ -1,4 +1,3 @@
-// Chat avatar renderer for user, assistant, tool, and unknown message roles.
 import { html } from "lit";
 import type { AssistantIdentity } from "../assistant-identity.ts";
 import {

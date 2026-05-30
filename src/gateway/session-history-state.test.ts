@@ -1,4 +1,3 @@
-// Tests gateway session history state test behavior.
 import { createHash } from "node:crypto";
 import { describe, expect, test, vi } from "vitest";
 import { HEARTBEAT_PROMPT } from "../auto-reply/heartbeat.js";

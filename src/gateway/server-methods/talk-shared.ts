@@ -1,5 +1,4 @@
 // Shared Gateway talk helpers. Builds realtime voice/transcription config,
-// launch overrides, browser guards, and room event delivery payloads.
 import { ErrorCodes } from "../../../packages/gateway-protocol/src/index.js";
 import {
   getVoiceProviderConfig,

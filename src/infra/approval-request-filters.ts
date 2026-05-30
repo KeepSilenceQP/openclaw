@@ -1,4 +1,3 @@
-// Applies agent and session filters to approval request metadata.
 import { parseAgentSessionKey } from "../routing/session-key.js";
 import { compileSafeRegex, testRegexWithBoundedInput } from "../security/safe-regex.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";

@@ -1,4 +1,3 @@
-// QA Lab gateway child helpers launch isolated OpenClaw gateways for scenarios.
 import { spawn, type ChildProcess } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { createWriteStream, existsSync, type WriteStream } from "node:fs";
@@ -49,7 +48,6 @@ import { seedQaAgentWorkspace } from "./qa-agent-workspace.js";
 import { buildQaGatewayConfig, type QaThinkingLevel } from "./qa-gateway-config.js";
 import type { QaTransportAdapter } from "./qa-transport.js";
 
-/** CLI backend auth mode type accepted by QA gateway child startup. */
 export type { QaCliBackendAuthMode } from "./providers/env.js";
 const QA_GATEWAY_CHILD_STARTUP_MAX_ATTEMPTS = 5;
 const QA_GATEWAY_CHILD_RPC_STARTUP_TIMEOUT_MS = 30_000;
@@ -1078,5 +1076,4 @@ export async function startQaGatewayChild(params: {
     );
   }
 }
-/** Backward-compatible test seam for gateway-child unit tests. */
 export { testing as __testing };

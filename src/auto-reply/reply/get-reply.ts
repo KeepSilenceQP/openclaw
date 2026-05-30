@@ -1,4 +1,3 @@
-// Main get-reply orchestration entrypoint.
 import fs from "node:fs/promises";
 import {
   resolveAutoFallbackPrimaryProbe,

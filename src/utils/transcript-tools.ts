@@ -1,4 +1,3 @@
-// Transcript inspection helpers for tool-call names and tool-result counts.
 import {
   normalizeOptionalLowercaseString,
   normalizeOptionalString,

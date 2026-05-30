@@ -1,4 +1,3 @@
-// Projects planned tools into the compact descriptor shape sent to model adapters.
 import type { JsonObject, ToolPlanEntry } from "./types.js";
 
 /** Provider-facing descriptor subset used after planning and schema normalization. */

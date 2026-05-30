@@ -1,4 +1,3 @@
-// Device bootstrap profile normalization and operator handoff scope rules.
 import { normalizeDeviceAuthRole, normalizeDeviceAuthScopes } from "./device-auth.js";
 
 /** Normalized bootstrap roles and scopes granted during device pairing. */

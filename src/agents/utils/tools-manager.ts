@@ -1,4 +1,3 @@
-// Managed binary discovery and on-demand installer for bundled CLI helpers.
 import { type SpawnSyncReturns, spawnSync } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import {

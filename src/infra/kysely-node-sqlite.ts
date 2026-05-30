@@ -1,4 +1,3 @@
-// Kysely dialect backed by Node's synchronous node:sqlite DatabaseSync API.
 import type { DatabaseSync, SQLInputValue } from "node:sqlite";
 import type {
   DatabaseConnection,

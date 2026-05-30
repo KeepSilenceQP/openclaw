@@ -74,13 +74,9 @@ import type {
   WriteToolInput,
 } from "../tools/tool-contracts.js";
 
-/** Exec option/result types exposed to extension command handlers. */
 export type { ExecOptions, ExecResult } from "../exec.js";
-/** System prompt build options exposed to before-agent-start hooks. */
 export type { BuildSystemPromptOptions } from "../system-prompt.js";
-/** Tool result/update/execution-mode types exposed to custom tools. */
 export type { AgentToolResult, AgentToolUpdateCallback, ToolExecutionMode };
-/** Keybinding types exposed to custom editors and shortcuts. */
 export type { AppKeybinding, KeybindingsManager } from "../keybindings.js";
 
 /** OAuth credential blob persisted for extension-registered providers. */

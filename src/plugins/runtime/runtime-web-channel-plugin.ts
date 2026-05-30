@@ -1,4 +1,3 @@
-// Lazy runtime facade for web-channel plugin light/heavy boundary modules.
 import type { AgentToolResult } from "../../agents/runtime/index.js";
 import type { ChannelAgentTool } from "../../channels/plugins/types.core.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

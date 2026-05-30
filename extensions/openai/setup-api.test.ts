@@ -1,4 +1,3 @@
-// Tests extensions/openai setup api test behavior.
 import { describe, expect, it } from "vitest";
 import { buildOpenAISetupProvider } from "./setup-api.js";
 

@@ -1,4 +1,3 @@
-// Tests test/scripts qa otel smoke test behavior.
 import { spawnSync } from "node:child_process";
 import { gzipSync } from "node:zlib";
 import { describe, expect, it } from "vitest";

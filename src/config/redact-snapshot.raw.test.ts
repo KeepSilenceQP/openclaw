@@ -1,4 +1,3 @@
-// Tests config redact snapshot raw test behavior.
 import { describe, expect, it } from "vitest";
 import { REDACTED_SENTINEL } from "./redact-snapshot.js";
 import { replaceSensitiveValuesInRaw } from "./redact-snapshot.raw.js";

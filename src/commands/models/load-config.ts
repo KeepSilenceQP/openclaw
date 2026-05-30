@@ -1,4 +1,3 @@
-// Loads model command config with command-scoped secret resolution.
 import { resolveCommandConfigWithSecrets } from "../../cli/command-config-resolution.js";
 import type { RuntimeEnv } from "../../runtime.js";
 import {

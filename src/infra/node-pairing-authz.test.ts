@@ -1,4 +1,3 @@
-// Tests infra node pairing authz test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveNodePairApprovalScopes } from "./node-pairing-authz.js";
 

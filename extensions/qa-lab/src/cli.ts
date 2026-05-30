@@ -1,4 +1,3 @@
-// QA Lab CLI registration wires private QA commands onto the OpenClaw CLI.
 import type { Command } from "commander";
 import { parseStrictPositiveInteger } from "openclaw/plugin-sdk/number-runtime";
 import { collectString } from "./cli-options.js";

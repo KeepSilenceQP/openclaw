@@ -1,4 +1,3 @@
-// Applies fs-safe defaults and exposes atomic file/directory replacement helpers.
 import "./fs-safe-defaults.js";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -8,7 +7,6 @@ import {
   type MovePathWithCopyFallbackOptions as BaseMovePathWithCopyFallbackOptions,
 } from "@openclaw/fs-safe/atomic";
 
-/** Atomic replacement primitives and result types from fs-safe. */
 export {
   replaceDirectoryAtomic,
   replaceFileAtomicSync,

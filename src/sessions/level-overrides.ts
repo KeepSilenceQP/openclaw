@@ -1,4 +1,3 @@
-// Parses and applies per-session verbose and trace level overrides.
 import {
   normalizeTraceLevel,
   normalizeVerboseLevel,

@@ -1,4 +1,3 @@
-// Tests media-generation provider capabilities contract test behavior.
 import { describe, expect, it } from "vitest";
 import { BUNDLED_PLUGIN_CONTRACT_SNAPSHOTS } from "../plugins/contracts/inventory/bundled-capability-metadata.js";
 

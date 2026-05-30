@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src agentic parity report test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildQaAgenticParityComparison,

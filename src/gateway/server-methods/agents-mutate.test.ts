@@ -1,4 +1,3 @@
-// Tests gateway/server-methods agents mutate test behavior.
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { FsSafeError } from "../../infra/fs-safe.js";
 /* ------------------------------------------------------------------ */

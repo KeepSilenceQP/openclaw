@@ -1,4 +1,3 @@
-// Tests secrets runtime discord surface test behavior.
 import { describe, expect, it } from "vitest";
 import "./runtime-discord.test-support.ts";
 import {

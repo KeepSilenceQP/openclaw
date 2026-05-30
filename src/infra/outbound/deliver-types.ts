@@ -1,5 +1,4 @@
 // Outbound delivery result and failure contracts.
-// Shared by direct channel delivery, queue recovery, and result formatting.
 import type { MessageReceipt } from "../../channels/message/types.js";
 import type { ChannelId } from "../../channels/plugins/channel-id.types.js";
 

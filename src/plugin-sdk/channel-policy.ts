@@ -6,12 +6,10 @@ import type { GroupPolicy } from "../config/types.base.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeStringEntries, uniqueStrings } from "../shared/string-normalization.js";
 import { createScopedDmSecurityResolver } from "./channel-config-helpers.js";
-/** Shared policy warnings and DM/group policy helpers for channel plugins. */
 export type {
   GroupToolPolicyBySenderConfig,
   GroupToolPolicyConfig,
 } from "../config/types.tools.js";
-/** Group-policy warning builders and collector combinators for channel setup/doctor flows. */
 export {
   composeAccountWarningCollectors,
   buildOpenGroupPolicyConfigureRouteAllowlistWarning,
@@ -37,9 +35,7 @@ export {
   projectConfigWarningCollector,
   projectWarningCollector,
 } from "../channels/plugins/group-policy-warnings.js";
-/** Builds DM security policy descriptors scoped to one channel account. */
 export { buildAccountScopedDmSecurityPolicy } from "../channels/plugins/helpers.js";
-/** Group policy resolution helpers for channel config and sender-scoped tool rules. */
 export {
   resolveChannelGroupPolicy,
   resolveChannelGroupRequireMention,
@@ -47,7 +43,6 @@ export {
   resolveToolsBySender,
   type ChannelGroupPolicy,
 } from "../config/group-policy.js";
-/** DM allowlist compatibility helpers shared by channel plugins. */
 export {
   DM_GROUP_ACCESS_REASON,
   readStoreAllowFromForDmPolicy,
@@ -56,13 +51,11 @@ export {
   resolveEffectiveAllowFromLists,
   resolveOpenDmAllowlistAccess,
 } from "./channel-access-compat.js";
-/** Runtime group access evaluators for routes and senders. */
 export {
   evaluateGroupRouteAccessForPolicy,
   evaluateSenderGroupAccessForPolicy,
   resolveSenderScopedGroupPolicy,
 } from "./group-access.js";
-/** Restrict-senders warning collector for allowlist-backed providers. */
 export { createAllowlistProviderRestrictSendersWarningCollector };
 
 /** Normalizes DM/group allow-from entries into trimmed unique strings. */

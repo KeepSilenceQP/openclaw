@@ -1,4 +1,3 @@
-// Top-level Control UI rendering, tab composition, and quick-settings extraction.
 import { html, nothing } from "lit";
 import { styleMap } from "lit/directives/style-map.js";
 import { t } from "../i18n/index.ts";

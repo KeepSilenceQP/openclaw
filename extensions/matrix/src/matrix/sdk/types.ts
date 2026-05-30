@@ -1,4 +1,3 @@
-// Shared types for extensions/matrix/src/matrix/sdk types behavior.
 import type { MatrixSyncState } from "../sync-state.js";
 import type {
   MatrixVerificationRequestLike,

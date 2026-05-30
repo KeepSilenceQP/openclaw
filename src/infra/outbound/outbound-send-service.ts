@@ -1,5 +1,4 @@
 // Outbound send service shared by message and poll actions.
-// It prefers plugin action handling, then falls back to core send/poll implementations.
 import type { AgentToolResult } from "../../agents/runtime/index.js";
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import type { InboundEventKind } from "../../channels/inbound-event/kind.js";

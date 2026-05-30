@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src auto reply broadcast groups combined test behavior.
 import "./test-helpers.js";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it, vi } from "vitest";

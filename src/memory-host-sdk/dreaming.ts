@@ -1,4 +1,3 @@
-// Memory dreaming defaults, config normalization, and workspace resolution.
 import path from "node:path";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

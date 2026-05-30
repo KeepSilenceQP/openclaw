@@ -1,4 +1,3 @@
-// Tests plugins installed plugin index test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";

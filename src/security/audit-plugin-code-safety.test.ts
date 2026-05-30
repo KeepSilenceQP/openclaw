@@ -1,4 +1,3 @@
-// Tests security audit plugin code safety test behavior.
 import { describe, expect, it } from "vitest";
 import { collectDeepCodeSafetyFindings } from "./audit-deep-code-safety.js";
 

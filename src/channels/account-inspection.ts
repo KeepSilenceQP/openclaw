@@ -1,4 +1,3 @@
-// Channel account inspection helpers for status/configuration views.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   hasConfiguredUnavailableCredentialStatus,

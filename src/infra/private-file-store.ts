@@ -1,5 +1,4 @@
 // Private fs-safe file-store factories.
-// Stores are created with private permissions for credentials and local state.
 import "./fs-safe-defaults.js";
 import {
   fileStore,

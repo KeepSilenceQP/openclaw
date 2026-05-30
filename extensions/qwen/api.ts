@@ -1,4 +1,3 @@
-/** Re-exported qwen plugin public API. */
 export {
   applyQwenNativeStreamingUsageCompat,
   buildQwenDefaultModelDefinition,
@@ -31,7 +30,5 @@ export {
   MODELSTUDIO_STANDARD_GLOBAL_BASE_URL,
   MODELSTUDIO_MODEL_CATALOG,
 } from "./models.js";
-/** Re-exported qwen plugin public API, starting with build Model Studio Provider. */
 export { buildModelStudioProvider, buildQwenProvider } from "./provider-catalog.js";
-/** Re-exported qwen plugin public API, starting with create Qwen Thinking Wrapper. */
 export { createQwenThinkingWrapper, wrapQwenProviderStream } from "./stream.js";

@@ -1,4 +1,3 @@
-// Tracks generated owner display secrets until config write/repair code consumes them.
 import type { OpenClawConfig } from "./types.openclaw.js";
 
 /** Process-local generated owner-display secrets keyed by config path. */

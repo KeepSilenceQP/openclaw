@@ -1,4 +1,3 @@
-// Node exec-host phase helpers for approval, invocation, and result formatting.
 import crypto from "node:crypto";
 import {
   describeInterpreterInlineEval,

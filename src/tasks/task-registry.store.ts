@@ -1,4 +1,3 @@
-// Runtime-configurable persistence and observer seams for the task registry.
 import {
   closeTaskRegistryDatabase,
   deleteTaskAndDeliveryStateFromSqlite,
@@ -14,7 +13,6 @@ import {
 import type { TaskRegistryStoreSnapshot } from "./task-registry.store.types.js";
 import type { TaskDeliveryState, TaskRecord } from "./task-registry.types.js";
 
-/** Re-export the persisted task registry snapshot shape. */
 export type { TaskRegistryStoreSnapshot } from "./task-registry.store.types.js";
 
 /** Storage contract used by the task registry to load/save tasks and delivery state. */

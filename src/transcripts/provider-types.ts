@@ -1,4 +1,3 @@
-// Transcript source provider contracts for live capture and post-hoc imports.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 
 /** Transcript acquisition modes a provider can advertise. */

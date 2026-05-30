@@ -1,4 +1,3 @@
-// Tests extensions/copilot/src replay shim test behavior.
 import { describe, expect, it } from "vitest";
 import {
   classifyResumeFailure,

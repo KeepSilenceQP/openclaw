@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Config docs baseline generator writes or checks config-surface hash artifacts.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { writeConfigDocBaselineArtifacts } from "../src/config/doc-baseline.js";

@@ -1,4 +1,3 @@
-// Tests plugins/contracts plugin sdk index bundle test behavior.
 import fs from "node:fs/promises";
 import { createRequire } from "node:module";
 import path from "node:path";

@@ -1,5 +1,4 @@
 // Durable outbound delivery queue storage.
-// Entries are written before sends and replayed by recovery when delivery outcome is uncertain.
 import path from "node:path";
 import {
   ackJsonDurableQueueEntry,

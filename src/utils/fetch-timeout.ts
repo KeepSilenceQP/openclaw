@@ -1,4 +1,3 @@
-// Fetch timeout helpers that compose AbortSignals and log sanitized timeout context.
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import { resolveSafeTimeoutDelayMs } from "./timer-delay.js";
 

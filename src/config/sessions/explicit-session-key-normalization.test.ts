@@ -1,4 +1,3 @@
-// Tests config/sessions explicit session key normalization test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeExplicitSessionKey } from "./explicit-session-key-normalization.js";
 import { installDiscordSessionKeyNormalizerFixture, makeCtx } from "./session-key.test-helpers.js";

@@ -1,4 +1,3 @@
-// Queue settings normalization from config.
 import type { InboundDebounceByProvider } from "../../../config/types.messages.js";
 import { normalizeOptionalLowercaseString } from "../../../shared/string-coerce.js";
 import {

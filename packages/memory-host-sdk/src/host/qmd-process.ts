@@ -1,4 +1,3 @@
-// QMD CLI probing and bounded process execution helpers.
 import { spawn } from "node:child_process";
 import { statSync } from "node:fs";
 import { resolveSafeTimeoutDelayMs } from "../../../gateway-client/src/timeouts.js";

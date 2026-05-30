@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser request policy test behavior.
 import { describe, expect, it } from "vitest";
 import { isPersistentBrowserProfileMutation } from "./request-policy.js";
 import { matchBrowserUrlPattern } from "./url-pattern.js";

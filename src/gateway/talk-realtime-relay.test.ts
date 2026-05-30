@@ -1,4 +1,3 @@
-// Tests gateway talk realtime relay test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   setActiveEmbeddedRun,

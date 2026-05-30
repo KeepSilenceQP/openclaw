@@ -1,4 +1,3 @@
-// Android gateway tests accept several historical config.get envelope shapes from remote nodes.
 import type { OpenClawConfig } from "../../../src/config/config.js";
 
 function asRecord(value: unknown): Record<string, unknown> {

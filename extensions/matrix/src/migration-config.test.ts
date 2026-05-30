@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src migration config test behavior.
 import path from "node:path";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { withTempHome } from "openclaw/plugin-sdk/test-env";

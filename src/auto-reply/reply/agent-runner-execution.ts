@@ -1,4 +1,3 @@
-// Reply agent execution wrapper for embedded and CLI runtimes.
 import crypto from "node:crypto";
 import {
   hasOutboundReplyContent,

@@ -1,4 +1,3 @@
-// Installed plugin index facade and query helpers.
 import type { OpenClawConfig } from "../config/types.js";
 import { resolveCompatibilityHostVersion } from "../version.js";
 import { normalizePluginsConfig, resolveEffectivePluginActivationState } from "./config-state.js";
@@ -23,13 +22,11 @@ import {
   type RefreshInstalledPluginIndexParams,
 } from "./installed-plugin-index-types.js";
 
-/** Re-export installed plugin index version constants and warning text. */
 export {
   INSTALLED_PLUGIN_INDEX_MIGRATION_VERSION,
   INSTALLED_PLUGIN_INDEX_VERSION,
   INSTALLED_PLUGIN_INDEX_WARNING,
 } from "./installed-plugin-index-types.js";
-/** Re-export installed plugin index record and parameter types. */
 export type {
   InstalledPluginIndex,
   InstalledPluginIndexRecord,
@@ -40,11 +37,8 @@ export type {
   LoadInstalledPluginIndexParams,
   RefreshInstalledPluginIndexParams,
 } from "./installed-plugin-index-types.js";
-/** Re-export install-record extraction from installed plugin indexes. */
 export { extractPluginInstallRecordsFromInstalledPluginIndex } from "./installed-plugin-index-install-records.js";
-/** Re-export installed plugin index invalidation diffing. */
 export { diffInstalledPluginIndexInvalidationReasons } from "./installed-plugin-index-invalidation.js";
-/** Re-export policy hash calculation used for installed plugin index freshness. */
 export { resolveInstalledPluginIndexPolicyHash } from "./installed-plugin-index-policy.js";
 
 function buildInstalledPluginIndex(

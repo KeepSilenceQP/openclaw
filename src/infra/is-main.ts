@@ -1,4 +1,3 @@
-// Detects whether an ESM module is the effective process entrypoint.
 import fs from "node:fs";
 import path from "node:path";
 

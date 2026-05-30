@@ -1,6 +1,5 @@
 // Chat item builder. It normalizes message history, hides heartbeat/tool noise,
 // lifts canvas previews into assistant messages, applies search filtering, and
-// groups visible messages for rendering.
 import type { ChatItem, MessageGroup, NormalizedMessage, ToolCard } from "../types/chat-types.ts";
 import {
   isAssistantHeartbeatAckForDisplay,

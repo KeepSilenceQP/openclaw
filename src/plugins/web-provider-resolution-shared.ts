@@ -1,4 +1,3 @@
-// Shared web-search/web-fetch provider discovery and sorting helpers.
 import { resolveBundledPluginCompatibleLoadValues } from "./activation-context.js";
 import type { PluginLoadOptions } from "./loader.js";
 import { loadManifestMetadataSnapshot } from "./manifest-contract-eligibility.js";

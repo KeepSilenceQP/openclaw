@@ -1,4 +1,3 @@
-// Plugin discovery/control-plane fingerprints for cache invalidation.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { hashJson } from "./installed-plugin-index-hash.js";
 import { resolveInstalledPluginIndexPolicyHash } from "./installed-plugin-index-policy.js";

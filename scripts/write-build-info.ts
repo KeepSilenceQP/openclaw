@@ -1,4 +1,3 @@
-// Build-info writer records package version, git commit, and build timestamp for dist artifacts.
 import { execSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";

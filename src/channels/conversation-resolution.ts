@@ -1,4 +1,3 @@
-// Conversation target resolution for command and inbound channel contexts.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   resolveTargetPrefixedChannel,

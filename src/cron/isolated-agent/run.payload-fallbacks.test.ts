@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run payload fallbacks test behavior.
 import { describe, expect, it } from "vitest";
 import {
   makeIsolatedAgentTurnJob,

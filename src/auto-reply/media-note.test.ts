@@ -1,4 +1,3 @@
-// Coverage for media note rendering in model-visible prompts.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { getMediaDir } from "../media/store.js";

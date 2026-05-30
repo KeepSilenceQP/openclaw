@@ -1,5 +1,4 @@
 // Media-understanding runtime orchestration for provider/CLI entry selection,
-// attachment caching, and per-capability execution.
 import { constants as fsConstants } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -60,9 +59,7 @@ import type {
   MediaUnderstandingOutput,
   MediaUnderstandingProvider,
 } from "./types.js";
-/** Attachment cache helpers exported for callers that pre-normalize media inputs. */
 export { createMediaAttachmentCache, normalizeMediaAttachments } from "./runner.attachments.js";
-/** Active model type exported with the media-understanding runner facade. */
 export type { ActiveMediaModel } from "./active-model.types.js";
 
 type ProviderRegistry = Map<string, MediaUnderstandingProvider>;

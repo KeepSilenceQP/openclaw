@@ -1,4 +1,3 @@
-// Builds status-all channel overview/detail sections from plugins, config, and gateway state.
 import fs from "node:fs";
 import { sanitizeForLog } from "../../../packages/terminal-core/src/ansi.js";
 import { resolveInspectedChannelAccount } from "../../channels/account-inspection.js";

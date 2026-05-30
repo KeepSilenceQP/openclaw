@@ -1,6 +1,5 @@
 // Public TTS runtime surface for speech providers, user preferences, synthesis
 // fallbacks, and reply-payload attachment. This module keeps channel-facing
-// helpers provider-agnostic while provider plugins own concrete audio backends.
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { resolveChannelTtsVoiceDelivery } from "openclaw/plugin-sdk/channel-targets";
@@ -68,7 +67,6 @@ import {
   type VoiceProviderCandidate,
 } from "../voice-models.js";
 
-/** Re-exported public API for packages/speech-core. */
 export type {
   ResolvedTtsConfig,
   ResolvedTtsModelOverrides,
@@ -2165,5 +2163,4 @@ export const testApi = {
   sanitizeTtsErrorForLog,
 };
 
-/** @deprecated Use `testApi`. */
 export { testApi as _test };

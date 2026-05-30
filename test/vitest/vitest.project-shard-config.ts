@@ -1,4 +1,3 @@
-// Vitest shard config helper wraps shared settings around project lists.
 import { defineConfig } from "vitest/config";
 import { nonIsolatedRunnerPath, sharedVitestConfig } from "./vitest.shared.config.ts";
 

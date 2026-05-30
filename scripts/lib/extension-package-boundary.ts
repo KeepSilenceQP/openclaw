@@ -1,4 +1,3 @@
-// Extension package-boundary helpers define tsconfig path maps and opt-in discovery.
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, posix, resolve } from "node:path";
 import { privateLocalOnlyPluginSdkEntrypoints } from "./plugin-sdk-entries.mjs";

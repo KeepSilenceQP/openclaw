@@ -1,4 +1,3 @@
-// Tests talk output activity tracker test behavior.
 import { describe, expect, it } from "vitest";
 import { createRealtimeVoiceOutputActivityTracker } from "./output-activity-tracker.js";
 

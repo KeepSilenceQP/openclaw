@@ -1,4 +1,3 @@
-// Tests plugins memory embedding providers test behavior.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   clearMemoryEmbeddingProviders,

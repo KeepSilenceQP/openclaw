@@ -1,4 +1,3 @@
-// Channel context resolution for reply command and delivery paths.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { getActivePluginChannelRegistry } from "../../plugins/runtime.js";
 import {

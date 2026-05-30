@@ -1,4 +1,3 @@
-// Typing indicator lifecycle helpers.
 import { createTypingKeepaliveLoop } from "../../channels/typing-lifecycle.js";
 import { createTypingStartGuard } from "../../channels/typing-start-guard.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";

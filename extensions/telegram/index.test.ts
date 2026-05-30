@@ -1,4 +1,3 @@
-// Tests extensions/telegram index test behavior.
 import { assertBundledChannelEntries } from "openclaw/plugin-sdk/channel-test-helpers";
 import { beforeEach, describe, vi } from "vitest";
 import entry from "./index.js";

@@ -1,4 +1,3 @@
-// Tests infra gemini auth test behavior.
 import { describe, expect, it } from "vitest";
 import { parseGeminiAuth } from "./gemini-auth.js";
 

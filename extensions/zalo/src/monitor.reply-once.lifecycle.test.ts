@@ -1,4 +1,3 @@
-// Tests extensions/zalo/src monitor reply once lifecycle test behavior.
 import { withServer } from "openclaw/plugin-sdk/test-env";
 import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { PluginRuntime } from "../runtime-api.js";

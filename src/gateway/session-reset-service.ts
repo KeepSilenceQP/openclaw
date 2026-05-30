@@ -1,4 +1,3 @@
-// Gateway session reset/delete lifecycle cleanup, hooks, and transcript rotation.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

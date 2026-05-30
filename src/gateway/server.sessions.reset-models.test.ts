@@ -1,4 +1,3 @@
-// Tests gateway server sessions reset models test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { expect, test } from "vitest";

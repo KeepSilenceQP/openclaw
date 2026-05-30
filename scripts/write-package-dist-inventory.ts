@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Package dist inventory writer records release package artifact metadata.
-
 import { pathToFileURL } from "node:url";
 import { writePackageDistInventory } from "../src/infra/package-dist-inventory.ts";
 

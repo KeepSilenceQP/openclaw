@@ -1,4 +1,3 @@
-// Tests test/scripts openclaw test state test behavior.
 import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";

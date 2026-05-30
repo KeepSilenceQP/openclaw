@@ -1,4 +1,3 @@
-// Tests infra stale lock file test behavior.
 import { describe, expect, it } from "vitest";
 import { shouldRemoveDeadOwnerOrExpiredLock } from "./stale-lock-file.js";
 

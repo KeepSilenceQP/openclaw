@@ -1,4 +1,3 @@
-// Remote embedding batch JSONL upload helper.
 import {
   buildBatchHeaders,
   normalizeBatchBaseUrl,

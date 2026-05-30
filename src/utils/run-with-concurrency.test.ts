@@ -1,4 +1,3 @@
-// Tests utils run with concurrency test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { runTasksWithConcurrency } from "./run-with-concurrency.js";
 

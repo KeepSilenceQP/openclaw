@@ -1,4 +1,3 @@
-// Coverage for reply dispatcher integration in dispatch-from-config.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { clearAgentHarnesses } from "../../agents/harness/registry.js";
 import type { PluginHookReplyDispatchResult } from "../../plugins/hooks.js";

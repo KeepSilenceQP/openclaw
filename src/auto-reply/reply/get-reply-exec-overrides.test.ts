@@ -1,4 +1,3 @@
-// Coverage for exec override directives.
 import { describe, expect, it } from "vitest";
 import type { SessionEntry } from "../../config/sessions.js";
 import { parseInlineDirectives } from "./directive-handling.parse.js";

@@ -1,4 +1,3 @@
-// Tests status status message test behavior.
 import { describe, expect, it } from "vitest";
 import { formatFastModeLabel } from "./status-labels.js";
 

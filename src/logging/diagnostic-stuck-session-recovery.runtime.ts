@@ -1,4 +1,3 @@
-// Runtime boundary for logging diagnostic stuck session recovery runtime behavior.
 import { resolveEmbeddedSessionLane } from "../agents/embedded-agent-runner/lanes.js";
 import {
   abortAndDrainEmbeddedAgentRun,
@@ -328,5 +327,4 @@ export const testing = {
     recoveriesInFlight.clear();
   },
 };
-/** Test-only namespace for clearing stuck-session recovery in-flight guards. */
 export { testing as __testing };

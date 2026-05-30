@@ -1,4 +1,3 @@
-// Node TLS environment helpers for system CA bundle discovery.
 import fs from "node:fs";
 
 /** Common Linux system CA bundle paths checked when Node does not inherit OS trust. */

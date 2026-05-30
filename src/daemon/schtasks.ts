@@ -1,5 +1,4 @@
 // Windows Scheduled Task service backend. Renders task scripts, installs or
-// falls back to Startup entries, controls runtime state, and reads task status.
 import { spawn, spawnSync } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";

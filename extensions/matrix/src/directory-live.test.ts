@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src directory live test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const { matrixAuthedHttpClientCtorMock, requestJsonMock } = vi.hoisted(() => ({

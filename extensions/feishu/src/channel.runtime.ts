@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/feishu/src channel runtime behavior.
 import {
   getChatInfo as getChatInfoImpl,
   getChatMembers as getChatMembersImpl,

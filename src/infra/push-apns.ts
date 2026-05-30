@@ -1,5 +1,4 @@
 // APNs registration storage and push delivery.
-// Supports direct APNs auth and official relay-backed pushes for alerts/background wakes.
 import { createHash, createPrivateKey, sign as signJwt } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -1212,5 +1211,4 @@ export async function sendApnsExecApprovalResolvedWake(
   });
 }
 
-/** APNs relay config resolver re-exported for push setup callers. */
 export { type ApnsRelayConfig, resolveApnsRelayConfigFromEnv };

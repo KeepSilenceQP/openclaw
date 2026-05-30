@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Plugin ClawHub release-plan CLI prints registry publish plans for selected plugins.
-
 import { pathToFileURL } from "node:url";
 import {
   collectPluginClawHubReleasePlan,

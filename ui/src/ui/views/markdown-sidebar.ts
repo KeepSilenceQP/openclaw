@@ -1,5 +1,4 @@
 // Sidebar renderer for markdown, canvas, and tool-detail previews. It keeps
-// iframe sandbox policy and markdown sanitization centralized for side panels.
 import { html, nothing } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { resolveCanvasIframeUrl } from "../canvas-url.ts";

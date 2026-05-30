@@ -1,4 +1,3 @@
-// Token summary regression tests for bot-only, bot+app, and status-only credentials.
 import { describe, expect, it } from "vitest";
 import type { ChannelAccountSnapshot } from "../../channels/plugins/types.public.js";
 import {

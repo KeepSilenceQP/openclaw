@@ -1,4 +1,3 @@
-// Vitest shard config for the full core unit UI project set.
 import { createProjectShardVitestConfig } from "./vitest.project-shard-config.ts";
 import { fullSuiteVitestShards } from "./vitest.test-shards.mjs";
 

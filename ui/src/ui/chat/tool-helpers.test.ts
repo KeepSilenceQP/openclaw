@@ -1,4 +1,3 @@
-// Tests ui/src/ui/chat tool helpers test behavior.
 import { describe, it, expect } from "vitest";
 import { formatToolOutputForSidebar, getTruncatedPreview } from "./tool-helpers.ts";
 

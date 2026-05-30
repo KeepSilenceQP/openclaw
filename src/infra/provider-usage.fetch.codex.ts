@@ -1,4 +1,3 @@
-// Fetches Codex usage and credit balance from ChatGPT backend usage APIs.
 import { resolveProviderRequestHeaders } from "../agents/provider-request-config.js";
 import { parseStrictFiniteNumber } from "./parse-finite-number.js";
 import {

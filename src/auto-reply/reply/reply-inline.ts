@@ -1,4 +1,3 @@
-// Inline reply parsing helpers.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import { collapseInlineHorizontalWhitespace } from "./reply-inline-whitespace.js";
 

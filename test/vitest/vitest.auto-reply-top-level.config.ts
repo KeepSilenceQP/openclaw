@@ -1,4 +1,3 @@
-// Vitest project config for top-level auto-reply tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 import { autoReplyTopLevelReplyTestInclude } from "./vitest.test-shards.mjs";
 

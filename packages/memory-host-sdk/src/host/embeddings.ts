@@ -1,4 +1,3 @@
-// Local embedding provider factory using worker-backed or in-process node-llama runtimes.
 import { DEFAULT_LOCAL_MODEL } from "./embedding-defaults.js";
 import { sanitizeAndNormalizeEmbedding } from "./embedding-vectors.js";
 import { createLocalEmbeddingWorkerProvider } from "./embeddings-worker.js";
@@ -15,7 +14,6 @@ type DisposableResource = {
   dispose?: () => Promise<void> | void;
 };
 
-/** Embedding provider contracts consumed by memory host backends. */
 export type {
   EmbeddingProvider,
   EmbeddingProviderFallback,
@@ -25,7 +23,6 @@ export type {
   GeminiTaskType,
 } from "./embeddings.types.js";
 
-/** Default local embedding model used when config omits a model path. */
 export { DEFAULT_LOCAL_MODEL } from "./embedding-defaults.js";
 
 /** Runtime-only knobs for tests and packaged worker script resolution. */

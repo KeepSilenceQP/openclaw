@@ -1,4 +1,3 @@
-// QA Lab gateway-log sentinel helpers classify known bad log and transcript patterns.
 import {
   isRecord,
   normalizeOptionalString as readNonEmptyString,

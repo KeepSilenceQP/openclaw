@@ -1,4 +1,3 @@
-// Maps external hook session keys to external content source categories.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** Hook-origin sources that need external-content prompt isolation. */

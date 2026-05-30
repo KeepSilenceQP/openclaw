@@ -1,4 +1,3 @@
-// Coverage for trigger handling that stages inbound media into sandbox workspaces.
 import fs from "node:fs/promises";
 import path, { basename, dirname, join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

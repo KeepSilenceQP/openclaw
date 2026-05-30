@@ -1,4 +1,3 @@
-// Tests extensions/kimi-coding replay policy test behavior.
 import { describe, expect, it } from "vitest";
 import { KIMI_REPLAY_POLICY } from "./replay-policy.js";
 

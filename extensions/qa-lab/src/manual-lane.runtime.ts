@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-lab/src manual lane runtime behavior.
 import { randomUUID } from "node:crypto";
 import { setTimeout as sleep } from "node:timers/promises";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";

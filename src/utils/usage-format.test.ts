@@ -1,4 +1,3 @@
-// Tests utils usage format test behavior.
 import nodeFs from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

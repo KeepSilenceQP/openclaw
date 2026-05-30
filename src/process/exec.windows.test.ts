@@ -1,4 +1,3 @@
-// Tests process exec windows test behavior.
 import type { execFile as execFileType } from "node:child_process";
 import { EventEmitter } from "node:events";
 import fs from "node:fs";

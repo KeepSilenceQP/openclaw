@@ -1,4 +1,3 @@
-// Runtime helpers for ACP transcript paths.
 import { resolveAcpSessionCwd } from "../../acp/runtime/session-identifiers.js";
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import { persistAcpTurnTranscript } from "../../agents/command/attempt-execution.js";

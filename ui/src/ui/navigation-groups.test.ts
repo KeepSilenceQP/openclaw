@@ -1,4 +1,3 @@
-// Tests ui/src/ui navigation groups test behavior.
 import { describe, expect, it } from "vitest";
 import {
   SETTINGS_TABS,

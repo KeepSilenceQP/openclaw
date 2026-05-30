@@ -1,4 +1,3 @@
-// Shared types for plugins hook registry types behavior.
 import type { HookEntry } from "../hooks/types.js";
 import type { PluginHookRegistration as TypedPluginHookRegistration } from "./hook-types.js";
 

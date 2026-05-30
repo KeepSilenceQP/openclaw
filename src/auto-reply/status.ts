@@ -1,4 +1,3 @@
-// Chat status message facade and verbose tool descriptions.
 import { describeToolForVerbose } from "../agents/tool-description-summary.js";
 import { normalizeToolName } from "../agents/tool-policy-shared.js";
 import type { EffectiveToolInventoryResult } from "../agents/tools-effective-inventory.types.js";

@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/scenarios jsonl byte fidelity test behavior.
 import { describe, expect, it } from "vitest";
 import { emitJsonl } from "../../jsonl/emit.js";
 import { parseJsonl } from "../../jsonl/parse.js";

@@ -1,4 +1,3 @@
-// Normalizes route binding match fields and evaluates binding scope constraints.
 import { normalizeChatChannelId } from "../channels/ids.js";
 import type { AgentRouteBinding } from "../config/types.agents.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

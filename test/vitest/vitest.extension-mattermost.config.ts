@@ -1,4 +1,3 @@
-// Mattermost extension Vitest config scopes tests to generated Mattermost root lists.
 import { mattermostExtensionTestRoots } from "./vitest.extension-mattermost-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

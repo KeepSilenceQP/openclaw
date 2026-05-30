@@ -1,4 +1,3 @@
-// Status formatting helpers for subagent run records.
 import type { SubagentRunRecord } from "../../agents/subagent-registry.types.js";
 import { formatDurationCompact } from "../../infra/format-time/format-duration.ts";
 import { formatRunLabel, sortSubagentRuns } from "./subagents-utils.js";

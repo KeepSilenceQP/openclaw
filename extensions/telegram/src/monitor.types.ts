@@ -1,4 +1,3 @@
-// Shared types for extensions/telegram/src monitor types behavior.
 import type {
   ChannelAccountSnapshot,
   ChannelRuntimeSurface,

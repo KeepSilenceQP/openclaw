@@ -1,5 +1,4 @@
 // HTTP hook configuration and payload normalization for external gateway
-// requests that dispatch messages into agents.
 import { randomUUID } from "node:crypto";
 import type { IncomingMessage } from "node:http";
 import { listAgentIds, resolveDefaultAgentId } from "../agents/agent-scope-config.js";
@@ -244,7 +243,6 @@ export type HookAgentDispatchPayload = Omit<HookAgentPayload, "sessionKey"> & {
 
 const listHookChannelValues = () => ["last", ...listChannelPlugins().map((plugin) => plugin.id)];
 
-/** Public hook channel selector accepted by external hook payloads. */
 export type { HookMessageChannel } from "./hooks.types.js";
 
 const getHookChannelSet = () => new Set<string>(listHookChannelValues());

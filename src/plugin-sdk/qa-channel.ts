@@ -1,4 +1,3 @@
-// Lazy public SDK facade for the bundled QA channel and QA bus protocol helpers.
 import type { ChannelPlugin } from "../channels/plugins/types.plugin.js";
 import {
   createLazyFacadeObjectValue,

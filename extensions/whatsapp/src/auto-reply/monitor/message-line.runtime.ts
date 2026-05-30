@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/whatsapp/src/auto-reply/monitor message line runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 
 export {

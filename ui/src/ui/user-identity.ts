@@ -1,5 +1,4 @@
 // Local user identity normalizer for chat display. It bounds names, text avatars,
-// and image avatar payloads before rendering them in the Control UI.
 import { coerceIdentityValue } from "../../../src/shared/assistant-identity-values.js";
 import { normalizeOptionalString } from "./string-coerce.ts";
 import {

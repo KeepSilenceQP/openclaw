@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/actions reactions test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { MatrixClient } from "../sdk.js";
 import { listMatrixReactions, removeMatrixReactions } from "./reactions.js";

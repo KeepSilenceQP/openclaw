@@ -1,4 +1,3 @@
-// Tests sessions input provenance test behavior.
 import { describe, expect, it } from "vitest";
 import {
   annotateInterSessionPromptText,

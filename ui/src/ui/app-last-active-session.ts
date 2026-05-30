@@ -1,4 +1,3 @@
-// Last-active-session settings helper.
 import type { UiSettings } from "./storage.ts";
 
 type LastActiveSessionHost = {

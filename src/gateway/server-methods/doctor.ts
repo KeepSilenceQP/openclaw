@@ -1,4 +1,3 @@
-// Gateway doctor RPC handlers for memory status, diary, and REM harness probes.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../../agents/agent-scope.js";

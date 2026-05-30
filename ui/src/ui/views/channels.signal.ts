@@ -1,4 +1,3 @@
-// Signal channel card renderer for signal-cli bridge status and probe output.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { formatRelativeTimestamp } from "../format.ts";

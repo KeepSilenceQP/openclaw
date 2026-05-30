@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Base config schema script verifies the runtime-computed config schema can be generated.
 import { pathToFileURL } from "node:url";
 import { computeBaseConfigSchemaResponse } from "../src/config/schema-base.js";
 

@@ -1,4 +1,3 @@
-// Adds active managed-proxy TLS settings to Undici proxy agent options.
 import type { EnvHttpProxyAgent } from "undici";
 import { isRecord as isProxyTlsRecord } from "../../../shared/record-coerce.js";
 import { resolveEnvHttpProxyAgentOptions, resolveEnvHttpProxyUrl } from "../proxy-env.js";

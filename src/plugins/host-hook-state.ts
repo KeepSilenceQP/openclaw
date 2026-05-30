@@ -1,4 +1,3 @@
-// Plugin-owned session state, queued next-turn injections, and projections.
 import { randomUUID } from "node:crypto";
 import { loadSessionStore, updateSessionStore, type SessionEntry } from "../config/sessions.js";
 import { resolveAgentMainSessionKey } from "../config/sessions/main-session.js";
@@ -17,7 +16,6 @@ import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalString,
 } from "../shared/string-coerce.js";
-/** Cleanup helper for plugin-owned session extension and injection state. */
 export { clearPluginOwnedSessionState } from "./host-hook-cleanup.js";
 import {
   buildPluginAgentTurnPrepareContext,

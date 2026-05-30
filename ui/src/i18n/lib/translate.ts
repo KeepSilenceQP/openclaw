@@ -1,4 +1,3 @@
-// Stateful UI translation manager with persisted locale and English fallback.
 import { getSafeLocalStorage } from "../../local-storage.ts";
 import { en } from "../locales/en.ts";
 import {
@@ -12,7 +11,6 @@ import type { Locale, TranslationMap } from "./types.ts";
 
 type Subscriber = (locale: Locale) => void;
 
-/** Locale registry helpers re-exported for UI settings and controls. */
 export { SUPPORTED_LOCALES, isSupportedLocale };
 
 class I18nManager {

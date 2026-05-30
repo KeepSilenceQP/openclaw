@@ -1,4 +1,3 @@
-// Tests extensions/slack/src channel message adapter test behavior.
 import {
   verifyChannelMessageAdapterCapabilityProofs,
   verifyChannelMessageLiveCapabilityAdapterProofs,

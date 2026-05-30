@@ -1,4 +1,3 @@
-// Tests cron isolated agent hook content wrapping test behavior.
 import "./isolated-agent.mocks.js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { runEmbeddedAgent } from "../agents/embedded-agent.js";

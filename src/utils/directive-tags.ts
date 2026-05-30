@@ -1,4 +1,3 @@
-// Parses and strips inline delivery directives embedded in assistant-visible text.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 /** Parsed inline directive state plus the cleaned text body. */

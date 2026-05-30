@@ -1,4 +1,3 @@
-// Small zod parsing adapters for permissive config/runtime boundaries.
 import type { ZodType } from "zod";
 
 /** Parse an unknown value with a zod schema, returning null on validation failure. */

@@ -1,4 +1,3 @@
-// Untrusted inbound context formatting for model prompts.
 import { normalizeInboundTextNewlines } from "./inbound-text.js";
 
 export function appendUntrustedContext(base: string, untrusted?: string[]): string {

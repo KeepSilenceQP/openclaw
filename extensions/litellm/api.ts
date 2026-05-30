@@ -1,4 +1,3 @@
-/** Re-exported litellm plugin public API. */
 export {
   applyLitellmConfig,
   applyLitellmProviderConfig,

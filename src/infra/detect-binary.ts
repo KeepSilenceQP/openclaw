@@ -1,4 +1,3 @@
-// Detects whether a safe binary name or path is available locally.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { runCommandWithTimeout } from "../process/exec.js";

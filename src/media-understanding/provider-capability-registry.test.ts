@@ -1,4 +1,3 @@
-// Tests media-understanding provider capability registry test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { resolvePluginCapabilityProviders } from "../plugins/capability-provider-runtime.js";
 import { buildMediaUnderstandingCapabilityRegistry } from "./provider-capability-registry.js";

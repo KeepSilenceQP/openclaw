@@ -1,4 +1,3 @@
-// Telegram RTT harness helpers run npm package round-trip timing scenarios.
 import { execFile, spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Vitest pattern-file helpers parse env and CLI include filters for shard configs.
 import fs from "node:fs";
 import path from "node:path";
 

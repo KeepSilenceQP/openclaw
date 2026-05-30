@@ -1,4 +1,3 @@
-// Package state probes for installed channel plugins.
 import fs from "node:fs";
 import path from "node:path";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

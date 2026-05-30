@@ -1,4 +1,3 @@
-// Cron run diagnostics normalization for stored failures and delivery summaries.
 import { getReplyPayloadMetadata } from "../auto-reply/reply-payload.js";
 import { redactSensitiveText } from "../logging/redact.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";

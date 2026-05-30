@@ -1,8 +1,6 @@
 // Shared provider catalog helpers for provider plugins.
 //
 // Keep provider-owned exports out of this subpath so plugin loaders can import it
-// without recursing through provider-specific facades.
-
 import { createHash } from "node:crypto";
 import { normalizeModelCatalog } from "@openclaw/model-catalog-core/model-catalog-normalize";
 import type {
@@ -21,10 +19,8 @@ import {
 } from "../shared/number-coercion.js";
 import type { ModelProviderConfig } from "./provider-model-shared.js";
 
-/** Provider catalog hook context/result types implemented by provider plugins. */
 export type { ProviderCatalogContext, ProviderCatalogResult } from "../plugins/types.js";
 
-/** Catalog builders for provider manifests that expose one or paired API-key templates. */
 export {
   buildPairedProviderApiKeyCatalog,
   buildSingleProviderApiKeyCatalog,

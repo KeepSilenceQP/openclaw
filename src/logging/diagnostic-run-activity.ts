@@ -1,5 +1,4 @@
 // Diagnostic run activity tracker: correlates internal model/tool/run events
-// into per-session active-work snapshots for stuck-session heuristics.
 import {
   onInternalDiagnosticEvent,
   type DiagnosticEventPayload,

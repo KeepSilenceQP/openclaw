@@ -1,4 +1,3 @@
-// Runway bundled video provider plugin entry.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { buildRunwayVideoGenerationProvider } from "./video-generation-provider.js";
 

@@ -1,4 +1,3 @@
-// Tests test/scripts check dependency pins test behavior.
 import { execFileSync } from "node:child_process";
 import { mkdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";

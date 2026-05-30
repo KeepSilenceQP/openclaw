@@ -1,4 +1,3 @@
-// Utility helpers for get-reply directive handling.
 import type { InlineDirectives } from "./directive-handling.js";
 
 const CLEARED_EXEC_FIELDS = {

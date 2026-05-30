@@ -1,4 +1,3 @@
-// Tests test openclaw launcher e2e test behavior.
 import { spawn, spawnSync } from "node:child_process";
 import { once } from "node:events";
 import fs from "node:fs/promises";

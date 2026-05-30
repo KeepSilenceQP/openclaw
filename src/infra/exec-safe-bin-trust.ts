@@ -1,5 +1,4 @@
 // Trusted-directory checks for exec safe-bin policy.
-// Trust is explicit and path-comparison aware so user-controlled PATH entries are ignored.
 import fs from "node:fs";
 import path from "node:path";
 import {

@@ -1,5 +1,4 @@
 // Exec approval reply payload builders and parsers.
-// Produces command text, interactive button metadata, pending/unavailable replies, and reply metadata.
 import type { ReplyPayload } from "../auto-reply/types.js";
 import type {
   InteractiveReply,

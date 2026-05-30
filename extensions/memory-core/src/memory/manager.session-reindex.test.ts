@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager session reindex test behavior.
 import { describe, expect, it } from "vitest";
 import { shouldSyncSessionsForReindex } from "./manager-session-reindex.js";
 

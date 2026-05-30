@@ -1,4 +1,3 @@
-// Aggregates task registry records into status/runtime counters.
 import type {
   TaskRecord,
   TaskRegistrySummary,

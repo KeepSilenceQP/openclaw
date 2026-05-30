@@ -1,4 +1,3 @@
-// Plugin registry and contracts for memory embedding provider adapters.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { SecretInput } from "../config/types.secrets.js";
 import type { EmbeddingInput } from "../memory-host-sdk/host/embedding-inputs.js";

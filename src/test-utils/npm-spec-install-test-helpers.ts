@@ -1,4 +1,3 @@
-// Vitest helpers for npm-spec install validation and npm command mocks.
 import fs from "node:fs";
 import path from "node:path";
 import { expect } from "vitest";

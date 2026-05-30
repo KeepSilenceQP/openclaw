@@ -1,4 +1,3 @@
-// Vitest config tests use these helpers to normalize absolute paths in snapshots.
 import path from "node:path";
 
 /** Normalize an absolute config path to repo-relative POSIX form for stable assertions. */

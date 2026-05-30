@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/auto-reply/monitor ack reaction test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { WhatsAppSendResult } from "../../inbound/send-result.js";

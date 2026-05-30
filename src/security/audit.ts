@@ -1,5 +1,4 @@
 // Security audit orchestration and shared collectors. Heavy channel/plugin and
-// gateway probe dependencies are loaded lazily so shallow audits stay cheap.
 import path from "node:path";
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
@@ -59,7 +58,6 @@ type ClaudePermissionModeHit = {
   mode: string;
 };
 
-/** Public security audit report and finding types. */
 export type {
   SecurityAuditFinding,
   SecurityAuditReport,

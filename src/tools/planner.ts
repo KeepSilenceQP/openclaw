@@ -1,4 +1,3 @@
-// Builds a deterministic visible/hidden plan from registered tool descriptors.
 import { evaluateToolAvailability } from "./availability.js";
 import { ToolPlanContractError } from "./diagnostics.js";
 import type {

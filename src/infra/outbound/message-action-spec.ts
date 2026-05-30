@@ -1,5 +1,4 @@
 // Message action target semantics.
-// The map defines whether each action uses `to`, `channelId`, or no destination.
 import { getBootstrapChannelPlugin } from "../../channels/plugins/bootstrap-registry.js";
 import type { ChannelMessageActionName } from "../../channels/plugins/types.public.js";
 import {

@@ -1,4 +1,3 @@
-// Tests config schema help quality test behavior.
 import { describe, expect, it } from "vitest";
 import { MEDIA_AUDIO_FIELD_KEYS } from "./media-audio-field-metadata.js";
 import { FIELD_HELP } from "./schema.help.js";

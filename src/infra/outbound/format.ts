@@ -1,5 +1,4 @@
 // Outbound delivery formatting for CLI/user-visible summaries and JSON output.
-// The helpers preserve channel-specific identifiers when adapters return them.
 import { getChatChannelMeta } from "../../channels/chat-meta.js";
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type { ChannelId } from "../../channels/plugins/types.public.js";

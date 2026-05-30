@@ -1,4 +1,3 @@
-// Public channel utility facade for gateway client identity, channel normalization, and markdown support checks.
 import {
   GATEWAY_CLIENT_MODES,
   GATEWAY_CLIENT_NAMES,
@@ -10,7 +9,6 @@ import {
 import { listBundledChannelCatalogEntries } from "../channels/bundled-channel-catalog-read.js";
 import { getChatChannelMeta } from "../channels/chat-meta.js";
 import { getRegisteredChannelPluginMeta, normalizeChatChannelId } from "../channels/registry.js";
-/** Re-export message-channel normalization helpers from the narrow module. */
 export {
   isDeliverableMessageChannel,
   isGatewayMessageChannel,
@@ -21,7 +19,6 @@ export {
   type DeliverableMessageChannel,
   type GatewayMessageChannel,
 } from "./message-channel-normalize.js";
-/** Re-export internal channel constants from the narrow module. */
 export {
   INTERNAL_MESSAGE_CHANNEL,
   INTERNAL_NON_DELIVERY_CHANNELS,
@@ -34,11 +31,8 @@ import {
 } from "./message-channel-constants.js";
 import { normalizeMessageChannel } from "./message-channel-normalize.js";
 
-/** Re-export gateway client enum constants. */
 export { GATEWAY_CLIENT_NAMES, GATEWAY_CLIENT_MODES };
-/** Re-export gateway client identity types. */
 export type { GatewayClientName, GatewayClientMode };
-/** Re-export gateway client normalization helpers. */
 export { normalizeGatewayClientName, normalizeGatewayClientMode };
 
 type GatewayClientInfoLike = {

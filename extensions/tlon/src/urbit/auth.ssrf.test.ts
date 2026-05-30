@@ -1,4 +1,3 @@
-// Tests extensions/tlon/src/urbit auth ssrf test behavior.
 import { SsrFBlockedError } from "openclaw/plugin-sdk/ssrf-runtime";
 import type { LookupFn } from "openclaw/plugin-sdk/ssrf-runtime";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

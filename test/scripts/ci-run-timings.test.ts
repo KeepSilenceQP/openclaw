@@ -1,4 +1,3 @@
-// Tests test/scripts ci run timings test behavior.
 import { describe, expect, it } from "vitest";
 import {
   parseRunTimingArgs,

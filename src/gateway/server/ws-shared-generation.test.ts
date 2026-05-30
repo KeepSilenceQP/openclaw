@@ -1,4 +1,3 @@
-// Tests gateway/server ws shared generation test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveSharedGatewaySessionGeneration } from "./ws-shared-generation.js";
 

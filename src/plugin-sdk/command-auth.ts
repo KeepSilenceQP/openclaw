@@ -16,7 +16,6 @@ import {
   type AccessGroupMembershipResolver,
 } from "./access-groups.js";
 import { resolveDmGroupAccessWithLists } from "./channel-access-compat.js";
-/** Access-group allow-from parsing and membership expansion helpers. */
 export {
   ACCESS_GROUP_ALLOW_FROM_PREFIX,
   expandAllowFromWithAccessGroups,
@@ -27,9 +26,7 @@ export {
   type AccessGroupMembershipLookup,
   type ResolvedAccessGroupAllowFromState,
 } from "./access-groups.js";
-/** Builds Telegram inline keyboards for paginated command lists. */
 export { buildCommandsPaginationKeyboard } from "./telegram-command-ui.js";
-/** Direct-DM authorization helpers for channel ingress compatibility. */
 export {
   createPreCryptoDirectDmAuthorizer,
   resolveInboundDirectDmAccessWithRuntime,
@@ -37,14 +34,12 @@ export {
   type ResolvedInboundDirectDmAccess,
 } from "../channels/direct-dm-access.js";
 
-/** Command token detection helpers for auto-reply routing. */
 export {
   hasControlCommand,
   hasInlineCommandTokens,
   isControlCommandMessage,
   shouldComputeCommandAuthorized,
 } from "../auto-reply/command-detection.js";
-/** Command registry helpers for parsing, resolving, and listing chat commands. */
 export {
   buildCommandText,
   buildCommandTextFromArgs,
@@ -67,7 +62,6 @@ export {
   serializeCommandArgs,
   shouldHandleTextCommands,
 } from "../auto-reply/commands-registry.js";
-/** Command registry types used by plugin command surfaces. */
 export type {
   ChatCommandDefinition,
   CommandArgChoiceContext,
@@ -82,9 +76,7 @@ export type {
   ResolvedCommandArgChoice,
   ShouldHandleTextCommandsParams,
 } from "../auto-reply/commands-registry.js";
-/** Parsed command argument payload type. */
 export type { CommandArgsParsing } from "../auto-reply/commands-registry.types.js";
-/** Command authorization and control-command gate resolvers. */
 export {
   resolveCommandAuthorizedFromAuthorizers,
   resolveControlCommandGate,
@@ -92,38 +84,29 @@ export {
   type CommandAuthorizer,
   type CommandGatingModeWhenAccessGroupsOff,
 } from "../channels/command-gating.js";
-/** Resolves session targets for native command invocations. */
 export {
   resolveNativeCommandSessionTargets,
   type ResolveNativeCommandSessionTargetsParams,
 } from "../channels/native-command-session-targets.js";
-/** Resolves command authorization status from auto-reply policy. */
 export {
   resolveCommandAuthorization,
   type CommandAuthorization,
 } from "../auto-reply/command-auth.js";
-/** Skill command discovery and invocation helpers. */
 export {
   listReservedChatSlashCommandNames,
   listSkillCommandsForAgents,
   listSkillCommandsForWorkspace,
   resolveSkillCommandInvocation,
 } from "../skills/discovery/chat-commands.js";
-/** Plugin command spec discovery helpers. */
 export { getPluginCommandSpecs, listProviderPluginCommandSpecs } from "../plugins/command-specs.js";
-/** Public skill command spec shape. */
 export type { SkillCommandSpec } from "../skills/types.js";
-/** Model command reply builders and provider data formatters. */
 export {
   buildModelsProviderData,
   formatModelsAvailableHeader,
   resolveModelsCommandReply,
 } from "../auto-reply/reply/commands-models.js";
-/** Provider data shape consumed by the models command reply. */
 export type { ModelsProviderData } from "../auto-reply/reply/commands-models.js";
-/** Resolves persisted model overrides for command replies. */
 export { resolveStoredModelOverride } from "../auto-reply/reply/stored-model-override.js";
-/** Stored model override payload returned by command reply helpers. */
 export type { StoredModelOverride } from "../auto-reply/reply/stored-model-override.js";
 
 /** @deprecated Use `resolveChannelMessageIngress` from `openclaw/plugin-sdk/channel-ingress-runtime`. */

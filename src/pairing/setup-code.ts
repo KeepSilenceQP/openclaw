@@ -1,4 +1,3 @@
-// Device pairing setup-code generation from gateway config and network state.
 import os from "node:os";
 import {
   isCarrierGradeNatIpv4Address,

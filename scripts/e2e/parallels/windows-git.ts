@@ -1,4 +1,3 @@
-// Windows guest Git helpers download MinGit and ensure git.exe exists before smoke tests.
 import path from "node:path";
 import type { WindowsGuest } from "./guest-transports.ts";
 import { die, run, say } from "./host-command.ts";

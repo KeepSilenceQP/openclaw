@@ -1,4 +1,3 @@
-// ClawHub plugin release helpers select publishable packages and query registry state.
 import { execFileSync } from "node:child_process";
 import { resolve } from "node:path";
 import { validateExternalCodePluginPackageJson } from "../../packages/plugin-package-contract/src/index.ts";
@@ -17,7 +16,6 @@ import {
   type PluginReleaseSelectionMode,
 } from "./plugin-npm-release.ts";
 
-/** Reuses npm plugin release argument parsing for ClawHub release scripts. */
 export { parsePluginReleaseArgs };
 
 type PluginPackageJson = {

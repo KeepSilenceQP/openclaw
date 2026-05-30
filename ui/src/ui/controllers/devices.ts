@@ -1,5 +1,4 @@
 // Controller helpers for Control UI device pairing and device-token management.
-// Local token storage is updated only for the browser's own device identity.
 import { clearDeviceAuthToken, storeDeviceAuthToken } from "../device-auth.ts";
 import { loadOrCreateDeviceIdentity } from "../device-identity.ts";
 import type { GatewayBrowserClient } from "../gateway.ts";

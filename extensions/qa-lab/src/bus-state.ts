@@ -1,4 +1,3 @@
-// QA Lab bus state stores normalized conversations, messages, threads, events, and waiters.
 import { randomUUID } from "node:crypto";
 import { sanitizeQaBusToolCalls } from "openclaw/plugin-sdk/qa-channel-protocol";
 import {

@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent model preflight runtime test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { fetchWithSsrFGuardMock } = vi.hoisted(() => ({

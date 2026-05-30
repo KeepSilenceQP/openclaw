@@ -1,4 +1,3 @@
-// Tests shared chat content test behavior.
 import { describe, expect, it } from "vitest";
 import { extractTextFromChatContent } from "./chat-content.js";
 

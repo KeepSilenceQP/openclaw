@@ -46,7 +46,6 @@ const grepSchema = Type.Object({
     Type.Number({ description: "Maximum number of matches to return (default: 100)" }),
   ),
 });
-/** Grep tool input/details contracts shared with renderers and callers. */
 export type { GrepToolDetails, GrepToolInput } from "./tool-contracts.js";
 const DEFAULT_LIMIT = 100;
 

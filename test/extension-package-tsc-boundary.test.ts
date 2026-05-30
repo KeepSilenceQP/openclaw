@@ -1,4 +1,3 @@
-// Tests test extension package tsc boundary test behavior.
 import { spawnSync } from "node:child_process";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";

@@ -1,4 +1,3 @@
-// Voice-call TwiML helpers generate provider instructions for notify and DTMF flows.
 import { escapeXml } from "../voice-mapping.js";
 
 /** Generate TwiML that speaks one notification message and hangs up. */

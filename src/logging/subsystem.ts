@@ -1,5 +1,4 @@
 // Subsystem logger facade: adds scoped names, terminal formatting, and runtime
-// adapters on top of the shared file/console logger.
 import { Chalk } from "chalk";
 import type { Logger as TsLogger } from "tslog";
 import { clearActiveProgressLine } from "../../packages/terminal-core/src/progress-line.js";

@@ -1,4 +1,3 @@
-// Forwards exec and plugin approval requests to configured message targets.
 import type { ReplyPayload } from "../auto-reply/types.js";
 import {
   getLoadedChannelPlugin,

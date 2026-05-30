@@ -27,7 +27,6 @@ import type { SilentReplyPromptMode } from "../../system-prompt.types.js";
 import type { PromptMode } from "../../system-prompt.types.js";
 import type { EmbeddedAgentExecutionPhase } from "../execution-phase.js";
 import type { AuthProfileFailurePolicy } from "./auth-profile-failure-policy.types.js";
-/** Re-export client tool definitions for embedded-run callers. */
 export type { ClientToolDefinition } from "../../command/shared-types.js";
 
 /** Source that initiated an embedded-agent run. */

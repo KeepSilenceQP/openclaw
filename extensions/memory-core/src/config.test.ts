@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src config test behavior.
 import fs from "node:fs";
 import {
   type JsonSchemaObject,

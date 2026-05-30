@@ -1,4 +1,3 @@
-// Main dispatch orchestration from normalized config and inbound context.
 import crypto from "node:crypto";
 import {
   hasOutboundReplyContent,

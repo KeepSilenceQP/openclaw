@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src/monitor sanitize outbound test behavior.
 import { describe, expect, it } from "vitest";
 import { sanitizeOutboundText } from "./sanitize-outbound.js";
 

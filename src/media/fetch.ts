@@ -1,4 +1,3 @@
-// SSRF-guarded remote media fetching and save-to-store helpers.
 import { formatErrorMessage } from "../infra/errors.js";
 import {
   fetchWithSsrFGuard,

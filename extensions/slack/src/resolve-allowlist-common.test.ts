@@ -1,4 +1,3 @@
-// Tests extensions/slack/src resolve allowlist common test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   collectSlackCursorItems,

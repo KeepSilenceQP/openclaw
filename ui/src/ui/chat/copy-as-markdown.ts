@@ -1,4 +1,3 @@
-// Chat copy-button renderers with optimistic copied/error button states.
 import { html, type TemplateResult } from "lit";
 import { icons } from "../icons.ts";
 

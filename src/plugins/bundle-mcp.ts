@@ -1,4 +1,3 @@
-// MCP server config extraction for Claude/Codex/Cursor plugin bundles.
 import fs from "node:fs";
 import path from "node:path";
 import { applyMergePatch } from "../config/merge-patch.js";

@@ -1,4 +1,3 @@
-// Model-visible summaries for inbound media attachments.
 import path from "node:path";
 import { getMediaDir } from "../media/store.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

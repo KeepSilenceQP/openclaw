@@ -1,5 +1,4 @@
 // Confirmation dialog for restarting the Dreaming service from Control UI.
-// Cancel is disabled while the restart request is in flight.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import "../components/modal-dialog.ts";

@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/slack/src approval handler runtime behavior.
 import type { App } from "@slack/bolt";
 import type { Block, KnownBlock } from "@slack/web-api";
 import type {

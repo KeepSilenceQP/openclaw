@@ -1,4 +1,3 @@
-// Tests extensions/nextcloud-talk/src send cfg threading test behavior.
 import { verifyChannelMessageAdapterCapabilityProofs } from "openclaw/plugin-sdk/channel-outbound";
 import {
   createSendCfgThreadingRuntime,

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/** ACP stdio server that bridges ACP clients to the OpenClaw gateway. */
 import { Readable, Writable } from "node:stream";
 import { fileURLToPath } from "node:url";
 import { AgentSideConnection, ndJsonStream } from "@agentclientprotocol/sdk";

@@ -1,4 +1,3 @@
-// Tests extensions/moonshot/src kimi web search provider test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/provider-onboard";
 import { withEnvAsync } from "openclaw/plugin-sdk/test-env";
 import { afterEach, describe, expect, it, vi } from "vitest";

@@ -1,11 +1,9 @@
-// Shared thinking-level vocabulary and normalization helpers.
 import {
   normalizeFastMode,
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,
 } from "../shared/string-coerce.js";
 
-/** Fast-mode normalizer shared with thinking directive parsing. */
 export { normalizeFastMode };
 
 /** Canonical thinking effort requested for a model response. */

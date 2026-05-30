@@ -1,4 +1,3 @@
-// Loads, validates, and prepares gateway config plus runtime secrets during startup.
 import { isDeepStrictEqual } from "node:util";
 import {
   formatInvalidConfigRecoveryHint,

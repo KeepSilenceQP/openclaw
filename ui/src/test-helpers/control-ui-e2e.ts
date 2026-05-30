@@ -1,6 +1,5 @@
 // Control UI E2E test harness. It starts a Vite server plus mock gateway
 // WebSocket/RPC controls so Playwright tests can drive the UI without a live
-// OpenClaw gateway.
 import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import { createServer as createNetServer } from "node:net";

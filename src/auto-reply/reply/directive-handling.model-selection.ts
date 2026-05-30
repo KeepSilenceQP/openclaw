@@ -1,4 +1,3 @@
-// Model selection helpers for inline directive handling.
 import { ensureAuthProfileStore } from "../../agents/auth-profiles.js";
 import { isModelKeyAllowedBySet } from "../../agents/model-selection-shared.js";
 import {

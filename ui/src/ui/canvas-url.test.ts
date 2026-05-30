@@ -1,4 +1,3 @@
-// Tests ui/src/ui canvas url test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveCanvasIframeUrl } from "./canvas-url.ts";
 

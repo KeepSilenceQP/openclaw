@@ -1,5 +1,4 @@
 // Top-level app lifecycle hooks. They connect/disconnect the gateway, start
-// active-tab polling, wire URL/theme state, and schedule scroll work after render.
 import { connectGateway } from "./app-gateway.ts";
 import {
   startLogsPolling,

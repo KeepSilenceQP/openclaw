@@ -1,4 +1,3 @@
-// Shared model cost and thinking-level normalization helpers.
 import type { Api, Model, ModelThinkingLevel, Usage } from "./types.js";
 
 /** Calculates per-million-token cost buckets in place on a usage record. */

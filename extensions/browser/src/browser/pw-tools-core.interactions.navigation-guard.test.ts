@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser pw tools core interactions navigation guard test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   getPwToolsCoreNavigationGuardMocks,

@@ -1,5 +1,4 @@
 // Process-local secret runtime snapshot state. Runtime consumers read cloned
-// prepared config/auth/web-tool facts instead of re-resolving secrets per call.
 import {
   clearRuntimeAuthProfileStoreSnapshots,
   getRuntimeAuthProfileStoreSnapshot,

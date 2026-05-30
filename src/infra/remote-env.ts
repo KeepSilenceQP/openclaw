@@ -1,4 +1,3 @@
-// Detects SSH, container, codespace, and headless Linux remote environments.
 import { isWSLEnv } from "./wsl.js";
 
 /** Returns true when the current process likely lacks a local desktop session. */

@@ -1,4 +1,3 @@
-// Builds dedupe keys for native approval delivery targets.
 import type { ChannelApprovalNativeTarget } from "../channels/plugins/approval-native.types.js";
 import { channelRouteDedupeKey } from "../plugin-sdk/channel-route.js";
 

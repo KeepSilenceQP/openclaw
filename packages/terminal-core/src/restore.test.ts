@@ -1,4 +1,3 @@
-// Tests terminal restore test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const clearActiveProgressLine = vi.hoisted(() => vi.fn());

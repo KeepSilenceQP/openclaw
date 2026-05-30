@@ -1,4 +1,3 @@
-// Parses process argv strings and identifies OpenClaw gateway processes.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 

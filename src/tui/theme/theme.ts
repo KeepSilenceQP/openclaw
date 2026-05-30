@@ -1,4 +1,3 @@
-// Shared TUI color palette and component theme adapters.
 import type {
   EditorTheme,
   MarkdownTheme,

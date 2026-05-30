@@ -29,7 +29,6 @@ import {
 } from "./plugin-model-catalog.js";
 import { stableStringify } from "./stable-stringify.js";
 
-/** Test hook for clearing the models.json readiness cache between isolated scenarios. */
 export { resetModelsJsonReadyCacheForTest } from "./models-config-state.js";
 
 async function readFileMtimeMs(pathname: string): Promise<number | null> {

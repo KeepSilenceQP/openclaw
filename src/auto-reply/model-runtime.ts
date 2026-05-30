@@ -1,4 +1,3 @@
-// Model reference formatting and active session model resolution helpers.
 import type { SessionEntry } from "../config/sessions.js";
 import {
   normalizeLowercaseStringOrEmpty,

@@ -1,4 +1,3 @@
-// Runtime boundary for plugins provider api key auth runtime behavior.
 import { applyAuthProfileConfig, buildApiKeyCredential } from "./provider-auth-helpers.js";
 import {
   ensureApiKeyFromOptionEnvOrPrompt,

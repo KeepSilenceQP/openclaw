@@ -1,4 +1,3 @@
-// Bundled channel plugin loader.
 import path from "node:path";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { extractErrorCode, formatErrorMessage } from "../../infra/errors.js";

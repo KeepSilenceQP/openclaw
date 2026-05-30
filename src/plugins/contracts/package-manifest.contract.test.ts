@@ -1,4 +1,3 @@
-// Tests plugins/contracts package manifest contract test behavior.
 import { describePackageManifestContract } from "openclaw/plugin-sdk/plugin-test-contracts";
 
 type PackageManifestContractParams = Parameters<typeof describePackageManifestContract>[0];

@@ -1,4 +1,3 @@
-// Tests cron isolated agent model preflight test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import {
   loadRunCronIsolatedAgentTurn,

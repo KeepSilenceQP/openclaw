@@ -1,4 +1,3 @@
-// Tests extensions/signal/src monitor tool result pairs uuid only senders uuid allowlist entry test behavior.
 import { Buffer } from "node:buffer";
 import { describe, expect, it, vi } from "vitest";
 import {

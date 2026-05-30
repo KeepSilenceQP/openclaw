@@ -1,4 +1,3 @@
-// Tests gateway server shared token session rotation test behavior.
 import fs from "node:fs/promises";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import {

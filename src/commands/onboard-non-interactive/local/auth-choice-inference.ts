@@ -1,4 +1,3 @@
-// Infers the selected auth path from explicit non-interactive onboarding flags.
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import { resolveManifestProviderOnboardAuthFlags } from "../../../plugins/provider-auth-choices.js";
 import { normalizeOptionalString } from "../../../shared/string-coerce.js";

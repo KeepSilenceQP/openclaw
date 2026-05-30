@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src send test behavior.
 import fs from "node:fs";
 import type { Bot } from "grammy";
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";

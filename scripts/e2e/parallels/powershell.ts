@@ -1,4 +1,3 @@
-// Parallels PowerShell helpers generate Windows guest smoke scripts.
 import {
   configPathMapKey,
   modelProviderConfigBatchJson,

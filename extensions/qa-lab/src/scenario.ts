@@ -1,4 +1,3 @@
-// QA Lab scenario helpers execute transport-backed scenario steps and collect results.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import type { QaTransportActionName, QaTransportState } from "./qa-transport.js";
 

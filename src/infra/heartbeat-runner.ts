@@ -1,4 +1,3 @@
-// Schedules heartbeat wakes, routes due work, and delivers heartbeat replies.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -269,7 +268,6 @@ function resolveHeartbeatTimeoutOverrideSeconds(cfg: OpenClawConfig, heartbeat?:
 }
 
 export { areHeartbeatsEnabled, setHeartbeatsEnabled };
-/** Heartbeat config summary helpers exposed with the runner facade. */
 export {
   isHeartbeatEnabledForAgent,
   resolveHeartbeatIntervalMs,
@@ -283,7 +281,6 @@ type HeartbeatAgent = {
   heartbeat?: HeartbeatConfig;
 };
 
-/** Cron event classifier reused by heartbeat wake callers. */
 export { isCronSystemEvent };
 
 function canHeartbeatDeliverCommitments(heartbeat?: HeartbeatConfig): boolean {

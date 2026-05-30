@@ -1,4 +1,3 @@
-// Small synchronous temp-repo helpers for tests that need filesystem setup before imports run.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Test helpers for Google provider message conversion and stream lifecycle tests.
 import { expect } from "vitest";
 import type { Model } from "../types.js";
 

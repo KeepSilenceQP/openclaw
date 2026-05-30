@@ -2,18 +2,14 @@
  * Extension system for lifecycle events and custom tools.
  */
 
-/** Slash command metadata types exposed to extension authors. */
 export type { SlashCommandInfo, SlashCommandSource } from "../slash-commands.js";
-/** Source information type attached to extension-provided commands. */
 export type { SourceInfo } from "../source-info.js";
-/** Extension loader entrypoints used by the session runtime. */
 export {
   createExtensionRuntime,
   discoverAndLoadExtensions,
   loadExtensionFromFactory,
   loadExtensions,
 } from "./loader.js";
-/** Extension runner handler types for session lifecycle hooks. */
 export type {
   ExtensionErrorListener,
   ForkHandler,
@@ -22,9 +18,7 @@ export type {
   ShutdownHandler,
   SwitchSessionHandler,
 } from "./runner.js";
-/** Extension runner implementation used by session hosts. */
 export { ExtensionRunner } from "./runner.js";
-/** Public extension event, API, tool, and UI context types. */
 export type {
   AfterProviderResponseEvent,
   AgentEndEvent,
@@ -163,8 +157,6 @@ export type {
   WriteToolCallEvent,
   WriteToolResultEvent,
 } from "./types.js";
-// Type guards
-/** Tool definition helpers and type guards exposed to extensions. */
 export {
   defineTool,
   isBashToolResult,
@@ -176,5 +168,4 @@ export {
   isToolCallEventType,
   isWriteToolResult,
 } from "./types.js";
-/** Wraps registered extension tools into runtime tool definitions. */
 export { wrapRegisteredTool, wrapRegisteredTools } from "./wrapper.js";

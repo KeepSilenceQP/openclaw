@@ -1,4 +1,3 @@
-// Tests extensions/copilot/src permission bridge test behavior.
 import type {
   PermissionRequest as SdkPermissionRequest,
   PermissionRequestResult as SdkPermissionRequestResult,

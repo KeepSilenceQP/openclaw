@@ -1,4 +1,3 @@
-// Docker E2E client verifies MCP channel bridge flows against a live gateway.
 import { randomUUID } from "node:crypto";
 import {
   assert,

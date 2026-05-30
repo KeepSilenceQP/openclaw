@@ -1,4 +1,3 @@
-// Tests config io observe recovery test behavior.
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import os from "node:os";

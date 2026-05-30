@@ -1,4 +1,3 @@
-// Fast-lane directive helpers that can return immediate reply payloads.
 import type { ReplyPayload } from "../types.js";
 import { isDirectiveOnly } from "./directive-handling.directive-only.js";
 import { handleDirectiveOnly } from "./directive-handling.impl.js";

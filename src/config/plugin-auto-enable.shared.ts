@@ -32,7 +32,6 @@ import type {
 import { ensurePluginAllowlisted } from "./plugins-allowlist.js";
 import { isBlockedObjectKey } from "./prototype-keys.js";
 import type { OpenClawConfig } from "./types.openclaw.js";
-/** Public auto-enable candidate/result shapes used by config and setup callers. */
 export type {
   PluginAutoEnableCandidate,
   PluginAutoEnableResult,

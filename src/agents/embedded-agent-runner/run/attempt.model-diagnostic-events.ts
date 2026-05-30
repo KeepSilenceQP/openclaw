@@ -29,7 +29,6 @@ import type {
 } from "../../../plugins/hook-types.js";
 import type { StreamFn } from "../../runtime/index.js";
 
-/** Re-export diagnostic error categorization for attempt diagnostics. */
 export { diagnosticErrorCategory };
 
 type ModelCallDiagnosticContext = {

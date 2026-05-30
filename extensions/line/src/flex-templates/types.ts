@@ -1,4 +1,3 @@
-// Shared types for extensions/line/src/flex-templates types behavior.
 import type { messagingApi } from "@line/bot-sdk";
 
 export type FlexContainer = messagingApi.FlexContainer;

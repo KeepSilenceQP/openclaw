@@ -1,4 +1,3 @@
-// Reply reference helpers for reply-to routing.
 import type { ReplyToMode } from "../../config/types.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 

@@ -1,4 +1,3 @@
-// Hoisted shared runtime state for gateway Vitest mocks and test fixtures.
 import crypto from "node:crypto";
 import os from "node:os";
 import path from "node:path";

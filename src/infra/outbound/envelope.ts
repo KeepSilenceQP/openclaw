@@ -1,4 +1,3 @@
-// Builds JSON result envelopes for outbound delivery tool responses.
 import type { ReplyPayload } from "../../auto-reply/types.js";
 import type { OutboundDeliveryJson } from "./format.js";
 import { normalizeOutboundPayloadsForJson, type OutboundPayloadJson } from "./payloads.js";

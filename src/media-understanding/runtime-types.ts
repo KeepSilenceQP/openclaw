@@ -1,4 +1,3 @@
-// Public runtime parameter/result contracts for media-understanding operations.
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.js";
 import type { ActiveMediaModel } from "./active-model.types.js";

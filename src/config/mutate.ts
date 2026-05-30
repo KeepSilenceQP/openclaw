@@ -1,5 +1,4 @@
 // Serializes config file mutations, checks optimistic hashes, and coordinates
-// runtime snapshot refresh/rollback around atomic source writes.
 import { AsyncLocalStorage } from "node:async_hooks";
 import crypto from "node:crypto";
 import fs from "node:fs/promises";

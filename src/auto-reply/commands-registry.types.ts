@@ -1,9 +1,7 @@
-// Public type model for command registry definitions and routing.
 import type { OpenClawConfig } from "../config/types.js";
 import type { CommandArgValues } from "./commands-args.types.js";
 import type { ThinkingCatalogEntry } from "./thinking.shared.js";
 
-/** Parsed command argument values shared with command definitions. */
 export type { CommandArgValues, CommandArgs } from "./commands-args.types.js";
 
 /** Surfaces where a command can be handled. */

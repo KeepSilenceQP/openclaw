@@ -1,4 +1,3 @@
-// Tests extensions/elevenlabs elevenlabs live test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

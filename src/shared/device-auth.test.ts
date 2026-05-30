@@ -1,4 +1,3 @@
-// Tests shared device auth test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeDeviceAuthRole, normalizeDeviceAuthScopes } from "./device-auth.js";
 

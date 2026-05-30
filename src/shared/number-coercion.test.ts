@@ -1,4 +1,3 @@
-// Tests shared number coercion test behavior.
 import { describe, expect, test } from "vitest";
 import {
   asDateTimestampMs,

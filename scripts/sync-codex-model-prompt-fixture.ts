@@ -1,4 +1,3 @@
-// Codex model prompt fixture sync renders checked-in prompt snapshots from Codex catalogs.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

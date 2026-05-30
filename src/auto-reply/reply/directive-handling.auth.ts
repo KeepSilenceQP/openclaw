@@ -1,4 +1,3 @@
-// Authorization gates for inline reply directives.
 import { formatRemainingShort } from "../../agents/auth-health.js";
 import {
   isConfiguredAwsSdkAuthProfileForProvider,

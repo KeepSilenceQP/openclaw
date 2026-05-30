@@ -1,4 +1,3 @@
-// QA Lab server starts the debugger UI, bus state, capture APIs, and optional gateway loop.
 import fs from "node:fs";
 import { createServer } from "node:http";
 import path from "node:path";
@@ -57,7 +56,6 @@ type QaLabBootstrapDefaults = {
   senderName: string;
 };
 
-/** Public QA Lab server handle and request/response types. */
 export type {
   QaLabLatestReport,
   QaLabScenarioOutcome,

@@ -1,4 +1,3 @@
-// QA Lab AIMock provider definition registers the local AIMock mock backend.
 import { createMockQaProviderDefinition } from "../shared/mock-provider-definition.js";
 
 /** Provider definition for the AIMock QA backend. */

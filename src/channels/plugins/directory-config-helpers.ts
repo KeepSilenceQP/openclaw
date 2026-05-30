@@ -1,4 +1,3 @@
-// Channel directory config access helpers.
 import type { OpenClawConfig } from "../../config/types.js";
 import {
   normalizeLowercaseStringOrEmpty,

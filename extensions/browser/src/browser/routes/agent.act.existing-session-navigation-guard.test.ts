@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser/routes agent act existing session navigation guard test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   createExistingSessionAgentSharedModule,

@@ -1,4 +1,3 @@
-// Tests security audit workspace skill escape test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";

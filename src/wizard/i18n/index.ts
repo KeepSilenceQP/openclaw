@@ -1,4 +1,3 @@
-// Locale resolution and translation helpers for setup wizard text.
 import { en } from "./locales/en.js";
 import { zh_CN } from "./locales/zh-CN.js";
 import { zh_TW } from "./locales/zh-TW.js";
@@ -9,7 +8,6 @@ import type {
   WizardTranslationTree,
 } from "./types.js";
 
-/** Re-exports wizard localization types. */
 export type { WizardI18nParams, WizardLocale, WizardTranslationMap };
 
 /** Translation function used by setup modules. */

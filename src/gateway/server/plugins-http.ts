@@ -1,5 +1,4 @@
 // Gateway HTTP/upgrade dispatch for plugin-owned routes, including auth and
-// runtime scope setup before handlers run.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Duplex } from "node:stream";
 import {
@@ -20,18 +19,15 @@ import {
 import { matchedPluginRoutesRequireGatewayAuth } from "./plugins-http/route-auth.js";
 import { findMatchingPluginHttpRoutes } from "./plugins-http/route-match.js";
 
-/** Plugin route path parsing helpers used by the gateway HTTP router. */
 export {
   isProtectedPluginRoutePathFromContext,
   resolvePluginRoutePathContext,
   type PluginRoutePathContext,
 } from "./plugins-http/path-context.js";
-/** Registered plugin route lookup helpers for HTTP and upgrade dispatch. */
 export {
   findRegisteredPluginHttpRoute,
   isRegisteredPluginHttpRoutePath,
 } from "./plugins-http/route-match.js";
-/** Decide whether a plugin route path must satisfy gateway auth before dispatch. */
 export { shouldEnforceGatewayAuthForPluginPath } from "./plugins-http/route-auth.js";
 
 type SubsystemLogger = ReturnType<typeof createSubsystemLogger>;

@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server request test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const sharedClientMocks = vi.hoisted(() => ({

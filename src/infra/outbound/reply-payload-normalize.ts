@@ -1,4 +1,3 @@
-// Normalizes loose reply payloads into outbound delivery fields.
 import type { ReplyPayload as InternalReplyPayload } from "../../auto-reply/reply-payload.js";
 import { readStringValue } from "../../shared/string-coerce.js";
 

@@ -1,4 +1,3 @@
-// Tests config config tools alsoAllow test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObject } from "./validation.js";
 

@@ -1,5 +1,4 @@
 // APNs HTTP/2 connection helpers with managed-proxy support.
-// Authorities are allowlisted before direct or CONNECT-tunneled sessions are opened.
 import http2 from "node:http2";
 import { resolveTimerTimeoutMs } from "../shared/number-coercion.js";
 import { openHttpConnectTunnel } from "./net/http-connect-tunnel.js";

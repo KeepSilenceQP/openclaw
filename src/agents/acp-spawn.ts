@@ -1,4 +1,3 @@
-// ACP spawn tool parameter parsing, policy checks, and direct runtime launch.
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import { getAcpSessionManager } from "../acp/control-plane/manager.js";

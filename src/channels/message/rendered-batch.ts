@@ -1,4 +1,3 @@
-// Rendered message batch planning from reply payloads.
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import type {
   RenderedMessageBatch,

@@ -1,4 +1,3 @@
-// Detection helpers for deciding whether a turn is an explicit command turn.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { isControlCommandMessage } from "./command-detection.js";

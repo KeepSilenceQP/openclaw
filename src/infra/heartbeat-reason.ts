@@ -1,4 +1,3 @@
-// Normalizes heartbeat wake reasons for events and logs.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 /** Returns a trimmed heartbeat wake reason, defaulting to requested. */

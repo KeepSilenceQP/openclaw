@@ -1,4 +1,3 @@
-// Tests extensions/mistral mistral live test behavior.
 import {
   normalizeTranscriptForMatch,
   runRealtimeSttLiveTest,

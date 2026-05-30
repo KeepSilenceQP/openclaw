@@ -1,4 +1,3 @@
-// Task registry maintenance, recovery, pruning, and operator inspection helpers.
 import { getAcpSessionManager } from "../acp/control-plane/manager.js";
 import {
   listAcpSessionEntries,

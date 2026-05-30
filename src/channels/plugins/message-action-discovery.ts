@@ -1,4 +1,3 @@
-// Message action discovery helpers for channel plugins.
 import type { TSchema } from "typebox";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { formatErrorMessage } from "../../infra/errors.js";
@@ -420,5 +419,4 @@ export const testing = {
     loggedMessageActionErrors.clear();
   },
 };
-/** Internal test-only access to message action discovery reset hooks. */
 export { testing as __testing };

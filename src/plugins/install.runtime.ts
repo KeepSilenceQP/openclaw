@@ -1,4 +1,3 @@
-// Runtime boundary for plugins install runtime behavior.
 import { resolveArchiveKind } from "../infra/archive.js";
 import { pathExists, root } from "../infra/fs-safe.js";
 import { resolveExistingInstallPath, withExtractedArchiveRoot } from "../infra/install-flow.js";

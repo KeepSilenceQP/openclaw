@@ -27,7 +27,6 @@ import {
 } from "../runtime/index.js";
 import { type BashExecutionMessage, type CustomMessage } from "./messages.js";
 
-/** Current transcript schema version written by new sessions. */
 export { CURRENT_SESSION_VERSION };
 
 /** Header record stored as the first entry of a session transcript. */

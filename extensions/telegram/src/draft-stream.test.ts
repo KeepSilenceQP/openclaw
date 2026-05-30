@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src draft stream test behavior.
 import type { Bot } from "grammy";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createTelegramDraftStream } from "./draft-stream.js";

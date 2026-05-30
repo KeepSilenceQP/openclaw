@@ -1,4 +1,3 @@
-// Tests plugins manifest owner policy test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizePluginsConfig } from "./config-state.js";
 import {

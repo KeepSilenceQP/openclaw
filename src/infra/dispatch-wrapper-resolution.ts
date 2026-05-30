@@ -1,5 +1,4 @@
 // Dispatch-wrapper unwrapping for exec policy resolution.
-// Transparent wrappers are peeled away; semantic or unsafe wrappers block safe-bin trust.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 import {
@@ -10,7 +9,6 @@ import {
 import { normalizeExecutableToken } from "./exec-wrapper-tokens.js";
 import { parseInlineOptionToken } from "./inline-option-token.js";
 
-/** Env invocation unwrapping shared with command-carrier analysis. */
 export { unwrapEnvInvocation } from "./command-carriers.js";
 
 /** Maximum transparent wrapper layers considered before treating the command as blocked. */

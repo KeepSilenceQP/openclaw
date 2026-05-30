@@ -1,4 +1,3 @@
-// Tests extensions/slack/src errors test behavior.
 import { describe, expect, it } from "vitest";
 import { formatSlackError } from "./errors.js";
 

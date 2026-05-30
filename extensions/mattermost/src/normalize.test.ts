@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src normalize test behavior.
 import { describe, expect, it } from "vitest";
 import { looksLikeMattermostTargetId, normalizeMattermostMessagingTarget } from "./normalize.js";
 

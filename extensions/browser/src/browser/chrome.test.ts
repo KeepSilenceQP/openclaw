@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser chrome test behavior.
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import { createServer } from "node:http";

@@ -1,5 +1,4 @@
 // Session cleanup service for pruning stale entries, repairing missing rows,
-// retiring old DM scope keys, and enforcing artifact disk budgets.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveDefaultAgentId } from "../../agents/agent-scope.js";

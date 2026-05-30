@@ -1,4 +1,3 @@
-// Queue drain helpers for delayed reply runs.
 import { channelRouteCompactKey } from "../../../plugin-sdk/channel-route.js";
 import { defaultRuntime } from "../../../runtime.js";
 import { resolveGlobalMap } from "../../../shared/global-singleton.js";

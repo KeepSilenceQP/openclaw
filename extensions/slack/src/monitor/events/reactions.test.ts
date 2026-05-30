@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/events reactions test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const reactionQueueMock = vi.hoisted(() => vi.fn());

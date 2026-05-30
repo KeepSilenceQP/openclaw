@@ -1,4 +1,3 @@
-// Generic slash command parser used by command handlers.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 
 export type SlashCommandParseResult =

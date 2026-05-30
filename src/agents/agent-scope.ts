@@ -1,10 +1,8 @@
 // Agent-scope helpers resolve the effective agent, workspace, model, fallback,
-// and skill settings used by runtime sessions and command entrypoints.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveAgentModelFallbackValues } from "../config/model-input.js";
 import { hasSessionAutoModelFallbackProvenance } from "../config/sessions/model-override-provenance.js";
-/** Exposes fallback provenance checks for callers that inspect session model overrides. */
 export { hasSessionAutoModelFallbackProvenance } from "../config/sessions/model-override-provenance.js";
 import type { SessionEntry } from "../config/sessions/types.js";
 import type { AgentDefaultsConfig } from "../config/types.agent-defaults.js";
@@ -32,7 +30,6 @@ import {
   resolveAgentWorkspaceDir,
   resolveDefaultAgentId,
 } from "./agent-scope-config.js";
-/** Agent config lookup helpers shared by commands, runtime routing, and UI status. */
 export {
   listAgentEntries,
   listAgentIds,
@@ -284,7 +281,6 @@ export function clearAutoFallbackPrimaryProbeSelection(
   entry.updatedAt = now;
 }
 
-/** Re-export session-key agent parsing for callers that should not import routing internals. */
 export { resolveAgentIdFromSessionKey };
 
 /** Resolves both default and active session agent ids from explicit input or session keys. */

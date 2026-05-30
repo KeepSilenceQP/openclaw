@@ -1,4 +1,3 @@
-// TypeBox schemas for task ledger list, get, and cancellation RPCs.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

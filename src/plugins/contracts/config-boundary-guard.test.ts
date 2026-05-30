@@ -1,4 +1,3 @@
-// Tests plugins/contracts config boundary guard test behavior.
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join } from "node:path";

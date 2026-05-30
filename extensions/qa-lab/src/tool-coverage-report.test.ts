@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src tool coverage report test behavior.
 import { describe, expect, it } from "vitest";
 import { readQaScenarioPack, type QaSeedScenarioWithSource } from "./scenario-catalog.js";
 import {

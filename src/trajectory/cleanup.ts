@@ -1,4 +1,3 @@
-// Removes trajectory sidecars that belong to deleted or pruned sessions.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveSessionFilePath } from "../config/sessions/paths.js";

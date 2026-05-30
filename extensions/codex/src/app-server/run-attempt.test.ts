@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server run attempt test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

@@ -1,4 +1,3 @@
-// Tests test qa convex credential payload validation test behavior.
 import { describe, expect, it } from "vitest";
 import {
   CredentialPayloadValidationError,

@@ -1,4 +1,3 @@
-// Tests provider-runtime operation retry test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   executeProviderOperationWithRetry,

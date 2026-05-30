@@ -1,4 +1,3 @@
-// Tests plugins/contracts plugin entry guardrails test behavior.
 import { existsSync, readFileSync } from "node:fs";
 import path, { dirname, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";

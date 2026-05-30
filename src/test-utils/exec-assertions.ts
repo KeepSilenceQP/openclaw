@@ -1,4 +1,3 @@
-// Assertions for npm subprocess calls emitted by install flows.
 import fs from "node:fs";
 import path from "node:path";
 import { expect } from "vitest";

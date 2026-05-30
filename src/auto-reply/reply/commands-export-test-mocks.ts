@@ -1,4 +1,3 @@
-// Shared mocks for command export tests.
 import type { vi } from "vitest";
 
 type ViLike = Pick<typeof vi, "fn">;

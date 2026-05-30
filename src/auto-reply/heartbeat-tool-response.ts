@@ -1,4 +1,3 @@
-// Heartbeat response tool normalization and notification payload helpers.
 import { isRecord } from "../shared/record-coerce.js";
 import { normalizeOptionalString as readString } from "../shared/string-coerce.js";
 import type { ReplyPayload } from "./reply-payload.js";

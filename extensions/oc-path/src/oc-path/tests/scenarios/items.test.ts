@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/scenarios items test behavior.
 import { describe, expect, it } from "vitest";
 import { parseMd } from "../../parse.js";
 

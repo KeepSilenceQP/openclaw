@@ -1,4 +1,3 @@
-// Shared outbound/message lifecycle helpers for channel plugins.
 import type {
   DurableMessageBatchSendResult,
   DurableMessageSendContext,
@@ -14,20 +13,17 @@ const loadChannelMessageRuntimeModule = async () => {
   return await channelMessageRuntimeModulePromise;
 };
 
-/** Durable inbound reply delivery contracts from the channel turn kernel. */
 export type {
   DurableInboundReplyDeliveryOptions,
   DurableInboundReplyDeliveryParams,
   DurableInboundReplyDeliveryResult,
 } from "../channels/turn/kernel.js";
-/** Durable outbound message runtime parameter and result contracts. */
 export type {
   DurableMessageBatchSendParams,
   DurableMessageBatchSendResult,
   DurableMessageSendContext,
   DurableMessageSendContextParams,
 } from "../channels/message/runtime.js";
-/** Reply prefix, typing callback, and message reply pipeline helpers. */
 export {
   createReplyPrefixContext,
   createReplyPrefixOptions,
@@ -36,7 +32,6 @@ export {
   resolveChannelSourceReplyDeliveryMode as resolveChannelMessageSourceReplyDeliveryMode,
 } from "../channels/message/index.js";
 
-/** Finalizable draft lifecycle helpers for streaming channel previews. */
 export {
   createFinalizableDraftLifecycle,
   createFinalizableDraftStreamControls,
@@ -44,59 +39,40 @@ export {
   clearFinalizableDraftMessage,
   takeMessageIdAfterStop,
 } from "../channels/draft-stream-controls.js";
-/** Mutable state contract for finalizable draft streaming controls. */
 export type { FinalizableDraftStreamState } from "../channels/draft-stream-controls.js";
-/** Creates the loop that drives draft preview updates. */
 export { createDraftStreamLoop } from "../channels/draft-stream-loop.js";
-/** Draft stream loop controller contract. */
 export type { DraftStreamLoop } from "../channels/draft-stream-loop.js";
-/** Builds runtime forwarding delegates for plugin outbound adapters. */
 export { createRuntimeOutboundDelegates } from "../channels/plugins/runtime-forwarders.js";
-/** Creates a serialized channel run queue for account lifecycle tasks. */
 export { createChannelRunQueue } from "./channel-lifecycle.core.js";
-/** Channel run queue contracts used by lifecycle helpers. */
 export type {
   ChannelRunQueue,
   ChannelRunQueueParams,
   ChannelRunQueueTaskContext,
 } from "./channel-lifecycle.core.js";
-/** Account status, server keepalive, passive lifecycle, and abort wait helpers. */
 export {
   createAccountStatusSink,
   keepHttpServerTaskAlive,
   runPassiveAccountLifecycle,
   waitUntilAbort,
 } from "./channel-lifecycle.core.js";
-/** Outbound payload planning helpers for delivery-specific projection. */
 export {
   createOutboundPayloadPlan,
   projectOutboundPayloadPlanForDelivery,
 } from "../infra/outbound/payloads.js";
-/** Builds outbound session context from configured agent/channel state. */
 export {
   buildOutboundSessionContext,
   type OutboundSessionContext,
 } from "../infra/outbound/session-context.js";
-/** Formatting options applied while rendering outbound delivery batches. */
 export type { OutboundDeliveryFormattingOptions } from "../infra/outbound/formatting.js";
-/** Resolves the agent identity used for outbound channel delivery. */
 export { resolveAgentOutboundIdentity } from "../infra/outbound/identity.js";
-/** Outbound identity facts rendered into channel replies. */
 export type { OutboundIdentity } from "../infra/outbound/identity.js";
-/** Expands reply-to targets into concrete outbound fanout destinations. */
 export { createReplyToFanout } from "../infra/outbound/reply-policy.js";
-/** Reply-to target resolution contract for outbound delivery. */
 export type { ReplyToResolution } from "../infra/outbound/reply-policy.js";
-/** Resolves optional outbound send dependencies from runtime context. */
 export { resolveOutboundSendDep } from "../infra/outbound/send-deps.js";
-/** Optional dependency bundle consumed by outbound send helpers. */
 export type { OutboundSendDeps } from "../infra/outbound/send-deps.js";
-/** Converts rich outbound content to plain text for limited channels. */
 export { sanitizeForPlainText } from "../infra/outbound/sanitize-text.js";
-/** Logging helpers for failed ack and typing notifications. */
 export { logAckFailure, logTypingFailure } from "../channels/logging.js";
 export * from "../channels/streaming.js";
-/** Message adapter, durability, receipt, live-preview, and proof helpers. */
 export {
   classifyDurableSendRecoveryState,
   createChannelMessageAdapterFromOutbound,
@@ -130,7 +106,6 @@ export {
   verifyDurableFinalCapabilityProofs,
   verifyLivePreviewFinalizerCapabilityProofs,
 } from "../channels/message/index.js";
-/** Message adapter, durability, receipt, live-preview, and proof contracts. */
 export type {
   ChannelMessageAdapter,
   ChannelMessageAdapterShape,

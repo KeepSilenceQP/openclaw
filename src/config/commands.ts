@@ -1,11 +1,9 @@
-// Native channel command and skill enablement resolution.
 import { getLoadedChannelPlugin, normalizeChannelId } from "../channels/plugins/index.js";
 import { resolveReadOnlyChannelCommandDefaults } from "../channels/plugins/read-only-command-defaults.js";
 import type { ChannelId } from "../channels/plugins/types.public.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import type { NativeCommandsSetting } from "./types.js";
 import type { OpenClawConfig } from "./types.openclaw.js";
-/** Re-export command flag helpers used by command-surface config checks. */
 export { isCommandFlagEnabled, isRestartEnabled } from "./commands.flags.js";
 
 function resolveAutoDefault(

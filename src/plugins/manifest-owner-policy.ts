@@ -1,4 +1,3 @@
-// Evaluates whether manifest-declared owner plugins are trusted and active enough to claim surfaces.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizePluginsConfig, resolveEffectivePluginActivationState } from "./config-state.js";
 import { isPluginEnabledByDefaultForPlatform } from "./default-enablement.js";

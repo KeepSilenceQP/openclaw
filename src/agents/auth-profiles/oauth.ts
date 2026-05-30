@@ -39,7 +39,6 @@ import {
 } from "./store.js";
 import type { AuthProfileCredential, AuthProfileStore, OAuthCredential } from "./types.js";
 
-/** OAuth identity comparison helpers used by refresh and mirroring logic. */
 export {
   isSafeToCopyOAuthIdentity,
   isSameOAuthIdentity,
@@ -47,7 +46,6 @@ export {
   normalizeAuthIdentityToken,
   shouldMirrorRefreshedOAuthCredential,
 } from "./oauth-identity.js";
-/** OAuth mirror decision contract and reason codes. */
 export type { OAuthMirrorDecision, OAuthMirrorDecisionReason } from "./oauth-identity.js";
 
 function listOAuthProviderIds(): string[] {

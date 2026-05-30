@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src channel message adapter test behavior.
 import {
   verifyChannelMessageAdapterCapabilityProofs,
   verifyChannelMessageLiveCapabilityAdapterProofs,

@@ -18,7 +18,6 @@ import { updateWizardCommand } from "./update-cli/wizard.js";
  * Re-export update command implementations for tests and legacy command assembly.
  */
 export { updateCommand, updateFinalizeCommand, updateStatusCommand, updateWizardCommand };
-/** Option shapes consumed by the update command implementations. */
 export type {
   UpdateCommandOptions,
   UpdateFinalizeOptions,

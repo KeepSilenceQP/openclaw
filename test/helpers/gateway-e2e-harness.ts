@@ -1,4 +1,3 @@
-// Gateway E2E tests share process launch, HTTP, node connection, and chat-event wait helpers here.
 import { randomUUID } from "node:crypto";
 import { request as httpRequest } from "node:http";
 import path from "node:path";
@@ -10,7 +9,6 @@ import { sleep } from "../../src/utils.js";
 import { GATEWAY_CLIENT_MODES, GATEWAY_CLIENT_NAMES } from "../../src/utils/message-channel.js";
 import { createOpenClawTestInstance, type OpenClawTestInstance } from "./openclaw-test-instance.js";
 
-/** Re-export chat text extraction for gateway E2E assertions. */
 export { extractFirstTextBlock };
 
 /** Minimal chat event fields used by gateway E2E wait helpers. */

@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/googlechat/src channel deps runtime behavior.
 export {
   buildChannelConfigSchema,
   chunkTextForOutbound,

@@ -1,4 +1,3 @@
-// Tests extensions/irc runtime api test behavior.
 import { runDirectImportSmoke } from "openclaw/plugin-sdk/plugin-test-contracts";
 import { beforeAll, describe, expect, it } from "vitest";
 

@@ -1,4 +1,3 @@
-// Shared SQLite helpers for task registry and task-flow registry stores.
 import { chmodSync, existsSync, mkdirSync } from "node:fs";
 import { isRecord } from "../utils.js";
 import { normalizeDeliveryContext } from "../utils/delivery-context.shared.js";

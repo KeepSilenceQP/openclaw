@@ -1,4 +1,3 @@
-// Tests infra heartbeat cooldown test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_FLOOD_THRESHOLD,

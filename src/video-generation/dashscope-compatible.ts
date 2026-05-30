@@ -1,4 +1,3 @@
-// Shared DashScope-compatible video generation request, polling, and download helpers.
 import {
   assertOkOrThrowHttpError,
   createProviderOperationDeadline,

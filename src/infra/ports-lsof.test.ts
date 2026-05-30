@@ -1,4 +1,3 @@
-// Tests infra ports lsof test behavior.
 import fs from "node:fs";
 import fsPromises from "node:fs/promises";
 import { afterEach, describe, expect, it, vi } from "vitest";

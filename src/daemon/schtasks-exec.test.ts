@@ -1,4 +1,3 @@
-// Tests daemon schtasks exec test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { execSchtasks } from "./schtasks-exec.js";
 

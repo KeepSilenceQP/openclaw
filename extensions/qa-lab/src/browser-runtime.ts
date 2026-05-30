@@ -1,4 +1,3 @@
-// QA Lab browser runtime helpers wrap gateway browser-control RPC calls.
 import { sleep } from "openclaw/plugin-sdk/runtime-env";
 
 type QaBrowserGateway = {

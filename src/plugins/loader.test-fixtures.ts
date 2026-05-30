@@ -1,5 +1,4 @@
 // Test fixtures for plugin loader suites. Helpers create isolated temp plugins,
-// disable bundled plugin discovery, and reset loader/runtime globals between tests.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

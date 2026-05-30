@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager cache test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   closeManagedCacheEntries,

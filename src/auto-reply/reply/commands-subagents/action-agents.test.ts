@@ -1,4 +1,3 @@
-// Coverage for subagent agents action.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const THREAD_CHANNEL = "thread-chat";

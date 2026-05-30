@@ -1,4 +1,3 @@
-// Shared agent view utilities for tool catalogs, avatars, config, and model pickers.
 import { html, nothing } from "lit";
 import {
   expandToolGroups,

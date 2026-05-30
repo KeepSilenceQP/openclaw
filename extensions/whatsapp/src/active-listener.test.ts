@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src active listener test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { getActiveWebListener, resolveWebAccountId } from "./active-listener.js";
 

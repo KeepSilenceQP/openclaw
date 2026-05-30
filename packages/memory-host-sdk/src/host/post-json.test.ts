@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host post json test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { postJson } from "./post-json.js";
 import { withRemoteHttpResponse } from "./remote-http.js";

@@ -1,4 +1,3 @@
-// Tests context-engine context engine test behavior.
 import type { AgentMessage } from "openclaw/plugin-sdk/agent-core";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { MemoryCitationsMode } from "../config/types.memory.js";
@@ -7,7 +6,6 @@ import { clearMemoryPluginState, registerMemoryPromptSection } from "../plugins/
 // ---------------------------------------------------------------------------
 // We dynamically import the registry so we can get a fresh module per test
 // group when needed.  For most groups we use the shared singleton directly.
-// ---------------------------------------------------------------------------
 import { buildMemorySystemPromptAddition, delegateCompactionToRuntime } from "./delegate.js";
 import { LegacyContextEngine } from "./legacy.js";
 import { registerLegacyContextEngine } from "./legacy.registration.js";

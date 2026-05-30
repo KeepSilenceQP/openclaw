@@ -1,4 +1,3 @@
-// Byte-sniffing helpers for image MIME types supported by model attachments.
 import { open } from "node:fs/promises";
 
 const IMAGE_TYPE_SNIFF_BYTES = 4100;

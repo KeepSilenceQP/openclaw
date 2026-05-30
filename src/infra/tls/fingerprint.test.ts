@@ -1,4 +1,3 @@
-// Tests infra/tls fingerprint test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeFingerprint } from "./fingerprint.js";
 

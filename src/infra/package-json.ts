@@ -1,5 +1,4 @@
 // Package metadata readers for install/update diagnostics.
-// Values are normalized to nullable strings so callers do not inspect raw package JSON.
 import path from "node:path";
 import { normalizeNullableString as normalizeString } from "../shared/string-coerce.js";
 import { tryReadJson } from "./json-files.js";

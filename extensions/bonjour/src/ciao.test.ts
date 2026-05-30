@@ -1,4 +1,3 @@
-// Tests extensions/bonjour/src ciao test behavior.
 import { describe, expect, it } from "vitest";
 
 const { classifyCiaoUnhandledRejection, ignoreCiaoUnhandledRejection } = await import("./ciao.js");

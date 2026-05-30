@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src group policy test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveWhatsAppGroupRequireMention,

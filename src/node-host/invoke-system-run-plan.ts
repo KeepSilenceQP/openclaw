@@ -1,6 +1,5 @@
 // Approval-plan hardening for system.run. User-approved commands are rebound to
 // canonical cwd, executable, and mutable script snapshots so later execution can
-// reject path or file swaps between approval and run time.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

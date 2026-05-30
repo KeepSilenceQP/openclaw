@@ -1,4 +1,3 @@
-// Channel reply pipeline builder for prefixes, typing, and delivery mode.
 import type { SourceReplyDeliveryMode } from "../../auto-reply/get-reply-options.types.js";
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import {
@@ -22,13 +21,9 @@ import {
 
 /** Prefix template context prepared for channel replies. */
 export type ReplyPrefixContext = ReplyPrefixContextBundle["prefixContext"];
-/** Reply prefix bundle/options types re-exported for channel senders. */
 export type { ReplyPrefixContextBundle, ReplyPrefixOptions };
-/** Typing callback types re-exported for channel reply pipelines. */
 export type { CreateTypingCallbacksParams, TypingCallbacks };
-/** Prefix/typing helpers re-exported for channel reply pipelines. */
 export { createReplyPrefixContext, createReplyPrefixOptions, createTypingCallbacks };
-/** Source reply delivery mode type used by channel pipeline resolution. */
 export type { SourceReplyDeliveryMode };
 
 /** Resolve source reply delivery mode for a channel message pipeline. */

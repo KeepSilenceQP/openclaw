@@ -1,4 +1,3 @@
-// Tests infra channel approval auth test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { createResolvedApproverActionAuthAdapter } from "../plugin-sdk/approval-auth-helpers.js";
 

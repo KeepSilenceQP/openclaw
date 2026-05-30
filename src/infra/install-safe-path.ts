@@ -1,6 +1,4 @@
-// Re-exports safe install path helpers and compares plugin ids to package names.
 import "./fs-safe-defaults.js";
-/** Safe install path primitives from fs-safe with infra defaults initialized. */
 export {
   assertCanonicalPathWithinBase,
   resolveSafeInstallDir,

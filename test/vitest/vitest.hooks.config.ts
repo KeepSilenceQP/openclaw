@@ -1,4 +1,3 @@
-// Vitest project config for hook tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the scoped Vitest config for hook tests. */

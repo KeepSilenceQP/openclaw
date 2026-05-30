@@ -3,7 +3,6 @@ import {
   CHANNEL_TARGET_DESCRIPTION,
   CHANNEL_TARGETS_DESCRIPTION,
 } from "../../infra/outbound/channel-target.js";
-/** String enum schema helpers shared by tool parameter definitions. */
 export { optionalStringEnum, stringEnum } from "./string-enum.js";
 
 /** Builds a schema for one outbound channel target. */

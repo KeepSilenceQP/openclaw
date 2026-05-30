@@ -1,4 +1,3 @@
-// Orchestrates all model-list row sources in source-plan order.
 import type { ModelRegistry } from "../../llm/model-registry.js";
 import {
   appendCatalogSupplementRows,

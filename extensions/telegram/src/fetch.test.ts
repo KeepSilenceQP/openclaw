@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src fetch test behavior.
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";

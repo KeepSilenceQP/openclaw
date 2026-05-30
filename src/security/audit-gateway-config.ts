@@ -1,4 +1,3 @@
-// Gateway configuration security audit checks.
 import { isIP } from "node:net";
 import type { GatewayAuthConfig } from "../config/types.gateway.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

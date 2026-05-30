@@ -30,14 +30,10 @@ import { uniqueStrings } from "../shared/string-normalization.js";
 import { resolveConfigDir, shortenHomeInString, shortenHomePath, sleep } from "../utils.js";
 import { VERSION } from "../version.js";
 import type { NodeManagerChoice, OnboardMode, ResetScope } from "./onboard-types.js";
-/** Token generator reused by onboarding flows that create gateway credentials. */
 export { randomToken } from "./random-token.js";
 
-/** Binary detector exposed for setup steps that verify local tooling. */
 export { detectBinary };
-/** Browser-open helpers used by onboarding to launch or explain Control UI access. */
 export { detectBrowserOpenSupport, openUrl, resolveBrowserOpenCommand };
-/** Control UI link resolver shared by local and remote onboarding summaries. */
 export { resolveControlUiLinks };
 
 /** Handles Clack cancellation consistently before exiting the onboarding command. */

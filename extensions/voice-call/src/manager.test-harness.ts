@@ -1,4 +1,3 @@
-// Voice-call manager tests use this fake provider and store harness for call lifecycle assertions.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

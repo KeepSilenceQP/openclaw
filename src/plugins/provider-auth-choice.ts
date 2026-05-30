@@ -615,5 +615,4 @@ async function upsertAuthProfileWithLockOrThrow(params: UpsertAuthProfileParams)
     );
   }
 }
-/** Test-only provider auth choice dependency controls. */
 export { testing as __testing };

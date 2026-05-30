@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory generic embedding provider bridge test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type {
   EmbeddingInput,

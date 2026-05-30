@@ -1,4 +1,3 @@
-// Reply payload helper for heartbeat responses with visible content.
 import { hasOutboundReplyContent } from "openclaw/plugin-sdk/reply-payload";
 import type { ReplyPayload } from "./types.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot message context group body test behavior.
 import "./bot-message-context.audio-transcript.test-support.js";
 import "./bot-message-context.implicit-mention.test-support.js";
 import "./bot-message-context.sender-prefix.test-support.js";

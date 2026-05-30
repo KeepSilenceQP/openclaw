@@ -1,4 +1,3 @@
-// Builds outbound session keys from channel route peers and config scope.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { buildAgentSessionKey, type RoutePeer } from "../../routing/resolve-route.js";
 

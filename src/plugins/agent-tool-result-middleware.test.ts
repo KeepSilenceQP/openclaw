@@ -1,4 +1,3 @@
-// Tests plugins agent tool result middleware test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeAgentToolResultMiddlewareRuntimes } from "./agent-tool-result-middleware.js";
 

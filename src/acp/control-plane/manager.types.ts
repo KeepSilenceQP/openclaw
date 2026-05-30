@@ -169,5 +169,4 @@ export const DEFAULT_DEPS: AcpSessionManagerDeps = {
   requireRuntimeBackend: requireAcpRuntimeBackend,
 };
 
-/** Session metadata types re-exported for ACP control-plane callers. */
 export type { AcpSessionRuntimeOptions, SessionAcpMeta, SessionEntry };

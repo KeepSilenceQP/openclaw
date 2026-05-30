@@ -1,4 +1,3 @@
-// Default UI state used when filters and cron forms have no persisted value.
 import type { LogLevel } from "./types.ts";
 import type { CronFormState } from "./ui-types.ts";
 

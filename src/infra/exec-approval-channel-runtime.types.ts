@@ -1,4 +1,3 @@
-// Shared contracts for channel runtimes that deliver approval requests.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { ExecApprovalRequest, ExecApprovalResolved } from "./exec-approvals.js";
 import type { PluginApprovalRequest, PluginApprovalResolved } from "./plugin-approvals.js";

@@ -1,4 +1,3 @@
-// Creates channel approval runtimes backed by native channel delivery plans.
 import type { ChannelApprovalNativeAdapter } from "../channels/plugins/approval-native.types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
@@ -27,7 +26,6 @@ import type { PluginApprovalRequest } from "./plugin-approvals.js";
 type ApprovalRequest = ExecApprovalRequest | PluginApprovalRequest;
 type ApprovalResolved = ExecApprovalResolved | PluginApprovalResolved;
 
-/** Prepared target contract used by native approval transport adapters. */
 export type { PreparedChannelNativeApprovalTarget } from "./approval-native-runtime-types.js";
 
 type ChannelNativeApprovalPlanDeliveryResult<TPendingEntry> = {

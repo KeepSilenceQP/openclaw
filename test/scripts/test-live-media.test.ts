@@ -1,4 +1,3 @@
-// Tests test/scripts test live media test behavior.
 import { describe, expect, it } from "vitest";
 import { parseArgs } from "../../scripts/test-live-media.ts";
 

@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src monitor handler sso test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createMSTeamsSsoTokenStoreMemory } from "./sso-token-store.js";
 import {

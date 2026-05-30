@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/discord/src/monitor agent components runtime behavior.
 export {
   buildPluginBindingResolvedText,
   parsePluginBindingApprovalCustomId,

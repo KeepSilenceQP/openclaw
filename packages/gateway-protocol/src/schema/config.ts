@@ -1,4 +1,3 @@
-// TypeBox schemas for gateway config editing, schema lookup, and update RPCs.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

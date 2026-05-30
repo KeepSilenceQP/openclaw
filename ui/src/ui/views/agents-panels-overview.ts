@@ -1,4 +1,3 @@
-// Agent overview panel rendering for model, workspace, runtime, and identity settings.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import type {

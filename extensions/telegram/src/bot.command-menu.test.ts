@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot command menu test behavior.
 import {
   listNativeCommandSpecs,
   listNativeCommandSpecsForConfig,

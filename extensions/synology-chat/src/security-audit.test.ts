@@ -1,4 +1,3 @@
-// Tests extensions/synology-chat/src security audit test behavior.
 import { describe, expect, it } from "vitest";
 import { collectSynologyChatSecurityAuditFindings } from "./security-audit.js";
 import type { ResolvedSynologyChatAccount } from "./types.js";

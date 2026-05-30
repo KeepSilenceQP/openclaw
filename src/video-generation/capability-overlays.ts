@@ -1,4 +1,3 @@
-// Applies provider/model capability overlays and validates reference-input support before video generation.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveVideoGenerationModeCapabilities } from "./capabilities.js";
 import type { GenerateVideoParams } from "./runtime-types.js";

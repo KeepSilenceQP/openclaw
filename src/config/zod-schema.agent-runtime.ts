@@ -1,4 +1,3 @@
-// Zod schemas for agent runtime, sandbox, memory, tools, and per-agent config.
 import { z } from "zod";
 import { splitSandboxBindSpec } from "../agents/sandbox/bind-spec.js";
 import { isSandboxHostPathAbsolute } from "../agents/sandbox/host-paths.js";
@@ -994,7 +993,6 @@ export const MemorySearchSchema = z
   })
   .strict()
   .optional();
-/** Agent model schema exports reused by runtime config schemas. */
 export { AgentModelSchema, AgentToolModelSchema };
 
 const AgentRuntimeAcpSchema = z

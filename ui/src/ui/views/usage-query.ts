@@ -259,9 +259,7 @@ const setQueryTokensForKey = (query: string, key: string, values: string[]): str
   return next.length ? `${next.join(" ")} ` : "";
 };
 
-/** Query suggestion type used by Usage filter controls. */
 export type { QuerySuggestion };
-/** Query parsing, suggestion, CSV, and download helpers for Usage. */
 export {
   addQueryToken,
   applySuggestionToQuery,

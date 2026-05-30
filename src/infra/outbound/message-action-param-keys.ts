@@ -1,4 +1,3 @@
-// Detects non-standard message action params that may belong to plugins.
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 
 const STANDARD_MESSAGE_ACTION_PARAM_KEYS = new Set([

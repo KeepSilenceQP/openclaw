@@ -140,14 +140,12 @@ export function createChatSessionsLoadOverrides(
   }
   return overrides;
 }
-/** Input-history actions re-exported for chat view components. */
 export {
   handleChatDraftChange,
   handleChatInputHistoryKey,
   navigateChatInputHistory,
   resetChatInputHistoryNavigation,
 };
-/** Input-history key event contracts re-exported for chat view components. */
 export type { ChatInputHistoryKeyInput, ChatInputHistoryKeyResult };
 
 /** Returns whether a send or streamed run currently blocks normal submission. */

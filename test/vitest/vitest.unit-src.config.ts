@@ -1,4 +1,3 @@
-// Vitest project config for source unit tests outside ACP/security lanes.
 import { createUnitVitestConfigWithOptions } from "./vitest.unit.config.ts";
 
 /** Default source-unit Vitest project configuration. */

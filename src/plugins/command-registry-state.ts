@@ -1,5 +1,4 @@
 // Process-global plugin command registry state. Commands are keyed by slash
-// name and locked after registration so runtime dispatch sees stable metadata.
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { normalizeAgentPromptSurfaceKind } from "./agent-prompt-surface-kind.js";

@@ -1,4 +1,3 @@
-// Tests test/scripts list prod store packages test behavior.
 import { spawnSync } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";

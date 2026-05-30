@@ -1,4 +1,3 @@
-// In-memory and persisted task registry operations, indexes, and delivery hooks.
 import crypto from "node:crypto";
 import { createRequire } from "node:module";
 import {

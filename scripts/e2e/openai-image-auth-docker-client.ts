@@ -1,4 +1,3 @@
-// OpenAI image auth Docker client verifies direct API-key and Codex OAuth image routes.
 import http from "node:http";
 import type { AddressInfo } from "node:net";
 

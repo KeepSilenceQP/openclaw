@@ -1,4 +1,3 @@
-// Tests extensions/copilot/src doctor probes test behavior.
 import { EventEmitter } from "node:events";
 import fs from "node:fs/promises";
 import os from "node:os";

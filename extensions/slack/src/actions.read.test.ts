@@ -1,4 +1,3 @@
-// Tests extensions/slack/src actions read test behavior.
 import type { WebClient } from "@slack/web-api";
 import { describe, expect, it, vi } from "vitest";
 import { readSlackMessages } from "./actions.js";

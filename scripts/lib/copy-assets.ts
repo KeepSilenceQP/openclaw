@@ -1,4 +1,3 @@
-// Build asset copy helpers share project-root resolution and verbose logging.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

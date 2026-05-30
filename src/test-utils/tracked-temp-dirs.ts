@@ -1,4 +1,3 @@
-// Temp directory tracker for tests that need multiple deterministic child dirs.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

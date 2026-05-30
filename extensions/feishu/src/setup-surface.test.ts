@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src setup surface test behavior.
 import {
   createNonExitingRuntimeEnv,
   createPluginSetupWizardConfigure,

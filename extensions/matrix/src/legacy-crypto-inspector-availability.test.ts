@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src legacy crypto inspector availability test behavior.
 import path from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

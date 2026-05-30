@@ -1,4 +1,3 @@
-// IP parsing and special-use network policy helpers for SSRF-safe URL handling.
 import ipaddr from "ipaddr.js";
 
 function normalizeOptionalString(value: unknown): string | undefined {

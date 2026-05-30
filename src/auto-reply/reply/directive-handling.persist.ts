@@ -1,4 +1,3 @@
-// Persistence helpers for inline directive state.
 import {
   resolveAgentDir,
   resolveDefaultAgentId,

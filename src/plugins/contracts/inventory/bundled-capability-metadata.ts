@@ -1,4 +1,3 @@
-// Build/test inventory snapshots for bundled plugin capability contracts.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

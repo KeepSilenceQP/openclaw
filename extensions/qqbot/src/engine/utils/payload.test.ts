@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/utils payload test behavior.
 import { describe, expect, it } from "vitest";
 import {
   decodeCronPayload,

@@ -1,4 +1,3 @@
-// MiniMax stream wrapper for provider-owned fast-mode model remapping.
 import type { StreamFn } from "../../../agents/runtime/index.js";
 import { streamSimple } from "../../stream.js";
 

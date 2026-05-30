@@ -1,4 +1,3 @@
-// Tests gateway/server-methods server methods test behavior.
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import fsPromises from "node:fs/promises";

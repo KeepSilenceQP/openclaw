@@ -809,5 +809,4 @@ export async function runLiveCacheRegression(): Promise<LiveCacheRegressionResul
   }
   return { regressions, summary, warnings };
 }
-/** Backward-compatible test hook export for live cache regression fixtures. */
 export { testing as __testing };

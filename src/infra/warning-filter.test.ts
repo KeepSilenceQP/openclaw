@@ -1,4 +1,3 @@
-// Tests infra warning filter test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { installProcessWarningFilter, shouldIgnoreWarning } from "./warning-filter.js";
 

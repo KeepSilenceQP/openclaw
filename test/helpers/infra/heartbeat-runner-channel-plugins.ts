@@ -1,4 +1,3 @@
-// Heartbeat runner tests use these channel plugins to exercise outbound delivery contracts.
 import type {
   ChannelId,
   ChannelMessagingAdapter,

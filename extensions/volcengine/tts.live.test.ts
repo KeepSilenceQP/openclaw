@@ -1,4 +1,3 @@
-// Tests extensions/volcengine tts live test behavior.
 import { describe, expect, it } from "vitest";
 import { volcengineTTS } from "./tts.js";
 

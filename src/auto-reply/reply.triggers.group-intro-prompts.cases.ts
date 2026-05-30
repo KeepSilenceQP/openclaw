@@ -1,4 +1,3 @@
-// Table-driven coverage for group intro prompt trigger behavior.
 import { describe, expect, it } from "vitest";
 import { makeCfg } from "../../test/helpers/auto-reply/trigger-handling-test-harness.js";
 import { buildGroupChatContext, buildGroupIntro } from "./reply/groups.js";

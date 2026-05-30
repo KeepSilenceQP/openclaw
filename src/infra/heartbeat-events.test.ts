@@ -1,4 +1,3 @@
-// Tests infra heartbeat events test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   emitHeartbeatEvent,

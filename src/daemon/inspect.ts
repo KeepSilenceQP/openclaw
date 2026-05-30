@@ -1,4 +1,3 @@
-// Detects managed and stray gateway services across launchd, systemd, and Windows tasks.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

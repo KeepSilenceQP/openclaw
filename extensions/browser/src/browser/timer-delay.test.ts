@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser timer delay test behavior.
 import { describe, expect, it } from "vitest";
 import { MAX_SAFE_TIMEOUT_DELAY_MS, normalizeBrowserTimerDelayMs } from "./timer-delay.js";
 

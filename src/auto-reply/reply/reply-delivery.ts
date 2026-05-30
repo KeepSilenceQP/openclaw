@@ -1,4 +1,3 @@
-// Reply delivery helpers for payload dispatch and channel hooks.
 import { hasOutboundReplyContent } from "openclaw/plugin-sdk/reply-payload";
 import { logVerbose } from "../../globals.js";
 import { copyReplyPayloadMetadata } from "../reply-payload.js";

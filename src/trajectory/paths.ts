@@ -1,4 +1,3 @@
-// Path helpers for writing runtime trajectory logs and session pointer files.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveHomeRelativePath } from "../infra/home-dir.js";

@@ -1,4 +1,3 @@
-// Tests extensions/signal/src monitor tool result autostart test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it, vi } from "vitest";
 import type { SignalDaemonExitEvent } from "./daemon.js";

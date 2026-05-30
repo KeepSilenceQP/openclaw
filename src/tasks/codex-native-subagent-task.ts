@@ -1,4 +1,3 @@
-// Identifies Codex native subagent tasks that do not have a child session record.
 import type { TaskRecord } from "./task-registry.types.js";
 
 /** Runtime id used by Codex native subagent tasks. */

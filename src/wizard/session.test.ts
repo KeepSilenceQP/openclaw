@@ -1,4 +1,3 @@
-// Tests wizard session test behavior.
 import { describe, expect, test } from "vitest";
 import { WizardSession } from "./session.js";
 

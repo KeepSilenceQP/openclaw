@@ -1,4 +1,3 @@
-// Applies reply-to/thread routing metadata for outbound message actions.
 import { readStringParam } from "../../agents/tools/common.js";
 import type {
   ChannelId,

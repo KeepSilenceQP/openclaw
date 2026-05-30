@@ -1,4 +1,3 @@
-// Cloudflare Workers AI and AI Gateway base URL helpers.
 import type { Model } from "../types.js";
 
 /** Workers AI direct endpoint. */

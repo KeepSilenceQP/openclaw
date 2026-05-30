@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix deps test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

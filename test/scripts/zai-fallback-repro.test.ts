@@ -1,4 +1,3 @@
-// Tests test/scripts zai fallback repro test behavior.
 import { describe, expect, it } from "vitest";
 import {
   appendBoundedReproOutput,

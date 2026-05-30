@@ -1,4 +1,3 @@
-// Tests tui/components btw inline message test behavior.
 import { describe, expect, it } from "vitest";
 import { BtwInlineMessage } from "./btw-inline-message.js";
 

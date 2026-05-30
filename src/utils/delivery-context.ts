@@ -1,8 +1,6 @@
-// Public delivery-context facade plus conversation-id target helpers.
 import { getChannelPlugin, normalizeChannelId } from "../channels/plugins/index.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { normalizeMessageChannel } from "./message-channel.js";
-/** Canonical delivery-context normalization and conversion helpers. */
 export {
   channelRouteFromDeliveryContext,
   deliveryContextFromChannelRoute,
@@ -12,7 +10,6 @@ export {
   normalizeDeliveryContext,
   normalizeSessionDeliveryFields,
 } from "./delivery-context.shared.js";
-/** Public delivery-context types. */
 export type { DeliveryContext, DeliveryContextSessionSource } from "./delivery-context.types.js";
 
 type ConversationTargetParams = {

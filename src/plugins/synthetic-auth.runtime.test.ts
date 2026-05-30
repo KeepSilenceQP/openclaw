@@ -1,4 +1,3 @@
-// Tests plugins synthetic auth runtime test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 type SyntheticAuthRegistrySnapshotResult = {

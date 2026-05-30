@@ -49,5 +49,4 @@ export const testing = {
     nodeWakeNudgeById.clear();
   },
 };
-/** Test-only alias for node wake state inspection helpers. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src/providers mock test behavior.
 import { describe, expect, it } from "vitest";
 import type { WebhookContext } from "../types.js";
 import { MockProvider } from "./mock.js";

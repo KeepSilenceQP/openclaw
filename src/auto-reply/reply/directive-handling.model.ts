@@ -1,4 +1,3 @@
-// Inline model directive handling and persistence.
 import { resolveAuthStorePathForDisplay } from "../../agents/auth-profiles.js";
 import { resolveAgentHarnessPolicy } from "../../agents/harness/selection.js";
 import {

@@ -1,4 +1,3 @@
-// Chat command handlers for MCP server controls.
 import {
   listConfiguredMcpServers,
   setConfiguredMcpServer,

@@ -1,4 +1,3 @@
-// Persistence layer for the installed plugin index cache and refresh decisions.
 import { z } from "zod";
 import { saveJsonFile } from "../infra/json-file.js";
 import { tryReadJson, tryReadJsonSync, writeJson } from "../infra/json-files.js";
@@ -30,7 +29,6 @@ import {
   type RefreshInstalledPluginIndexParams,
 } from "./installed-plugin-index.js";
 import { clearPluginMetadataLifecycleCaches } from "./plugin-metadata-lifecycle.js";
-/** Store path resolver used by callers that need to inspect or override the index file location. */
 export {
   resolveInstalledPluginIndexStorePath,
   type InstalledPluginIndexStoreOptions,

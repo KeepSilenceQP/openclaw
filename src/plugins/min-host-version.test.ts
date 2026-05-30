@@ -1,4 +1,3 @@
-// Tests plugins min host version test behavior.
 import { describe, expect, it } from "vitest";
 import {
   checkMinHostVersion,

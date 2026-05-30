@@ -1,4 +1,3 @@
-// Assistant identity normalization for names, text avatars, and image avatar URLs.
 import { coerceIdentityValue } from "../../../src/shared/assistant-identity-values.js";
 
 const MAX_ASSISTANT_NAME = 50;

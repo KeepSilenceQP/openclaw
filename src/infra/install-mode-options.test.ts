@@ -1,4 +1,3 @@
-// Tests infra install mode options test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveInstallModeOptions,

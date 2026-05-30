@@ -1,4 +1,3 @@
-// Tests talk forced consult coordinator test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createRealtimeVoiceForcedConsultCoordinator } from "./forced-consult-coordinator.js";
 

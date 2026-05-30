@@ -1,4 +1,3 @@
-/** Re-exported video-generation-core plugin public API. */
 export {
   generateVideo,
   listRuntimeVideoGenerationProviders,

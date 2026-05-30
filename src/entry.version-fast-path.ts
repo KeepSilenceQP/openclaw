@@ -1,4 +1,3 @@
-// Root CLI version fast path that avoids loading the full command graph.
 import { isRootVersionInvocation } from "./cli/argv.js";
 import { resolveCliContainerTarget } from "./cli/container-target.js";
 

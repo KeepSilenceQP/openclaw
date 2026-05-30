@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src approval auth test behavior.
 import { describe, expect, it } from "vitest";
 import { getIMessageApprovalApprovers, imessageApprovalAuth } from "./approval-auth.js";
 

@@ -1,5 +1,4 @@
 // Controller helpers for the Debug view. It loads common gateway diagnostics and
-// exposes an operator-entered raw RPC call surface for troubleshooting.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { HealthSnapshot, StatusSummary } from "../types.ts";
 

@@ -1,4 +1,3 @@
-// Retrying JSON POST wrapper for remote embedding batch APIs.
 import { postJson } from "./post-json.js";
 import { retryAsync } from "./retry-utils.js";
 import type { SsrFPolicy } from "./ssrf-policy.js";

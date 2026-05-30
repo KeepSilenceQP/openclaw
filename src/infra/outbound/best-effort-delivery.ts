@@ -1,4 +1,3 @@
-// Resolves best-effort external delivery targets for session-first replies.
 import { stringifyRouteThreadId } from "../../plugin-sdk/channel-route.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import {

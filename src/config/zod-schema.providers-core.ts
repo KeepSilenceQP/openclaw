@@ -1,4 +1,3 @@
-// Core channel provider Zod schemas for config validation and account inheritance.
 import { z } from "zod";
 import { isSafeScpRemoteHost } from "../infra/scp-host.js";
 import { isValidInboundPathRootPattern } from "../media/inbound-path-policy.js";

@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor media test behavior.
 import type { WebClient } from "@slack/web-api";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {

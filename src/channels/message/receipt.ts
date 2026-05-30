@@ -1,4 +1,3 @@
-// Message receipt construction and id extraction helpers.
 import { normalizeUniqueStringEntries } from "../../shared/string-normalization.js";
 import type {
   MessageReceipt,

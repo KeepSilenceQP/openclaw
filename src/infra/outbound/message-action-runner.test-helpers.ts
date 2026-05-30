@@ -1,5 +1,4 @@
 // Test helpers for message action runner routing and target resolution.
-// Fixtures create lightweight channel plugins with predictable dry-run behavior.
 import type {
   ChannelDirectoryEntryKind,
   ChannelMessageActionName,

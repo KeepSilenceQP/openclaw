@@ -1,4 +1,3 @@
-// Gateway protocol schemas for listing and inspecting runtime environments.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

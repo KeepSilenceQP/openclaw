@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src audit test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 let collectTelegramUnmentionedGroupIds: typeof import("./audit.js").collectTelegramUnmentionedGroupIds;

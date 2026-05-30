@@ -1,4 +1,3 @@
-// Shared runtime web-search/web-fetch provider selection and SecretRef resolution helpers.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveSecretInputRef } from "../config/types.secrets.js";
 import { createLazyRuntimeNamedExport } from "../shared/lazy-runtime.js";
@@ -11,7 +10,6 @@ import type {
 } from "./runtime-shared.js";
 import { pushInactiveSurfaceWarning, pushWarning } from "./runtime-shared.js";
 import type { RuntimeWebDiagnostic, RuntimeWebDiagnosticCode } from "./runtime-web-tools.types.js";
-/** Runtime object guard re-exported for web-tool resolver callers. */
 export { isRecord } from "./shared.js";
 import { isRecord } from "./shared.js";
 

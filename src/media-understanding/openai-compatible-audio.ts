@@ -1,4 +1,3 @@
-// OpenAI-compatible audio transcription adapter for media-understanding providers.
 import {
   assertOkOrThrowHttpError,
   buildAudioTranscriptionFormData,

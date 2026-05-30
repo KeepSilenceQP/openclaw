@@ -1,4 +1,3 @@
-// Memory config contracts for built-in memory and QMD-backed recall.
 import type { SessionSendPolicyConfig } from "./types.base.js";
 
 /** Memory backend selected by config. */

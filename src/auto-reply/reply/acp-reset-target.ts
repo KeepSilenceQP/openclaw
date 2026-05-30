@@ -1,4 +1,3 @@
-// ACP reset target resolution for session reset commands.
 import {
   buildConfiguredAcpSessionKey,
   normalizeBindingConfig,

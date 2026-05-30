@@ -1,4 +1,3 @@
-// Tests talk turn context tracker test behavior.
 import { describe, expect, it } from "vitest";
 import { createRealtimeVoiceTurnContextTracker } from "./turn-context-tracker.js";
 

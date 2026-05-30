@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src group mentions test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMatrixGroupToolPolicy } from "./group-mentions.js";
 

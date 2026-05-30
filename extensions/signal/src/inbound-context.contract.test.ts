@@ -1,4 +1,3 @@
-// Tests extensions/signal/src inbound context contract test behavior.
 import { expectChannelInboundContextContract } from "openclaw/plugin-sdk/channel-contract-testing";
 import { finalizeInboundContext } from "openclaw/plugin-sdk/reply-runtime";
 import { describe, it } from "vitest";

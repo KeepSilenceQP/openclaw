@@ -1,4 +1,3 @@
-// Tests config heartbeat config honor inventory test behavior.
 import { describe, expect, it } from "vitest";
 import {
   auditConfigHonorInventory,

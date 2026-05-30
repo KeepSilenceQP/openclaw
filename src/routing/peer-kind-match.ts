@@ -1,4 +1,3 @@
-// Compares route binding peer kinds with caller chat types.
 import type { ChatType } from "../channels/chat-type.js";
 
 /** Treats group and channel as compatible peer kinds while keeping direct distinct. */

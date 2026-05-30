@@ -1,5 +1,3 @@
-// Shared helpers for parsing MEDIA tokens from command/stdout text.
-
 import {
   extractEmbeddedIpv4FromIpv6,
   isBlockedSpecialUseIpv4Address,

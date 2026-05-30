@@ -23,7 +23,6 @@ import {
 } from "./constants.js";
 import { resolveGatewayStateDir } from "./paths.js";
 
-/** Node runtime and Linux CA helpers used by service environment construction. */
 export { isNodeVersionManagerRuntime, resolveLinuxSystemCaBundle };
 
 type MinimalServicePathOptions = {

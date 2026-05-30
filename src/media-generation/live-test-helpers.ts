@@ -1,4 +1,3 @@
-// Helpers shared by media-generation live tests for filters, model maps, and redaction.
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 

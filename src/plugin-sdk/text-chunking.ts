@@ -1,4 +1,3 @@
-// Public SDK text chunking, Markdown rendering, and delivery sanitization helpers.
 import { chunkTextByBreakResolver } from "../shared/text-chunking.js";
 
 /** Chunk outbound text while preferring newline boundaries over spaces. */
@@ -10,7 +9,6 @@ export function chunkTextForOutbound(text: string, limit: number): string[] {
   });
 }
 
-/** Markdown intermediate representation parsing and slicing helpers. */
 export {
   chunkMarkdownIR,
   markdownToIR,
@@ -43,24 +41,19 @@ export {
   stripToolCallXmlTags,
   type AssistantVisibleTextSanitizerProfile,
 } from "../shared/text/assistant-visible-text.js";
-/** Auto-linked file reference detection helpers. */
 export {
   FILE_REF_EXTENSIONS_WITH_TLD,
   isAutoLinkedFileRef,
 } from "../shared/text/auto-linked-file-ref.js";
-/** Code-region helpers used when stripping or chunking Markdown. */
 export { findCodeRegions, isInsideCode, type CodeRegion } from "../shared/text/code-regions.js";
-/** Reasoning tag stripping helpers for visible reply text. */
 export {
   stripReasoningTagsFromText,
   type ReasoningTagMode,
   type ReasoningTagTrim,
 } from "../shared/text/reasoning-tags.js";
-/** Strips Markdown formatting for plain-text channel fallbacks. */
 export { stripMarkdown } from "../shared/text/strip-markdown.js";
 export { sanitizeTerminalText } from "../../packages/terminal-core/src/safe-text.js";
 export { SYSTEM_MARK, hasSystemMark, prefixSystemMessage } from "../infra/system-message.ts";
-/** Inline directive stripping helpers for display and delivery paths. */
 export {
   stripInlineDirectiveTagsForDelivery,
   stripInlineDirectiveTagsForDisplay,
@@ -68,5 +61,4 @@ export {
   type DisplayMessageWithContent,
   type InlineDirectiveParseResult,
 } from "../utils/directive-tags.js";
-/** Generic fixed-size item chunking helper. */
 export { chunkItems } from "../utils/chunk-items.js";

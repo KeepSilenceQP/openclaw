@@ -1,4 +1,3 @@
-// Gateway chat attachment normalization, inline image routing, and media offload support.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { formatErrorMessage } from "../infra/errors.js";
 import { estimateBase64DecodedBytes } from "../media/base64.js";

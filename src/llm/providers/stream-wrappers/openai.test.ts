@@ -1,4 +1,3 @@
-// Tests llm/providers/stream-wrappers openai test behavior.
 import type { StreamFn } from "openclaw/plugin-sdk/agent-core";
 import type { Model } from "openclaw/plugin-sdk/llm";
 import { createAssistantMessageEventStream } from "openclaw/plugin-sdk/llm";

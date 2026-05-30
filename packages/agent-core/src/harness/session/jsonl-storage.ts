@@ -1,4 +1,3 @@
-// JSONL-backed session storage for persisted harness transcript trees.
 import type { FileSystem, JsonlSessionMetadata, SessionTreeEntry } from "../types.js";
 import { SessionError, toError } from "../types.js";
 import { getFileSystemResultOrThrow } from "./repo-utils.js";

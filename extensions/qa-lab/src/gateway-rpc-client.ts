@@ -1,4 +1,3 @@
-// QA Lab gateway RPC client serializes CLI-backed requests to a child gateway.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import { callGatewayFromCli } from "openclaw/plugin-sdk/gateway-runtime";
 import { formatQaGatewayLogsForError } from "./gateway-log-redaction.js";

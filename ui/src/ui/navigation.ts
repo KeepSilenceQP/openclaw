@@ -1,4 +1,3 @@
-// Control UI tab routing metadata and path/title/icon helpers.
 import { t } from "../i18n/index.ts";
 import type { IconName } from "./icons.js";
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";

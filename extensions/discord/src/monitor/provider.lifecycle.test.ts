@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor provider lifecycle test behavior.
 import { EventEmitter } from "node:events";
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime-env";
 import { beforeAll, beforeEach, describe, expect, it, vi, type Mock } from "vitest";

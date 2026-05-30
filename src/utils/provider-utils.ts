@@ -1,4 +1,3 @@
-// Provider capability helpers for reasoning output mode decisions.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { ProviderRuntimePluginHandle } from "../plugins/provider-hook-runtime.js";
 import type { ProviderRuntimeModel } from "../plugins/provider-runtime-model.types.js";

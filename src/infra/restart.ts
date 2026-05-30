@@ -1,5 +1,4 @@
 // Gateway restart orchestration and SIGUSR1 authorization.
-// Coordinates in-process restarts, supervisor handoff, deferral, cooldown, and restart intent files.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";
@@ -16,7 +15,6 @@ import { cleanStaleGatewayProcessesSync, findGatewayPidsOnPortSync } from "./res
 import type { RestartAttempt } from "./restart.types.js";
 import { relaunchGatewayScheduledTask } from "./windows-task-restart.js";
 
-/** Restart attempt result type returned by supervisor restart helpers. */
 export type { RestartAttempt } from "./restart.types.js";
 
 const SPAWN_TIMEOUT_MS = 2000;
@@ -33,7 +31,6 @@ const GATEWAY_RESTART_INTENT_MAX_BYTES = 1024;
 
 const restartLog = createSubsystemLogger("restart");
 
-/** Gateway process discovery helper used by restart cleanup. */
 export { findGatewayPidsOnPortSync };
 
 let sigusr1AuthorizedCount = 0;
@@ -901,5 +898,4 @@ export const testing = {
     clearPendingScheduledRestart();
   },
 };
-/** Test-only restart state controls. */
 export { testing as __testing };

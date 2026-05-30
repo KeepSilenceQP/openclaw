@@ -1,4 +1,3 @@
-// Tests extensions/file-transfer/src/shared policy test behavior.
 import os from "node:os";
 import path from "node:path";
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";

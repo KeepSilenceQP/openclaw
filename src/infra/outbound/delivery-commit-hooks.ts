@@ -1,5 +1,4 @@
 // Outbound delivery after-commit hooks.
-// Hooks attach to result objects so senders can defer side effects until delivery is committed.
 import { createSubsystemLogger } from "../../logging/subsystem.js";
 import { formatErrorMessage } from "../errors.js";
 import type { OutboundDeliveryResult } from "./deliver-types.js";

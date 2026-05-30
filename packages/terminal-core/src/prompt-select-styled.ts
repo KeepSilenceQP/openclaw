@@ -1,4 +1,3 @@
-// Styled wrapper for Clack select prompts.
 import { select } from "@clack/prompts";
 import { styleSelectParams } from "./prompt-select-styled-params.js";
 

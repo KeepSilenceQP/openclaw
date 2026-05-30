@@ -1,4 +1,3 @@
-// QA Lab model-switch evaluator checks for concise handoff continuity signals.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 /** Returns whether text looks like a valid model-switch continuity handoff. */

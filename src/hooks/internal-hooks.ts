@@ -18,7 +18,6 @@ import type {
   InternalHookEventType,
   InternalHookHandler,
 } from "./internal-hook-types.js";
-/** Core internal hook event and handler contracts. */
 export type { InternalHookEvent, InternalHookEventType, InternalHookHandler };
 
 /** Context emitted when an agent workspace is bootstrapped. */

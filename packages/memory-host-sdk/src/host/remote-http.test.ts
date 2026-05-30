@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host remote http test behavior.
 import { describe, expect, it } from "vitest";
 import { MEMORY_REMOTE_TRUSTED_ENV_PROXY_MODE, withRemoteHttpResponse } from "./remote-http.js";
 

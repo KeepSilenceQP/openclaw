@@ -1,4 +1,3 @@
-// Custom Vitest runner resets mocks, timers, env, and evaluated modules between non-isolated files.
 import fs from "node:fs";
 import path from "node:path";
 import { TestRunner, type RunnerTask, type RunnerTestSuite, vi } from "vitest";

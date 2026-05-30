@@ -1,4 +1,3 @@
-// Shared provider setup helpers for writing auth profiles and config references.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveDefaultAgentDir } from "../agents/agent-scope-config.js";

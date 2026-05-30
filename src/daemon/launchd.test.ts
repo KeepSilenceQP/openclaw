@@ -1,4 +1,3 @@
-// Tests daemon launchd test behavior.
 import { PassThrough } from "node:stream";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {

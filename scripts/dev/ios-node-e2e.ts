@@ -1,4 +1,3 @@
-// iOS node E2E helper connects to Gateway and invokes representative device commands.
 import {
   MIN_CLIENT_PROTOCOL_VERSION,
   PROTOCOL_VERSION,

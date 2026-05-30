@@ -1,4 +1,3 @@
-// Adds semantic deny rules for safe-bin commands that remain risky by design.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 type SafeBinSemanticValidationParams = {

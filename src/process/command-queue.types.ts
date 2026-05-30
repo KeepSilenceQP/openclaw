@@ -1,4 +1,3 @@
-// Shared types for process command queue types behavior.
 export type CommandQueueEnqueueOptions = {
   warnAfterMs?: number;
   onWait?: (waitMs: number, queuedAhead: number) => void;

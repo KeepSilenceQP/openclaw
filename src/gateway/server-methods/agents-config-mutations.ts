@@ -1,4 +1,3 @@
-// Gateway method helpers that mutate configured agent entries in the root config file.
 import { resolveAgentDir, resolveAgentWorkspaceDir } from "../../agents/agent-scope.js";
 import {
   applyAgentConfig,

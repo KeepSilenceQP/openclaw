@@ -1,4 +1,3 @@
-// Tests extensions/tlon/src/urbit send test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("@urbit/aura", () => ({

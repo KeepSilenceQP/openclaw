@@ -1,4 +1,3 @@
-// Implements `openclaw models aliases` list/add/remove commands.
 import { formatCliCommand } from "../../cli/command-format.js";
 import { logConfigUpdated } from "../../config/logging.js";
 import { type RuntimeEnv, writeRuntimeJson } from "../../runtime.js";

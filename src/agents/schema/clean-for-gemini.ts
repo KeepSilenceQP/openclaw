@@ -1,6 +1,4 @@
 // Cloud Code Assist API rejects a subset of JSON Schema keywords.
-// This module scrubs/normalizes tool schemas to keep Gemini happy.
-
 import type { TSchema } from "typebox";
 
 // Keywords that Cloud Code Assist API rejects (not compliant with their JSON Schema subset).

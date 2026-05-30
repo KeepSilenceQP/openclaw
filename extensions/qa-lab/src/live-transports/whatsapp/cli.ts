@@ -1,4 +1,3 @@
-// QA Lab WhatsApp live-transport CLI registration lazy-loads the WhatsApp lane.
 import {
   createLazyCliRuntimeLoader,
   createLiveTransportQaCliRegistration,

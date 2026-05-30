@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Telegram user Crabbox proof CLI records real Telegram Desktop send/view evidence.
-
 import { type ChildProcess, spawn, type SpawnOptionsWithoutStdio } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";

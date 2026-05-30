@@ -1,5 +1,4 @@
 // Context-window usage notice. It computes themed warning colors and optional
-// compaction affordances from the current session token usage.
 import { html, nothing } from "lit";
 import { icons } from "../icons.ts";
 import type { GatewaySessionRow } from "../types.ts";

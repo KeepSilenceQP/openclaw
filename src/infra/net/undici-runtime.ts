@@ -1,5 +1,4 @@
 // Loads undici runtime constructors behind a testable boundary and creates
-// HTTP/1-only dispatchers for guarded network paths.
 import { createRequire } from "node:module";
 import net from "node:net";
 import { isRecord as isObjectRecord } from "../../shared/record-coerce.js";

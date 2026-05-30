@@ -1,4 +1,3 @@
-// Session key target resolution for native channel commands.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** Inputs for resolving native command session and command-target keys. */

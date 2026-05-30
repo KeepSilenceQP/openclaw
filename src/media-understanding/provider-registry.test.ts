@@ -1,4 +1,3 @@
-// Tests media-understanding provider registry test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   buildMediaUnderstandingRegistry,

@@ -1,5 +1,4 @@
 // Config write preparation helpers. Build minimal merge patches, preserve
-// authored/include/env-ref values, normalize model refs, and apply unset paths.
 import { isDeepStrictEqual } from "node:util";
 import { normalizeConfiguredProviderCatalogModelId } from "@openclaw/model-catalog-core/provider-model-id-normalization";
 import { parseConfigPathArrayIndex } from "../shared/path-array-index.js";

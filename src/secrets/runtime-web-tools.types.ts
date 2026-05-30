@@ -1,4 +1,3 @@
-// Shared types for secrets runtime web tools types behavior.
 export type RuntimeWebDiagnosticCode =
   | "WEB_SEARCH_PROVIDER_INVALID_AUTODETECT"
   | "WEB_SEARCH_AUTODETECT_SELECTED"

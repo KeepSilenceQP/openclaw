@@ -1,4 +1,3 @@
-// Tests infra/outbound sanitize text test behavior.
 import { describe, expect, it } from "vitest";
 import { sanitizeForPlainText, stripInternalRuntimeScaffolding } from "./sanitize-text.js";
 

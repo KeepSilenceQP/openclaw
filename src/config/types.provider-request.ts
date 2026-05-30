@@ -1,4 +1,3 @@
-// Provider HTTP request override contracts for auth, proxy, TLS, and private-network policy.
 import type { SecretInput } from "./types.secrets.js";
 
 /** Auth override strategy applied on top of provider-default request auth. */

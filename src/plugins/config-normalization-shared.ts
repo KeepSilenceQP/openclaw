@@ -1,4 +1,3 @@
-// Normalizes plugin config into stable shapes for activation, hooks, slots, and model policy.
 import { normalizeChatChannelId } from "../channels/ids.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {

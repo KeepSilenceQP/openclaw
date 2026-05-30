@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src channel setup test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { RuntimeEnv } from "../runtime-api.js";
 

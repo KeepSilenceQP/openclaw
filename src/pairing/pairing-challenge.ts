@@ -1,4 +1,3 @@
-// Shared pairing challenge flow for channel DM authorization gates.
 import { buildPairingReply } from "./pairing-messages.js";
 
 type PairingMeta = Record<string, string | undefined>;

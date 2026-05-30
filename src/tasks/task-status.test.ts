@@ -1,4 +1,3 @@
-// Tests tasks task status test behavior.
 import { describe, expect, it } from "vitest";
 import type { TaskRecord } from "./task-registry.types.js";
 import {

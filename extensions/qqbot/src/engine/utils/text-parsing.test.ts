@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/utils text parsing test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { parseFaceTags } from "./text-parsing.js";
 

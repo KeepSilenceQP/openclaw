@@ -1,4 +1,3 @@
-// Import cycle graph helpers collect source files, detect SCCs, and render cycle witnesses.
 import { readdirSync, statSync } from "node:fs";
 import path from "node:path";
 

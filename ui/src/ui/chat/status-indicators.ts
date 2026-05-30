@@ -1,4 +1,3 @@
-// Composer status indicators for chat runs, compaction, and fallback model state.
 import { html, nothing } from "lit";
 import type { CompactionStatus, FallbackStatus } from "../app-tool-stream.ts";
 import { icons } from "../icons.ts";

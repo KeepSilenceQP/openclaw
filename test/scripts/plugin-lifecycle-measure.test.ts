@@ -1,4 +1,3 @@
-// Tests test/scripts plugin lifecycle measure test behavior.
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";

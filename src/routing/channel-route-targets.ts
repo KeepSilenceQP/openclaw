@@ -1,4 +1,3 @@
-// Collects channel ids each agent may receive from bindings and configured routes.
 import { normalizeChatChannelId } from "../channels/ids.js";
 import { listRouteBindings } from "../config/bindings.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

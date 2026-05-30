@@ -1,5 +1,4 @@
 // Outbound message unit planning.
-// Text and media payloads are split into send units while preserving per-unit overrides.
 import {
   chunkByParagraph,
   chunkMarkdownTextWithMode,

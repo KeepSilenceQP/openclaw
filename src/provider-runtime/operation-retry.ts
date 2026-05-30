@@ -1,4 +1,3 @@
-// Retry policy helpers for transient provider operations such as polling, reading, and downloads.
 import { sleepWithAbort } from "../infra/backoff.js";
 import { formatErrorMessage } from "../infra/errors.js";
 

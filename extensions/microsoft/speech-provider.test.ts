@@ -1,4 +1,3 @@
-// Tests extensions/microsoft speech provider test behavior.
 import { mkdtempSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";

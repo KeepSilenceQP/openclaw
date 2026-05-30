@@ -1032,5 +1032,4 @@ export function createImageTool(options?: {
     },
   };
 }
-/** Test-only image-tool helper and provider override surface. */
 export { testing as __testing };

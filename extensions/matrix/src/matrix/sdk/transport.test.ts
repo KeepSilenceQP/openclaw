@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/sdk transport test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { MatrixMediaSizeLimitError } from "../media-errors.js";
 import { createMatrixGuardedFetch, performMatrixRequest } from "./transport.js";

@@ -1,4 +1,3 @@
-// Stores task-flow state and keeps managed flows synchronized with task records.
 import crypto from "node:crypto";
 import { formatErrorMessage } from "../infra/errors.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";

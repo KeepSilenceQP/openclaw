@@ -1,4 +1,3 @@
-// Tests extensions/slack/src threading test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveSlackThreadContext, resolveSlackThreadTargets } from "./threading.js";
 

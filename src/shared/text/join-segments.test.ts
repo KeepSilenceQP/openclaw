@@ -1,4 +1,3 @@
-// Tests shared/text join segments test behavior.
 import { describe, expect, it } from "vitest";
 import { concatOptionalTextSegments, joinPresentTextSegments } from "./join-segments.js";
 

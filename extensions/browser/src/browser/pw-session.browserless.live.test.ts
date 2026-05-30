@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser pw session browserless live test behavior.
 import { describe, expect, it } from "vitest";
 import { isLiveTestEnabled } from "../../test-support.js";
 

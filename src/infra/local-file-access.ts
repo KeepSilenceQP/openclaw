@@ -1,5 +1,4 @@
 import "./fs-safe-defaults.js";
-/** Public file URL and Windows network-path guards from fs-safe. */
 export {
   assertNoWindowsNetworkPath,
   basenameFromMediaSource,

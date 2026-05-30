@@ -1,4 +1,3 @@
-/** Re-exported tlon plugin public API. */
 export {
   createDedupeCache,
   createLoggerBackedRuntime,
@@ -13,7 +12,5 @@ export {
   ssrfPolicyFromAllowPrivateNetwork,
   ssrfPolicyFromDangerouslyAllowPrivateNetwork,
 } from "./runtime-api.js";
-/** Re-exported tlon plugin public API, starting with tlon Plugin. */
 export { tlonPlugin } from "./src/channel.js";
-/** Re-exported tlon plugin public API, starting with set Tlon Runtime. */
 export { setTlonRuntime } from "./src/runtime.js";

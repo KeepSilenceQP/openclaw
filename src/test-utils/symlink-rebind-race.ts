@@ -1,4 +1,3 @@
-// Symlink rebinding helpers for race-condition filesystem tests.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { vi } from "vitest";

@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src tools citations test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

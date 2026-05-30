@@ -1,4 +1,3 @@
-// Tests infra/outbound message plan test behavior.
 import { describe, expect, it } from "vitest";
 import { planOutboundMediaMessageUnits, planOutboundTextMessageUnits } from "./message-plan.js";
 import { createReplyToDeliveryPolicy } from "./reply-policy.js";

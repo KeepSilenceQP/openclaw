@@ -1,4 +1,3 @@
-// Tests config gateway control ui origins test behavior.
 import { describe, expect, it } from "vitest";
 import { ensureControlUiAllowedOriginsForNonLoopbackBind } from "./gateway-control-ui-origins.js";
 

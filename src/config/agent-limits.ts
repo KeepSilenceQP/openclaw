@@ -1,4 +1,3 @@
-// Defaults and resolvers for agent and subagent concurrency limits.
 import type { OpenClawConfig } from "./types.js";
 
 /** Default maximum concurrently active top-level agents. */

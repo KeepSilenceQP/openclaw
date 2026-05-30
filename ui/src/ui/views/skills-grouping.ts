@@ -1,6 +1,5 @@
 // Grouping helpers for the Skills view. Skill source ids are normalized into
 // stable display groups so workspace, bundled, managed, and extra skills render
-// in predictable sections.
 import type { SkillStatusEntry } from "../types.ts";
 
 /** Display group containing skills from one source family. */

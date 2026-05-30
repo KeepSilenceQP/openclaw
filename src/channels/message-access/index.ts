@@ -1,4 +1,3 @@
-// Public channel message ingress access facade.
 export { decideChannelIngress } from "./decision.js";
 export { defineStableChannelIngressIdentity } from "./runtime-identity.js";
 export {

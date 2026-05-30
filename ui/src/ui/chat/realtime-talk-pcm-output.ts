@@ -1,5 +1,4 @@
 // PCM output queue for realtime talk. It schedules PCM chunks on an AudioContext
-// playhead so streamed audio stays ordered without gaps between chunks.
 import { base64ToBytes, pcm16ToFloat } from "./realtime-talk-audio.ts";
 
 /** Queue and stop streamed PCM16 audio chunks for realtime talk playback. */

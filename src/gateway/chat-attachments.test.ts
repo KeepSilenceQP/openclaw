@@ -1,4 +1,3 @@
-// Tests gateway chat attachments test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const saveMediaBufferMock = vi.hoisted(() =>

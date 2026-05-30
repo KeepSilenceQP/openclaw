@@ -1,5 +1,4 @@
 // Approval view-model contracts for native/channel presentation.
-// Views normalize exec and plugin approvals into pending/resolved/expired display shapes.
 import type { InteractiveReplyButton } from "../interactive/payload.js";
 import type { ChannelApprovalKind } from "./approval-types.js";
 import type { CommandExplanationSummary } from "./command-analysis/explain.js";

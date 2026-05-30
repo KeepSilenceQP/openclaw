@@ -1,5 +1,4 @@
 // Canonical builders and normalizers for routing session keys across agents,
-// channels, peers, cron runs, and threaded conversations.
 import type { ChatType } from "../channels/chat-type.js";
 import {
   isCronRunSessionKey,
@@ -10,7 +9,6 @@ import {
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { normalizeAccountId } from "./account-id.js";
 
-/** Exposes parser helpers from the canonical session-key utility module. */
 export {
   getSubagentDepth,
   isCronSessionKey,
@@ -20,7 +18,6 @@ export {
   parseThreadSessionSuffix,
   type ParsedAgentSessionKey,
 } from "../sessions/session-key-utils.js";
-/** Exposes account-id helpers beside routing key builders for callers. */
 export {
   DEFAULT_ACCOUNT_ID,
   normalizeAccountId,

@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src/monitor-handler message handler thread session test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMSTeamsRouteSessionKey } from "./thread-session.js";
 

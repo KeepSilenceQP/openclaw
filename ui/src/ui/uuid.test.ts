@@ -1,4 +1,3 @@
-// Tests ui/src/ui uuid test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { generateUUID } from "./uuid.ts";
 

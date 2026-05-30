@@ -1,6 +1,4 @@
 // Keep provider onboarding helpers dependency-light so bundled provider plugins
-// do not pull heavyweight runtime graphs at activation time.
-
 import { findNormalizedProviderKey } from "@openclaw/model-catalog-core/provider-id";
 import { ensureStaticModelAllowlistEntry } from "../agents/model-allowlist-entry.js";
 import { normalizeConfiguredProviderCatalogModelId } from "../agents/model-ref-shared.js";
@@ -17,9 +15,7 @@ import type {
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolvePrimaryStringValue } from "../shared/string-coerce.js";
 
-/** Config/model types needed by provider onboarding helpers. */
 export type { OpenClawConfig, ModelApi, ModelDefinitionConfig, ModelProviderConfig };
-/** Model-ref readers shared with provider onboarding callers. */
 export {
   resolveAgentModelFallbackValues,
   resolveAgentModelPrimaryValue,

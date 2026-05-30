@@ -1,4 +1,3 @@
-// Tests shared global singleton test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { resolveGlobalMap, resolveGlobalSingleton } from "./global-singleton.js";
 

@@ -1,4 +1,3 @@
-// Install-time dependency denylist checks for plugin manifests and files.
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 
 const BLOCKED_INSTALL_DEPENDENCY_PACKAGE_NAMES = ["plain-crypto-js"] as const;

@@ -1,4 +1,3 @@
-// Tests infra machine name test behavior.
 import os from "node:os";
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";
 import { afterEach, describe, expect, it, vi } from "vitest";

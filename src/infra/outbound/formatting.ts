@@ -1,4 +1,3 @@
-// Shared outbound message formatting limits and parse options.
 import type { ChunkMode } from "../../auto-reply/chunk.js";
 import type { MarkdownTableMode } from "../../config/types.js";
 

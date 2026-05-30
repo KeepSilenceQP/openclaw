@@ -1,4 +1,3 @@
-// sqlite-vec extension loading with explicit paths and optional package variants.
 import type { DatabaseSync } from "node:sqlite";
 import { formatErrorMessage } from "./error-utils.js";
 import { resolveSqliteVecPlatformVariant } from "./sqlite-vec-platform-variant.js";

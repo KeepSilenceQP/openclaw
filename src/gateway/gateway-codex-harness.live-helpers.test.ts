@@ -1,4 +1,3 @@
-// Tests gateway gateway codex harness live helpers test behavior.
 import { describe, expect, it } from "vitest";
 import {
   EXPECTED_CODEX_MODELS_COMMAND_TEXT,

@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src suite runtime gateway test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   getGatewayRetryAfterMs,

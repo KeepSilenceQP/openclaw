@@ -1,4 +1,3 @@
-// Command argument parsing and formatting helpers for chat command definitions.
 import {
   normalizeOptionalLowercaseString,
   normalizeOptionalString,

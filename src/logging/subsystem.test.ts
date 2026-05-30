@@ -1,4 +1,3 @@
-// Tests logging subsystem test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";

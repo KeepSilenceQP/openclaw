@@ -1,4 +1,3 @@
-// Discord account, guild, DM, thread, voice, and action configuration contracts.
 import type {
   ChannelPreviewStreamingConfig,
   ChannelStreamingProgressConfig,

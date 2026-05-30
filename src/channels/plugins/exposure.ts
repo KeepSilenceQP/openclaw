@@ -1,4 +1,3 @@
-// Channel plugin exposure helpers for public metadata.
 import type { ChannelMeta } from "./types.core.js";
 
 export function resolveChannelExposure(

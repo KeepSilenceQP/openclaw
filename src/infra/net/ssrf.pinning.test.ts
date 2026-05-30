@@ -1,4 +1,3 @@
-// Tests infra/net ssrf pinning test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   createPinnedLookup,

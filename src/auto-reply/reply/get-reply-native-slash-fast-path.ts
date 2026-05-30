@@ -1,4 +1,3 @@
-// Fast path for native slash commands in get-reply.
 import { loadModelCatalog } from "../../agents/model-catalog.js";
 import {
   resolveThinkingDefaultWithRuntimeCatalog,

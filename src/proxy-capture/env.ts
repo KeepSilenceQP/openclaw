@@ -1,5 +1,4 @@
 // Environment contract for debug proxy capture. These helpers propagate proxy
-// settings into child processes and websocket clients.
 import { randomUUID } from "node:crypto";
 import type { Agent } from "node:http";
 import process from "node:process";

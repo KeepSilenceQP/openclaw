@@ -1,4 +1,3 @@
-// Voice-call outbound manager handles call initiation, TTS, DTMF, turns, and hangup.
 import crypto from "node:crypto";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import {

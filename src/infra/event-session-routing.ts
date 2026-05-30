@@ -1,5 +1,4 @@
 // Session routing helpers for scheduled events and heartbeat wakes.
-// They collapse eligible direct-DM event sessions back to the configured main scope.
 import type { SessionScope } from "../config/types.base.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveAgentRoute } from "../routing/resolve-route.js";

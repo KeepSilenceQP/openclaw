@@ -1,4 +1,3 @@
-// Converts ws RawData payload variants into strings.
 import { Buffer } from "node:buffer";
 import type WebSocket from "ws";
 

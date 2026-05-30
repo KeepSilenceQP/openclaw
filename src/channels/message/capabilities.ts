@@ -1,4 +1,3 @@
-// Durable final delivery capability requirement derivation.
 import type {
   DeriveDurableFinalDeliveryRequirementsParams,
   DurableFinalDeliveryCapability,

@@ -1,6 +1,5 @@
 // Top-level Usage page renderer. It composes usage data filters, query helpers,
 // overview charts, session cards, and detail panels without owning gateway
-// loading; controllers provide the state bundle.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { getUsageCacheRefreshTitle } from "../usage-cache-status.ts";
@@ -44,7 +43,6 @@ import type {
   UsageTotals,
 } from "./usageTypes.ts";
 
-/** Usage view types re-exported for controllers/tests that import the page module. */
 export type { UsageColumnId, SessionLogEntry, SessionLogRole };
 
 function createEmptyUsageTotals(): UsageTotals {

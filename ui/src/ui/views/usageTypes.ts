@@ -1,6 +1,5 @@
 // Shared Usage view state contracts. These types separate loaded usage data,
 // filters, display preferences, detail-panel state, and callbacks so the large
-// usage page can stay split across render modules.
 import type {
   CostUsageDailyEntry,
   SessionsUsageEntry,

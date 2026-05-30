@@ -1,4 +1,3 @@
-// Tests extensions/irc/src channel test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { ircOutboundBaseAdapter } from "./outbound-base.js";
 import { clearIrcRuntime } from "./runtime.js";

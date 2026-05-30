@@ -1,4 +1,3 @@
-// QMD session-export scope matching helpers.
 import type { ResolvedQmdConfig } from "./backend-config.js";
 import {
   normalizeLowercaseStringOrEmpty,

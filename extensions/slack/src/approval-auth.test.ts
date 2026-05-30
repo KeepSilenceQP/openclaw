@@ -1,4 +1,3 @@
-// Tests extensions/slack/src approval auth test behavior.
 import { describe, expect, it } from "vitest";
 import { slackApprovalAuth } from "./approval-auth.js";
 

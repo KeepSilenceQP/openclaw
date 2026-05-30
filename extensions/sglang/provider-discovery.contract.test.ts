@@ -1,4 +1,3 @@
-// Tests extensions/sglang provider discovery contract test behavior.
 import { fileURLToPath } from "node:url";
 import { describeSglangProviderDiscoveryContract } from "openclaw/plugin-sdk/provider-test-contracts";
 

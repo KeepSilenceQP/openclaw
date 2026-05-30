@@ -1,4 +1,3 @@
-// Tests gateway talk handoff test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   cancelTalkHandoffTurn,

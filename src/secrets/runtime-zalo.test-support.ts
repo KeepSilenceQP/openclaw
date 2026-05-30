@@ -1,4 +1,3 @@
-// Vitest shim that exposes Zalo bundled secret contracts to runtime-auth tests.
 import { vi } from "vitest";
 import { loadBundledChannelSecretContractApi } from "./channel-contract-api.js";
 

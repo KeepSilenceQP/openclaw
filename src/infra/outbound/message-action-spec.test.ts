@@ -1,4 +1,3 @@
-// Tests infra/outbound message action spec test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { actionHasTarget, actionRequiresTarget } from "./message-action-spec.js";
 

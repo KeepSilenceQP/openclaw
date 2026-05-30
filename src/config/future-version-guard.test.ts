@@ -1,4 +1,3 @@
-// Tests config future version guard test behavior.
 import { describe, expect, it } from "vitest";
 import {
   ALLOW_OLDER_BINARY_DESTRUCTIVE_ACTIONS_ENV,

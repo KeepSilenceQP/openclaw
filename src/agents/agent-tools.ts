@@ -364,7 +364,6 @@ function resolveExecConfig(params: { cfg?: OpenClawConfig; agentId?: string }) {
   };
 }
 
-/** Resolve tool loop detection config for an agent/session context. */
 export { resolveToolLoopDetectionConfig } from "./tool-loop-detection-config.js";
 
 /** Test hooks for tool schema cleanup, validation, and provider policy application. */
@@ -1159,5 +1158,4 @@ export function createOpenClawCodingTools(options?: {
   // on the wire and maps them back for tool dispatch.
   return withDeferredFollowupDescriptions;
 }
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

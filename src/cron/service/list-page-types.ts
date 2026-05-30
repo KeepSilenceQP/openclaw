@@ -1,4 +1,3 @@
-// Public list-page filter and result shapes for cron job service queries.
 import type { CronJob, CronRunStatus } from "../types.js";
 
 /** Enabled-state selector accepted by cron job list pages. */

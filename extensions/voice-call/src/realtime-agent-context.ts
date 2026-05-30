@@ -1,4 +1,3 @@
-// Realtime voice-call context builder folds compact agent identity and workspace hints into phone prompts.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { buildRealtimeVoiceAgentConsultPolicyInstructions } from "openclaw/plugin-sdk/realtime-voice";
 import { root } from "openclaw/plugin-sdk/security-runtime";

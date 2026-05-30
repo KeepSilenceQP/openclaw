@@ -1,4 +1,3 @@
-// Redaction snapshot tests use this minimal sensitive-path hint fixture.
 import type { ConfigUiHints } from "../../../src/config/schema.js";
 
 // Keep this fixture minimal so redaction tests exercise the hint-matching

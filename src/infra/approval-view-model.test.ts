@@ -1,4 +1,3 @@
-// Tests infra approval view model test behavior.
 import { describe, expect, it } from "vitest";
 import { buildPendingApprovalView } from "./approval-view-model.js";
 import type { ExecApprovalRequest } from "./exec-approvals.js";

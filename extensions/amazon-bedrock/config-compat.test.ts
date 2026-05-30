@@ -1,4 +1,3 @@
-// Tests extensions/amazon-bedrock config compat test behavior.
 import { describe, expect, it } from "vitest";
 import { migrateAmazonBedrockLegacyConfig } from "./config-compat.js";
 

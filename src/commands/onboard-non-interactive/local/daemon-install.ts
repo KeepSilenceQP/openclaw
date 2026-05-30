@@ -1,4 +1,3 @@
-// Installs the gateway daemon during non-interactive onboarding when requested.
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import { resolveGatewayService } from "../../../daemon/service.js";
 import { isSystemdUserServiceAvailable } from "../../../daemon/systemd.js";

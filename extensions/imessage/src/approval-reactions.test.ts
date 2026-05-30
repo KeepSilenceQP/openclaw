@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src approval reactions test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   appendIMessageApprovalReactionHintForOutboundMessage,

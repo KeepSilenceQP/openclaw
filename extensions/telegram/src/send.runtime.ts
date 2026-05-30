@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/telegram/src send runtime behavior.
 export { requireRuntimeConfig } from "openclaw/plugin-sdk/plugin-config-runtime";
 export { resolveMarkdownTableMode } from "openclaw/plugin-sdk/markdown-table-runtime";
 export type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";

@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/gateway/stages envelope stage test behavior.
 import { describe, expect, it } from "vitest";
 import type { GroupMessageGateResult } from "../../group/message-gating.js";
 import type { ProcessedAttachments } from "../inbound-attachments.js";

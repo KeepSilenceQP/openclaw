@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src coverage report test behavior.
 import { describe, expect, it } from "vitest";
 import { buildQaCoverageInventory, renderQaCoverageMarkdownReport } from "./coverage-report.js";
 import { readQaScenarioPack } from "./scenario-catalog.js";

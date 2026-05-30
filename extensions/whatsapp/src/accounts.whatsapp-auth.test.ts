@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src accounts whatsapp auth test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Runtime queue setting resolution from channel plugins.
 import { getLoadedChannelPlugin } from "../../../channels/plugins/index.js";
 import { normalizeOptionalLowercaseString } from "../../../shared/string-coerce.js";
 import { resolveQueueSettings as resolveQueueSettingsCore } from "./settings.js";

@@ -1,4 +1,3 @@
-// Shared data shapes for transcript usage, cost, latency, and log summaries.
 import type { NormalizedUsage } from "../agents/usage.js";
 import type {
   SessionUsageTimePoint as SharedSessionUsageTimePoint,

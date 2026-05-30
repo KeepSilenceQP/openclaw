@@ -1,4 +1,3 @@
-// Builds the public matrix of user-supplied credential surfaces.
 import { getSourceSecretTargetRegistry } from "./target-registry-data.js";
 import { getUnsupportedSecretRefSurfacePatterns } from "./unsupported-surface-policy.js";
 

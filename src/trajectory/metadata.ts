@@ -1,4 +1,3 @@
-// Builds redacted trajectory metadata snapshots for support/export bundles.
 import { resolveStateDir } from "../config/paths.js";
 import { redactConfigObject } from "../config/redact-snapshot.js";
 import type { SessionSystemPromptReport } from "../config/sessions/types.js";

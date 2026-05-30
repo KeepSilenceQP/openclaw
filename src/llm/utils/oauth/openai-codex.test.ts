@@ -1,4 +1,3 @@
-// Tests llm/utils/oauth openai codex test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 type LoginOpenAICodexOAuth =

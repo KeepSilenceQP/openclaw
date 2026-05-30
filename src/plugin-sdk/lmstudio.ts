@@ -8,7 +8,6 @@ import type {
 } from "../plugins/types.js";
 import type { WizardPrompter } from "../wizard/prompts.js";
 
-/** Provider and auth contracts needed by LM Studio setup/runtime integration. */
 export type {
   OpenClawPluginApi,
   ProviderAuthContext,
@@ -19,9 +18,7 @@ export type {
   ProviderPrepareDynamicModelContext,
   ProviderRuntimeModel,
 } from "../plugins/types.js";
-/** LM Studio model wire/runtime shapes shared with bundled plugin code. */
 export type { LmstudioModelBase, LmstudioModelWire } from "./lmstudio-runtime.js";
-/** LM Studio constants, config normalization, discovery, and auth helpers. */
 export {
   LMSTUDIO_DEFAULT_API_KEY_ENV_VAR,
   LMSTUDIO_DEFAULT_BASE_URL,

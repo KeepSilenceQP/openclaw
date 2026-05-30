@@ -1,4 +1,3 @@
-// Vitest project config for Diffs plugin tests.
 import { diffsExtensionTestRoots } from "./vitest.extension-diffs-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

@@ -1,4 +1,3 @@
-// Tests extensions/lobster/src lobster taskflow test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { LobsterRunner } from "./lobster-runner.js";
 import { resumeManagedLobsterFlow, runManagedLobsterFlow } from "./lobster-taskflow.js";

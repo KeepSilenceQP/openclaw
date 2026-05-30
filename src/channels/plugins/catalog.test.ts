@@ -1,4 +1,3 @@
-// Coverage for channel plugin catalog helpers.
 import { describe, expect, it } from "vitest";
 import { getChannelPluginCatalogEntry } from "./catalog.js";
 

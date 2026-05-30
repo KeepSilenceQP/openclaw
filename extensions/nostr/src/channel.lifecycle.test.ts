@@ -1,4 +1,3 @@
-// Tests extensions/nostr/src channel lifecycle test behavior.
 import {
   createStartAccountContext,
   createPluginRuntimeMock,

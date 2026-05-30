@@ -1,4 +1,3 @@
-// Parsing helpers for BTW follow-up commands.
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import { normalizeCommandBody, type CommandNormalizeOptions } from "../commands-registry.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src suite runtime transport test behavior.
 import { describe, expect, it } from "vitest";
 import { createQaBusState } from "./bus-state.js";
 import {

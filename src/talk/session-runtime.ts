@@ -1,4 +1,3 @@
-// Runtime wrapper that binds realtime voice provider bridges to audio sinks and callbacks.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { RealtimeVoiceProviderPlugin } from "../plugins/types.js";
 import type {

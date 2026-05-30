@@ -1,4 +1,3 @@
-// Narrow task registry accessors used by status/reporting surfaces.
 import { getTaskById, listTasksForAgentId, listTasksForSessionKey } from "./task-registry.js";
 import type { TaskRecord } from "./task-registry.types.js";
 

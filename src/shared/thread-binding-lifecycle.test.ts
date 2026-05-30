@@ -1,4 +1,3 @@
-// Tests shared thread binding lifecycle test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveThreadBindingLifecycle } from "./thread-binding-lifecycle.js";
 

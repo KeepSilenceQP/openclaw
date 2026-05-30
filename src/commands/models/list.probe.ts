@@ -1,4 +1,3 @@
-// Runs lightweight model auth probes for `models list --status`.
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import {

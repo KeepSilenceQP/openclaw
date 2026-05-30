@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src monitor test behavior.
 import { once } from "node:events";
 import type { Server } from "node:http";
 import { createConnection, type AddressInfo } from "node:net";

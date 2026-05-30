@@ -1,4 +1,3 @@
-// Canonicalizes HTTP paths before applying protected-prefix security checks.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 type SecurityPathCanonicalization = {

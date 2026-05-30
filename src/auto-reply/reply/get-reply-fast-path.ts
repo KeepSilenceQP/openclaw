@@ -1,4 +1,3 @@
-// Fast-path get-reply orchestration for simple command/message turns.
 import crypto from "node:crypto";
 import { normalizeChatType } from "../../channels/chat-type.js";
 import { normalizeAnyChannelId } from "../../channels/registry.js";
@@ -15,8 +14,8 @@ import {
 import { resolveCommandTurnTargetSessionKey } from "../command-turn-context.js";
 import { normalizeCommandBody } from "../commands-registry.js";
 import type { MsgContext, TemplateContext } from "../templating.js";
-import { parseSoftResetCommand } from "./commands-reset-mode.js";
 import { isFormattedGoalContinuationPrompt } from "./commands-goal.js";
+import { parseSoftResetCommand } from "./commands-reset-mode.js";
 import type { CommandContext } from "./commands-types.js";
 import { stripMentions, stripStructuralPrefixes } from "./mentions.js";
 import type { SessionInitResult } from "./session.js";

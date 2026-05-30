@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/matrix/src/matrix/sdk crypto node runtime behavior.
 import { createRequire } from "node:module";
 
 // Load via createRequire so the CJS package gets __dirname (its index.js

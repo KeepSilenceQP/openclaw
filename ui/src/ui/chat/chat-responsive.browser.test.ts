@@ -1,4 +1,3 @@
-// Tests ui/src/ui/chat chat responsive browser test behavior.
 import { existsSync } from "node:fs";
 import { chromium, type Browser, type Page } from "playwright";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";

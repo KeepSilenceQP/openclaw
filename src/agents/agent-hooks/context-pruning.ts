@@ -7,9 +7,7 @@
 
 export { default } from "./context-pruning/extension.js";
 
-/** Context pruner used by hooks and direct harness callers. */
 export { pruneContextMessages } from "./context-pruning/pruner.js";
-/** Context pruning settings helpers shared with config and runtime code. */
 export {
   computeEffectiveSettings,
   DEFAULT_CONTEXT_PRUNING_SETTINGS,

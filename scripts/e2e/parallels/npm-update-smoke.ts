@@ -1,5 +1,4 @@
 #!/usr/bin/env -S pnpm tsx
-// Parallels npm update smoke tests published-to-local package upgrade paths across guests.
 import { spawn } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { readFile, rm, writeFile } from "node:fs/promises";

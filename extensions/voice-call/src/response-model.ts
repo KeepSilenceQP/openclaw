@@ -1,4 +1,3 @@
-// Voice-call response model resolution chooses explicit voice config or agent defaults.
 import type { VoiceCallConfig } from "./config.js";
 import type { CoreAgentDeps } from "./core-bridge.js";
 

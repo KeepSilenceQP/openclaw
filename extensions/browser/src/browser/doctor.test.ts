@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser doctor test behavior.
 import { describe, expect, it } from "vitest";
 import { buildBrowserDoctorReport } from "./doctor.js";
 

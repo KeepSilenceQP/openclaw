@@ -1,4 +1,3 @@
-// Collects generic and plugin-specific channel status issues from snapshots.
 import { listChannelPlugins } from "../channels/plugins/index.js";
 import type {
   ChannelAccountSnapshot,

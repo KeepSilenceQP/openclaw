@@ -1,4 +1,3 @@
-// Tests plugins wired hooks inbound claim test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createHookRunnerWithRegistry } from "./hooks.test-helpers.js";
 

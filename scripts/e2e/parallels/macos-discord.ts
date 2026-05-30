@@ -1,4 +1,3 @@
-// Parallels macOS Discord smoke verifies outbound send and inbound readback in a guest.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { MacosGuest } from "./guest-transports.ts";

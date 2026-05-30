@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/gateway interaction handler test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { createSdkAccessAdapter } from "../../bridge/sdk-adapter.js";

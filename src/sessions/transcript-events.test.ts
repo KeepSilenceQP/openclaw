@@ -1,4 +1,3 @@
-// Tests sessions transcript events test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { emitSessionTranscriptUpdate, onSessionTranscriptUpdate } from "./transcript-events.js";
 

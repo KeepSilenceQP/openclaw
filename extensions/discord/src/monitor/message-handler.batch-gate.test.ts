@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor message handler batch gate test behavior.
 import { describe, expect, it } from "vitest";
 import { applyImplicitReplyBatchGate } from "./message-handler.batch-gate.js";
 

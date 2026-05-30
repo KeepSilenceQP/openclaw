@@ -1,4 +1,3 @@
-// Audio preflight transcription before mention-gating message handling.
 import type { MsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.js";
 import { logVerbose, shouldLogVerbose } from "../globals.js";

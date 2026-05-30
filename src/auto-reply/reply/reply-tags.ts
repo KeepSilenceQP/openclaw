@@ -1,4 +1,3 @@
-// Reply tag parsing helpers.
 import { parseInlineDirectives } from "../../utils/directive-tags.js";
 
 export function extractReplyToTag(

@@ -1,5 +1,4 @@
 // Overview event-log panel renderer. It shows the newest buffered UI/gateway
-// events without expanding the full Debug view.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import type { EventLogEntry } from "../app-events.ts";

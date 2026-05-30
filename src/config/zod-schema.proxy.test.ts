@@ -1,4 +1,3 @@
-// Tests config zod schema proxy test behavior.
 import { describe, it, expect } from "vitest";
 import { ProxyConfigSchema } from "./zod-schema.proxy.js";
 

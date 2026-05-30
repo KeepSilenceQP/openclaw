@@ -1,4 +1,3 @@
-// Tests extensions/venice models test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   buildVeniceModelDefinition,

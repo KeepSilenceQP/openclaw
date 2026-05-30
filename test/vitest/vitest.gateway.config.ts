@@ -1,4 +1,3 @@
-// Gateway Vitest config either runs the fallback gateway shard or fans out to project shards.
 import { createProjectShardVitestConfig } from "./vitest.project-shard-config.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

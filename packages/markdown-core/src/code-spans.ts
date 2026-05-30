@@ -1,4 +1,3 @@
-// Tracks fenced and inline code ranges while scanning markdown text.
 import { scanFenceSpans, type FenceScanState, type FenceSpan } from "./fences.js";
 
 /** Carry-over state for inline backtick parsing across streamed chunks. */

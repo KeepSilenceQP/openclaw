@@ -1,4 +1,3 @@
-// Tests plugins clawhub test behavior.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import os from "node:os";

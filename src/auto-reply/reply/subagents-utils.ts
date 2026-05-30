@@ -1,4 +1,3 @@
-// Utility helpers for subagent command output.
 import type { SubagentRunRecord } from "../../agents/subagent-registry.js";
 import {
   normalizeLowercaseStringOrEmpty,

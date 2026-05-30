@@ -1,4 +1,3 @@
-// Outbound attachment resolver that loads web media and writes it to the media store.
 import { buildOutboundMediaLoadOptions, type OutboundMediaAccess } from "./load-options.js";
 import { saveMediaBuffer } from "./store.js";
 import { loadWebMedia } from "./web-media.js";

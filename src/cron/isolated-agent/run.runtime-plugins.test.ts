@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run runtime plugins test behavior.
 import { describe, expect, it } from "vitest";
 import {
   makeIsolatedAgentTurnParams,

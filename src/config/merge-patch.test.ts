@@ -1,4 +1,3 @@
-// Tests config merge patch test behavior.
 import { describe, expect, it } from "vitest";
 import { applyMergePatch } from "./merge-patch.js";
 

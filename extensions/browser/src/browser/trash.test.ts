@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser trash test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

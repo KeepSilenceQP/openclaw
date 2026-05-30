@@ -1,4 +1,3 @@
-// Logging Vitest config scopes tests to the logging source tree.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Creates the logging Vitest project config. */

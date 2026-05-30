@@ -1,4 +1,3 @@
-// Tests config plugin auto enable core test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { afterAll, afterEach, describe, expect, it, vi } from "vitest";

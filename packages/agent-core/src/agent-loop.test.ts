@@ -1,4 +1,3 @@
-// Tests packages/agent-core/src agent loop test behavior.
 import { describe, expect, it } from "vitest";
 import { agentLoop, agentLoopContinue } from "./agent-loop.js";
 import type { Message, Model } from "./llm.js";

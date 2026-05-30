@@ -1,4 +1,3 @@
-// Tests extensions/xiaomi onboard test behavior.
 import {
   expectProviderOnboardMergedLegacyConfig,
   expectProviderOnboardPrimaryModel,

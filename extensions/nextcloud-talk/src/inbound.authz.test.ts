@@ -1,4 +1,3 @@
-// Tests extensions/nextcloud-talk/src inbound authz test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { PluginRuntime, RuntimeEnv } from "../runtime-api.js";
 import type { ResolvedNextcloudTalkAccount } from "./accounts.js";

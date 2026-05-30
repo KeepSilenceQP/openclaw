@@ -1,4 +1,3 @@
-// extensions/qa-lab/src/mantis cli helpers and runtime behavior.
 import type { Command } from "commander";
 import { createLazyCliRuntimeLoader } from "../live-transports/shared/live-transport-cli.js";
 import type { MantisDesktopBrowserSmokeOptions } from "./desktop-browser-smoke.runtime.js";

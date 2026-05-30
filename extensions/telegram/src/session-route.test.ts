@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src session route test behavior.
 import { describe, expect, it } from "vitest";
 import { telegramPlugin } from "./channel.js";
 

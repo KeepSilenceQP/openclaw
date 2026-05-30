@@ -1,10 +1,8 @@
-// QA Lab provider registry normalizes provider modes and exposes provider metadata.
 import { aimockProviderDefinition } from "./aimock/index.js";
 import { liveFrontierProviderDefinition } from "./live-frontier/index.js";
 import { mockOpenAiProviderDefinition } from "./mock-openai/index.js";
 import type { QaProviderDefinition, QaProviderMode, QaProviderModeInput } from "./shared/types.js";
 
-/** Public provider registry types. */
 export type { QaMockProviderServer, QaProviderMode, QaProviderModeInput } from "./shared/types.js";
 
 const PROVIDERS: readonly QaProviderDefinition[] = [

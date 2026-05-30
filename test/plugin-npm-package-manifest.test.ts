@@ -1,4 +1,3 @@
-// Tests test plugin npm package manifest test behavior.
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, win32 } from "node:path";

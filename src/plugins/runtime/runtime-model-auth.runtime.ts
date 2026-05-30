@@ -1,4 +1,3 @@
-// Runtime boundary for plugins/runtime runtime model auth runtime behavior.
 import {
   getApiKeyForModel as resolveModelApiKey,
   resolveApiKeyForProvider as resolveProviderApiKey,

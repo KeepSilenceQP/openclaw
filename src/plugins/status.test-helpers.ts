@@ -1,4 +1,3 @@
-// Shared plugin status fixtures and load-result builders for tests.
 import type { PluginLoadResult } from "./loader.js";
 import type { PluginRecord } from "./registry.js";
 import type { PluginCompatibilityNotice } from "./status.js";

@@ -1,4 +1,3 @@
-// Test helper for per-case temporary directories in security tests.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

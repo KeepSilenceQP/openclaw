@@ -1,4 +1,3 @@
-// Tests infra plain object test behavior.
 import { describe, expect, it } from "vitest";
 import { isPlainObject } from "./plain-object.js";
 

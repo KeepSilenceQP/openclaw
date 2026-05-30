@@ -1,4 +1,3 @@
-// Tests extensions/slack/src security audit test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { ResolvedSlackAccount } from "./accounts.js";
 import type { OpenClawConfig } from "./runtime-api.js";

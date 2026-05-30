@@ -1,4 +1,3 @@
-// Tests ui/src/ui/controllers logs test behavior.
 import { describe, expect, it } from "vitest";
 import { parseLogLine } from "./logs.ts";
 

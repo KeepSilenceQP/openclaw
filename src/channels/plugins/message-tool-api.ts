@@ -1,4 +1,3 @@
-// Message tool API exposed by channel plugins.
 import { loadBundledPluginPublicArtifactModuleSync } from "../../plugins/public-surface-loader.js";
 import type { ChannelMessageActionAdapter, ChannelMessageToolDiscovery } from "./types.public.js";
 

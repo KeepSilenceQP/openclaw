@@ -1,4 +1,3 @@
-// Tests gateway node pairing auto approve test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveNodePairingClientIpSource,

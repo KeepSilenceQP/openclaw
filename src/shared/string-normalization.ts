@@ -1,4 +1,3 @@
-// Shared string-list, uniqueness, sorting, and slug normalization helpers.
 import { normalizeOptionalLowercaseString, normalizeOptionalString } from "./string-coerce.js";
 
 /** Trims/coerces unknown list entries and drops empty strings. */

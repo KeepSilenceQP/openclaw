@@ -1,4 +1,3 @@
-// Bridges in-memory subagent run state to persisted SQLite snapshots.
 import {
   loadSubagentRegistryFromSqlite,
   saveSubagentRegistryToSqlite,

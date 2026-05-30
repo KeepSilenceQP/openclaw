@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src tts provider voice test behavior.
 import { describe, expect, it } from "vitest";
 import { resolvePreferredTtsVoice } from "./tts-provider-voice.js";
 

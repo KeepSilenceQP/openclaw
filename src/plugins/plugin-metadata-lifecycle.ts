@@ -1,4 +1,3 @@
-// Lifecycle hooks for clearing process-local plugin metadata caches.
 import { clearCurrentPluginMetadataSnapshotState } from "./current-plugin-metadata-state.js";
 
 const pluginMetadataProcessMemoClears = new Set<() => void>();

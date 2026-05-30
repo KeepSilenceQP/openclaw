@@ -26,7 +26,6 @@ function normalizeGroqModelId(modelId: string | undefined): string {
   return modelId?.trim().toLowerCase() ?? "";
 }
 
-/** Public groq plugin helper for resolve Groq Reasoning Compat Patch behavior. */
 export function resolveGroqReasoningCompatPatch(
   modelId: string,
 ): Pick<

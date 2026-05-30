@@ -1,5 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// RTT harness CLI runs release round-trip scenarios against package specs and provider modes.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {
@@ -272,5 +271,4 @@ export const testing = {
   parsePositiveInt,
   resolveHome,
 };
-/** Backward-compatible test alias for RTT helper internals. */
 export { testing as __testing };

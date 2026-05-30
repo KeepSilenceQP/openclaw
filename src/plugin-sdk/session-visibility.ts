@@ -1,4 +1,3 @@
-// Public SDK helpers for session-tool visibility and agent-to-agent access policy.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { callGateway as defaultCallGateway } from "../gateway/call.js";
 import { resolveAgentIdFromSessionKey } from "../routing/session-key.js";

@@ -1,4 +1,3 @@
-// QMD query JSON parser with noisy-output and no-result handling.
 import { formatErrorMessage } from "./error-utils.js";
 import { normalizeLowercaseStringOrEmpty } from "./string-utils.js";
 

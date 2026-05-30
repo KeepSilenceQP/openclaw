@@ -1,4 +1,3 @@
-// QA Lab bundled-plugin staging helpers assemble temporary plugin trees for runtime tests.
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

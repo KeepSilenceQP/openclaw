@@ -1,4 +1,3 @@
-// Discovers git repository roots and HEAD files by walking parent dirs.
 import fs from "node:fs";
 import path from "node:path";
 

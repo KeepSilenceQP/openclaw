@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot message context acp bindings test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const ensureConfiguredBindingRouteReadyMock = vi.hoisted(() => vi.fn());

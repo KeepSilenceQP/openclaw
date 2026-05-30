@@ -1,4 +1,3 @@
-// Shared types for extensions/telegram/src audit types behavior.
 import type { TelegramNetworkConfig } from "openclaw/plugin-sdk/config-contracts";
 
 export type TelegramGroupMembershipAuditEntry = {

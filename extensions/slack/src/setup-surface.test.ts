@@ -1,4 +1,3 @@
-// Tests extensions/slack/src setup surface test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   createTestWizardPrompter,

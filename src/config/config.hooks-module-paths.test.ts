@@ -1,4 +1,3 @@
-// Tests config config hooks module paths test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObjectWithPlugins } from "./validation.js";
 

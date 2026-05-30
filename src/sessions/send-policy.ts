@@ -1,4 +1,3 @@
-// Resolves whether a session is allowed to send outbound messages.
 import { normalizeChatType } from "../channels/chat-type.js";
 import type { SessionChatType, SessionEntry } from "../config/sessions.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

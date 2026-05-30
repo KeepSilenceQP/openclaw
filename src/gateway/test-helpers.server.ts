@@ -1,5 +1,4 @@
 // Shared gateway server test harness for isolated env setup, server lifecycle,
-// WebSocket auth, and RPC helpers.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

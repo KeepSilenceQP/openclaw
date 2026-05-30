@@ -1,4 +1,3 @@
-// Tests extensions/diffs/src browser test behavior.
 import fs from "node:fs/promises";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import path from "node:path";

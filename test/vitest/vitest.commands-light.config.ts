@@ -1,4 +1,3 @@
-// Vitest project config for the lightweight commands test lane.
 import { commandsLightTestFiles } from "./vitest.commands-light-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 import { getUnitFastTestFiles } from "./vitest.unit-fast-paths.mjs";

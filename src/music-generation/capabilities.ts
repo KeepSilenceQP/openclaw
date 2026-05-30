@@ -1,4 +1,3 @@
-// Capability helpers for choosing music-generation generate/edit mode and per-mode provider limits.
 import type {
   MusicGenerationEditCapabilities,
   MusicGenerationMode,

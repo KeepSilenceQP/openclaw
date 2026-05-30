@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src graph test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const {

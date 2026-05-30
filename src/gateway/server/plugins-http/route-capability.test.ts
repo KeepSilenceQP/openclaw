@@ -1,4 +1,3 @@
-// Tests gateway/server/plugins-http route capability test behavior.
 import { describe, expect, it } from "vitest";
 import type { PluginRegistry } from "../../../plugins/registry.js";
 import { resolvePluginRoutePathContext } from "./path-context.js";

@@ -1,4 +1,3 @@
-// Test helpers for subagent command suites.
 import type { InlineDirectives } from "./directive-handling.js";
 
 export function createEmptyInlineDirectives(): InlineDirectives {

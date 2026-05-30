@@ -1,5 +1,4 @@
 import "./fs-safe-defaults.js";
-/** Public path guards and safe filesystem probes from the fs-safe package. */
 export {
   isNotFoundPathError,
   hasNodeErrorCode,
@@ -15,5 +14,4 @@ export {
   safeStatSync,
   splitSafeRelativePath,
 } from "@openclaw/fs-safe/path";
-/** Formatting helper for POSIX mode values used in diagnostics. */
 export { formatPosixMode } from "@openclaw/fs-safe/advanced";

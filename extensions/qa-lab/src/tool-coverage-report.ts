@@ -1,4 +1,3 @@
-// QA Lab tool coverage report helpers summarize runtime tool fixture coverage and drift.
 import {
   isRecord,
   normalizeOptionalString as readString,

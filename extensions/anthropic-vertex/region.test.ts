@@ -1,4 +1,3 @@
-// Tests extensions/anthropic-vertex region test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveAnthropicVertexRegion, resolveAnthropicVertexRegionFromBaseUrl } from "./api.js";
 

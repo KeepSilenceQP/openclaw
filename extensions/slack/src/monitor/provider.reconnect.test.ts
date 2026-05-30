@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor provider reconnect test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   gracefulStopSlackApp,

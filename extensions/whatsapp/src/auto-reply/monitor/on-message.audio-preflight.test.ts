@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/auto-reply/monitor on message audio preflight test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const events: string[] = [];

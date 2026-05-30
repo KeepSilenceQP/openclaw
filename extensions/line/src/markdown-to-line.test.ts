@@ -1,4 +1,3 @@
-// Tests extensions/line/src markdown to line test behavior.
 import { describe, expect, it } from "vitest";
 import {
   extractMarkdownTables,

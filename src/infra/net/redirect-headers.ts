@@ -1,4 +1,3 @@
-// Filters request headers before following a cross-origin redirect.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import { normalizeHeadersInitForFetch } from "../fetch-headers.js";
 

@@ -1,4 +1,3 @@
-// Resolves Homebrew Cellar Node paths to upgrade-stable symlink paths.
 import fs from "node:fs/promises";
 import path from "node:path";
 

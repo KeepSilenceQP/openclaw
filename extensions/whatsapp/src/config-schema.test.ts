@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src config schema test behavior.
 import { describe, expect, it } from "vitest";
 import { WhatsAppConfigSchema } from "../config-api.js";
 

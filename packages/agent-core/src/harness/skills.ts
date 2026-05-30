@@ -1,4 +1,3 @@
-// Skill discovery and loading helpers for harness execution environments.
 import ignore from "ignore";
 import {
   basenameEnvPath,

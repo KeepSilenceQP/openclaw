@@ -1,4 +1,3 @@
-// Tests plugins provider auth input test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { WizardPrompter } from "../wizard/prompts.js";
 import {

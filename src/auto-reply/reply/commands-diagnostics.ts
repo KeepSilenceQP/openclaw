@@ -1,4 +1,3 @@
-// Chat command handlers for diagnostics and runtime troubleshooting.
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import { createExecTool } from "../../agents/bash-tools.js";
 import type { ExecToolDetails } from "../../agents/bash-tools.js";

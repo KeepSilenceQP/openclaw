@@ -1,4 +1,3 @@
-// Parallels host server helpers expose local artifacts to guest VMs during smoke runs.
 import { spawn, type ChildProcessWithoutNullStreams } from "node:child_process";
 import { createServer } from "node:http";
 import { createConnection } from "node:net";

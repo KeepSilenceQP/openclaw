@@ -1,4 +1,3 @@
-// Tests test/scripts real behavior proof check test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { fetchProofComments } from "../../scripts/github/real-behavior-proof-check.mjs";
 

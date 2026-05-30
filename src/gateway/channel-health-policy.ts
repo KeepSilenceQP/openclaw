@@ -1,4 +1,3 @@
-// Evaluates channel runtime snapshots for health checks and restart decisions.
 import type { ChannelId } from "../channels/plugins/types.public.js";
 
 type ChannelHealthSnapshot = {

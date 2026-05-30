@@ -1,4 +1,3 @@
-// Test fixtures for OpenAI SecretRef resolution from runtime secret files.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { expect } from "vitest";

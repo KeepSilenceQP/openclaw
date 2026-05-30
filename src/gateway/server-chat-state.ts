@@ -1,5 +1,4 @@
 // In-memory Gateway chat/run fanout state. Registries track active chat runs,
-// buffered deltas, session subscribers, and tool-event recipients per process.
 import type { AgentEventPayload } from "../infra/agent-events.js";
 
 /** Client run id paired with the server session key it created. */

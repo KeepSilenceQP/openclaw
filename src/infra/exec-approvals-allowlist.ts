@@ -1,5 +1,4 @@
 // Exec approval allowlist evaluation.
-// Matches segmented shell analysis against explicit entries, safe bins, and trusted skill bins.
 import path from "node:path";
 import {
   normalizeLowercaseStringOrEmpty,

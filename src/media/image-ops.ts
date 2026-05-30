@@ -1,5 +1,4 @@
 // Image probing and resizing helpers backed by rastermill plus trusted system
-// tools. Callers get stable OpenClaw errors when native processing is missing.
 import {
   createRastermill,
   isRastermillUnavailableError,
@@ -13,7 +12,6 @@ import {
 import { resolveSystemBin } from "../infra/resolve-system-bin.js";
 import { resolvePreferredOpenClawTmpDir } from "../infra/tmp-openclaw-dir.js";
 
-/** Rastermill metadata/probe types re-exported for media callers. */
 export type { ImageMetadata, ImageProbe };
 
 /** Stable error raised when local image processing dependencies are unavailable. */

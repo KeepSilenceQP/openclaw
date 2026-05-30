@@ -1,4 +1,3 @@
-// Hook dispatch for reset command lifecycle events.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { logVerbose } from "../../globals.js";

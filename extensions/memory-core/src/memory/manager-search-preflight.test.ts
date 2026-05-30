@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager search preflight test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMemorySearchPreflight } from "./manager-search-preflight.js";
 

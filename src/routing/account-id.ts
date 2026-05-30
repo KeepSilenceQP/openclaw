@@ -1,4 +1,3 @@
-// Normalizes channel account ids for config lookup and route binding matches.
 import { isBlockedObjectKey } from "../infra/prototype-keys.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 

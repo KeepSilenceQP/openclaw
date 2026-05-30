@@ -1,4 +1,3 @@
-// Interactive model authentication commands for built-in and plugin-backed providers.
 import {
   cancel,
   confirm as clackConfirm,

@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src accounts test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import * as runtimeEnvModule from "openclaw/plugin-sdk/runtime-env";
 import { withEnv } from "openclaw/plugin-sdk/test-env";

@@ -1,4 +1,3 @@
-// Agent detail panels for tool policy visibility and skill eligibility.
 import { html, nothing } from "lit";
 import { normalizeToolName } from "../../../../src/agents/tool-policy-shared.js";
 import { t } from "../../i18n/index.ts";

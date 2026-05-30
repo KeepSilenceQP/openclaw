@@ -1,4 +1,3 @@
-// Reads route bindings and derives account bindings by channel and agent.
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";
 import { listRouteBindings } from "../config/bindings.js";
 import type { AgentRouteBinding } from "../config/types.agents.js";

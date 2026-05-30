@@ -1,4 +1,3 @@
-// Chat target prefix parsing helpers for channel routes.
 import { parseStrictInteger } from "../../infra/parse-finite-number.js";
 import {
   normalizeLowercaseStringOrEmpty,

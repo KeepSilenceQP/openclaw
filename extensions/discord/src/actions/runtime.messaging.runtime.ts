@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/discord/src/actions runtime messaging runtime behavior.
 import { readDiscordComponentSpec } from "../components.js";
 import type { OpenClawConfig } from "../runtime-api.js";
 import { sendDiscordComponentMessage } from "../send.components.js";

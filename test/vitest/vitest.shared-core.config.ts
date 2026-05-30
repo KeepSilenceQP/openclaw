@@ -1,4 +1,3 @@
-// Shared core Vitest config runs shared source tests outside the faster unit shard list.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 import { getUnitFastTestFiles } from "./vitest.unit-fast-paths.mjs";
 

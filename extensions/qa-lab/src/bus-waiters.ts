@@ -1,4 +1,3 @@
-// QA Lab bus waiter helpers resolve async waits against state snapshots.
 import type {
   QaBusEvent,
   QaBusMessage,

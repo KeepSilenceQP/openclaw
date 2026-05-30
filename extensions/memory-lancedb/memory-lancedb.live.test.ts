@@ -1,4 +1,3 @@
-// Tests extensions/memory-lancedb memory lancedb live test behavior.
 import { describe, expect, test } from "vitest";
 import { installTmpDirHarness } from "./test-helpers.js";
 

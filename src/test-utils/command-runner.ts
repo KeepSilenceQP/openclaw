@@ -1,4 +1,3 @@
-// Commander CLI runner helper for command registration tests.
 import { Command } from "commander";
 
 /** Register a CLI command tree and parse user-style argv. */

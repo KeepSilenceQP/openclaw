@@ -1,4 +1,3 @@
-// Tests extensions/web-readability web content extractor test behavior.
 import { describe, expect, it } from "vitest";
 import { createReadabilityWebContentExtractor } from "./web-content-extractor.js";
 

@@ -1,4 +1,3 @@
-// Validates OpenClaw config objects, plugin references, channel sections, and security invariants.
 import path from "node:path";
 import { collectConfiguredModelRefs } from "@openclaw/model-catalog-core/configured-model-refs";
 import { isCanonicalDottedDecimalIPv4, isLoopbackIpAddress } from "@openclaw/net-policy/ip";
@@ -1920,5 +1919,4 @@ function validateConfigObjectWithPluginsBase(
 
   return { ok: true, config: mutatedConfig, warnings };
 }
-/** Test-only alias for config validation internals. */
 export { testing as __testing };

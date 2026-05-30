@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src card interaction test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildFeishuCardActionTextFallback,

@@ -1,5 +1,4 @@
 // Diagnostic event facade: records webhook/message/session/run health events,
-// heartbeat sampling, stuck-session checks, and test reset hooks.
 import { monitorEventLoopDelay, performance } from "node:perf_hooks";
 import { getRuntimeConfig } from "../config/config.js";
 import { resolveAllAgentSessionStoreTargetsSync } from "../config/sessions/targets.js";
@@ -65,7 +64,6 @@ import {
   startDiagnosticStabilityRecorder,
   stopDiagnosticStabilityRecorder,
 } from "./diagnostic-stability.js";
-/** Diagnostic subsystem logger and lane queue event helpers. */
 export { diagnosticLogger, logLaneDequeue, logLaneEnqueue } from "./diagnostic-runtime.js";
 
 const webhookStats = {

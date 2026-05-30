@@ -1,4 +1,3 @@
-// Context-window overflow detection shared by model routing and retry logic.
 import type { AssistantMessage } from "../types.js";
 
 /**

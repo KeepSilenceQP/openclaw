@@ -1,5 +1,4 @@
 // Shell wrapper detection and inline payload extraction.
-// Handles dispatch wrappers, busybox/toybox multiplexers, startup options, and bindable commands.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import {
   MAX_DISPATCH_WRAPPER_DEPTH,

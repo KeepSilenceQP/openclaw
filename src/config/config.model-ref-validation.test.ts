@@ -1,4 +1,3 @@
-// Tests config config model ref validation test behavior.
 import { describe, expect, it } from "vitest";
 import type { PluginManifestRegistry } from "../plugins/manifest-registry.js";
 import { validateConfigObjectWithPlugins } from "./validation.js";

@@ -1,4 +1,3 @@
-// Tests config talk normalize test behavior.
 import { describe, expect, it } from "vitest";
 import { TALK_TEST_PROVIDER_ID } from "../test-utils/talk-test-provider.js";
 import { buildTalkConfigResponse, normalizeTalkSection } from "./talk.js";

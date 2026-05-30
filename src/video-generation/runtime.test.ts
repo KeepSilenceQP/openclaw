@@ -1,4 +1,3 @@
-// Tests video-generation runtime test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../config/types.js";
 import {

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src browser tool test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const browserClientMocks = vi.hoisted(() => ({

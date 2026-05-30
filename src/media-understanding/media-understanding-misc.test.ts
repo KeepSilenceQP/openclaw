@@ -1,4 +1,3 @@
-// Tests media-understanding media understanding misc test behavior.
 import { constants as fsConstants } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Shared DM/group access helpers used by security audits and channel ingress.
 import { resolveGroupAllowFromSources } from "../channels/allow-from.js";
 import { resolveControlCommandGate } from "../channels/command-gating.js";
 import { resolveDmAllowAuditState } from "../channels/message-access/dm-allow-state.js";

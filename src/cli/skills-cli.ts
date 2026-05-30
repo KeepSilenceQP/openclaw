@@ -55,7 +55,6 @@ export type {
   SkillsCheckOptions,
   SkillsListOptions,
 } from "./skills-cli.format.js";
-/** Re-export skill formatters for list, info, and health-check output. */
 export { formatSkillInfo, formatSkillsCheck, formatSkillsList } from "./skills-cli.format.js";
 
 type SkillStatusReport = Awaited<

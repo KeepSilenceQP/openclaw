@@ -1,4 +1,3 @@
-// Coverage for final media handling in runReplyAgent.
 import path from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { TemplateContext } from "../templating.js";

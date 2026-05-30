@@ -1,4 +1,3 @@
-// Cron delivery inference from active or persisted session delivery context.
 import { extractDeliveryInfo } from "../config/sessions/delivery-info.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {

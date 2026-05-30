@@ -1,4 +1,3 @@
-// Session key helpers used by runtime policy decisions.
 import { normalizeChatType } from "../../channels/chat-type.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import {

@@ -1,10 +1,7 @@
 import { spawn } from "node:child_process";
 
-/** Gateway connection detail formatter used by logs commands. */
 export { buildGatewayConnectionDetails } from "../gateway/call.js";
-/** Gateway systemd service-name resolver used by logs commands. */
 export { resolveGatewaySystemdServiceName } from "../daemon/constants.js";
-/** Systemd runtime reader used by logs commands. */
 export { readSystemdServiceRuntime } from "../daemon/systemd.js";
 
 type ExecFileTailResult = { stdout: string; stderr: string; code: number; truncated: boolean };

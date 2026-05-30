@@ -1,4 +1,3 @@
-// Command handlers for reading and mutating configuration.
 import { resolveConfigWriteTargetFromPath } from "../../channels/plugins/config-writes.js";
 import { normalizeChannelId } from "../../channels/registry.js";
 import { getConfigValueAtPath, parseConfigPath } from "../../config/config-paths.js";

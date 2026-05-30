@@ -1,4 +1,3 @@
-// Live media tests use this tiny bitmap renderer to create deterministic PNG prompt images.
 import { encodePngRgba, fillPixel } from "../../src/media/png-encode.js";
 
 const GLYPH_ROWS_5X7: Record<string, number[]> = {

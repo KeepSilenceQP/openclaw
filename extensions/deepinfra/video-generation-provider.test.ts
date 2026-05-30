@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra video generation provider test behavior.
 import {
   getProviderHttpMocks,
   installProviderHttpMockCleanup,

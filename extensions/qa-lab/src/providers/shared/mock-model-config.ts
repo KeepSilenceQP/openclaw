@@ -1,4 +1,3 @@
-// QA Lab mock model config helpers build provider maps for local mock servers.
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 
 const ZERO_COST = Object.freeze({

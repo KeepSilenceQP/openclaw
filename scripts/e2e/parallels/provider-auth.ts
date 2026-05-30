@@ -1,4 +1,3 @@
-// Parallels provider auth helpers resolve model credentials and config patches for smoke runs.
 import { mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";

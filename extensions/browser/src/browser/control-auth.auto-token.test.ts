@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser control auth auto token test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { expectGeneratedTokenPersistedToGatewayAuth } from "../../test-support.js";
 import type { OpenClawConfig } from "../config/config.js";

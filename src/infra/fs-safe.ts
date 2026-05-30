@@ -1,5 +1,4 @@
 // fs-safe facade and compatibility helpers.
-// Centralizes re-exports from @openclaw/fs-safe plus legacy within-root wrappers.
 import "./fs-safe-defaults.js";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -10,9 +9,7 @@ import {
 } from "@openclaw/fs-safe/advanced";
 import { root as fsSafeRoot, type ReadResult } from "@openclaw/fs-safe/root";
 
-/** fs-safe error type and code exports. */
 export { FsSafeError, type FsSafeErrorCode } from "@openclaw/fs-safe/errors";
-/** Absolute path resolution and directory safety helpers from fs-safe. */
 export {
   assertAbsolutePathInput,
   canonicalPathFromExistingAncestor,
@@ -25,15 +22,10 @@ export {
   type ResolvedAbsolutePath,
   type ResolvedWritableAbsolutePath,
 } from "@openclaw/fs-safe/advanced";
-/** Path containment predicate from fs-safe. */
 export { isPathInside } from "@openclaw/fs-safe/path";
-/** Existence helpers from fs-safe advanced APIs. */
 export { pathExists, pathExistsSync } from "@openclaw/fs-safe/advanced";
-/** Trash-moving helper from fs-safe advanced APIs. */
 export { movePathToTrash, type MovePathToTrashOptions } from "@openclaw/fs-safe/advanced";
-/** Local-root file resolution/read helpers from fs-safe advanced APIs. */
 export { readLocalFileFromRoots, resolveLocalPathFromRootsSync } from "@openclaw/fs-safe/advanced";
-/** Regular-file read/append/stat helpers from fs-safe advanced APIs. */
 export {
   appendRegularFile,
   appendRegularFileSync,
@@ -43,7 +35,6 @@ export {
   statRegularFile,
   statRegularFileSync,
 } from "@openclaw/fs-safe/advanced";
-/** Root-scoped file APIs from fs-safe. */
 export {
   openLocalFileSafely,
   readLocalFileSafely,
@@ -52,15 +43,12 @@ export {
   type OpenResult,
   type ReadResult,
 } from "@openclaw/fs-safe/root";
-/** Untrusted filename sanitizer from fs-safe. */
 export { sanitizeUntrustedFileName } from "@openclaw/fs-safe/advanced";
-/** Secure-file read helpers from fs-safe. */
 export {
   readSecureFile,
   type SecureFileReadOptions,
   type SecureFileReadResult,
 } from "@openclaw/fs-safe/secure-file";
-/** Directory walk helpers from fs-safe. */
 export {
   walkDirectory,
   walkDirectorySync,
@@ -68,7 +56,6 @@ export {
   type WalkDirectoryOptions,
   type WalkDirectoryResult,
 } from "@openclaw/fs-safe/walk";
-/** Timeout wrapper helper from fs-safe advanced APIs. */
 export { withTimeout } from "@openclaw/fs-safe/advanced";
 
 /** Options for safely writing an externally named file under a root directory. */

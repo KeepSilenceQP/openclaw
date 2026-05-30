@@ -1,4 +1,3 @@
-// Flags model-provider HTTP header names that should be treated as secrets.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 const ALWAYS_SENSITIVE_MODEL_PROVIDER_HEADER_NAMES = new Set([

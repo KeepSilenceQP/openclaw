@@ -1,4 +1,3 @@
-// Lazy runtime imports for ACP dispatch.
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 
 type ShouldBypassAcpDispatchForCommand =

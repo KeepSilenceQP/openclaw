@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src/monitor-handler inbound media test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("../attachments.js", () => ({

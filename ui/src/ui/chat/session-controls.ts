@@ -1,4 +1,3 @@
-// Chat session picker, agent filter, model, and thinking-level controls.
 import { html } from "lit";
 import { live } from "lit/directives/live.js";
 import { repeat } from "lit/directives/repeat.js";

@@ -1,4 +1,3 @@
-// Tests shared/text reasoning tags test behavior.
 import { describe, expect, it } from "vitest";
 import { stripReasoningTagsFromText } from "./reasoning-tags.js";
 

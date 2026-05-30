@@ -1,4 +1,3 @@
-// Helpers for running small Node ESM snippets in subprocess tests.
 import { execFileSync, spawnSync, type SpawnSyncReturns } from "node:child_process";
 
 type NodeEvalArgsOptions = {

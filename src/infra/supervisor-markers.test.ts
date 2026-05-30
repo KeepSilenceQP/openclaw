@@ -1,4 +1,3 @@
-// Tests infra supervisor markers test behavior.
 import { describe, expect, it } from "vitest";
 import { detectRespawnSupervisor, SUPERVISOR_HINT_ENV_VARS } from "./supervisor-markers.js";
 

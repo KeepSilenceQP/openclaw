@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/gateway message queue test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createMessageQueue, mergeGroupMessages, type QueuedMessage } from "./message-queue.js";
 

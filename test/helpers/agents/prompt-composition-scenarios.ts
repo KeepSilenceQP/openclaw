@@ -1,4 +1,3 @@
-// Prompt composition fixtures build stable multi-surface scenarios for prompt snapshot tests.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

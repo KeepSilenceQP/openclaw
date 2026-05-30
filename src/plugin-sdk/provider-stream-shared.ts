@@ -881,21 +881,16 @@ export function createGoogleThinkingStreamWrapper(
   return createGoogleThinkingPayloadWrapper(ctx.streamFn, ctx.thinkingLevel);
 }
 
-/** Anthropic payload policy helpers exposed to provider stream plugins. */
 export {
   applyAnthropicPayloadPolicyToParams,
   resolveAnthropicPayloadPolicy,
 } from "../agents/anthropic-payload-policy.js";
-/** Applies Anthropic ephemeral cache-control markers to stream payloads. */
 export { applyAnthropicEphemeralCacheControlMarkers } from "../llm/providers/stream-wrappers/anthropic-cache-control-payload.js";
-/** Moonshot thinking payload helpers exposed to provider stream plugins. */
 export {
   createMoonshotThinkingWrapper,
   resolveMoonshotThinkingType,
 } from "../llm/providers/stream-wrappers/moonshot-thinking.js";
-/** Low-level stream utility that applies payload patch callbacks. */
 export { streamWithPayloadPatch };
-/** Z.ai tool-stream wrappers exposed to provider stream plugins. */
 export {
   createToolStreamWrapper,
   createZaiToolStreamWrapper,

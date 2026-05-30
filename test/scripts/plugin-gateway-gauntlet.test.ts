@@ -1,4 +1,3 @@
-// Tests test/scripts plugin gateway gauntlet test behavior.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";

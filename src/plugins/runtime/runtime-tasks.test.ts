@@ -1,4 +1,3 @@
-// Tests plugins/runtime runtime tasks test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   getDetachedTaskLifecycleRuntime,

@@ -1,4 +1,3 @@
-// Regression coverage for inbound freshness handling in dispatch flow.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { OutboundDeliveryError } from "../infra/outbound/deliver-types.js";

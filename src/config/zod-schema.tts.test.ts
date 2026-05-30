@@ -1,4 +1,3 @@
-// Tests config zod schema tts test behavior.
 import { describe, expect, it } from "vitest";
 import { TtsConfigSchema } from "./zod-schema.core.js";
 

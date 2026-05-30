@@ -1,4 +1,3 @@
-// QA Lab self-check scenario verifies basic bus message and action behavior.
 import { extractQaToolPayload } from "./extract-tool-payload.js";
 import type { QaScenarioDefinition } from "./scenario.js";
 

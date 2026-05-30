@@ -1,4 +1,3 @@
-// Vitest project config for package-level support tests outside gateway protocol lanes.
 import { createUnitVitestConfigWithOptions } from "./vitest.unit.config.ts";
 
 /** Default package support Vitest project configuration. */

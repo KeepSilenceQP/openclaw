@@ -1,5 +1,4 @@
 // Plugin install pipeline for local dirs/files/archives/npm specs. Heavy
-// archive/scanning runtime is loaded lazily so metadata-only paths stay light.
 import { createHash } from "node:crypto";
 import type { Dirent } from "node:fs";
 import fs from "node:fs/promises";
@@ -70,7 +69,6 @@ import {
   relinkOpenClawPeerDependenciesInManagedNpmRoot,
 } from "./plugin-peer-link.js";
 
-/** Safe managed install-directory resolver re-exported for install callers. */
 export { resolvePluginInstallDir } from "./install-paths.js";
 
 const pluginInstallRuntimeLoader = createLazyImportLoader(() => import("./install.runtime.js"));

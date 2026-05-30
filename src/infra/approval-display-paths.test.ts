@@ -1,4 +1,3 @@
-// Tests infra approval display paths test behavior.
 import { describe, expect, it } from "vitest";
 import { formatApprovalDisplayPath } from "./approval-display-paths.js";
 

@@ -1,4 +1,3 @@
-// OpenAI Responses tool-schema conversion and strict-mode diagnostics.
 import { createHash } from "node:crypto";
 import type { Tool as OpenAITool } from "openai/resources/responses/responses.js";
 import { resolveOpenAIStrictToolSetting } from "../../agents/openai-strict-tool-setting.js";

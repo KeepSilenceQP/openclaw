@@ -1,4 +1,3 @@
-// Sets the default text model and repairs Codex runtime plugin config when needed.
 import { logConfigUpdated } from "../../config/logging.js";
 import { resolveAgentModelPrimaryValue } from "../../config/model-input.js";
 import type { RuntimeEnv } from "../../runtime.js";

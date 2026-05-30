@@ -1,4 +1,3 @@
-// Tests extensions/azure-speech tts test behavior.
 import { installPinnedHostnameTestHooks } from "openclaw/plugin-sdk/test-env";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {

@@ -1,4 +1,3 @@
-// Tests ui/src/ui/controllers workboard test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { GatewaySessionRow } from "../types.ts";
 import {
@@ -612,14 +611,10 @@ describe("workboard controller", () => {
     });
 
     expect(sessionKey).toBeNull();
-    expect(client.request).toHaveBeenNthCalledWith(
-      4,
-      "chat.abort",
-      {
-        sessionKey: "agent:main:dashboard:1",
-        runId: "run-1",
-      },
-    );
+    expect(client.request).toHaveBeenNthCalledWith(4, "chat.abort", {
+      sessionKey: "agent:main:dashboard:1",
+      runId: "run-1",
+    });
     expect(client.request).toHaveBeenNthCalledWith(
       5,
       "workboard.cards.update",

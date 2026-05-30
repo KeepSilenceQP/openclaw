@@ -1,4 +1,3 @@
-// Tracks last inbound and outbound activity timestamps per channel account.
 import type { ChannelId } from "../channels/plugins/channel-id.types.js";
 /** Direction of observed channel activity. */
 export type ChannelDirection = "inbound" | "outbound";

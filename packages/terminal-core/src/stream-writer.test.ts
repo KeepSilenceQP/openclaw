@@ -1,4 +1,3 @@
-// Tests terminal stream writer test behavior.
 import { describe, expect, it } from "vitest";
 import { createSafeStreamWriter } from "./stream-writer.js";
 

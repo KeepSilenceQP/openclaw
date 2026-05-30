@@ -1,4 +1,3 @@
-// Shared ACP command helpers.
 import { randomUUID } from "node:crypto";
 import { toAcpRuntimeErrorText } from "../../../acp/runtime/error-text.js";
 import type { AcpRuntimeError } from "../../../acp/runtime/errors.js";
@@ -47,7 +46,6 @@ export const ACP_DOCTOR_USAGE = "Usage: /acp doctor";
 export const ACP_SESSIONS_USAGE = "Usage: /acp sessions";
 /** Maximum characters returned from ACP steer command output. */
 export const ACP_STEER_OUTPUT_LIMIT = 800;
-/** Session id matcher reused by ACP command target parsing. */
 export { SESSION_ID_RE } from "../../../sessions/session-id.js";
 
 /** Parsed ACP subcommand action. */

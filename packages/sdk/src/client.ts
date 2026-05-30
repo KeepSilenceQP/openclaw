@@ -1,4 +1,3 @@
-// High-level OpenClaw SDK client built on gateway RPC methods and normalized event streams.
 import { randomUUID } from "node:crypto";
 import { EventHub } from "./event-hub.js";
 import { normalizeGatewayEvent } from "./normalize.js";

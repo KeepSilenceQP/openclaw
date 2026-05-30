@@ -1,4 +1,3 @@
-// Chat command handlers for provider model selection and listing.
 import {
   resolveAgentDir,
   resolveAgentWorkspaceDir,

@@ -1,4 +1,3 @@
-// Tests cron isolated agent session identity test behavior.
 import "./isolated-agent.mocks.js";
 import fs from "node:fs/promises";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Tests OpenClaw docker setup e2e test behavior.
 import { spawnSync } from "node:child_process";
 import { chmod, copyFile, mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { createServer } from "node:net";

@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/whatsapp/src/auto-reply/monitor inbound dispatch runtime behavior.
 export {
   createChannelMessageReplyPipeline,
   dispatchReplyWithBufferedBlockDispatcher,

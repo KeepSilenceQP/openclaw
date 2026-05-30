@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src/providers telnyx test behavior.
 import crypto from "node:crypto";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { WebhookContext } from "../types.js";

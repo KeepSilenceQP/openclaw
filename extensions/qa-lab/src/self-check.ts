@@ -1,4 +1,3 @@
-// QA Lab self-check helpers run the vertical slice and write its Markdown report.
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";

@@ -1,5 +1,4 @@
 // Managed npm root manifest and lockfile helpers.
-// Keeps plugin install roots aligned with host overrides, peer pins, and installed package metadata.
 import type { Stats } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

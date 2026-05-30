@@ -1,4 +1,3 @@
-// Accessible modal dialog component with focus trapping and close handling.
 import { LitElement, css, html, nothing } from "lit";
 import { property, query } from "lit/decorators.js";
 import { ifDefined } from "lit/directives/if-defined.js";

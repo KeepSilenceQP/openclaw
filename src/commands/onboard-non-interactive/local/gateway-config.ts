@@ -1,4 +1,3 @@
-// Applies gateway bind/auth/tailscale settings for non-interactive onboarding.
 import { formatCliCommand } from "../../../cli/command-format.js";
 import { formatInvalidPortOption } from "../../../cli/error-format.js";
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";

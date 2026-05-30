@@ -1,5 +1,3 @@
-// Security-audit barrel for Windows ACL inspection and repair command helpers.
-/** Re-export Windows ACL helpers from the shared permissions implementation. */
 export {
   createIcaclsResetCommand,
   formatIcaclsResetCommand,

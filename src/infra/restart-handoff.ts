@@ -1,5 +1,4 @@
 // Gateway supervisor restart handoff persistence.
-// Short-lived JSON files let the next process explain intentional restarts after the old PID exits.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Applies link-understanding outputs back onto an inbound message context.
 import { finalizeInboundContext } from "../auto-reply/reply/inbound-context.js";
 import type { MsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

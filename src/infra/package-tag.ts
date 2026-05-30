@@ -1,4 +1,3 @@
-// Normalizes package tag inputs relative to known package names.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 /** Returns the explicit tag portion from `pkg@tag`, or the raw tag when unqualified. */

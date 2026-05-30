@@ -1,4 +1,3 @@
-// ACP command context resolution helpers.
 import { normalizeConversationText } from "../../../acp/conversation-id.js";
 import { normalizeConversationTargetRef } from "../../../infra/outbound/session-binding-normalization.js";
 import { normalizeLowercaseStringOrEmpty } from "../../../shared/string-coerce.js";

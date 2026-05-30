@@ -48,7 +48,6 @@ import {
   stopSystemdService,
   uninstallSystemdService,
 } from "./systemd.js";
-/** Gateway service argument, state, result, and environment types. */
 export type {
   GatewayServiceCommandConfig,
   GatewayServiceControlArgs,

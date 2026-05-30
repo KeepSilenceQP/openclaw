@@ -1,4 +1,3 @@
-// Coverage for queue state storage.
 import { afterEach, describe, expect, it } from "vitest";
 import { clearFollowupQueue, getFollowupQueue, refreshQueuedFollowupSession } from "./state.js";
 import type { FollowupRun } from "./types.js";

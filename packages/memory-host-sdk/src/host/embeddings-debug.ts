@@ -1,4 +1,3 @@
-// Opt-in stderr logging for memory embedding diagnostics.
 import { normalizeLowercaseStringOrEmpty } from "./string-utils.js";
 
 const debugEmbeddings = isTruthyEnvValue(process.env.OPENCLAW_DEBUG_MEMORY_EMBEDDINGS);

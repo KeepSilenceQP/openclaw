@@ -1,4 +1,3 @@
-// Tests infra gateway processes test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { mockProcessPlatform } from "../test-utils/vitest-spies.js";
 

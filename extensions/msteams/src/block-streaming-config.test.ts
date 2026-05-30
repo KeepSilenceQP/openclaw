@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src block streaming config test behavior.
 import { describe, expect, it } from "vitest";
 import { MSTeamsConfigSchema } from "../config-api.js";
 

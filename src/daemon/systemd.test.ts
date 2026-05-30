@@ -1,15 +1,10 @@
-// Tests daemon systemd test behavior.
+import type { ExecFileException, ExecFileOptionsWithStringEncoding } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import type { ExecFileException, ExecFileOptionsWithStringEncoding } from "node:child_process";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-type ExecFileCallback = (
-  error: ExecFileException | null,
-  stdout: string,
-  stderr: string,
-) => void;
+type ExecFileCallback = (error: ExecFileException | null, stdout: string, stderr: string) => void;
 type ExecFileMock = (
   command: string,
   args: string[],

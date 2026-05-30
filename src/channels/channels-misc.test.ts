@@ -1,4 +1,3 @@
-// Miscellaneous coverage for channel helpers.
 import { describe, expect, it } from "vitest";
 import { normalizeChatType } from "./chat-type.js";
 

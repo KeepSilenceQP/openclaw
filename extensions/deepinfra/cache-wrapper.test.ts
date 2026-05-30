@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra cache wrapper test behavior.
 import { describe, expect, it } from "vitest";
 import { createDeepInfraAnthropicCacheWrapper } from "./cache-wrapper.js";
 

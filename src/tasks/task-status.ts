@@ -1,4 +1,3 @@
-// Builds user-facing background task status summaries while scrubbing internal context.
 import { sanitizeUserFacingText } from "../agents/embedded-agent-helpers/sanitize-user-facing-text.js";
 import {
   INTERNAL_RUNTIME_CONTEXT_BEGIN,

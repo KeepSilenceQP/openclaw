@@ -1,11 +1,9 @@
-// Process-local registry for embedding provider adapters contributed by plugins.
 import type {
   EmbeddingProviderAdapter,
   RegisteredEmbeddingProvider,
 } from "./embedding-provider-types.js";
 import { openAICompatibleEmbeddingProviderAdapter } from "./openai-compatible-embedding-provider.js";
 
-/** Public embedding provider adapter/runtime types used by plugin implementations. */
 export type {
   EmbeddingInput,
   EmbeddingProvider,

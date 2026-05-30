@@ -1,4 +1,3 @@
-// Stored model override helpers for session state.
 import { hasSessionAutoModelFallbackProvenance } from "../../agents/agent-scope.js";
 import {
   modelKey,

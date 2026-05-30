@@ -1,4 +1,3 @@
-// Shared types for extensions/nostr/src types behavior.
 import {
   DEFAULT_ACCOUNT_ID,
   normalizeAccountId,

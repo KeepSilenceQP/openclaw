@@ -1,4 +1,3 @@
-// Tests plugins provider validation test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeRegisteredProvider } from "./provider-validation.js";
 import type { PluginDiagnostic, ProviderPlugin } from "./types.js";

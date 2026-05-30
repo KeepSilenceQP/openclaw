@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src/providers/shared call status test behavior.
 import { describe, expect, it } from "vitest";
 import {
   isProviderStatusTerminal,

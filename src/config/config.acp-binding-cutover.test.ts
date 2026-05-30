@@ -1,4 +1,3 @@
-// Tests config config acp binding cutover test behavior.
 import { describe, expect, it } from "vitest";
 import { OpenClawSchema } from "./zod-schema.js";
 

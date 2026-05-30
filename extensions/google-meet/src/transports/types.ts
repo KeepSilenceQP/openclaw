@@ -1,4 +1,3 @@
-// Shared types for extensions/google-meet/src/transports types behavior.
 import type { GoogleMeetMode, GoogleMeetModeInput, GoogleMeetTransport } from "../config.js";
 
 type GoogleMeetSessionState = "active" | "ended";

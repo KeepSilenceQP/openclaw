@@ -1,4 +1,3 @@
-// BTW/side-result renderer for assistant output that is not saved into history.
 import { html, nothing, type TemplateResult } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { icons } from "../icons.ts";

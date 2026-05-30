@@ -69,9 +69,7 @@ import type { AgentToolResult } from "./runtime/index.js";
 import { EXEC_TOOL_DISPLAY_SUMMARY } from "./tool-description-presets.js";
 import { type AgentToolWithMeta, failedTextResult, textResult } from "./tools/common.js";
 
-/** Sandbox config type surfaced from exec tool setup. */
 export type { BashSandboxConfig } from "./bash-tools.shared.js";
-/** Exec tool option/result types shared with callers that assemble tool defaults. */
 export type {
   ExecElevatedDefaults,
   ExecToolDefaults,
@@ -1824,5 +1822,4 @@ export const testing = {
   parseOpenClawChannelsLoginShellCommand,
   validateScriptFileForShellBleed,
 };
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

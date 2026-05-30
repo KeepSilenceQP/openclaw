@@ -1,4 +1,3 @@
-// Tests infra prototype keys test behavior.
 import { describe, expect, it } from "vitest";
 import { isBlockedObjectKey } from "./prototype-keys.js";
 

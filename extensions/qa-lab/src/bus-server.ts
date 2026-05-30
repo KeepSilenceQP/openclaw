@@ -1,4 +1,3 @@
-// QA Lab bus server exposes the in-memory QA channel over local HTTP endpoints.
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from "node:http";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import {

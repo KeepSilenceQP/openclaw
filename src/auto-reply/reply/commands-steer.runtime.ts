@@ -1,4 +1,3 @@
-// Runtime re-export for steering command helpers.
 export {
   formatEmbeddedAgentQueueFailureSummary,
   isEmbeddedAgentRunActive,

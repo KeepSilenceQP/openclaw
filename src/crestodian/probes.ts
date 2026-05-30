@@ -1,4 +1,3 @@
-// Lightweight local probes used by Crestodian overview to report CLI and Gateway availability.
 import { spawn } from "node:child_process";
 import { resolveTimerTimeoutMs } from "../shared/number-coercion.js";
 

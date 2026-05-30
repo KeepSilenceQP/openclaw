@@ -1,4 +1,3 @@
-// Tests extensions/xai xai oauth test behavior.
 import type { ProviderAuthContext } from "openclaw/plugin-sdk/plugin-entry";
 import {
   createRuntimeEnv,

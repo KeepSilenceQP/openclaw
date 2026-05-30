@@ -1,4 +1,3 @@
-// Contract between core task registry code and detachable task runtimes.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {
   TaskDeliveryState,

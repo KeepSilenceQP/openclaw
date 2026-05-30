@@ -1,4 +1,3 @@
-// Tests extensions/github-copilot embeddings test behavior.
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const resolveFirstGithubTokenMock = vi.hoisted(() => vi.fn());

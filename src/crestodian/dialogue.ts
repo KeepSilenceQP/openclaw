@@ -1,4 +1,3 @@
-// Resolves interactive Crestodian input by parsing known commands and asking the assistant planner only as fallback.
 import type { RuntimeEnv } from "../runtime.js";
 import type { CrestodianAssistantPlan, CrestodianAssistantPlanner } from "./assistant.js";
 import {

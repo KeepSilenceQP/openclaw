@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src reply stream controller test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createTeamsReplyStreamController } from "./reply-stream-controller.js";
 

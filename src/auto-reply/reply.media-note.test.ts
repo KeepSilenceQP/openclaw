@@ -1,4 +1,3 @@
-// Coverage for media note plumbing through reply prompt construction.
 import { describe, expect, it } from "vitest";
 import { finalizeInboundContext } from "./reply/inbound-context.js";
 import { buildReplyPromptBodies } from "./reply/prompt-prelude.js";

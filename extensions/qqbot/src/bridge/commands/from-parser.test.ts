@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/bridge/commands from parser test behavior.
 import { describe, expect, it } from "vitest";
 import { parseQQBotFrom } from "./from-parser.js";
 

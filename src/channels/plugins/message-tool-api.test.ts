@@ -1,4 +1,3 @@
-// Coverage for channel message tool API helpers.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { loadBundledPluginPublicArtifactModuleSyncMock } = vi.hoisted(() => ({

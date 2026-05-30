@@ -1,4 +1,3 @@
-// Vitest spy helpers that restore platform/process mocks reliably.
 import { vi } from "vitest";
 
 /** Minimal mock handle that can be restored after a scoped test callback. */

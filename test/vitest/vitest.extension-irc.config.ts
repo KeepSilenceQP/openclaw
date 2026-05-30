@@ -1,4 +1,3 @@
-// IRC extension Vitest config scopes tests to generated IRC extension root lists.
 import { ircExtensionTestRoots } from "./vitest.extension-irc-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

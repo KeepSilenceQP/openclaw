@@ -1,4 +1,3 @@
-// Tests test/scripts openclaw cross os release workflow test behavior.
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 

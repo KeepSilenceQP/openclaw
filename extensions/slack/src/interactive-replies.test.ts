@@ -1,4 +1,3 @@
-// Tests extensions/slack/src interactive replies test behavior.
 import { describe, expect, it } from "vitest";
 import { compileSlackInteractiveReplies } from "./interactive-replies.js";
 

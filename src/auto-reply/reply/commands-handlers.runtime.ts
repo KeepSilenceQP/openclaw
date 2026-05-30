@@ -1,4 +1,3 @@
-// Runtime command handler imports for lazy command dispatch.
 import { handleAcpCommand } from "./commands-acp.js";
 import { handleAllowlistCommand } from "./commands-allowlist.js";
 import { handleApproveCommand } from "./commands-approve.js";

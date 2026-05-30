@@ -1,6 +1,5 @@
 // Controller helpers for browsing and editing per-agent files. The controller
 // keeps server contents and local drafts separate so refreshes do not overwrite
-// edited drafts unless requested.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type {
   AgentFileEntry,

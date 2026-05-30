@@ -1,4 +1,3 @@
-// Parallels package artifact helpers build or fetch OpenClaw tgz inputs for guest lanes.
 import { randomUUID } from "node:crypto";
 import { copyFile, mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";

@@ -1,4 +1,3 @@
-// Tests config/sessions disk budget test behavior.
 import nodeFs from "node:fs";
 import type { PathLike, StatOptions } from "node:fs";
 import fs from "node:fs/promises";

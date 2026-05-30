@@ -1,5 +1,4 @@
 // Telegram channel card renderer. It handles both the standard single-account
-// card and the multi-account layout with per-bot status rows.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { formatRelativeTimestamp } from "../format.ts";

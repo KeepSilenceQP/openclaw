@@ -349,5 +349,4 @@ export const testing = {
     AGENT_WAITERS_BY_RUN_ID.clear();
   },
 };
-/** Test-only alias for gateway dedupe waiter internals. */
 export { testing as __testing };

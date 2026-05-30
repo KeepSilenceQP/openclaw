@@ -1,4 +1,3 @@
-// Assertions for generated gateway auth token persistence.
 import { expect } from "vitest";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 

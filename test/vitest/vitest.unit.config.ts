@@ -1,4 +1,3 @@
-// Vitest project config for the broad unit lane and derived unit sublanes.
 import fs from "node:fs";
 import path from "node:path";
 import { defineConfig } from "vitest/config";

@@ -1,4 +1,3 @@
-// Shared mocks for directive behavior E2E-style tests.
 import { vi, type Mock } from "vitest";
 
 /** Hoisted embedded-agent runner mock used by directive behavior tests. */

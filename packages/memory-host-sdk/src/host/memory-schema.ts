@@ -1,4 +1,3 @@
-// SQLite schema setup for memory file, chunk, cache, and FTS tables.
 import type { DatabaseSync } from "node:sqlite";
 import { formatErrorMessage } from "./error-utils.js";
 

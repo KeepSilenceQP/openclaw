@@ -1,5 +1,4 @@
 // Package manager resolution for update/build flows.
-// Prefers the detected manager, bootstraps pnpm when possible, and falls back only when allowed.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

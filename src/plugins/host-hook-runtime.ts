@@ -1,5 +1,4 @@
 // Process-local runtime state for plugin host hooks. Stores per-run plugin JSON
-// context and scheduler jobs while bounding cleanup after terminal agent events.
 import type { AgentEventPayload } from "../infra/agent-events.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";

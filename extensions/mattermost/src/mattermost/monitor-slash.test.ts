@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src/mattermost monitor slash test behavior.
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const listSkillCommandsForAgents = vi.hoisted(() => vi.fn());

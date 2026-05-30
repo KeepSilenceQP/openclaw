@@ -1,4 +1,3 @@
-// Runtime re-export for subagent control command helpers.
 export {
   listControlledSubagentRuns,
   killAllControlledSubagentRuns,

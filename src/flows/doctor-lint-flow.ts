@@ -1,4 +1,3 @@
-// Doctor lint flow runner for health-check detection without repairs.
 import { scrubDoctorErrorMessage } from "./doctor-error-message.js";
 import { listHealthChecks } from "./health-check-registry.js";
 import {

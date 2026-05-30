@@ -1,4 +1,3 @@
-// Tests config config allowlist requires allowfrom test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DiscordConfigSchema,

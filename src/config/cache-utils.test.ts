@@ -1,4 +1,3 @@
-// Tests config cache utils test behavior.
 import { describe, expect, it } from "vitest";
 import { createExpiringMapCache, resolveCacheTtlMs } from "./cache-utils.js";
 

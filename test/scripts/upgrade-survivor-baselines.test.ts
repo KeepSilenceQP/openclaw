@@ -1,4 +1,3 @@
-// Tests test/scripts upgrade survivor baselines test behavior.
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";

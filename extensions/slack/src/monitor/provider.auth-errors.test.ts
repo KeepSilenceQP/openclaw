@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor provider auth errors test behavior.
 import { describe, it, expect } from "vitest";
 import { isNonRecoverableSlackAuthError } from "./reconnect-policy.js";
 

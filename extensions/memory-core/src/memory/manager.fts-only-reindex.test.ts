@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager fts only reindex test behavior.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

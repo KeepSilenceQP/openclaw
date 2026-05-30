@@ -1,4 +1,3 @@
-// Detects containerized runtime environments for install/update behavior.
 import fs from "node:fs";
 
 /**

@@ -1,4 +1,3 @@
-// Tests extensions/searxng/src searxng search provider test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   resolveSearxngBaseUrl,

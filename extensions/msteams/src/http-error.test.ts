@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src http error test behavior.
 import { describe, expect, it } from "vitest";
 import { createMSTeamsHttpError, readMSTeamsHttpErrorDetail } from "./http-error.js";
 

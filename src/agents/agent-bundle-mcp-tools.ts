@@ -7,7 +7,6 @@ export type {
   SessionMcpRuntime,
   SessionMcpRuntimeManager,
 } from "./agent-bundle-mcp-types.js";
-/** Session MCP runtime lifecycle helpers used while assembling agent tool lists. */
 export {
   testing,
   testing as __testing,
@@ -22,7 +21,6 @@ export {
   retireSessionMcpRuntime,
   retireSessionMcpRuntimeForSessionKey,
 } from "./agent-bundle-mcp-runtime.js";
-/** Materializers that turn bundle MCP catalogs into runnable agent tools. */
 export {
   buildBundleMcpToolsFromCatalog,
   createBundleMcpToolRuntime,

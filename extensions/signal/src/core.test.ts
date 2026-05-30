@@ -1,4 +1,3 @@
-// Tests extensions/signal/src core test behavior.
 import {
   createMessageReceiptFromOutboundResults,
   verifyChannelMessageAdapterCapabilityProofs,

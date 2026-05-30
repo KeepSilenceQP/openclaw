@@ -1,4 +1,3 @@
-// Shared fixtures for reply agent runner tests.
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { SessionEntry } from "../../config/sessions.js";

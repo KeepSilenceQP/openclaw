@@ -1,4 +1,3 @@
-// Tests the background commitment extraction queue and embedded-agent runtime hooks.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

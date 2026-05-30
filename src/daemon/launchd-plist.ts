@@ -1,4 +1,3 @@
-// LaunchAgent plist rendering and tolerant reads for generated gateway services.
 import fs from "node:fs/promises";
 import type { GatewayServiceEnvironmentValueSource } from "./service-types.js";
 

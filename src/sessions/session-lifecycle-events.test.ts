@@ -1,4 +1,3 @@
-// Tests sessions session lifecycle events test behavior.
 import { describe, expect, it } from "vitest";
 import { emitSessionLifecycleEvent, onSessionLifecycleEvent } from "./session-lifecycle-events.js";
 

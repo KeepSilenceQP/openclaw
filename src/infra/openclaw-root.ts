@@ -1,5 +1,4 @@
 // OpenClaw package-root discovery for CLI, package, and symlinked binary launches.
-// Results are process-local cached because package layout does not change at runtime.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { openClawRootFs, openClawRootFsSync } from "./openclaw-root.fs.runtime.js";
@@ -200,5 +199,4 @@ export const testing = {
     argv1CandidateCache.clear();
   },
 };
-/** Stable test hook alias used by existing root-discovery tests. */
 export { testing as __testing };

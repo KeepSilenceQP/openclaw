@@ -1,4 +1,3 @@
-// Command helpers for private channel reply routing.
 import {
   getLoadedChannelPlugin,
   listChannelPlugins,

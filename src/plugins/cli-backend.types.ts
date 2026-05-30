@@ -1,4 +1,3 @@
-// Plugin-owned CLI backend contracts used by the generic CLI runner.
 import type { CliBackendConfig } from "../config/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { ContextEngineHostCapability } from "../context-engine/types.js";

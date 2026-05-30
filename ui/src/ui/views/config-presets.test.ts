@@ -1,4 +1,3 @@
-// Tests ui/src/ui/views config presets test behavior.
 import { describe, expect, it } from "vitest";
 import { OpenClawSchema } from "../../../../src/config/zod-schema.js";
 import { CONFIG_PRESETS, detectActivePreset } from "./config-presets.ts";

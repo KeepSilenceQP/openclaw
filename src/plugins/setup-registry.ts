@@ -1,4 +1,3 @@
-// Plugin setup runtime registry for providers, backends, migrations, and probes.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

@@ -1,4 +1,3 @@
-// Tests extensions/senseaudio media understanding provider test behavior.
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, readFileSync, rmSync } from "node:fs";
 import os from "node:os";

@@ -1,4 +1,3 @@
-// Records bounded JSONL trajectory sidecars for agent runtime events.
 import fs from "node:fs";
 import path from "node:path";
 import { sanitizeDiagnosticPayload } from "../agents/payload-redaction.js";
@@ -22,7 +21,6 @@ import {
 } from "./paths.js";
 import type { TrajectoryEvent, TrajectoryToolDefinition } from "./types.js";
 
-/** Re-export trajectory path helpers and byte limits used by recorder callers. */
 export {
   TRAJECTORY_RUNTIME_CAPTURE_MAX_BYTES,
   TRAJECTORY_RUNTIME_EVENT_MAX_BYTES,

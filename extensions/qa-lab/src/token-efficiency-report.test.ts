@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src token efficiency report test behavior.
 import { describe, expect, it } from "vitest";
 import type {
   RuntimeId,

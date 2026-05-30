@@ -1,4 +1,3 @@
-// QA Lab provider server runtime starts mock provider servers for selected modes.
 import { getQaProvider, type QaMockProviderServer, type QaProviderModeInput } from "./index.js";
 
 type QaProviderServerParams = {

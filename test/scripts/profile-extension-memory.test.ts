@@ -1,4 +1,3 @@
-// Tests test/scripts profile extension memory test behavior.
 import { spawnSync } from "node:child_process";
 import { EventEmitter } from "node:events";
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";

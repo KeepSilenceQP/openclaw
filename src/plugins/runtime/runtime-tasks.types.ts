@@ -1,4 +1,3 @@
-// Shared types for plugins/runtime runtime tasks types behavior.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { TaskDeliveryState } from "../../tasks/task-registry.types.js";
 import type { OpenClawPluginToolContext } from "../tool-types.js";
@@ -11,7 +10,6 @@ import type {
   TaskRunDetail,
   TaskRunView,
 } from "./task-domain-types.js";
-/** Task and flow DTOs exposed by plugin runtime task APIs. */
 export type {
   TaskFlowDetail,
   TaskFlowView,
@@ -20,7 +18,6 @@ export type {
   TaskRunDetail,
   TaskRunView,
 } from "./task-domain-types.js";
-/** Detached task lifecycle runtime contract re-exported for plugin runtime callers. */
 export type { DetachedTaskLifecycleRuntime } from "../../tasks/detached-task-runtime-contract.js";
 
 /** Task-run runtime bound to one session and requester origin. */

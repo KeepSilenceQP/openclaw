@@ -1,4 +1,3 @@
-// Central plugin registry builder for provider, channel, hook, command, and gateway surfaces.
 import path from "node:path";
 import { clearCodeModeNamespacesForPlugin } from "../agents/code-mode-namespaces.js";
 import {
@@ -132,7 +131,6 @@ import type {
   PluginSessionActionRegistryRegistration,
   PluginTextTransformsRegistration,
 } from "./registry-types.js";
-/** Registry-side service/session/reload registration types exposed to internal callers. */
 export type {
   PluginReloadRegistration,
   PluginRuntimeLifecycleRegistryRegistration,
@@ -243,7 +241,6 @@ type PluginOwnedProviderRegistration<T extends { id: string }> = {
   rootDir?: string;
 };
 
-/** Registry record and registration types exposed by the plugin runtime. */
 export type {
   PluginChannelRegistration,
   PluginChannelSetupRegistration,
@@ -316,7 +313,6 @@ const constrainLegacyPromptInjectionHook = (
   };
 };
 
-/** Create an empty mutable registry without installing plugin registration handlers. */
 export { createEmptyPluginRegistry } from "./registry-empty.js";
 
 /** Resolve a configured plugin path relative to workspace root, home, or cwd state. */

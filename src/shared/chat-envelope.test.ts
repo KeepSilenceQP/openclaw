@@ -1,4 +1,3 @@
-// Tests shared chat envelope test behavior.
 import { describe, expect, it } from "vitest";
 import { stripEnvelope, stripMessageIdHints } from "./chat-envelope.js";
 

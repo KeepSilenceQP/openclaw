@@ -1,4 +1,3 @@
-// qa/convex-credential-broker/convex crons helpers and runtime behavior.
 import { cronJobs } from "convex/server";
 import { internal } from "./_generated/api";
 

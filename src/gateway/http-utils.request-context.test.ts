@@ -1,4 +1,3 @@
-// Tests gateway http utils request context test behavior.
 import type { IncomingMessage } from "node:http";
 import { describe, expect, it } from "vitest";
 import {

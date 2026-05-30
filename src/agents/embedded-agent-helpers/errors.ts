@@ -11,7 +11,6 @@ import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,
 } from "../../shared/string-coerce.js";
-/** Shared assistant error parsing/formatting helpers re-exported for callers. */
 export {
   extractLeadingHttpStatus,
   formatRawAssistantErrorForUi,
@@ -51,7 +50,6 @@ import {
 } from "./sanitize-user-facing-text.js";
 import type { FailoverReason } from "./types.js";
 
-/** User-facing billing/rate-limit sanitizers used by agent error handling. */
 export {
   BILLING_ERROR_USER_MESSAGE,
   formatBillingErrorMessage,
@@ -61,7 +59,6 @@ export {
   sanitizeUserFacingText,
 } from "./sanitize-user-facing-text.js";
 
-/** Failover predicate helpers exposed beside the higher-level classifiers. */
 export {
   isAuthErrorMessage,
   isAuthPermanentErrorMessage,
@@ -1480,7 +1477,6 @@ export function isAuthAssistantError(msg: AssistantMessage | undefined): boolean
   return isAuthErrorMessage(msg.errorMessage ?? "");
 }
 
-/** Model-not-found predicate exposed with the rest of the failover helpers. */
 export { isModelNotFoundErrorMessage };
 
 function isCliSessionExpiredErrorMessage(raw: string): boolean {

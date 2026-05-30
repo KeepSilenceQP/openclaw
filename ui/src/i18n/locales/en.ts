@@ -1,4 +1,3 @@
-// English UI translation map.
 import type { TranslationMap } from "../lib/types.ts";
 
 /** Built-in English translations used as the UI fallback locale. */

@@ -1,4 +1,3 @@
-// Tests extensions/zalouser/src zalo js credentials test behavior.
 import {
   lstat,
   mkdir,

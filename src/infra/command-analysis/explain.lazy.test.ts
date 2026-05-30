@@ -1,4 +1,3 @@
-// Tests infra/command-analysis explain lazy test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 vi.mock("../command-explainer/extract.js", () => {

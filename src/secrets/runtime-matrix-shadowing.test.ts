@@ -1,4 +1,3 @@
-// Tests secrets runtime matrix shadowing test behavior.
 import { describe, expect, it } from "vitest";
 import "./runtime-matrix.test-support.ts";
 import {

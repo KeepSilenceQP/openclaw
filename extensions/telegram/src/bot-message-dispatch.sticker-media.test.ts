@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot message dispatch sticker media test behavior.
 import { describe, expect, it } from "vitest";
 import { pruneStickerMediaFromContext } from "./bot-message-dispatch.media.js";
 

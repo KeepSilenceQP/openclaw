@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/xai/src web search provider runtime behavior.
 import { resolveDefaultAgentDir } from "openclaw/plugin-sdk/agent-runtime";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {

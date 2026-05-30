@@ -1,4 +1,3 @@
-// Tests extensions/nextcloud-talk/src doctor test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const hoisted = vi.hoisted(() => ({

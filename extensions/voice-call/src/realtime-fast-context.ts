@@ -1,4 +1,3 @@
-// Voice-call realtime fast-context helper labels generic SDK consult results for callers.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   resolveRealtimeVoiceFastContextConsult,

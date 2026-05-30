@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser/routes agent act normalize test behavior.
 import { describe, expect, it } from "vitest";
 import { MAX_SAFE_TIMEOUT_DELAY_MS } from "../timer-delay.js";
 import { normalizeActRequest } from "./agent.act.normalize.js";

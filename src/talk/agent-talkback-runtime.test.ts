@@ -1,4 +1,3 @@
-// Tests talk agent talkback runtime test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createRealtimeVoiceAgentTalkbackQueue } from "./agent-talkback-runtime.js";
 

@@ -1,5 +1,4 @@
 // Outbound target normalization helpers backed by channel plugins.
-// Caches plugin target normalizers by active registry version for request hot paths.
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import { getLoadedChannelPluginForRead } from "../../channels/plugins/registry-loaded-read.js";
 import type { ChannelPlugin } from "../../channels/plugins/types.plugin.js";
@@ -184,5 +183,4 @@ function hashSignature(value: string): string {
   }
   return (hash >>> 0).toString(36);
 }
-/** Test-only target-normalization cache controls. */
 export { testing as __testing };

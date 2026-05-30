@@ -852,5 +852,4 @@ export function resolveCatalogHookProviderPluginIds(params: {
   }).filter((pluginId) => runtimeAugmentPluginIds.has(pluginId));
   return dedupeSortedPluginIds([...enabledProviderPluginIds, ...bundledCompatPluginIds]);
 }
-/** Legacy test alias for provider ownership helper coverage. */
 export { testing as __testing };

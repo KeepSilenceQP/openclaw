@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/acpx register runtime behavior.
 import {
   getAcpRuntimeBackend,
   registerAcpRuntimeBackend,

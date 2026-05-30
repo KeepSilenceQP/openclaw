@@ -1,4 +1,3 @@
-// Boolean coercion helpers for config, env, and provider option boundaries.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
 /** Optional token overrides for string-to-boolean parsing. */

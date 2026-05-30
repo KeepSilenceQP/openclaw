@@ -1,5 +1,4 @@
 // Node-host gateway client runtime. It registers local system/skill capabilities
-// and dispatches gateway invoke events to local execution handlers.
 import fs from "node:fs";
 import {
   GATEWAY_CLIENT_MODES,
@@ -29,7 +28,6 @@ import {
   listRegisteredNodeHostCapsAndCommands,
 } from "./plugin-node-host.js";
 
-/** Re-export node invoke result helpers for tests and gateway handlers. */
 export { buildNodeInvokeResultParams };
 
 type NodeHostRunOptions = {

@@ -1,4 +1,3 @@
-// Doctor repair flow runner for health-check fixes and post-repair validation.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { uniqueStrings } from "../shared/string-normalization.js";
 import { scrubDoctorErrorMessage } from "./doctor-error-message.js";

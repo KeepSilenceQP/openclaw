@@ -1,4 +1,3 @@
-// Channel allowlist resolution utilities shared by plugin config readers.
 import { mapAllowFromEntries } from "openclaw/plugin-sdk/channel-config-helpers";
 import type { RuntimeEnv } from "../../runtime.js";
 import {

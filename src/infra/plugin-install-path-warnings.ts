@@ -1,4 +1,3 @@
-// Detects and formats warnings for path-based plugin installs during updates.
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { PluginInstallRecord } from "../config/types.plugins.js";

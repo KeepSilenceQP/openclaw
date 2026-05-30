@@ -1,4 +1,3 @@
-// Tests config io write prepare test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectChangedPaths,

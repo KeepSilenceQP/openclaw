@@ -1,5 +1,4 @@
 // Message action runner for send, poll, broadcast, and plugin channel actions.
-// It normalizes tool args, resolves channel/account/target state, then dispatches locally or via gateway.
 import { resolveSendableOutboundReplyParts } from "openclaw/plugin-sdk/reply-payload";
 import { stripPlainTextToolCallBlocks } from "../../../packages/tool-call-repair/src/index.js";
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";

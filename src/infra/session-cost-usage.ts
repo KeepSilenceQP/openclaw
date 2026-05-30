@@ -1,4 +1,3 @@
-// Scans session transcripts and usage caches to build cost, activity, and log summaries.
 import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
@@ -55,7 +54,6 @@ import type {
   UsageCacheStatus,
 } from "./session-cost-usage.types.js";
 
-/** Public cost/session usage report types re-exported from the shared type module. */
 export type {
   CostUsageSummary,
   CostUsageTotals,

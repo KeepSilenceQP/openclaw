@@ -1,5 +1,4 @@
 // Command-carrier parsing for shell approval analysis.
-// Carriers like env/sudo/command can wrap the real executable behind options.
 import { splitShellArgs } from "../utils/shell-argv.js";
 import { normalizeExecutableToken } from "./exec-wrapper-tokens.js";
 import { parseInlineOptionToken } from "./inline-option-token.js";

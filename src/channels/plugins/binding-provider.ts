@@ -1,4 +1,3 @@
-// Configured binding provider registration helper.
 import type { ChannelConfiguredBindingProvider } from "./types.adapters.js";
 import type { ChannelPlugin } from "./types.plugin.js";
 

@@ -19,7 +19,6 @@ import {
   type CommandGroupEntry,
 } from "./register-command-groups.js";
 
-/** Re-export core descriptor helpers for program help and completion assembly. */
 export { getCoreCliCommandDescriptors, getCoreCliCommandsWithSubcommands };
 
 type CommandRegisterParams = {

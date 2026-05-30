@@ -1,4 +1,3 @@
-// Tests extensions/signal/src approval handler runtime test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const sendMocks = vi.hoisted(() => ({

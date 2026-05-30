@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/voice sanitize test behavior.
 import { describe, expect, it } from "vitest";
 import { sanitizeVoiceReplyTextForSpeech } from "./sanitize.js";
 

@@ -1,4 +1,3 @@
-// Converts provider audio payloads, URLs, and base64 blobs into bounded generated music assets.
 import { fetchProviderDownloadResponse } from "../media-understanding/shared.js";
 import { maxBytesForKind } from "../media/constants.js";
 import { extensionForMime } from "../media/mime.js";

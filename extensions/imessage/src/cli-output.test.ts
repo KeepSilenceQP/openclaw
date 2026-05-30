@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src cli output test behavior.
 import { describe, expect, it } from "vitest";
 import { appendIMessageCliStderrTail, appendIMessageCliStdout } from "./cli-output.js";
 

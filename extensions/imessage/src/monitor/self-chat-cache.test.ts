@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src/monitor self chat cache test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createSelfChatCache } from "./self-chat-cache.js";
 

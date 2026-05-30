@@ -380,5 +380,4 @@ export class KeybindingsManager extends TuiKeybindingsManager {
   }
 }
 
-/** Re-export pi-tui keybinding types used by session callers. */
 export type { Keybinding, KeyId, KeybindingsConfig };

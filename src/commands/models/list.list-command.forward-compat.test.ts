@@ -1,4 +1,3 @@
-// Forward-compat tests for `models list` when configured models are missing from registries.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const OPENAI_CODEX_MODEL = {

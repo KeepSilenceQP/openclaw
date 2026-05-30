@@ -1,4 +1,3 @@
-// Resolves provider/model fallback order and retry decisions for agent runs.
 import { sanitizeForLog } from "../../packages/terminal-core/src/ansi.js";
 import {
   resolveAgentModelFallbackValues,
@@ -1618,5 +1617,4 @@ export async function runWithImageModelFallback<T>(params: {
     cfg: params.cfg,
   });
 }
-/** Backward-compatible test hook export for fallback dependency overrides. */
 export { testing as __testing };

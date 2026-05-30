@@ -1,6 +1,5 @@
 // Tool-display resolver for the Control UI. It combines the shared tool display
 // JSON with browser-safe detail shortening so chat/tool rows show stable labels,
-// icons, verbs, and details without importing Node-only path helpers.
 import SHARED_TOOL_DISPLAY_JSON from "../../../apps/shared/OpenClawKit/Sources/OpenClawKit/Resources/tool-display.json" with { type: "json" };
 import {
   defaultTitle,

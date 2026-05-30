@@ -1,4 +1,3 @@
-// Tests markdown tables test behavior.
 import { describe, expect, it } from "vitest";
 import { convertMarkdownTables } from "./tables.js";
 

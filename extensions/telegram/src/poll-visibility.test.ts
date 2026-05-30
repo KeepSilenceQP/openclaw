@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src poll visibility test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveTelegramPollVisibility } from "./poll-visibility.js";
 

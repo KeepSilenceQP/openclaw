@@ -1,4 +1,3 @@
-// Test channel plugin factories for registry and routing tests.
 import type {
   ChannelCapabilities,
   ChannelId,

@@ -1,4 +1,3 @@
-// Local media claim-check store for inbound, outbound, and downloaded attachments.
 import "../infra/fs-safe-defaults.js";
 import crypto from "node:crypto";
 import { createWriteStream } from "node:fs";

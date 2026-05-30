@@ -1,4 +1,3 @@
-// Tests web-search runtime test behavior.
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";

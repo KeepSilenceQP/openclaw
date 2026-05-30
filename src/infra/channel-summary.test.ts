@@ -1,4 +1,3 @@
-// Tests infra channel summary test behavior.
 import { describe, expect, it } from "vitest";
 import type { ChannelPlugin } from "../channels/plugins/types.js";
 import { buildChannelSummary } from "./channel-summary.js";

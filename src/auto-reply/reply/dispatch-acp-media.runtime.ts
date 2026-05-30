@@ -1,4 +1,3 @@
-// Runtime re-export for ACP media understanding.
 export { applyMediaUnderstanding } from "../../media-understanding/apply.js";
 export { MediaAttachmentCache } from "../../media-understanding/attachments.js";
 export { normalizeAttachments } from "../../media-understanding/attachments.normalize.js";

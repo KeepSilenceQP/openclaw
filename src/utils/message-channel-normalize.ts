@@ -1,4 +1,3 @@
-// Normalizes channel ids and separates deliverable chat channels from gateway-only internal channels.
 import { CHANNEL_IDS } from "../channels/ids.js";
 import { listRegisteredChannelPluginIds } from "../channels/registry.js";
 import { uniqueStrings } from "../shared/string-normalization.js";
@@ -63,5 +62,4 @@ export function resolveMessageChannel(
   return normalizeMessageChannel(primary) ?? normalizeMessageChannel(fallback);
 }
 
-/** Re-export internal channel type for callers that only need normalization types. */
 export type { InternalMessageChannel };

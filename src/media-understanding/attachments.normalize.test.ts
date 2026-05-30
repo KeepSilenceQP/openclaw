@@ -1,4 +1,3 @@
-// Tests media-understanding attachments normalize test behavior.
 import os from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";

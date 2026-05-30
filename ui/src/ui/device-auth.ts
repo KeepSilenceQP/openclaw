@@ -1,5 +1,4 @@
 // Browser local-storage adapter for device-auth tokens. Core store helpers own
-// token shape and role scoping; this module supplies Control UI persistence.
 import {
   clearDeviceAuthTokenFromStore,
   type DeviceAuthEntry,

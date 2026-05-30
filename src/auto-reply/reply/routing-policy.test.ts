@@ -1,4 +1,3 @@
-// Coverage for reply routing policy.
 import { describe, expect, it } from "vitest";
 import { resolveReplyRoutingDecision } from "./routing-policy.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/opencode index test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

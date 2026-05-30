@@ -1,4 +1,3 @@
-// Runtime boundary for plugins providers runtime behavior.
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 import { withActivatedPluginIds } from "./activation-context.js";
 import { resolveBundledPluginCompatibleActivationInputs } from "./activation-context.js";

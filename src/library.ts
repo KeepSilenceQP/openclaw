@@ -79,7 +79,6 @@ export const runCommandWithTimeout: RunCommandWithTimeout = async (...args) =>
 export const monitorWebChannel: MonitorWebChannel = async (...args) =>
   (await loadWebChannelRuntime()).monitorWebChannel(...args);
 
-/** Stable library exports for config, session, port, template, and utility helpers. */
 export {
   applyTemplate,
   createDefaultDeps,

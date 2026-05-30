@@ -1,4 +1,3 @@
-// Tests infra exec approval surface test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const loadConfigMock = vi.hoisted(() => vi.fn());

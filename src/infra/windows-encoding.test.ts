@@ -1,4 +1,3 @@
-// Tests infra windows encoding test behavior.
 import { describe, expect, it } from "vitest";
 import {
   createWindowsOutputDecoder,

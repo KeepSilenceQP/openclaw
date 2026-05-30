@@ -1,4 +1,3 @@
-// Tests plugins schema validator test behavior.
 import { Format } from "typebox/format";
 import { describe, expect, it } from "vitest";
 import { validateJsonSchemaValue } from "./schema-validator.js";

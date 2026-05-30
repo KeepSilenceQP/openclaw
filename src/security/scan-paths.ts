@@ -1,5 +1,3 @@
-// Scanner path safety helpers and skipped-path detection.
-/** Re-export path containment helpers used by security scanners. */
 export { isPathInside, isPathInsideWithRealpath } from "../infra/path-safety.js";
 
 /** Return whether an extension path includes directories scanners intentionally skip. */

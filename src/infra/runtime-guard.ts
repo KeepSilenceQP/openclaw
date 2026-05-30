@@ -1,5 +1,4 @@
 // Startup runtime guard for supported Node versions.
-// Keeps CLI failures explicit before deeper gateway code runs on an unsupported engine.
 import process from "node:process";
 import { defaultRuntime, type RuntimeEnv } from "../runtime.js";
 

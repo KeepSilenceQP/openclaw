@@ -1,4 +1,3 @@
-// Background runtime for debounced commitment extraction from conversation turns.
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { resolveAgentWorkspaceDir } from "../agents/agent-scope.js";

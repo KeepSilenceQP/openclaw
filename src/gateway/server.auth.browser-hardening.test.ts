@@ -1,4 +1,3 @@
-// Tests gateway server auth browser hardening test behavior.
 import { randomUUID } from "node:crypto";
 import os from "node:os";
 import path from "node:path";

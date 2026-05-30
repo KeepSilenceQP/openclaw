@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/inbound outbound mentions test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveWhatsAppOutboundMentions } from "./outbound-mentions.js";
 

@@ -1,4 +1,3 @@
-// Tests hooks internal hooks test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import {

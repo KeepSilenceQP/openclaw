@@ -1,5 +1,4 @@
 // Test helpers for isolated cron agent turns. Provides mocked embedded-agent
-// responses, temp session stores, and common cron turn fixture runners.
 import "./isolated-agent.mocks.js";
 import fs from "node:fs/promises";
 import { expect, vi } from "vitest";
@@ -14,7 +13,6 @@ import {
 } from "./isolated-agent.test-harness.js";
 import type { CronJob } from "./types.js";
 
-/** Temp cron home helper re-exported for isolated-agent turn tests. */
 export { withTempHome };
 
 /** Creates mocked CLI delivery dependencies for cron turn tests. */

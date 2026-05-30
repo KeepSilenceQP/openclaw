@@ -1,4 +1,3 @@
-// Vitest project config for serialized cron tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the scoped Vitest config for cron tests with serialized execution. */

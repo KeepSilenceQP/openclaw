@@ -1,5 +1,4 @@
 // Process-local active managed proxy registry.
-// Nested users share one proxy URL/TLS tuple and release it by registration count.
 import type { ProxyConfig } from "../../../config/zod-schema.proxy.js";
 import type { ManagedProxyTlsOptions } from "./proxy-tls.js";
 

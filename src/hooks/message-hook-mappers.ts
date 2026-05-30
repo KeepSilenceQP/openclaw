@@ -1,5 +1,4 @@
 // Canonical mappers between channel message facts, plugin hook payloads, and
-// internal hook contexts. Keep provider-specific naming normalized here.
 import type { FinalizedMsgContext } from "../auto-reply/templating.js";
 import { getChannelPlugin, normalizeChannelId } from "../channels/plugins/index.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

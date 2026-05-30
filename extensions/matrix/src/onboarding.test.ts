@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src onboarding test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { matrixOnboardingAdapter } from "./onboarding.js";
 import {

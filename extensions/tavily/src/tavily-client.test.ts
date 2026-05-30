@@ -1,4 +1,3 @@
-// Tests extensions/tavily/src tavily client test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 // Capture every call to postTrustedWebToolsJson so we can assert on extraHeaders.

@@ -1,4 +1,3 @@
-// Maps gateway auth/remote secret-input paths to config reads and writes.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 
 /** Config paths whose gateway credentials may be resolved from secret input. */

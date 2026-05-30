@@ -1,4 +1,3 @@
-// Tests logging diagnostic session attention test behavior.
 import { describe, expect, it } from "vitest";
 import { classifySessionAttention } from "./diagnostic-session-attention.js";
 

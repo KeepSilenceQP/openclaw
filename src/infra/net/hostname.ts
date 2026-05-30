@@ -1,4 +1,3 @@
-// Normalizes hostnames for network policy comparisons before SSRF/proxy checks.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 
 /** Lowercases a hostname, strips trailing dots, and unwraps bracketed IPv6 literals. */

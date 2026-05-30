@@ -1,4 +1,3 @@
-// Controller helper for loading the effective skill status report for one agent.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { SkillStatusReport } from "../types.ts";
 

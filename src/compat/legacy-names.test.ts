@@ -1,4 +1,3 @@
-// Tests current product keys and legacy manifest fallbacks.
 import { describe, expect, it } from "vitest";
 import { LEGACY_MANIFEST_KEYS, MANIFEST_KEY, PROJECT_NAME } from "./legacy-names.js";
 

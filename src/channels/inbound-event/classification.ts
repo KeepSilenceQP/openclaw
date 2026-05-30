@@ -1,4 +1,3 @@
-// Inbound event classification helpers for channel adapters.
 import { resolveAgentConfig } from "../../agents/agent-scope.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { ConversationFacts } from "../turn/types.js";

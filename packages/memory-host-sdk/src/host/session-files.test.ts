@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host session files test behavior.
 import fsSync from "node:fs";
 import os from "node:os";
 import path from "node:path";

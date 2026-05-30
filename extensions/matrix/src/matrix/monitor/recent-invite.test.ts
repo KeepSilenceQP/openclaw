@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor recent invite test behavior.
 import { describe, expect, it } from "vitest";
 import { shouldPromoteRecentInviteRoom } from "./recent-invite.js";
 

@@ -1,4 +1,3 @@
-// Tests ui/src/ui user identity test behavior.
 import { describe, expect, it } from "vitest";
 import {
   normalizeLocalUserIdentity,

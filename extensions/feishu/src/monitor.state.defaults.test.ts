@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src monitor state defaults test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveFeishuWebhookAnomalyDefaultsForTest,

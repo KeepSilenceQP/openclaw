@@ -1,4 +1,3 @@
-// Appends deeper status-all diagnosis for config, gateway, Tailscale, skills, and plugin health.
 import type { ProgressReporter } from "../../cli/progress.js";
 import { formatConfigIssueLine } from "../../config/issue-format.js";
 import {

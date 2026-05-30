@@ -1,4 +1,3 @@
-// Tests extensions/slack/src resolve users test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { resolveSlackUserAllowlist } from "./resolve-users.js";
 

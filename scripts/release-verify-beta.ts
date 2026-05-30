@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Beta release verifier CLI checks GitHub/npm/plugin publication state for a beta tag.
-
 import { parseReleaseVerifyBetaArgs, verifyBetaRelease } from "./lib/release-beta-verifier.ts";
 
 async function main() {

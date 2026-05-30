@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/whatsapp/src approval handler runtime behavior.
 import {
   buildChannelApprovalExpiredText,
   buildChannelApprovalResolvedText,

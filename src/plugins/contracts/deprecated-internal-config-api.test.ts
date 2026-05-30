@@ -1,4 +1,3 @@
-// Tests plugins/contracts deprecated internal config api test behavior.
 import { beforeAll, describe, expect, it } from "vitest";
 import { collectDeprecatedInternalConfigApiViolations } from "../../../scripts/lib/deprecated-config-api-guard.mjs";
 

@@ -1,4 +1,3 @@
-// Tests ui/src/ui/chat message normalizer test behavior.
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { normalizeMessage } from "./message-normalizer.ts";
 

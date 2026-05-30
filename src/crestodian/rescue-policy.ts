@@ -1,4 +1,3 @@
-// Gates message-channel Crestodian rescue so remote repair stays limited to owner DMs and YOLO-style host posture.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeAgentId } from "../routing/session-key.js";
 

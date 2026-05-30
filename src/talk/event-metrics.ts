@@ -1,5 +1,3 @@
-// Shared Talk event payload helpers used by logging and diagnostics.
-/** Narrows arbitrary Talk event payloads to record-shaped metric input. */
 export { asOptionalRecord as talkEventPayloadRecord } from "../shared/record-coerce.js";
 
 /** Returns the first non-negative finite numeric metric from a payload. */

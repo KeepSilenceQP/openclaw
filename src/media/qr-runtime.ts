@@ -1,4 +1,3 @@
-// Lazy QR-code runtime loader and input validation helpers.
 import type QRCode from "qrcode";
 import { createLazyImportLoader } from "../shared/lazy-promise.js";
 

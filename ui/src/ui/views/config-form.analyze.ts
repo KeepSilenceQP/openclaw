@@ -1,5 +1,4 @@
 // Config schema analyzer. It normalizes the JSON Schema subset the UI can
-// render and records unsupported paths so the form can fall back to raw editing.
 import { pathKey, schemaType, type JsonSchema } from "./config-form.shared.ts";
 
 /** Normalized schema plus paths the generated form cannot render safely. */

@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/inbound send result test behavior.
 import type { WAMessage } from "baileys";
 import { describe, expect, it } from "vitest";
 import { combineWhatsAppSendResults, normalizeWhatsAppSendResult } from "./send-result.js";

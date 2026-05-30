@@ -1,4 +1,3 @@
-// Control UI i18n report script summarizes raw-copy debt and locale fallback coverage.
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";

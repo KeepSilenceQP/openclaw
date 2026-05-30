@@ -1,4 +1,3 @@
-// Tests extensions/discord/src send voice test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { makeDiscordRest } from "./send.test-harness.js";
 

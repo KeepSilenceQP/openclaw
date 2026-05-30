@@ -1,4 +1,3 @@
-// Reply routing policy helpers for message channels and private routes.
 import { INTERNAL_MESSAGE_CHANNEL, normalizeMessageChannel } from "../../utils/message-channel.js";
 
 export function resolveReplyRoutingDecision(params: {

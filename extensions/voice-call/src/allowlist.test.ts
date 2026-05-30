@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src allowlist test behavior.
 import { describe, expect, it } from "vitest";
 import { isAllowlistedCaller, normalizePhoneNumber } from "./allowlist.js";
 

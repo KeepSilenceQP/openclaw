@@ -1,4 +1,3 @@
-// Tests test/scripts preinstall package manager warning test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   createPackageManagerWarningMessage,

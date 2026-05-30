@@ -1,4 +1,3 @@
-// Tests media read capability test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/types.js";
 import { getDefaultMediaLocalRoots } from "./local-roots.js";

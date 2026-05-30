@@ -1,4 +1,3 @@
-// QA Lab server-capture helpers adapt proxy capture rows and startup probes for reports.
 import net from "node:net";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 

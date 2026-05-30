@@ -1,4 +1,3 @@
-// Best-effort network discovery helpers for user-facing gateway display.
 import type { GatewayBindMode } from "../config/types.js";
 import { pickPrimaryLanIPv4, resolveGatewayBindHost } from "../gateway/net.js";
 import { pickPrimaryTailnetIPv4 } from "./tailnet.js";

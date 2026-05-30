@@ -1,4 +1,3 @@
-// Tests image-generation image assets test behavior.
 import { describe, expect, it } from "vitest";
 import {
   generatedImageAssetFromDataUrl,

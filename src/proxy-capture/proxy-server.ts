@@ -1,5 +1,4 @@
 // Local debug proxy server that records HTTP requests, responses, CONNECT
-// tunnels, and local forwarding errors.
 import { randomUUID } from "node:crypto";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { request as httpRequest } from "node:http";

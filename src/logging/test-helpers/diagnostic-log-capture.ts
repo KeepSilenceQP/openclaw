@@ -1,4 +1,3 @@
-// Test helper for subscribing to internal diagnostic log.record events.
 import {
   onInternalDiagnosticEvent,
   type DiagnosticEventPayload,

@@ -1,4 +1,3 @@
-// Auth profile selection helpers for reply agent runs.
 import {
   resolveProviderIdForAuth,
   type ProviderAuthAliasLookupParams,

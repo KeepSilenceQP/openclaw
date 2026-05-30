@@ -1,4 +1,3 @@
-// Text command detection used before heavier reply and authorization handling.
 import type { OpenClawConfig } from "../config/types.js";
 import {
   normalizeLowercaseStringOrEmpty,

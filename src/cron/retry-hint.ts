@@ -1,4 +1,3 @@
-// Cron execution retry classification from error text and configured retry categories.
 import type { CronRetryOn } from "../config/types.cron.js";
 
 /** Retry decision plus the transient category that matched. */

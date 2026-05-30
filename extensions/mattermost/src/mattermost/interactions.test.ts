@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src/mattermost interactions test behavior.
 import { type IncomingMessage, type ServerResponse } from "node:http";
 import { describe, expect, it, beforeEach, afterEach, vi } from "vitest";
 import type { PluginRuntime } from "../../runtime-api.js";

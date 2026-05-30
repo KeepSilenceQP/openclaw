@@ -1,4 +1,3 @@
-// Full core source Vitest config resolves source projects from the full-suite shard map.
 import { createProjectShardVitestConfig } from "./vitest.project-shard-config.ts";
 import { fullSuiteVitestShards } from "./vitest.test-shards.mjs";
 

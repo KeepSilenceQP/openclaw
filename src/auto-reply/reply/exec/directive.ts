@@ -1,4 +1,3 @@
-// Exec directive parser for inline command execution settings.
 import {
   type ExecAsk,
   type ExecSecurity,

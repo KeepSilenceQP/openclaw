@@ -1,4 +1,3 @@
-// Test helper for allocating isolated log file paths per suite.
 import crypto from "node:crypto";
 import path from "node:path";
 import { createSuiteTempRootTracker } from "../test-helpers/temp-dir.js";

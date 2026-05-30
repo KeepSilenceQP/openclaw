@@ -21,14 +21,10 @@ import { getRuntimeConfig, getRuntimeConfigSnapshot } from "./runtime-config-sna
  * New channel plugins should use generic channel SDK subpaths.
  */
 export type { ChannelMessageActionAdapter, ChannelMessageActionName } from "./channel-contract.js";
-/** Channel plugin type kept for legacy Discord subpath consumers. */
 export type { ChannelPlugin } from "./channel-core.js";
-/** OpenClaw config type kept for legacy Discord subpath consumers. */
 export type { OpenClawConfig } from "./config-types.js";
-/** Core plugin API/runtime types kept for legacy Discord subpath consumers. */
 export type { OpenClawPluginApi, PluginRuntime } from "./channel-plugin-common.js";
 
-/** Generic channel plugin config/account helpers kept on the legacy Discord facade. */
 export {
   DEFAULT_ACCOUNT_ID,
   applyAccountNameToChannelSection,
@@ -39,14 +35,12 @@ export {
   normalizeAccountId,
   PAIRING_APPROVED_MESSAGE,
 } from "./channel-plugin-common.js";
-/** Channel status helpers forwarded for legacy Discord status integrations. */
 export {
   buildComputedAccountStatusSnapshot,
   buildTokenChannelStatusSummary,
   projectCredentialSnapshotFields,
   resolveConfiguredFromCredentialStatuses,
 } from "./channel-status.js";
-/** Discord config schema forwarded from the bundled channel config artifact. */
 export { DiscordConfigSchema } from "./bundled-channel-config-schema.js";
 
 /** Discord channel account config shape from the canonical OpenClaw config. */

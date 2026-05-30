@@ -1,4 +1,3 @@
-// Tests extensions/gradium gradium live test behavior.
 import { writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";

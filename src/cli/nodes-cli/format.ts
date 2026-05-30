@@ -1,6 +1,5 @@
 import { normalizeStringifiedOptionalString } from "../../shared/string-coerce.js";
 
-/** Node list parsers re-exported for nodes CLI renderers and tests. */
 export { parseNodeList, parsePairingList } from "../../shared/node-list-parse.js";
 
 /** Formats node permission maps into deterministic compact status text. */

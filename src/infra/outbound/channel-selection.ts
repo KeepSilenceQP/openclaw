@@ -1,5 +1,4 @@
 // Outbound message channel selection.
-// Resolves explicit/tool-context/default channels and reports missing official plugin repairs.
 import { listChannelPlugins } from "../../channels/plugins/index.js";
 import type { ChannelPlugin } from "../../channels/plugins/types.plugin.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
@@ -305,5 +304,4 @@ export const testing = {
     loggedChannelSelectionErrors.clear();
   },
 };
-/** Stable test hook alias used by channel-selection tests. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Coverage for routed reply delivery.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type {
   ChannelMessagingAdapter,

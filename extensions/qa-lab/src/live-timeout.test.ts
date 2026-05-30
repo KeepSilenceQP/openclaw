@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src live timeout test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveQaLiveTurnTimeoutMs } from "./live-timeout.js";
 

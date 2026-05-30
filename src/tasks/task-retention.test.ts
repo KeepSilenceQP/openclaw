@@ -1,4 +1,3 @@
-// Tests tasks task retention test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_TASK_RETENTION_MS,

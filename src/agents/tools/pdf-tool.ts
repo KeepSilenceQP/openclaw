@@ -82,7 +82,6 @@ export const PdfToolSchema = Type.Object({
 // Model resolution (mirrors image tool pattern)
 // ---------------------------------------------------------------------------
 
-/** Resolve the model config used specifically by the PDF tool. */
 export { resolvePdfModelConfigForTool } from "./pdf-tool.model-config.js";
 
 function hasExplicitPdfToolModelConfig(config?: OpenClawConfig): boolean {

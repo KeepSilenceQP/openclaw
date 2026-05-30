@@ -1,4 +1,3 @@
-// Prompt helpers for reset session bootstrap messages.
 import { resolveBootstrapMode, type BootstrapMode } from "../../agents/bootstrap-mode.js";
 import {
   buildFullBootstrapPromptLines,

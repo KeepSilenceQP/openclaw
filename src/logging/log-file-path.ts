@@ -1,5 +1,4 @@
 // Shared log-file path resolver used by config/status code that cannot import
-// the full logger runtime.
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.js";
 import {

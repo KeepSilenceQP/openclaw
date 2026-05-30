@@ -1,4 +1,3 @@
-// Shared validation helpers for user-configured slash command aliases.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** Raw custom command entry from config. */

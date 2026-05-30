@@ -1,4 +1,3 @@
-// Shared contract Vitest helpers group channel and plugin contract test patterns.
 import path from "node:path";
 import { defineConfig } from "vitest/config";
 import { loadPatternListFromEnv, narrowIncludePatternsForCli } from "./vitest.pattern-file.ts";

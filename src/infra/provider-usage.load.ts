@@ -1,4 +1,3 @@
-// Loads provider usage summaries from plugin hooks or built-in fallbacks.
 import { getRuntimeConfig, type OpenClawConfig } from "../config/config.js";
 import { resolveProviderUsageSnapshotWithPlugin } from "../plugins/provider-runtime.js";
 import { resolveFetch } from "./fetch.js";

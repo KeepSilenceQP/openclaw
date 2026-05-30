@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/jsonl edit test behavior.
 import { describe, expect, it } from "vitest";
 import { appendJsonlOcPath, setJsonlOcPath } from "../../jsonl/edit.js";
 import { emitJsonl } from "../../jsonl/emit.js";

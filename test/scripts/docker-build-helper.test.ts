@@ -1,4 +1,3 @@
-// Tests test/scripts docker build helper test behavior.
 import { execFileSync } from "node:child_process";
 import {
   chmodSync,

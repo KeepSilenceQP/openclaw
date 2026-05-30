@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser chrome internal test behavior.
 import { EventEmitter } from "node:events";
 import fs from "node:fs";
 import fsp from "node:fs/promises";

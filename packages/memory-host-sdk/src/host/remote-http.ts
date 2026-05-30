@@ -1,4 +1,3 @@
-// Remote HTTP wrapper that applies SSRF policy and releases guarded responses.
 import {
   fetchWithSsrFGuard,
   shouldUseEnvHttpProxyForUrl,

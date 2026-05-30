@@ -1,4 +1,3 @@
-// Chat command handler for session and runtime status.
 import { logVerbose } from "../../globals.js";
 import { buildStatusText } from "../../status/status-text.js";
 import type { BuildStatusTextParams } from "../../status/status-text.types.js";

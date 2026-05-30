@@ -1,4 +1,3 @@
-// Tests gateway gateway models profiles live test behavior.
 import { randomBytes, randomUUID } from "node:crypto";
 import { writeSync } from "node:fs";
 import fs from "node:fs/promises";

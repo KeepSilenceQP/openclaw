@@ -1,4 +1,3 @@
-// Inbound event context builder helpers.
 import {
   commandTurnKindToSource,
   createCommandTurnContext,

@@ -1,4 +1,3 @@
-// TypeBox schemas for plugin approval request and resolution RPCs.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

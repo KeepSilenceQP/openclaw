@@ -1,5 +1,4 @@
 // Exec approval policy, durable allowlists, and approval socket requests.
-// Normalizes policy files and decides when command execution must ask the user.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -19,7 +18,6 @@ import { expandHomePrefix, resolveRequiredHomeDir } from "./home-dir.js";
 import { requestJsonlSocket } from "./jsonl-socket.js";
 export * from "./exec-approvals-analysis.js";
 export * from "./exec-approvals-allowlist.js";
-/** Durable allowlist entry shape shared with command analysis helpers. */
 export type { ExecAllowlistEntry } from "./exec-approvals.types.js";
 
 /** Runtime host where a command can execute. */

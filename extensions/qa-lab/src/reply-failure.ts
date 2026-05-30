@@ -1,4 +1,3 @@
-// QA Lab reply-failure helpers detect visible error and coordination-leak replies.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 const FAILURE_REPLY_PREFIXES = [

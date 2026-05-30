@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser bridge server auth test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { startBrowserBridgeServer, stopBrowserBridgeServer } from "./bridge-server.js";
 import type { ResolvedBrowserConfig } from "./config.js";

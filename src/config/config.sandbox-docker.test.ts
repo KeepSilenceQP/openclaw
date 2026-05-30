@@ -1,4 +1,3 @@
-// Tests config config sandbox docker test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DANGEROUS_SANDBOX_DOCKER_BOOLEAN_KEYS,

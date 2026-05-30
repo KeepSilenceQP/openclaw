@@ -1,4 +1,3 @@
-// UI-facing aliases for shared usage and cost time-series payloads.
 import type {
   SessionUsageTimePoint as SharedSessionUsageTimePoint,
   SessionUsageTimeSeries as SharedSessionUsageTimeSeries,

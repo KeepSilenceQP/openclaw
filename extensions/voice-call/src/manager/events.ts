@@ -1,4 +1,3 @@
-// Voice-call manager event handling creates calls, dedupes provider events, and drives state transitions.
 import crypto from "node:crypto";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import { isAllowlistedCaller, normalizePhoneNumber } from "../allowlist.js";

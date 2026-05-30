@@ -1,4 +1,3 @@
-// Shared secret-resolution runtime state, assignment, and warning helpers.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { coerceSecretRef, type SecretRef } from "../config/types.secrets.js";
 import type { PluginManifestRegistry } from "../plugins/manifest-registry.js";
@@ -48,7 +47,6 @@ export type ResolverContext = {
 
 /** Default secret ref config inherited by individual secret fields. */
 export type SecretDefaults = NonNullable<OpenClawConfig["secrets"]>["defaults"];
-/** Cache shape shared by secret ref resolver implementations. */
 export type { SecretRefResolveCache } from "./resolve-types.js";
 
 /** Creates an empty resolver context for one config-resolution pass. */

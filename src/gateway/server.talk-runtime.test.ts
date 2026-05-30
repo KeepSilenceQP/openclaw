@@ -1,4 +1,3 @@
-// Tests gateway server talk runtime test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   invokeTalkSpeakDirect,

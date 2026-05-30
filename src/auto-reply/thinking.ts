@@ -6,7 +6,6 @@ import {
   THINKING_LEVEL_RANKS,
 } from "./thinking.shared.js";
 import type { ThinkLevel, ThinkingCatalogEntry } from "./thinking.shared.js";
-/** Shared thinking, reasoning, verbosity, trace, and usage normalization helpers. */
 export {
   formatXHighModelHint,
   isSessionDefaultDirectiveValue,
@@ -21,7 +20,6 @@ export {
   resolveResponseUsageMode,
   resolveElevatedMode,
 } from "./thinking.shared.js";
-/** Shared thinking and response display option types. */
 export type {
   ElevatedLevel,
   ElevatedMode,

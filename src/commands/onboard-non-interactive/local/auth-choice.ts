@@ -1,4 +1,3 @@
-// Applies core non-interactive auth choices for built-in and custom model providers.
 import type { ApiKeyCredential } from "../../../agents/auth-profiles/types.js";
 import { formatCliCommand } from "../../../cli/command-format.js";
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";

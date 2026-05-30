@@ -1,5 +1,4 @@
 // Queued chat-message renderer. It shows pending, failed, and steerable messages
-// while the chat transport is reconnecting or an abortable run is active.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { icons } from "../icons.ts";

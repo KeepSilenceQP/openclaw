@@ -1,4 +1,3 @@
-// Tests packages/gateway-protocol/src primitives secretref test behavior.
 import { Compile } from "typebox/compile";
 import { describe, expect, it } from "vitest";
 import {

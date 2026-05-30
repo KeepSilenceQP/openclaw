@@ -1,4 +1,3 @@
-// Shared mapping from simple stream options into provider-specific stream options.
 import type {
   Model,
   SimpleStreamOptions,

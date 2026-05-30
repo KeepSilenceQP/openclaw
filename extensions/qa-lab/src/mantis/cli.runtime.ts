@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-lab/src/mantis cli runtime behavior.
 import {
   runMantisDesktopBrowserSmoke,
   type MantisDesktopBrowserSmokeOptions,

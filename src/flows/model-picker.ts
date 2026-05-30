@@ -1,4 +1,3 @@
-// Interactive model picker and allowlist helpers for configure/onboarding flows.
 import { resolveDefaultAgentDir } from "../agents/agent-scope.js";
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "../agents/defaults.js";
 import { resolveVisibleModelCatalog } from "../agents/model-catalog-visibility.js";
@@ -36,7 +35,6 @@ import { t } from "../wizard/i18n/index.js";
 import type { WizardPrompter, WizardSelectOption } from "../wizard/prompts.js";
 import { loadPreferredProviderPickerCatalog } from "./model-picker.provider-catalog.js";
 
-/** Apply the selected primary model to provider-owned config. */
 export { applyPrimaryModel } from "../plugins/provider-model-primary.js";
 
 const KEEP_VALUE = "__keep__";

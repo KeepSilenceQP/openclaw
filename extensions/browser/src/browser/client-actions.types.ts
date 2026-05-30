@@ -1,4 +1,3 @@
-// Shared types for extensions/browser/src/browser client actions types behavior.
 export type BrowserFormField = {
   ref: string;
   type: string;

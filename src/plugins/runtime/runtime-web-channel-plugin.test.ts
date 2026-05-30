@@ -1,4 +1,3 @@
-// Tests plugins/runtime runtime web channel plugin test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 afterEach(() => {

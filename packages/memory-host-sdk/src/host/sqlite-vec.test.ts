@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host sqlite vec test behavior.
 import { existsSync } from "node:fs";
 import { createRequire } from "node:module";
 import { afterEach, describe, expect, it, vi } from "vitest";

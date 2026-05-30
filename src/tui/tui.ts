@@ -61,11 +61,8 @@ import type {
 } from "./tui-types.js";
 import { buildWaitingStatusMessage, defaultWaitingPhrases } from "./tui-waiting.js";
 
-/** Final assistant text formatter exposed for TUI tests and callers. */
 export { resolveFinalAssistantText } from "./tui-formatters.js";
-/** Public option shape accepted by the TUI runner. */
 export type { TuiOptions } from "./tui-types.js";
-/** Submit helpers exposed for TUI component and PTY tests. */
 export {
   createEditorSubmitHandler,
   createSubmitBurstCoalescer,

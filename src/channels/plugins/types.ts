@@ -1,16 +1,12 @@
 import type { ChannelMessageActionName as ChannelMessageActionNameFromList } from "./message-action-names.js";
 
-/** Canonical channel message action names exposed through the channel plugin barrel. */
 export { CHANNEL_MESSAGE_ACTION_NAMES } from "./message-action-names.js";
-/** Canonical channel message capabilities exposed through the channel plugin barrel. */
 export { CHANNEL_MESSAGE_CAPABILITIES } from "./message-capabilities.js";
 
 /** Channel message action name union derived from the canonical action list. */
 export type ChannelMessageActionName = ChannelMessageActionNameFromList;
-/** Channel message capability union exported for plugin adapters. */
 export type { ChannelMessageCapability } from "./message-capabilities.js";
 
-/** Channel adapter interfaces exported for internal plugin runtime composition. */
 export type {
   ChannelActionAvailabilityState,
   ChannelApprovalAdapter,
@@ -54,9 +50,7 @@ export type {
   ChannelSetupAdapter,
   ChannelStatusAdapter,
 } from "./types.adapters.js";
-/** Channel runtime surface enum/type exported for channel capability routing. */
 export type { ChannelRuntimeSurface } from "./channel-runtime-surface.types.js";
-/** Core channel plugin types exported by the internal channel plugin barrel. */
 export type {
   ChannelAccountSnapshot,
   ChannelAccountState,
@@ -96,5 +90,4 @@ export type {
   BaseTokenResolution,
 } from "./types.core.js";
 
-/** Channel plugin manifest/runtime contract exported by the internal barrel. */
 export type { ChannelPlugin } from "./types.plugin.js";

@@ -1,4 +1,3 @@
-// Validates whether local inbound attachment paths are inside allowed channel roots.
 import path from "node:path";
 
 const WILDCARD_SEGMENT = "*";

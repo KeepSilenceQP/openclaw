@@ -1,4 +1,3 @@
-// Reply dispatcher helpers that settle queued delivery work around inbound handling.
 import type { ReplyDispatcher } from "./reply/reply-dispatcher.types.js";
 
 /** Wait for pending dispatcher work to settle and surface delivery failures. */

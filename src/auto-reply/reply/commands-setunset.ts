@@ -1,4 +1,3 @@
-// Slash command parser for set/unset forms.
 import { parseSlashCommandOrNull } from "./commands-slash-parse.js";
 import { parseConfigValue } from "./config-value.js";
 

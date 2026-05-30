@@ -1,4 +1,3 @@
-// Discovers bundled plugin source roots for install hints and setup repair flows.
 import { isRecord } from "../shared/record-coerce.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { discoverOpenClawPlugins, type PluginDiscoveryResult } from "./discovery.js";

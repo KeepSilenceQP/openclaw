@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser browser proxy mode test behavior.
 import { describe, expect, it } from "vitest";
 import {
   hasChromeProxyControlArg,

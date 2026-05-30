@@ -1,4 +1,3 @@
-// Loads trusted global and restricted workspace dotenv files without overriding env.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

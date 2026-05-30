@@ -1,4 +1,3 @@
-// Version discovery helpers for bundled builds, npm/dev checkouts, and runtime services.
 import { createRequire } from "node:module";
 import { normalizeOptionalString } from "./shared/string-coerce.js";
 

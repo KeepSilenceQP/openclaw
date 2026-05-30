@@ -1,4 +1,3 @@
-// Mirrors source-conversation send actions back into the active transcript.
 import type { ReplyPayload } from "../../auto-reply/types.js";
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type {

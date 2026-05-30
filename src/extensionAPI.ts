@@ -20,25 +20,17 @@ if (shouldWarnExtensionApiImport) {
   );
 }
 
-/** Legacy agent path helpers kept for deprecated extension-api importers. */
 export { resolveAgentDir, resolveAgentWorkspaceDir } from "./agents/agent-scope.js";
-/** Legacy default model/provider constants kept for deprecated extension-api importers. */
 export { DEFAULT_MODEL, DEFAULT_PROVIDER } from "./agents/defaults.js";
-/** Legacy agent identity resolver kept for deprecated extension-api importers. */
 export { resolveAgentIdentity } from "./agents/identity.js";
-/** Legacy thinking-default resolver kept for deprecated extension-api importers. */
 export { resolveThinkingDefault } from "./agents/model-selection.js";
-/** Legacy embedded agent runner export kept for deprecated extension-api importers. */
 export {
   runEmbeddedAgent,
   /** @deprecated Use runEmbeddedAgent. */
   runEmbeddedAgent as runEmbeddedPiAgent,
 } from "./agents/embedded-agent.js";
-/** Legacy agent timeout resolver kept for deprecated extension-api importers. */
 export { resolveAgentTimeoutMs } from "./agents/timeout.js";
-/** Legacy workspace setup helper kept for deprecated extension-api importers. */
 export { ensureAgentWorkspace } from "./agents/workspace.js";
-/** Legacy session-store helpers kept for deprecated extension-api importers. */
 export {
   resolveStorePath,
   loadSessionStore,

@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server native execution policy test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveCodexNativeExecutionPolicy } from "./native-execution-policy.js";
 

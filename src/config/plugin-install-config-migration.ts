@@ -1,4 +1,3 @@
-// Migration helpers for removing shipped plugin install records from config.
 import { z } from "zod";
 import { isRecord } from "../shared/record-coerce.js";
 import type { PluginInstallRecord } from "./types.plugins.js";

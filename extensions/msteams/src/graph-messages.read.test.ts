@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src graph messages read test behavior.
 import { beforeAll, describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../runtime-api.js";
 import {

@@ -4,7 +4,6 @@ import {
   createProviderHttpError,
   readProviderJsonObjectResponse,
 } from "../agents/provider-http-errors.js";
-/** Provider HTTP error helpers shared by media understanding providers. */
 export {
   assertOkOrThrowHttpError,
   readProviderJsonObjectResponse,
@@ -35,11 +34,8 @@ import {
   resolveTimerTimeoutMs,
 } from "../shared/number-coercion.js";
 import { fetchWithTimeout } from "../utils/fetch-timeout.js";
-/** Timeout-aware fetch helper used by provider operations. */
 export { fetchWithTimeout };
-/** Provider base URL normalizer. */
 export { normalizeBaseUrl } from "../agents/provider-request-config.js";
-/** Sanitizer for logging configured provider request policy. */
 export { sanitizeConfiguredModelProviderRequest } from "../agents/provider-request-config.js";
 
 const DEFAULT_GUARDED_HTTP_TIMEOUT_MS = 60_000;

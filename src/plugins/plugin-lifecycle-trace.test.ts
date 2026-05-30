@@ -1,4 +1,3 @@
-// Tests plugins plugin lifecycle trace test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   tracePluginLifecyclePhase,

@@ -10,9 +10,7 @@ import {
 } from "../../runtime/index.js";
 import type { SessionEntry, ReadonlySessionManager } from "../session-manager.js";
 
-/** Branch summary preparation and filesystem operation contracts from agent-core. */
 export type { BranchPreparation, BranchSummaryDetails, FileOperations };
-/** Prepare branch entries before generating a branch summary. */
 export { prepareBranchEntries };
 
 /** Transcript entries and common ancestor selected for branch summarization. */

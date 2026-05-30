@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src document filename test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveWhatsAppDocumentFileName } from "./document-filename.js";
 

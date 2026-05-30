@@ -1,4 +1,3 @@
-// Tests extensions/zalo/src accounts test behavior.
 import { describe, expect, it } from "vitest";
 import {
   listEnabledZaloAccounts,

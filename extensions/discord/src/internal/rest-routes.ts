@@ -1,4 +1,3 @@
-// Builds Discord REST route keys and parses rate-limit reset headers.
 import {
   asDateTimestampMs,
   resolveExpiresAtMsFromDurationMs,

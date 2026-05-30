@@ -1,4 +1,3 @@
-// Plugin interactive handler registry for channel callback payloads.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import {
   normalizePluginInteractiveNamespace,

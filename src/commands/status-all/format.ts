@@ -1,4 +1,3 @@
-// Formatting helpers for status-all diagnostics and redacted report text.
 import { resolveGatewayPort } from "../../config/config.js";
 import type { OpenClawConfig } from "../../config/types.js";
 import { resolveControlUiLinks } from "../../gateway/control-ui-links.js";
@@ -12,7 +11,6 @@ import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import { VERSION } from "../../version.js";
 import { formatUpdateOneLiner, resolveUpdateAvailability } from "../status.update.js";
 
-/** Relative time formatter shared by status-all sections. */
 export { formatTimeAgo } from "../../infra/format-time/format-relative.ts";
 
 /** One row in the status-all overview table. */

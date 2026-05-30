@@ -1,4 +1,3 @@
-// Tests gateway server request context test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { GatewayServerLiveState } from "./server-live-state.js";
 import {

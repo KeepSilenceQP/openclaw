@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host batch output test behavior.
 import { describe, expect, it } from "vitest";
 import { applyEmbeddingBatchOutputLine } from "./batch-output.js";
 

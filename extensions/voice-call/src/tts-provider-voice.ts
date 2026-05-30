@@ -1,4 +1,3 @@
-// Voice Call TTS voice helpers resolve provider-specific voice settings from config.
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { VoiceCallTtsConfig } from "./config.js";
 

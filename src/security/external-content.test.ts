@@ -1,4 +1,3 @@
-// Tests security external content test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildSafeExternalPrompt,

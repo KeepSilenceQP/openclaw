@@ -16,11 +16,8 @@ import { formatCliCommand } from "../command-format.js";
 import { parsePort } from "../shared/parse-port.js";
 import { createDaemonActionContext } from "./response.js";
 
-/** Formats daemon runtime status for CLI output. */
 export { formatRuntimeStatus };
-/** Parses CLI port values shared by daemon commands. */
 export { parsePort };
-/** Detects container-managed daemon execution context. */
 export { resolveDaemonContainerContext };
 
 /** Creates the structured response context for daemon install commands. */

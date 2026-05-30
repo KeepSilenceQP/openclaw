@@ -1,4 +1,3 @@
-// Agent tools Vitest config serializes tool tests to avoid shared fixture races.
 import { agentsToolsTestPatterns } from "./vitest.agents-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

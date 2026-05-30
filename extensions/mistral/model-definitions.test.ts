@@ -1,4 +1,3 @@
-// Tests extensions/mistral model definitions test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildMistralCatalogModels,

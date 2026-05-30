@@ -1,4 +1,3 @@
-// Agents Vitest config scopes the agent test project to agent source patterns.
 import { agentsAllTestPatterns } from "./vitest.agents-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

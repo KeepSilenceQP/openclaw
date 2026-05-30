@@ -1,4 +1,3 @@
-// Voice-call webhook code reads case-insensitive HTTP headers through this helper.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 type HttpHeaderMap = Record<string, string | string[] | undefined>;

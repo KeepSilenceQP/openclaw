@@ -1,4 +1,3 @@
-// QA Lab transport helpers define normalized message transport adapters and waits.
 import { setTimeout as sleep } from "node:timers/promises";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type { QaProviderMode } from "./model-selection.js";

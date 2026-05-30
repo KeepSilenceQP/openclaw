@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src webhook test behavior.
 import { createHash } from "node:crypto";
 import { once } from "node:events";
 import { request, type IncomingMessage } from "node:http";

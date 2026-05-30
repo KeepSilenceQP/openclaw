@@ -1,4 +1,3 @@
-// Tests extensions/zalo/src monitor image polling test behavior.
 import { createRuntimeEnv } from "openclaw/plugin-sdk/plugin-test-runtime";
 import { afterAll, beforeEach, describe, expect, it } from "vitest";
 import {

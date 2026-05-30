@@ -1,4 +1,3 @@
-// Built-in chat command registry data access.
 import { listLoadedChannelPlugins } from "../channels/plugins/registry-loaded.js";
 import { getActivePluginChannelRegistryVersionFromState } from "../plugins/runtime-channel-state.js";
 import {

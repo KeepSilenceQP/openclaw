@@ -1,4 +1,3 @@
-// QA Lab gateway-log redaction helpers scrub secrets before surfacing debug logs.
 import { escapeRegExp } from "openclaw/plugin-sdk/text-utility-runtime";
 import {
   QA_PROVIDER_SECRET_ENV_KEY_PATTERNS,

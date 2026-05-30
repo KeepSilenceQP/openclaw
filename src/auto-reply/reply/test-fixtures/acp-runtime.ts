@@ -1,4 +1,3 @@
-// Test fixtures for ACP runtime metadata.
 import type { SessionAcpMeta } from "../../../config/sessions/types.js";
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 

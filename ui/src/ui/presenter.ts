@@ -1,6 +1,5 @@
 // Formatting helpers for Control UI display text. These keep raw gateway
 // payloads out of templates by converting presence, session, cron, and event
-// data into compact localized labels.
 import { t } from "../i18n/index.ts";
 import { resolveCronJobLastRunStatus } from "./cron-status.ts";
 import {

@@ -1,4 +1,3 @@
-// Beta release verifier checks GitHub, npm, ClawHub, workflow, and evidence state.
 import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";

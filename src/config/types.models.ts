@@ -1,4 +1,3 @@
-// Model/provider config contracts shared by config loading, provider routing, and docs.
 import type {
   AnthropicMessagesCompat,
   OpenAICompletionsCompat,

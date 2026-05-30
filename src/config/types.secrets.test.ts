@@ -1,4 +1,3 @@
-// Tests config types secrets test behavior.
 import { describe, expect, it } from "vitest";
 import { parseEnvTemplateSecretRef } from "./types.secrets.js";
 

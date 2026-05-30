@@ -1,4 +1,3 @@
-// Thin fs.watch helpers with retry-friendly error handling.
 import { type FSWatcher, type WatchListener, watch } from "node:fs";
 
 /** Delay used by callers before retrying a failed filesystem watch. */

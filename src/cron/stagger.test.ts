@@ -1,4 +1,3 @@
-// Tests cron stagger test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_TOP_OF_HOUR_STAGGER_MS,

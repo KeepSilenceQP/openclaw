@@ -1,4 +1,3 @@
-// Tests test openclaw prepack test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectPreparedPrepackErrors,

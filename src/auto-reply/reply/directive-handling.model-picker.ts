@@ -1,4 +1,3 @@
-// Model picker helpers for inline directive handling.
 import {
   findNormalizedProviderValue,
   type ModelRef,

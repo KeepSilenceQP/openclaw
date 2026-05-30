@@ -86,7 +86,6 @@ export function resolveCurrentSessionClientAlias(params: {
   return requesterKey;
 }
 
-/** Lists session keys spawned by a requester for visibility checks. */
 export { listSpawnedSessionKeys };
 
 /** Checks whether a target session is visible as requester-owned or requester-spawned. */
@@ -158,7 +157,6 @@ export async function isResolvedSessionVisibleToRequester(params: {
   });
 }
 
-/** Session id shape detector used before gateway resolution. */
 export { looksLikeSessionId };
 
 /** Detects canonical session key shapes that should not be treated as session ids. */
@@ -499,5 +497,4 @@ export const testing = {
     );
   },
 };
-/** Internal test-only access to session resolution dependency hooks. */
 export { testing as __testing };

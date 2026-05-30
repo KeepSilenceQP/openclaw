@@ -1,4 +1,3 @@
-// Tests media qr terminal render test behavior.
 import QRCode from "qrcode";
 import { describe, expect, it } from "vitest";
 import { renderQrTerminal } from "./qr-terminal.ts";

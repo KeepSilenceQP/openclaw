@@ -1,4 +1,3 @@
-// Tests extensions/kilocode provider models test behavior.
 import { afterAll, describe, expect, it, vi } from "vitest";
 
 const { fetchWithSsrFGuardMock } = vi.hoisted(() => ({

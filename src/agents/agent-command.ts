@@ -2067,5 +2067,4 @@ export const testing = {
   resolveExplicitAgentCommandSessionKey,
 };
 
-/** @deprecated Use `testing`. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Parallels E2E snapshot resolver picks the best powered-off snapshot for a hint.
 import { die, run } from "./host-command.ts";
 import type { SnapshotInfo } from "./types.ts";
 

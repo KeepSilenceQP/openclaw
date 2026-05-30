@@ -1,4 +1,3 @@
-// Tests gateway client bootstrap test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { resolveGatewayConnectionAuth } from "./connection-auth.js";
 

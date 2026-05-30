@@ -1,4 +1,3 @@
-// Subagent command action for logs.
 import { callGateway } from "../../../gateway/call.js";
 import { parseStrictNonNegativeInteger } from "../../../shared/number-coercion.js";
 import { normalizeLowercaseStringOrEmpty } from "../../../shared/string-coerce.js";

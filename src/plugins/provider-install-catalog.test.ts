@@ -1,4 +1,3 @@
-// Tests plugins provider install catalog test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 type LoadOpenClawProviderIndex =

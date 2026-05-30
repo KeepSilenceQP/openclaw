@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src channel message adapter test behavior.
 import {
   verifyChannelMessageAdapterCapabilityProofs,
   verifyChannelMessageLiveCapabilityAdapterProofs,

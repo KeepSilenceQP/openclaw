@@ -1,5 +1,4 @@
 // Wide-area DNS zone rendering for gateway discovery.
-// Zone files stay under the OpenClaw DNS config dir and use content hashes to avoid serial churn.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

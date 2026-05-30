@@ -1,6 +1,4 @@
-// Live message preview state and finalization helpers.
 import type { LiveMessageState, MessageReceipt, RenderedMessageBatch } from "./types.js";
-/** Live message state and phase contracts shared by channel delivery adapters. */
 export type { LiveMessagePhase, LiveMessageState } from "./types.js";
 
 /** Draft preview object that can flush, reveal, seal, or clear a live preview. */

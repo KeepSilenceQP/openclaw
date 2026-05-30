@@ -1,4 +1,3 @@
-// Core memory indexing helpers for file discovery, chunking, and vector math.
 import crypto from "node:crypto";
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
@@ -32,7 +31,6 @@ import {
 } from "./openclaw-runtime-memory.js";
 import { normalizeStringEntries, uniqueStrings } from "./string-utils.js";
 
-/** Stable text hashing helper shared with index entries and chunks. */
 export { hashText } from "./hash.js";
 import { hashText } from "./hash.js";
 

@@ -1,4 +1,3 @@
-// IPv4 form validation helpers for network bind configuration.
 import { isCanonicalDottedDecimalIPv4 } from "./ip.js";
 
 /** Return a user-facing validation error unless input is canonical dotted IPv4. */

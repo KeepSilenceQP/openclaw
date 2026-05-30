@@ -21,7 +21,6 @@ const DEFAULT_CONFIG_VALUES: Record<string, boolean> = {
   "browser.evaluateEnabled": true,
 };
 
-/** Re-export shared runtime eligibility helpers used by skill loading. */
 export { hasBinary, resolveConfigPath, resolveRuntimePlatform };
 
 /** Resolves skill installer preferences with repo defaults for missing config. */

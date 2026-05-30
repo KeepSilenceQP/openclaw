@@ -1,4 +1,3 @@
-// Tests extensions/qa-matrix/src/substrate client test behavior.
 import { describe, expect, it } from "vitest";
 import { testing, createMatrixQaClient, provisionMatrixQaRoom } from "./client.js";
 import { buildDefaultMatrixQaTopologySpec } from "./topology.js";

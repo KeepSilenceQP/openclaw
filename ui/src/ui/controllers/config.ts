@@ -1,4 +1,3 @@
-// Control UI state controller for config snapshots, schema-backed forms, and apply/update actions.
 import { applyMergePatch } from "../../../../src/config/merge-patch.ts";
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { ConfigSchemaResponse, ConfigSnapshot, ConfigUiHints } from "../types.ts";

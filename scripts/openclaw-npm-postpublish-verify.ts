@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Postpublish verifier installs published OpenClaw packages and checks packaged runtime artifacts.
-
 import {
   existsSync,
   lstatSync,

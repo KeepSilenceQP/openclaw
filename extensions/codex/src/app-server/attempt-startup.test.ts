@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server attempt startup test behavior.
 import type {
   CodexBundleMcpThreadConfig,
   EmbeddedRunAttemptParams,

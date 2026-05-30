@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src media helpers test behavior.
 import { describe, expect, it } from "vitest";
 import { extractFilename, extractMessageId, getMimeType, isLocalPath } from "./media-helpers.js";
 

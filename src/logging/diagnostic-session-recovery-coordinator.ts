@@ -1,5 +1,4 @@
 // Stuck-session recovery coordinator: de-duplicates recovery attempts and
-// applies confirmed recovery outcomes back into diagnostic session state.
 import { emitInternalDiagnosticEvent as emitDiagnosticEvent } from "../infra/diagnostic-events.js";
 import { markDiagnosticActivity as markActivity } from "./diagnostic-runtime.js";
 import type { SessionAttentionClassification } from "./diagnostic-session-attention.js";

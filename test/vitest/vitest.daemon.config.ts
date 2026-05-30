@@ -1,4 +1,3 @@
-// Daemon Vitest config scopes tests to daemon source files.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Creates the daemon Vitest project config. */

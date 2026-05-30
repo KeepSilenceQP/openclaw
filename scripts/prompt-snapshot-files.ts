@@ -1,4 +1,3 @@
-// Prompt snapshot file helpers prune committed Codex happy-path artifacts that are no longer generated.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { CODEX_RUNTIME_HAPPY_PATH_PROMPT_SNAPSHOT_DIR } from "../test/helpers/agents/prompt-snapshot-paths.js";

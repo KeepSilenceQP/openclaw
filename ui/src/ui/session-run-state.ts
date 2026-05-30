@@ -1,4 +1,3 @@
-// Session run-state helper shared by activity/chat UI indicators.
 import type { SessionRunStatus } from "./types.ts";
 
 type SessionRunState = {

@@ -1,4 +1,3 @@
-// MCP command parsing helpers.
 import { parseStandardSetUnsetSlashCommand } from "./commands-setunset-standard.js";
 
 export type McpCommand =

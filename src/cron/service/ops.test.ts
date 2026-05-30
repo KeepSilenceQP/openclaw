@@ -1,4 +1,3 @@
-// Tests cron/service ops test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { describe, expect, it, vi } from "vitest";

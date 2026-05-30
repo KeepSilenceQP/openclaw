@@ -1,4 +1,3 @@
-// Coverage for channel message action helpers.
 import { Type } from "typebox";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";

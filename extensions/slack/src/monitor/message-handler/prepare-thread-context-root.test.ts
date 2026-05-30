@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/message-handler prepare thread context root test behavior.
 import { describe, expect, it } from "vitest";
 import {
   applySlackThreadHistoryFilterPolicy,

@@ -1,4 +1,3 @@
-// Coverage for mention detection helpers.
 import { describe, expect, it } from "vitest";
 import { stripStructuralPrefixes } from "./mentions.js";
 

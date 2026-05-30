@@ -1,4 +1,3 @@
-// Tests extensions/canvas/src/host server state dir test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { defaultRuntime } from "openclaw/plugin-sdk/runtime-env";

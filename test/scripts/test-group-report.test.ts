@@ -1,4 +1,3 @@
-// Tests test/scripts test group report test behavior.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {

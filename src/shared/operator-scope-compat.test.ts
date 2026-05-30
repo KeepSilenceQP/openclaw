@@ -1,4 +1,3 @@
-// Tests shared operator scope compat test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveMissingRequestedScope,

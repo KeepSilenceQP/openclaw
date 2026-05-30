@@ -1,4 +1,3 @@
-// Built-in context-engine registration entry point.
 import { registerLegacyContextEngine } from "./legacy.registration.js";
 
 /**

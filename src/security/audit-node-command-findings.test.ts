@@ -1,4 +1,3 @@
-// Tests security audit node command findings test behavior.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 import {

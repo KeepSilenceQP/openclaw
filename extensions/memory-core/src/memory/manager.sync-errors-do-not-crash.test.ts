@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager sync errors do not crash test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { runDetachedMemorySync } from "./manager-sync-ops.js";
 

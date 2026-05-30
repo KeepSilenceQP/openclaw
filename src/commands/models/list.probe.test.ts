@@ -1,4 +1,3 @@
-// Tests model-list auth probes and keeps the embedded runner lazily imported.
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 

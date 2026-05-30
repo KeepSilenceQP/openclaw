@@ -22,9 +22,7 @@ import type { ProcessSession } from "./bash-process-registry.js";
 import type { ExecToolDetails } from "./bash-tools.exec-types.js";
 import type { BashSandboxConfig } from "./bash-tools.shared.js";
 import type { AgentToolResult } from "./runtime/index.js";
-/** PATH prepend helpers used when shaping exec environments. */
 export { applyPathPrepend, findPathKey, normalizePathPrepend } from "../infra/path-prepend.js";
-/** Exec approval policy normalizers shared with runtime callers. */
 export {
   normalizeExecAsk,
   normalizeExecHost,
@@ -57,7 +55,6 @@ import {
 import { buildCursorPositionResponse, stripDsrRequests } from "./pty-dsr.js";
 import { getShellConfig, sanitizeBinaryOutput } from "./shell-utils.js";
 
-/** Model-facing schema for the bash exec tool. */
 export { execSchema } from "./bash-tools.schemas.js";
 
 const SMKX = "\x1b[?1h";
@@ -506,7 +503,6 @@ export function emitExecSystemEvent(
   }
 }
 
-/** Renders user-facing incremental exec update text. */
 export { renderExecUpdateText } from "./bash-tools.exec-output.js";
 
 function joinExecFailureOutput(aggregated: string, reason: string) {

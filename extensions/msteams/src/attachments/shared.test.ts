@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src/attachments shared test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   applyAuthorizationHeaderForUrl,

@@ -1,5 +1,4 @@
 // Routes network calls through the runtime undici stack while preserving test
-// mocks that intentionally replace global fetch.
 import type { Dispatcher } from "undici";
 import { normalizeHeadersInitForFetch } from "../fetch-headers.js";
 import { loadUndiciRuntimeDeps, type UndiciRuntimeDeps } from "./undici-runtime.js";

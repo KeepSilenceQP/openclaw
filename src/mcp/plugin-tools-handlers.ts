@@ -1,4 +1,3 @@
-// MCP list/call handlers for OpenClaw plugin and agent tools.
 import {
   isToolWrappedWithBeforeToolCallHook,
   rewrapToolWithBeforeToolCallHook,

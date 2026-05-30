@@ -1,4 +1,3 @@
-// Tests shared/text citation control markers test behavior.
 import { describe, expect, it } from "vitest";
 import { stripUnsupportedCitationControlMarkers } from "./citation-control-markers.js";
 

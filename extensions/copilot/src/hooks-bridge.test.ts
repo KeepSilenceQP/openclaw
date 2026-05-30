@@ -1,4 +1,3 @@
-// Tests extensions/copilot/src hooks bridge test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createHooksBridge, type CopilotHooksConfig } from "./hooks-bridge.js";
 

@@ -1,4 +1,3 @@
-// Process-local queue state storage.
 import { resolveGlobalMap } from "../../../shared/global-singleton.js";
 import { normalizeOptionalString } from "../../../shared/string-coerce.js";
 import { applyQueueRuntimeSettings } from "../../../utils/queue-helpers.js";

@@ -1,4 +1,3 @@
-// Node SQLite loading and memory database WAL maintenance lifecycle helpers.
 import { createRequire } from "node:module";
 import type { DatabaseSync } from "node:sqlite";
 import { formatErrorMessage } from "./error-utils.js";

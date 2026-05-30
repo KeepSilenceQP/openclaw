@@ -1,4 +1,3 @@
-// Validation helpers for directives applied to queued runs.
 import type { SessionEntry } from "../../config/sessions.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { ReplyPayload } from "../types.js";

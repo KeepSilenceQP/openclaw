@@ -1,4 +1,3 @@
-// Image input normalization before media-understanding provider calls.
 import { extractImageContentFromSource, normalizeMimeType } from "../media/input-files.js";
 import { DEFAULT_MAX_BYTES } from "./defaults.constants.js";
 

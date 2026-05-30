@@ -1,4 +1,3 @@
-// Handoff message builders for reinforcing current session hierarchy.
 import type { AgentMessage } from "../agents/runtime/index.js";
 
 export interface HandoffSnapshot {

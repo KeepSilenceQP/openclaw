@@ -1,4 +1,3 @@
-// Tests infra provider usage shared test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { clampPercent, resolveUsageProviderId, withTimeout } from "./provider-usage.shared.js";
 

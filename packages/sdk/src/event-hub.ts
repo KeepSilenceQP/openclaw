@@ -1,4 +1,3 @@
-// Small async event hub with bounded replay for SDK stream consumers.
 import type { GatewayEvent } from "./types.js";
 
 type Listener<T> = (event: T) => void;

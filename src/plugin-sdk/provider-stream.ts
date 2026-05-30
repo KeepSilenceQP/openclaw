@@ -27,7 +27,6 @@ import {
   createToolStreamWrapper,
   resolveMoonshotThinkingType,
 } from "./provider-stream-shared.js";
-/** Generic stream wrapper utilities for provider plugins that patch payloads or tool output. */
 export {
   applyAnthropicEphemeralCacheControlMarkers,
   applyAnthropicPayloadPolicyToParams,
@@ -168,26 +167,21 @@ export const TOOL_STREAM_DEFAULT_ON_HOOKS =
 
 // Public stream-wrapper helpers for provider plugins.
 
-/** Anthropic-family tool payload compatibility wrappers for provider streams. */
 export {
   createAnthropicToolPayloadCompatibilityWrapper,
   createOpenAIAnthropicToolPayloadCompatibilityWrapper,
 } from "../llm/providers/stream-wrappers/anthropic-family-tool-payload-compat.js";
-/** Google thinking payload wrapper and sanitizer exports for provider plugins. */
 export {
   createGoogleThinkingPayloadWrapper,
   sanitizeGoogleThinkingPayload,
 } from "../llm/providers/stream-wrappers/google.js";
-/** Proxy-provider reasoning and system-cache wrappers shared by compatible providers. */
 export {
   createKilocodeWrapper,
   createOpenRouterSystemCacheWrapper,
   createOpenRouterWrapper,
   isProxyReasoningUnsupported,
 } from "../llm/providers/stream-wrappers/proxy.js";
-/** MiniMax fast-mode payload wrapper for MiniMax-compatible providers. */
 export { createMinimaxFastModeWrapper } from "../llm/providers/stream-wrappers/minimax.js";
-/** OpenAI Responses wrapper utilities for provider plugins. */
 export {
   createOpenAIAttributionHeadersWrapper,
   createCodexNativeWebSearchWrapper,
@@ -201,7 +195,6 @@ export {
   resolveOpenAIServiceTier,
   resolveOpenAITextVerbosity,
 } from "../llm/providers/stream-wrappers/openai.js";
-/** OpenRouter model capability helpers used by provider routing and stream wrappers. */
 export {
   getOpenRouterModelCapabilities,
   loadOpenRouterModelCapabilities,

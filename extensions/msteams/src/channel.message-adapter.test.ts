@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src channel message adapter test behavior.
 import {
   verifyChannelMessageAdapterCapabilityProofs,
   verifyChannelMessageLiveCapabilityAdapterProofs,

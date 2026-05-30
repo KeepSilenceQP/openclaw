@@ -1,4 +1,3 @@
-// Tests config plugin auto enable model support test behavior.
 import { describe, expect, it } from "vitest";
 import type { PluginManifestRegistry } from "../plugins/manifest-registry.js";
 import { applyPluginAutoEnable } from "./plugin-auto-enable.js";

@@ -1,4 +1,3 @@
-// Terminal cleanup for raw-mode prompts and progress-line escape state.
 import { clearActiveProgressLine } from "./progress-line.js";
 
 const RESET_SEQUENCE =

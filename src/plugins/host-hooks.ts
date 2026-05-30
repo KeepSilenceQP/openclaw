@@ -1,4 +1,3 @@
-// Plugin host hook contracts for session state, tool policy, UI actions, and events.
 import type { OperatorScope } from "../gateway/operator-scopes.js";
 import type { AgentEventPayload, AgentEventStream } from "../infra/agent-events.js";
 import type {
@@ -14,11 +13,8 @@ import type {
   PluginNextTurnInjectionRecord,
 } from "./host-hook-turn-types.js";
 
-/** JSON value validator shared by host hook payloads. */
 export { isPluginJsonValue } from "./host-hook-json.js";
-/** JSON value types accepted by host hook payloads and plugin state. */
 export type { PluginJsonPrimitive, PluginJsonValue } from "./host-hook-json.js";
-/** Agent-turn preparation, heartbeat, and next-turn injection hook contracts. */
 export type {
   PluginAgentTurnPrepareEvent,
   PluginAgentTurnPrepareResult,

@@ -1,4 +1,3 @@
-// Coverage for inline reply whitespace normalization.
 import { describe, expect, it } from "vitest";
 import { collapseInlineHorizontalWhitespace } from "./reply-inline-whitespace.js";
 

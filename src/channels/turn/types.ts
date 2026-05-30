@@ -21,7 +21,6 @@ import type { MessageReceipt } from "../message/types.js";
 import type { InboundLastRouteUpdate, RecordInboundSession } from "../session.types.js";
 import type { ChannelBotLoopProtectionFacts } from "./bot-loop-protection.js";
 
-/** Inbound event kind shared with channel turn adapters. */
 export type { InboundEventKind } from "../inbound-event/kind.js";
 
 /** Admission decision produced before a channel turn reaches the agent. */

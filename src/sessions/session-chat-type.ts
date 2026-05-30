@@ -1,4 +1,3 @@
-// Resolves chat type from built-in key rules and channel plugin legacy adapters.
 import { getBootstrapChannelPlugin } from "../channels/plugins/bootstrap-registry.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import {
@@ -7,7 +6,6 @@ import {
 } from "./session-chat-type-shared.js";
 import { parseAgentSessionKey } from "./session-key-utils.js";
 
-/** Re-exports shared session-key chat type inference helpers. */
 export {
   deriveSessionChatTypeFromKey,
   type SessionKeyChatType,

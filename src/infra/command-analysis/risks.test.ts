@@ -1,4 +1,3 @@
-// Tests infra/command-analysis risks test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildCommandPayloadCandidates,

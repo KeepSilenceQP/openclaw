@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src node exec test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveQaNodeExecPath } from "./node-exec.js";
 

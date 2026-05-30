@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser pw ai e2e test behavior.
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { connectOverCdpMock, getChromeWebSocketUrlMock } from "./pw-session.mock-setup.js";
 

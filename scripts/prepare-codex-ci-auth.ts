@@ -1,5 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Codex CI auth preparer patches staged auth JSON with account claims needed by app-server.
 import fs from "node:fs/promises";
 import path from "node:path";
 

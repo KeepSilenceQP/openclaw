@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor channel access test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveDiscordChannelInfoSafe,

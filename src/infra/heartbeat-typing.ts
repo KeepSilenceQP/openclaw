@@ -1,4 +1,3 @@
-// Adapts channel heartbeat typing capabilities into reusable typing callbacks.
 import type { ChannelHeartbeatDeps, ChannelPlugin } from "../channels/plugins/types.public.js";
 import { createTypingCallbacks, type TypingCallbacks } from "../channels/typing.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

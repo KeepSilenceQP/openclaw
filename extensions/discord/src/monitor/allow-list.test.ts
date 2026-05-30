@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor allow list test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeDiscordDisplaySlug, normalizeDiscordSlug } from "./allow-list.js";
 

@@ -1,5 +1,4 @@
 // Identifies live-mutating state files that should be skipped while building a
-// backup archive from a running OpenClaw install.
 import path from "node:path";
 
 /**

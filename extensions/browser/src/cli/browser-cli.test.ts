@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/cli browser cli test behavior.
 import { Command } from "commander";
 import { describe, expect, it } from "vitest";
 

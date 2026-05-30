@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src doctor test behavior.
 import { describe, expect, it } from "vitest";
 import { imessageDoctor } from "./doctor.js";
 

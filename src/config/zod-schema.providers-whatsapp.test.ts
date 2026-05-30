@@ -1,4 +1,3 @@
-// Tests config zod schema providers whatsapp test behavior.
 import { describe, it, expect } from "vitest";
 import { WhatsAppConfigSchema, WhatsAppAccountSchema } from "./zod-schema.providers-whatsapp.js";
 

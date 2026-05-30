@@ -1,4 +1,3 @@
-// Tests gateway/server/ws-connection auth context state test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { AuthRateLimiter } from "../../auth-rate-limit.js";
 import type { ResolvedGatewayAuth } from "../../auth.js";

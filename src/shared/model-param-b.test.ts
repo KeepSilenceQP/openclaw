@@ -1,4 +1,3 @@
-// Tests shared model param b test behavior.
 import { describe, expect, it } from "vitest";
 import { inferParamBFromIdOrName } from "./model-param-b.js";
 

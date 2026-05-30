@@ -1,5 +1,4 @@
 // Delegates detached task lifecycle operations to the registered runtime, with
-// the core task executor as the default implementation and plugin/test override hooks.
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import type {
   DetachedTaskRecoveryAttemptParams,
@@ -30,7 +29,6 @@ import type { TaskRecord } from "./task-registry.types.js";
 const log = createSubsystemLogger("tasks/detached-runtime");
 const DETACHED_TASK_RECOVERY_WARN_MS = 5_000;
 
-/** Runtime contract plugins can register to own detached task lifecycle updates. */
 export type { DetachedTaskLifecycleRuntime, DetachedTaskLifecycleRuntimeRegistration };
 
 const DEFAULT_DETACHED_TASK_LIFECYCLE_RUNTIME: DetachedTaskLifecycleRuntime = {

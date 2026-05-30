@@ -1,4 +1,3 @@
-// Tests plugins provider runtime synthetic auth discovery test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 const resolveProviderRuntimePlugin = vi.hoisted(() => vi.fn(() => undefined));

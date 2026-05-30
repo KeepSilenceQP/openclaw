@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor handler media failure test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { installMatrixMonitorTestRuntime } from "../../test-runtime.js";
 import { MatrixMediaSizeLimitError } from "../media-errors.js";

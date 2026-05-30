@@ -1,4 +1,3 @@
-// Pairing display labels derived from channel pairing adapters.
 import { getPairingAdapter } from "../channels/plugins/pairing.js";
 import type { PairingChannel } from "./pairing-store.types.js";
 

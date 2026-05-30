@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor native command think autocomplete test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

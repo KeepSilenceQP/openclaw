@@ -1,4 +1,3 @@
-// Tests infra/command-analysis explain test behavior.
 import { describe, expect, it } from "vitest";
 import { explainShellCommand } from "../command-explainer/index.js";
 import {

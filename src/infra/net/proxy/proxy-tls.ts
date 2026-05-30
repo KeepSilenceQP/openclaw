@@ -1,4 +1,3 @@
-// Resolves and loads custom CA material for HTTPS managed proxy connections.
 import { readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import type { ProxyConfig } from "../../../config/zod-schema.proxy.js";

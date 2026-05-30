@@ -1,4 +1,3 @@
-// Conservative UTF-8 byte based embedding input size estimators and splitters.
 import type { EmbeddingInput } from "./embedding-inputs.js";
 
 // Helpers for enforcing embedding model input size limits.

@@ -1,4 +1,3 @@
-// Streaming directive helpers for reply payload delivery.
 import { hasOutboundReplyContent } from "openclaw/plugin-sdk/reply-payload";
 import { parseInlineDirectives } from "../../utils/directive-tags.js";
 import {

@@ -1,5 +1,4 @@
 // Per-session tool-card expansion state. It initializes new tool cards from the
-// auto-expand preference and preserves user toggles across chat re-renders.
 import type { ChatItem, MessageGroup } from "../types/chat-types.ts";
 import { isToolResultMessage, normalizeRoleForGrouping } from "./role-normalizer.ts";
 import { getOrCreateSessionCacheValue } from "./session-cache.ts";

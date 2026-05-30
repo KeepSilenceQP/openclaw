@@ -1,6 +1,5 @@
 // WebRTC realtime-talk transport. It opens a microphone/audio peer connection,
 // sends model control events over the data channel, and routes tool calls through
-// shared realtime-talk helpers.
 import type { RealtimeTalkWebRtcSdpSessionResult } from "./realtime-talk-shared.ts";
 import {
   REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME,

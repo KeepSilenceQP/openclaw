@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src process tree cpu test behavior.
 import { describe, expect, it } from "vitest";
 import {
   parsePsCpuTimeMs,

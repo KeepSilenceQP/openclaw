@@ -1,4 +1,3 @@
-// Gateway chat RPC handlers for history, send, inject, and abort flows.
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -278,7 +277,6 @@ async function buildWebchatAssistantMediaMessage(
   });
 }
 
-/** Chat history display projection helpers reused by gateway RPC handlers. */
 export {
   DEFAULT_CHAT_HISTORY_TEXT_MAX_CHARS,
   resolveEffectiveChatHistoryMaxChars,

@@ -1,4 +1,3 @@
-// Microsoft Teams provider config contracts for Bot Framework, SSO, and channel policy.
 import type {
   BlockStreamingCoalesceConfig,
   ChannelPreviewStreamingConfig,

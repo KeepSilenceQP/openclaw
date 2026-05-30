@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/events assistant test behavior.
 import type { App } from "@slack/bolt";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { SlackMonitorContext } from "../context.js";

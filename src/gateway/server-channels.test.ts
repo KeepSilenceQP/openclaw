@@ -1,4 +1,3 @@
-// Tests gateway server channels test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   type ChannelGatewayContext,

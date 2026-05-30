@@ -1,4 +1,3 @@
-// Parses ClawHub plugin install specs.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** Parses `clawhub:name` and `clawhub:name@version` plugin specs. */

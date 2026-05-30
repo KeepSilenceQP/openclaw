@@ -1,4 +1,3 @@
-// Tests gateway probe test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const gatewayClientState = vi.hoisted(() => ({

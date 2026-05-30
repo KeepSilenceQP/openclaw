@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-lab/src model catalog runtime behavior.
 import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";

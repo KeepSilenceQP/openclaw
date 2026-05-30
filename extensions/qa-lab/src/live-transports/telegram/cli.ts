@@ -1,4 +1,3 @@
-// QA Lab Telegram live-transport CLI registration lazy-loads the Telegram lane.
 import {
   createLazyCliRuntimeLoader,
   createLiveTransportQaCliRegistration,

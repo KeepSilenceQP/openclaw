@@ -1,4 +1,3 @@
-// Tests extensions/ollama/src discovery shared test behavior.
 import { describe, expect, it } from "vitest";
 import { isLocalOllamaBaseUrl } from "./discovery-shared.js";
 

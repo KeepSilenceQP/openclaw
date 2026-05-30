@@ -1,4 +1,3 @@
-// Vitest project config for Zalo plugin tests.
 import { zaloExtensionTestRoots } from "./vitest.extension-zalo-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

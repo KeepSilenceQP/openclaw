@@ -1,4 +1,3 @@
-// iMessage extension Vitest config delegates to the single-channel extension helper.
 import { createSingleChannelExtensionVitestConfig } from "./vitest.extension-channel-single-config.ts";
 
 /** Creates the iMessage extension Vitest project config. */

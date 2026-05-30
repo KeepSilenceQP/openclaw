@@ -1,4 +1,3 @@
-// Tests test/scripts prepare extension package boundary artifacts test behavior.
 import { EventEmitter } from "node:events";
 import fs from "node:fs";
 import os from "node:os";

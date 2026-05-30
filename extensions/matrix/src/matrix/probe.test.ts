@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix probe test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const createMatrixClientMock = vi.fn();

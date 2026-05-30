@@ -1,4 +1,3 @@
-// Tests plugins startup trace segment test behavior.
 import { describe, expect, it } from "vitest";
 import { encodeStartupTraceSegment } from "./startup-trace-segment.js";
 

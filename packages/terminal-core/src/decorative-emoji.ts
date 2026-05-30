@@ -1,4 +1,3 @@
-// Decorative emoji helpers that degrade cleanly on limited terminals.
 import { splitGraphemes } from "./ansi.js";
 
 /** Terminal and locale inputs used to decide whether decorative emoji are safe. */

@@ -1,6 +1,5 @@
 // Scroll coordination for chat, logs, activity, and topbar layout. It preserves
 // user scroll position during streaming while still following new content when
-// the user is near the bottom or auto-follow is enabled.
 import { normalizeChatAutoScrollMode, type ChatAutoScrollMode } from "./storage.ts";
 
 /** Distance (px) from the bottom within which we consider the user "near bottom". */

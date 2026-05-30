@@ -1,4 +1,3 @@
-// Tests daemon runtime paths test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const fsMocks = vi.hoisted(() => ({

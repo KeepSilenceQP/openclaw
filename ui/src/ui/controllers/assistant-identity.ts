@@ -1,6 +1,5 @@
 // Controller helpers for assistant identity display. Remote identity loads are
 // versioned by session key so stale async responses cannot overwrite a newer
-// session, while local avatar overrides still win.
 import { normalizeAssistantIdentity } from "../assistant-identity.ts";
 import type { GatewayBrowserClient } from "../gateway.ts";
 import { loadLocalAssistantIdentity, saveLocalAssistantIdentity } from "../storage.ts";

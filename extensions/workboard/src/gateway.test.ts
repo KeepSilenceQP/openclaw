@@ -1,4 +1,3 @@
-// Tests extensions/workboard/src gateway test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { OpenClawPluginApi } from "../api.js";
 import { registerWorkboardGatewayMethods } from "./gateway.js";

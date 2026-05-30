@@ -1,4 +1,3 @@
-// Stateful ACP target driver for channel plugin routing.
 import {
   ensureConfiguredAcpBindingReady,
   ensureConfiguredAcpBindingSession,

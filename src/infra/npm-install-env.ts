@@ -1,5 +1,4 @@
 // npm install environment sanitizer.
-// It clears inherited npm config that would break project installs and disables freshness gates.
 import { execFileSync } from "node:child_process";
 import fsSync from "node:fs";
 import os from "node:os";

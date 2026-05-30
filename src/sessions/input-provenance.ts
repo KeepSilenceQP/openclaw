@@ -1,5 +1,4 @@
 // User-input provenance helpers: tag routed/inter-session prompts and add
-// policy-visible prefixes when content did not originate from the current user.
 import type { AgentMessage } from "../agents/runtime/index.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

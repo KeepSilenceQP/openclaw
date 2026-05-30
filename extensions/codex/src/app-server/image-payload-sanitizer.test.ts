@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server image payload sanitizer test behavior.
 import { describe, expect, it } from "vitest";
 import {
   invalidInlineImageText,

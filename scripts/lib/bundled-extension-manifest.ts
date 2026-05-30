@@ -1,4 +1,3 @@
-// Bundled extension manifest checks validate install metadata for release packaging.
 import { validateMinHostVersion } from "../../src/plugins/min-host-version.ts";
 import { isRecord } from "../../src/utils.js";
 

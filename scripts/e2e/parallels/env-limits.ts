@@ -1,4 +1,3 @@
-// Parallels env limit helpers parse positive integer smoke settings.
 import { die } from "./host-command.ts";
 
 const positiveIntPattern = /^[1-9]\d*$/u;

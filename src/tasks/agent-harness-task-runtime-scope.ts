@@ -1,4 +1,3 @@
-// Brands task runtime scopes issued by the host before the agent harness accepts them.
 import { normalizeDeliveryContext } from "../utils/delivery-context.shared.js";
 import type { DeliveryContext } from "../utils/delivery-context.types.js";
 

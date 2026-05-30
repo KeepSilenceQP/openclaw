@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/approval index test behavior.
 import { describe, expect, it } from "vitest";
 import { buildApprovalKeyboard } from "./index.js";
 

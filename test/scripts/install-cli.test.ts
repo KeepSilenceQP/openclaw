@@ -1,4 +1,3 @@
-// Tests test/scripts install cli test behavior.
 import { spawnSync } from "node:child_process";
 import {
   chmodSync,

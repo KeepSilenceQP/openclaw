@@ -1,4 +1,3 @@
-// Audio delivery directive parser for media-generating replies.
 import { parseInlineDirectives } from "../utils/directive-tags.js";
 
 /**

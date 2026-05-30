@@ -1,4 +1,3 @@
-// Tests process spawn utils test behavior.
 import type { ChildProcess } from "node:child_process";
 import { EventEmitter } from "node:events";
 import { PassThrough } from "node:stream";

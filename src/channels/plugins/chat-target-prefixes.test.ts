@@ -1,4 +1,3 @@
-// Coverage for chat target prefix parsing.
 import { describe, expect, it } from "vitest";
 import {
   createAllowedChatSenderMatcher,

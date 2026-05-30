@@ -1,4 +1,3 @@
-// Coverage for session update helpers.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const TEST_WORKSPACE_DIR = "/tmp/workspace";

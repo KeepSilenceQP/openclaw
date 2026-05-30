@@ -1,4 +1,3 @@
-// Detects WSL/WSL2 environments from env vars and Linux proc files.
 import { readFileSync } from "node:fs";
 import fs from "node:fs/promises";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

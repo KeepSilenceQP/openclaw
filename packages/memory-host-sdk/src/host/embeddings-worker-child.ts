@@ -1,4 +1,3 @@
-// Child-process runtime for local embeddings so node-llama shutdown stays isolated.
 import { createLocalEmbeddingProviderInProcess } from "./embeddings.js";
 import type { EmbeddingProvider, EmbeddingProviderOptions } from "./embeddings.types.js";
 

@@ -1,4 +1,3 @@
-// TypeScript LOC check reports oversized tracked or untracked source files.
 import { execFileSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";

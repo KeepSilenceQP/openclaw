@@ -1,4 +1,3 @@
-// Tests shared device bootstrap profile test behavior.
 import { describe, expect, test } from "vitest";
 import {
   BOOTSTRAP_HANDOFF_OPERATOR_SCOPES,

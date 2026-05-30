@@ -1,5 +1,4 @@
 // Diagnostic support export builder: assembles redacted config, log tails, and
-// stability snapshots into the zip users can attach to bug reports.
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";

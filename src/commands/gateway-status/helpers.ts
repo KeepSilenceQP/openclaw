@@ -183,7 +183,6 @@ export async function resolveAuthForTarget(
   });
 }
 
-/** Picks the best Gateway self-presence record for status display. */
 export { pickGatewaySelfPresence };
 
 /** Extracts a redacted Gateway config summary from a config snapshot. */

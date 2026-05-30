@@ -1,4 +1,3 @@
-// Tests packages/plugin-package-contract/src index test behavior.
 import { describe, expect, it } from "vitest";
 import {
   EXTERNAL_CODE_PLUGIN_REQUIRED_FIELD_PATHS,

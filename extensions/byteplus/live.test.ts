@@ -1,4 +1,3 @@
-// Tests extensions/byteplus live test behavior.
 import { completeSimple, type Model } from "openclaw/plugin-sdk/llm";
 import {
   createSingleUserPromptMessage,

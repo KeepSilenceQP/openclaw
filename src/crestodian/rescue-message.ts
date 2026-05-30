@@ -1,4 +1,3 @@
-// Parses and applies `/crestodian` rescue messages, including one-message approval for persistent writes.
 import { createHash, randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

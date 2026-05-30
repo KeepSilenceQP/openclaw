@@ -1,4 +1,3 @@
-// Voice-call state helpers enforce forward call transitions and transcript mutation.
 import { TerminalStates, type CallRecord, type CallState, type TranscriptEntry } from "../types.js";
 
 const ConversationStates = new Set<CallState>(["speaking", "listening"]);

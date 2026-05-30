@@ -1,4 +1,3 @@
-// Routed delivery thread helpers for session-specific replies.
 import { parseSessionThreadInfoFast } from "../../config/sessions/thread-info.js";
 import type { MsgContext } from "../templating.js";
 

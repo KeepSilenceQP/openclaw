@@ -1,4 +1,3 @@
-// Tests gateway android node capabilities policy config test behavior.
 import { describe, expect, it } from "vitest";
 import { unwrapRemoteConfigSnapshot } from "../../test/helpers/gateway/android-node-capabilities-policy-config.js";
 

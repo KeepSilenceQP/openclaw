@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src polling status test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createTelegramPollingStatusPublisher } from "./polling-status.js";
 

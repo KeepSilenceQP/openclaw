@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src button types test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildTelegramInteractiveButtons,

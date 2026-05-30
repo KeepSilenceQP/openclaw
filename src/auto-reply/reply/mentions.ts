@@ -1,4 +1,3 @@
-// Mention detection helpers for group chat activation.
 import { resolveAgentConfig } from "../../agents/agent-scope.js";
 import type { ChannelId } from "../../channels/plugins/channel-id.types.js";
 import { getLoadedChannelPluginById } from "../../channels/plugins/registry-loaded.js";
@@ -15,7 +14,6 @@ import {
 import { escapeRegExp } from "../../utils.js";
 import type { MsgContext } from "../templating.js";
 import type { ExplicitMentionSignal } from "./mentions.types.js";
-/** Explicit mention signal type exported with mention helpers. */
 export type { ExplicitMentionSignal } from "./mentions.types.js";
 
 function deriveMentionPatterns(identity?: { name?: string; emoji?: string }) {

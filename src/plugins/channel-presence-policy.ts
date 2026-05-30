@@ -1,5 +1,4 @@
 // Channel presence policy resolver. Combines explicit config, env/auth signals,
-// manifest ownership, trust, and activation state into effective channel visibility.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import {
   hasMeaningfulChannelConfig,

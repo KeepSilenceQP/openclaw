@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src approval reactions test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   buildMatrixApprovalReactionHint,

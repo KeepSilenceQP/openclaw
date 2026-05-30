@@ -1,4 +1,3 @@
-// Sync Codex app-server JSON protocol schemas into OpenClaw's generated mirror.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

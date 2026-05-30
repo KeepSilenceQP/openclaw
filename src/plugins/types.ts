@@ -1,5 +1,4 @@
 // Public plugin contract types for OpenClaw runtime and SDK surfaces.
-// Keeps manifest, provider, channel, CLI, session, migration, and setup APIs in one typed boundary.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Duplex } from "node:stream";
 import type {
@@ -156,18 +155,14 @@ import type { WebFetchProviderPlugin, WebSearchProviderPlugin } from "./web-prov
 type ModelProviderRequestTransportOverrides =
   import("../agents/provider-request-config.js").ModelProviderRequestTransportOverrides;
 
-/** Runtime contract exposed to plugin entrypoints. */
 export type { PluginRuntime } from "./runtime/types.js";
-/** Plugin origin metadata used by discovery and registries. */
 export type { PluginOrigin } from "./plugin-origin.types.js";
-/** Manifest format and diagnostic types consumed by plugin loaders. */
 export type {
   PluginBundleFormat,
   PluginConfigUiHint,
   PluginDiagnostic,
   PluginFormat,
 } from "./manifest-types.js";
-/** Tool registration contracts re-exported for plugin authors. */
 export type {
   OpenClawPluginActiveModelContext,
   OpenClawPluginHookOptions,
@@ -175,11 +170,8 @@ export type {
   OpenClawPluginToolFactory,
   OpenClawPluginToolOptions,
 } from "./tool-types.js";
-/** Agent tool shape accepted by plugin tool registration. */
 export type { AnyAgentTool } from "../agents/tools/common.js";
-/** Agent harness handle exposed to plugin runtime code. */
 export type { AgentHarness } from "../agents/harness/types.js";
-/** Tool result middleware contracts for plugin-provided wrappers. */
 export type {
   AgentToolResultMiddleware,
   AgentToolResultMiddlewareContext,
@@ -190,7 +182,6 @@ export type {
   AgentToolResultMiddlewareRuntime,
   OpenClawAgentToolResult,
 } from "./agent-tool-result-middleware-types.js";
-/** Conversation binding contracts shared by plugins and channels. */
 export type {
   PluginConversationBinding,
   PluginConversationBindingRequestParams,
@@ -198,7 +189,6 @@ export type {
   PluginConversationBindingResolvedEvent,
   PluginConversationBindingResolutionDecision,
 } from "./conversation-binding.types.js";
-/** CLI backend plugin contracts for native command integrations. */
 export type {
   CliBackendAuthEpochMode,
   CliBackendNormalizeConfigContext,
@@ -214,7 +204,6 @@ export type {
   PluginTextTransforms,
 } from "./cli-backend.types.js";
 export * from "./hook-types.js";
-/** Host hook registration contracts exposed through the plugin runtime. */
 export type {
   PluginAgentEventEmitParams,
   PluginAgentEventEmitResult,
@@ -263,9 +252,7 @@ export type PluginLogger = {
   error: (message: string) => void;
 };
 
-/** Plugin kind discriminator shared by manifests and registries. */
 export type { PluginKind } from "./plugin-kind.types.js";
-/** External and synthetic auth profile contracts for provider plugins. */
 export type {
   ProviderExternalAuthProfile,
   ProviderExternalOAuthProfile,
@@ -274,7 +261,6 @@ export type {
   ProviderResolveSyntheticAuthContext,
   ProviderSyntheticAuthResult,
 } from "./provider-external-auth.types.js";
-/** Web search/fetch provider contracts exposed to plugin authors. */
 export type {
   PluginWebFetchProviderEntry,
   PluginWebSearchProviderEntry,
@@ -293,7 +279,6 @@ export type {
   WebSearchProviderToolExecutionContext,
   WebSearchRuntimeMetadataContext,
 } from "./web-provider-types.js";
-/** Provider runtime model description used by inference resolution. */
 export type { ProviderRuntimeModel } from "./provider-runtime-model.types.js";
 
 /** Result returned by lightweight plugin config validators. */
@@ -591,7 +576,6 @@ export type ProviderNormalizeModelIdContext = {
   modelId: string;
 };
 
-/** Provider config normalization context contracts. */
 export type {
   ProviderApplyConfigDefaultsContext,
   ProviderNormalizeConfigContext,
@@ -1118,7 +1102,6 @@ export type ProviderBuiltInModelSuppressionResult = {
   errorMessage?: string;
 };
 
-/** Provider thinking profile and policy contexts. */
 export type {
   ProviderDefaultThinkingPolicyContext,
   ProviderThinkingProfile,

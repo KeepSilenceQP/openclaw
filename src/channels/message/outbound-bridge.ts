@@ -1,4 +1,3 @@
-// Bridge from legacy outbound channel hooks to channel message adapters.
 import { createMessageReceiptFromOutboundResults } from "./receipt.js";
 import type {
   ChannelMessageAdapterShape,

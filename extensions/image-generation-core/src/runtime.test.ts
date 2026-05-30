@@ -1,4 +1,3 @@
-// Tests extensions/image-generation-core/src runtime test behavior.
 import { afterAll, describe, expect, it, vi } from "vitest";
 
 const sdkExports = vi.hoisted(() => ({

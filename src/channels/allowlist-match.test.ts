@@ -1,4 +1,3 @@
-// Coverage for generic channel allowlist matching.
 import { describe, expect, it } from "vitest";
 import {
   resolveAllowlistMatchByCandidates,

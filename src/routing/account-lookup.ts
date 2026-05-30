@@ -1,4 +1,3 @@
-// Finds channel account config entries with exact or normalized id matching.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** Resolves an account entry by exact key, then case-insensitive key match. */

@@ -1,4 +1,3 @@
-// Gateway protocol schemas for connection handshake and top-level transport frames.
 import { Type } from "typebox";
 import { GatewayClientIdSchema, GatewayClientModeSchema, NonEmptyString } from "./primitives.js";
 import { SnapshotSchema, StateVersionSchema } from "./snapshot.js";

@@ -1,4 +1,3 @@
-// Node HTTP(S) proxy agent helpers for provider SDK clients.
 import type { Agent as HttpAgent } from "node:http";
 import type { Agent as HttpsAgent } from "node:https";
 import {
@@ -13,7 +12,6 @@ export interface NodeHttpProxyAgents {
   httpsAgent: HttpsAgent;
 }
 
-/** Shared error message for proxy URL schemes unsupported by Node provider clients. */
 export { UNSUPPORTED_PROXY_PROTOCOL_MESSAGE };
 
 /** Resolves the proxy URL selected by environment rules for a target provider URL. */

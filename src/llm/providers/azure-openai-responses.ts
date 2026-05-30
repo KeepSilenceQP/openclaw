@@ -1,4 +1,3 @@
-// Azure OpenAI Responses API stream adapter.
 import { AzureOpenAI } from "openai";
 import type { ResponseCreateParamsStreaming } from "openai/resources/responses/responses.js";
 import { getEnvApiKey } from "../env-api-keys.js";

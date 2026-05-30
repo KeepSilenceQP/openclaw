@@ -1,4 +1,3 @@
-// Test helper for capturing Crestodian runtime output and exits.
 import type { RuntimeEnv } from "../runtime.js";
 
 /** Create a fake RuntimeEnv that records output lines and throws on exit. */

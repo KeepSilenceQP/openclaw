@@ -1,4 +1,3 @@
-// Tests infra is main test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { isMainModule } from "./is-main.js";
 

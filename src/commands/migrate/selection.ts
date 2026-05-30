@@ -1,4 +1,3 @@
-// Selection helpers for interactive/non-interactive migration skill and plugin filters.
 import path from "node:path";
 import { markMigrationItemSkipped, summarizeMigrationItems } from "../../plugin-sdk/migration.js";
 import type { MigrationItem, MigrationPlan } from "../../plugins/types.js";

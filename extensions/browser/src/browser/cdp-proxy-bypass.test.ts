@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser cdp proxy bypass test behavior.
 import http from "node:http";
 import https from "node:https";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

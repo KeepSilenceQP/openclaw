@@ -28,7 +28,6 @@ const findSchema = Type.Object({
   ),
   limit: Type.Optional(Type.Number({ description: "Maximum number of results (default: 1000)" })),
 });
-/** Find tool input/details contracts shared with renderers and callers. */
 export type { FindToolDetails, FindToolInput } from "./tool-contracts.js";
 
 const DEFAULT_LIMIT = 1000;

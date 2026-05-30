@@ -1,4 +1,3 @@
-// In-process pub/sub for session transcript writes.
 import { asPositiveSafeInteger } from "../shared/number-coercion.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

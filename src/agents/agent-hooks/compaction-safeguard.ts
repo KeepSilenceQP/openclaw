@@ -1348,5 +1348,4 @@ export const testing = {
   MAX_FILE_OPS_LIST_CHARS,
   SUMMARY_TRUNCATED_MARKER,
 } as const;
-/** Test-only constants and helpers for compaction safeguard hooks. */
 export { testing as __testing };

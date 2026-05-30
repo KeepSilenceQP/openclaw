@@ -1,5 +1,4 @@
 // Attachment cache for media understanding runners, with local-path validation,
-// remote-fetch fallback, and temp-file cleanup shared by capability adapters.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { logVerbose, shouldLogVerbose } from "../globals.js";

@@ -1,5 +1,4 @@
 #!/usr/bin/env -S pnpm tsx
-// Parallels macOS smoke validates install, provider auth, and agent turns in a guest VM.
 import { readFile, rm } from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";

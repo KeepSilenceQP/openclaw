@@ -1,4 +1,3 @@
-// Establishes OpenClaw's fs-safe process defaults before wrapper facades load.
 import { configureFsSafePython } from "@openclaw/fs-safe/config";
 
 const hasPythonModeOverride =

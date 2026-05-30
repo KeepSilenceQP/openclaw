@@ -1,4 +1,3 @@
-// Silent-reply policy resolution for sessions and surfaces.
 import {
   classifySilentReplyConversationType,
   resolveSilentReplyPolicyFromPolicies,

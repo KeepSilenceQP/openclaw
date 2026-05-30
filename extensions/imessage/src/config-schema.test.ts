@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src config schema test behavior.
 import { describe, expect, it } from "vitest";
 import { IMessageConfigSchema } from "../config-api.js";
 

@@ -17,7 +17,6 @@ import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "./defaults.js";
 import { findModelInCatalog } from "./model-catalog-lookup.js";
 import type { ModelCatalogEntry } from "./model-catalog.types.js";
 import { splitTrailingAuthProfile } from "./model-ref-profile.js";
-/** Thinking-default helpers shared by model selection and runtime catalog callers. */
 export {
   resolveThinkingDefault,
   resolveThinkingDefaultWithRuntimeCatalog,
@@ -54,7 +53,6 @@ import {
   type ModelRefStatus,
 } from "./model-selection-shared.js";
 
-/** Shared model-selection types for aliases, manifests, refs, and status checks. */
 export type { ModelAliasIndex, ModelManifestNormalizationContext, ModelRef, ModelRefStatus };
 
 /** Supported thinking/reasoning effort levels. */
@@ -68,7 +66,6 @@ export type ThinkLevel =
   | "adaptive"
   | "max";
 
-/** Core model-selection normalization and catalog helpers. */
 export {
   buildConfiguredAllowlistKeys,
   buildConfiguredModelCatalog,
@@ -89,7 +86,6 @@ export {
   resolveHooksGmailModel,
   resolveModelRefFromString,
 };
-/** Identify provider ids that are backed by CLI integrations. */
 export { isCliProvider } from "./model-selection-cli.js";
 
 function normalizePersistedDefaultProvider(value: unknown): string {

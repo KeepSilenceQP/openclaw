@@ -1,4 +1,3 @@
-// Vitest project config for repo tooling and script tests.
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 import { boundaryTestFiles } from "./vitest.unit-paths.mjs";

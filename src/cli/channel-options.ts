@@ -44,5 +44,4 @@ export const testing = {
     precomputedChannelOptions = undefined;
   },
 };
-/** Backward-compatible test export for channel option cache controls. */
 export { testing as __testing };

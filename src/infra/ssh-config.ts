@@ -1,4 +1,3 @@
-// Resolves effective ssh -G config values for tunnel targets with bounded output reads.
 import { spawn } from "node:child_process";
 import { parseStrictPositiveInteger } from "./parse-finite-number.js";
 import type { SshParsedTarget } from "./ssh-tunnel.js";

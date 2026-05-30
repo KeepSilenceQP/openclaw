@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src tools test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   getMemorySearchManagerMockCalls,

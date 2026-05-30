@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src model buttons test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildModelSelectionCallbackData,

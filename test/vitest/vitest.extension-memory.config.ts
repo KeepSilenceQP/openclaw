@@ -1,4 +1,3 @@
-// Vitest project config for memory plugin tests.
 import { memoryExtensionTestRoots } from "./vitest.extension-memory-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

@@ -1,4 +1,3 @@
-// Detection of channels configured through config, env, or persisted auth.
 import fs from "node:fs";
 import os from "node:os";
 import {

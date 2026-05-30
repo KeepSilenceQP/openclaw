@@ -1,4 +1,3 @@
-// Plugin SDK declaration writer flattens public entrypoint d.ts files for packaging.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

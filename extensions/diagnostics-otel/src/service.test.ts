@@ -1,4 +1,3 @@
-// Tests extensions/diagnostics-otel/src service test behavior.
 import { afterAll, afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
 const telemetryState = vi.hoisted(() => {

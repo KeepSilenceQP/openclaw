@@ -1,5 +1,4 @@
 // Gateway connection-error formatter. It translates structured gateway detail
-// codes and pairing metadata into short Control UI messages.
 import {
   ConnectErrorDetailCodes,
   describePairingConnectRequirement,

@@ -1,4 +1,3 @@
-// Tests media local roots test behavior.
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { afterEach, describe, expect, it, vi } from "vitest";

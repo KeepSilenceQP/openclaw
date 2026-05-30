@@ -1,4 +1,3 @@
-// Direct-message allowlist audit state for account diagnostics.
 import { normalizeStringEntries } from "../../shared/string-normalization.js";
 import type { ChannelId } from "../plugins/types.public.js";
 import { readChannelIngressStoreAllowFromForDmPolicy } from "./runtime.js";

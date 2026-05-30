@@ -1,4 +1,3 @@
-// Tests extensions/deepgram audio live test behavior.
 import {
   runRealtimeSttLiveTest,
   synthesizeElevenLabsLiveSpeech,

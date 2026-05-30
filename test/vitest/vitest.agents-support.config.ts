@@ -1,4 +1,3 @@
-// Agent support Vitest config scopes tests to support modules while excluding heavier shards.
 import { agentsSupportExcludePatterns, agentsSupportTestPatterns } from "./vitest.agents-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

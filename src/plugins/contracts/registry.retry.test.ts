@@ -1,4 +1,3 @@
-// Tests plugins/contracts registry retry test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { ProviderPlugin, WebFetchProviderPlugin, WebSearchProviderPlugin } from "../types.js";
 

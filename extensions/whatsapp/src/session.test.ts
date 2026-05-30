@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src session test behavior.
 import { EventEmitter } from "node:events";
 import fsSync from "node:fs";
 import fs from "node:fs/promises";

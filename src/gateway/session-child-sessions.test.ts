@@ -1,4 +1,3 @@
-// Tests gateway session child sessions test behavior.
 import { expect, test, vi } from "vitest";
 import { loadCombinedSessionStoreForGateway } from "../config/sessions/combined-store-gateway.js";
 import type { SessionEntry } from "../config/sessions/types.js";

@@ -1,4 +1,3 @@
-// Platform-specific sqlite-vec package variant resolver.
 import { createRequire } from "node:module";
 
 type PlatformVariant = { readonly pkg: string; readonly file: string };

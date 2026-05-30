@@ -1,5 +1,4 @@
 // Outbound messaging target resolver.
-// Combines plugin id-like resolution, cached directory lookup, ambiguity handling, and display labels.
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type {
   ChannelDirectoryEntry,
@@ -47,7 +46,6 @@ function asResolvedMessagingTarget(
   return target;
 }
 
-/** ID-like target resolver shared by outbound target resolution callers. */
 export { maybeResolveIdLikeTarget } from "./target-id-resolution.js";
 
 /** Resolve a channel target using the full outbound messaging target pipeline. */

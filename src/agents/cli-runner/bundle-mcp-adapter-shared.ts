@@ -1,6 +1,5 @@
 import type { BundleMcpServerConfig } from "../../plugins/bundle-mcp.js";
 import { isRecord } from "../../shared/record-coerce.js";
-/** Record guard shared by bundled-MCP CLI adapter projections. */
 export { isRecord } from "../../shared/record-coerce.js";
 
 function normalizeStringArray(value: unknown): string[] | undefined {

@@ -16,7 +16,6 @@ import type { SecretTargetRegistryEntry } from "../../secrets/target-registry-ty
 import type { ChannelApprovalNativeAdapter } from "./approval-native.types.js";
 import type { ChannelRuntimeSurface } from "./channel-runtime-surface.types.js";
 import type { ConfigWriteTarget } from "./config-writes.js";
-/** Outbound send adapter contracts implemented by channel plugins. */
 export type {
   ChannelOutboundAdapter,
   ChannelOutboundChunkContext,
@@ -40,11 +39,9 @@ import type {
   ChannelSetupInput,
   ChannelStatusIssue,
 } from "./types.core.js";
-/** Pairing adapter contract for approval/allowlist flows. */
 export type { ChannelPairingAdapter } from "./pairing.types.js";
 
 type ConfiguredBindingRule = AgentBinding;
-/** Approval kind discriminator shared by channel approval adapters. */
 export type { ChannelApprovalKind } from "../../infra/approval-types.js";
 
 /** Availability state for channel-native actions such as approve. */
@@ -618,7 +615,6 @@ export type ChannelApproveCommandBehavior =
   | { kind: "ignore" }
   | { kind: "reply"; text: string };
 
-/** Native channel approval delivery contracts. */
 export type {
   ChannelApprovalNativeAdapter,
   ChannelApprovalNativeDeliveryCapabilities,

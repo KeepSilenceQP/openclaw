@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src webhook exposure test behavior.
 import { describe, expect, it } from "vitest";
 import { isLocalOnlyWebhookHost, isProviderUnreachableWebhookUrl } from "./webhook-exposure.js";
 

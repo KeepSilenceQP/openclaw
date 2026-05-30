@@ -1,4 +1,3 @@
-// Startup TLS environment resolver for launched Node child processes.
 import { type EnvMap, resolveAutoNodeExtraCaCerts } from "./node-extra-ca-certs.js";
 
 type NodeStartupTlsEnvironment = {

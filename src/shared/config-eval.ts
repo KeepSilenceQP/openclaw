@@ -1,4 +1,3 @@
-// Shared runtime eligibility evaluation for config, env, binary, and OS requirements.
 import fs from "node:fs";
 import path from "node:path";
 

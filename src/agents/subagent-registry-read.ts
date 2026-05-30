@@ -11,7 +11,6 @@ import {
 import { getSubagentRunsSnapshotForRead } from "./subagent-registry-state.js";
 import type { SubagentRunRecord } from "./subagent-registry.types.js";
 
-/** Subagent session timing/status helpers re-exported with registry readers. */
 export {
   getSubagentSessionRuntimeMs,
   getSubagentSessionStartedAt,

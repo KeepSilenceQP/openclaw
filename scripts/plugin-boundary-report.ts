@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Plugin boundary report audits SDK compatibility debt, reserved imports, and memory-host ownership.
 import { spawnSync } from "node:child_process";
 import { existsSync, lstatSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";

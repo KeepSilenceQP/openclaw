@@ -1,4 +1,3 @@
-// Allowlist analysis and argv hardening for node-host SYSTEM_RUN execution.
 import {
   analyzeArgvCommand,
   buildSafeBinsShellCommand,

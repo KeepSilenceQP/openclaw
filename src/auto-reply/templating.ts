@@ -1,4 +1,3 @@
-// Template context types and helpers for auto-reply message rendering.
 import type { InboundEventKind } from "../channels/inbound-event/kind.js";
 import type {
   MediaUnderstandingDecision,

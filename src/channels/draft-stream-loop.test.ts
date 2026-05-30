@@ -1,4 +1,3 @@
-// Coverage for throttled draft stream loop behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createDraftStreamLoop } from "./draft-stream-loop.js";
 

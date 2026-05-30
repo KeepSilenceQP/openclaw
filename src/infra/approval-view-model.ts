@@ -1,4 +1,3 @@
-// Builds channel-facing view models for exec and plugin approval states.
 import type {
   ApprovalMetadataView,
   ApprovalRequest,

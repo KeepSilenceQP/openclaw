@@ -1,5 +1,4 @@
 // Session path resolvers. These keep transcript/store paths under the
-// per-agent sessions directory while tolerating older absolute persisted paths.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

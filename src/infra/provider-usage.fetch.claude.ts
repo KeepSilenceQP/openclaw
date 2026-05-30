@@ -1,4 +1,3 @@
-// Fetches Anthropic usage windows from OAuth or Claude web session credentials.
 import {
   buildUsageHttpErrorSnapshot,
   fetchJson,

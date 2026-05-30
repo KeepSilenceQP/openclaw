@@ -1,4 +1,3 @@
-// iMessage account config contracts for CLI access, private API actions, and catchup.
 import type {
   BlockStreamingCoalesceConfig,
   ContextVisibilityMode,

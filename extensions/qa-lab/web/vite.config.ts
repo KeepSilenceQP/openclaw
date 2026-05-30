@@ -1,4 +1,3 @@
-// QA Lab web Vite config builds the private debugger UI bundle.
 import path from "node:path";
 import { defineConfig } from "vite";
 

@@ -1,4 +1,3 @@
-// Tests extensions/discord/src accounts test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   clearRuntimeConfigSnapshot,

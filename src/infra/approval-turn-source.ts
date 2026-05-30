@@ -1,4 +1,3 @@
-// Checks whether an approval can route back to the initiating turn source.
 import { getRuntimeConfig } from "../config/config.js";
 import { resolveApprovalInitiatingSurfaceState } from "./exec-approval-surface.js";
 

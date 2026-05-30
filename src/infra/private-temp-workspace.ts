@@ -1,6 +1,4 @@
-// Applies fs-safe defaults before exposing private temporary workspace helpers.
 import "./fs-safe-defaults.js";
-/** Temporary workspace helpers with automatic cleanup semantics. */
 export {
   tempWorkspace,
   tempWorkspaceSync,

@@ -1,4 +1,3 @@
-// Tests extensions/ollama/src wsl2 crash loop check test behavior.
 import { promisify } from "node:util";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

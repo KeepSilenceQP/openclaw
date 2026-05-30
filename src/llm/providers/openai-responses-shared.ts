@@ -1,4 +1,3 @@
-// Shared OpenAI Responses API conversion, params, and streaming helpers.
 import type OpenAI from "openai";
 import type {
   ResponseCreateParamsStreaming,
@@ -93,9 +92,7 @@ export interface OpenAIResponsesStreamOptions {
 export interface ConvertResponsesMessagesOptions {
   includeSystemPrompt?: boolean;
 }
-/** Re-export tool conversion for providers that share the Responses adapter. */
 export { convertResponsesTools };
-/** Re-export tool conversion options for Responses adapter callers. */
 export type { ConvertResponsesToolsOptions } from "./openai-responses-tools.js";
 
 type ResponsesRequestOptions = {

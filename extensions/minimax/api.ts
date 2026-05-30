@@ -1,6 +1,4 @@
-/** Re-exported minimax plugin public API, starting with build Minimax Portal Provider. */
 export { buildMinimaxPortalProvider, buildMinimaxProvider } from "./provider-catalog.js";
-/** Re-exported minimax plugin public API. */
 export {
   buildMinimaxApiModelDefinition,
   buildMinimaxModelDefinition,
@@ -13,7 +11,6 @@ export {
   MINIMAX_HOSTED_MODEL_REF,
   MINIMAX_LM_STUDIO_COST,
 } from "./model-definitions.js";
-/** Re-exported minimax plugin public API. */
 export {
   isMiniMaxModernModelId,
   MINIMAX_DEFAULT_MODEL_ID,
@@ -22,7 +19,6 @@ export {
   MINIMAX_TEXT_MODEL_ORDER,
   MINIMAX_TEXT_MODEL_REFS,
 } from "./provider-models.js";
-/** Re-exported minimax plugin public API. */
 export {
   applyMinimaxApiConfig,
   applyMinimaxApiConfigCn,

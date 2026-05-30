@@ -1,4 +1,3 @@
-// Tests config zod schema visible replies test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObjectRaw } from "./validation.js";
 

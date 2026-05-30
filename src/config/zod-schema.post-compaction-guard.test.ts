@@ -1,4 +1,3 @@
-// Tests config zod schema post compaction guard test behavior.
 import { describe, expect, it } from "vitest";
 import { ToolsSchema } from "./zod-schema.agent-runtime.js";
 import { OpenClawSchema } from "./zod-schema.js";

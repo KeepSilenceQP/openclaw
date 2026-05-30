@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser cdp test behavior.
 import { createServer } from "node:http";
 import type { AddressInfo } from "node:net";
 import type { Duplex } from "node:stream";

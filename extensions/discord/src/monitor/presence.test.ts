@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor presence test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveDiscordPresenceUpdate } from "./presence.js";
 

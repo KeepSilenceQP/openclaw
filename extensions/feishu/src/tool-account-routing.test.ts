@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src tool account routing test behavior.
 import { afterAll, beforeAll, beforeEach, describe, expect, test, vi } from "vitest";
 import type { OpenClawPluginApi } from "../runtime-api.js";
 import { createToolFactoryHarness } from "./tool-factory-test-harness.js";

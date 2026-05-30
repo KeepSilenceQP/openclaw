@@ -1,4 +1,3 @@
-// Tests plugins cli test behavior.
 import { Command } from "commander";
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";

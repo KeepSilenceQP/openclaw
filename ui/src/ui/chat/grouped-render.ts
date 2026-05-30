@@ -1,5 +1,4 @@
 // Grouped chat renderer. It renders normalized message groups, attachments,
-// managed media previews, tool cards, timestamps, and streaming/reading states.
 import { html, nothing } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { until } from "lit/directives/until.js";
@@ -19,7 +18,6 @@ import type {
   ToolCard,
 } from "../types/chat-types.ts";
 import { resolveLocalUserName } from "../user-identity.ts";
-/** Assistant text-avatar resolver shared with grouped chat rendering callers. */
 export { resolveAssistantTextAvatar } from "../views/agents-utils.ts";
 import { renderChatAvatar } from "./chat-avatar.ts";
 import { renderCopyAsMarkdownButton } from "./copy-as-markdown.ts";

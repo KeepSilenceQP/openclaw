@@ -1,4 +1,3 @@
-// Runtime guards for cron job payloads displayed in Control UI.
 import type { CronJob, CronPayload } from "./types.ts";
 
 function isRecord(value: unknown): value is Record<string, unknown> {

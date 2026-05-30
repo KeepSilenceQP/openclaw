@@ -1,4 +1,3 @@
-// Coverage for Node startup TLS environment resolution.
 import { describe, expect, it } from "vitest";
 import { LINUX_CA_BUNDLE_PATHS } from "./node-extra-ca-certs.js";
 import { resolveNodeStartupTlsEnvironment } from "./node-startup-env.js";

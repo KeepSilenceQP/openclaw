@@ -1,4 +1,3 @@
-// Tests infra approval turn source test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const loadConfigMock = vi.hoisted(() => vi.fn());

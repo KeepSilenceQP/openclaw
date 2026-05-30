@@ -1,4 +1,3 @@
-// Timing tracker for reply generation and delivery phases.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { isDiagnosticFlagEnabled } from "../../infra/diagnostic-flags.js";
 

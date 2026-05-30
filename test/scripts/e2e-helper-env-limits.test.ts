@@ -1,4 +1,3 @@
-// Tests test/scripts e2e helper env limits test behavior.
 import { spawn, spawnSync } from "node:child_process";
 import { createServer, type Server } from "node:http";
 import { describe, expect, it } from "vitest";

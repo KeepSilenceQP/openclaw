@@ -1,4 +1,3 @@
-// Provides bounded TTL dedupe caches for idempotency and delivery guards.
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import { pruneMapToMaxSize } from "./map-size.js";
 import { resolveNonNegativeIntegerOption } from "./numeric-options.js";
@@ -18,7 +17,6 @@ export type DedupeCacheOptions = {
   maxSize: number;
 };
 
-/** @deprecated Use resolveNonNegativeIntegerOption for new internal numeric option normalization. */
 export { resolveNonNegativeIntegerOption as resolveDedupeNonNegativeInteger };
 
 /** Creates a bounded dedupe cache whose check operation records misses. */

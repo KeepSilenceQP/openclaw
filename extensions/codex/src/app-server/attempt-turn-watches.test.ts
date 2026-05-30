@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server attempt turn watches test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createCodexAttemptTurnWatchController } from "./attempt-turn-watches.js";
 

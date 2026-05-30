@@ -1,4 +1,3 @@
-// Coordinates cross-runtime notices when native approvals route away from origin.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalString,

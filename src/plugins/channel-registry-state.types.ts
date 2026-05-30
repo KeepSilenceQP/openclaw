@@ -1,4 +1,3 @@
-// Shared types for plugins channel registry state types behavior.
 export type ActiveChannelPluginRuntimeShape = {
   id?: string | null;
   meta?: {

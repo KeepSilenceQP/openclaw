@@ -1,4 +1,3 @@
-// Persisted task-flow registry contracts shared by store and runtime logic.
 import type { DeliveryContext } from "../utils/delivery-context.types.js";
 import type { TaskNotifyPolicy } from "./task-registry.types.js";
 

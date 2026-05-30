@@ -1,4 +1,3 @@
-// Implements `models auth-order` get/set/clear for provider profile precedence.
 import { resolveAgentDir, resolveDefaultAgentId } from "../../agents/agent-scope.js";
 import {
   type AuthProfileStore,

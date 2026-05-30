@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor thread title test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeGeneratedThreadTitle } from "./thread-title.js";
 

@@ -1,4 +1,3 @@
-// Local non-interactive onboarding: workspace, gateway config, daemon install, and health proof.
 import { formatCliCommand } from "../../cli/command-format.js";
 import { resolveGatewayPort } from "../../config/config.js";
 import { logConfigUpdated } from "../../config/logging.js";

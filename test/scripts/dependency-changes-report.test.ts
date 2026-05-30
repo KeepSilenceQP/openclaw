@@ -1,4 +1,3 @@
-// Tests test/scripts dependency changes report test behavior.
 import { describe, expect, it } from "vitest";
 import {
   createDependencyChangesReport,

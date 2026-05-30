@@ -1,4 +1,3 @@
-// Tests media file context test behavior.
 import { describe, expect, it } from "vitest";
 import { renderFileContextBlock } from "./file-context.js";
 

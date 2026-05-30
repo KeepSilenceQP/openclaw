@@ -1,4 +1,3 @@
-// Locale registry and lazy translation loading for the web UI.
 import type { Locale, TranslationMap } from "./types.ts";
 
 type LazyLocale = Exclude<Locale, "en">;

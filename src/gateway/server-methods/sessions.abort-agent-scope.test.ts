@@ -1,4 +1,3 @@
-// Tests gateway/server-methods sessions abort agent scope test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { GatewayRequestContext, RespondFn } from "./types.js";
 

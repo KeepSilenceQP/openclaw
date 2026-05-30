@@ -1,4 +1,3 @@
-// Image-generation runtime orchestration, provider fallback, and override normalization.
 import { describeFailoverError, isFailoverError } from "../agents/failover-error.js";
 import type { FallbackAttempt } from "../agents/model-fallback.types.js";
 import { resolveAgentModelTimeoutMsValue } from "../config/model-input.js";
@@ -29,7 +28,6 @@ export type ImageGenerationRuntimeDeps = {
   log?: Pick<typeof log, "warn">;
 };
 
-/** Public runtime request/result types. */
 export type { GenerateImageParams, GenerateImageRuntimeResult } from "./runtime-types.js";
 
 function buildNoImageGenerationModelConfiguredMessage(

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src channel account paths test behavior.
 import { PAIRING_APPROVED_MESSAGE } from "openclaw/plugin-sdk/channel-status";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { createMatrixPairingText, createMatrixProbeAccount } from "./channel-account-paths.js";

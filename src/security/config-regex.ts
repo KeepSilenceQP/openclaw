@@ -1,4 +1,3 @@
-// Security-audit helpers for compiling operator-provided regex config safely.
 import {
   compileSafeRegexDetailed,
   type SafeRegexCompileResult,

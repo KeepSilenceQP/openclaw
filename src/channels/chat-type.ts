@@ -1,4 +1,3 @@
-// Chat type normalization shared by channel routing and reply policy.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
 /** Normalized chat surface kind. */

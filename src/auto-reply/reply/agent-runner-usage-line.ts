@@ -1,4 +1,3 @@
-// Usage line formatting for reply agent run summaries.
 import {
   estimateUsageCost,
   formatTokenCount,

@@ -1,4 +1,3 @@
-// Secure Markdown memory-file reader for workspace and configured extra paths.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

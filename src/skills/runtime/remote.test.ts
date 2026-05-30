@@ -1,4 +1,3 @@
-// Tests infra skills remote test behavior.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";

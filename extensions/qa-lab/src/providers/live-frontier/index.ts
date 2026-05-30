@@ -1,4 +1,3 @@
-// QA Lab live-frontier provider definition configures real model-provider lanes.
 import type { QaProviderDefinition } from "../shared/types.js";
 
 function isOpenAiModel(modelRef: string) {

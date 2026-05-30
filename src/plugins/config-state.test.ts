@@ -1,4 +1,3 @@
-// Tests plugins config state test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   createPluginActivationSource,

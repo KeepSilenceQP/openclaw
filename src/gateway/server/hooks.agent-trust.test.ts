@@ -1,4 +1,3 @@
-// Tests gateway/server hooks agent trust test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const enqueueSystemEventMock = vi.fn();

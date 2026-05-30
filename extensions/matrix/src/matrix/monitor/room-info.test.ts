@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor room info test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { MatrixClient } from "../sdk.js";
 import { createMatrixRoomInfoResolver } from "./room-info.js";

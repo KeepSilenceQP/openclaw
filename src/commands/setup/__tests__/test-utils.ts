@@ -1,4 +1,3 @@
-// Shared setup-command test factories for runtimes and wizard prompters.
 import { vi } from "vitest";
 import type { RuntimeEnv } from "../../../runtime.js";
 import type { WizardPrompter } from "../../../wizard/prompts.js";

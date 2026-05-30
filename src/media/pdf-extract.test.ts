@@ -1,4 +1,3 @@
-// Tests media pdf extract test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { extractDocumentContentMock } = vi.hoisted(() => ({

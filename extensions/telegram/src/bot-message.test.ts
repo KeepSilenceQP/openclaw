@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot message test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { TelegramBotDeps } from "./bot-deps.js";
 

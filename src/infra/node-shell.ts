@@ -1,4 +1,3 @@
-// Builds the platform shell command used by Node process launches.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** Returns Windows or POSIX shell argv for executing one command string. */

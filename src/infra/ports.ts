@@ -1,5 +1,4 @@
 // Public port availability and diagnostics facade.
-// Wraps low-level probes with user-facing errors and re-exports port inspection helpers.
 import { danger, info, shouldLogVerbose, warn } from "../globals.js";
 import { logDebug } from "../logger.js";
 import type { RuntimeEnv } from "../runtime.js";
@@ -96,9 +95,7 @@ export async function handlePortError(
   throw new Error("unreachable");
 }
 
-/** Error type used when an expected listener port is already occupied. */
 export { PortInUseError };
-/** Port diagnostics types shared by CLI and gateway startup checks. */
 export type {
   PortConnection,
   PortConnections,
@@ -107,7 +104,6 @@ export type {
   PortUsage,
   PortUsageStatus,
 };
-/** Port formatting/classification helpers for listener diagnostics. */
 export {
   buildPortHints,
   classifyPortListener,
@@ -116,5 +112,4 @@ export {
   isExpectedGatewayListeners,
   isSingleExpectedGatewayListener,
 } from "./ports-format.js";
-/** Low-level port inspection helpers. */
 export { inspectPortConnections, inspectPortUsage } from "./ports-inspect.js";

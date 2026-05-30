@@ -1,4 +1,3 @@
-// Vitest project config for Browser plugin tests.
 import { browserExtensionTestRoots } from "./vitest.extension-browser-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

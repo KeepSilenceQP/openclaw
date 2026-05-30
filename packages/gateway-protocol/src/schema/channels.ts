@@ -1,4 +1,3 @@
-// Gateway protocol schemas for Talk realtime sessions and channel lifecycle/status APIs.
 import { Type } from "typebox";
 import { NonEmptyString, SecretInputSchema } from "./primitives.js";
 

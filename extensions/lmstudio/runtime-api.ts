@@ -1,4 +1,3 @@
-/** Re-exported lmstudio plugin public API. */
 export {
   LMSTUDIO_DEFAULT_API_KEY_ENV_VAR,
   LMSTUDIO_DEFAULT_BASE_URL,
@@ -11,13 +10,11 @@ export {
   LMSTUDIO_PROVIDER_ID,
   LMSTUDIO_PROVIDER_LABEL,
 } from "./src/defaults.js";
-/** Re-exported lmstudio plugin public API. */
 export {
   discoverLmstudioModels,
   ensureLmstudioModelLoaded,
   fetchLmstudioModels,
 } from "./src/models.fetch.js";
-/** Re-exported lmstudio plugin public API. */
 export {
   mapLmstudioWireEntry,
   mapLmstudioWireModelsToConfig,
@@ -29,7 +26,6 @@ export {
   type LmstudioModelBase,
   type LmstudioModelWire,
 } from "./src/models.js";
-/** Re-exported lmstudio plugin public API. */
 export {
   buildLmstudioAuthHeaders,
   resolveLmstudioConfiguredApiKey,

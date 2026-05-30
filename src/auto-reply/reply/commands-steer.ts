@@ -1,4 +1,3 @@
-// Chat command handler for steering active sessions.
 import {
   resolveInternalSessionKey,
   resolveMainSessionAlias,

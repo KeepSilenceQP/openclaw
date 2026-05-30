@@ -1,4 +1,3 @@
-// Runtime access-group expansion for channel ingress allowlists.
 import { normalizeStringEntries, uniqueStrings } from "../../shared/string-normalization.js";
 import { parseAccessGroupAllowFromEntry } from "../allow-from.js";
 import type { ChannelIngressAdapter, ResolveChannelMessageIngressParams } from "./runtime-types.js";

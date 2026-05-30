@@ -1,4 +1,3 @@
-// Tests test extension test boundary test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { BUNDLED_PLUGIN_PATH_PREFIX } from "openclaw/plugin-sdk/test-fixtures";

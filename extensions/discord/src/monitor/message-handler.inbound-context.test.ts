@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor message handler inbound context test behavior.
 import { expectChannelInboundContextContract as expectInboundContextContract } from "openclaw/plugin-sdk/channel-contract-testing";
 import { finalizeInboundContext } from "openclaw/plugin-sdk/reply-dispatch-runtime";
 import { describe, expect, it } from "vitest";

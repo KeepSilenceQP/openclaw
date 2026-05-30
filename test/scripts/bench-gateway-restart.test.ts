@@ -1,4 +1,3 @@
-// Tests test/scripts bench gateway restart test behavior.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import { createServer } from "node:http";

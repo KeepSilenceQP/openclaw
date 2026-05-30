@@ -1,4 +1,3 @@
-// Gateway payload/result contracts for node-host invoke requests.
 import type { SkillBinTrustEntry, SystemRunApprovalPlan } from "../infra/exec-approvals.js";
 
 /** Input payload for the node-host SYSTEM_RUN command. */

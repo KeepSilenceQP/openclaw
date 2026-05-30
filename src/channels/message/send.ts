@@ -1,4 +1,3 @@
-// Durable message sending through outbound delivery with receipts and recovery state.
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import { formatErrorMessage } from "../../infra/errors.js";
 import type { OutboundDeliveryResult } from "../../infra/outbound/deliver-types.js";

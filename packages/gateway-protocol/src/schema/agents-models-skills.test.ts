@@ -1,4 +1,3 @@
-// Tests packages/gateway-protocol/src/schema agents models skills test behavior.
 import { Value } from "typebox/value";
 import { describe, expect, it } from "vitest";
 import {

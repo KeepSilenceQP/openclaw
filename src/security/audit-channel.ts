@@ -1,4 +1,3 @@
-// Channel-account security audit checks for configured channel plugins.
 import {
   hasConfiguredUnavailableCredentialStatus,
   hasResolvedCredentialValue,

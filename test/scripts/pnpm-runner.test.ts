@@ -1,4 +1,3 @@
-// Tests test/scripts pnpm runner test behavior.
 import { chmodSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";

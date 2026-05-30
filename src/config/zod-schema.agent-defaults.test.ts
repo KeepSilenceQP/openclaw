@@ -1,4 +1,3 @@
-// Tests config zod schema agent defaults test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObject } from "./validation.js";
 import { AgentDefaultsSchema } from "./zod-schema.agent-defaults.js";

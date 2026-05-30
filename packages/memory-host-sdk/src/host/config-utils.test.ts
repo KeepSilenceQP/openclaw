@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host config utils test behavior.
 import { describe, expect, it } from "vitest";
 import { parseDurationMs } from "./config-utils.js";
 

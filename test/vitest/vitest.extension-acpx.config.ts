@@ -1,4 +1,3 @@
-// Vitest project config for ACPx plugin tests.
 import { acpxExtensionTestRoots } from "./vitest.extension-acpx-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

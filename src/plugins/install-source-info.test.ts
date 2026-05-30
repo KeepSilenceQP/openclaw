@@ -1,4 +1,3 @@
-// Tests plugins install source info test behavior.
 import { describe, expect, it } from "vitest";
 import { describePluginInstallSource } from "./install-source-info.js";
 

@@ -1,4 +1,3 @@
-// Gateway protocol schemas for listing, inspecting, and downloading run artifacts.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

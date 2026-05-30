@@ -1,4 +1,3 @@
-// Tests config/sessions store session key normalization test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";

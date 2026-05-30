@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager embedding cache test behavior.
 import {
   ensureMemoryIndexSchema,
   requireNodeSqlite,

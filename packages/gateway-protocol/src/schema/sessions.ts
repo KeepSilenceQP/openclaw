@@ -1,4 +1,3 @@
-// TypeBox schemas for session lifecycle, messaging, patching, compaction, and usage RPCs.
 import { Type } from "typebox";
 import { PluginJsonValueSchema } from "./plugins.js";
 import { NonEmptyString, SessionLabelString } from "./primitives.js";

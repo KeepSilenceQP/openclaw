@@ -1,4 +1,3 @@
-// Send policy directive parsing for reply delivery behavior.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { normalizeCommandBody } from "./commands-registry.js";
 import { stripInboundMetadata } from "./reply/strip-inbound-meta.js";

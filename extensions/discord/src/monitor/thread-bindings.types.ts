@@ -1,4 +1,3 @@
-// Shared types for extensions/discord/src/monitor thread bindings types behavior.
 export type ThreadBindingTargetKind = "subagent" | "acp";
 
 export type ThreadBindingRecord = {

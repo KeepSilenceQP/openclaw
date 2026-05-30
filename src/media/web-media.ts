@@ -1,4 +1,3 @@
-// Loads local/remote media for model input, enforcing access policy, byte caps, MIME detection, and image optimization.
 import { lstat, realpath } from "node:fs/promises";
 import path from "node:path";
 import { logVerbose, shouldLogVerbose } from "../globals.js";
@@ -34,9 +33,7 @@ import {
   normalizeMimeType,
 } from "./mime.js";
 
-/** Re-export local media access helpers used by legacy media callers. */
 export { getDefaultLocalRoots, LocalMediaAccessError };
-/** Re-export local media access denial code type. */
 export type { LocalMediaAccessErrorCode };
 
 /** Loaded media bytes plus detected kind/content metadata. */
@@ -1123,5 +1120,4 @@ export async function optimizeImageToJpeg(
   };
 }
 
-/** Re-export PNG optimizer from the media service runtime. */
 export { optimizeImageToPng } from "./media-services.js";

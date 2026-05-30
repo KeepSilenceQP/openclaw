@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager vector warning test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { logMemoryVectorDegradedWrite } from "./manager-vector-warning.js";
 

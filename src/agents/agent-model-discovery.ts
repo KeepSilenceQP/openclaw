@@ -22,7 +22,6 @@ import {
   type ModelRegistry as AgentModelRegistry,
 } from "./sessions/index.js";
 
-/** Session-layer auth and model registry classes exposed for discovery callers. */
 export { AuthStorage, ModelRegistry };
 
 type ProviderRuntimeModelLike = Model & {
@@ -174,7 +173,6 @@ export function discoverModels(
   );
 }
 
-/** Auth discovery helpers shared by model registry creation and setup flows. */
 export {
   addEnvBackedAgentCredentials,
   resolveAgentCredentialsForDiscovery,

@@ -1,4 +1,3 @@
-// Helpers for reading, writing, and projecting install records through the plugin index.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { PluginInstallRecord } from "../config/types.plugins.js";
 import {
@@ -16,7 +15,6 @@ import {
 import { type RefreshInstalledPluginIndexParams } from "./installed-plugin-index.js";
 import { recordPluginInstall, type PluginInstallUpdate } from "./installs.js";
 
-/** Install-record readers and cache reset shared by plugin setup and discovery paths. */
 export {
   clearLoadInstalledPluginIndexInstallRecordsCache,
   loadInstalledPluginIndexInstallRecords,

@@ -1,4 +1,3 @@
-// Plugin tool descriptor cache keyed by plugin source, context, and config.
 import fs from "node:fs";
 import type { AnyAgentTool } from "../agents/tools/common.js";
 import { resolveRuntimeConfigCacheKey } from "../config/runtime-snapshot.js";

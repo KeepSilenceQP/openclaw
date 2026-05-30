@@ -1,4 +1,3 @@
-// ACP target resolution helpers.
 import { callGateway } from "../../../gateway/call.js";
 import { normalizeOptionalString } from "../../../shared/string-coerce.js";
 import { resolveEffectiveResetTargetSessionKey } from "../acp-reset-target.js";

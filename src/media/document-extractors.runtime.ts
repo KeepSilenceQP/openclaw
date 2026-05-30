@@ -1,4 +1,3 @@
-// Runtime boundary for plugin-provided document extractors used by media loading.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {
   DocumentExtractionRequest,

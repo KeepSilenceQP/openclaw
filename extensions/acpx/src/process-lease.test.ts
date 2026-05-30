@@ -1,4 +1,3 @@
-// Tests extensions/acpx/src process lease test behavior.
 import { mkdtemp, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";

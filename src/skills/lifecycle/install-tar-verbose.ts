@@ -1,4 +1,3 @@
-// Parser for verbose `tar` listing output used to audit uploaded skill archives.
 import { normalizeStringEntries } from "../../shared/string-normalization.js";
 
 const TAR_VERBOSE_MONTHS = new Set([

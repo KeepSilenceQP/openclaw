@@ -1,5 +1,4 @@
 // Diagnostic stability recorder: keeps a bounded, payload-free event ring for
-// health snapshots and support bundles.
 import {
   onDiagnosticEvent,
   type DiagnosticEventPayload,

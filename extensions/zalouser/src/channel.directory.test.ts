@@ -1,4 +1,3 @@
-// Tests extensions/zalouser/src channel directory test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import "./accounts.test-mocks.js";
 import { listZalouserDirectoryGroupMembers } from "./directory.js";

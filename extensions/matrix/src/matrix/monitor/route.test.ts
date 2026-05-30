@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor route test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { matrixPlugin } from "../../channel.js";
 import {

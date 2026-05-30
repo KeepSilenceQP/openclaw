@@ -1,4 +1,3 @@
-// QA Lab capture saved-view helpers sanitize persisted capture filter/view presets.
 import type { CaptureSavedView } from "./ui-render.js";
 
 const MAX_SAVED_VIEWS = 12;

@@ -1,4 +1,3 @@
-// Enforces local media path allowlists before files are loaded for model input.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { assertNoWindowsNetworkPath } from "../infra/local-file-access.js";

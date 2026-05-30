@@ -1,4 +1,3 @@
-// Tests extensions/twitch/src config test behavior.
 import { describe, expect, it } from "vitest";
 import {
   getAccountConfig,

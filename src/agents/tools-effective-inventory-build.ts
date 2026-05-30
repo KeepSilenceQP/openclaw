@@ -196,5 +196,4 @@ export function buildRuntimeCompatibleToolInventory(params: {
   };
 }
 
-/** Group effective tool inventory entries for UI/API consumers. */
 export { buildEffectiveToolInventoryGroups };

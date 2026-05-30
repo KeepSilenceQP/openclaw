@@ -1,5 +1,4 @@
 // Session display-name helpers. They parse stored session keys into readable
-// names while preserving explicit labels from session rows when available.
 import { normalizeLowercaseStringOrEmpty, normalizeOptionalString } from "./string-coerce.ts";
 import type { SessionsListResult } from "./types.ts";
 

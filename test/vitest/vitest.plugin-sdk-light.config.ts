@@ -1,4 +1,3 @@
-// Vitest project config for lightweight Plugin SDK tests.
 import { pluginSdkLightTestFiles } from "./vitest.plugin-sdk-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 import { getUnitFastTestFiles } from "./vitest.unit-fast-paths.mjs";

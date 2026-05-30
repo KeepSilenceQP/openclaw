@@ -1,5 +1,4 @@
 // MIME detection and extension helpers for downloaded, generated, and host-local
-// media attachments.
 import path from "node:path";
 import { createLazyImportLoader } from "../shared/lazy-promise.js";
 import { type MediaKind, mediaKindFromMime } from "./constants.js";

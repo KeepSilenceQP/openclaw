@@ -1,4 +1,3 @@
-// Tests gateway server silent scope upgrade reconnect poc test behavior.
 import { describe, expect, test, vi } from "vitest";
 import { WebSocket } from "ws";
 import {

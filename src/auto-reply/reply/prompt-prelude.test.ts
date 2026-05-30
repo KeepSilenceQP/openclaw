@@ -1,4 +1,3 @@
-// Coverage for reply prompt prelude construction.
 import { describe, expect, it } from "vitest";
 import { finalizeInboundContext } from "./inbound-context.js";
 import { buildReplyPromptEnvelope } from "./prompt-prelude.js";

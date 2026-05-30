@@ -1,4 +1,3 @@
-// Tests infra device pairing churn test behavior.
 import { afterAll, beforeAll, describe, expect, test } from "vitest";
 import { normalizeDeviceAuthScopes } from "../shared/device-auth.js";
 import { createSuiteTempRootTracker } from "../test-helpers/temp-dir.js";

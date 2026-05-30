@@ -1,4 +1,3 @@
-// Validates cron jobs, computes schedule state, and applies job mutations.
 import crypto from "node:crypto";
 import { normalizeAgentId } from "../../routing/session-key.js";
 import {

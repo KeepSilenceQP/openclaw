@@ -1,4 +1,3 @@
-// Scope rule evaluation for enabling or denying media-understanding per message.
 import { normalizeChatType } from "../channels/chat-type.js";
 import type { MediaUnderstandingScopeConfig } from "../config/types.tools.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";

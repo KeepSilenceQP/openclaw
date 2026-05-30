@@ -1,4 +1,3 @@
-// Tests test/scripts config reload log scanner test behavior.
 import { appendFileSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";

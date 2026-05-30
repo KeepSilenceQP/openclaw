@@ -1,4 +1,3 @@
-// Assertions for preventing filesystem scan regressions in hot paths.
 import fs from "node:fs";
 import { expect, vi } from "vitest";
 import { spawnNodeEvalSync } from "./node-process.js";

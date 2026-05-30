@@ -1,5 +1,4 @@
 // Message-action parameter normalization and attachment hydration.
-// Converts CLI/tool media hints into sandbox-safe, size-checked payload fields.
 import { assertMediaNotDataUrl, resolveSandboxedMediaSource } from "../../agents/sandbox-paths.js";
 import { readStringParam } from "../../agents/tools/common.js";
 import { resolveChannelMessageToolMediaSourceParamKeys } from "../../channels/plugins/message-action-discovery.js";

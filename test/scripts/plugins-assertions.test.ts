@@ -1,4 +1,3 @@
-// Tests test/scripts plugins assertions test behavior.
 import { spawn, spawnSync } from "node:child_process";
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";

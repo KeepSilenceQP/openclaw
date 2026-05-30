@@ -1,4 +1,3 @@
-// Plugin npm release helpers select publishable packages, validate metadata, and build plans.
 import { execFileSync } from "node:child_process";
 import { mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";

@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src run config test behavior.
 import path from "node:path";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

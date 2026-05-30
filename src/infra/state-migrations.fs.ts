@@ -1,5 +1,4 @@
 // Filesystem helpers shared by state migration scripts.
-// They prefer best-effort reads/checks so migrations can skip missing legacy state.
 import fs from "node:fs";
 import JSON5 from "json5";
 

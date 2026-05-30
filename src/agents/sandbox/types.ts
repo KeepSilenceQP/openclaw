@@ -2,7 +2,6 @@ import type { SandboxBackendHandle, SandboxBackendId } from "./backend-handle.ty
 import type { SandboxFsBridge } from "./fs-bridge.types.js";
 import type { SandboxDockerConfig } from "./types.docker.js";
 
-/** Docker-specific sandbox configuration re-exported with core sandbox types. */
 export type { SandboxDockerConfig } from "./types.docker.js";
 
 /** Allow/deny lists controlling which tools may run inside a sandbox. */

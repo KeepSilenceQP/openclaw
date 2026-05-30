@@ -1,4 +1,3 @@
-// Compiler from config binding declarations to runtime binding records.
 import { listConfiguredBindings } from "../../config/bindings.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { pickFirstExistingAgentId } from "../../routing/resolve-route.js";

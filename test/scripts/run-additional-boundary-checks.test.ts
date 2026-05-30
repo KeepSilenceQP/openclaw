@@ -1,4 +1,3 @@
-// Tests test/scripts run additional boundary checks test behavior.
 import { describe, expect, it } from "vitest";
 import {
   BOUNDARY_CHECKS,

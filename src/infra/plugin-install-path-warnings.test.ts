@@ -1,4 +1,3 @@
-// Tests infra plugin install path warnings test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { withTempHome } from "openclaw/plugin-sdk/test-env";

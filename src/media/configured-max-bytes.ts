@@ -1,4 +1,3 @@
-// Config-driven media size ceilings layered over the built-in defaults.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { maxBytesForKind, type MediaKind } from "./constants.js";
 

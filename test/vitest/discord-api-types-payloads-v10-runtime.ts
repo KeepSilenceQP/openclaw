@@ -1,4 +1,3 @@
-// Discord payload API runtime facade exposes CJS enum constants to ESM tests.
 import { createRequire } from "node:module";
 import type * as DiscordPayloadApiTypes from "discord-api-types/payloads/v10";
 

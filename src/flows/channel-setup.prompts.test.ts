@@ -1,4 +1,3 @@
-// Tests flows channel setup prompts test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ChannelSetupDmPolicy } from "../commands/channel-setup/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

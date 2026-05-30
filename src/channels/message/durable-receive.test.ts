@@ -1,4 +1,3 @@
-// Coverage for durable inbound receive journal behavior.
 import { describe, expect, it } from "vitest";
 import type {
   PluginStateEntry,

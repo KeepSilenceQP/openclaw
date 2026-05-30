@@ -1,4 +1,3 @@
-// Tests extensions/google speech provider test behavior.
 import {
   getProviderHttpMocks,
   installProviderHttpMockCleanup,

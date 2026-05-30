@@ -1,4 +1,3 @@
-// Tests ui/src/ui external link test behavior.
 import { describe, expect, it } from "vitest";
 import { buildExternalLinkRel } from "./external-link.ts";
 

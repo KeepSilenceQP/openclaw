@@ -1,4 +1,3 @@
-// Configured binding provider registry.
 import { ensureConfiguredBindingBuiltinsRegistered } from "./configured-binding-builtins.js";
 import {
   primeConfiguredBindingRegistry as primeConfiguredBindingRegistryRaw,

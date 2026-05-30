@@ -1,4 +1,3 @@
-// QA Lab auth-store helpers write fixture auth profiles into isolated agent state.
 import fs from "node:fs/promises";
 import path from "node:path";
 

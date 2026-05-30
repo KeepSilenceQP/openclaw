@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/actions limits test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMatrixActionLimit } from "./limits.js";
 

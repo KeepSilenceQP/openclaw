@@ -1,4 +1,3 @@
-// Tests utils utils misc test behavior.
 import { describe, expect, it } from "vitest";
 import { asBoolean, parseBooleanValue } from "./boolean.js";
 import { splitShellArgs } from "./shell-argv.js";

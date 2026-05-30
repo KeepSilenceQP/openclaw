@@ -1,4 +1,3 @@
-// QA Lab confidence report helpers classify lane artifacts into release gate verdicts.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";

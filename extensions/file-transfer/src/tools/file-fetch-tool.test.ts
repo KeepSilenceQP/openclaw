@@ -1,4 +1,3 @@
-// Tests extensions/file-transfer/src/tools file fetch tool test behavior.
 import crypto from "node:crypto";
 import {
   callGatewayTool,

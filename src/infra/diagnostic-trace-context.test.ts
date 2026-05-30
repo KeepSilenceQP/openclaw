@@ -1,4 +1,3 @@
-// Tests infra diagnostic trace context test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import {
   createChildDiagnosticTraceContext,

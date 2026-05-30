@@ -1,4 +1,3 @@
-// Thinking-level label helpers for session/model override controls.
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";
 import { normalizeThinkLevel } from "./thinking.ts";
 

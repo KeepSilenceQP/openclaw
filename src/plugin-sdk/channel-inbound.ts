@@ -1,4 +1,3 @@
-// Shared inbound parsing helpers for channel plugins.
 import {
   buildChannelInboundEventContext,
   finalizeChannelInboundContext,
@@ -15,12 +14,10 @@ import {
 } from "../channels/inbound-event/context.js";
 import type { InboundEventKind } from "../channels/inbound-event/kind.js";
 
-/** Inbound text debounce helpers shared by channel plugin listeners. */
 export {
   createInboundDebouncer,
   resolveInboundDebounceMs,
 } from "../auto-reply/inbound-debounce.js";
-/** Direct-DM access guards and dispatch helpers for pre-crypto admission paths. */
 export {
   createDirectDmPreCryptoGuardPolicy,
   createPreCryptoDirectDmAuthorizer,
@@ -32,27 +29,22 @@ export {
   type DirectDmPreCryptoGuardPolicyOverrides,
   type ResolvedInboundDirectDmAccess,
 } from "../channels/direct-dm.js";
-/** Envelope formatting helpers for channel-delivered inbound messages. */
 export {
   formatInboundEnvelope,
   formatInboundFromLabel,
   resolveEnvelopeFormatOptions,
 } from "../auto-reply/envelope.js";
-/** Options controlling how inbound channel envelopes are rendered. */
 export type { EnvelopeFormatOptions } from "../auto-reply/envelope.js";
-/** Mention normalization and matching helpers for channel plugins. */
 export {
   buildMentionRegexes,
   matchesMentionPatterns,
   matchesMentionWithExplicit,
   normalizeMentionText,
 } from "../auto-reply/reply/mentions.js";
-/** Channel-level inbound debounce policy helpers. */
 export {
   createChannelInboundDebouncer,
   shouldDebounceTextInbound,
 } from "../channels/inbound-debounce-policy.js";
-/** Mention-gating facts, policies, and result contracts for inbound events. */
 export type {
   InboundMentionFacts,
   InboundMentionPolicy,
@@ -66,7 +58,6 @@ export type {
   ResolveInboundMentionDecisionNestedParams,
   ResolveInboundMentionDecisionParams,
 } from "../channels/mention-gating.js";
-/** Mention-gating decision helpers plus deprecated compatibility wrappers. */
 export {
   implicitMentionKindWhen,
   resolveInboundMentionDecision,
@@ -75,24 +66,16 @@ export {
   // @deprecated Prefer `resolveInboundMentionDecision({ facts, policy })`.
   resolveMentionGatingWithBypass,
 } from "../channels/mention-gating.js";
-/** Normalized location contracts used by inbound message context. */
 export type { LocationSource, NormalizedLocation } from "../channels/location.js";
-/** Location formatting helpers for inbound supplemental context. */
 export { formatLocationText, toLocationContext } from "../channels/location.js";
-/** Logger callback contract used by channel helper APIs. */
 export type { LogFn } from "../channels/logging.js";
-/** Structured logging helper for dropped inbound events. */
 export { logInboundDrop } from "../channels/logging.js";
-/** Resolves session envelope facts used when routing inbound replies. */
 export { resolveInboundSessionEnvelopeContext } from "../channels/session-envelope.js";
-/** Inbound event classification helpers for group and direct-message routing. */
 export {
   classifyChannelInboundEvent,
   resolveUnmentionedGroupInboundPolicy,
 } from "../channels/inbound-event/classification.js";
-/** Parameter contract for inbound event classification. */
 export type { ClassifyChannelInboundEventParams } from "../channels/inbound-event/classification.js";
-/** Context assembly helpers for inbound channel event execution. */
 export {
   buildChannelInboundEventContext,
   // @deprecated Prefer `buildChannelInboundEventContext`.
@@ -102,7 +85,6 @@ export {
   // @deprecated Prefer `buildChannelInboundEventContext({ resolveSupplementalMedia: true })`.
   resolveChannelInboundSupplementalContext,
 };
-/** Context assembly parameter/result contracts for inbound channel events. */
 export type {
   BuildChannelInboundEventContextAsyncParams,
   BuildChannelInboundEventContextParams,
@@ -146,7 +128,6 @@ export function buildChannelTurnContext(
 
 /** @deprecated Use `filterChannelInboundSupplementalContext`. */
 export const filterChannelTurnSupplementalContext = filterChannelInboundSupplementalContext;
-/** Reply execution, dispatch, history, and loop-protection helpers for inbound events. */
 export {
   runChannelInboundEvent,
   runPreparedInboundReply,
@@ -158,7 +139,6 @@ export {
   recordChannelBotPairLoopAndCheckSuppression,
   resolveInboundReplyDispatchCounts,
 } from "../channels/message/inbound-reply-dispatch.js";
-/** Inbound reply dispatch and bot-loop contracts for channel plugins. */
 export type {
   AssembledInboundReply,
   ChannelBotLoopProtectionFacts,
@@ -169,7 +149,6 @@ export type {
   InboundReplyRecordOptions,
 } from "../channels/message/inbound-reply-dispatch.js";
 
-/** Media normalization helpers for inbound channel event payloads. */
 export {
   toHistoryMediaEntries,
   toInboundMediaFacts,
@@ -177,24 +156,19 @@ export {
   // @deprecated Prefer `buildChannelInboundMediaPayload`.
   buildChannelInboundMediaPayload as buildChannelTurnMediaPayload,
 } from "../channels/inbound-event/media.js";
-/** Media input and payload contracts for inbound channel events. */
 export type {
   ChannelInboundMediaInput,
   ChannelInboundMediaInput as ChannelTurnMediaInput,
   ChannelInboundMediaPayload,
   ChannelInboundMediaPayload as ChannelTurnMediaPayload,
 } from "../channels/inbound-event/media.js";
-/** Shared inbound command, media, and supplemental context fact contracts. */
 export type {
   CommandFacts,
   InboundMediaFacts,
   SupplementalContextFacts,
 } from "../channels/turn/types.js";
-/** Canonical inbound event kind used by channel turn classification. */
 export type { InboundEventKind } from "../channels/inbound-event/kind.js";
-/** Deprecated alias retained for older channel turn helpers. */
 export type { InboundEventKind as InboundTurnKind } from "../channels/inbound-event/kind.js";
-/** Text/native command turn detection helpers for inbound channel messages. */
 export {
   createCommandTurnContext,
   isAuthorizedTextSlashCommandTurn,
@@ -202,7 +176,5 @@ export {
   isNativeCommandTurn,
   isTextSlashCommandTurn,
 } from "../auto-reply/command-turn-context.js";
-/** Command turn context shape passed to command authorization helpers. */
 export type { CommandTurnContext } from "../auto-reply/command-turn-context.js";
-/** Merges trusted filesystem roots for inbound media path policy. */
 export { mergeInboundPathRoots } from "../media/inbound-path-policy.js";

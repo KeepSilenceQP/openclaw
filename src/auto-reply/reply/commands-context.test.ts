@@ -1,4 +1,3 @@
-// Coverage for context command parsing and output.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import { buildCommandContext } from "./commands-context.js";

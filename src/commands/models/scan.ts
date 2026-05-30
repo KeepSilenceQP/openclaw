@@ -1,4 +1,3 @@
-// Scans OpenRouter model metadata/probes and optionally imports selected models into config.
 import { cancel, multiselect as clackMultiselect, isCancel } from "@clack/prompts";
 import {
   stylePromptHint,

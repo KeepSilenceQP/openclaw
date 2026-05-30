@@ -1,4 +1,3 @@
-// Tests gateway control ui http test behavior.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import type { IncomingMessage } from "node:http";

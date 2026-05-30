@@ -1,4 +1,3 @@
-// Tests source-plan selection for `models list` fast paths and fallbacks.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({

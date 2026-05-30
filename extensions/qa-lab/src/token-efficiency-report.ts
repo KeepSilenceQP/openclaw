@@ -1,4 +1,3 @@
-// Token efficiency reporting compares OpenClaw and Codex runtime usage from QA parity runs.
 import type { RuntimeId, RuntimeParityCell, RuntimeParityResult } from "./runtime-parity.js";
 
 /** Normalized token/tool usage for one runtime in a QA scenario. */

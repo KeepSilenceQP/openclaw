@@ -1,4 +1,3 @@
-// Relaunches the Windows gateway by handing off to its scheduled task.
 import { spawn } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import fs from "node:fs";

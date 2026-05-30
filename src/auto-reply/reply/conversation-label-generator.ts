@@ -1,4 +1,3 @@
-// Conversation label generation for unlabeled reply sessions.
 import { resolveModelAsync } from "../../agents/embedded-agent-runner/model.js";
 import { requireApiKey } from "../../agents/model-auth.js";
 import { resolveDefaultModelForAgent } from "../../agents/model-selection.js";

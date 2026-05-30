@@ -1,4 +1,3 @@
-// Gateway protocol schemas for paired node presence, pairing, invocation, and pending work.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

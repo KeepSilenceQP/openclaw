@@ -1,12 +1,9 @@
-/** Re-exported mistral plugin public API, starting with build Mistral Provider. */
 export { buildMistralProvider } from "./provider-catalog.js";
-/** Re-exported mistral plugin public API. */
 export {
   buildMistralModelDefinition,
   MISTRAL_BASE_URL,
   MISTRAL_DEFAULT_MODEL_ID,
 } from "./model-definitions.js";
-/** Re-exported mistral plugin public API. */
 export {
   applyMistralConfig,
   applyMistralProviderConfig,
@@ -15,7 +12,6 @@ export {
 
 const MISTRAL_MAX_TOKENS_FIELD = "max_tokens";
 
-/** Public mistral plugin constant for MISTRAL MODEL TRANSPORT PATCH behavior. */
 export const MISTRAL_MODEL_TRANSPORT_PATCH = {
   supportsStore: false,
   maxTokensField: MISTRAL_MAX_TOKENS_FIELD,
@@ -35,12 +31,9 @@ const MISTRAL_SMALL_LATEST_REASONING_EFFORT_MAP: Record<string, string> = {
   max: "high",
 };
 
-/** Public mistral plugin constant for MISTRAL SMALL LATEST ID behavior. */
 export const MISTRAL_SMALL_LATEST_ID = "mistral-small-latest";
-/** Public mistral plugin constant for MISTRAL MEDIUM 3 5 ID behavior. */
 export const MISTRAL_MEDIUM_3_5_ID = "mistral-medium-3-5";
 
-/** Public mistral plugin helper for resolve Mistral Compat Patch behavior. */
 export function resolveMistralCompatPatch(model: { id?: string }): {
   supportsStore: boolean;
   supportsReasoningEffort: boolean;
@@ -69,7 +62,6 @@ function compatMatchesResolved(
   );
 }
 
-/** Public mistral plugin helper for apply Mistral Model Compat behavior. */
 export function applyMistralModelCompat<T extends { compat?: unknown; id?: string }>(model: T): T {
   const compat =
     model.compat && typeof model.compat === "object"

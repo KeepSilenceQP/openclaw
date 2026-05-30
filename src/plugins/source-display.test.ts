@@ -1,4 +1,3 @@
-// Tests plugins source display test behavior.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { withPathResolutionEnv } from "../test-utils/env.js";

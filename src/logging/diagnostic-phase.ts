@@ -1,4 +1,3 @@
-// Diagnostic phase timing helpers with recent in-memory snapshots and optional event emission.
 import { performance } from "node:perf_hooks";
 import {
   areDiagnosticsEnabledForProcess,

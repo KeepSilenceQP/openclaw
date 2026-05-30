@@ -1,4 +1,3 @@
-// Tests talk agent run control test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   classifyRealtimeVoiceAgentControlText,

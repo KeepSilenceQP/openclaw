@@ -1,4 +1,3 @@
-// Tests mcp channel server shutdown unhandled rejection test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const transportState = vi.hoisted(() => ({

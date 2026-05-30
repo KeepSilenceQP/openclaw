@@ -1,4 +1,3 @@
-// Coverage for channel plugin module loading.
 import fs from "node:fs";
 import { createRequire } from "node:module";
 import os from "node:os";

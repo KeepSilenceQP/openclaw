@@ -1,4 +1,3 @@
-// Tests config/sessions cache fields test behavior.
 import { describe, expect, it } from "vitest";
 import type { SessionEntry } from "./types.js";
 import { mergeSessionEntry } from "./types.js";

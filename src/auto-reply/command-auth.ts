@@ -1,4 +1,3 @@
-// Command authorization resolution across native commands, text commands, and owners.
 import {
   getLoadedChannelPluginById,
   listLoadedChannelPlugins,

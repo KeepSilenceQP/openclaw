@@ -1,4 +1,3 @@
-// Tests extensions/xai/src tool auth shared test behavior.
 import { NON_ENV_SECRETREF_MARKER } from "openclaw/plugin-sdk/provider-auth-runtime";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {

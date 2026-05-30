@@ -1,4 +1,3 @@
-// QA Lab mock provider definitions describe embedded provider modes for suite runs.
 import { createMockProviderMap } from "./mock-model-config.js";
 import type { QaProviderDefinition, QaProviderMode } from "./types.js";
 

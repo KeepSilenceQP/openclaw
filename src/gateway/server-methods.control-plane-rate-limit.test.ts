@@ -1,4 +1,3 @@
-// Tests gateway server methods control plane rate limit test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { isRetryableGatewayStartupUnavailableError } from "../../packages/gateway-protocol/src/startup-unavailable.js";
 import {

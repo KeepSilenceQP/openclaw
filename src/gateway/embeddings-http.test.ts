@@ -1,4 +1,3 @@
-// Tests gateway embeddings http test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";

@@ -1,4 +1,3 @@
-// Tests infra system run approval context test behavior.
 import { describe, expect, test } from "vitest";
 import {
   parsePreparedSystemRunPayload,

@@ -1,4 +1,3 @@
-// Runtime bridge from realtime voice consult calls into embedded OpenClaw agent runs.
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import type { RunEmbeddedAgentParams } from "../agents/embedded-agent-runner/run/params.js";
@@ -28,7 +27,6 @@ export type RealtimeVoiceAgentConsultRuntime = PluginRuntimeCore["agent"];
 export type RealtimeVoiceAgentConsultResult = { text: string };
 /** Whether consults use an isolated session or fork context from the caller session. */
 export type RealtimeVoiceAgentConsultContextMode = "isolated" | "fork";
-/** Consult tool policy helpers re-exported for provider/session setup. */
 export {
   resolveRealtimeVoiceAgentConsultTools,
   resolveRealtimeVoiceAgentConsultToolsAllow,

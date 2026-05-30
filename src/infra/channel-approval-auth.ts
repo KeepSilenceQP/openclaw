@@ -1,4 +1,3 @@
-// Resolves whether a channel actor can approve exec or plugin requests.
 import { getChannelPlugin, resolveChannelApprovalCapability } from "../channels/plugins/index.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { isImplicitSameChatApprovalAuthorization } from "../plugin-sdk/approval-auth-helpers.js";

@@ -1,5 +1,4 @@
 // SCP host/path safety checks for remote copy commands.
-// Inputs are restricted to simple ssh tokens and absolute paths to avoid shell injection.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 const SSH_TOKEN = /^[A-Za-z0-9._-]+$/;

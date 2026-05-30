@@ -1,4 +1,3 @@
-// Tests infra clipboard test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const runCommandWithTimeoutMock = vi.hoisted(() => vi.fn());

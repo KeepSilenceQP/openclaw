@@ -1,9 +1,7 @@
 // Plugin runtime public types. Native plugins receive this trusted in-process
-// surface for subagent runs, remote node invocation, logging, core, and channel APIs.
 import type { PluginRuntimeChannel } from "./types-channel.js";
 import type { PluginRuntimeCore, RuntimeLogger } from "./types-core.js";
 
-/** Logger contract re-exported with the plugin runtime surface. */
 export type { RuntimeLogger };
 
 // ── Subagent runtime types ──────────────────────────────────────────

@@ -1,4 +1,3 @@
-// Tests video-generation provider registry test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { VideoGenerationProviderPlugin } from "../plugins/types.js";
 

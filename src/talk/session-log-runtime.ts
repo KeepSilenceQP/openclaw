@@ -1,4 +1,3 @@
-// Bounded realtime voice session logs used by health probes and echo suppression.
 import { uniqueStrings } from "../shared/string-normalization.js";
 import type { RealtimeVoiceBridgeEvent, RealtimeVoiceRole } from "./provider-types.js";
 

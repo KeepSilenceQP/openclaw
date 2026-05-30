@@ -1,4 +1,3 @@
-// Tests extensions/qa-matrix/src run config test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeQaProviderMode } from "./run-config.js";
 

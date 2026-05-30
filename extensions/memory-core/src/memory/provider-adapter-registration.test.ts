@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory provider adapter registration test behavior.
 import { describe, expect, it } from "vitest";
 import { filterUnregisteredMemoryEmbeddingProviderAdapters } from "./provider-adapter-registration.js";
 

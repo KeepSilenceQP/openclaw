@@ -1,4 +1,3 @@
-/** Re-exported amazon-bedrock-mantle plugin public API. */
 export {
   discoverMantleModels,
   generateBearerTokenFromIam,

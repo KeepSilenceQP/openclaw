@@ -1,4 +1,3 @@
-// Tests media-understanding runner deepgram test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/types.js";
 import { buildProviderRegistry, runCapability } from "./runner.js";

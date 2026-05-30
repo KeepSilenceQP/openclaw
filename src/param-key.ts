@@ -1,4 +1,3 @@
-// Tool parameter key lookup helpers that accept camelCase and snake_case inputs.
 import { lowercasePreservingWhitespace } from "./shared/string-coerce.js";
 
 function toSnakeCaseKey(key: string): string {

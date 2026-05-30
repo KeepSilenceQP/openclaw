@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/message-handler timestamp test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveSlackTimestampMs } from "./timestamp.js";
 

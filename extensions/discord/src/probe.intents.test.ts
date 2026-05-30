@@ -1,4 +1,3 @@
-// Tests extensions/discord/src probe intents test behavior.
 import { withFetchPreconnect } from "openclaw/plugin-sdk/test-env";
 import { describe, expect, it } from "vitest";
 import {

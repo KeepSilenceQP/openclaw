@@ -1,4 +1,3 @@
-// Coordinator for forced consults and native consult de-duplication in voice sessions.
 import {
   matchRealtimeVoiceConsultQuestions,
   readRealtimeVoiceConsultQuestion,

@@ -1,4 +1,3 @@
-// Workboard UI controller state, DTO normalization, and card actions.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { GatewaySessionRow } from "../types.ts";
 

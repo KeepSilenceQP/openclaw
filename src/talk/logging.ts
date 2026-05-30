@@ -1,4 +1,3 @@
-// Structured logging adapter for low-volume realtime Talk events.
 import { getChildLogger } from "../logging/logger.js";
 import { firstFiniteTalkEventNumber, talkEventPayloadRecord } from "./event-metrics.js";
 import type { TalkEvent, TalkEventType } from "./talk-events.js";

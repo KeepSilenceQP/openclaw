@@ -1,5 +1,4 @@
 // Applies media understanding outputs to inbound message context before the
-// agent sees the turn.
 import path from "node:path";
 import { finalizeInboundContext } from "../auto-reply/reply/inbound-context.js";
 import type { MsgContext } from "../auto-reply/templating.js";

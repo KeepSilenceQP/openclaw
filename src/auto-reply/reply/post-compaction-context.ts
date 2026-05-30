@@ -1,4 +1,3 @@
-// Post-compaction context loading for resumed sessions.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveAgentContextLimits } from "../../agents/agent-scope.js";

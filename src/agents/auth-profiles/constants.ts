@@ -1,5 +1,4 @@
 import { createSubsystemLogger } from "../../logging/subsystem.js";
-/** Auth profile filenames shared by profile storage, migration, and doctor code. */
 export {
   AUTH_PROFILE_FILENAME,
   AUTH_STATE_FILENAME,

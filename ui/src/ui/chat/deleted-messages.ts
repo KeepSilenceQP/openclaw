@@ -1,4 +1,3 @@
-// Per-session deleted-message state backed by local storage.
 import { getSafeLocalStorage } from "../../local-storage.ts";
 
 const PREFIX = "openclaw:deleted:";

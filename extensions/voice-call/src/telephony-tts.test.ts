@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src telephony tts test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { VoiceCallTtsConfig } from "./config.js";
 import type { CoreConfig } from "./core-bridge.js";

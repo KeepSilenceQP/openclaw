@@ -1,4 +1,3 @@
-// Loads or generates TLS material for the local gateway.
 import { execFile } from "node:child_process";
 import { X509Certificate } from "node:crypto";
 import fs from "node:fs/promises";

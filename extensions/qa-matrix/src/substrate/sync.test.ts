@@ -1,4 +1,3 @@
-// Tests extensions/qa-matrix/src/substrate sync test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { MatrixQaObservedEvent } from "./events.js";
 import {

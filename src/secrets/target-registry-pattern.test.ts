@@ -1,4 +1,3 @@
-// Tests secrets target registry pattern test behavior.
 import { describe, expect, it } from "vitest";
 import {
   expandPathTokens,

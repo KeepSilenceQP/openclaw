@@ -27,7 +27,6 @@ import { deriveGatewaySessionLifecycleSnapshot } from "./session-lifecycle-state
 import { loadSessionEntry } from "./session-utils.js";
 import { formatForLog } from "./ws-log.js";
 
-/** Chat run/subscriber registry constructors used by gateway server assembly. */
 export {
   createChatRunRegistry,
   createChatRunState,
@@ -35,7 +34,6 @@ export {
   createSessionMessageSubscriberRegistry,
   createToolEventRecipientRegistry,
 } from "./server-chat-state.js";
-/** Chat run/subscriber registry types used by gateway event handlers. */
 export type {
   ChatRunEntry,
   ChatRunRegistry,

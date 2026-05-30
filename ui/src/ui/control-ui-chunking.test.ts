@@ -1,4 +1,3 @@
-// Tests ui/src/ui control ui chunking test behavior.
 import { describe, expect, it } from "vitest";
 import { controlUiManualChunk, normalizeModuleId } from "../../config/control-ui-chunking.ts";
 

@@ -1,6 +1,4 @@
-// External-content prompt isolation, sanitization, and wrapper helpers.
 import { randomBytes } from "node:crypto";
-/** Re-export hook external-content source helpers. */
 export {
   isExternalHookSession,
   mapHookExternalContentSource,

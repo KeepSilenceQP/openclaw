@@ -1,4 +1,3 @@
-// Tests media image ops helpers test behavior.
 import { describe, expect, it } from "vitest";
 import { buildImageResizeSideGrid, IMAGE_REDUCE_QUALITY_STEPS } from "./image-ops.js";
 

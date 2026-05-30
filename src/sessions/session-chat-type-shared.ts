@@ -1,4 +1,3 @@
-// Shared chat-type inference for canonical and legacy session key formats.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { parseAgentSessionKey } from "./session-key-utils.js";
 

@@ -1,5 +1,4 @@
 // Native approval surface capability helpers.
-// They describe whether the initiating channel can approve exec/plugin requests in place.
 import {
   getChannelPlugin,
   listChannelPlugins,

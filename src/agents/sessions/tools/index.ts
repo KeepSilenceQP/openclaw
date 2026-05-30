@@ -6,9 +6,7 @@ export {
   createBashToolDefinition,
   createLocalBashOperations,
 } from "./bash.js";
-/** File-system and process operations used by the bash tool implementation. */
 export type { BashOperations } from "./bash-operations.js";
-/** Built-in tool input and detail contracts shared by tool definitions. */
 export type {
   BashToolDetails,
   BashToolInput,
@@ -24,44 +22,37 @@ export type {
   ReadToolInput,
   WriteToolInput,
 } from "./tool-contracts.js";
-/** Edit tool factory and operation contracts. */
 export {
   createEditTool,
   createEditToolDefinition,
   type EditOperations,
   type EditToolOptions,
 } from "./edit.js";
-/** Serializes file mutations so write/edit tools do not race each other. */
 export { withFileMutationQueue } from "./file-mutation-queue.js";
-/** Find tool factory and operation contracts. */
 export {
   createFindTool,
   createFindToolDefinition,
   type FindOperations,
   type FindToolOptions,
 } from "./find.js";
-/** Grep tool factory and operation contracts. */
 export {
   createGrepTool,
   createGrepToolDefinition,
   type GrepOperations,
   type GrepToolOptions,
 } from "./grep.js";
-/** Directory listing tool factory and operation contracts. */
 export {
   createLsTool,
   createLsToolDefinition,
   type LsOperations,
   type LsToolOptions,
 } from "./ls.js";
-/** Read tool factory and operation contracts. */
 export {
   createReadTool,
   createReadToolDefinition,
   type ReadOperations,
   type ReadToolOptions,
 } from "./read.js";
-/** Shared truncation helpers for file and command output tools. */
 export {
   DEFAULT_MAX_BYTES,
   DEFAULT_MAX_LINES,
@@ -72,7 +63,6 @@ export {
   truncateLine,
   truncateTail,
 } from "./truncate.js";
-/** Write tool factory and operation contracts. */
 export {
   createWriteTool,
   createWriteToolDefinition,

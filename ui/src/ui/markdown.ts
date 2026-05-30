@@ -1,4 +1,3 @@
-// Markdown rendering pipeline for chat messages, code blocks, links, and sanitization.
 import DOMPurify from "dompurify";
 import hljs from "highlight.js/lib/core";
 import bash from "highlight.js/lib/languages/bash";

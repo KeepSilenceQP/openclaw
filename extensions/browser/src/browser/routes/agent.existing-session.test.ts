@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser/routes agent existing session test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { EXISTING_SESSION_LIMITS } from "./existing-session-limits.js";
 import {

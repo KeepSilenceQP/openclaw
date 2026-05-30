@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot create telegram bot media group skip warning test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const saveRemoteMedia = vi.fn();

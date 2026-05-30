@@ -1,4 +1,3 @@
-// Bundled channel config tests read runtime and schema maps from manifests and loaded plugins.
 import * as bundledChannelModule from "../../../src/channels/plugins/bundled.js";
 import type {
   ChannelConfigRuntimeSchema,

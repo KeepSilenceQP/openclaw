@@ -1,4 +1,3 @@
-// OpenClaw gateway client wrapper around the shared protocol client package.
 import {
   GatewayClient as BaseGatewayClient,
   GATEWAY_CLOSE_CODE_HINTS as BASE_GATEWAY_CLOSE_CODE_HINTS,
@@ -243,5 +242,4 @@ export class GatewayClient {
   }
 }
 
-/** Device identity contract used by gateway authentication. */
 export type { DeviceIdentity };

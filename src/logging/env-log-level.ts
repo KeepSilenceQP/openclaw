@@ -1,4 +1,3 @@
-// Environment log-level override parser with one-time invalid-value warnings.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { ALLOWED_LOG_LEVELS, type LogLevel, tryParseLogLevel } from "./levels.js";
 import { loggingState } from "./state.js";

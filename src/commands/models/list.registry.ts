@@ -1,4 +1,3 @@
-// Adapts the agent model registry into model-list rows with availability fallback handling.
 import { loadAgentModelRegistry } from "../../agents/model-registry-loader.js";
 import {
   shouldSuppressBuiltInModel,

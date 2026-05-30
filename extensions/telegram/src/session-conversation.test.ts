@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src session conversation test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveTelegramSessionConversation,

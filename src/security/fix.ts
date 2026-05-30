@@ -1,4 +1,3 @@
-// Security repair helpers for config hardening and local credential permissions.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";

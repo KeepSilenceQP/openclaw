@@ -1,6 +1,5 @@
 // Confirmation dialog for switching the Control UI to a manually entered
 // gateway URL. The warning is centralized here so callers only stage/cancel the
-// pending URL state.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import type { AppViewState } from "../app-view-state.ts";

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor threads test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMatrixThreadRouting } from "./threads.js";
 

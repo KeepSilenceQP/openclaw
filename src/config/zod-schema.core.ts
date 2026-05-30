@@ -1,4 +1,3 @@
-// Core config Zod schemas shared by config loading, validation, and runtime consumers.
 import path from "node:path";
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
 import { z } from "zod";

@@ -1,4 +1,3 @@
-// File-backed transcript session store and markdown summary writer.
 import { createReadStream } from "node:fs";
 import type { Dirent } from "node:fs";
 import fs from "node:fs/promises";

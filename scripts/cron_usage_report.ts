@@ -1,4 +1,3 @@
-// Cron usage report aggregates token usage from cron run JSONL logs.
 import fs from "node:fs/promises";
 import path from "node:path";
 

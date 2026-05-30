@@ -1,4 +1,3 @@
-// Tests tui/components chat log test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeTestText } from "../../../test/helpers/normalize-text.js";
 import { ChatLog } from "./chat-log.js";

@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot native command menu test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   buildCappedTelegramMenuCommands,

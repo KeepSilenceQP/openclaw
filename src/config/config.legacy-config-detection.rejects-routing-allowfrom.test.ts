@@ -1,4 +1,3 @@
-// Tests config config legacy config detection rejects routing allowfrom test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObject } from "./validation.js";
 

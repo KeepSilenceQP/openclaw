@@ -1,4 +1,3 @@
-// Normalizes system-run command argv/raw text into canonical display and validation forms.
 import {
   extractShellWrapperCommand,
   hasEnvManipulationBeforeShellWrapper,

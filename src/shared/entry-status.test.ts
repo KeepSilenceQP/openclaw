@@ -1,4 +1,3 @@
-// Tests shared entry status test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { mockProcessPlatform } from "../test-utils/vitest-spies.js";
 import {

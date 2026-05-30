@@ -1,4 +1,3 @@
-// Scans bundled plugin manifests and maps source entries to generated runtime artifacts.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

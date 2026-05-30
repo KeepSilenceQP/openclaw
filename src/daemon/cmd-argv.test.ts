@@ -1,4 +1,3 @@
-// Tests daemon cmd argv test behavior.
 import { describe, expect, it } from "vitest";
 import { parseCmdScriptCommandLine, quoteCmdScriptArg } from "./cmd-argv.js";
 

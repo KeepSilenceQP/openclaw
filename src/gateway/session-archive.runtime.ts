@@ -1,4 +1,3 @@
-// Runtime boundary for gateway session archive runtime behavior.
 export {
   archiveSessionTranscriptsDetailed,
   archiveSessionTranscripts,

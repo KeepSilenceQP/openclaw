@@ -1,4 +1,3 @@
-// Tests extensions music generation providers live test behavior.
 import {
   resolveApiKeyForProvider,
   resolveDefaultAgentDir,

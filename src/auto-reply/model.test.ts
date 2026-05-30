@@ -1,4 +1,3 @@
-// Coverage for model directive parsing.
 import { describe, expect, it } from "vitest";
 import { extractModelDirective } from "./model.js";
 

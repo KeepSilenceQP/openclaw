@@ -1,4 +1,3 @@
-// Normalizes gateway approval-not-found errors across exec and plugin methods.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 const INVALID_REQUEST = "INVALID_REQUEST";

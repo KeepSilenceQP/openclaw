@@ -1,4 +1,3 @@
-// Skills management view with local status, setup actions, and ClawHub discovery.
 import { html, nothing } from "lit";
 import { ref } from "lit/directives/ref.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";

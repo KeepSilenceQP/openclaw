@@ -1,4 +1,3 @@
-// Coverage for inline reply parsing.
 import { describe, expect, it } from "vitest";
 import { extractInlineSimpleCommand, stripInlineStatus } from "./reply-inline.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra provider models test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const isProviderApiKeyConfiguredMock = vi.hoisted(() => vi.fn<(p: unknown) => boolean>());

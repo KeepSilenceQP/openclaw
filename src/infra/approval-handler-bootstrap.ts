@@ -1,5 +1,4 @@
 // Starts native approval handlers when a channel runtime publishes the matching
-// approval context, including retry handling while gateway readiness catches up.
 import { resolveChannelApprovalCapability } from "../channels/plugins/approvals.js";
 import type { ChannelRuntimeSurface } from "../channels/plugins/channel-runtime-surface.types.js";
 import type { ChannelPlugin } from "../channels/plugins/types.plugin.js";

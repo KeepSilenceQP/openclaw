@@ -1,4 +1,3 @@
-// Builds memoized plugin metadata snapshots from discovery, manifest registry, and installed index state.
 import fs from "node:fs";
 import path from "node:path";
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
@@ -75,7 +74,6 @@ const MEMO_RELEVANT_ENV_KEYS = [
   "USERPROFILE",
   "XDG_CONFIG_HOME",
 ] as const;
-/** Snapshot parameter/result types consumed by plugin discovery and runtime setup. */
 export type {
   LoadPluginMetadataSnapshotParams,
   PluginMetadataManifestView,

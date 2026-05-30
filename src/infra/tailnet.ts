@@ -1,5 +1,4 @@
 // Tailnet address discovery.
-// Detects Tailscale IPv4/IPv6 ranges from local external network interfaces.
 import { isIpInCidr } from "@openclaw/net-policy/ip";
 import { uniqueStrings } from "../shared/string-normalization.js";
 import { listExternalInterfaceAddresses, readNetworkInterfaces } from "./network-interfaces.js";

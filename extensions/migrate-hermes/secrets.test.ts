@@ -1,4 +1,3 @@
-// Tests extensions/migrate-hermes secrets test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { MigrationProviderContext } from "openclaw/plugin-sdk/plugin-entry";

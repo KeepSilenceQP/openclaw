@@ -1,4 +1,3 @@
-// Small shared utilities for paths, JSON, numeric bounds, strings, and timing.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -9,7 +8,6 @@ import {
   resolveRequiredHomeDir,
 } from "./infra/home-dir.js";
 import { isPlainObject } from "./infra/plain-object.js";
-/** Regex escaping helper kept available from the legacy utils barrel. */
 export { escapeRegExp } from "./shared/regexp.js";
 
 /** Creates a directory tree if it does not already exist. */
@@ -43,7 +41,6 @@ export function safeParseJson<T>(raw: string): T | null {
   }
 }
 
-/** Plain-object guard kept available from the legacy utils barrel. */
 export { isPlainObject };
 
 /**

@@ -1,4 +1,3 @@
-// Event-loop readiness probe used before gateway reconnect and handshake attempts.
 import { resolveFiniteTimeoutDelayMs } from "./timeouts.js";
 
 /** Result from sampling timer drift until the event loop is responsive enough. */

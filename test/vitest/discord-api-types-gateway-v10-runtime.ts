@@ -1,4 +1,3 @@
-// Runtime CommonJS bridge for discord-api-types Gateway v10 values in Vitest.
 import { createRequire } from "node:module";
 import type * as DiscordGatewayApiTypes from "discord-api-types/gateway/v10";
 

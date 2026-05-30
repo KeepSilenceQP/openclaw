@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/cli browser cli shared test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { callGatewayFromCli } from "./core-api.js";
 

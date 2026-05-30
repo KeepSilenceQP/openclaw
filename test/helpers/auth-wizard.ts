@@ -1,4 +1,3 @@
-// Auth wizard tests share runtime, prompter, and temp auth-profile fixtures from this module.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { vi } from "vitest";

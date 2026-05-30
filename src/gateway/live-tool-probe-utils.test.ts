@@ -1,4 +1,3 @@
-// Tests gateway live tool probe utils test behavior.
 import { describe, expect, it } from "vitest";
 import {
   hasExpectedSingleNonce,

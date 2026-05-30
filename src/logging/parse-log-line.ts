@@ -1,4 +1,3 @@
-// Parses logtape-style JSON log lines for diagnostics and support views.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
 type ParsedLogLine = {

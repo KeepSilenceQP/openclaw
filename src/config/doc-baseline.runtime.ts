@@ -1,4 +1,3 @@
-// Runtime boundary for config doc baseline runtime behavior.
 import { collectBundledChannelConfigs as collectBundledChannelConfigsImpl } from "../plugins/bundled-channel-config-metadata.js";
 import { loadPluginManifestRegistry as loadPluginManifestRegistryImpl } from "../plugins/manifest-registry.js";
 import {

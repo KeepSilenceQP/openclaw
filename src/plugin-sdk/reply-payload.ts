@@ -6,15 +6,11 @@ import { hasReplyPayloadContent } from "../interactive/payload.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 
-/** Public media payload contract for plugin outbound replies. */
 export type { MediaPayload, MediaPayloadInput } from "../channels/plugins/media-payload.js";
-/** Builds a normalized media payload from plugin-provided media input. */
 export { buildMediaPayload } from "../channels/plugins/media-payload.js";
 /** Public reply payload shape with host-only trusted local media omitted. */
 export type ReplyPayload = Omit<InternalReplyPayload, "trustedLocalMedia">;
-/** TTS supplement marker carried on reply payloads. */
 export type { ReplyPayloadTtsSupplement } from "../auto-reply/reply-payload.js";
-/** Public TTS supplement helpers for plugin reply payloads. */
 export {
   buildTtsSupplementMediaPayload,
   getReplyPayloadTtsSupplement,

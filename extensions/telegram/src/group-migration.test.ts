@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src group migration test behavior.
 import { describe, expect, it } from "vitest";
 import { migrateTelegramGroupConfig, migrateTelegramGroupsInPlace } from "./group-migration.js";
 

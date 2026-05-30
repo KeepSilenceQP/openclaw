@@ -1,4 +1,3 @@
-// Tests test/scripts release candidate checklist test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildPublishCommand,

@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/inbound extract test behavior.
 import type { proto } from "baileys";
 import { describe, expect, it } from "vitest";
 import { extractMentionedJids, hasInboundUserContent } from "./extract.js";

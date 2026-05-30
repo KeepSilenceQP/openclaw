@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src/mattermost monitor gating test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   evaluateMattermostMentionGate,

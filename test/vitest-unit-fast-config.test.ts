@@ -1,4 +1,3 @@
-// Tests test vitest unit fast config test behavior.
 import { beforeAll, describe, expect, it } from "vitest";
 import { spawnNodeEvalSync } from "../src/test-utils/node-process.js";
 import { createCommandsLightVitestConfig } from "./vitest/vitest.commands-light.config.ts";

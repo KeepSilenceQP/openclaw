@@ -1,4 +1,3 @@
-// Tests secrets runtime test behavior.
 import { describe, expect, it } from "vitest";
 import { asConfig, setupSecretsRuntimeSnapshotTestHooks } from "./runtime.test-support.ts";
 

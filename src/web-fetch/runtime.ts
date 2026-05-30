@@ -1,5 +1,4 @@
 // Runtime resolver for web-fetch providers and their model-facing tool
-// definitions, including runtime metadata and credential auto-detection.
 import type { OpenClawConfig } from "../config/types.js";
 import { logVerbose } from "../globals.js";
 import type {

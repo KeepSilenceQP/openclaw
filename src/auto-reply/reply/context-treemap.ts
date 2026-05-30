@@ -1,4 +1,3 @@
-// Treemap-style context summaries for workspace file sets.
 import crypto from "node:crypto";
 import { writeFile } from "node:fs/promises";
 import path from "node:path";

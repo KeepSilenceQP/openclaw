@@ -1,4 +1,3 @@
-// Base in-memory session tree storage shared by concrete harness stores.
 import {
   type LeafEntry,
   SessionError,

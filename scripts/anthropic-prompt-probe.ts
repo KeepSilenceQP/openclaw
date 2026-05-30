@@ -1,4 +1,3 @@
-// Anthropic prompt probe checks setup-token prompt transport through direct and gateway paths.
 import { spawn } from "node:child_process";
 // Live prompt probe for Anthropic setup-token and Claude CLI prompt-path debugging.
 // Usage:
@@ -6,7 +5,6 @@ import { spawn } from "node:child_process";
 // OPENCLAW_PROMPT_MODE=extra
 // OPENCLAW_PROMPT_TEXT='...'
 // OPENCLAW_PROMPT_CAPTURE=1
-// pnpm probe:anthropic:prompt
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import http from "node:http";

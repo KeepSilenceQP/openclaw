@@ -1,4 +1,3 @@
-// Tests test/scripts check opengrep rule metadata test behavior.
 import { describe, expect, it } from "vitest";
 import { validateRuleMetadata } from "../../security/opengrep/check-rule-metadata.mjs";
 

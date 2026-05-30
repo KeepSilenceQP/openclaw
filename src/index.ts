@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Dual package entrypoint: lazy library exports for imports, CLI handoff for direct execution.
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { formatCliFailureLines } from "./cli/failure-output.js";

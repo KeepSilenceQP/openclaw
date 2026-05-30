@@ -1,4 +1,3 @@
-// Runtime boundary for plugins install security scan runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { tryReadJson } from "../infra/json-files.js";

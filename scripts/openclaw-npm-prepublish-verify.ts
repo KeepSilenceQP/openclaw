@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Prepublish verifier installs a prepared OpenClaw tarball and checks package/runtime smoke behavior.
-
 import { mkdtempSync, readFileSync, realpathSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";

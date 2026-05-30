@@ -1,4 +1,3 @@
-// Realtime voice consult tool schema, policy, and prompt builders.
 import {
   normalizeOptionalLowercaseString,
   normalizeOptionalString,

@@ -1,4 +1,3 @@
-// Tests gateway server runtime state test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { createEmptyPluginRegistry } from "../plugins/registry.js";
 import {

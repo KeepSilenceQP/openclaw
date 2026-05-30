@@ -1,4 +1,3 @@
-// Runs package-manager update/install/verify/swap steps for global packages.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

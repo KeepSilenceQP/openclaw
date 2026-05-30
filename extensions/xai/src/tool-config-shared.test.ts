@@ -1,4 +1,3 @@
-// Tests extensions/xai/src tool config shared test behavior.
 import { describe, expect, it } from "vitest";
 import {
   coerceXaiToolConfig,

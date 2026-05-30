@@ -1,7 +1,5 @@
 // Lightweight in-memory queue for human-readable system events that should be
 // prefixed to the next prompt. We intentionally avoid persistence to keep
-// events ephemeral. Events are session-scoped and require an explicit key.
-
 import { channelRouteDedupeKey } from "../plugin-sdk/channel-route.js";
 import { sanitizeInboundSystemTags } from "../security/system-tags.js";
 import { resolveGlobalMap } from "../shared/global-singleton.js";

@@ -1,4 +1,3 @@
-// Tests extensions/slack/src shared interactive test behavior.
 import { describe, expect, it } from "vitest";
 import { buildSlackInteractiveBlocks, buildSlackPresentationBlocks } from "./blocks-render.js";
 import { resolveSlackReplyBlocks } from "./reply-blocks.js";

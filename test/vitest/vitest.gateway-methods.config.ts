@@ -1,4 +1,3 @@
-// Vitest project config for gateway server-method tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the gateway-methods Vitest project config. */

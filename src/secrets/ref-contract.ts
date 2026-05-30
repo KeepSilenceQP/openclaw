@@ -1,4 +1,3 @@
-// Defines secret reference id, provider alias, and default-provider contracts.
 import {
   DEFAULT_SECRET_PROVIDER_ALIAS,
   type SecretRef,

@@ -1,4 +1,3 @@
-// CLI backend live metadata script prints command/model defaults for live backend probes.
 import { pathToFileURL } from "node:url";
 import { resolveCliBackendConfig, resolveCliBackendLiveTest } from "../src/agents/cli-backends.js";
 

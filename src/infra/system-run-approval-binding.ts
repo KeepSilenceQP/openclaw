@@ -1,5 +1,4 @@
 // Binds system-run approvals to argv/cwd/agent/session/env facts so approval
-// ids cannot be replayed against a different command request.
 import crypto from "node:crypto";
 import type {
   SystemRunApprovalBinding,

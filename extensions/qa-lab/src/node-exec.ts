@@ -1,4 +1,3 @@
-// QA Lab Node exec helpers locate a real Node binary for child process lanes.
 import { execFile } from "node:child_process";
 import path from "node:path";
 import { promisify } from "node:util";

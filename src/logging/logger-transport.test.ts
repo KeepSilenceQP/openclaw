@@ -1,4 +1,3 @@
-// Tests logging logger transport test behavior.
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";
 import { afterAll, afterEach, beforeAll, describe, expect, it } from "vitest";
 import { createSuiteLogPathTracker } from "./log-test-helpers.js";

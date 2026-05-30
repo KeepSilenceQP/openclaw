@@ -1,4 +1,3 @@
-// Coverage for channel message capability contract verification.
 import { describe, expect, it, vi } from "vitest";
 import {
   listDeclaredChannelMessageLiveCapabilities,

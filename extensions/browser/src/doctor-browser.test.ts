@@ -1,4 +1,3 @@
-// Tests extensions/browser/src doctor browser test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   maybeArchiveLegacyClawdBrowserProfileResidue,

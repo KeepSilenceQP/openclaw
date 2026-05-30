@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src reaction level test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it } from "vitest";
 import { resolveWhatsAppReactionLevel } from "./reaction-level.js";

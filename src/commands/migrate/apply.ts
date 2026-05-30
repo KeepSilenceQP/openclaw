@@ -1,4 +1,3 @@
-// Runs migration apply: preflight planning, backup, item filtering, provider execution, report write.
 import fs from "node:fs/promises";
 import { withProgress } from "../../cli/progress.js";
 import type { ProgressReporter } from "../../cli/progress.js";

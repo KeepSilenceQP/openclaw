@@ -1,4 +1,3 @@
-// Byte-size parsing helpers for config values.
 import { parseByteSize } from "../cli/parse-bytes.js";
 
 /**

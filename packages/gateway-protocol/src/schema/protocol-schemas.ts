@@ -1,4 +1,3 @@
-// Central TypeBox schema registry for gateway protocol methods, events, and frames.
 import type { TSchema } from "typebox";
 import {
   AgentEventSchema,
@@ -548,7 +547,6 @@ export const ProtocolSchemas = {
   ShutdownEvent: ShutdownEventSchema,
 } satisfies Record<string, TSchema>;
 
-/** Re-exported public API for packages/gateway-protocol. */
 export {
   MIN_CLIENT_PROTOCOL_VERSION,
   MIN_PROBE_PROTOCOL_VERSION,

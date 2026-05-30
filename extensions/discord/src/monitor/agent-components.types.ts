@@ -1,4 +1,3 @@
-// Shared types for extensions/discord/src/monitor agent components types behavior.
 import type { DiscordAccountConfig, OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type {
   ButtonInteraction,

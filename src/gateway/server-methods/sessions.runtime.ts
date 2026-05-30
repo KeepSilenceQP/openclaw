@@ -1,4 +1,3 @@
-// Runtime boundary for gateway/server-methods sessions runtime behavior.
 export {
   archiveSessionTranscriptsForSessionDetailed,
   cleanupSessionBeforeMutation,

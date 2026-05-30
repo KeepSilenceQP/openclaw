@@ -1,5 +1,4 @@
 // Session-key normalization and parsing helpers, including opaque peer IDs that
-// must preserve provider-owned casing.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,

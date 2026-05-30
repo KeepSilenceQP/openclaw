@@ -1,4 +1,3 @@
-// Tests infra os summary test behavior.
 import os from "node:os";
 import { afterEach, describe, expect, it, vi } from "vitest";
 

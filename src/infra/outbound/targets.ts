@@ -1,5 +1,4 @@
 // Outbound delivery target resolution.
-// Handles explicit sends, heartbeat targets, session route adoption, and allowFrom sender context.
 import { mapAllowFromEntries } from "openclaw/plugin-sdk/channel-config-helpers";
 import { normalizeChatType, type ChatType } from "../../channels/chat-type.js";
 import type { ChannelOutboundTargetMode } from "../../channels/plugins/types.core.js";
@@ -57,9 +56,7 @@ export type HeartbeatSenderContext = {
   allowFrom: string[];
 };
 
-/** Shared outbound target resolution result shape. */
 export type { OutboundTargetResolution } from "./targets-resolve-shared.js";
-/** Session delivery target resolver and result type. */
 export { resolveSessionDeliveryTarget, type SessionDeliveryTarget } from "./targets-session.js";
 import { resolveSessionDeliveryTarget, type SessionDeliveryTarget } from "./targets-session.js";
 

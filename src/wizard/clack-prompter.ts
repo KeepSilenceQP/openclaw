@@ -1,4 +1,3 @@
-// Terminal-backed wizard prompter implementation using Clack prompts.
 import {
   autocomplete,
   autocompleteMultiselect,

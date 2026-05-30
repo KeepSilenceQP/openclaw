@@ -1,4 +1,3 @@
-// Device pairing access comparison helpers for pending approval prompts.
 import { normalizeDeviceAuthScopes } from "./device-auth.js";
 
 /** Normalized role/scope summary for a device pairing request or approval. */

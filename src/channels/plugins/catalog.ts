@@ -1,4 +1,3 @@
-// Channel plugin catalog discovery and formatting helpers.
 import path from "node:path";
 import { MANIFEST_KEY } from "../../compat/legacy-names.js";
 import type { PluginInstallRecord } from "../../config/types.plugins.js";

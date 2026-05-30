@@ -1,4 +1,3 @@
-// Config mutation helpers used by chat commands.
 import { setConfigValueAtPath, unsetConfigValueAtPath } from "../../config/config-paths.js";
 import {
   transformConfigFileWithRetry,

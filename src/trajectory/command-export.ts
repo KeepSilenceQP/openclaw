@@ -1,4 +1,3 @@
-// CLI-facing trajectory export helpers with workspace-contained output path validation.
 import fsp from "node:fs/promises";
 import path from "node:path";
 import { pathExists } from "../infra/fs-safe.js";

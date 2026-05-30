@@ -1,4 +1,3 @@
-// Tests extensions/google google live test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

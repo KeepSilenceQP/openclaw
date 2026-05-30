@@ -1,5 +1,4 @@
 // Diagnostic message lifecycle helper: emits queue, processing, idle, and
-// processed events around channel message handling.
 import { logMessageProcessed, logMessageQueued, logSessionStateChange } from "./diagnostic.js";
 
 type MessageLifecycleRef = {

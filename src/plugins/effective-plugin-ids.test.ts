@@ -1,4 +1,3 @@
-// Tests plugins effective plugin ids test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { PluginMetadataSnapshot } from "./plugin-metadata-snapshot.js";

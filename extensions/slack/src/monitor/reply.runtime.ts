@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/slack/src/monitor reply runtime behavior.
 export {
   createReplyDispatcherWithTyping,
   dispatchReplyWithBufferedBlockDispatcher,

@@ -1,4 +1,3 @@
-// QA Lab agent bootstrap helpers render identity and scenario-plan Markdown.
 import {
   DEFAULT_QA_AGENT_IDENTITY_MARKDOWN,
   readQaBootstrapScenarioCatalog,

@@ -1,4 +1,3 @@
-// TUI backend contract for gateway connection, chat, session, model, and command APIs.
 import type {
   CommandEntry,
   CommandsListParams,

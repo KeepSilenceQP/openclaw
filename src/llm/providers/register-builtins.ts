@@ -1,4 +1,3 @@
-// Registers built-in LLM API providers through lazy stream-module loaders.
 import { registerApiProvider, unregisterApiProviders } from "../api-registry.js";
 import type {
   Api,

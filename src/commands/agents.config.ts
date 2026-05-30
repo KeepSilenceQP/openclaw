@@ -34,7 +34,6 @@ type AgentEntry = NonNullable<NonNullable<OpenClawConfig["agents"]>["list"]>[num
 
 /** Agent identity file shape surfaced by agent config commands. */
 export type AgentIdentity = AgentIdentityFile;
-/** Config agent-list normalizer shared by command handlers. */
 export { listAgentEntries };
 
 /** Find a configured agent entry by normalized id. */

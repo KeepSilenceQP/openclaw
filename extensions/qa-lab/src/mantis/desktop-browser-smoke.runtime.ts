@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-lab/src/mantis desktop browser smoke runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";

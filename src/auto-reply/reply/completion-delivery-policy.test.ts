@@ -1,4 +1,3 @@
-// Coverage for completion delivery policy.
 import { describe, expect, it } from "vitest";
 import {
   completionRequiresMessageToolDelivery,

@@ -1,4 +1,3 @@
-// iOS version pinning CLI writes the release version manifest and optional synced artifacts.
 import path from "node:path";
 import {
   normalizePinnedIosVersion,

@@ -1,4 +1,3 @@
-// Shared types for extensions/tlon/src types behavior.
 import {
   DEFAULT_ACCOUNT_ID,
   listCombinedAccountIds,

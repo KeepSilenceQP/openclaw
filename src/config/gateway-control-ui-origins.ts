@@ -1,4 +1,3 @@
-// Seeds Control UI allowed origins when gateway bind mode is non-loopback.
 import { DEFAULT_GATEWAY_PORT } from "./paths.js";
 import type { OpenClawConfig } from "./types.openclaw.js";
 

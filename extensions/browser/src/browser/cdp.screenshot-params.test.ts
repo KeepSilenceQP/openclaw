@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser cdp screenshot params test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { withCdpSocket } from "./cdp.helpers.js";
 import { captureScreenshot } from "./cdp.js";

@@ -1,4 +1,3 @@
-// Reply turn admission policy for suppressing or allowing inbound turns.
 import {
   createReplyOperation,
   REPLY_RUN_IDLE_SETTLE_TIMEOUT_MS,

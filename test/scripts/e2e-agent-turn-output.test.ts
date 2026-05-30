@@ -1,4 +1,3 @@
-// Tests test/scripts e2e agent turn output test behavior.
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";

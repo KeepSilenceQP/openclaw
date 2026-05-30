@@ -1,4 +1,3 @@
-// Shared Vitest config centralizes aliases, worker scheduling, setup, and excludes.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { pluginSdkSubpaths } from "../../scripts/lib/plugin-sdk-entries.mjs";

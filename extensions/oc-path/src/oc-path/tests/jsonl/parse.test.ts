@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/jsonl parse test behavior.
 import { describe, expect, it } from "vitest";
 import { parseJsonl } from "../../jsonl/parse.js";
 

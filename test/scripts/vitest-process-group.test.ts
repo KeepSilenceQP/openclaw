@@ -1,4 +1,3 @@
-// Tests test/scripts vitest process group test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   forwardSignalToVitestProcessGroup,

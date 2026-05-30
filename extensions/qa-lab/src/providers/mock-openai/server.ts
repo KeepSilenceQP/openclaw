@@ -1,4 +1,3 @@
-// QA Lab mock OpenAI server emulates provider endpoints for deterministic scenario runs.
 import { createHash } from "node:crypto";
 import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
 import { setTimeout as sleep } from "node:timers/promises";

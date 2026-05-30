@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Import-cycle checker scans runtime value imports and reports cyclic source components.
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

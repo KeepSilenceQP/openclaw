@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/inbound access control test behavior.
 import { beforeAll, describe, expect, it } from "vitest";
 import {
   readAllowFromStoreMock,

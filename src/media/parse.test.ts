@@ -1,4 +1,3 @@
-// Tests media parse test behavior.
 import { describe, expect, it } from "vitest";
 import { splitMediaFromOutput, type SplitMediaFromOutputOptions } from "./parse.js";
 

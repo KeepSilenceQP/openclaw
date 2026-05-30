@@ -1,4 +1,3 @@
-// E2E-style coverage for native stop commands targeting active sessions.
 import fs from "node:fs/promises";
 import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";

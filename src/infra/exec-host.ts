@@ -1,5 +1,4 @@
 // Socket client for delegating command execution to the local exec host.
-// Requests are HMAC-bound to nonce, timestamp, and payload to prevent replay/tamper.
 import crypto from "node:crypto";
 import { requestJsonlSocket } from "./jsonl-socket.js";
 

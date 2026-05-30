@@ -1,4 +1,3 @@
-// Tests cron parse test behavior.
 import { describe, expect, it } from "vitest";
 import { parseAbsoluteTimeMs } from "./parse.js";
 

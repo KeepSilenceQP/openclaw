@@ -28,9 +28,7 @@ import {
 import { listTaskRecords, type TaskRecord } from "../tasks/runtime-internal.js";
 import { INTERNAL_MESSAGE_CHANNEL } from "../utils/message-channel.js";
 
-/** Task record shape returned by scoped agent harness task helpers. */
 export type { TaskRecord as AgentHarnessTaskRecord };
-/** Scope object that binds harness tasks to a requester session. */
 export type { AgentHarnessTaskRuntimeScope };
 
 type AgentHarnessTaskRuntimeId = Parameters<typeof createRunningTaskRun>[0]["runtime"];

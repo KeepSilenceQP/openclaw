@@ -1,4 +1,3 @@
-// Tests tui tui formatters test behavior.
 import { describe, expect, it } from "vitest";
 import { MALFORMED_STREAMING_FRAGMENT_ERROR_MESSAGE } from "../shared/assistant-error-format.js";
 import {

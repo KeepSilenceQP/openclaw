@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor monitor media test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { resetSlackThreadStarterCacheForTest, resolveSlackThreadStarter } from "./thread.js";
 

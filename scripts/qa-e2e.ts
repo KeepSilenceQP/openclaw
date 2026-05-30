@@ -1,4 +1,3 @@
-// QA E2E CLI enables private QA surfaces and runs the QA-lab self-check.
 import { pathToFileURL } from "node:url";
 
 /** Enables private QA plugin and CLI flags needed by the self-check script. */

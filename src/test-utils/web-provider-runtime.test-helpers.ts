@@ -1,4 +1,3 @@
-// Test factories for web-search and web-fetch runtime provider entries.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {
   PluginWebFetchProviderEntry,

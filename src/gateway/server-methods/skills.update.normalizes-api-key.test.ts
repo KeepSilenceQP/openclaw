@@ -1,4 +1,3 @@
-// Tests gateway/server-methods skills update normalizes api key test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import { REDACTED_SENTINEL } from "../../config/redact-snapshot.js";

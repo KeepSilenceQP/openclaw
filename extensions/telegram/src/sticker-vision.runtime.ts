@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/telegram/src sticker vision runtime behavior.
 import {
   findModelInCatalog,
   loadModelCatalog,

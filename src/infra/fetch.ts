@@ -1,4 +1,3 @@
-// Normalizes fetch behavior across Node, Bun, and custom fetch implementations.
 import { bindAbortRelay } from "../utils/fetch-timeout.js";
 import { normalizeRequestInitHeadersForFetch } from "./fetch-headers.js";
 

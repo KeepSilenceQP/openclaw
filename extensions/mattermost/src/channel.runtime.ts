@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/mattermost/src channel runtime behavior.
 export {
   listMattermostDirectoryGroups,
   listMattermostDirectoryPeers,

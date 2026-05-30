@@ -1,4 +1,3 @@
-// Formats tool executor references for logs and diagnostics.
 import type { ToolExecutorRef } from "./types.js";
 
 /** Converts a closed executor reference into a stable human-readable string. */

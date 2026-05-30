@@ -1,4 +1,3 @@
-// Runtime import contracts for fast abort handling.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { FinalizedMsgContext } from "../templating.js";
 

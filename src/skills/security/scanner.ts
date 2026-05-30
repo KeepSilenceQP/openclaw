@@ -1,4 +1,3 @@
-// Static security scanner for installed skill source files.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { hasErrnoCode } from "../../infra/errors.js";

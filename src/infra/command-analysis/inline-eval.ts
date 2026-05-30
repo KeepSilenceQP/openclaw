@@ -1,4 +1,3 @@
-// Detects interpreter flags and positional forms that execute inline command text.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import { normalizeExecutableToken } from "../exec-wrapper-resolution.js";
 

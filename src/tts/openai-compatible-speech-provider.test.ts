@@ -1,4 +1,3 @@
-// Tests tts openai compatible speech provider test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createOpenAiCompatibleSpeechProvider } from "./openai-compatible-speech-provider.js";
 

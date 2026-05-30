@@ -1,5 +1,4 @@
 // Windows install-root discovery for trusted system/package directories.
-// Registry roots are preferred for the real process; injected envs skip registry reads for tests.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";

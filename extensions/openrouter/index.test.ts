@@ -1,4 +1,3 @@
-// Tests extensions/openrouter index test behavior.
 import {
   registerProviderPlugin,
   registerSingleProviderPlugin,

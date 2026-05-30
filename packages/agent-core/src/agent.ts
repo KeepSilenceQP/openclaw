@@ -26,7 +26,6 @@ import type {
   ToolExecutionMode,
 } from "./types.js";
 
-/** Queue mode type re-exported for callers configuring agent turn scheduling. */
 export type { QueueMode } from "./types.js";
 
 function defaultConvertToLlm(messages: AgentMessage[]): Message[] {

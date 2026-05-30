@@ -1,4 +1,3 @@
-// Converts in-memory audio buffers into channel-compatible voice containers.
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { writeExternalFileWithinRoot } from "../infra/fs-safe.js";

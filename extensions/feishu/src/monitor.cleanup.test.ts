@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src monitor cleanup test behavior.
 import { afterAll, afterEach, describe, expect, it, vi } from "vitest";
 import { botNames, botOpenIds, stopFeishuMonitorState, wsClients } from "./monitor.state.js";
 import type { ResolvedFeishuAccount } from "./types.js";

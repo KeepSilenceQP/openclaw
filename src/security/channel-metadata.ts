@@ -1,4 +1,3 @@
-// Helpers for wrapping channel metadata as explicitly untrusted model context.
 import { uniqueStrings } from "../shared/string-normalization.js";
 import { wrapExternalContent } from "./external-content.js";
 

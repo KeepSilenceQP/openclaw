@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-lab/src docker up runtime behavior.
 import path from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 import { writeQaDockerHarnessFiles } from "./docker-harness.js";

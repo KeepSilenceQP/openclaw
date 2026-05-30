@@ -1,4 +1,3 @@
-// Tests ui/src/ui config form browser test behavior.
 import { render } from "lit";
 import { describe, expect, it, vi } from "vitest";
 import { analyzeConfigSchema, renderConfigForm } from "./views/config-form.ts";

@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src/monitor dm history test behavior.
 import { resolveEnvelopeFormatOptions } from "openclaw/plugin-sdk/channel-inbound";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it, vi } from "vitest";

@@ -1,4 +1,3 @@
-// npm verification command helpers run bounded subprocess checks for release validation.
 import { execFileSync } from "node:child_process";
 
 /** Command invocation shape used by npm release verification helpers. */

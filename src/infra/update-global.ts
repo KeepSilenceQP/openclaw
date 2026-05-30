@@ -1,5 +1,4 @@
 // Global package update helpers for OpenClaw installs.
-// Stages npm, pnpm, and bun updates while preserving rollback dirs and install metadata.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

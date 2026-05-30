@@ -1,4 +1,3 @@
-// Deprecated draft preview finalizer facade for channel outbound compatibility.
 import {
   deliverFinalizableLivePreview,
   type LivePreviewFinalizerDraft,

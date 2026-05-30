@@ -1,4 +1,3 @@
-// Tests media-understanding runner entries guards test behavior.
 import { describe, expect, it } from "vitest";
 import { formatDecisionSummary } from "./runner.entries.js";
 import type { MediaUnderstandingDecision } from "./types.js";

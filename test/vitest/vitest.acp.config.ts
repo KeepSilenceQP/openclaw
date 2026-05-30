@@ -1,4 +1,3 @@
-// Vitest project config for ACP tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the ACP Vitest project config. */

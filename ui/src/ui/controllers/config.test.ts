@@ -1,4 +1,3 @@
-// Tests ui/src/ui/controllers config test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   applyConfigSnapshot,

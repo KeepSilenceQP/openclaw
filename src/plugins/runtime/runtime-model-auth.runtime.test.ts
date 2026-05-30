@@ -1,4 +1,3 @@
-// Tests plugins/runtime runtime model auth runtime test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const hoisted = vi.hoisted(() => ({

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src resolve targets test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ChannelDirectoryEntry } from "../runtime-api.js";
 

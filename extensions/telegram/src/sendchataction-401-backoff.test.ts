@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src sendchataction 401 backoff test behavior.
 import { beforeAll, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({

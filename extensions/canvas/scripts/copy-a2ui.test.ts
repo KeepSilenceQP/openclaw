@@ -1,4 +1,3 @@
-// Tests extensions/canvas/scripts copy a2ui test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { resolvePreferredOpenClawTmpDir, withTempWorkspace } from "openclaw/plugin-sdk/temp-path";

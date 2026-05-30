@@ -1,5 +1,3 @@
-// Global CLI verbosity/yes-mode facade plus themed console helpers.
-/** Re-export global process flags used by legacy CLI entrypoints. */
 export { isVerbose, isYes, setVerbose, setYes } from "./global-state.js";
 import { theme } from "../packages/terminal-core/src/theme.js";
 import { isVerbose } from "./global-state.js";

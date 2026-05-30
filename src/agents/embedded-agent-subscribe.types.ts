@@ -16,7 +16,6 @@ import type {
 } from "./embedded-agent-subscribe.shared-types.js";
 import type { AgentInternalEvent } from "./internal-events.js";
 import type { AgentSession } from "./sessions/index.js";
-/** Shared embedded subscription formatting options re-exported with params. */
 export type {
   BlockReplyChunking,
   ToolProgressDetailMode,

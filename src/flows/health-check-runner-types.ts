@@ -1,4 +1,3 @@
-// Shared health-check runner contracts for doctor detection and repair execution.
 import type {
   HealthCheck,
   HealthCheckContext,

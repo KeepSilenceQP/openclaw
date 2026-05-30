@@ -1,4 +1,3 @@
-// Reply run registry for active and recent run tracking.
 import {
   markDiagnosticEmbeddedRunEnded,
   markDiagnosticEmbeddedRunStarted,
@@ -621,5 +620,4 @@ export const testing = {
     replyRunState.waitersByKey.clear();
   },
 };
-/** Test-only alias preserved for existing registry tests. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host session files yield test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const { fileState } = vi.hoisted(() => ({

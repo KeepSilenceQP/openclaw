@@ -1,4 +1,3 @@
-// Builds compact command-risk summaries for approval prompts and diagnostics.
 import { uniqueStrings } from "../../shared/string-normalization.js";
 import type { CommandExplanation, CommandRisk } from "../command-explainer/types.js";
 import type { ExecCommandSegment } from "../exec-approvals-analysis.js";

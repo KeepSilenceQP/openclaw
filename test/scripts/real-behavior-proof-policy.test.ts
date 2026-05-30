@@ -1,4 +1,3 @@
-// Tests test/scripts real behavior proof policy test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   MOCK_ONLY_PROOF_LABEL,

@@ -1,4 +1,3 @@
-// Tests infra google api base url test behavior.
 import { describe, expect, it } from "vitest";
 import { DEFAULT_GOOGLE_API_BASE_URL, normalizeGoogleApiBaseUrl } from "./google-api-base-url.js";
 

@@ -1,4 +1,3 @@
-// Tests logging diagnostic stability test behavior.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   emitDiagnosticEvent,

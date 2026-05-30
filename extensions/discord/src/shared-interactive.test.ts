@@ -1,4 +1,3 @@
-// Tests extensions/discord/src shared interactive test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildDiscordInteractiveComponents,

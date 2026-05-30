@@ -1,4 +1,3 @@
-// Fast abort command handling for active agent sessions.
 import { getAcpSessionManager } from "../../acp/control-plane/manager.js";
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import {
@@ -51,9 +50,7 @@ import { stripMentions, stripStructuralPrefixes } from "./mentions.js";
 import { clearSessionQueues } from "./queue.js";
 import { replyRunRegistry } from "./reply-run-registry.js";
 
-/** Abort cutoff helpers shared by fast-abort and message filtering. */
 export { resolveAbortCutoffFromContext, shouldSkipMessageByAbortCutoff } from "./abort-cutoff.js";
-/** Abort trigger memory and text matching primitives. */
 export {
   getAbortMemory,
   getAbortMemorySizeForTest,
@@ -473,5 +470,4 @@ export async function tryFastAbortFromMessage(params: {
   const { stopped } = stopSubagentsForRequester({ cfg, requesterSessionKey });
   return { handled: true, aborted: false, stoppedSubagents: stopped };
 }
-/** Backward-compatible test facade alias. */
 export { testing as __testing };

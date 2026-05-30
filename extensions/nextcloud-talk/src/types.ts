@@ -1,4 +1,3 @@
-// Shared types for extensions/nextcloud-talk/src types behavior.
 import type { MessageReceipt } from "openclaw/plugin-sdk/channel-outbound";
 import type {
   BlockStreamingCoalesceConfig,

@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor slash test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import { getSlackSlashMocks, resetSlackSlashMocks } from "./slash.test-harness.js";
 

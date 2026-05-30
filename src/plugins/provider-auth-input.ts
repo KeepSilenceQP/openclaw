@@ -1,4 +1,3 @@
-// Provider setup helpers for API-key input, SecretRef prompts, and env-token handoff.
 import { resolveEnvApiKey } from "../agents/model-auth-env.js";
 import type { OpenClawConfig } from "../config/types.js";
 import type { SecretInput } from "../config/types.secrets.js";
@@ -15,14 +14,12 @@ import {
 } from "./provider-auth-ref.js";
 import type { SecretInputMode } from "./provider-auth-types.js";
 
-/** SecretRef prompt helpers shared by provider setup flows. */
 export {
   extractEnvVarFromSourceLabel,
   promptSecretRefForSetup,
   resolveRefFallbackInput,
   type SecretRefSetupPromptCopy,
 } from "./provider-auth-ref.js";
-/** Secret input mode prompt helpers for plaintext-vs-ref setup choices. */
 export {
   resolveSecretInputModeForEnvSelection,
   type SecretInputModePromptCopy,

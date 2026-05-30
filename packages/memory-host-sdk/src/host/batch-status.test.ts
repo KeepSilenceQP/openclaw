@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host batch status test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveBatchCompletionFromStatus,

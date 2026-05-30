@@ -1,5 +1,4 @@
 // Cron scheduler timer and execution loop. Owns wake timers, missed-run catchup,
-// job execution, timeout watchdogs, delivery status, and event emission.
 import { formatEmbeddedAgentExecutionPhase } from "../../agents/embedded-agent-runner/execution-phase.js";
 import { resolveFailoverReasonFromError } from "../../agents/failover-error.js";
 import { readSessionEntry } from "../../config/sessions/store-load.js";
@@ -68,7 +67,6 @@ import { ensureLoaded, persist } from "./store.js";
 import { CRON_TASK_RUNNING_PROGRESS_SUMMARY } from "./task-ledger.js";
 import { resolveCronJobTimeoutMs } from "./timeout-policy.js";
 
-/** Default cron job timeout policy re-exported with timer helpers. */
 export { DEFAULT_JOB_TIMEOUT_MS } from "./timeout-policy.js";
 
 const MAX_TIMER_DELAY_MS = 60_000;

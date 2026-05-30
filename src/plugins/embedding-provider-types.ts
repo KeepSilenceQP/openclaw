@@ -1,4 +1,3 @@
-// Embedding provider plugin contracts and runtime creation types.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { SecretInput } from "../config/types.secrets.js";
 

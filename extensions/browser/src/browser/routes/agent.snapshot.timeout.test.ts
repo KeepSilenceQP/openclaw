@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser/routes agent snapshot timeout test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { createBrowserRouteApp, createBrowserRouteResponse } from "./test-helpers.js";
 

@@ -1,4 +1,3 @@
-/** Re-exported lmstudio plugin public API. */
 export {
   buildLmstudioAuthHeaders,
   buildLmstudioModelName,

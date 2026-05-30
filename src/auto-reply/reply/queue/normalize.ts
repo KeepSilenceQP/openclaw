@@ -1,4 +1,3 @@
-// Queue option normalization helpers.
 import { normalizeOptionalLowercaseString } from "../../../shared/string-coerce.js";
 import type { QueueDropPolicy, QueueMode } from "./types.js";
 

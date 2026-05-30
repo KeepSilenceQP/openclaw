@@ -1,4 +1,3 @@
-// Moonshot onboarding helpers that apply default Kimi model presets.
 import {
   createDefaultModelPresetAppliers,
   type OpenClawConfig,

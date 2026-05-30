@@ -1,4 +1,3 @@
-// Tests scripts control ui i18n test behavior.
 import { describe, expect, it } from "vitest";
 import {
   findPlaceholderMismatches,

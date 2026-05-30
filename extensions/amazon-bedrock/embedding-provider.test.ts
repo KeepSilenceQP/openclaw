@@ -1,4 +1,3 @@
-// Tests extensions/amazon-bedrock embedding provider test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { testing, hasAwsCredentials } from "./embedding-provider.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/file-transfer/src/tools dir fetch tool test behavior.
 import { spawn } from "node:child_process";
 import { EventEmitter } from "node:events";
 import fs from "node:fs/promises";

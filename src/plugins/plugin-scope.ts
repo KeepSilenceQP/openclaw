@@ -1,4 +1,3 @@
-// Normalizes optional plugin-id scopes for cache keys, registry filters, and diagnostics.
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 
 /** Optional sorted plugin-id list; `undefined` means unscoped, while `[]` means explicitly empty. */

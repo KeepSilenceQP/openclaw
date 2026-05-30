@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server trajectory test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser server context list profiles test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import "./server-context.chrome-test-harness.js";
 import * as chromeModule from "./chrome.js";

@@ -1,4 +1,3 @@
-// Runtime indirection for selecting the model used by commitment extraction.
 import { resolveDefaultModelForAgent } from "../agents/model-selection.js";
 import type { OpenClawConfig } from "../config/config.js";
 

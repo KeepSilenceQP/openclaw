@@ -1,4 +1,3 @@
-// Wrapped Clack note output with suppression and copy-safe line wrapping.
 import { AsyncLocalStorage } from "node:async_hooks";
 import { note as clackNote } from "@clack/prompts";
 import { visibleWidth } from "./ansi.js";

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor ack config test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMatrixAckReactionConfig } from "./ack-config.js";
 

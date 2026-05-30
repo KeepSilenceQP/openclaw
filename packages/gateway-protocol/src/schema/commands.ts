@@ -1,4 +1,3 @@
-// TypeBox schemas and bounds for gateway command catalog responses.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

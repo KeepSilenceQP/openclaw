@@ -1,4 +1,3 @@
-// Core command dispatcher and lazy command handler registry.
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 import { shouldHandleTextCommands } from "../commands-registry.js";
 import { maybeHandleResetCommand } from "./commands-reset.js";

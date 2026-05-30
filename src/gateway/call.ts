@@ -1,4 +1,3 @@
-// Gateway WebSocket RPC client helpers for auth, scopes, transport errors, and CLI calls.
 import { randomUUID } from "node:crypto";
 import { isLoopbackIpAddress } from "@openclaw/net-policy/ip";
 import { redactSensitiveUrlLikeString } from "@openclaw/net-policy/redact-sensitive-url";
@@ -54,7 +53,6 @@ import {
   resolveLeastPrivilegeOperatorScopesForMethod,
   type OperatorScope,
 } from "./method-scopes.js";
-/** Connection detail shape used in Gateway call errors and diagnostics. */
 export type { GatewayConnectionDetails };
 
 /** Bound Gateway request function passed to abort hooks. */
@@ -465,7 +463,6 @@ function ensureGatewayCallCanAuthenticate(params: {
   });
 }
 
-/** Explicit token/password auth shape accepted by Gateway callers. */
 export type { ExplicitGatewayAuth } from "./credentials.js";
 
 /** Normalizes explicit Gateway token/password values. */
@@ -652,7 +649,6 @@ async function resolveGatewayCredentialsWithEnv(
   });
 }
 
-/** SecretRef-aware Gateway credential resolver for callers that need the lower-level API. */
 export { resolveGatewayCredentialsWithSecretInputs };
 
 async function resolveGatewayTlsFingerprint(params: {
@@ -1081,5 +1077,4 @@ export async function callGateway<T = Record<string, unknown>>(
 export function randomIdempotencyKey() {
   return randomUUID();
 }
-/** Test-only alias for Gateway call dependency controls. */
 export { testing as __testing };

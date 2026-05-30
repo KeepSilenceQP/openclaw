@@ -1,5 +1,4 @@
 // Chat event reload heuristic. It detects final events that need a history
-// refresh because the streamed payload does not contain renderable assistant text.
 import { extractText } from "./chat/message-extract.ts";
 import type { ChatEventPayload } from "./controllers/chat.ts";
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";

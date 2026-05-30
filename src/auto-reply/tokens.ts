@@ -1,4 +1,3 @@
-// Token estimation helpers for text and message payloads.
 import { escapeRegExp } from "../shared/regexp.js";
 
 export const HEARTBEAT_TOKEN = "HEARTBEAT_OK";

@@ -1,4 +1,3 @@
-// Redacts structured log lines into safe support-bundle records.
 import { isBlockedObjectKey } from "../infra/prototype-keys.js";
 import { asOptionalRecord } from "../shared/record-coerce.js";
 import {

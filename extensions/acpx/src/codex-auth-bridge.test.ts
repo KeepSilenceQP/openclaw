@@ -1,4 +1,3 @@
-// Tests extensions/acpx/src codex auth bridge test behavior.
 import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";

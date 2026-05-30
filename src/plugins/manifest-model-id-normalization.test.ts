@@ -1,4 +1,3 @@
-// Tests plugins manifest model id normalization test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Finds and terminates stale gateway processes before service restart.
 import { spawnSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import path from "node:path";
@@ -636,5 +635,4 @@ export const testing = {
   /** Invoke sleepSync directly (bypasses the override) for unit-testing the real Atomics path. */
   callSleepSyncRaw: sleepSync,
 };
-/** Test-only hooks exported under an explicit testing alias. */
 export { testing as __testing };

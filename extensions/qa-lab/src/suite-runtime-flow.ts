@@ -1,4 +1,3 @@
-// QA Lab suite-runtime flow helper builds the action API exposed to YAML scenario flows.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

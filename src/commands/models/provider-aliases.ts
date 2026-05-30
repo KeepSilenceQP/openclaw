@@ -1,4 +1,3 @@
-// Canonicalizes provider aliases declared by plugin model catalogs.
 import { normalizeProviderId } from "../../agents/model-selection.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import {

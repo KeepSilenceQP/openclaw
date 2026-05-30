@@ -1,4 +1,3 @@
-// Tests test/scripts transitive manifest risk report test behavior.
 import { describe, expect, it } from "vitest";
 import {
   createTransitiveManifestRiskReport,

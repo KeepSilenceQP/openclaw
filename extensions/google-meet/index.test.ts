@@ -1,4 +1,3 @@
-// Tests extensions/google-meet index test behavior.
 import { EventEmitter } from "node:events";
 import { existsSync, mkdtempSync, readFileSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";

@@ -1,4 +1,3 @@
-// Tests config config gateway tailscale bind test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObject } from "./validation.js";
 

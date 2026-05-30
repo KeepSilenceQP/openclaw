@@ -1,4 +1,3 @@
-// Runtime store wiring for task flow registry persistence and observer hooks.
 import {
   closeTaskFlowRegistryDatabase,
   deleteTaskFlowRegistryRecordFromSqlite,
@@ -9,7 +8,6 @@ import {
 import type { TaskFlowRegistryStoreSnapshot } from "./task-flow-registry.store.types.js";
 import type { TaskFlowRecord } from "./task-flow-registry.types.js";
 
-/** Snapshot shape re-exported for callers that provide custom registry stores. */
 export type { TaskFlowRegistryStoreSnapshot } from "./task-flow-registry.store.types.js";
 
 /** Persistence adapter used by the task flow registry runtime. */

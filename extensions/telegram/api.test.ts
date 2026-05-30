@@ -1,4 +1,3 @@
-// Tests extensions/telegram api test behavior.
 import { describe, expect, it } from "vitest";
 import { escapeTelegramHtml, markdownToTelegramHtml } from "./api.js";
 

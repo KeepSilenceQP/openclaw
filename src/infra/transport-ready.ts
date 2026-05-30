@@ -1,4 +1,3 @@
-// Polls transport startup readiness with timeout and optional progress logging.
 import { danger } from "../globals.js";
 import type { RuntimeEnv } from "../runtime.js";
 import { resolveTimerTimeoutMs } from "../shared/number-coercion.js";

@@ -1,4 +1,3 @@
-// QA Lab live-timeout helper delegates provider/model-specific turn timeout selection.
 import type { QaProviderMode } from "./model-selection.js";
 import { getQaProvider } from "./providers/index.js";
 

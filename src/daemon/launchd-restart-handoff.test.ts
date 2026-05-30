@@ -1,4 +1,3 @@
-// Tests daemon launchd restart handoff test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const spawnMock = vi.hoisted(() => vi.fn());

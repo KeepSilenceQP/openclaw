@@ -1,4 +1,3 @@
-// Tests test/scripts install ps1 test behavior.
 import { spawnSync } from "node:child_process";
 import { chmodSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";

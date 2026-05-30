@@ -1,4 +1,3 @@
-// Configured binding routing helpers.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { logVerbose } from "../../globals.js";
 import {

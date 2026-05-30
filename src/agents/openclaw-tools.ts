@@ -575,5 +575,4 @@ export const testing = {
       : defaultOpenClawToolsDeps;
   },
 };
-/** Test-only dependency overrides for built-in OpenClaw tools. */
 export { testing as __testing };

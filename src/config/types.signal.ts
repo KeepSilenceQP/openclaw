@@ -1,4 +1,3 @@
-// Signal channel config contracts shared by config validation and channel runtime.
 import type { CommonChannelMessagingConfig } from "./types.channel-messaging-common.js";
 import type { GroupToolPolicyBySenderConfig, GroupToolPolicyConfig } from "./types.tools.js";
 

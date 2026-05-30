@@ -1,4 +1,3 @@
-// Media metadata helpers for reply history entries.
 import { mimeTypeFromFilePath } from "../../media/mime.js";
 import { asFiniteNumber } from "../../shared/number-coercion.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";

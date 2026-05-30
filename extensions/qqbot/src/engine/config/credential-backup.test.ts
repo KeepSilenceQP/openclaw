@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/config credential backup test behavior.
 import fs from "node:fs";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { getCredentialBackupFile, getLegacyCredentialBackupFile } from "../utils/data-paths.js";

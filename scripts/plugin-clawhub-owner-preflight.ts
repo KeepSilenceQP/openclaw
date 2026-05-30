@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// ClawHub owner preflight verifies OpenClaw owns candidate plugin packages before release.
-
 import { readFileSync } from "node:fs";
 import { pathToFileURL } from "node:url";
 import { collectClawHubOpenClawOwnerErrors } from "./lib/plugin-clawhub-release.ts";

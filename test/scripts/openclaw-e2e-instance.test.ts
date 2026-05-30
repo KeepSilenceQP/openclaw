@@ -1,4 +1,3 @@
-// Tests test/scripts openclaw e2e instance test behavior.
 import { execFileSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";

@@ -1,4 +1,3 @@
-// Gateway restart trace lifecycle, metric formatting, and process handoff helpers.
 import { performance } from "node:perf_hooks";
 import { isTruthyEnvValue } from "../infra/env.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";

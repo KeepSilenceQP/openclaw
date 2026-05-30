@@ -186,5 +186,4 @@ export function buildEmbeddedExtensionFactories(params: {
   return factories;
 }
 
-/** Re-export reserve-token helper used by compaction extension callers. */
 export { ensureAgentCompactionReserveTokens };

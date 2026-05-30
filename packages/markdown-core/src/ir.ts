@@ -1,4 +1,3 @@
-// Parses markdown into plain text plus span metadata for channel renderers.
 import MarkdownIt from "markdown-it";
 import { chunkText } from "./chunk-text.js";
 import type { MarkdownTableMode } from "./types.js";

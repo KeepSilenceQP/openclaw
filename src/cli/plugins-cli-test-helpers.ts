@@ -158,7 +158,6 @@ const { defaultRuntime, runtimeLogs, runtimeErrors, resetRuntimeCapture } = vi.h
   };
 });
 
-/** Captured runtime stderr/stdout lines for plugins CLI assertions. */
 export { runtimeErrors, runtimeLogs };
 
 /** Seeds the in-memory installed-plugin index used by mocked registry IO. */
@@ -685,7 +684,6 @@ vi.mock("../infra/clawhub.js", () => ({
 
 const { registerPluginsCli } = await import("./plugins-cli.js");
 
-/** Plugins CLI registrar imported after mocks are installed. */
 export { registerPluginsCli };
 
 /** Runs a plugins CLI command through Commander with the mocked harness. */

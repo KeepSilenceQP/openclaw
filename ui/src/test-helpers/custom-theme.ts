@@ -1,4 +1,3 @@
-// Custom-theme fixtures for Control UI theme import tests.
 import { normalizeImportedCustomTheme } from "../ui/custom-theme.ts";
 
 /** Create a representative tweakcn theme payload for import tests. */

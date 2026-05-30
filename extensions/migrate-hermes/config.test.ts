@@ -1,4 +1,3 @@
-// Tests extensions/migrate-hermes config test behavior.
 import path from "node:path";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/provider-auth";
 import { afterEach, describe, expect, it } from "vitest";

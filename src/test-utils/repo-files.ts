@@ -1,4 +1,3 @@
-// Repo path and tracked-file helpers for tests that inspect source trees.
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 

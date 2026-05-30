@@ -1,4 +1,3 @@
-// Delivery target metadata shared by session persistence and channel routing.
 import type { ChannelRouteRef, ChannelRouteTargetInput } from "../plugin-sdk/channel-route.js";
 
 /** Reference to an outbound delivery queue intent associated with a context. */

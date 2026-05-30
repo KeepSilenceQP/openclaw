@@ -58,7 +58,6 @@ import { resolveSubagentSpawnAcceptedNote } from "./subagent-spawn-accepted-note
 import { resolveSubagentSpawnOwnership } from "./subagent-spawn-ownership.js";
 import { resolveSubagentTargetPolicy } from "./subagent-target-policy.js";
 import { normalizeSubagentTaskName } from "./subagent-task-name.js";
-/** Accepted-note constants for subagent spawn responses. */
 export {
   SUBAGENT_SPAWN_ACCEPTED_NOTE,
   SUBAGENT_SPAWN_SESSION_ACCEPTED_NOTE,
@@ -102,20 +101,17 @@ import {
   type SpawnSubagentSandboxMode,
 } from "./subagent-spawn.types.js";
 
-/** Allowed subagent spawn mode enum values. */
 export {
   SUBAGENT_SPAWN_CONTEXT_MODES,
   SUBAGENT_SPAWN_MODES,
   SUBAGENT_SPAWN_SANDBOX_MODES,
 } from "./subagent-spawn.types.js";
-/** Subagent spawn mode types used by callers and config. */
 export type {
   SpawnSubagentContextMode,
   SpawnSubagentMode,
   SpawnSubagentSandboxMode,
 } from "./subagent-spawn.types.js";
 
-/** Strict attachment base64 decoder used by subagent spawn materialization. */
 export { decodeStrictBase64 };
 
 function resolveConfiguredAgentIds(cfg: OpenClawConfig): string[] {
@@ -217,7 +213,6 @@ export type SpawnSubagentResult = {
   };
 };
 
-/** Split a provider/model ref for subagent model planning. */
 export { splitModelRef } from "./subagent-spawn-plan.js";
 
 async function updateSubagentSessionStore(
@@ -1669,5 +1664,4 @@ export const testing = {
       : defaultSubagentSpawnDeps;
   },
 };
-/** Backward-compatible test facade alias. */
 export { testing as __testing };

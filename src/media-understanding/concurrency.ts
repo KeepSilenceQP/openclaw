@@ -1,4 +1,3 @@
-// Media-understanding concurrency wrapper with verbose task-failure logging.
 import { logVerbose, shouldLogVerbose } from "../globals.js";
 import { runTasksWithConcurrency } from "../utils/run-with-concurrency.js";
 

@@ -1,4 +1,3 @@
-// Tests test/scripts audit seams test behavior.
 import { describe, expect, it } from "vitest";
 import {
   HELP_TEXT,

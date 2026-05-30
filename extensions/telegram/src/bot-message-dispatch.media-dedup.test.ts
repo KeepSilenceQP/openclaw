@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot message dispatch media dedup test behavior.
 import { describe, expect, it } from "vitest";
 import { deduplicateBlockSentMedia } from "./bot-message-dispatch.media-dedup.js";
 

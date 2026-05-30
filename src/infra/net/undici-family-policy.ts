@@ -1,4 +1,3 @@
-// Resolves Undici address-family defaults, including WSL2 IPv4 fallback policy.
 import * as net from "node:net";
 import { isWSL2Sync } from "../wsl.js";
 

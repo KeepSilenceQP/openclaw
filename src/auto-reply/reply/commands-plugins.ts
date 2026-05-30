@@ -1,4 +1,3 @@
-// Chat command handlers for plugin listing, install, and management.
 import fs from "node:fs";
 import { buildNpmInstallRecordFields } from "../../cli/npm-resolution.js";
 import { resolveOfficialExternalNpmPackageTrust } from "../../cli/plugin-install-plan.js";

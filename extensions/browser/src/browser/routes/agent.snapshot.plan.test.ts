@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser/routes agent snapshot plan test behavior.
 import { describe, expect, it } from "vitest";
 import type { ResolvedBrowserProfile } from "../config.js";
 import { DEFAULT_AI_SNAPSHOT_MAX_CHARS } from "../constants.js";

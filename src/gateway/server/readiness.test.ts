@@ -1,4 +1,3 @@
-// Tests gateway/server readiness test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { ChannelId } from "../../channels/plugins/index.js";
 import type { ChannelAccountSnapshot } from "../../channels/plugins/types.js";

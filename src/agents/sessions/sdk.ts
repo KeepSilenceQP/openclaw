@@ -1,4 +1,3 @@
-// Agent sessions SDK creates session runtimes and re-exports extension/tool APIs.
 import { join } from "node:path";
 import { clampThinkingLevel } from "../../llm/model-utils.js";
 import { streamSimple } from "../../llm/stream.js";
@@ -101,7 +100,6 @@ export interface CreateAgentSessionResult {
 
 // Re-exports
 
-/** Extension API types used by session SDK consumers. */
 export type {
   ExtensionAPI,
   ExtensionCommandContext,
@@ -111,14 +109,10 @@ export type {
   SlashCommandSource,
   ToolDefinition,
 } from "./extensions/index.js";
-/** Prompt template type used by custom session resources. */
 export type { PromptTemplate } from "./prompt-templates.js";
-/** Skill type loaded into session prompts. */
 export type { Skill } from "../../skills/loading/session.js";
-/** Built-in/custom tool type exposed by the session SDK. */
 export type { Tool } from "./tools/index.js";
 
-/** Built-in tool factories and write-queue helper exposed by the session SDK. */
 export {
   withFileMutationQueue,
   // Tool factories (for custom cwd)

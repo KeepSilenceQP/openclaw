@@ -1,4 +1,3 @@
-// Session state helpers for reply orchestration.
 import crypto from "node:crypto";
 import path from "node:path";
 import { retireSessionMcpRuntime } from "../../agents/agent-bundle-mcp-tools.js";

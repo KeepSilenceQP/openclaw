@@ -1,4 +1,3 @@
-// Setup wizard flow for choosing and configuring a web_search provider.
 import { resolveDefaultAgentDir } from "../agents/agent-scope-config.js";
 import { hasAuthProfileForProvider } from "../agents/tools/model-config.helpers.js";
 import type { SecretInputMode } from "../commands/onboard-types.js";

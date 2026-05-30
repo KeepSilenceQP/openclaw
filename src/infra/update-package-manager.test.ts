@@ -1,4 +1,3 @@
-// Tests infra update package manager test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveUpdateBuildManager,

@@ -1,4 +1,3 @@
-// Module mock helper for replacing session write-lock acquisition in tests.
 import type * as SessionWriteLockModule from "../agents/session-write-lock.js";
 
 type SessionWriteLockModuleShape = typeof SessionWriteLockModule;

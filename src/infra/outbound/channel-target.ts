@@ -1,5 +1,4 @@
 // Channel target CLI/action normalization.
-// Modern `target` input is mapped to legacy adapter fields only where the action allows it.
 import {
   hasNonEmptyString as sharedHasNonEmptyString,
   normalizeOptionalString,

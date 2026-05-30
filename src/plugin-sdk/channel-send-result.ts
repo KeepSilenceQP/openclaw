@@ -2,9 +2,7 @@ import type { ChannelOutboundAdapter } from "../channels/plugins/outbound.types.
 import type { ChannelPollResult } from "../channels/plugins/types.public.js";
 import type { OutboundDeliveryResult } from "../infra/outbound/deliver.js";
 
-/** Channel outbound adapter type used by send-result helpers. */
 export type { ChannelOutboundAdapter } from "../channels/plugins/outbound.types.js";
-/** Normalized outbound delivery result type returned by channel adapters. */
 export type { OutboundDeliveryResult } from "../infra/outbound/deliver.js";
 /** Minimal raw send result accepted from channel-specific send helpers. */
 export type ChannelSendRawResult = {

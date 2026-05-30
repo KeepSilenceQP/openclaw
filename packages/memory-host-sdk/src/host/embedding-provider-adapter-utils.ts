@@ -1,4 +1,3 @@
-// Shared adapter helpers for embedding provider implementations.
 import { normalizeLowercaseStringOrEmpty } from "./string-utils.js";
 
 /** Detects provider auth errors caused by missing embedding API keys. */

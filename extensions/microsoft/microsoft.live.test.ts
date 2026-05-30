@@ -1,4 +1,3 @@
-// Tests extensions/microsoft microsoft live test behavior.
 import { isLiveTestEnabled } from "openclaw/plugin-sdk/test-env";
 import { describe, expect, it } from "vitest";
 import { listMicrosoftVoices } from "./speech-provider.js";

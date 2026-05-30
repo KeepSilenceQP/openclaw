@@ -1,4 +1,3 @@
-// Tests plugins provider model primary test behavior.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { applyPrimaryModel } from "./provider-model-primary.js";

@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor auto presence test behavior.
 import type { AuthProfileStore } from "openclaw/plugin-sdk/provider-auth";
 import { describe, expect, it, vi } from "vitest";
 import {

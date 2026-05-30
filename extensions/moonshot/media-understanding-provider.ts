@@ -1,5 +1,4 @@
 // Moonshot media-understanding provider for image and OpenAI-compatible video
-// description requests.
 import {
   buildOpenAiCompatibleVideoRequestBody,
   coerceOpenAiCompatibleVideoText,

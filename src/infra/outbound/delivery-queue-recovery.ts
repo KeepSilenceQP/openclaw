@@ -1,5 +1,4 @@
 // Durable outbound delivery recovery.
-// Replays or reconciles pending sends after crashes while respecting retry/backoff policy.
 import type {
   ChannelMessageSendCommitContext,
   ChannelMessageUnknownSendReconciliationResult,
@@ -705,5 +704,4 @@ export async function recoverPendingDeliveries(opts: {
   return summary;
 }
 
-/** Maximum retry count before a pending delivery is moved to failed/. */
 export { MAX_RETRIES };

@@ -1,4 +1,3 @@
-// Tests infra system run command test behavior.
 import { describe, expect, test } from "vitest";
 import {
   extractShellCommandFromArgv,

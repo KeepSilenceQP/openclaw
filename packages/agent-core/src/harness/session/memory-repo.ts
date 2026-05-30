@@ -1,4 +1,3 @@
-// In-memory session repository used by tests and lightweight harness embedders.
 import { type Session, SessionError, type SessionMetadata, type SessionRepo } from "../types.js";
 import { InMemorySessionStorage } from "./memory-storage.js";
 import { createSessionId, createTimestamp, getEntriesToFork, toSession } from "./repo-utils.js";

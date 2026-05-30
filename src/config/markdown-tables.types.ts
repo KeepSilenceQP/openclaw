@@ -1,4 +1,3 @@
-// Shared types for config markdown tables types behavior.
 import type { MarkdownTableMode } from "./types.base.js";
 import type { OpenClawConfig } from "./types.openclaw.js";
 

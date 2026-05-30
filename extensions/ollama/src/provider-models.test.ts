@@ -1,4 +1,3 @@
-// Tests extensions/ollama/src provider models test behavior.
 import { jsonResponse, requestBodyText, requestUrl } from "openclaw/plugin-sdk/test-env";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {

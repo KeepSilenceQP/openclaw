@@ -1,4 +1,3 @@
-// Coverage for get-reply fast-path handling.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

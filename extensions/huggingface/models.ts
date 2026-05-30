@@ -1,4 +1,3 @@
-// Hugging Face model catalog fetch and normalization helpers.
 import { resolveTimerTimeoutMs } from "openclaw/plugin-sdk/number-runtime";
 import type { ModelDefinitionConfig } from "openclaw/plugin-sdk/provider-model-types";
 import {

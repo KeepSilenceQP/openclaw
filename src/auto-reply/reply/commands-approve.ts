@@ -1,4 +1,3 @@
-// Command handlers for approving queued tool or action requests.
 import {
   getChannelPlugin,
   resolveChannelApprovalCapability,

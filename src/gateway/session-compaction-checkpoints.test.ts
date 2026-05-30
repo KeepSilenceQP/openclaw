@@ -1,4 +1,3 @@
-// Tests gateway session compaction checkpoints test behavior.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

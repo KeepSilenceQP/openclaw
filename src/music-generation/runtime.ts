@@ -1,4 +1,3 @@
-// Runtime entrypoint for music generation provider selection, fallback, normalization, and result shaping.
 import type { FallbackAttempt } from "../agents/model-fallback.types.js";
 import { resolveAgentModelTimeoutMsValue } from "../config/model-input.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -27,7 +26,6 @@ export type MusicGenerationRuntimeDeps = {
   log?: Pick<typeof log, "debug">;
 };
 
-/** Re-export public runtime request/result types for callers of the music generation facade. */
 export type { GenerateMusicParams, GenerateMusicRuntimeResult } from "./runtime-types.js";
 
 /** Lists currently available music-generation providers using the runtime dependency seam. */

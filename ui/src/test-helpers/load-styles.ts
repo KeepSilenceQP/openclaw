@@ -1,4 +1,3 @@
-// Test-only style loader for Control UI component and view suites.
 import "../styles/base.css";
 import "../styles/layout.css";
 import "../styles/layout.mobile.css";

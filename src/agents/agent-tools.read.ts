@@ -26,7 +26,6 @@ import type { SandboxFsBridge } from "./sandbox/fs-bridge.js";
 import { createEditTool, createReadTool, createWriteTool } from "./sessions/index.js";
 import { sanitizeToolResultImages } from "./tool-images.js";
 
-/** Parameter validation utilities reused by wrapped read/write/edit tools. */
 export {
   REQUIRED_PARAM_GROUPS,
   assertRequiredParams,

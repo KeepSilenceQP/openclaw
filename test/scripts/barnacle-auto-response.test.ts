@@ -1,4 +1,3 @@
-// Tests test/scripts barnacle auto response test behavior.
 import { describe, expect, it } from "vitest";
 import {
   candidateLabels,

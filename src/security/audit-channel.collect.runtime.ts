@@ -1,4 +1,3 @@
-// Runtime boundary for security audit channel collect runtime behavior.
 import { collectChannelSecurityFindings as collectChannelSecurityFindingsImpl } from "./audit-channel.js";
 
 type CollectChannelSecurityFindings =

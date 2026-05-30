@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/messaging decode media path test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { decodeMediaPath } from "./decode-media-path.js";
 

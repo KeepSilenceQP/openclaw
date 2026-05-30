@@ -494,7 +494,6 @@ export interface SessionStorage<TMetadata extends SessionMetadata = SessionMetad
   getEntries(): Promise<SessionTreeEntry[]>;
 }
 
-/** Re-export the concrete Session facade alongside storage/repo contracts. */
 export type { Session } from "./session/session.js";
 
 /** Harness contract for Session Create Options. */
@@ -919,5 +918,4 @@ export interface AgentHarnessOptions<
   followUpMode?: QueueMode;
 }
 
-/** Re-export the concrete AgentHarness facade alongside event and option contracts. */
 export type { AgentHarness } from "./agent-harness.js";

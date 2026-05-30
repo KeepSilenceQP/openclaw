@@ -5,7 +5,6 @@ import type { ToolFsPolicy } from "./tool-fs-policy.types.js";
 import { isToolAllowedByPolicies } from "./tool-policy-match.js";
 import { mergeAlsoAllowPolicy, resolveToolProfilePolicy } from "./tool-policy.js";
 
-/** Filesystem policy shape enforced by read/write/edit/apply_patch tools. */
 export type { ToolFsPolicy } from "./tool-fs-policy.types.js";
 
 /** Create a filesystem policy object from resolved workspace-only settings. */

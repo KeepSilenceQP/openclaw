@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/memory-core/src tools runtime behavior.
 export {
   readAgentMemoryFile,
   resolveMemoryBackendConfig,

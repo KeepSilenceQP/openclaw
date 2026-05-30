@@ -1,4 +1,3 @@
-// Conversation binding context resolution for command targets.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   resolveCommandConversationResolution,

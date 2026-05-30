@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src targets test behavior.
 import { describe, expect, it } from "vitest";
 import {
   isNumericTelegramSenderUserId,

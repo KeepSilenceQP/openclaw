@@ -36,7 +36,6 @@ type MediaGenerateListProviderDetails<TProvider extends MediaGenerateProvider> =
   catalog: ReturnType<typeof synthesizeMediaGenerationCatalogEntries<TProvider["capabilities"]>>;
 };
 
-/** Generic action result used by media generation tools. */
 export type { MediaGenerateActionResult };
 
 /** Builds a provider/model listing action result for a media tool. */

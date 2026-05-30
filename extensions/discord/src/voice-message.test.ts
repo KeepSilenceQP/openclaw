@@ -1,4 +1,3 @@
-// Tests extensions/discord/src voice message test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";

@@ -1,4 +1,3 @@
-// Converts raw gateway event frames into the stable SDK event vocabulary.
 import type { GatewayEvent, JsonObject, OpenClawEvent, OpenClawEventType } from "./types.js";
 
 function asRecord(value: unknown): JsonObject {

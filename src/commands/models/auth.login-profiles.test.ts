@@ -1,4 +1,3 @@
-// Tests login profile id override behavior for provider auth responses.
 import { describe, expect, it } from "vitest";
 import { resolveLoginProfiles } from "./auth.js";
 

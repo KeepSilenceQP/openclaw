@@ -1,5 +1,4 @@
 // Gateway diagnostic probe client. Connects with read scope, derives auth
-// capability, and fetches optional detail without mutating pairing state.
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import {

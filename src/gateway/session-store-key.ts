@@ -1,4 +1,3 @@
-// Canonicalizes session keys before gateway reads/writes per-agent session stores.
 import { listAgentIds, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import {
   canonicalizeMainSessionAlias,

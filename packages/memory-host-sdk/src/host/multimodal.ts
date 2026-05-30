@@ -1,4 +1,3 @@
-// Multimodal memory indexing settings and file classification helpers.
 import { normalizeLowercaseStringOrEmpty } from "./string-utils.js";
 
 const MEMORY_MULTIMODAL_SPECS = {

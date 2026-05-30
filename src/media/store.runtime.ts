@@ -1,4 +1,3 @@
-// Runtime boundary for media store runtime behavior.
 import "../infra/fs-safe-defaults.js";
 import {
   FsSafeError,

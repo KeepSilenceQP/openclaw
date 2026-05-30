@@ -1,4 +1,3 @@
-// Tests extensions/qwen media understanding provider test behavior.
 import {
   createRequestCaptureJsonFetch,
   installPinnedHostnameTestHooks,

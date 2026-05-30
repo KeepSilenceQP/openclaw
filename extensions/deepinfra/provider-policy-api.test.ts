@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra provider policy api test behavior.
 import type {
   ModelDefinitionConfig,
   ModelProviderConfig,

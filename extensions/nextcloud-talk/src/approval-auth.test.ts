@@ -1,4 +1,3 @@
-// Tests extensions/nextcloud-talk/src approval auth test behavior.
 import { describe, expect, it } from "vitest";
 import { nextcloudTalkApprovalAuth } from "./approval-auth.js";
 

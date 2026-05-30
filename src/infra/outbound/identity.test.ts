@@ -1,4 +1,3 @@
-// Tests infra/outbound identity test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const resolveAgentIdentityMock = vi.hoisted(() => vi.fn());

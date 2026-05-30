@@ -1,4 +1,3 @@
-// Tests test/scripts verify plugin npm published runtime test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectPluginNpmPublishedRuntimeErrors,

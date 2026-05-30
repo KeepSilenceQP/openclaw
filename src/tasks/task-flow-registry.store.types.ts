@@ -1,4 +1,3 @@
-// TaskFlow registry store snapshot types.
 import type { TaskFlowRecord } from "./task-flow-registry.types.js";
 
 /** In-memory TaskFlow store snapshot keyed by flow id. */

@@ -1,4 +1,3 @@
-// Adapts plugin approval capabilities into channel approval runtime handlers.
 import type {
   ChannelApprovalCapability,
   ChannelApprovalNativeAdapter,
@@ -36,7 +35,6 @@ import type {
 import type { ExecApprovalChannelRuntime } from "./exec-approval-channel-runtime.js";
 import type { ExecApprovalChannelRuntimeEventKind } from "./exec-approval-channel-runtime.types.js";
 
-/** Approval view-model shapes exposed to channel approval integrations. */
 export type {
   ApprovalActionView,
   ApprovalMetadataView,
@@ -51,12 +49,10 @@ export type {
   PluginApprovalResolvedView,
   ResolvedApprovalView,
 } from "./approval-view-model.types.js";
-/** Native runtime context and lazy adapter factory for channel approval plugins. */
 export {
   CHANNEL_APPROVAL_NATIVE_RUNTIME_CONTEXT_CAPABILITY,
   createLazyChannelApprovalNativeRuntimeAdapter,
 };
-/** Native approval runtime adapter contracts implemented by channel plugins. */
 export type {
   ChannelApprovalCapabilityHandlerContext,
   ChannelApprovalNativeAvailabilityAdapter,

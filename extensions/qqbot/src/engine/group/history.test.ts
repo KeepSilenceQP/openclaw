@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/group history test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildMergedMessageContext,

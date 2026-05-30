@@ -1,5 +1,4 @@
 // Exec approval policy summary helpers for CLI diagnostics and operator views.
-// They explain how requested config, host policy, and agent overrides combine.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { DEFAULT_AGENT_ID } from "../routing/session-key.js";
 import { sortUniqueStrings } from "../shared/string-normalization.js";

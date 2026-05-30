@@ -1,4 +1,3 @@
-// QA Lab scenario-pack helpers group scenario ids into named runner packs.
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 /** Definition for a named QA scenario pack. */

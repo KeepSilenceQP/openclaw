@@ -1,4 +1,3 @@
-// Chat-side tool stream state, compaction toasts, and lifecycle event handlers.
 import { updateActivityFromToolEvent, type ActivityEntry } from "./activity-model.ts";
 import { createChatModelOverride } from "./chat-model-ref.ts";
 import type { ChatModelOverride } from "./chat-model-ref.types.ts";

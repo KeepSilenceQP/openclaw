@@ -7,11 +7,7 @@
  * - GitHub Copilot
  */
 
-// Anthropic
-/** Anthropic OAuth login/refresh provider exports. */
 export { anthropicOAuthProvider, loginAnthropic, refreshAnthropicToken } from "./anthropic.js";
-// GitHub Copilot
-/** GitHub Copilot OAuth login/refresh provider exports. */
 export {
   getGitHubCopilotBaseUrl,
   githubCopilotOAuthProvider,
@@ -19,8 +15,6 @@ export {
   normalizeDomain,
   refreshGitHubCopilotToken,
 } from "./github-copilot.js";
-// OpenAI Codex (ChatGPT OAuth)
-/** OpenAI Codex OAuth login/refresh provider exports. */
 export {
   loginOpenAICodex,
   openaiCodexOAuthProvider,
@@ -31,8 +25,6 @@ export * from "./types.js";
 
 // ============================================================================
 // Provider Registry
-// ============================================================================
-
 import { anthropicOAuthProvider } from "./anthropic.js";
 import { githubCopilotOAuthProvider } from "./github-copilot.js";
 import { openaiCodexOAuthProvider } from "./openai-codex.js";

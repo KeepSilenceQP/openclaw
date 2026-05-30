@@ -1,4 +1,3 @@
-// Observes config reads, records health fingerprints, and recovers suspicious clobbers.
 import crypto from "node:crypto";
 import path from "node:path";
 import { isRecord } from "../utils.js";

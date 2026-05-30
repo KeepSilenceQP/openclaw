@@ -1,4 +1,3 @@
-// Coverage for queued reply deduplication.
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";
 import { beforeEach, describe, expect, it } from "vitest";
 import type { FollowupRun, QueueSettings } from "./queue.js";

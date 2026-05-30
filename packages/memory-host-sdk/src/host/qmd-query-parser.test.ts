@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host qmd query parser test behavior.
 import { describe, expect, it } from "vitest";
 import { parseQmdQueryJson } from "./qmd-query-parser.js";
 

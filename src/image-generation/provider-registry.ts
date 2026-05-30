@@ -1,4 +1,3 @@
-// Image-generation provider registry backed by plugin capability providers.
 import { normalizeProviderId } from "../agents/model-selection.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { isBlockedObjectKey } from "../infra/prototype-keys.js";

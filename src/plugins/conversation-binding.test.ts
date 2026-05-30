@@ -1,4 +1,3 @@
-// Tests plugins conversation binding test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";

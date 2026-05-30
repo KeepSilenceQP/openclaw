@@ -40,18 +40,14 @@ import type {
   RunChannelTurnParams,
 } from "../turn/types.js";
 
-/** Inbound turn record/drop option contracts shared with compatibility reply dispatch. */
 export type {
   ChannelTurnDroppedHistoryOptions,
   ChannelTurnDroppedHistoryOptions as ChannelInboundDroppedHistoryOptions,
   ChannelTurnRecordOptions,
   ChannelTurnRecordOptions as InboundReplyRecordOptions,
 } from "../turn/types.js";
-/** Durable delivery parameters used when inbound replies are sent through message adapters. */
 export type { DurableInboundReplyDeliveryParams } from "../turn/kernel.js";
-/** Bot-loop facts carried through inbound channel turn preparation. */
 export type { ChannelBotLoopProtectionFacts } from "../turn/kernel.js";
-/** Records paired bot-loop suppression before dispatching an inbound turn. */
 export { recordChannelBotPairLoopAndCheckSuppression } from "../turn/kernel.js";
 
 type ReplyOptionsWithoutModelSelected = Omit<
@@ -143,7 +139,6 @@ export async function dispatchChannelInboundReply(params: AssembledInboundReply)
   return await dispatchChannelInboundReplyCore(params);
 }
 
-/** Compatibility aliases for inbound reply dispatch visibility, durability, and history helpers. */
 export {
   hasFinalChannelTurnDispatch as hasFinalInboundReplyDispatch,
   hasVisibleChannelTurnDispatch as hasVisibleInboundReplyDispatch,

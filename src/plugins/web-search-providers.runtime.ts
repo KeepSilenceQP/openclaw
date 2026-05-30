@@ -1,4 +1,3 @@
-// Runtime boundary for plugins web search providers runtime behavior.
 import { loadOpenClawPlugins } from "./loader.js";
 import type { PluginLoadOptions } from "./loader.js";
 import { type PluginManifestRecord } from "./manifest-registry.js";

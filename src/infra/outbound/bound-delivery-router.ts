@@ -1,5 +1,4 @@
 // Bound delivery router for task-completion replies.
-// It prefers requester-matched bindings and only falls back when policy permits ambiguity.
 import { normalizeConversationRef } from "./session-binding-normalization.js";
 import {
   getSessionBindingService,

@@ -1,4 +1,3 @@
-// Tests infra exec safe bin semantics test behavior.
 import { describe, expect, it } from "vitest";
 import {
   listRiskyConfiguredSafeBins,

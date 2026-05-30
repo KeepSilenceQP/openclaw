@@ -1,4 +1,3 @@
-// Coverage for token estimation helpers.
 import { describe, it, expect } from "vitest";
 import {
   isSilentReplyPrefixText,

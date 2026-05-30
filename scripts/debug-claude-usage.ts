@@ -1,4 +1,3 @@
-// Claude usage debugger inspects local auth/session state and optionally queries Claude usage APIs.
 import { execFileSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs";

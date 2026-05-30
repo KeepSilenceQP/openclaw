@@ -1,4 +1,3 @@
-// Registers, reads, watches, and scopes channel runtime context objects.
 import type {
   ChannelRuntimeContextKey,
   ChannelRuntimeSurface,

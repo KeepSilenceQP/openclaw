@@ -1,5 +1,4 @@
 // Native approval runtime adapter contracts.
-// Defines shared request/resolution, presentation, transport, interaction, and observer shapes.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { ChannelApprovalNativePlannedTarget } from "./approval-native-delivery.js";
 import type { PreparedChannelNativeApprovalTarget } from "./approval-native-runtime.js";
@@ -13,7 +12,6 @@ import type { ExecApprovalChannelRuntimeEventKind } from "./exec-approval-channe
 import type { ExecApprovalRequest, ExecApprovalResolved } from "./exec-approvals.js";
 import type { PluginApprovalRequest, PluginApprovalResolved } from "./plugin-approvals.js";
 
-/** Approval kind discriminator shared by native approval runtimes. */
 export type { ChannelApprovalKind } from "./approval-types.js";
 
 /** Approval request union handled by native approval runtimes. */

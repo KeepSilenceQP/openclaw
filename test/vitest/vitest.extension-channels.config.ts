@@ -1,4 +1,3 @@
-// Extension channels Vitest config runs channel plugin tests outside single-channel shards.
 import {
   extensionChannelOverrideExcludeGlobs,
   extensionChannelTestInclude,

@@ -1,4 +1,3 @@
-// Camera URL test helpers for fetch stubs and temporary output reads.
 import * as fs from "node:fs/promises";
 import { vi } from "vitest";
 import { withFetchPreconnect } from "./fetch-mock.js";

@@ -1,12 +1,9 @@
-// Channel config compatibility normalizers for legacy DM and streaming aliases.
 import {
   normalizeLegacyDmAliases,
   type CompatMutationResult,
 } from "../channels/plugins/dm-access.js";
 
-/** DM alias normalizer re-exported for config repair and migration callers. */
 export { normalizeLegacyDmAliases };
-/** Shared result shape for compatibility normalizers that may rewrite config. */
 export type { CompatMutationResult };
 
 /** Resolved streaming migration policy for one root channel or account entry. */

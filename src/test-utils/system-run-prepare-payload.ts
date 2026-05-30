@@ -1,4 +1,3 @@
-// System-run payload builder for exec approval and gateway tests.
 import { formatExecCommand } from "../infra/system-run-command.js";
 
 type SystemRunPrepareInput = {

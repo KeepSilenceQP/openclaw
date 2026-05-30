@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src/mattermost slash http send config test behavior.
 import { ServerResponse, type IncomingMessage } from "node:http";
 import { PassThrough } from "node:stream";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/core";

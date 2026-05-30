@@ -1,4 +1,3 @@
-// Shared repository helpers for session id, timestamp, wrapping, and forking.
 import {
   type FileError,
   type Result,

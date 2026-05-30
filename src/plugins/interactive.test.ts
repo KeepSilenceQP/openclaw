@@ -1,4 +1,3 @@
-// Tests plugins interactive test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi, type MockInstance } from "vitest";
 import * as conversationBinding from "./conversation-binding.js";
 import { createInteractiveConversationBindingHelpers } from "./interactive-binding-helpers.js";

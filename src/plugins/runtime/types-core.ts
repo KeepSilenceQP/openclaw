@@ -1,4 +1,3 @@
-// Core runtime surface injected into trusted native plugin runtime helpers.
 import type { HeartbeatRunResult } from "../../infra/heartbeat-wake.js";
 import type { LogLevel } from "../../logging/levels.js";
 import type { MediaUnderstandingRuntime } from "../../media-understanding/runtime-types.js";
@@ -10,7 +9,6 @@ import type {
 } from "../../plugin-sdk/tts-runtime.types.js";
 import type { PluginRuntimeTaskFlows, PluginRuntimeTaskRuns } from "./runtime-tasks.types.js";
 
-/** Result shape returned by immediate heartbeat runs. */
 export type { HeartbeatRunResult };
 
 /** Options accepted by the runtime heartbeat request helper. */

@@ -1,4 +1,3 @@
-// Tests extensions/anthropic-vertex index test behavior.
 import { registerSingleProviderPlugin } from "openclaw/plugin-sdk/plugin-test-runtime";
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 

@@ -1,4 +1,3 @@
-// Tests wizard/i18n index test behavior.
 import { describe, expect, it } from "vitest";
 import {
   WIZARD_SUPPORTED_LOCALES,

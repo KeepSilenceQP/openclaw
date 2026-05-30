@@ -1,5 +1,4 @@
 // Control UI render helpers for navigation, chat session controls, refresh
-// actions, and sidebar/topbar affordances shared by the app shell.
 import { html, nothing } from "lit";
 import { t } from "../i18n/index.ts";
 import {
@@ -41,7 +40,6 @@ import type { ThemeMode } from "./theme.ts";
 import type { SessionsListResult } from "./types.ts";
 import type { ChatQueueItem } from "./ui-types.ts";
 
-/** Session display and grouping helpers reused by app render surfaces. */
 export { isCronSessionKey, parseSessionKey, resolveSessionDisplayName, resolveSessionOptionGroups };
 
 type SessionDefaultsSnapshot = {

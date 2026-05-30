@@ -1,4 +1,3 @@
-// Tests extensions/openai transport policy test behavior.
 import type { ProviderRuntimeModel } from "openclaw/plugin-sdk/plugin-entry";
 import { describe, expect, it } from "vitest";
 import {

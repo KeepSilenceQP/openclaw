@@ -1,4 +1,3 @@
-// Tests plugin-sdk/test-helpers node builtin mocks test behavior.
 import { describe, expect, it } from "vitest";
 import { mockNodeBuiltinModule } from "./node-builtin-mocks.js";
 

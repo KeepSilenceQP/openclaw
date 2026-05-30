@@ -1,4 +1,3 @@
-// Shared types for extensions/qqbot/src/engine/gateway types behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/core";
 import type { EngineLogger } from "../types.js";
 export type { EngineLogger };
@@ -158,8 +157,6 @@ export interface GroupMessageEvent {
   message_type?: number;
   msg_elements?: RawMsgElement[];
 }
-
-// ============ Gateway Context ============
 
 import type { EngineAdapters } from "../adapter/index.js";
 

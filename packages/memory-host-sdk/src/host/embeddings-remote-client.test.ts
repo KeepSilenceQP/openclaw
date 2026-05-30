@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host embeddings remote client test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { resolveRemoteEmbeddingBearerClient } from "./embeddings-remote-client.js";
 

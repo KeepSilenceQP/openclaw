@@ -1,4 +1,3 @@
-// Coverage for stripping inbound metadata from command text.
 import { describe, it, expect } from "vitest";
 import type { TemplateContext } from "../templating.js";
 import { buildInboundUserContextPrefix } from "./inbound-meta.js";

@@ -1,5 +1,4 @@
 // Approval request session-target resolution.
-// Used to route exec/plugin approvals back to the originating conversation safely.
 import { resolveSessionConversationRef } from "../channels/plugins/session-conversation.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";

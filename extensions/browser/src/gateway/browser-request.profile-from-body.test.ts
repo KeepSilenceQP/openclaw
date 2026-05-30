@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/gateway browser request profile from body test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { loadConfigMock, isNodeCommandAllowedMock, resolveNodeCommandAllowlistMock } = vi.hoisted(

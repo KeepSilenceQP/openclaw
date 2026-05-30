@@ -1,4 +1,3 @@
-// Runtime boundary for plugins manifest command aliases runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { resolveManifestActivationPluginIds } from "./activation-planner.js";

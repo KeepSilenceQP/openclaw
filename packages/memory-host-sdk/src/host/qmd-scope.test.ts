@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host qmd scope test behavior.
 import { describe, expect, it } from "vitest";
 import type { ResolvedQmdConfig } from "./backend-config.js";
 import { deriveQmdScopeChannel, deriveQmdScopeChatType, isQmdScopeAllowed } from "./qmd-scope.js";

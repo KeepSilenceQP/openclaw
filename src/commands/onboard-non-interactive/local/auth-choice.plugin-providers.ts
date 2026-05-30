@@ -1,4 +1,3 @@
-// Applies non-interactive auth choices owned by provider plugins and their setup hooks.
 import {
   resolveAgentDir,
   resolveDefaultAgentId,

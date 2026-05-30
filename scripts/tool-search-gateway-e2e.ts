@@ -1,4 +1,3 @@
-// Tool Search gateway E2E compares direct plugin-tool exposure with bridge-based lookup.
 import fs from "node:fs/promises";
 import net from "node:net";
 import os from "node:os";

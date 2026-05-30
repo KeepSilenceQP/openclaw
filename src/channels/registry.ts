@@ -10,13 +10,9 @@ import {
   findRegisteredChannelPluginEntryById,
   listRegisteredChannelPluginEntries,
 } from "./registry-lookup.js";
-/** Bundled chat-channel metadata lookup re-exported for core callers. */
 export { getChatChannelMeta } from "./chat-meta.js";
-/** Stable bundled channel ordering re-exported for display surfaces. */
 export { CHAT_CHANNEL_ORDER } from "./ids.js";
-/** Bundled chat-channel id union re-exported for channel-aware code. */
 export type { ChatChannelId } from "./ids.js";
-/** Bundled channel id normalizer re-exported as part of the registry facade. */
 export { normalizeChatChannelId };
 
 // Channel docking: prefer this helper in shared code. Importing from

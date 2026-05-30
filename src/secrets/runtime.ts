@@ -1,4 +1,3 @@
-// Runtime secret snapshot preparation, activation, refresh, and accessors.
 import { isDeepStrictEqual } from "node:util";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope-config.js";
 import {
@@ -36,9 +35,7 @@ import {
 import { getActiveRuntimeWebToolsMetadata as getActiveRuntimeWebToolsMetadataFromState } from "./runtime-web-tools-state.js";
 import type { RuntimeWebToolsMetadata } from "./runtime-web-tools.types.js";
 
-/** Warning emitted while resolving runtime SecretRefs. */
 export type { SecretResolverWarning } from "./runtime-shared.js";
-/** Prepared runtime snapshot shape consumed by active secret resolution. */
 export type { PreparedSecretsRuntimeSnapshot } from "./runtime-state.js";
 
 registerSecretsRuntimeStateClearHook(clearRuntimeAuthProfileStoreSnapshots);

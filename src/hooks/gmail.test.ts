@@ -1,4 +1,3 @@
-// Tests hooks gmail test behavior.
 import { describe, expect, it } from "vitest";
 import { type OpenClawConfig, DEFAULT_GATEWAY_PORT } from "../config/config.js";
 import {

@@ -1,4 +1,3 @@
-// Resolves setup wizard secret inputs from raw strings or configured SecretRefs.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeSecretInputString, resolveSecretInputRef } from "../config/types.secrets.js";
 import { resolveSecretRefString } from "../secrets/resolve.js";

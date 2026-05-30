@@ -1,4 +1,3 @@
-// Tests gateway session lifecycle state test behavior.
 import { describe, expect, it } from "vitest";
 import {
   deriveGatewaySessionLifecycleSnapshot,

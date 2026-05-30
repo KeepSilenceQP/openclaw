@@ -1,4 +1,3 @@
-// Tests cron/service wake test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { wake } from "./timer.js";
 

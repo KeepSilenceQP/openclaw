@@ -1,4 +1,3 @@
-// Auto-reply Vitest config scopes tests to the auto-reply source tree.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Creates the auto-reply Vitest project config. */

@@ -1,5 +1,4 @@
 // Outbound reply payload normalization and projections.
-// Builds channel-agnostic send plans, JSON views, mirror text, and transport summaries.
 import { resolveSendableOutboundReplyParts } from "openclaw/plugin-sdk/reply-payload";
 import { parseReplyDirectives } from "../../auto-reply/reply/reply-directives.js";
 import {

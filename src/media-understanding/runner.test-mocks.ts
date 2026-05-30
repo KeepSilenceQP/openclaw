@@ -1,4 +1,3 @@
-// Small Vitest module factories shared by media-understanding runner tests.
 import { vi } from "vitest";
 
 /** Creates auth mocks that make every provider appear configured for tests. */

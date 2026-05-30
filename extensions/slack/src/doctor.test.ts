@@ -1,4 +1,3 @@
-// Tests extensions/slack/src doctor test behavior.
 import { describe, expect, it } from "vitest";
 import { slackDoctor } from "./doctor.js";
 

@@ -1,4 +1,3 @@
-// Voice-call lifecycle helper finalizes calls and clears related runtime state.
 import type { CallRecord, EndReason } from "../types.js";
 import type { CallManagerContext } from "./context.js";
 import { transitionState } from "./state.js";

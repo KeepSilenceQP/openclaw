@@ -1,4 +1,3 @@
-// Lit reactive controller that refreshes components after locale changes.
 import type { ReactiveController, ReactiveControllerHost } from "lit";
 import { i18n } from "./translate.ts";
 

@@ -15,9 +15,7 @@ import type {
 } from "./channel-contract.js";
 import type { OpenClawConfig } from "./config-runtime.js";
 
-/** Core SSRF helpers exposed to plugin SDK callers building network policies. */
 export { isPrivateIpAddress, mergeSsrFPolicies };
-/** Network policy shape consumed by guarded fetch and hostname pinning helpers. */
 export type { SsrFPolicy };
 
 /** Accepted plugin config shapes for explicit private-network opt-in. */

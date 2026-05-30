@@ -1,4 +1,3 @@
-// Voice-call tests share a complete base config fixture from this module.
 import type { VoiceCallConfig } from "./config.js";
 import { DEFAULT_VOICE_CALL_REALTIME_INSTRUCTIONS } from "./realtime-defaults.js";
 

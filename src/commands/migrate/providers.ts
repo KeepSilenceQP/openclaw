@@ -1,4 +1,3 @@
-// Resolves plugin-backed migration providers and provider option payloads.
 import { getRuntimeConfig } from "../../config/config.js";
 import {
   ensureStandaloneMigrationProviderRegistryLoaded,

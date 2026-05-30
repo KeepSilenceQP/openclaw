@@ -1,4 +1,3 @@
-// QA Lab live-frontier character-eval config lists models and judge options.
 import type { QaThinkingLevel } from "../../qa-thinking.js";
 
 type QaFrontierCharacterModelOptions = {

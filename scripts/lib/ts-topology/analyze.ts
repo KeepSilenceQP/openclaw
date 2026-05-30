@@ -1,4 +1,3 @@
-// TypeScript topology analyzer ranks public exports by usage and ownership shape.
 import path from "node:path";
 import ts from "typescript";
 import {

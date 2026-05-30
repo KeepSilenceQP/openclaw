@@ -1,4 +1,3 @@
-// Tests config io eacces test behavior.
 import { describe, expect, it } from "vitest";
 import { createConfigIO } from "./io.js";
 

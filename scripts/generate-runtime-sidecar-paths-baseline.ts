@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Runtime sidecar baseline generator writes/checks bundled plugin sidecar path snapshots.
 import path from "node:path";
 import { writeBundledRuntimeSidecarPathBaseline } from "../src/plugins/runtime-sidecar-paths-baseline.js";
 

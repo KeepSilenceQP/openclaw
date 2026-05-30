@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src resolve outbound target test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import * as normalize from "./normalize-target.js";
 

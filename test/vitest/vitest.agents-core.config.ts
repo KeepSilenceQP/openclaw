@@ -1,4 +1,3 @@
-// Agent core Vitest config scopes tests to core agent runtime patterns.
 import { agentsCoreTestPatterns } from "./vitest.agents-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

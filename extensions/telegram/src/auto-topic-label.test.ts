@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src auto topic label test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 const generateConversationLabel = vi.hoisted(() => vi.fn());

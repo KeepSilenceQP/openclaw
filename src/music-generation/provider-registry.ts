@@ -1,4 +1,3 @@
-// Registry for plugin-provided music-generation providers and their aliases.
 import { normalizeProviderId } from "../agents/model-selection.js";
 import type { OpenClawConfig } from "../config/types.js";
 import { isBlockedObjectKey } from "../infra/prototype-keys.js";

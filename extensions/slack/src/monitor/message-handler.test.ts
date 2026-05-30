@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor message handler test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const enqueueMock = vi.fn(async (_entry: unknown) => {});

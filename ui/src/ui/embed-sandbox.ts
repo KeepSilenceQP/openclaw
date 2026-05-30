@@ -1,4 +1,3 @@
-// Iframe sandbox policy mapping for Control UI embedded content.
 import type { ControlUiEmbedSandboxMode } from "../../../src/gateway/control-ui-contract.js";
 
 /** Sandbox mode accepted by Control UI embed frames. */

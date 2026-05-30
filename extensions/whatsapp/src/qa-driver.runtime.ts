@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/whatsapp/src qa driver runtime behavior.
 import type { WAMessage } from "baileys";
 import { extractText } from "./inbound/extract.js";
 import { createWebSendApi } from "./inbound/send-api.js";

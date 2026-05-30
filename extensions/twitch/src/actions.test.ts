@@ -1,4 +1,3 @@
-// Tests extensions/twitch/src actions test behavior.
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { twitchMessageActions } from "./actions.js";
 import type { ResolvedTwitchAccountContext } from "./config.js";

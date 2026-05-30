@@ -1,4 +1,3 @@
-// Tests extensions/xiaomi xiaomi live test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

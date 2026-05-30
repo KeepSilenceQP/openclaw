@@ -1,4 +1,3 @@
-// Required-completion heuristics that mark progress-only outputs as blocked terminal results.
 import type { TaskTerminalOutcome } from "./task-registry.types.js";
 
 /** Terminal metadata inferred when a required completion did not produce a final deliverable. */

@@ -1,4 +1,3 @@
-// QA Lab runtime parity helpers compare OpenClaw and Codex transcripts for scenario drift.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

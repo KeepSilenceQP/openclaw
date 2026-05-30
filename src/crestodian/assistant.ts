@@ -1,4 +1,3 @@
-// Plans Crestodian commands from natural language using configured models first, then local Codex/Claude runtimes.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -21,7 +20,6 @@ import {
 } from "./assistant-prompts.js";
 import type { CrestodianOverview } from "./overview.js";
 
-/** Re-export planner prompt helpers for tests and alternate Crestodian frontends. */
 export {
   buildCrestodianAssistantUserPrompt,
   parseCrestodianAssistantPlanText,

@@ -1,4 +1,3 @@
-// Tests shared string normalization test behavior.
 import { describe, expect, it } from "vitest";
 import {
   normalizeAtHashSlug,

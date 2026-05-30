@@ -1,4 +1,3 @@
-// Tests infra ssh tunnel test behavior.
 import { describe, expect, it } from "vitest";
 import { parseSshTarget } from "./ssh-tunnel.js";
 

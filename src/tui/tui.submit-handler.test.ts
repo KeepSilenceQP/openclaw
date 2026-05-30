@@ -1,4 +1,3 @@
-// Tests tui tui submit handler test behavior.
 import type { TUI } from "@earendil-works/pi-tui";
 import { describe, expect, it, vi } from "vitest";
 import { CustomEditor } from "./components/custom-editor.js";

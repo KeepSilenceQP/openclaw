@@ -1,4 +1,3 @@
-// Crestodian TUI backend adapter for overview, chat history, and operations.
 import { randomUUID } from "node:crypto";
 import type {
   SessionsPatchParams,

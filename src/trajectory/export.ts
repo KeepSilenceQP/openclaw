@@ -1,4 +1,3 @@
-// Exports session trajectory captures into a redacted support bundle.
 import fsp from "node:fs/promises";
 import path from "node:path";
 import { sanitizeDiagnosticPayload } from "../agents/payload-redaction.js";

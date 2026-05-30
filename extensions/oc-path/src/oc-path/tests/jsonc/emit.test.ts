@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/jsonc emit test behavior.
 import { describe, expect, it } from "vitest";
 import { emitJsonc } from "../../jsonc/emit.js";
 import { parseJsonc } from "../../jsonc/parse.js";

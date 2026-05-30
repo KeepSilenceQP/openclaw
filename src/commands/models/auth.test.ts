@@ -1,4 +1,3 @@
-// Tests interactive and plugin-backed `models auth` flows with mocked providers.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import type { ProviderPlugin } from "../../plugins/types.js";

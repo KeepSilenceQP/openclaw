@@ -1,4 +1,3 @@
-// Maps short Crestodian commands onto read-only checks, config mutations, plugin lifecycle, and TUI handoff.
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "../agents/defaults.js";
 import type { ConfigSetOptions } from "../cli/config-set-input.js";
 import type { DoctorOptions } from "../commands/doctor.types.js";

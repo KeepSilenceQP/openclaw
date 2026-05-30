@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src comment dispatcher test behavior.
 import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const resolveFeishuRuntimeAccountMock = vi.hoisted(() => vi.fn());

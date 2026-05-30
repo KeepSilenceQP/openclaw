@@ -1,4 +1,3 @@
-// Tests extensions/signal/src send reactions test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const rpcMock = vi.fn();

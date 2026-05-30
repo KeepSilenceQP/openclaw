@@ -4,7 +4,6 @@ import { resolveNodeFromNodeList, resolveNodeIdFromNodeList } from "../../shared
 import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js";
 import { callGatewayTool, type GatewayCallOptions } from "./gateway.js";
 
-/** Gateway node metadata returned by node-list commands. */
 export type { NodeListNode };
 
 type DefaultNodeFallback = "none" | "first";

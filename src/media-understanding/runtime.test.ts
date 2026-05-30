@@ -1,4 +1,3 @@
-// Tests media-understanding runtime test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.js";

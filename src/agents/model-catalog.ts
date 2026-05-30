@@ -42,9 +42,7 @@ import {
 const log = createSubsystemLogger("model-catalog");
 const AGENT_CUSTOM_MODEL_DEFAULT_CONTEXT_WINDOW = 128_000;
 
-/** Public model catalog row and input capability types. */
 export type { ModelCatalogEntry, ModelInputType } from "./model-catalog.types.js";
-/** Catalog lookup helpers shared by model selection and UI surfaces. */
 export {
   findModelCatalogEntry,
   findModelInCatalog,
@@ -113,7 +111,6 @@ export function setModelCatalogImportForTest(loader?: () => Promise<AgentDiscove
   importAgentDiscovery = loader ?? defaultImportAgentDiscovery;
 }
 
-/** @deprecated Use `setModelCatalogImportForTest`. */
 export { setModelCatalogImportForTest as __setModelCatalogImportForTest };
 
 function catalogEntryDedupeKey(provider: string, id: string): string {

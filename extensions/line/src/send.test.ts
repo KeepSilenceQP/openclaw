@@ -1,4 +1,3 @@
-// Tests extensions/line/src send test behavior.
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const {

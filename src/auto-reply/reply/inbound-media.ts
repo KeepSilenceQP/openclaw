@@ -1,4 +1,3 @@
-// Inbound media normalization for reply context.
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 
 export type InboundMediaContext = {

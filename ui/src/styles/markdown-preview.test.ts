@@ -1,4 +1,3 @@
-// Tests ui/src/styles markdown preview test behavior.
 import { describe, expect, it } from "vitest";
 import { readStyleSheetAsync } from "../../../test/helpers/ui-style-fixtures.js";
 

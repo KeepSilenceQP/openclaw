@@ -1,4 +1,3 @@
-// Shared realtime voice tool schema and intent parsing for controlling active agent runs.
 import {
   normalizeOptionalLowercaseString,
   normalizeOptionalString,

@@ -1,4 +1,3 @@
-// Coverage for reply history formatting.
 import { describe, expect, it } from "vitest";
 import { normalizeHistoryMediaEntries, recordPendingHistoryEntryWithMedia } from "./history.js";
 import type { HistoryEntry } from "./history.types.js";

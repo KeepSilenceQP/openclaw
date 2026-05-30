@@ -1,4 +1,3 @@
-// Tests markdown ir hr spacing test behavior.
 import { describe, it, expect } from "vitest";
 import { markdownToIR } from "./ir.js";
 

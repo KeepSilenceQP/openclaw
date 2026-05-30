@@ -1,4 +1,3 @@
-// Message, command, queue, broadcast, status-reaction, and TTS config contracts.
 import type { QueueDropPolicy, QueueMode, QueueModeByProvider } from "./types.queue.js";
 import type { TtsConfig } from "./types.tts.js";
 

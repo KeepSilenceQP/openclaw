@@ -1,4 +1,3 @@
-// Slack channel/account config contracts.
 import type {
   ChannelStreamingBlockConfig,
   ChannelStreamingProgressConfig,

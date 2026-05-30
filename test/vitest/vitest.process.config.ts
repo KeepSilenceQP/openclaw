@@ -1,4 +1,3 @@
-// Process Vitest config runs process tests after runtime-independent setup.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Creates the process Vitest project config. */

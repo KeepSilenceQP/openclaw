@@ -1,4 +1,3 @@
-// Manages Linux systemd user units for the OpenClaw gateway and node services.
 import * as fsSync from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -80,7 +79,6 @@ export function resolveSystemdUserUnitPath(env: GatewayServiceEnv): string {
   return resolveSystemdUnitPath(env);
 }
 
-/** User linger helpers used before installing long-lived user services. */
 export { enableSystemdUserLinger, readSystemdUserLingerStatus };
 
 // Unit file parsing/rendering: see systemd-unit.ts

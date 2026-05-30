@@ -1,4 +1,3 @@
-// Vitest project config for UI unit tests.
 import { unitUiIncludePatterns } from "./vitest.ui-paths.mjs";
 import { createUiVitestConfig } from "./vitest.ui.config.ts";
 

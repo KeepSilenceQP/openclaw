@@ -1,4 +1,3 @@
-// Context compaction helpers for selecting cut points and generating checkpoint summaries.
 import type {
   AssistantMessage,
   Context,
@@ -716,7 +715,6 @@ Summarize the prefix to provide context for the retained suffix:
 
 Be concise. Focus on what's needed to understand the kept suffix.`;
 
-/** Re-exported public API for packages/agent-core, starting with serialize Conversation. */
 export { serializeConversation } from "./utils.js";
 
 /** Generate compaction summary data from prepared session history. */

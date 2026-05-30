@@ -10,7 +10,6 @@ import {
 } from "./embedded-agent-helpers.js";
 import { stableStringify } from "./stable-stringify.js";
 
-/** Console sanitizer reused by error observation formatting. */
 export { sanitizeForConsole } from "./console-sanitize.js";
 
 const MAX_OBSERVATION_INPUT_CHARS = 64_000;

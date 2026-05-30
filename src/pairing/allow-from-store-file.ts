@@ -1,4 +1,3 @@
-// File-backed allow-from store helpers for channel/account pairing permissions.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

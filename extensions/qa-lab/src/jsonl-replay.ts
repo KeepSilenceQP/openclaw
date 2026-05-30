@@ -1,4 +1,3 @@
-// QA Lab JSONL replay helpers compare curated transcripts across runtimes.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

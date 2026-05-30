@@ -1,4 +1,3 @@
-// Tests daemon schtasks stop test behavior.
 import { PassThrough } from "node:stream";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import "./test-helpers/schtasks-base-mocks.js";

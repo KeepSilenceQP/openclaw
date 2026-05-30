@@ -1,4 +1,3 @@
-// Tests gateway server discovery runtime test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { PluginGatewayDiscoveryServiceRegistration } from "../plugins/registry-types.js";
 

@@ -1,4 +1,3 @@
-// Tests mcp plugin tools serve test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   type HookContext,

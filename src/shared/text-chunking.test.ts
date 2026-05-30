@@ -1,4 +1,3 @@
-// Tests shared text chunking test behavior.
 import { describe, expect, it } from "vitest";
 import { chunkTextByBreakResolver } from "./text-chunking.js";
 

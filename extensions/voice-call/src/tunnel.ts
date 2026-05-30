@@ -1,4 +1,3 @@
-// Voice Call tunnel helpers start and stop ngrok or Tailscale webhook exposure.
 import { spawn } from "node:child_process";
 import {
   appendBoundedChildOutput,

@@ -1,5 +1,4 @@
 // Shell inline-command flag parsing.
-// Covers POSIX shells and PowerShell aliases used by exec approval analysis.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** POSIX shell flags that take an inline command string. */

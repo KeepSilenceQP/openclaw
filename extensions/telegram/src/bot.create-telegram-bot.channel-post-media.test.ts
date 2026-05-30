@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot create telegram bot channel post media test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const harness = await import("./bot.create-telegram-bot.test-harness.js");

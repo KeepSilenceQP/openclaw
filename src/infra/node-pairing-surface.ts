@@ -1,4 +1,3 @@
-// Compares node approval and permission surfaces after canonical normalization.
 import { normalizeArrayBackedTrimmedStringList } from "../shared/string-normalization.js";
 
 /** Normalize an approval-surface list to the canonical trimmed string array. */

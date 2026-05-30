@@ -1,4 +1,3 @@
-// Extracts safe bare HTTP(S) links from inbound messages.
 import { isBlockedHostnameOrIp } from "../infra/net/ssrf.js";
 import { DEFAULT_MAX_LINKS } from "./defaults.js";
 

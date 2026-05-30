@@ -1,4 +1,3 @@
-// Session lifecycle hook dispatch for reply runs.
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type {

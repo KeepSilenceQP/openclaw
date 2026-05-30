@@ -1,4 +1,3 @@
-// Cached plugin module loading with native require fast paths and jiti fallback.
 import { createRequire } from "node:module";
 import path from "node:path";
 import { pathToFileURL } from "node:url";

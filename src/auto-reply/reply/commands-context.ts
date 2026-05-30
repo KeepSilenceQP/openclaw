@@ -1,4 +1,3 @@
-// Chat command handlers for viewing and managing context.
 import { normalizeAnyChannelId } from "../../channels/registry.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import {

@@ -1,4 +1,3 @@
-// Tests infra cli root options test behavior.
 import { describe, expect, it } from "vitest";
 import { consumeRootOptionToken, isValueToken } from "./cli-root-options.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory qmd manager slugified paths test behavior.
 import { EventEmitter } from "node:events";
 import fs from "node:fs/promises";
 import os from "node:os";

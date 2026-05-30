@@ -1,4 +1,3 @@
-// QA Lab server UI helpers serve the debugger bundle and proxy embedded Control UI traffic.
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import { request as httpRequest, type IncomingMessage, type ServerResponse } from "node:http";

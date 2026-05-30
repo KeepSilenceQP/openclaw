@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server plugin thread config test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { CodexAppInventoryCache } from "./app-inventory-cache.js";
 import { CODEX_PLUGINS_MARKETPLACE_NAME } from "./config.js";

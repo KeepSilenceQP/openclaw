@@ -1,4 +1,3 @@
-// Tests media-understanding format test behavior.
 import { describe, expect, it } from "vitest";
 import { formatMediaUnderstandingBody } from "./format.js";
 

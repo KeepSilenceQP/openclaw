@@ -1,5 +1,4 @@
 // Guarded fetch implementation with SSRF checks, DNS pinning, redirect policy,
-// and optional trusted proxy dispatchers.
 import type { Dispatcher } from "undici";
 import { logWarn } from "../../logger.js";
 import { buildTimeoutAbortSignal } from "../../utils/fetch-timeout.js";
@@ -407,7 +406,6 @@ function rewriteRedirectInitForCrossOrigin(params: {
   };
 }
 
-/** Runtime undici fetch helper re-exported for guarded-fetch callers. */
 export { fetchWithRuntimeDispatcher } from "./runtime-fetch.js";
 
 /** Performs a fetch with SSRF validation, DNS pinning, redirects, and cleanup. */

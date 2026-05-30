@@ -1,4 +1,3 @@
-// Shared mapping from OpenClaw thinking levels to provider reasoning effort names.
 import type { ThinkLevel } from "../../../auto-reply/thinking.js";
 
 /** Provider-facing reasoning effort values used by stream wrappers. */

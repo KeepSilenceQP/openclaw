@@ -1,5 +1,4 @@
 // Log tail reader for diagnostics: follows rolling log filenames, reads bounded
-// slices, and redacts lines before returning them to commands or support zips.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { getResolvedLoggerSettings } from "../logging.js";

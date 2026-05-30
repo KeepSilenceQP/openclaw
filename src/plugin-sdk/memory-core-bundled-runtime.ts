@@ -1,6 +1,4 @@
-// Lazy facade for bundled memory-core public and runtime APIs.
 import { loadBundledPluginPublicSurfaceModuleSync } from "./facade-loader.js";
-// Manual facade. Keep loader boundary explicit.
 import type {
   MemoryEmbeddingProvider,
   MemoryEmbeddingProviderAdapter,

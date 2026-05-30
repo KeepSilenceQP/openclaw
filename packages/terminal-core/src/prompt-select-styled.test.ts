@@ -1,4 +1,3 @@
-// Tests terminal prompt select styled test behavior.
 import { describe, expect, it } from "vitest";
 import { styleSelectParams } from "./prompt-select-styled-params.js";
 

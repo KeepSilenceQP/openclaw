@@ -1,4 +1,3 @@
-// Tests infra/tls gateway test behavior.
 import { X509Certificate } from "node:crypto";
 import { writeFile } from "node:fs/promises";
 import path from "node:path";

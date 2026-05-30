@@ -1,9 +1,5 @@
-// Tests test/scripts telegram bot api test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
-import {
-  readTelegramBotApiLimits,
-  telegramBotApi,
-} from "../../scripts/e2e/telegram-bot-api.ts";
+import { readTelegramBotApiLimits, telegramBotApi } from "../../scripts/e2e/telegram-bot-api.ts";
 
 describe("Telegram Bot API helper", () => {
   afterEach(() => {

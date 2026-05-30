@@ -1,4 +1,3 @@
-// Best-effort cleanup helpers for media temp files.
 import fs from "node:fs/promises";
 
 /** Remove a temp file if present, ignoring cleanup races and missing files. */

@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/discord/src/voice manager runtime behavior.
 import {
   DiscordVoiceManager as DiscordVoiceManagerImpl,
   DiscordVoiceReadyListener as DiscordVoiceReadyListenerImpl,

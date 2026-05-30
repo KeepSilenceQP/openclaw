@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/http registry test behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {

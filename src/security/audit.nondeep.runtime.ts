@@ -1,4 +1,3 @@
-// Runtime boundary for src/security audit nondeep runtime behavior.
 export {
   collectAttackSurfaceSummaryFindings,
   collectSmallModelRiskFindings,

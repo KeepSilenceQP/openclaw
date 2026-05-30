@@ -1,4 +1,3 @@
-// Tests test/scripts test extension test behavior.
 import { execFileSync, spawnSync } from "node:child_process";
 import path from "node:path";
 import { bundledPluginFile, bundledPluginRoot } from "openclaw/plugin-sdk/test-fixtures";

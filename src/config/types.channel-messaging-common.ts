@@ -1,4 +1,3 @@
-// Shared account/channel messaging config used by multiple message-channel plugins.
 import type {
   BlockStreamingCoalesceConfig,
   ContextVisibilityMode,

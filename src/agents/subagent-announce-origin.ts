@@ -16,7 +16,6 @@ import type {
   DeliveryContextSessionSource,
 } from "../utils/delivery-context.types.js";
 import { isInternalMessageChannel } from "../utils/message-channel.js";
-/** Delivery context shape used to route subagent completion announcements. */
 export type { DeliveryContext } from "../utils/delivery-context.types.js";
 
 function normalizeAnnounceRouteTarget(context?: DeliveryContext): string | undefined {

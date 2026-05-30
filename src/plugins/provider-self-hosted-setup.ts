@@ -30,7 +30,6 @@ import type {
   ProviderNonInteractiveApiKeyResult,
 } from "./types.js";
 
-/** Default self-hosted model metadata reused by provider setup flows. */
 export {
   SELF_HOSTED_DEFAULT_CONTEXT_WINDOW,
   SELF_HOSTED_DEFAULT_COST,

@@ -1,4 +1,3 @@
-// Custom Clack multiselect wrapper for migration skill selection shortcuts.
 import { styleText } from "node:util";
 import { MultiSelectPrompt, settings, wrapTextWithPrefix } from "@clack/core";
 import {

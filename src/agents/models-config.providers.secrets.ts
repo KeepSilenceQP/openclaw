@@ -22,7 +22,6 @@ import {
 } from "./models-config.providers.secret-helpers.js";
 import { resolveProviderIdForAuth } from "./provider-auth-aliases.js";
 
-/** Secret-resolution types consumed by provider config planning and auth discovery. */
 export type {
   ProfileApiKeyResolution,
   ProviderApiKeyResolver,
@@ -31,7 +30,6 @@ export type {
   SecretDefaults,
 } from "./models-config.providers.secret-helpers.js";
 
-/** Secret helpers shared by provider config normalization and model auth discovery. */
 export {
   listAuthProfilesForProvider,
   normalizeApiKeyConfig,

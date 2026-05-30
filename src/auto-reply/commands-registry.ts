@@ -1,4 +1,3 @@
-// Public command registry facade for command definitions, menus, and parsing.
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "../agents/defaults.js";
 import {
   buildConfiguredModelCatalog,
@@ -21,14 +20,12 @@ import type {
 } from "./commands-registry.types.js";
 import type { ThinkingCatalogEntry } from "./thinking.shared.js";
 
-/** Command enablement and listing helpers. */
 export {
   isCommandEnabled,
   listChatCommands,
   listChatCommandsForConfig,
 } from "./commands-registry-list.js";
 
-/** Command detection, alias, normalization, and text resolution helpers. */
 export {
   getCommandDetection,
   maybeResolveTextAlias,
@@ -36,10 +33,8 @@ export {
   resolveTextCommand,
 } from "./commands-registry-normalize.js";
 
-/** Native/text command routing helpers. */
 export { isNativeCommandSurface, shouldHandleTextCommands } from "./commands-text-routing.js";
 
-/** Public command definition, detection, argument, and routing types. */
 export type {
   ChatCommandDefinition,
   CommandArgChoiceContext,

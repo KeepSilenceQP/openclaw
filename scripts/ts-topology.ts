@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// TypeScript topology CLI analyzes public surfaces and renders ownership reports.
 import path from "node:path";
 import { formatErrorMessage } from "../src/infra/errors.ts";
 import { analyzeTopology } from "./lib/ts-topology/analyze.js";

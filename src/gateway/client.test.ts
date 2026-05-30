@@ -1,4 +1,3 @@
-// Tests gateway client test behavior.
 import { Buffer } from "node:buffer";
 import { generateKeyPairSync } from "node:crypto";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";

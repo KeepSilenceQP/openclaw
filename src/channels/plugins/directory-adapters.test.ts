@@ -1,4 +1,3 @@
-// Coverage for channel directory adapter helpers.
 import { describe, expect, it } from "vitest";
 import {
   createChannelDirectoryAdapter,

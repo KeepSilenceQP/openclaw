@@ -1,4 +1,3 @@
-// Cross-platform gateway service argument, state, and render contracts.
 import type { GatewayServiceRuntime } from "./service-runtime.js";
 
 /** Environment map accepted by gateway service managers. */

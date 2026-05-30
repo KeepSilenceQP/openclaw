@@ -1,4 +1,3 @@
-// QA Lab plugin entry registers the private QA CLI surface.
 import { definePluginEntry } from "./runtime-api.js";
 import { registerQaLabCli } from "./src/cli.js";
 

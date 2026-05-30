@@ -1,4 +1,3 @@
-// Normalizes TLS SHA-256 fingerprints for comparison.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 
 /** Strips SHA-256 prefixes/separators and lowercases the hex fingerprint. */

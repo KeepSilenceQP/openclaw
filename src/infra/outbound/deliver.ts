@@ -1,5 +1,4 @@
 // Outbound delivery substrate for message payload batches.
-// Bridges legacy outbound adapters, durable queues, lifecycle hooks, and plugin message sends.
 import { resolveChunkMode, resolveTextChunkLimit } from "../../auto-reply/chunk.js";
 import { runReplyPayloadSendingHook } from "../../auto-reply/reply/reply-payload-sending-hook.js";
 import type { ReplyPayload } from "../../auto-reply/types.js";
@@ -91,13 +90,9 @@ import { type OutboundSendDeps } from "./send-deps.js";
 import type { OutboundSessionContext } from "./session-context.js";
 import type { OutboundChannel } from "./targets.js";
 
-/** Outbound delivery result type returned by send adapters. */
 export type { OutboundDeliveryResult } from "./deliver-types.js";
-/** Normalized outbound payload type used by batch delivery. */
 export type { NormalizedOutboundPayload } from "./payloads.js";
-/** Payload normalization helper for outbound delivery callers. */
 export { normalizeOutboundPayloads } from "./payloads.js";
-/** Dependency resolver and deps type used by outbound send paths. */
 export { resolveOutboundSendDep, type OutboundSendDeps } from "./send-deps.js";
 
 /** Durability policy for write-ahead outbound delivery queueing. */

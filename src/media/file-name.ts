@@ -1,4 +1,3 @@
-// Normalizes path-like strings before extracting file name components.
 import path from "node:path";
 
 /** Returns the final basename from either POSIX or Windows style paths. */

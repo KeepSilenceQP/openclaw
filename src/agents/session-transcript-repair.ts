@@ -209,7 +209,6 @@ function normalizeLegacyToolResultId(
   return { ...message, toolCallId: toolCall.id, isError: true };
 }
 
-/** Fabricate an error tool result for transcript repair when a call result is missing. */
 export { makeMissingToolResult };
 
 type ToolCallInputRepairReport = {

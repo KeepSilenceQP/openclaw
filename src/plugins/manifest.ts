@@ -1,4 +1,3 @@
-// Plugin manifest contracts and loaders for metadata-first discovery.
 import fs from "node:fs";
 import path from "node:path";
 import { normalizeModelCatalog } from "@openclaw/model-catalog-core/model-catalog-normalize";

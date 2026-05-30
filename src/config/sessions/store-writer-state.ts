@@ -1,4 +1,3 @@
-// Process-local writer queues and test hooks for session store persistence.
 import {
   clearStoreWriterQueuesForTest,
   drainStoreWriterQueuesForTest,

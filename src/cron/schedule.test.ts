@@ -1,4 +1,3 @@
-// Tests cron schedule test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import {
   coerceFiniteScheduleNumber,

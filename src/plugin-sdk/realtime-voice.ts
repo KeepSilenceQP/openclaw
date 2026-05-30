@@ -1,5 +1,4 @@
 export type { RealtimeVoiceProviderPlugin } from "../plugins/types.js";
-/** Realtime voice provider, bridge, audio, tool, and config contracts. */
 export type {
   RealtimeVoiceAudioFormat,
   RealtimeVoiceBargeInOptions,
@@ -20,12 +19,10 @@ export type {
   RealtimeVoiceToolCallEvent,
   RealtimeVoiceToolResultOptions,
 } from "../talk/provider-types.js";
-/** Canonical realtime voice audio format identifiers. */
 export {
   REALTIME_VOICE_AUDIO_FORMAT_G711_ULAW_8KHZ,
   REALTIME_VOICE_AUDIO_FORMAT_PCM16_24KHZ,
 } from "../talk/provider-types.js";
-/** Talk event sequencing and transport contracts. */
 export {
   createTalkEventSequencer,
   TALK_EVENT_TYPES,
@@ -38,13 +35,9 @@ export {
   type TalkMode,
   type TalkTransport,
 } from "../talk/talk-events.js";
-/** Talk diagnostic event helpers. */
 export { createTalkDiagnosticEvent, recordTalkDiagnosticEvent } from "../talk/diagnostics.js";
-/** Talk log record helpers. */
 export { createTalkLogRecord, recordTalkLogEvent } from "../talk/logging.js";
-/** Talk observability event recorder. */
 export { recordTalkObservabilityEvent } from "../talk/observability.js";
-/** Session controller for coordinating talk turns and transports. */
 export {
   createTalkSessionController,
   normalizeTalkTransport,
@@ -57,7 +50,6 @@ export {
   type TalkTurnResult,
   type TalkTurnSuccess,
 } from "../talk/talk-session-controller.js";
-/** Realtime voice activation-name normalization and matching helpers. */
 export {
   REALTIME_VOICE_ACTIVATION_NAME_MAX_WORDS,
   isSupportedRealtimeVoiceActivationName,
@@ -71,12 +63,10 @@ export {
   type RealtimeVoiceActivationNameMatchKind,
   type RealtimeVoiceActivationNameTranscriptResult,
 } from "../talk/activation-name.js";
-/** Consult transcript classifier for skippable voice turns. */
 export {
   classifySkippableRealtimeVoiceConsultTranscript,
   type SkippableRealtimeVoiceConsultTranscriptReason,
 } from "../talk/consult-transcript.js";
-/** Consult question parsing and speakable tool-result helpers. */
 export {
   matchRealtimeVoiceConsultQuestions,
   normalizeRealtimeVoiceConsultQuestion,
@@ -85,7 +75,6 @@ export {
   type RealtimeVoiceConsultQuestionMatchOptions,
   type RealtimeVoiceSpeakableToolResultOptions,
 } from "../talk/consult-question.js";
-/** Forced consult coordinator for native and timer-triggered consults. */
 export {
   createRealtimeVoiceForcedConsultCoordinator,
   type RealtimeVoiceForcedConsultCoordinator,
@@ -95,14 +84,12 @@ export {
   type RealtimeVoiceForcedConsultNativeRecentOptions,
   type RealtimeVoiceForcedConsultTimer,
 } from "../talk/forced-consult-coordinator.js";
-/** Turn-context tracker for associating voice events with agent turns. */
 export {
   createRealtimeVoiceTurnContextTracker,
   type RealtimeVoiceTurnContextHandle,
   type RealtimeVoiceTurnContextTracker,
   type RealtimeVoiceTurnContextTrackerOptions,
 } from "../talk/turn-context-tracker.js";
-/** Output activity tracker for spoken/audio response progress. */
 export {
   createRealtimeVoiceOutputActivityTracker,
   type RealtimeVoiceOutputActivityDelta,
@@ -110,7 +97,6 @@ export {
   type RealtimeVoiceOutputActivityTracker,
   type RealtimeVoiceOutputActivityTrackerOptions,
 } from "../talk/output-activity-tracker.js";
-/** Agent consult tool builders, parsers, policy helpers, and constants. */
 export {
   buildRealtimeVoiceAgentConsultChatMessage,
   buildRealtimeVoiceAgentConsultPolicyInstructions,
@@ -129,20 +115,17 @@ export {
   type RealtimeVoiceAgentConsultToolPolicy,
   type RealtimeVoiceAgentConsultTranscriptEntry,
 } from "../talk/agent-consult-tool.js";
-/** Runtime entrypoint for consulting the agent during a voice session. */
 export {
   consultRealtimeVoiceAgent,
   type RealtimeVoiceAgentConsultResult,
   type RealtimeVoiceAgentConsultRuntime,
 } from "../talk/agent-consult-runtime.js";
-/** Talkback queue for returning agent speech to realtime voice providers. */
 export {
   createRealtimeVoiceAgentTalkbackQueue,
   type RealtimeVoiceAgentTalkbackQueue,
   type RealtimeVoiceAgentTalkbackQueueParams,
   type RealtimeVoiceAgentTalkbackResult,
 } from "../talk/agent-talkback-runtime.js";
-/** Agent run-control tool helpers for cancel, pause, resume, and speech control. */
 export {
   buildRealtimeVoiceAgentCancelProviderResult,
   buildRealtimeVoiceAgentControlSpeechMessage,
@@ -160,27 +143,23 @@ export {
   type RealtimeVoiceAgentControlProviderResult,
   type RealtimeVoiceAgentControlResult,
 } from "../talk/agent-run-control.js";
-/** Fast-context consult resolver and result contracts. */
 export {
   resolveRealtimeVoiceFastContextConsult,
   type RealtimeVoiceFastContextConfig,
   type RealtimeVoiceFastContextConsultResult,
   type RealtimeVoiceFastContextLabels,
 } from "../talk/fast-context-runtime.js";
-/** Realtime voice provider registry lookup and id normalization helpers. */
 export {
   canonicalizeRealtimeVoiceProviderId,
   getRealtimeVoiceProvider,
   listRealtimeVoiceProviders,
   normalizeRealtimeVoiceProviderId,
 } from "../talk/provider-registry.js";
-/** Configured realtime voice provider resolver. */
 export {
   resolveConfiguredRealtimeVoiceProvider,
   type ResolvedRealtimeVoiceProvider,
   type ResolveConfiguredRealtimeVoiceProviderParams,
 } from "../talk/provider-resolver.js";
-/** Bridge session runtime for connecting provider audio to sinks. */
 export {
   createRealtimeVoiceBridgeSession,
   type RealtimeVoiceAudioSink,
@@ -188,7 +167,6 @@ export {
   type RealtimeVoiceBridgeSessionParams,
   type RealtimeVoiceMarkStrategy,
 } from "../talk/session-runtime.js";
-/** Bridge event and transcript logging plus health heuristics. */
 export {
   extendRealtimeVoiceOutputEchoSuppression,
   getRealtimeVoiceBridgeEventHealth,
@@ -201,7 +179,6 @@ export {
   type RealtimeVoiceTranscriptEntry,
   type RealtimeVoiceTranscriptHealth,
 } from "../talk/session-log-runtime.js";
-/** PCM, mulaw, and resampling helpers for realtime voice audio. */
 export {
   convertPcmToMulaw8k,
   mulawToPcm,

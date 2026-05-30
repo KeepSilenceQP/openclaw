@@ -1,4 +1,3 @@
-// Config command parser and command text helpers.
 import { parseStandardSetUnsetSlashCommand } from "./commands-setunset-standard.js";
 
 export type ConfigCommand =

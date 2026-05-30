@@ -1,4 +1,3 @@
-// QA lab harness runtime builds an in-memory plugin runtime for scenario tests.
 import {
   buildMentionRegexes,
   implicitMentionKindWhen,

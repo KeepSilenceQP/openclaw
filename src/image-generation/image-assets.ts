@@ -1,4 +1,3 @@
-// Image asset parsing and MIME helpers for OpenAI-compatible image responses.
 import { canonicalizeBase64 } from "../media/base64.js";
 import { isRecord } from "../shared/record-coerce.js";
 import {

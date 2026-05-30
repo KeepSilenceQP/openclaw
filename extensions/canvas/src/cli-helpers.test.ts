@@ -1,4 +1,3 @@
-// Tests extensions/canvas/src cli helpers test behavior.
 import { describe, expect, it } from "vitest";
 import {
   canvasSnapshotTempPath,

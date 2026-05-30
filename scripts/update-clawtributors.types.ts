@@ -1,4 +1,3 @@
-// Shared types for scripts update clawtributors types behavior.
 export type MapConfig = {
   ensureLogins?: string[];
   displayName?: Record<string, string>;

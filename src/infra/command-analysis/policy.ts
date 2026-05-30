@@ -1,4 +1,3 @@
-// Normalizes shell or argv command analysis for exec policy decisions.
 import {
   analyzeArgvCommand,
   analyzeShellCommand,

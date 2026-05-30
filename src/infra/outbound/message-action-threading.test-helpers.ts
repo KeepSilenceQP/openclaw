@@ -1,4 +1,3 @@
-// Test doubles for outbound reply-to, thread, and mirror route resolution.
 import { vi } from "vitest";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 

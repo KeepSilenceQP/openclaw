@@ -1,4 +1,3 @@
-// Coverage for block streaming policy and content filtering.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import {

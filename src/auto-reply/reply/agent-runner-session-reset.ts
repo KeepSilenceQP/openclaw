@@ -1,4 +1,3 @@
-// Session reset helpers used by reply agent orchestration.
 import fs from "node:fs";
 import type { SessionEntry } from "../../config/sessions.js";
 import {

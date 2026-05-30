@@ -1,4 +1,3 @@
-// Lists saved model auth profiles for a target agent without exposing credential material.
 import { resolveAgentDir, resolveDefaultAgentId } from "../../agents/agent-scope.js";
 import {
   ensureAuthProfileStore,

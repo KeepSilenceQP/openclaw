@@ -1,4 +1,3 @@
-// Tests secrets channel contract api fast path test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { loadPluginManifestRegistryMock } = vi.hoisted(() => ({

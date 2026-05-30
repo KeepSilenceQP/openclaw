@@ -146,5 +146,4 @@ export const testing = {
   resolveLaneResumeConcurrency,
   resolveSessionSuspensionReason,
 } as const;
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

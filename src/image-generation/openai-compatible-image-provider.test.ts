@@ -1,4 +1,3 @@
-// Tests image-generation openai compatible image provider test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   createOpenAiCompatibleImageGenerationProvider,

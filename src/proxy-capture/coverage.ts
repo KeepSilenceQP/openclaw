@@ -1,4 +1,3 @@
-// Static coverage registry for debug proxy seams and warning/report helpers.
 import process from "node:process";
 import { resolveDebugProxySettings, type DebugProxySettings } from "./env.js";
 import type { CaptureProtocol } from "./types.js";

@@ -1,4 +1,3 @@
-// Serves Control UI assets plus authenticated avatar and assistant-media routes.
 import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
 import fs from "node:fs";
 import type { IncomingMessage, ServerResponse } from "node:http";

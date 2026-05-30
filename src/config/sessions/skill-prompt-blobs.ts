@@ -1,4 +1,3 @@
-// Content-addressed prompt blobs for large session skill snapshots.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

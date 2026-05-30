@@ -1,4 +1,3 @@
-// Static Moonshot provider contract used by plugin metadata checks.
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 
 const noopAuth = async () => ({ profiles: [] });

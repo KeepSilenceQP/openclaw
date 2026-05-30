@@ -1,4 +1,3 @@
-// Normalizes loose system-run config values into strict strings and arrays.
 import { mapAllowFromEntries } from "openclaw/plugin-sdk/channel-config-helpers";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

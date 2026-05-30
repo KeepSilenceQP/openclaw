@@ -1,4 +1,3 @@
-// Voice Call extension Vitest config scopes tests to voice-call plugin shards and env filters.
 import { voiceCallExtensionTestRoots } from "./vitest.extension-voice-call-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

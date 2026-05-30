@@ -194,5 +194,4 @@ export const testing = {
       : defaultSessionsSendA2ADeps;
   },
 };
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

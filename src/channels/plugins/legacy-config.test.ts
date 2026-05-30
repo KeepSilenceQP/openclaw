@@ -1,4 +1,3 @@
-// Coverage for channel legacy config migration helpers.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { LegacyConfigRule } from "../../config/legacy.shared.js";
 

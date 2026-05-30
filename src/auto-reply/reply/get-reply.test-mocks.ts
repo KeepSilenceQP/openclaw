@@ -1,4 +1,3 @@
-// Shared mocks for get-reply tests.
 import { vi } from "vitest";
 import { createMockTypingController } from "./reply.test-helpers.js";
 

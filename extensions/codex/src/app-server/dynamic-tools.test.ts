@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server dynamic tools test behavior.
 import type { AgentToolResult } from "openclaw/plugin-sdk/agent-core";
 import type { AnyAgentTool } from "openclaw/plugin-sdk/agent-harness";
 import {

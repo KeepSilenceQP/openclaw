@@ -1,4 +1,3 @@
-// Secret input contracts and coercion helpers for env/file/exec SecretRef config.
 import { isRecord } from "../utils.js";
 
 /** Supported backing store families for configured secret references. */

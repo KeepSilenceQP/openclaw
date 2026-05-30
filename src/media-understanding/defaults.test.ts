@@ -1,4 +1,3 @@
-// Tests media-understanding defaults test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 const mediaMetadataPlugins = vi.hoisted(() => [

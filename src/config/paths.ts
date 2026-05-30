@@ -1,4 +1,3 @@
-// Config/state path resolvers for OpenClaw home, config, credentials, and gateway ports.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

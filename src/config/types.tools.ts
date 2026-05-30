@@ -1,4 +1,3 @@
-// Tool configuration type contracts for media, exec, fs, sessions, and memory tools.
 import type { ChatType } from "../channels/chat-type.js";
 import type { SafeBinProfileFixture } from "../infra/exec-safe-bin-policy.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

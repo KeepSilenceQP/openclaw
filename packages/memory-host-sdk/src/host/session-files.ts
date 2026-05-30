@@ -1,4 +1,3 @@
-// Session transcript discovery, classification, sanitization, and indexing helpers.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

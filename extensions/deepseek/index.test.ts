@@ -1,4 +1,3 @@
-// Tests extensions/deepseek index test behavior.
 import type { Context, Model } from "openclaw/plugin-sdk/llm";
 import { createAssistantMessageEventStream } from "openclaw/plugin-sdk/llm";
 import {

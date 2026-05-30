@@ -1,4 +1,3 @@
-// Chat command handlers for session lifecycle and inspection.
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import { resolveFastModeState } from "../../agents/fast-mode.js";
 import {
@@ -750,5 +749,4 @@ export const handleRestartCommand: CommandHandler = async (params, allowTextComm
   };
 };
 
-/** Abort/stop command handlers re-exported for session command routing. */
 export { handleAbortTrigger, handleStopCommand };

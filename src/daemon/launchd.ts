@@ -1,4 +1,3 @@
-// macOS LaunchAgent service management for the OpenClaw gateway.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { sanitizeForLog } from "../../packages/terminal-core/src/ansi.js";

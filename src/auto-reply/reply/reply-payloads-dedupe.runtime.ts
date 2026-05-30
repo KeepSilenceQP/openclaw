@@ -1,4 +1,3 @@
-// Runtime re-export for reply payload deduplication.
 export {
   filterMessagingToolDuplicates,
   filterMessagingToolMediaDuplicates,

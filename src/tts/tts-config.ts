@@ -1,4 +1,3 @@
-// Text-to-speech config resolution across global, agent, channel, account, and session state.
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.js";
@@ -11,7 +10,6 @@ import {
 } from "../shared/string-coerce.js";
 import { resolveConfigDir, resolveUserPath } from "../utils.js";
 import { normalizeTtsAutoMode } from "./tts-auto-mode.js";
-/** Auto-mode normalizer shared by TTS config and runtime callers. */
 export { normalizeTtsAutoMode } from "./tts-auto-mode.js";
 
 const BLOCKED_MERGE_KEYS = new Set(["__proto__", "prototype", "constructor"]);

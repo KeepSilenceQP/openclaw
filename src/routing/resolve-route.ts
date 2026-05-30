@@ -1,4 +1,3 @@
-// Inbound channel/account/peer routing to agents and session keys.
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";
 import type { ChatType } from "../channels/chat-type.js";
 import { normalizeChatType } from "../channels/chat-type.js";
@@ -70,7 +69,6 @@ export type ResolvedAgentRoute = {
     | "default";
 };
 
-/** Default account id used when channel inputs omit account context. */
 export { DEFAULT_ACCOUNT_ID } from "./session-key.js";
 
 /** Chooses whether inbound last-route state is stored on main or session key. */

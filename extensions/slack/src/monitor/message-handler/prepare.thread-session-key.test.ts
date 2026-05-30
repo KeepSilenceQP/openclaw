@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/message-handler prepare thread session key test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   registerSessionBindingAdapter,

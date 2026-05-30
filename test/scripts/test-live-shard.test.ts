@@ -1,4 +1,3 @@
-// Tests test/scripts test live shard test behavior.
 import { spawnSync } from "node:child_process";
 import fs, { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";

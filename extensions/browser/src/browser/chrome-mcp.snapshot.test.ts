@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser chrome mcp snapshot test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildAiSnapshotFromChromeMcpSnapshot,

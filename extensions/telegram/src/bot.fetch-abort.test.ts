@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot fetch abort test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { getTelegramNetworkErrorOrigin } from "./network-errors.js";
 

@@ -1,4 +1,3 @@
-// Tests plugins config schema test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 import {

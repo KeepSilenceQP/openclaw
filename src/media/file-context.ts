@@ -1,4 +1,3 @@
-// Formats attachment text as escaped XML-like context blocks for prompts.
 import { sanitizeUntrustedFileName } from "../infra/fs-safe-advanced.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

@@ -1,4 +1,3 @@
-// Tests gateway/server-methods diagnostics test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   emitDiagnosticEvent,

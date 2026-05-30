@@ -1,5 +1,4 @@
 // Bundled plugin load path alias helpers. Maps packaged dist extension paths
-// to legacy source-style extension paths for compatibility diagnostics/loading.
 import path from "node:path";
 import { isPathInside } from "./path-safety.js";
 

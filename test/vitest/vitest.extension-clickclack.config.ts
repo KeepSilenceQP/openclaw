@@ -1,4 +1,3 @@
-// ClickClack extension Vitest config scopes tests through the single-channel helper.
 import { createSingleChannelExtensionVitestConfig } from "./vitest.extension-channel-single-config.ts";
 
 /** Creates the ClickClack extension Vitest project config. */

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser server auth fail closed test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { startBrowserControlServerFromConfig, stopBrowserControlServer } from "../server.js";
 import { getFreePort } from "./test-port.js";

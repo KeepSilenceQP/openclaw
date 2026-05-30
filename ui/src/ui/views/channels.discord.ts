@@ -1,5 +1,4 @@
 // Discord channel card renderer. It presents bot runtime/probe status and
-// delegates config controls to the shared channel config section.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { formatRelativeTimestamp } from "../format.ts";

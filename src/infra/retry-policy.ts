@@ -1,4 +1,3 @@
-// Builds shared retry runners for channel APIs and rate-limited provider calls.
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import { formatErrorMessage } from "./errors.js";
 import { type RetryConfig, resolveRetryConfig, retryAsync } from "./retry.js";

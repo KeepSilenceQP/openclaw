@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src/mattermost monitor authz test behavior.
 import { describe, expect, it } from "vitest";
 import type { ResolvedMattermostAccount } from "./accounts.js";
 import {

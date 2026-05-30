@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server sandbox exec server http test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   closeCodexSandboxExecServersForTests,

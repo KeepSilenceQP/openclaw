@@ -1,5 +1,4 @@
 // High-level audio transcription runner used by reply flows that need text
-// extracted from inbound media attachments before prompt rendering.
 import type { MsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.js";
 import type { ActiveMediaModel } from "./active-model.types.js";

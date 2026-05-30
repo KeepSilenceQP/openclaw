@@ -1,4 +1,3 @@
-// Tests infra heartbeat wake test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   HEARTBEAT_SKIP_CRON_IN_PROGRESS,

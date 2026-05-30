@@ -1,4 +1,3 @@
-// Tests extensions/discord/src exec approvals test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it } from "vitest";
 import {

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Generate bundled channel config metadata from plugin manifests and config-surface modules.
 import fs from "node:fs";
 import path from "node:path";
 import { loadBundledPluginPublicArtifactModuleSync } from "../src/plugins/public-surface-loader.js";

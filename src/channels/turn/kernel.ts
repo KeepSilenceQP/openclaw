@@ -13,33 +13,25 @@ import {
   isDurableInboundReplyDeliveryHandled,
   throwIfDurableInboundReplyDeliveryFailed,
 } from "./durable-delivery.js";
-/** Inbound context assembly helpers used by channel turn adapters. */
 export {
   buildChannelInboundEventContext,
   filterChannelInboundSupplementalContext,
 } from "../inbound-event/context.js";
-/** Parameters for assembling inbound event context. */
 export type { BuildChannelInboundEventContextParams } from "../inbound-event/context.js";
-/** Bot-loop guard controls and test inspection helpers. */
 export {
   clearChannelBotPairLoopGuardForTests,
   listTrackedChannelBotPairsForTests,
   recordChannelBotPairLoopAndCheckSuppression,
 } from "./bot-loop-protection.js";
-/** Creates a bounded history window for channel transcript context. */
 export { createChannelHistoryWindow } from "./history-window.js";
-/** Bounded channel history window contract. */
 export type { ChannelHistoryWindow } from "./history-window.js";
-/** Facts used by the bot-loop suppression guard. */
 export type { ChannelBotLoopProtectionFacts } from "./bot-loop-protection.js";
-/** Durable inbound reply delivery helpers for message lifecycle adapters. */
 export {
   deliverDurableInboundReplyPayload,
   deliverInboundReplyWithMessageSendContext,
   isDurableInboundReplyDeliveryHandled,
   throwIfDurableInboundReplyDeliveryFailed,
 } from "./durable-delivery.js";
-/** Durable inbound reply delivery parameter/result contracts. */
 export type {
   DurableInboundReplyDeliveryOptions,
   DurableInboundReplyDeliveryParams,
@@ -60,9 +52,7 @@ import type {
   PreflightFacts,
   RunChannelTurnParams,
 } from "./types.js";
-/** Converts message receipts into legacy channel delivery results. */
 export { createChannelDeliveryResultFromReceipt } from "./delivery-result.js";
-/** Dispatch-count helpers for visible and final channel reply delivery. */
 export {
   EMPTY_CHANNEL_TURN_DISPATCH_COUNTS,
   hasFinalChannelTurnDispatch,
@@ -71,7 +61,6 @@ export {
   type ChannelTurnDispatchResultLike,
   type ChannelTurnVisibleDeliverySignals,
 } from "./dispatch-result.js";
-/** Core channel turn input, routing, dispatch, and result contracts. */
 export type {
   AccessFacts,
   AssembledChannelTurn,
@@ -101,7 +90,6 @@ export type {
   SenderFacts,
   SupplementalContextFacts,
 } from "./types.js";
-/** Inbound media facts captured during channel turn preflight. */
 export type { InboundMediaFacts } from "./types.js";
 
 const DEFAULT_EVENT_CLASS: ChannelEventClass = {

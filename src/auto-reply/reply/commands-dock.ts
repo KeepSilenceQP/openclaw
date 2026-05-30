@@ -1,4 +1,3 @@
-// Chat command handlers for plugin dock surfaces.
 import { getActivePluginChannelRegistry } from "../../plugins/runtime.js";
 import {
   normalizeLowercaseStringOrEmpty,

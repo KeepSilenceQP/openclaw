@@ -1,4 +1,3 @@
-// Resolves commitments feature defaults and user timezone from OpenClaw config.
 import { resolveUserTimezone } from "../agents/date-time.js";
 import type { OpenClawConfig } from "../config/config.js";
 

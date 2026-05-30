@@ -1,5 +1,4 @@
 // Public context-engine contract for pluggable context assembly, ingestion,
-// compaction, maintenance, and runtime host integration.
 import type { AgentMessage } from "../agents/runtime/index.js";
 import type { MemoryCitationsMode } from "../config/types.memory.js";
 

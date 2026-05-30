@@ -1,4 +1,3 @@
-// Decides whether lock files are owned by dead or expired owners.
 import {
   getProcessStartTime as defaultGetProcessStartTime,
   isPidDefinitelyDead as defaultIsPidDefinitelyDead,

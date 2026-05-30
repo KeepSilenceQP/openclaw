@@ -1,4 +1,3 @@
-// Tests infra agent events test behavior.
 import { beforeEach, describe, expect, test, vi } from "vitest";
 import {
   clearAgentRunContext,

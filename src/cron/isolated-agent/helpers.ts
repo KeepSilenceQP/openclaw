@@ -1,5 +1,4 @@
 // Cron isolated-agent payload selection, heartbeat filtering, and fatal-error
-// synthesis for scheduled delivery.
 import { hasOutboundReplyContent } from "openclaw/plugin-sdk/reply-payload";
 import { DEFAULT_HEARTBEAT_ACK_MAX_CHARS } from "../../auto-reply/heartbeat.js";
 import { getReplyPayloadMetadata } from "../../auto-reply/reply-payload.js";

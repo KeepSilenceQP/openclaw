@@ -1,4 +1,3 @@
-// Tests plugin provider catalog discovery used by filtered model-list output.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   hasProviderStaticCatalogForFilter,

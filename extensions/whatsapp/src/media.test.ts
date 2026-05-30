@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src media test behavior.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

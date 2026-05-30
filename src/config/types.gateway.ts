@@ -1,4 +1,3 @@
-// Gateway config types shared by schema parsing, defaults, and runtime consumers.
 import type { SecretInput } from "./types.secrets.js";
 
 /** Bind-address policy for the gateway HTTP and WebSocket server. */

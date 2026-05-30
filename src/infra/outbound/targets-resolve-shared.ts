@@ -1,4 +1,3 @@
-// Shared outbound target resolution against channel plugin config and capabilities.
 import { mapAllowFromEntries } from "openclaw/plugin-sdk/channel-config-helpers";
 import type { ChannelPlugin } from "../../channels/plugins/types.plugin.js";
 import type { ChannelOutboundTargetMode } from "../../channels/plugins/types.public.js";

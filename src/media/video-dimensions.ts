@@ -1,4 +1,3 @@
-// Video dimension probing helpers backed by ffprobe JSON output.
 import { runFfprobe } from "./ffmpeg-exec.js";
 
 /** Pixel dimensions for the first video stream. */

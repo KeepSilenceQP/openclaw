@@ -1,4 +1,3 @@
-// Tests extensions/googlechat/src monitor webhook routing test behavior.
 import { EventEmitter } from "node:events";
 import type { IncomingMessage } from "node:http";
 import {

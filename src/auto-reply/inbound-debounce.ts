@@ -1,4 +1,3 @@
-// Inbound debounce helpers for coalescing rapid channel events.
 import type { InboundDebounceByProvider } from "../config/types.messages.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 

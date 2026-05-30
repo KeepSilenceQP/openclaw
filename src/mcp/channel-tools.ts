@@ -1,4 +1,3 @@
-// Tool registration for the channel MCP server.
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import type { OpenClawChannelBridge } from "./channel-bridge.js";

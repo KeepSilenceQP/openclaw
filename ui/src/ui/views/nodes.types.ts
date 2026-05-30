@@ -1,4 +1,3 @@
-// Nodes view props shared between the renderer and app shell.
 import type { DevicePairingList } from "../controllers/devices.ts";
 import type { ExecApprovalsFile, ExecApprovalsSnapshot } from "../controllers/exec-approvals.ts";
 

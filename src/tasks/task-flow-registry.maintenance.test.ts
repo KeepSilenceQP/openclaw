@@ -1,4 +1,3 @@
-// Tests tasks task flow registry maintenance test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { withOpenClawTestState } from "../test-utils/openclaw-test-state.js";
 import { createRunningTaskRun } from "./task-executor.js";

@@ -1,5 +1,4 @@
 // Builds OpenClaw backup archives from the resolved config/state/workspace plan,
-// with manifest generation, volatile-file filtering, and tar retry handling.
 import { randomUUID } from "node:crypto";
 import { constants as fsConstants } from "node:fs";
 import fs from "node:fs/promises";
@@ -192,7 +191,6 @@ async function writeTarArchiveWithRetry(params: {
 
 /** Internal tar retry hooks exposed to regression tests only. */
 export const testApi = { writeTarArchiveWithRetry, isTarEofRaceError };
-/** Stable test-only alias for backup archive retry internals. */
 export { testApi as __test };
 
 async function resolveOutputPath(params: {

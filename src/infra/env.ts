@@ -1,5 +1,4 @@
 // Environment normalization and diagnostic logging.
-// Accepted env options are logged once with optional redaction for operator debugging.
 import type { SubsystemLogger } from "../logging/subsystem.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 

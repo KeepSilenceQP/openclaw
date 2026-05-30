@@ -1,4 +1,3 @@
-// Tests model-command config loading, source snapshots, and secret diagnostics.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({

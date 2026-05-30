@@ -1,4 +1,3 @@
-// Tests utils mask api key test behavior.
 import { describe, expect, it } from "vitest";
 import { maskApiKey } from "./mask-api-key.js";
 

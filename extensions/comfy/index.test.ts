@@ -1,4 +1,3 @@
-// Tests extensions/comfy index test behavior.
 import fs from "node:fs";
 import {
   registerSingleProviderPlugin,

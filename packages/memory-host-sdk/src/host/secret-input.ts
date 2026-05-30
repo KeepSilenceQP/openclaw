@@ -1,4 +1,3 @@
-// Memory-specific secret input wrappers with env SecretRef resolution.
 import {
   hasConfiguredSecretInput,
   normalizeEnvSecretInputString,

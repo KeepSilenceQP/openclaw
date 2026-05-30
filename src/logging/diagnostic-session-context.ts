@@ -1,5 +1,4 @@
 // Cron/session diagnostic context: pulls bounded transcript/job details for
-// stuck-session log messages without loading full session history.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";
@@ -207,5 +206,4 @@ export function formatStoppedCronSessionDiagnosticFields(context: CronSessionCon
 export const testing = {
   quoteLogField,
 };
-/** Test-only namespace for cron diagnostic formatting helpers. */
 export { testing as __testing };

@@ -1,5 +1,3 @@
-// Security-audit barrel for filesystem permission checks.
-/** Re-export filesystem permission helpers from the shared permissions implementation. */
 export {
   formatPermissionDetail,
   formatPermissionRemediation,

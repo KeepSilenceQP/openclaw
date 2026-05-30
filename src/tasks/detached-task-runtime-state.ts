@@ -1,10 +1,8 @@
-// Process-local registration state for the active detached task lifecycle runtime.
 import type {
   DetachedTaskLifecycleRuntime,
   DetachedTaskLifecycleRuntimeRegistration,
 } from "./detached-task-runtime-contract.js";
 
-/** Re-export detached task runtime contracts for registry users. */
 export type { DetachedTaskLifecycleRuntime, DetachedTaskLifecycleRuntimeRegistration };
 
 let detachedTaskLifecycleRuntimeRegistration: DetachedTaskLifecycleRuntimeRegistration | undefined;

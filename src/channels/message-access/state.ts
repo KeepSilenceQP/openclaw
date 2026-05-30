@@ -1,4 +1,3 @@
-// Channel ingress state normalization before access decisions.
 import { normalizeStringEntries, uniqueStrings } from "../../shared/string-normalization.js";
 import { parseAccessGroupAllowFromEntry } from "../allow-from.js";
 import type {

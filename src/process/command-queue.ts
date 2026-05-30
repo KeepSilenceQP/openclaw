@@ -1,5 +1,4 @@
 // In-process command lane queue. Serializes work per lane, supports priority,
-// draining, active-task waits, and restart recovery across global state.
 import {
   diagnosticLogger as diag,
   logLaneDequeue,

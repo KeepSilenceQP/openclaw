@@ -1,4 +1,3 @@
-// Vitest fixtures and mocks for secrets runtime snapshot tests.
 import { afterEach, beforeAll, beforeEach, vi } from "vitest";
 import type { AuthProfileStore } from "../agents/auth-profiles.js";
 import type { OpenClawConfig } from "../config/config.js";

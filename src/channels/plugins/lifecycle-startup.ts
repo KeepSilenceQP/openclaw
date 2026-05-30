@@ -1,4 +1,3 @@
-// Channel plugin startup lifecycle runner.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { listChannelPlugins } from "./registry.js";
 

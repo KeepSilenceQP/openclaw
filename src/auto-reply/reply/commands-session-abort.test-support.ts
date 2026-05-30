@@ -1,4 +1,3 @@
-// Test support for session abort command tests.
 import { vi } from "vitest";
 
 vi.mock("./queue.js", async () => {

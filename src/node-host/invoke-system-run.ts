@@ -1,6 +1,5 @@
 // Policy and execution pipeline for node-host system.run. This module parses
 // incoming commands, layers global/agent exec policy, applies approval and
-// allowlist decisions, then delegates to the local host or companion app.
 import crypto from "node:crypto";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { GatewayClient } from "../gateway/client.js";
@@ -374,7 +373,6 @@ function argvArraysMatch(left: readonly string[] | undefined, right: readonly st
   );
 }
 
-/** Approval-plan builder is re-exported for tests and node-host command routing. */
 export { buildSystemRunApprovalPlan } from "./invoke-system-run-plan.js";
 
 async function parseSystemRunPhase(

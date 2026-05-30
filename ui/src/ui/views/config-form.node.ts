@@ -1,5 +1,4 @@
 // Recursive config-form node renderer. It handles schema search, sensitive-value
-// redaction/reveal, object/array traversal, and primitive controls for one path.
 import { html, nothing, type TemplateResult } from "lit";
 import { formatUnknownText } from "../format.ts";
 import { icons as sharedIcons } from "../icons.ts";

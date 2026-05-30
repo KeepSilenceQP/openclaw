@@ -1,4 +1,3 @@
-// Tests test git hooks pre commit test behavior.
 import { execFileSync } from "node:child_process";
 import { mkdirSync, symlinkSync, writeFileSync } from "node:fs";
 import path from "node:path";

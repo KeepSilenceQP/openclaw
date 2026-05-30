@@ -1,4 +1,3 @@
-// Tests test/scripts parallels smoke model test behavior.
 import { chmodSync, copyFileSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { createServer } from "node:net";
 import { tmpdir } from "node:os";
@@ -134,16 +133,12 @@ describe("Parallels smoke model selection", () => {
 
   it("accepts leading package-manager separators and still honors later terminators", () => {
     expect(parseLinuxSmokeArgs(["--", "--mode", "upgrade"]).mode).toBe("upgrade");
-    expect(parseLinuxSmokeArgs(["--mode", "fresh", "--", "--mode", "upgrade"]).mode).toBe(
-      "fresh",
-    );
+    expect(parseLinuxSmokeArgs(["--mode", "fresh", "--", "--mode", "upgrade"]).mode).toBe("fresh");
     expect(parseMacosSmokeArgs(["--", "--mode", "upgrade"]).mode).toBe("upgrade");
-    expect(parseMacosSmokeArgs(["--mode", "fresh", "--", "--mode", "upgrade"]).mode).toBe(
-      "fresh",
+    expect(parseMacosSmokeArgs(["--mode", "fresh", "--", "--mode", "upgrade"]).mode).toBe("fresh");
+    expect(parseNpmUpdateSmokeArgs(["--", "--package-spec", "openclaw@2026.5.1"]).packageSpec).toBe(
+      "openclaw@2026.5.1",
     );
-    expect(
-      parseNpmUpdateSmokeArgs(["--", "--package-spec", "openclaw@2026.5.1"]).packageSpec,
-    ).toBe("openclaw@2026.5.1");
     expect(
       parseNpmUpdateSmokeArgs([
         "--package-spec",
@@ -156,9 +151,10 @@ describe("Parallels smoke model selection", () => {
     expect(parseWindowsSmokeArgs(["--", "--upgrade-from-packed-main"]).upgradeFromPackedMain).toBe(
       true,
     );
-    expect(parseWindowsSmokeArgs(["--mode", "fresh", "--", "--upgrade-from-packed-main"]).upgradeFromPackedMain).toBe(
-      false,
-    );
+    expect(
+      parseWindowsSmokeArgs(["--mode", "fresh", "--", "--upgrade-from-packed-main"])
+        .upgradeFromPackedMain,
+    ).toBe(false);
   });
 
   it("keeps provider auth and model defaults in the shared TypeScript helper", () => {

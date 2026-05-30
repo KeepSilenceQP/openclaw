@@ -1,4 +1,3 @@
-// Chat command handlers for subagent control and inspection.
 import { logVerbose } from "../../globals.js";
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 import {

@@ -1,4 +1,3 @@
-// Tests extensions/discord/src gateway logging test behavior.
 import { EventEmitter } from "node:events";
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 

@@ -1,4 +1,3 @@
-// Coverage for fast-path runtime imports in get-reply.
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import {

@@ -1,4 +1,3 @@
-// Parallels E2E phase runner records phase logs, deadlines, and timing summaries.
 import { writeFile } from "node:fs/promises";
 import path from "node:path";
 import { say, warn } from "./host-command.ts";

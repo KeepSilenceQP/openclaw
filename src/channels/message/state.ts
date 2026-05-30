@@ -1,4 +1,3 @@
-// Durable message send state records and recovery classification.
 import type { DurableMessageSendIntent, MessageReceipt } from "./types.js";
 
 /** Durable send state persisted for recovery and diagnostics. */

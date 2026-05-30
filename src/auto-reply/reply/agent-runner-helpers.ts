@@ -1,4 +1,3 @@
-// Shared helper functions for constructing reply agent runs.
 import {
   hasOutboundReplyContent,
   resolveSendableOutboundReplyParts,

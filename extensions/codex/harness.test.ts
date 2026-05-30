@@ -1,4 +1,3 @@
-// Tests extensions/codex harness test behavior.
 import { describe, expect, it } from "vitest";
 import { createCodexAppServerAgentHarness } from "./harness.js";
 

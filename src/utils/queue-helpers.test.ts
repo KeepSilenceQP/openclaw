@@ -1,4 +1,3 @@
-// Tests utils queue helpers test behavior.
 import { describe, expect, it } from "vitest";
 import {
   applyQueueRuntimeSettings,

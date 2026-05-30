@@ -1,4 +1,3 @@
-// QA Lab auth-profile fixtures seed and inspect fake Codex/OpenAI auth profiles.
 import fs from "node:fs/promises";
 import path from "node:path";
 

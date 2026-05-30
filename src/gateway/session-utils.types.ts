@@ -1,4 +1,3 @@
-// Gateway session list, preview, patch, and row result types.
 import type { ChatType } from "../channels/chat-type.js";
 import type {
   SessionCompactionCheckpoint,

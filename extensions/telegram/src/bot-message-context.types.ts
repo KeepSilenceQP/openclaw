@@ -1,4 +1,3 @@
-// Shared types for extensions/telegram/src bot message context types behavior.
 import type { Bot } from "grammy";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type {

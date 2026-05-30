@@ -1,4 +1,3 @@
-// Tests plugins loader bundle test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { afterAll, afterEach, describe, expect, it } from "vitest";

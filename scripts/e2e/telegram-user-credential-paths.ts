@@ -1,4 +1,3 @@
-// Telegram user credential path helpers expand home paths and write private JSON files.
 import { chmod, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 

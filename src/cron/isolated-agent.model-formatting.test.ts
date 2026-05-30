@@ -1,4 +1,3 @@
-// Tests cron isolated agent model formatting test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "../agents/defaults.js";
 import type { AgentConfig } from "../config/types.agents.js";

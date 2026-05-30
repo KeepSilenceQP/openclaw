@@ -1,4 +1,3 @@
-// Coverage for group mention gating policy.
 import { describe, expect, it } from "vitest";
 import {
   implicitMentionKindWhen,

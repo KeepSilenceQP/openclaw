@@ -1,4 +1,3 @@
-// QA Lab coverage report helpers inventory scenario metadata and render coverage reports.
 import { normalizeStringEntriesLower } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {
   buildLiveTransportCoverageLaneSummaries,

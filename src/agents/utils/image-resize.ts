@@ -1,4 +1,3 @@
-// Image resize pipeline for model attachment limits and coordinate notes.
 import type { ImageContent } from "../../llm/types.js";
 import {
   createImageProcessor,

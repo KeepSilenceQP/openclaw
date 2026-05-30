@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src auth store lazy dir test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

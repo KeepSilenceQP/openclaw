@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src/bot delivery test behavior.
 import type { Bot } from "grammy";
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime-env";
 import { beforeEach, describe, expect, it, vi } from "vitest";

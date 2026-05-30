@@ -1,4 +1,3 @@
-// Filters plugin install directories before security trust inspection.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
 const IGNORED_INSTALLED_PLUGIN_DIR_NAMES = new Set(["node_modules", ".openclaw-install-backups"]);

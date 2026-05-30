@@ -1,4 +1,3 @@
-// Tests extensions/openai provider auth contract test behavior.
 import { describeOpenAICodexProviderAuthContract } from "openclaw/plugin-sdk/provider-test-contracts";
 import { vi } from "vitest";
 

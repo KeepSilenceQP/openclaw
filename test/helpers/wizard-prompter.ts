@@ -1,4 +1,3 @@
-// Wizard tests use this mocked prompter fixture for predictable prompt answers.
 import { vi } from "vitest";
 import type { WizardPrompter } from "../../src/wizard/prompts.js";
 

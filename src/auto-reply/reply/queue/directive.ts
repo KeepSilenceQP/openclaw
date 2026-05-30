@@ -1,4 +1,3 @@
-// Queue directive parser.
 import { parseDurationMs } from "../../../cli/parse-duration.js";
 import { parseStrictPositiveInteger } from "../../../infra/parse-finite-number.js";
 import { normalizeOptionalLowercaseString } from "../../../shared/string-coerce.js";

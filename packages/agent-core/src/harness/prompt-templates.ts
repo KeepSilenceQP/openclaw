@@ -1,4 +1,3 @@
-// Prompt-template discovery and loading helpers for harness execution environments.
 import {
   basenameEnvPath,
   parseFrontmatter,

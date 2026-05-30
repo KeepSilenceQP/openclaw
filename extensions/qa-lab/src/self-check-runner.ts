@@ -1,4 +1,3 @@
-// QA Lab self-check runner starts a lab server and executes the smoke scenario.
 import { startQaLabServer } from "./lab-server.js";
 
 /** Runs the QA Lab self-check and stops the temporary lab server afterward. */

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/client create client test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const ensureMatrixSdkLoggingConfiguredMock = vi.hoisted(() => vi.fn());

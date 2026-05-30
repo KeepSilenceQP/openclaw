@@ -1,4 +1,3 @@
-// Config honor audit helpers verify schema keys have merge, reload, consumer, and test proof.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

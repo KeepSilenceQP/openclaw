@@ -1,4 +1,3 @@
-// Normalizes model catalog manifests into deterministic provider/model rows.
 import {
   buildModelCatalogMergeKey,
   buildModelCatalogRef,

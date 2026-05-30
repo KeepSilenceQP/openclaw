@@ -1,4 +1,3 @@
-// Tests infra provider usage fetch claude test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   createProviderUsageFetch,

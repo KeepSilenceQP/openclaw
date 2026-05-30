@@ -1,4 +1,3 @@
-// Coverage for reply turn admission policy.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createReplyOperation, testing } from "./reply-run-registry.js";
 import { admitReplyTurn } from "./reply-turn-admission.js";

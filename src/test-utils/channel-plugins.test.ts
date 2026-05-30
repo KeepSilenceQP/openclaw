@@ -1,4 +1,3 @@
-// Tests test-utils channel plugins test behavior.
 import { describe, expect, it } from "vitest";
 import { createChannelTestPluginBase, createOutboundTestPlugin } from "./channel-plugins.js";
 

@@ -1,4 +1,3 @@
-// Plugin activation reader for config snapshots shown in the UI.
 import type { ConfigSnapshot } from "./types.ts";
 
 type PluginActivationOptions = {

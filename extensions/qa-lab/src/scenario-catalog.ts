@@ -1,4 +1,3 @@
-// QA Lab scenario catalog loads Markdown scenario packs and validates YAML fences.
 import fs from "node:fs";
 import path from "node:path";
 import YAML from "yaml";
@@ -239,7 +238,6 @@ export type QaBootstrapScenarioCatalog = {
   scenarios: QaSeedScenarioWithSource[];
 };
 
-/** Scenario pack ids and resolver helpers shared with catalog consumers. */
 export {
   QA_OBSERVABILITY_SCENARIO_IDS,
   QA_PERSONAL_AGENT_SCENARIO_IDS,

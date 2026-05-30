@@ -1,4 +1,3 @@
-// Direct cron delivery orchestration for isolated runs, transcript mirrors, and retries.
 import { retireSessionMcpRuntime } from "../../agents/agent-bundle-mcp-tools.js";
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import {

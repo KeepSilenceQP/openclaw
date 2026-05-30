@@ -1,4 +1,3 @@
-// Tests gateway server node pairing auto approve test behavior.
 import net from "node:net";
 import { describe, expect, test } from "vitest";
 import { WebSocket } from "ws";

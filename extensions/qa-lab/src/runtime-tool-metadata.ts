@@ -1,4 +1,3 @@
-// QA Lab runtime-tool metadata helpers classify scenario coverage expectations.
 import {
   asBoolean as readBoolean,
   isRecord,

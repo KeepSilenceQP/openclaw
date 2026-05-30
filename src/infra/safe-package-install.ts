@@ -1,4 +1,3 @@
-// Builds npm install env and argv with scripts/audit/fund disabled by default.
 import type { NpmProjectInstallEnvOptions } from "./npm-install-env.js";
 import { createNpmProjectInstallEnv } from "./npm-install-env.js";
 

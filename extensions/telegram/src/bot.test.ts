@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot test behavior.
 import { rm } from "node:fs/promises";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {

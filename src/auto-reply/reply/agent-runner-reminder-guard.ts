@@ -1,4 +1,3 @@
-// Reminder guard that prevents reply agents from duplicating pending cron work.
 import { loadCronStore, resolveCronStorePath } from "../../cron/store.js";
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import type { ReplyPayload } from "../types.js";

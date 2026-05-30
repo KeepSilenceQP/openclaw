@@ -1,4 +1,3 @@
-// Tests extensions/zalouser/src monitor account scope test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig, PluginRuntime } from "../runtime-api.js";
 import "./monitor.send-mocks.js";

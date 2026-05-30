@@ -1,4 +1,3 @@
-// Tests config io parse test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { parseConfigJson5 } from "./config.js";
 

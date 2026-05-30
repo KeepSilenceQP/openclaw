@@ -1,4 +1,3 @@
-// Tests config/sessions store skills stripping test behavior.
 import type { MakeDirectoryOptions, Mode, PathLike } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

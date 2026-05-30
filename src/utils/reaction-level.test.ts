@@ -1,4 +1,3 @@
-// Tests utils reaction level test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveReactionLevel } from "./reaction-level.js";
 

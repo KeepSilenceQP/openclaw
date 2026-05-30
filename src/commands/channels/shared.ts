@@ -14,9 +14,7 @@ import {
 /** Channel id accepted by channel command helpers. */
 export type ChatChannel = ChannelId;
 
-/** Config snapshot validator shared by channel subcommands. */
 export { requireValidConfigSnapshot };
-/** Config file validator shared by channel subcommands. */
 export { requireValidConfigFileSnapshot };
 
 /** Loads validated config and resolves channel command secrets for status/setup paths. */

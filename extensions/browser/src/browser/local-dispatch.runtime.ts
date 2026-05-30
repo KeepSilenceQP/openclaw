@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/browser/src/browser local dispatch runtime behavior.
 import {
   createBrowserControlContext,
   startBrowserControlServiceFromConfig,

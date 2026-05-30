@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/config group test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_GROUP_HISTORY_LIMIT,

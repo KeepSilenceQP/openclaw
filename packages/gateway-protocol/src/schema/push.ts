@@ -1,4 +1,3 @@
-// Gateway protocol schemas for APNs push testing and browser Web Push subscriptions.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

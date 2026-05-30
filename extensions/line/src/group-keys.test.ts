@@ -1,4 +1,3 @@
-// Tests extensions/line/src group keys test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveExactLineGroupConfigKey,

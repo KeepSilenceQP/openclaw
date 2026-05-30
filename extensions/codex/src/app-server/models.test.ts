@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server models test behavior.
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { CodexAppServerClient } from "./client.js";
 import { createClientHarness } from "./test-support.js";

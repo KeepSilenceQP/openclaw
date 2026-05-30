@@ -1,4 +1,3 @@
-// Tests packages/memory-host-sdk/src/host read file shared test behavior.
 import { describe, expect, it } from "vitest";
 import { buildMemoryReadResult, buildMemoryReadResultFromSlice } from "./read-file-shared.js";
 

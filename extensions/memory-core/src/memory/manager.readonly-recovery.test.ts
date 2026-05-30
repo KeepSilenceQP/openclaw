@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager readonly recovery test behavior.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

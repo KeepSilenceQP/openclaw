@@ -1,4 +1,3 @@
-// Tests config logging max file bytes test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObject } from "./validation.js";
 

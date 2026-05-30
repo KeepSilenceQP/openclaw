@@ -1,4 +1,3 @@
-// Session run accounting helpers for usage totals.
 import { deriveSessionTotalTokens, type NormalizedUsage } from "../../agents/usage.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { incrementCompactionCount } from "./session-updates.js";

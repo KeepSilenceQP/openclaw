@@ -1,6 +1,5 @@
 import { routedCommands, type RouteSpec } from "./route-specs.js";
 
-/** Re-export the route-first command spec for tests and dispatch helpers. */
 export type { RouteSpec } from "./route-specs.js";
 
 /** Find the first route-first command whose path and optional argv parser match. */

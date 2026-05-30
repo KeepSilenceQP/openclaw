@@ -6,7 +6,6 @@ export {
   resolveSandboxedSessionToolContext,
 } from "./sessions-access.js";
 import { resolveSandboxedSessionToolContext } from "./sessions-access.js";
-/** Session reference resolution helpers shared by session tools. */
 export {
   resolveCurrentSessionClientAlias,
   resolveDisplaySessionKey,
@@ -16,7 +15,6 @@ export {
   resolveVisibleSessionReference,
   shouldResolveSessionIdInput,
 } from "./sessions-resolution.js";
-/** Chat transcript text helpers shared by session list/detail tools. */
 export {
   extractAssistantText,
   sanitizeTextContent,

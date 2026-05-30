@@ -1,4 +1,3 @@
-// Tests infra/outbound agent delivery test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({

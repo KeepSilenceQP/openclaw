@@ -17,7 +17,6 @@ import type { ChannelId } from "./channel-id.types.js";
 import type { ChannelMessageActionName as ChannelMessageActionNameFromList } from "./message-action-names.js";
 import type { ChannelMessageCapability } from "./message-capabilities.js";
 
-/** Channel id type shared by plugin contracts. */
 export type { ChannelId } from "./channel-id.types.js";
 
 /** Visibility flags for setup, docs, and configured channel surfaces. */

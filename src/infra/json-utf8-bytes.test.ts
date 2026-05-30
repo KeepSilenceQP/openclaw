@@ -1,4 +1,3 @@
-// Tests infra json utf8 bytes test behavior.
 import { describe, expect, it } from "vitest";
 import {
   boundedJsonUtf8Bytes,

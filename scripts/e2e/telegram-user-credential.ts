@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Telegram user credential CLI exports, restores, leases, and releases QA user payloads.
-
 import { createHash } from "node:crypto";
 import { copyFile, mkdir, mkdtemp, readFile, rm, unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";

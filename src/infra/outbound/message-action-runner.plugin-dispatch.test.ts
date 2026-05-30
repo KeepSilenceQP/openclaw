@@ -1,4 +1,3 @@
-// Tests infra/outbound message action runner plugin dispatch test behavior.
 import path from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { jsonResult } from "../../agents/tools/common.js";

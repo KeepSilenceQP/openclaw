@@ -1,4 +1,3 @@
-// Shared plugin contracts for web search and web fetch provider registration.
 import type { TSchema } from "typebox";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { RuntimeEnv } from "../runtime.js";

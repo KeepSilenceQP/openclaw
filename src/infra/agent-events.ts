@@ -1,5 +1,4 @@
 // Agent event logging and prompt extraction.
-// Converts agent lifecycle and tool events into durable rows and normalized live payloads.
 import type { VerboseLevel } from "../auto-reply/thinking.js";
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import { notifyListeners, registerListener } from "../shared/listeners.js";

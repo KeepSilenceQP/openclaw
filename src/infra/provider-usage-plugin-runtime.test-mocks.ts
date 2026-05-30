@@ -1,4 +1,3 @@
-// Vitest mocks for provider usage plugin runtime integration tests.
 import { vi } from "vitest";
 
 const resolveProviderUsageSnapshotWithPluginMock = vi.hoisted(() =>

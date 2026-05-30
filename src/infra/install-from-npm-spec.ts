@@ -1,4 +1,3 @@
-// Installs validated npm specs through the archive install pipeline.
 import type { NpmIntegrityDriftPayload } from "./npm-integrity.js";
 import {
   finalizeNpmSpecArchiveInstall,

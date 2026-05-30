@@ -1,4 +1,3 @@
-// Parent-side client for isolated local embedding worker processes.
 import { fork, type ChildProcess } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

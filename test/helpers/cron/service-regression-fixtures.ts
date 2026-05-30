@@ -1,4 +1,3 @@
-// Shared cron service fixtures for regression tests that need isolated stores, frozen time, and clean command queues.
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import os from "node:os";

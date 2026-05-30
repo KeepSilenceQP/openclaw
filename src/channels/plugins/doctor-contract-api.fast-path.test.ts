@@ -1,4 +1,3 @@
-// Coverage for channel doctor contract fast paths.
 import { describe, expect, it, vi } from "vitest";
 
 const { loadBundledPluginPublicArtifactModuleSyncMock } = vi.hoisted(() => ({

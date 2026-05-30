@@ -1,4 +1,3 @@
-// Tests config zod schema talk test behavior.
 import { describe, expect, it } from "vitest";
 import { OpenClawSchema } from "./zod-schema.js";
 

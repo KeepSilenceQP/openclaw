@@ -1,4 +1,3 @@
-// Tests gateway/server-methods config test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   clearConfigSchemaResponseCacheForTests,

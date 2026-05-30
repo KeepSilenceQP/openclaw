@@ -1,4 +1,3 @@
-// Command handler for context report generation requests.
 import { logVerbose } from "../../globals.js";
 import { buildContextReply } from "./commands-context-report.js";
 import type { CommandHandler } from "./commands-types.js";

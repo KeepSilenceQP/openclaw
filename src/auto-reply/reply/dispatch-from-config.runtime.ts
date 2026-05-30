@@ -1,4 +1,3 @@
-// Runtime re-export for session store path resolution.
 export { resolveStorePath } from "../../config/sessions/paths.js";
 export {
   loadSessionStore,

@@ -1,4 +1,3 @@
-// Shared migrate command option shapes for CLI and embedded onboarding flows.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { MigrationPlan } from "../../plugins/types.js";
 

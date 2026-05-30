@@ -1,4 +1,3 @@
-// Tests config plugin auto enable providers test behavior.
 import { afterAll, describe, expect, it } from "vitest";
 import {
   applyPluginAutoEnable,

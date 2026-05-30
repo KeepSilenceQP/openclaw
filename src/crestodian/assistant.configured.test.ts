@@ -1,4 +1,3 @@
-// Tests crestodian assistant configured test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { planCrestodianCommandWithConfiguredModel } from "./assistant.js";
 

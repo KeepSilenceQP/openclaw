@@ -1,4 +1,3 @@
-// Tests extensions/irc/src connect options test behavior.
 import { describe, expect, it } from "vitest";
 import { buildIrcConnectOptions } from "./connect-options.js";
 

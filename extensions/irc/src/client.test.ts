@@ -1,4 +1,3 @@
-// Tests extensions/irc/src client test behavior.
 import { describe, expect, it } from "vitest";
 import { buildIrcNickServCommands } from "./client.js";
 

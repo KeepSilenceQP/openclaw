@@ -1,4 +1,3 @@
-// Tests extensions/opencode media understanding provider test behavior.
 import { describe, expect, it } from "vitest";
 import {
   opencodeMediaUnderstandingProvider,

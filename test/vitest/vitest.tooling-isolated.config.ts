@@ -1,4 +1,3 @@
-// Vitest project config for tooling tests that must run with isolated workers.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the isolated tooling Vitest project config. */

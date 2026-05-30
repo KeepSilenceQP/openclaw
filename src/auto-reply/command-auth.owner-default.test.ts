@@ -1,4 +1,3 @@
-// Regression coverage for owner authorization defaults across command surfaces.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 import { resolveCommandAuthorization } from "./command-auth.js";

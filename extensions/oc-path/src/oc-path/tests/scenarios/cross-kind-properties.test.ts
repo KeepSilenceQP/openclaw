@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/scenarios cross kind properties test behavior.
 import { describe, expect, it } from "vitest";
 import { inferKind } from "../../dispatch.js";
 import { setMdOcPath } from "../../edit.js";

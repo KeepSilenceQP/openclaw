@@ -1,5 +1,4 @@
 // Chat model select-state builder. It combines session overrides, server
-// defaults, and catalog display metadata into the dropdown model.
 import type { AppViewState } from "./app-view-state.ts";
 import {
   buildCatalogDisplayLookup,

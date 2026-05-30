@@ -1,4 +1,3 @@
-// Chat command handler for session and runtime info.
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import { resolveEffectiveToolInventory } from "../../agents/tools-effective-inventory.js";
 import { getChannelPlugin } from "../../channels/plugins/index.js";
@@ -22,9 +21,7 @@ import { buildStatusReply } from "./commands-status.js";
 import type { CommandHandler, HandleCommandsParams } from "./commands-types.js";
 import { extractExplicitGroupId } from "./group-id.js";
 import { resolveReplyToMode } from "./reply-threading.js";
-/** Context command handler re-exported from the info command barrel. */
 export { handleContextCommand } from "./commands-context-command.js";
-/** Whoami command handler re-exported from the info command barrel. */
 export { handleWhoamiCommand } from "./commands-whoami.js";
 
 async function resolveSkillCommands(params: HandleCommandsParams) {

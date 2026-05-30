@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Live media test runner selects image/music/video provider suites based on auth and CLI filters.
-
 import type { ChildProcess } from "node:child_process";
 import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";

@@ -1,4 +1,3 @@
-// qa/convex-credential-broker/convex credentials helpers and runtime behavior.
 import { v } from "convex/values";
 import { internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";

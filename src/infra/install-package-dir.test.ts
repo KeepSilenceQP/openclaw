@@ -1,4 +1,3 @@
-// Tests infra install package dir test behavior.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

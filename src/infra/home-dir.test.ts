@@ -1,4 +1,3 @@
-// Tests infra home dir test behavior.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {

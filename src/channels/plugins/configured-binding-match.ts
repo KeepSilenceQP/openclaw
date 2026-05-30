@@ -1,4 +1,3 @@
-// Configured binding record matching helpers.
 import type { ConversationRef } from "../../infra/outbound/session-binding-service.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../../routing/session-key.js";
 import {

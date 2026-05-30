@@ -1,4 +1,3 @@
-/** Re-exported media-understanding-core plugin public API. */
 export {
   describeImageFile,
   describeImageFileWithModel,

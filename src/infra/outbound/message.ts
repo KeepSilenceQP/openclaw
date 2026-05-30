@@ -1,5 +1,4 @@
 // Core outbound message and poll send helpers.
-// Direct sends use durable channel delivery; gateway-mode channels proxy through the gateway runtime.
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import { deriveDurableFinalDeliveryRequirements } from "../../channels/message/capabilities.js";
 import { sendDurableMessageBatch } from "../../channels/message/runtime.js";

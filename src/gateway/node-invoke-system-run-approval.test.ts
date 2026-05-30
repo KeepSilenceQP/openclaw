@@ -1,4 +1,3 @@
-// Tests gateway node invoke system run approval test behavior.
 import { describe, expect, test } from "vitest";
 import {
   buildSystemRunApprovalBinding,

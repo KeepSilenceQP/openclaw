@@ -1,4 +1,3 @@
-// Channel inbound debounce policy and debouncer construction.
 import { isControlCommandMessage } from "../auto-reply/command-detection.js";
 import type { CommandNormalizeOptions } from "../auto-reply/commands-registry.js";
 import {

@@ -1,4 +1,3 @@
-// Tests llm/utils node http proxy test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   createHttpProxyAgentsForTarget,

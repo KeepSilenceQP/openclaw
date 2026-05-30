@@ -1,4 +1,3 @@
-// Tests tasks task boundaries test behavior.
 import { beforeAll, describe, expect, it } from "vitest";
 import {
   listTaskBoundarySourceFiles,

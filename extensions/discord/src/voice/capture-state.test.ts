@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/voice capture state test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   beginVoiceCapture,

@@ -1,4 +1,3 @@
-// Tests test/scripts close duplicate prs after merge test behavior.
 import { describe, expect, it } from "vitest";
 import {
   applyClosePlan,

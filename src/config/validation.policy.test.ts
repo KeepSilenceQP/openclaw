@@ -1,4 +1,3 @@
-// Tests config validation policy test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { validateConfigObjectRaw } from "./validation.js";
 

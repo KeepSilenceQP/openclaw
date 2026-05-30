@@ -1,4 +1,3 @@
-// Tests gateway device auth test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildDeviceAuthPayload,

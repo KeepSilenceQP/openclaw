@@ -1,4 +1,3 @@
-// Task registry audit helpers for stale, lost, failed-delivery, and inconsistent task records.
 import {
   compareTaskAuditFindingSortKeys,
   createEmptyTaskAuditSummary,
@@ -26,9 +25,7 @@ export type RetainedLostTaskAuditSummary = {
 
 const DEFAULT_STALE_QUEUED_MS = 10 * 60_000;
 const DEFAULT_STALE_RUNNING_MS = 30 * 60_000;
-/** Empty audit-summary factory shared with callers that aggregate custom finding lists. */
 export { createEmptyTaskAuditSummary };
-/** Public audit finding codes, severities, records, and summary shapes. */
 export type { TaskAuditCode, TaskAuditFinding, TaskAuditSeverity, TaskAuditSummary };
 
 let taskAuditTaskProvider: () => TaskRecord[] = () => [];

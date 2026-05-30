@@ -1,4 +1,3 @@
-// Browser-facing wrapper for assistant-visible text cleanup.
 import { stripAssistantInternalScaffolding } from "../../../src/shared/text/assistant-visible-text.js";
 
 /** Remove internal thinking/scaffolding tags before rendering assistant text. */

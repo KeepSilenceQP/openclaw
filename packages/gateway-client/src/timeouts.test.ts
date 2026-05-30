@@ -1,4 +1,3 @@
-// Tests packages/gateway-client/src timeouts test behavior.
 import { describe, expect, it } from "vitest";
 import {
   addSafeTimeoutDelayGraceMs,

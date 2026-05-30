@@ -1,5 +1,4 @@
 // Markdown frontmatter parser with YAML support plus line-parser fallbacks for
-// legacy metadata blocks that contain informal scalar values.
 import YAML from "yaml";
 
 type ParsedFrontmatter = Record<string, string>;

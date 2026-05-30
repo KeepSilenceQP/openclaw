@@ -1,5 +1,4 @@
 #!/usr/bin/env -S pnpm tsx
-// Beta release smoke CLI runs npm beta validation through Telegram and Parallels lanes.
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Shared native approval delivery transport and lifecycle contracts.
 import type { ChannelApprovalNativePlannedTarget } from "./approval-native-delivery.js";
 import type { ChannelApprovalKind } from "./approval-types.js";
 

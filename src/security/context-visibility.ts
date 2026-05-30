@@ -1,4 +1,3 @@
-// Supplemental context visibility policy shared by channels and message routing.
 import type { ContextVisibilityMode } from "../config/types.base.js";
 
 /** Supplemental context source class used for visibility decisions. */

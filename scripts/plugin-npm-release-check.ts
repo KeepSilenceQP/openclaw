@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Plugin npm release check resolves publishable plugin packages and validates metadata.
-
 import { pathToFileURL } from "node:url";
 import {
   collectChangedExtensionIdsFromGitRange,

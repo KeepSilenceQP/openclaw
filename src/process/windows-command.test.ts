@@ -1,4 +1,3 @@
-// Tests process windows command test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveWindowsCommandShim } from "./windows-command.js";
 

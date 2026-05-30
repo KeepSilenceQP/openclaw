@@ -1,4 +1,3 @@
-// Dashboard overview metric cards for usage, sessions, skills, cron, and quotas.
 import { html, nothing, type TemplateResult } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { asDateTimestampMs } from "../../../../src/shared/number-coercion.js";

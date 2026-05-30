@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src streaming card test behavior.
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const fetchWithSsrFGuardMock = vi.hoisted(() => vi.fn());

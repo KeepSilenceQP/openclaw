@@ -1,4 +1,3 @@
-// Tests plugins host tool param parsers test behavior.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { deriveToolParams } from "./host-tool-param-parsers.js";

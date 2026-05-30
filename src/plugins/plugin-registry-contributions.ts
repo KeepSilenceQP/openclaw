@@ -25,7 +25,6 @@ import {
   type LoadPluginRegistryParams,
   type PluginRegistrySnapshot,
 } from "./plugin-registry-snapshot.js";
-/** Plugin id normalizer used by registry contribution lookups. */
 export {
   createPluginRegistryIdNormalizer,
   type PluginRegistryIdNormalizerOptions,

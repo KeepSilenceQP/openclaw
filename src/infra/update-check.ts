@@ -1,5 +1,4 @@
 // Update status checks for git, dependencies, and npm registry targets.
-// Used by CLI/status surfaces before deciding whether an update is available or safe.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { runCommandWithTimeout } from "../process/exec.js";

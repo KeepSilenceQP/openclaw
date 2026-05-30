@@ -1,4 +1,3 @@
-// Coverage for conversation label resolution.
 import { describe, expect, it } from "vitest";
 import type { MsgContext } from "../auto-reply/templating.js";
 import { resolveConversationLabel } from "./conversation-label.js";

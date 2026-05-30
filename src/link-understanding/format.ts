@@ -1,4 +1,3 @@
-// Merges link-understanding outputs into the message body sent to the agent.
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 
 /** Appends normalized link-understanding outputs after the original body text. */

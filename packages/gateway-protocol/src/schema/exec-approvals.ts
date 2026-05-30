@@ -1,4 +1,3 @@
-// Gateway protocol schemas for exec approval policy files and approval prompts.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

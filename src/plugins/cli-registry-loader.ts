@@ -1,5 +1,4 @@
 // Plugin CLI registry facade. Discovery stays metadata-first for descriptors and
-// narrows runtime loading to the primary command owner when registration runs.
 import { collectUniqueCommandDescriptors } from "../cli/program/command-descriptor-utils.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

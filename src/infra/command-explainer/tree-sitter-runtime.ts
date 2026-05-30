@@ -1,4 +1,3 @@
-// Loads tree-sitter-bash and parses shell source for command explanations.
 import fs from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";

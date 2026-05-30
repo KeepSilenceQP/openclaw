@@ -1,4 +1,3 @@
-// Channel config contracts for built-in and plugin-owned messaging channels.
 import type { ContextVisibilityMode, GroupPolicy } from "./types.base.js";
 import type { ChannelBotLoopProtectionConfig } from "./types.bot-loop-protection.js";
 import type {
@@ -15,12 +14,10 @@ import type { SlackConfig } from "./types.slack.js";
 import type { TelegramConfig } from "./types.telegram.js";
 import type { WhatsAppConfig } from "./types.whatsapp.js";
 
-/** Channel health and heartbeat visibility config contracts. */
 export type {
   ChannelHealthMonitorConfig,
   ChannelHeartbeatVisibilityConfig,
 } from "./types.channel-health.js";
-/** Bot loop protection config shared by channel sections. */
 export type { ChannelBotLoopProtectionConfig } from "./types.bot-loop-protection.js";
 
 /** Defaults inherited by channel config sections when they omit local policy. */

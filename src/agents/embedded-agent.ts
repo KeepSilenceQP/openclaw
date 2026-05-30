@@ -4,7 +4,6 @@ export type {
   EmbeddedAgentRunMeta,
   EmbeddedAgentRunResult,
 } from "./embedded-agent-runner.js";
-/** Embedded-agent run lifecycle controls exported through the public agent barrel. */
 export {
   abortAndDrainEmbeddedAgentRun,
   abortEmbeddedAgentRun,

@@ -1,4 +1,3 @@
-// Tests extensions/memory-wiki/src gateway test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   applyMemoryWikiMutation,

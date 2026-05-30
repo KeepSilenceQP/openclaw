@@ -1,4 +1,3 @@
-// Usage controller helpers for loading cost/session summaries and drill-down logs.
 import { getSafeLocalStorage } from "../../local-storage.ts";
 import type { GatewayBrowserClient } from "../gateway.ts";
 import { normalizeLowercaseStringOrEmpty } from "../string-coerce.ts";
@@ -405,7 +404,6 @@ export const testApi = {
     legacyUsageAgentScopeCache = null;
   },
 };
-/** Test-only usage controller hooks. */
 export { testApi as __test };
 
 async function runOptionalUsageDetailRequest(

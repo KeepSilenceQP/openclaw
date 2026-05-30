@@ -1,4 +1,3 @@
-// Coverage for channel allowlist resolution utilities.
 import { describe, expect, it, vi } from "vitest";
 import type { RuntimeEnv } from "../../runtime.js";
 import {

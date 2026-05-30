@@ -1,4 +1,3 @@
-// Parses TCP port values into valid positive port numbers.
 import { parseStrictPositiveInteger } from "./parse-finite-number.js";
 
 /** Highest valid TCP/UDP port number. */

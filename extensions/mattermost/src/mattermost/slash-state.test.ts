@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src/mattermost slash state test behavior.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig, RuntimeEnv } from "../runtime-api.js";
 import type { ResolvedMattermostAccount } from "./accounts.js";

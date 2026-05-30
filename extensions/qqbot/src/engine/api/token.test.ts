@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/api token test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { TokenManager } from "./token.js";
 

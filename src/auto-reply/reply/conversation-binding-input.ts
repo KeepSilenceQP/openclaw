@@ -1,4 +1,3 @@
-// Conversation binding input normalization for ACP sessions.
 import { normalizeConversationText } from "../../acp/conversation-id.js";
 import { resolveConversationBindingContext } from "../../channels/conversation-binding-context.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

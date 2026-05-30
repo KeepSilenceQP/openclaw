@@ -1,4 +1,3 @@
-// QA Lab discovery-eval helpers classify source/docs discovery scenario replies.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { readQaScenarioExecutionConfig } from "./scenario-catalog.js";
 

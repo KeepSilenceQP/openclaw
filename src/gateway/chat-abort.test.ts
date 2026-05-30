@@ -1,4 +1,3 @@
-// Tests gateway chat abort test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   abortChatRunById,

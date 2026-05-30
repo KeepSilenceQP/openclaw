@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src session route test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveMattermostOutboundSessionRoute } from "./session-route.js";
 

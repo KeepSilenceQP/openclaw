@@ -1,4 +1,3 @@
-// Gmail hook setup helpers for dependencies, gcloud, Pub/Sub, and Tailscale.
 import fs from "node:fs";
 import path from "node:path";
 import { formatErrorMessage } from "../infra/errors.js";

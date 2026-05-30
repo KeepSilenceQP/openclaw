@@ -1,5 +1,4 @@
 // Runway video-generation provider: submits text/image/video tasks, polls task
-// completion, and downloads bounded generated video assets.
 import { extensionForMime } from "openclaw/plugin-sdk/media-mime";
 import { isProviderApiKeyConfigured } from "openclaw/plugin-sdk/provider-auth";
 import { resolveApiKeyForProvider } from "openclaw/plugin-sdk/provider-auth-runtime";

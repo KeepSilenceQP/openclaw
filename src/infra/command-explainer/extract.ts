@@ -1,4 +1,3 @@
-// Extracts command shapes, spans, and risk hints from parsed shell commands.
 import type { Node as TreeSitterNode } from "web-tree-sitter";
 import type { InterpreterInlineEvalHit } from "../command-analysis/inline-eval.js";
 import {

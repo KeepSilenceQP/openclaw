@@ -1,4 +1,3 @@
-// Built-in transcript source provider for importing plain text transcripts.
 import type { TranscriptSourceProvider } from "./provider-types.js";
 
 function parseSpeakerLine(line: string): { speakerLabel?: string; text: string } {

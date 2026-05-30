@@ -1,4 +1,3 @@
-// Public agent-loop contracts shared by harness integrations and low-level runtimes.
 import type { Static, TSchema } from "typebox";
 import type {
   AssistantMessage,

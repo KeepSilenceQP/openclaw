@@ -1,4 +1,3 @@
-// WebSocket handshake helpers for gateway auth locality, pairing, and unauthorized diagnostics.
 import {
   GATEWAY_CLIENT_IDS,
   GATEWAY_CLIENT_MODES,

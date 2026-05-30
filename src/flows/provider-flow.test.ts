@@ -1,4 +1,3 @@
-// Tests flows provider flow test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 type ResolveProviderInstallCatalogEntries =

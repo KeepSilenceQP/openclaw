@@ -1,4 +1,3 @@
-// Shared MCP channel payload types, schemas, and event projection helpers.
 import { z } from "zod";
 import {
   normalizeOptionalLowercaseString,
@@ -145,7 +144,6 @@ export const ClaudePermissionRequestSchema = z.object({
   }),
 });
 
-/** Shared string coercion helper used by channel projection code. */
 export { toText };
 
 /** Resolves a message id from either direct fields or OpenClaw metadata. */

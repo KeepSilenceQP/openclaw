@@ -1,4 +1,3 @@
-// Shared types for extensions/matrix/src/matrix/client types behavior.
 import type { PinnedDispatcherPolicy } from "openclaw/plugin-sdk/ssrf-dispatcher";
 import type { SsrFPolicy } from "../../runtime-api.js";
 

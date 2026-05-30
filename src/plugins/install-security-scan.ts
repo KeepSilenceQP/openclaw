@@ -3,7 +3,6 @@ type InstallScanLogger = {
   warn?: (message: string) => void;
 };
 
-/** Safety override flags accepted by install scan entrypoints. */
 export type { InstallSafetyOverrides } from "./install-security-scan.types.js";
 import type { InstallSafetyOverrides } from "./install-security-scan.types.js";
 

@@ -1,4 +1,3 @@
-// Manages Tailscale binary discovery, Funnel/Serve setup, and peer identity lookup.
 import { existsSync } from "node:fs";
 import { colorize, isRich, theme } from "../../packages/terminal-core/src/theme.js";
 import { formatCliCommand } from "../cli/command-format.js";

@@ -1,4 +1,3 @@
-// Tests extensions/google oauth test behavior.
 import { join, parse } from "node:path";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 

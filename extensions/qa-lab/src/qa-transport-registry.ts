@@ -1,4 +1,3 @@
-// QA Lab transport registry maps transport ids to adapters and default suite concurrency.
 import type { QaBusState } from "./bus-state.js";
 import {
   createQaChannelTransport,

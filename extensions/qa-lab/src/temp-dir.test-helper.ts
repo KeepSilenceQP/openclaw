@@ -1,4 +1,3 @@
-// QA Lab temp-dir test helper tracks temporary workspaces for cleanup.
 import {
   tempWorkspace,
   resolvePreferredOpenClawTmpDir,

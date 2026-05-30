@@ -1,4 +1,3 @@
-// Voice-call lookup helpers map provider call IDs back to active call records.
 import type { CallId, CallRecord } from "../types.js";
 
 /** Find an active call by provider call ID, falling back to record scans when the map is stale. */

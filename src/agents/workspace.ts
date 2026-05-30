@@ -17,7 +17,6 @@ import {
   resolveWorkspaceTemplateDir,
   resolveWorkspaceTemplateSearchDirs,
 } from "./workspace-templates.js";
-/** Default workspace path helpers shared by agent setup callers. */
 export {
   DEFAULT_AGENT_WORKSPACE_DIR,
   resolveDefaultAgentWorkspaceDir,

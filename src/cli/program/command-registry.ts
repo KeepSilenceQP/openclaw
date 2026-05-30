@@ -20,7 +20,6 @@ export {
   registerCoreCliByName,
   registerCoreCliCommands,
 };
-/** Core command descriptor shape used by the program registry. */
 export type { CommandRegistration };
 
 /** Register built-in commands first, then attach external sub-CLI entrypoints. */

@@ -1,4 +1,3 @@
-// highlight.js adapter that renders themed plain text from highlighted HTML.
 import hljs from "highlight.js";
 import { decodeHtmlEntityAt } from "./html.js";
 

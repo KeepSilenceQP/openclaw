@@ -1,6 +1,5 @@
 // Control UI performance telemetry helpers. They record refresh, RPC, render,
 // tab-paint, and browser responsiveness timings into the debug event buffer
-// without coupling instrumentation to individual views.
 import type { EventLogEntry } from "./app-events.ts";
 import type { GatewayRequestTiming } from "./gateway.ts";
 import type { Tab } from "./navigation.ts";

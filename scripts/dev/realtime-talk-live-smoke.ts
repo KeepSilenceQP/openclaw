@@ -1,4 +1,3 @@
-// Realtime talk live smoke probes OpenAI/Google realtime voice paths through local pages.
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";

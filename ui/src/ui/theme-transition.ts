@@ -1,5 +1,4 @@
 // Theme transition entry point. Current UI applies themes immediately while
-// retaining the context/options shape for callers that pass pointer metadata.
 import type { ResolvedTheme } from "./theme.ts";
 
 /** Pointer/element metadata retained for theme transition callers. */

@@ -1,4 +1,3 @@
-// Centralizes background task notification wording and delivery policy.
 import type { TaskEventRecord, TaskRecord, TaskStatus } from "./task-registry.types.js";
 import { formatTaskStatusTitleText, sanitizeTaskStatusText } from "./task-status.js";
 

@@ -1,11 +1,9 @@
-// Starts gateway background services after config and plugin metadata are available.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { isVitestRuntimeEnv } from "../infra/env.js";
 import { startHeartbeatRunner, type HeartbeatRunner } from "../infra/heartbeat-runner.js";
 import type { PluginMetadataRegistryView } from "../plugins/plugin-metadata-snapshot.types.js";
 import { isGatewayModelPricingEnabled } from "./model-pricing-config.js";
 import type { startGatewayMaintenanceTimers } from "./server-maintenance.js";
-/** Runtime startup services re-exported for gateway assembly code. */
 export {
   startGatewayChannelHealthMonitor,
   startGatewayRuntimeServices,

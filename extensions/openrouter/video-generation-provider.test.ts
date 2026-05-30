@@ -1,4 +1,3 @@
-// Tests extensions/openrouter video generation provider test behavior.
 import { clearLiveCatalogCacheForTests } from "openclaw/plugin-sdk/provider-catalog-shared";
 import {
   expectExplicitVideoGenerationCapabilities,

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser profiles test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveBrowserConfig } from "./config.js";
 import {

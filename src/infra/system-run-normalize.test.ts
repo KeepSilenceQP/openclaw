@@ -1,4 +1,3 @@
-// Tests infra system run normalize test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeNonEmptyString, normalizeStringArray } from "./system-run-normalize.js";
 

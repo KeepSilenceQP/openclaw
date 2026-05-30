@@ -1,4 +1,3 @@
-// Runtime boundary for secrets runtime prepare runtime behavior.
 export { resolveSecretRefValues } from "./resolve.js";
 export { collectAuthStoreAssignments } from "./runtime-auth-collectors.js";
 export { collectConfigAssignments } from "./runtime-config-collectors.js";

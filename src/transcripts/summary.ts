@@ -1,4 +1,3 @@
-// Heuristic transcript summary extraction and markdown rendering.
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 import type { TranscriptSessionDescriptor, TranscriptUtterance } from "./provider-types.js";
 

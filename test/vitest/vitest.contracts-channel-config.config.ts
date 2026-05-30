@@ -1,4 +1,3 @@
-// Vitest project config for channel config contract tests.
 import {
   channelConfigContractPatterns,
   createContractsVitestConfig,

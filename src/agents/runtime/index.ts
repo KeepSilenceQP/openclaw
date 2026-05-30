@@ -19,7 +19,5 @@ export class Agent extends CoreAgent {
   }
 }
 
-/** OpenClaw-owned reusable agent-core public API. */
 export * from "../../../packages/agent-core/src/index.js";
-/** Proxy utilities for server-routed LLM streaming. */
 export * from "./proxy.js";

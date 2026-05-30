@@ -1,4 +1,3 @@
-// Tests daemon systemd unavailable test behavior.
 import { describe, expect, it } from "vitest";
 import {
   classifySystemdUnavailableDetail,

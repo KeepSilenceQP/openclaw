@@ -1,4 +1,3 @@
-// iOS version helpers normalize release versions and sync generated app metadata.
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 

@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server run attempt hooks test behavior.
 import path from "node:path";
 import {
   abortAgentHarnessRun,

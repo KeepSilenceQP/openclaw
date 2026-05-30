@@ -1,4 +1,3 @@
-// Shared HTTP server test harness for gateway auth, hooks, and path canonicalization.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { expect, vi } from "vitest";
 import type { createSubsystemLogger } from "../logging/subsystem.js";

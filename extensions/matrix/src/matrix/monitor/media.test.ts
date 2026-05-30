@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor media test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { PluginRuntime } from "../../../runtime-api.js";
 import { setMatrixRuntime } from "../../runtime.js";

@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests oc path test behavior.
 import { describe, expect, it } from "vitest";
 import { OcPathError, formatOcPath, isValidOcPath, parseOcPath } from "../oc-path.js";
 

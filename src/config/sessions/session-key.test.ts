@@ -1,4 +1,3 @@
-// Tests config/sessions session key test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveSessionKey } from "./session-key.js";
 import { installDiscordSessionKeyNormalizerFixture, makeCtx } from "./session-key.test-helpers.js";

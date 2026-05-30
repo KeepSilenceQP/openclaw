@@ -1,4 +1,3 @@
-// Provider setup wizard option and model-picker helpers.
 import { DEFAULT_PROVIDER } from "../agents/defaults.js";
 import { normalizeProviderId } from "../agents/model-selection.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

@@ -1,4 +1,3 @@
-// Normalizes model input images/files from base64 or guarded URLs with size, MIME, and PDF limits.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { fetchWithSsrFGuard } from "../infra/net/fetch-guard.js";
 import type { SsrFPolicy } from "../infra/net/ssrf.js";

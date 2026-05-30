@@ -1,4 +1,3 @@
-// Coverage for heartbeat task parsing, prompts, and scheduling helpers.
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_HEARTBEAT_ACK_MAX_CHARS,

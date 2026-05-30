@@ -7,7 +7,6 @@ import type { OperatorScope } from "../gateway/operator-scopes.js";
 import type { DeviceIdentity } from "../infra/device-identity.js";
 import { createLazyImportLoader } from "../shared/lazy-promise.js";
 import type { GatewayRpcOpts } from "./gateway-rpc.types.js";
-/** Shared options accepted by gateway RPC CLI commands. */
 export type { GatewayRpcOpts } from "./gateway-rpc.types.js";
 
 type GatewayRpcRuntimeModule = typeof import("./gateway-rpc.runtime.js");

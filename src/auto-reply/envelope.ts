@@ -1,4 +1,3 @@
-// Formatting helpers for model-visible inbound and agent message envelopes.
 import { resolveUserTimezone } from "../agents/date-time.js";
 import { normalizeChatType } from "../channels/chat-type.js";
 import { resolveSenderLabel, type SenderLabelParams } from "../channels/sender-label.js";

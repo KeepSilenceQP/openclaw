@@ -1,4 +1,3 @@
-// Security-audit helpers for translating deep probe failures into report findings.
 import { formatCliCommand } from "../cli/command-format.js";
 import type { SecurityAuditFinding, SecurityAuditReport } from "./audit.types.js";
 

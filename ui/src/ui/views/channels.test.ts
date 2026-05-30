@@ -1,4 +1,3 @@
-// Tests ui/src/ui/views channels test behavior.
 import { render } from "lit";
 import { describe, expect, it, vi } from "vitest";
 import type { WhatsAppStatus } from "../types.ts";

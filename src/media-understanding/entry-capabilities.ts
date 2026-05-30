@@ -1,5 +1,4 @@
 // Capability resolution for media-understanding model entries from shared and
-// capability-specific config.
 import type { MediaUnderstandingModelConfig } from "../config/types.tools.js";
 import { normalizeMediaProviderId } from "./provider-id.js";
 import type {

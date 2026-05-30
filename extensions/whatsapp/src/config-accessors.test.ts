@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src config accessors test behavior.
 import { describe, expect, it } from "vitest";
 import {
   formatWhatsAppConfigAllowFromEntries,

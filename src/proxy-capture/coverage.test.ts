@@ -1,4 +1,3 @@
-// Tests proxy-capture coverage test behavior.
 import { describe, expect, it } from "vitest";
 import { buildDebugProxyCoverageReport } from "./coverage.js";
 

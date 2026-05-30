@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src bot update tracker test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   createTelegramUpdateTracker,

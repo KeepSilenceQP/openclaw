@@ -1,4 +1,3 @@
-// Tests test/scripts npm telegram live test behavior.
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

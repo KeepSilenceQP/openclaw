@@ -1,5 +1,4 @@
 // Gateway credential resolution. Merges explicit auth, env, local/remote config,
-// secret-reference availability, and probe-specific fallback rules.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   createGatewayCredentialPlan,
@@ -7,7 +6,6 @@ import {
   trimCredentialToUndefined,
   trimToUndefined,
 } from "./credential-planner.js";
-/** Credential planner helpers re-exported for gateway command paths. */
 export {
   hasGatewayPasswordEnvCandidate,
   hasGatewayTokenEnvCandidate,

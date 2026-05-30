@@ -1,4 +1,3 @@
-// Shared types for gateway server channel runtime types behavior.
 import type { ChannelId, ChannelAccountSnapshot } from "../channels/plugins/types.public.js";
 
 export type ChannelRuntimeSnapshot = {

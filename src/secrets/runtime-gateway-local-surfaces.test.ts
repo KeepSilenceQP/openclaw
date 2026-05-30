@@ -1,4 +1,3 @@
-// Tests secrets runtime gateway local surfaces test behavior.
 import { describe, expect, it } from "vitest";
 import { asConfig, setupSecretsRuntimeSnapshotTestHooks } from "./runtime.test-support.ts";
 

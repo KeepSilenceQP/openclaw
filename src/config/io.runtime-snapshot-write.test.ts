@@ -1,4 +1,3 @@
-// Tests config io runtime snapshot write test behavior.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   projectConfigOntoRuntimeSourceSnapshot,

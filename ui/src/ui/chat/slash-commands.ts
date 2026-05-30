@@ -1,6 +1,5 @@
 // Slash command catalog and parser. It merges built-in and gateway-provided
 // commands, sanitizes remote command metadata, and serves completion/parsing
-// helpers for the chat composer.
 import type {
   CommandEntry,
   CommandsListResult,

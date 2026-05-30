@@ -1,4 +1,3 @@
-// Pending final delivery tracking for streamed replies.
 import {
   isSilentReplyPayloadText,
   isSilentReplyText,

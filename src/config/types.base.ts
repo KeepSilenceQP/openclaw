@@ -1,4 +1,3 @@
-// Shared base configuration types used across channels, sessions, logging, and web runtime.
 import type { ChatType } from "../channels/chat-type.js";
 
 /** Reply handling mode for incoming channel messages. */

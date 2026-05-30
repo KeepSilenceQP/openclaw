@@ -1,4 +1,3 @@
-// Session reset policy resolution and freshness checks for direct/group/thread chats.
 import type { SessionConfig, SessionResetConfig } from "../types.base.js";
 import { DEFAULT_IDLE_MINUTES } from "./types.js";
 

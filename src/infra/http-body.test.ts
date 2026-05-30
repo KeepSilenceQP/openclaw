@@ -1,4 +1,3 @@
-// Tests infra http body test behavior.
 import { EventEmitter } from "node:events";
 import type { IncomingMessage } from "node:http";
 import { beforeEach, describe, expect, it, vi } from "vitest";

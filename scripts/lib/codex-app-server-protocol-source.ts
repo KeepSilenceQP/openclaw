@@ -1,4 +1,3 @@
-// Codex app-server protocol source helpers generate and normalize experimental schemas.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";

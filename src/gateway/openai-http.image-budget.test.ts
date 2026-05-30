@@ -1,4 +1,3 @@
-// Tests gateway openai http image budget test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const extractImageContentFromSourceMock = vi.fn();

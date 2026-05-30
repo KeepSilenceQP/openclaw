@@ -1,4 +1,3 @@
-// Classifies audio attachments that can be sent as voice messages.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { getFileExtension, normalizeMimeType } from "./mime.js";
 

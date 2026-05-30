@@ -1,4 +1,3 @@
-// Tests extensions/fireworks index test behavior.
 import type { ProviderRuntimeModel } from "openclaw/plugin-sdk/plugin-entry";
 import {
   registerSingleProviderPlugin,

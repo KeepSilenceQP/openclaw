@@ -1,4 +1,3 @@
-// Gateway restart log path resolution and shell snippets for supervised restarts.
 import path from "node:path";
 import { quoteCmdScriptArg } from "./cmd-argv.js";
 import { resolveGatewayProfileSuffix } from "./constants.js";

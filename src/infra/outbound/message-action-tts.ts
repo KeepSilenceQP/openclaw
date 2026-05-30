@@ -1,4 +1,3 @@
-// Applies session-aware TTS settings to outbound message-action payloads.
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import {
   loadSessionStore,

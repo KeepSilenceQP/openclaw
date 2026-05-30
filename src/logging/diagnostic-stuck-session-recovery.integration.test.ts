@@ -1,4 +1,3 @@
-// Tests logging diagnostic stuck session recovery integration test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { resolveEmbeddedSessionLane } from "../agents/embedded-agent-runner/lanes.js";
 import {

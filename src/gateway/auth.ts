@@ -1,4 +1,3 @@
-// Gateway auth helpers for shared secrets, Tailscale identity, and trusted proxy mode.
 import type { IncomingMessage } from "node:http";
 import type { GatewayAuthConfig, GatewayTrustedProxyConfig } from "../config/types.gateway.js";
 import { readTailscaleWhoisIdentity, type TailscaleWhoisIdentity } from "../infra/tailscale.js";
@@ -22,7 +21,6 @@ import {
 } from "./net.js";
 import { checkBrowserOrigin } from "./origin-check.js";
 import { withSerializedRateLimitAttempt } from "./rate-limit-attempt-serialization.js";
-/** Gateway auth config resolution helpers and public resolved-auth types. */
 export {
   resolveEffectiveSharedGatewayAuth,
   resolveGatewayAuth,

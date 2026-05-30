@@ -1,4 +1,3 @@
-// Shared test harness for command handler suites.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { configureTaskRegistryRuntime } from "../../tasks/task-registry.store.js";
 import type { MsgContext } from "../templating.js";

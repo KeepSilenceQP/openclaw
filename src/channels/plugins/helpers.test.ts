@@ -1,4 +1,3 @@
-// Coverage for channel plugin helper utilities.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import {

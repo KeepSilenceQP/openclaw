@@ -1,4 +1,3 @@
-// QA Lab live-transports CLI registry collects built-in and plugin-provided lanes.
 import { listQaRunnerCliContributions } from "openclaw/plugin-sdk/qa-runner-runtime";
 import { discordQaCliRegistration } from "./discord/cli.js";
 import type { LiveTransportQaCliRegistration } from "./shared/live-transport-cli.js";

@@ -1,4 +1,3 @@
-// Coverage for native command session target resolution.
 import { describe, expect, it } from "vitest";
 import { resolveNativeCommandSessionTargets } from "./native-command-session-targets.js";
 

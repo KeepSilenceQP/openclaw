@@ -1,6 +1,5 @@
 // Gateway-facing node.invoke dispatcher. Built-in system commands, plugin
 // node-host commands, and exec approval updates all flow through this boundary
-// so result frames and host environment sanitization stay consistent.
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
@@ -77,7 +76,6 @@ type NodeInvokeRequestPayload = {
   idempotencyKey?: string | null;
 };
 
-/** Public skill-bin lookup contract consumed by system-run execution. */
 export type { SkillBinsProvider } from "./invoke-types.js";
 
 function resolveExecSecurity(value?: string): ExecSecurity {

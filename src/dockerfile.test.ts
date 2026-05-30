@@ -1,4 +1,3 @@
-// Tests OpenClaw dockerfile test behavior.
 import { readFile } from "node:fs/promises";
 import { join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";

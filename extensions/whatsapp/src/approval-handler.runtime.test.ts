@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src approval handler runtime test behavior.
 import { describe, expect, it } from "vitest";
 import { whatsappApprovalNativeRuntime } from "./approval-handler.runtime.js";
 

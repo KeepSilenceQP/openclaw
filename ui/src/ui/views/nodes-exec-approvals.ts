@@ -1,4 +1,3 @@
-// Node/gateway exec approval policy editor for the Control UI.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import type {

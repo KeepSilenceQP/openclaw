@@ -1,4 +1,3 @@
-// Gateway-backed bridge that exposes OpenClaw channel sessions through MCP tools/events.
 import { randomUUID } from "node:crypto";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { EventFrame } from "../../packages/gateway-protocol/src/index.js";

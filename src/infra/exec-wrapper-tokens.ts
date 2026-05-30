@@ -1,4 +1,3 @@
-// Normalizes executable tokens for wrapper and carrier command detection.
 import path from "node:path";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 

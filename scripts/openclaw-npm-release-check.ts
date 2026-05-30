@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Npm release check validates package metadata, version/tag policy, pack contents, and npm command wiring.
-
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";

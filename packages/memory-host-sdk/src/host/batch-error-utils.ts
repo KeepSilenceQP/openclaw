@@ -1,4 +1,3 @@
-// Remote embedding batch error extraction and fallback formatting helpers.
 import { formatErrorMessage } from "./error-utils.js";
 
 type BatchOutputErrorLike = {

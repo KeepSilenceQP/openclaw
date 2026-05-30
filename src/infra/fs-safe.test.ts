@@ -1,4 +1,3 @@
-// Tests infra fs safe test behavior.
 import type { FileHandle } from "node:fs/promises";
 import fs from "node:fs/promises";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Static Kimi web-search provider contract for setup and metadata surfaces.
 import {
   createWebSearchProviderContractFields,
   type WebSearchProviderPlugin,

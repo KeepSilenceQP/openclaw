@@ -1,4 +1,3 @@
-// Chat controller state, event routing, and view-model updates for the UI.
 import { resetToolStream } from "../app-tool-stream.ts";
 import {
   getChatAttachmentDataUrl,

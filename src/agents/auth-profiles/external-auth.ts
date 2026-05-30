@@ -208,5 +208,4 @@ export function syncPersistedExternalCliAuthProfiles(
 export const overlayExternalOAuthProfiles = overlayExternalAuthProfiles;
 /** Compatibility alias for callers using the older OAuth-specific name. */
 export const shouldPersistExternalOAuthProfile = shouldPersistExternalAuthProfile;
-/** Test-only external auth resolver controls. */
 export { testing as __testing };

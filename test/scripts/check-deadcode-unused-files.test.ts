@@ -1,4 +1,3 @@
-// Tests test/scripts check deadcode unused files test behavior.
 import { describe, expect, it } from "vitest";
 import {
   checkUnusedFiles,

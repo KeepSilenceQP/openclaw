@@ -1,4 +1,3 @@
-// Tests extensions/migrate-hermes provider test behavior.
 import os from "node:os";
 import path from "node:path";
 import { createCapturedPluginRegistration } from "openclaw/plugin-sdk/plugin-test-runtime";

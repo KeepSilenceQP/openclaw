@@ -1,5 +1,4 @@
 // SQLite-backed debug proxy capture store for sessions, events, query presets,
-// coverage summaries, and blob references.
 import fs from "node:fs";
 import path from "node:path";
 import type { DatabaseSync } from "node:sqlite";

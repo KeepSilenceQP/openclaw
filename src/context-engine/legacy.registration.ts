@@ -1,4 +1,3 @@
-// Registration helper for the built-in legacy context engine fallback.
 import { LegacyContextEngine } from "./legacy.js";
 import { registerContextEngineForOwner } from "./registry.js";
 

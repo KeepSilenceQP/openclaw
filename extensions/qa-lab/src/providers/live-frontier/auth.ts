@@ -1,4 +1,3 @@
-// QA Lab live-frontier auth helpers stage portable credentials for isolated runs.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   applyAuthProfileConfig,

@@ -1,4 +1,3 @@
-// Tests cron isolated agent direct delivery core channels test behavior.
 import "./isolated-agent.mocks.js";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { runSubagentAnnounceFlow } from "../agents/subagent-announce.js";

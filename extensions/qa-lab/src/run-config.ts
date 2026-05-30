@@ -1,4 +1,3 @@
-// QA Lab run-config helpers normalize model/provider selections and output paths.
 import path from "node:path";
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { defaultQaModelForMode as defaultStaticQaModelForMode } from "./model-selection.js";
@@ -12,9 +11,7 @@ import {
 } from "./providers/index.js";
 import type { QaSeedScenario } from "./scenario-catalog.js";
 
-/** QA provider mode type used by run selection. */
 export type { QaProviderMode } from "./model-selection.js";
-/** Raw QA provider mode input accepted by provider normalization. */
 export type { QaProviderModeInput } from "./providers/index.js";
 
 type QaLabRunSelection = {

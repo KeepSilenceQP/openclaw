@@ -1,4 +1,3 @@
-// Reset mode normalization for session reset commands.
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 
 export type SoftResetParseResult = { matched: false } | { matched: true; tail: string };

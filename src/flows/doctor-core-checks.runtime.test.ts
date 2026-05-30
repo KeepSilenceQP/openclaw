@@ -1,4 +1,3 @@
-// Tests flows doctor core checks runtime test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { AnyAgentTool } from "../agents/tools/common.js";
 import { setPluginToolMeta } from "../plugins/tools.js";

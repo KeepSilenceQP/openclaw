@@ -1,4 +1,3 @@
-// Parallels VM helpers discover, start, resume, and select guest machines for E2E lanes.
 import { die, run, say, warn } from "./host-command.ts";
 
 interface PrlctlVmListItem {

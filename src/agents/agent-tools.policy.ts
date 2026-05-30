@@ -608,5 +608,4 @@ export function resolveGroupToolPolicy(params: {
   return pickSandboxToolPolicy(configTools);
 }
 
-/** Tool-name policy matchers used by sandbox checks and allowlist diagnostics. */
 export { isToolAllowedByPolicies, isToolAllowedByPolicyName } from "./tool-policy-match.js";

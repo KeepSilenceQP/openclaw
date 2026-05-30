@@ -1,4 +1,3 @@
-// Tests test/scripts setup pnpm store cache ensure node test behavior.
 import { spawnSync } from "node:child_process";
 import { chmodSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";

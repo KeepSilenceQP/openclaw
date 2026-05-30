@@ -1,4 +1,3 @@
-// Tests plugins tool descriptor cache test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 
 const hoisted = vi.hoisted(() => ({

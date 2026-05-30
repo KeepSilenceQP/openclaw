@@ -1,4 +1,3 @@
-// Condense installer stdout/stderr into concise user-facing failure messages.
 import { normalizeStringEntries } from "../../shared/string-normalization.js";
 
 type InstallCommandResult = {

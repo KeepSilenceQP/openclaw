@@ -1,5 +1,4 @@
 // Loads the plugin registry snapshot from the current process snapshot, persisted index,
-// or live discovery while keeping gateway metadata reads bounded and restart-scoped.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -42,7 +41,6 @@ export type PluginRegistrySnapshot = InstalledPluginIndex;
 export type PluginRegistryRecord = InstalledPluginIndexRecord;
 /** Persisted registry store inspection returned by registry diagnostics. */
 export type PluginRegistryInspection = InstalledPluginIndexStoreInspection;
-/** Describes whether a returned registry came from caller input, process state, disk, or discovery. */
 export type { PluginRegistrySnapshotSource } from "./plugin-registry-snapshot.types.js";
 /** Machine-readable reason a persisted registry could not be used as the active snapshot. */
 export type PluginRegistrySnapshotDiagnosticCode =

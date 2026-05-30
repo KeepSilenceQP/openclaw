@@ -45,7 +45,6 @@ import {
   ToolInputError,
   type AnyAgentTool,
 } from "./tools/common.js";
-/** Code-mode control tool names and classifier helpers. */
 export {
   CODE_MODE_EXEC_TOOL_NAME,
   CODE_MODE_WAIT_TOOL_NAME,
@@ -1123,5 +1122,4 @@ export const testing = {
     typescriptRuntimeForTest = runtime;
   },
 };
-/** Test-only code-mode runtime injection hooks. */
 export { testing as __testing };

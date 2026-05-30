@@ -1,4 +1,3 @@
-// Tests plugins plugin registry contributions current snapshot test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {

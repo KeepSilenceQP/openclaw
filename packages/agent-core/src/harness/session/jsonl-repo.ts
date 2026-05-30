@@ -1,4 +1,3 @@
-// JSONL-backed session repository for persisted harness transcripts.
 import type {
   FileSystem,
   JsonlSessionCreateOptions,

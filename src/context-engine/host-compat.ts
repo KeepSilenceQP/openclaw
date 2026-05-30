@@ -1,5 +1,4 @@
 // Host compatibility contracts for deciding whether a context engine can run
-// safely in a given runtime surface.
 import type {
   ContextEngine,
   ContextEngineHostCapability,

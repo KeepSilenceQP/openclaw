@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src manager notify test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createManagerHarness, FakeProvider } from "./manager.test-harness.js";
 

@@ -1,5 +1,4 @@
 // Hardens undici's process-global dispatcher for proxy env use and long-lived
-// stream timeout defaults.
 import { isProxylineDispatcher } from "@openclaw/proxyline/dispatcher-brand";
 import { hasEnvHttpProxyAgentConfigured, resolveEnvHttpProxyAgentOptions } from "./proxy-env.js";
 import { addActiveManagedProxyTlsOptions } from "./proxy/managed-proxy-undici.js";

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser server lifecycle test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { stopOpenClawChromeMock } = vi.hoisted(() => ({

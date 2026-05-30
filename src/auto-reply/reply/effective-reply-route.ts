@@ -1,4 +1,3 @@
-// Effective reply route resolution from session and inbound context.
 import type { SessionEntry } from "../../config/sessions/types.js";
 import type { FinalizedMsgContext } from "../templating.js";
 

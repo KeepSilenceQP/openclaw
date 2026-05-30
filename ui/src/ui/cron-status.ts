@@ -1,4 +1,3 @@
-// Cron status helpers for reconciling old and current last-run fields.
 import type { CronJob, CronRunStatus } from "./types.ts";
 
 /** Last run status shown for a cron job, with unknown as UI fallback. */

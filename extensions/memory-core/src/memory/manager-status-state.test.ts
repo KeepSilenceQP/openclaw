@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager status state test behavior.
 import type { SQLInputValue } from "node:sqlite";
 import { describe, expect, it } from "vitest";
 import {

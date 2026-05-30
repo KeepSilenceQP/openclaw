@@ -2349,5 +2349,4 @@ export const testing = {
     nativeHookRelayDeferredToolApprovalRequester = requester;
   },
 } as const;
-/** Internal test-only access to native hook relay reset and inspection hooks. */
 export { testing as __testing };

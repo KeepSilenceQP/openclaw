@@ -1,4 +1,3 @@
-// Runtime boundary for cron/isolated-agent delivery target runtime behavior.
 import type { ChannelId } from "../../channels/plugins/types.public.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { resolveOutboundChannelPlugin } from "../../infra/outbound/channel-resolution.js";

@@ -1,4 +1,3 @@
-// Plugin extension points for memory prompt sections, corpus supplements, and runtime state.
 import type { MemoryCitationsMode } from "../config/types.memory.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { MemorySearchManager } from "../memory-host-sdk/host/types.js";

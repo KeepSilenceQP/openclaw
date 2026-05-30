@@ -1,4 +1,3 @@
-// QA Lab suite-runtime process helpers call the CLI and wait for agent/gateway state.
 import { spawn } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
@@ -319,7 +318,6 @@ async function runAgentPrompt(
   };
 }
 
-/** Process-backed helpers exposed to QA scenario flow runtime. */
 export {
   forceMemoryIndex,
   findManagedDreamingCronJob,

@@ -1,5 +1,4 @@
 // Reply-to policy helpers for outbound fanout.
-// Single-use implicit reply references are consumed once while explicit overrides persist.
 import { isSingleUseReplyToMode } from "../../auto-reply/reply/reply-reference.js";
 import type { ReplyPayload } from "../../auto-reply/types.js";
 import type { ReplyToMode } from "../../config/types.js";

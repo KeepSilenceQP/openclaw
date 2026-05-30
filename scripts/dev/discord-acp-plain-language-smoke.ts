@@ -1,14 +1,13 @@
 #!/usr/bin/env bun
-// Discord ACP plain-language smoke validates thread routing and cleanup against live Discord.
 import { execFile } from "node:child_process";
 // Manual ACP thread smoke for plain-language routing.
-// Keep this script available for regression/debug validation. Do not delete.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { promisify } from "node:util";
 import { formatErrorMessage } from "../../src/infra/errors.ts";
+import { readBoundedResponseText } from "../lib/bounded-response.ts";
 import {
   maskIdentifier,
   parseStrictIntegerOption,
@@ -16,7 +15,6 @@ import {
   redactForDevToolLog,
   redactHomePath,
 } from "../lib/dev-tooling-safety.ts";
-import { readBoundedResponseText } from "../lib/bounded-response.ts";
 
 function writeStdoutLine(message: string): void {
   process.stdout.write(`${message}\n`);

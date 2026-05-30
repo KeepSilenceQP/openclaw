@@ -1,4 +1,3 @@
-// Builds provider-facing migration contexts, report paths, and JSON-safe logging.
 import path from "node:path";
 import { getRuntimeConfig } from "../../config/config.js";
 import { resolveStateDir } from "../../config/paths.js";

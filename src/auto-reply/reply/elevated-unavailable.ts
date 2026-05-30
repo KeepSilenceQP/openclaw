@@ -1,4 +1,3 @@
-// User-facing copy for unavailable elevated command paths.
 import { formatCliCommand } from "../../cli/command-format.js";
 
 export function formatElevatedUnavailableMessage(params: {

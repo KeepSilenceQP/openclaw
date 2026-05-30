@@ -1,4 +1,3 @@
-// Tests extensions/googlechat/src config schema test behavior.
 import { describe, expect, it } from "vitest";
 import { GoogleChatConfigSchema } from "../runtime-api.js";
 

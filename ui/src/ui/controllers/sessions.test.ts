@@ -1,4 +1,3 @@
-// Tests ui/src/ui/controllers sessions test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { isSessionRunActive } from "../session-run-state.ts";
 import {

@@ -1,4 +1,3 @@
-// Tests shared pid alive test behavior.
 import fsSync from "node:fs";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { withMockedPlatform } from "../test-utils/vitest-spies.js";

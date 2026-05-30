@@ -1,6 +1,5 @@
 // Shared Nodes view helpers for selecting config agents and node-host targets.
 // Node metadata is provider/plugin-shaped, so these helpers coerce only the
-// fields the UI needs.
 import { normalizeOptionalString } from "../string-coerce.ts";
 
 /** Select option for a node-host that supports required commands. */

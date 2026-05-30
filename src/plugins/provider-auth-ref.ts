@@ -1,4 +1,3 @@
-// Provider setup helpers for storing API keys as secret references.
 import type { OpenClawConfig } from "../config/types.js";
 import { isValidEnvSecretRefId, type SecretRef } from "../config/types.secrets.js";
 import { formatErrorMessage } from "../infra/errors.js";

@@ -1,4 +1,3 @@
-// Tests cron isolated agent auth profile propagation test behavior.
 import { describe, expect, it } from "vitest";
 import {
   makeIsolatedAgentTurnJob,

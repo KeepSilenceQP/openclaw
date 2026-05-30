@@ -1,4 +1,3 @@
-// Tests config load channel config surface test behavior.
 import fs from "node:fs";
 import path from "node:path";
 import type { createJiti as createJitiType } from "jiti";

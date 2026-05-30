@@ -1,4 +1,3 @@
-// Tests extensions/google transport stream test behavior.
 import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// In-memory durable inbound receive journal primitive.
 import type { PluginStateKeyedStore } from "../../plugin-state/plugin-state-store.types.js";
 
 /** Pending inbound message awaiting processing or retry. */

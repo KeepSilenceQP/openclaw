@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src scenario runtime api test behavior.
 import { randomUUID } from "node:crypto";
 import * as fs from "node:fs/promises";
 import path from "node:path";

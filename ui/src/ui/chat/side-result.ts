@@ -1,5 +1,4 @@
 // Parser for side-channel chat results such as `btw` follow-up answers. It
-// accepts raw gateway payloads and returns the narrow shape rendered by chat UI.
 import { normalizeOptionalString } from "../string-coerce.ts";
 
 /** Normalized side-result message rendered alongside a chat run. */

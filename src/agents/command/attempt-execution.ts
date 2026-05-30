@@ -49,7 +49,6 @@ import { resolveAgentRunContext } from "./run-context.js";
 import { clearCliSessionInStore } from "./session-store.js";
 import type { AgentCommandOpts } from "./types.js";
 
-/** ACP text accumulator helpers shared by command execution callers. */
 export {
   createAcpVisibleTextAccumulator,
   sessionFileHasContent,

@@ -1,5 +1,4 @@
 // Chat search helpers. Search operates on extracted message text rather than raw
-// payloads so structured/tool messages match what the user actually sees.
 import { normalizeLowercaseStringOrEmpty } from "../string-coerce.ts";
 import { extractTextCached } from "./message-extract.ts";
 

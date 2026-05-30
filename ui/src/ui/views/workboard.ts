@@ -1,4 +1,3 @@
-// Workboard view rendering and drag/drop orchestration for task cards.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import {

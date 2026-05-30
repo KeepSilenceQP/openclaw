@@ -1,4 +1,3 @@
-// Tests ui/src/ui custom theme test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   createImportedCustomThemeFixture as createImportedTheme,

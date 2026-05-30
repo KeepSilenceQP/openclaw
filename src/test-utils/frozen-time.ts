@@ -1,4 +1,3 @@
-// Vitest timer helpers for freezing and restoring Date.now/system time.
 import { vi } from "vitest";
 
 /** Switch Vitest to fake timers and set the process clock. */

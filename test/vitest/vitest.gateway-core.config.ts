@@ -1,4 +1,3 @@
-// Vitest project config for focused gateway core tests, excluding broader gateway lanes.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 const nonCoreGatewayTestExclude = [

@@ -1,4 +1,3 @@
-// Channel-specific model override resolution from config and session context.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   parseRawSessionConversationRef,

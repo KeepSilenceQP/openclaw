@@ -1,4 +1,3 @@
-// Tests OpenClaw polls test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizePollDurationHours, normalizePollInput } from "./polls.js";
 

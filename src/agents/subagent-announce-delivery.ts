@@ -1684,5 +1684,4 @@ export const testing = {
       : defaultSubagentAnnounceDeliveryDeps;
   },
 };
-/** Backward-compatible test hook export for delivery dependency overrides. */
 export { testing as __testing };

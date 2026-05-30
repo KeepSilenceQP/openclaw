@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src/live-transports/shared live gateway runtime test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 

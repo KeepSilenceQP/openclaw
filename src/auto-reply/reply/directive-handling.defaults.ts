@@ -1,4 +1,3 @@
-// Default provider/model resolution for directive handling.
 import {
   buildModelAliasIndex,
   type ModelAliasIndex,

@@ -1,4 +1,3 @@
-// Single-channel extension Vitest config helper builds per-plugin extension shards.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Creates a Vitest project config for one channel extension id. */

@@ -1,4 +1,3 @@
-// Tests ui/src/ui/chat message extract test behavior.
 import { describe, expect, it } from "vitest";
 import {
   extractText,

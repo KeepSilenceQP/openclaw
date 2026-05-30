@@ -1,4 +1,3 @@
-// Tests gateway server startup matrix migration integration test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveGatewayStartupMaintenanceConfig } from "./server-startup-plugins.js";
 

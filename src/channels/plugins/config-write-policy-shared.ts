@@ -1,4 +1,3 @@
-// Shared config write policy helpers for channel account sections.
 import { resolveAccountEntry } from "../../routing/account-lookup.js";
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "../../routing/session-key.js";
 

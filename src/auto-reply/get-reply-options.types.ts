@@ -1,4 +1,3 @@
-// Shared option types for get-reply orchestration and queued delivery.
 import type { ImageContent } from "../llm/types.js";
 import type { PromptImageOrderEntry } from "../media/prompt-image-order.js";
 import type { UserTurnTranscriptRecorder } from "../sessions/user-turn-transcript.js";

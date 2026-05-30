@@ -1,4 +1,3 @@
-// Tests daemon schtasks startup fallback test behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { PassThrough } from "node:stream";

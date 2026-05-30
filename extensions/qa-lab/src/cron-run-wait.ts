@@ -1,4 +1,3 @@
-// QA Lab cron-run wait helper polls gateway cron history for completion.
 import { setTimeout as sleep } from "node:timers/promises";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 

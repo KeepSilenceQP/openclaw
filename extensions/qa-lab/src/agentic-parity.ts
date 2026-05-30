@@ -1,4 +1,3 @@
-// QA Lab agentic parity helpers define the scenario pack used for provider comparison.
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 const QA_AGENTIC_PARITY_PACK = "agentic";

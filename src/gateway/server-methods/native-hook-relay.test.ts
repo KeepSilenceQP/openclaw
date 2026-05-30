@@ -1,4 +1,3 @@
-// Tests gateway/server-methods native hook relay test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { testing, registerNativeHookRelay } from "../../agents/harness/native-hook-relay.js";
 import { nativeHookRelayHandlers } from "./native-hook-relay.js";

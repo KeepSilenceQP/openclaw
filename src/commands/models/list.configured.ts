@@ -1,4 +1,3 @@
-// Reads configured model entries and aliases from agent defaults.
 import {
   buildModelAliasIndex,
   resolveConfiguredModelRef,

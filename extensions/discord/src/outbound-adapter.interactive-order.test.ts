@@ -1,4 +1,3 @@
-// Tests extensions/discord/src outbound adapter interactive order test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import {
   createDiscordOutboundHoisted,

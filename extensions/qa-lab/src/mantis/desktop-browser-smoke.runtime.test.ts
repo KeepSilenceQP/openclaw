@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src/mantis desktop browser smoke runtime test behavior.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

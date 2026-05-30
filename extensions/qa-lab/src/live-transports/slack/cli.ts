@@ -1,4 +1,3 @@
-// QA Lab Slack live-transport CLI registration lazy-loads the Slack runtime lane.
 import {
   createLazyCliRuntimeLoader,
   createLiveTransportQaCliRegistration,

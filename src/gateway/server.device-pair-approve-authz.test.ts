@@ -1,4 +1,3 @@
-// Tests gateway server device pair approve authz test behavior.
 import { describe, expect, test } from "vitest";
 import { WebSocket } from "ws";
 import {

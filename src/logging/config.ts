@@ -1,4 +1,3 @@
-// Reads logging config lazily without interfering with config schema commands.
 import fs from "node:fs";
 import JSON5 from "json5";
 import { getCommandPathWithRootOptions } from "../cli/argv.js";

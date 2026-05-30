@@ -1,4 +1,3 @@
-// Grouping and concurrency helpers for embedding batch execution.
 import { splitBatchRequests } from "./batch-utils.js";
 import { runWithConcurrency } from "./internal.js";
 

@@ -79,9 +79,7 @@ import {
 } from "./subagent-session-reconciliation.js";
 import { resolveAgentTimeoutMs } from "./timeout.js";
 
-/** Public subagent run record shape owned by the registry. */
 export type { SubagentRunRecord } from "./subagent-registry.types.js";
-/** Session timing/status helpers for subagent run records. */
 export {
   getSubagentSessionRuntimeMs,
   getSubagentSessionStartedAt,
@@ -1480,8 +1478,5 @@ export function initSubagentRegistry() {
 }
 
 // Importing this module also registers the subagent maintenance preserve-key
-// provider as a side effect (see subagent-registry-maintenance.ts).
-/** Session keys that maintenance must preserve while subagents are tracked. */
 export { listSessionMaintenanceProtectedSubagentSessionKeys } from "./subagent-registry-maintenance.js";
-/** Test-only registry lifecycle controls. */
 export { testing as __testing };

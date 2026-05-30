@@ -1,4 +1,3 @@
-// Tests gateway server startup websocket race test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { WebSocket } from "ws";
 import { createEmptyPluginRegistry } from "../plugins/registry.js";

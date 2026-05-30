@@ -1,5 +1,4 @@
 // Safe-bin policy profiles for exec approval auto-allow.
-// Profiles restrict stdin-oriented tools to bounded positional args and approved value flags.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 

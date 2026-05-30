@@ -1,4 +1,3 @@
-// Moonshot model catalog helpers and native streaming usage compatibility.
 import {
   buildManifestModelProviderConfig,
   applyProviderNativeStreamingUsageCompat,

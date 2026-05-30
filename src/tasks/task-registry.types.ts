@@ -1,4 +1,3 @@
-// Shared task registry record, event, status, and snapshot shapes.
 import type { DeliveryContext } from "../utils/delivery-context.types.js";
 
 /** Runtime family that owns or produced a task record. */

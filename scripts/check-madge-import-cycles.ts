@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// Import-cycle check builds a TypeScript import graph and reports strongly connected components.
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

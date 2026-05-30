@@ -1,4 +1,3 @@
-// DTOs exposed by plugin runtime task and flow APIs.
 import type { JsonValue } from "../../tasks/task-flow-registry.types.js";
 import type {
   TaskDeliveryStatus,

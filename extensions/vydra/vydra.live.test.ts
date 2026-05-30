@@ -1,4 +1,3 @@
-// Tests extensions/vydra vydra live test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

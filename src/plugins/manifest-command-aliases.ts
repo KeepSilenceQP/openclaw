@@ -1,4 +1,3 @@
-// Plugin manifest command alias and tool-owner registry helpers.
 import {
   normalizeOptionalLowercaseString,
   normalizeOptionalString,

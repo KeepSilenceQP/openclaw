@@ -1,4 +1,3 @@
-// Tests src/gateway session utils plugin runtime test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 import type { SessionEntry } from "../config/sessions.js";

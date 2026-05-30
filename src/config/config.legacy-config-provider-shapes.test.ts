@@ -1,4 +1,3 @@
-// Tests config config legacy config provider shapes test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeLegacyTalkConfig } from "../commands/doctor/shared/legacy-talk-config-normalizer.js";
 import type { OpenClawConfig } from "./types.js";

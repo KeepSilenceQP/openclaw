@@ -1,4 +1,3 @@
-// Tests infra dedupe test behavior.
 import { describe, expect, it } from "vitest";
 import { createDedupeCache } from "./dedupe.js";
 

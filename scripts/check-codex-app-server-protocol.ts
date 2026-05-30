@@ -1,4 +1,3 @@
-// Check that the Codex app-server protocol mirror still matches bridge assumptions.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

@@ -1,5 +1,3 @@
-// Config facade for memory host consumers that need canonical OpenClaw parsing.
-/** Config loading, secret normalization, duration, byte-size, and state-dir helpers. */
 export {
   getRuntimeConfig,
   hasConfiguredSecretInput,
@@ -10,7 +8,6 @@ export {
   resolveSessionTranscriptsDirForAgent,
   resolveStateDir,
 } from "./openclaw-runtime.js";
-/** Public config shape types used by memory host resolution. */
 export type {
   MemoryBackend,
   MemoryCitationsMode,

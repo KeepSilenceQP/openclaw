@@ -1,4 +1,3 @@
-// Builds and parses the constrained JSON prompt contract used by Crestodian assistant planners.
 import type { CrestodianOverview } from "./overview.js";
 
 /** Planner deadline; Crestodian should remain responsive during startup and rescue handling. */

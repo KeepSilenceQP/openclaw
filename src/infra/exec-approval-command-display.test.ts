@@ -1,4 +1,3 @@
-// Tests infra exec approval command display test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveExecApprovalCommandDisplay,

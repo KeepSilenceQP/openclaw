@@ -1,4 +1,3 @@
-// Tests gateway input allowlist test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeInputHostnameAllowlist } from "./input-allowlist.js";
 

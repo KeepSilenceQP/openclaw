@@ -1,4 +1,3 @@
-// Resolves CLI backend registrations and model/runtime bindings.
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
 import type { CliBackendConfig } from "../config/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -461,5 +460,4 @@ export const testing = {
     };
   },
 } as const;
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

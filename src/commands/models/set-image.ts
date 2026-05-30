@@ -1,4 +1,3 @@
-// Sets the default image model in agent defaults.
 import { logConfigUpdated } from "../../config/logging.js";
 import { resolveAgentModelPrimaryValue } from "../../config/model-input.js";
 import type { RuntimeEnv } from "../../runtime.js";

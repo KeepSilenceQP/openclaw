@@ -1,4 +1,3 @@
-// Tests OpenClaw entry test behavior.
 import { describe, expect, it } from "vitest";
 import { tryHandlePrecomputedCommandHelpFastPath, tryHandleRootHelpFastPath } from "./entry.js";
 

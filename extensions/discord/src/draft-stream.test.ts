@@ -1,4 +1,3 @@
-// Tests extensions/discord/src draft stream test behavior.
 import { MessageFlags, Routes } from "discord-api-types/v10";
 import { describe, expect, it, vi } from "vitest";
 import { createDiscordDraftStream } from "./draft-stream.js";

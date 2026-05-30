@@ -1,4 +1,3 @@
-// Delivers warn-only session maintenance notices to chat or system events.
 import type { SessionMaintenanceWarning } from "../config/sessions/store-maintenance.js";
 import type { SessionEntry } from "../config/sessions/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -151,5 +150,4 @@ export async function deliverSessionMaintenanceWarning(params: WarningParams): P
     enqueueSystemEvent(text, { sessionKey: params.sessionKey });
   }
 }
-/** Test-only session maintenance warning hooks. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Resolves the workspace directory used by non-interactive local onboarding.
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import { resolveUserPath } from "../../../utils.js";
 import type { OnboardOptions } from "../../onboard-types.js";

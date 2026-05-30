@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src conversation store helpers test behavior.
 import { describe, expect, it } from "vitest";
 import { findPreferredDmConversationByUserId } from "./conversation-store-helpers.js";
 import type { MSTeamsConversationStoreEntry } from "./conversation-store.js";

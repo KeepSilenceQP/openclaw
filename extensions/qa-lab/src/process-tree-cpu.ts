@@ -1,4 +1,3 @@
-// QA Lab process-tree metric helpers read CPU and RSS for a process and its children.
 import { spawnSync } from "node:child_process";
 import { parseStrictFiniteNumber, parseStrictInteger } from "openclaw/plugin-sdk/number-runtime";
 

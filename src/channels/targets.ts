@@ -1,8 +1,6 @@
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
-/** Directory config params re-exported for channel setup and docs helpers. */
 export type { DirectoryConfigParams } from "./plugins/directory-types.js";
-/** Public directory entry shape re-exported for channel target pickers. */
 export type { ChannelDirectoryEntry } from "./plugins/types.public.js";
 
 /** Supported generic messaging destination families. */

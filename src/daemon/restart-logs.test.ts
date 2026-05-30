@@ -1,4 +1,3 @@
-// Tests daemon restart logs test behavior.
 import { describe, expect, it } from "vitest";
 import {
   GATEWAY_RESTART_LOG_FILENAME,

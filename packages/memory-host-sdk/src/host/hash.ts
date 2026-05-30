@@ -1,4 +1,3 @@
-// Stable SHA-256 hashing helper for memory files, chunks, and cache keys.
 import crypto from "node:crypto";
 
 /** Hashes text as lowercase SHA-256 hex. */

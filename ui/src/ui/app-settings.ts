@@ -1,4 +1,3 @@
-// Control UI settings, routing, theme, tab refresh, and overview attention helpers.
 import { roleScopesAllow } from "../../../src/shared/operator-scope-compat.js";
 import { t } from "../i18n/index.ts";
 import { refreshChat } from "./app-chat.ts";
@@ -82,7 +81,6 @@ import type { AgentsListResult, AttentionItem } from "./types.ts";
 import { normalizeLocalUserIdentity } from "./user-identity.ts";
 import { resetChatViewState } from "./views/chat.ts";
 
-/** Re-export session persistence helper used by chat/session routing. */
 export { setLastActiveSessionKey } from "./app-last-active-session.ts";
 
 type SettingsHost = {

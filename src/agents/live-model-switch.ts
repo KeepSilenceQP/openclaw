@@ -12,7 +12,6 @@ import {
   resolveDefaultModelForAgent,
   resolvePersistedSelectedModelRef,
 } from "./model-selection.js";
-/** Error thrown when a live-session model switch request cannot be accepted. */
 export { LiveSessionModelSwitchError } from "./live-model-switch-error.js";
 /** Selected live provider/model and optional auth profile. */
 export type LiveSessionModelSelection = EmbeddedRunModelSwitchRequest;

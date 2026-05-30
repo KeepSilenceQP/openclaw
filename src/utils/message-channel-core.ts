@@ -1,4 +1,3 @@
-// Message channel normalization shared by delivery routing and session metadata.
 import { normalizeChatChannelId } from "../channels/ids.js";
 import { normalizeAnyChannelId } from "../channels/registry-normalize.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";

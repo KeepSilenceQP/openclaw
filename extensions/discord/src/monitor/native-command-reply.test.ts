@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor native command reply test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { Container, TextDisplay } from "../internal/discord.js";
 import {

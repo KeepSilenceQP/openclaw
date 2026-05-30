@@ -1,4 +1,3 @@
-// Tests extensions/elevenlabs config compat test behavior.
 import type fs from "node:fs";
 import type os from "node:os";
 import type path from "node:path";

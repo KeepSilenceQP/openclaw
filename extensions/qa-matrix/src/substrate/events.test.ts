@@ -1,4 +1,3 @@
-// Tests extensions/qa-matrix/src/substrate events test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeMatrixQaObservedEvent } from "./events.js";
 

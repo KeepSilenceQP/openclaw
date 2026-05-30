@@ -1,4 +1,3 @@
-// Tests extensions/minimax model definitions test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildMinimaxApiModelDefinition,

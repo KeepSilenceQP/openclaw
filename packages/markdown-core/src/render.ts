@@ -1,5 +1,4 @@
 // Markdown IR renderer that inserts caller-provided style/link markers while
-// preserving span nesting.
 import type { MarkdownIR, MarkdownLinkSpan, MarkdownStyle, MarkdownStyleSpan } from "./ir.js";
 
 /** Opening/closing marker pair for a Markdown style span. */

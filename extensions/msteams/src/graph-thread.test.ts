@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src graph thread test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   _teamGroupIdCacheForTest,

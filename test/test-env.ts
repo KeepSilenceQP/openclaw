@@ -1,4 +1,3 @@
-// Global test environment setup isolates home/state paths and loads live-test credentials only when requested.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import { createRequire } from "node:module";

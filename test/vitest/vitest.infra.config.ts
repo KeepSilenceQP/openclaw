@@ -1,4 +1,3 @@
-// Infra Vitest config scopes infrastructure tests while excluding boundary-owned cases.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 import { boundaryTestFiles } from "./vitest.unit-paths.mjs";
 

@@ -366,5 +366,4 @@ export function buildBootstrapContextForFiles(
   return contextFiles;
 }
 
-/** Workspace bootstrap status helper used by callers that only need pending state. */
 export { isWorkspaceBootstrapPending };

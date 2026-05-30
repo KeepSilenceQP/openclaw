@@ -12,7 +12,6 @@ import {
   updateAuthProfileStoreWithLock,
 } from "./store.js";
 import type { AuthProfileCredential, AuthProfileStore, ProfileUsageStats } from "./types.js";
-/** Profile-list helpers shared by auth profile mutation callers. */
 export { dedupeProfileIds, listProfilesForProvider } from "./profile-list.js";
 
 function findProviderAuthStateKey(

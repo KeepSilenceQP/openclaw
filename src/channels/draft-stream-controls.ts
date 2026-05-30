@@ -1,4 +1,3 @@
-// Draft stream controls for live preview finalization and cleanup.
 import { formatErrorMessage } from "../infra/errors.js";
 import { createDraftStreamLoop } from "./draft-stream-loop.js";
 

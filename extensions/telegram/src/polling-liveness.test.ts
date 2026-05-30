@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src polling liveness test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { TelegramPollingLivenessTracker } from "./polling-liveness.js";
 

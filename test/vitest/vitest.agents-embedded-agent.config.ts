@@ -1,4 +1,3 @@
-// Embedded agent Vitest config scopes tests to embedded-agent runtime patterns.
 import { agentsEmbeddedTestPatterns } from "./vitest.agents-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

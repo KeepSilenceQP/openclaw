@@ -1,4 +1,3 @@
-/** Re-exported clickclack plugin public API. */
 export {
   type ClickClackAccountConfig,
   type ClickClackEvent,

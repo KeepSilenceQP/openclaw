@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src discovery eval test behavior.
 import { describe, expect, it } from "vitest";
 import {
   hasDiscoveryLabels,

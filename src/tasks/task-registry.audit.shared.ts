@@ -1,4 +1,3 @@
-// Shared task registry audit finding and summary helpers.
 import type { TaskRecord } from "./task-registry.types.js";
 
 /** Severity level assigned to a task registry audit finding. */

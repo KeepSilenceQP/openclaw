@@ -27,7 +27,6 @@ import type {
   RunMediaUnderstandingFileResult,
   TranscribeAudioFileParams,
 } from "./runtime-types.js";
-/** Public request/result parameter types for media understanding runtime APIs. */
 export type {
   DescribeImageFileParams,
   DescribeImageFileWithModelParams,

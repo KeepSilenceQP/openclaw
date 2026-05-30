@@ -1,4 +1,3 @@
-// Channel approval adapter capability helpers.
 import type { ChannelApprovalAdapter, ChannelApprovalCapability } from "./types.adapters.js";
 import type { ChannelPlugin } from "./types.plugin.js";
 

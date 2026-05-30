@@ -1,4 +1,3 @@
-// Tests infra gateway process argv test behavior.
 import { describe, expect, it } from "vitest";
 import { isGatewayArgv, parseProcCmdline, parseWindowsCmdline } from "./gateway-process-argv.js";
 

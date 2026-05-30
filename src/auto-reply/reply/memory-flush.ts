@@ -1,4 +1,3 @@
-// Memory flush policy for reply agent runs.
 import { resolveContextTokensForModel } from "../../agents/context.js";
 import { DEFAULT_CONTEXT_TOKENS } from "../../agents/defaults.js";
 import { legacyModelKey, modelKey } from "../../agents/model-selection-normalize.js";

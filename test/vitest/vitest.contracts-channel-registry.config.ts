@@ -1,4 +1,3 @@
-// Vitest project config for channel registry contract tests.
 import {
   channelRegistryContractPatterns,
   createContractsVitestConfig,

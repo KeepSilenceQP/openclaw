@@ -1,4 +1,3 @@
-// Tests infra inline option token test behavior.
 import { describe, expect, it } from "vitest";
 import { parseInlineOptionToken } from "./inline-option-token.js";
 

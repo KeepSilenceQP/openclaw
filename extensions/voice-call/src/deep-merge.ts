@@ -1,4 +1,3 @@
-// Voice-call config merging preserves defined override values while blocking prototype pollution keys.
 import { isRecord as isPlainObject } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 const BLOCKED_MERGE_KEYS = new Set(["__proto__", "prototype", "constructor"]);

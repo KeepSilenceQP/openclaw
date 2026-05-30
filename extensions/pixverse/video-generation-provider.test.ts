@@ -1,4 +1,3 @@
-// Tests extensions/pixverse video generation provider test behavior.
 import {
   getProviderHttpMocks,
   installProviderHttpMockCleanup,

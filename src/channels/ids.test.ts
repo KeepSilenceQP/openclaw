@@ -1,4 +1,3 @@
-// Coverage for chat channel id normalization.
 import { describe, expect, it } from "vitest";
 import { listBundledChannelCatalogEntries } from "./bundled-channel-catalog-read.js";
 import {

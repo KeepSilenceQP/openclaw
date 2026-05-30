@@ -1,4 +1,3 @@
-// Tests tools planner test behavior.
 import { describe, expect, it } from "vitest";
 import { ToolPlanContractError } from "./diagnostics.js";
 import { formatToolExecutorRef } from "./execution.js";

@@ -1,5 +1,4 @@
 // Realtime Talk session launcher. It requests a gateway/provider session,
-// chooses the matching browser transport, and owns start/stop lifecycle.
 import { normalizeTalkTransport } from "../../../../src/talk/talk-session-controller.js";
 import type { GatewayBrowserClient } from "../gateway.ts";
 import { GatewayRelayRealtimeTalkTransport } from "./realtime-talk-gateway-relay.ts";
@@ -17,7 +16,6 @@ import {
 } from "./realtime-talk-shared.ts";
 import { WebRtcSdpRealtimeTalkTransport } from "./realtime-talk-webrtc.ts";
 
-/** Public realtime-talk callback/event/status types. */
 export type {
   RealtimeTalkCallbacks,
   RealtimeTalkEvent,

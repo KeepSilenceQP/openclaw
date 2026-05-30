@@ -1,4 +1,3 @@
-// Shared test helpers for reply modules.
 import { vi } from "vitest";
 import type { FollowupRun } from "./queue.js";
 import type { TypingController } from "./typing.js";

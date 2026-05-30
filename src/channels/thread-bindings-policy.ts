@@ -8,7 +8,6 @@ import {
 import { getLoadedChannelPlugin } from "./plugins/index.js";
 import { resolveBundledChannelThreadBindingDefaultPlacement } from "./plugins/thread-binding-api.js";
 
-/** Lifecycle helper re-exported for channel code that needs expiry calculations. */
 export {
   resolveThreadBindingLifecycle,
   type ThreadBindingLifecycleRecord,

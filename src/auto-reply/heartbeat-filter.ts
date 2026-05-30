@@ -1,4 +1,3 @@
-// Heartbeat prompt and transcript filters that keep poll artifacts out of memory.
 import { isRecord } from "../shared/record-coerce.js";
 import { normalizeOptionalString as readString } from "../shared/string-coerce.js";
 import { uniqueStrings } from "../shared/string-normalization.js";

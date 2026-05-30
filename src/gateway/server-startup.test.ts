@@ -1,4 +1,3 @@
-// Tests gateway server startup test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 

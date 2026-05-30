@@ -1,4 +1,3 @@
-// Resolves a stable human-readable machine name for gateway/client labels.
 import { execFile } from "node:child_process";
 import os from "node:os";
 import { promisify } from "node:util";

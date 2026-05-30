@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser cdp internal test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { type WebSocket, WebSocketServer } from "ws";
 import { rawDataToString } from "../infra/ws.js";

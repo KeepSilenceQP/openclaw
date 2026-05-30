@@ -1,4 +1,3 @@
-// QA Lab bus query helpers normalize targets, clone state, and poll message events.
 import { normalizeOptionalLowercaseString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type {
   QaBusAttachment,

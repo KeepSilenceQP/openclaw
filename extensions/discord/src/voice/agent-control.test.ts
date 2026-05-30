@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/voice agent control test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { maybeControlDiscordVoiceAgentRun } from "./agent-control.js";
 

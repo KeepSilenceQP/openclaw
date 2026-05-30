@@ -1,5 +1,4 @@
 // Provider-facing contracts for describing, transcribing, and extracting
-// structured data from media attachments.
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 

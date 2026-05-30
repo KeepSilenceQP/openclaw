@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor dm command auth test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   resolveDiscordDmCommandAccess,

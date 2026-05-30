@@ -1,4 +1,3 @@
-// Tests extensions/vercel-ai-gateway thinking test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

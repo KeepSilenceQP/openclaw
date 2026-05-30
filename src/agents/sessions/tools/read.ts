@@ -30,7 +30,6 @@ const readSchema = Type.Object({
   ),
   limit: Type.Optional(Type.Number({ description: "Maximum number of lines to read" })),
 });
-/** Read tool input/details contracts shared with renderers and callers. */
 export type { ReadToolDetails, ReadToolInput } from "./tool-contracts.js";
 
 interface CompactReadClassification {

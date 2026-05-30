@@ -1,4 +1,3 @@
-// Tests extensions/zalouser/src setup surface test behavior.
 import {
   createPluginSetupWizardConfigure,
   createTestWizardPrompter,

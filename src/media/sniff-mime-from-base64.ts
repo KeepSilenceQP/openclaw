@@ -1,4 +1,3 @@
-// Detects MIME type from the decoded prefix of a base64 payload.
 import { canonicalizeBase64 } from "./base64.js";
 import { detectMime } from "./mime.js";
 

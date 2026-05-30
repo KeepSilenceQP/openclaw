@@ -1,4 +1,3 @@
-// Manual facade. Keep loader boundary explicit.
 import type { ModelDefinitionConfig, ModelProviderConfig } from "../config/types.js";
 import {
   createLazyFacadeObjectValue,

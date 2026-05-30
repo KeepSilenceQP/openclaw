@@ -1,4 +1,3 @@
-// Runtime helpers for forking reply sessions.
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

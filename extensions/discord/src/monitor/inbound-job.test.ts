@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor inbound job test behavior.
 import { describe, expect, it } from "vitest";
 import { Message } from "../internal/discord.js";
 import { createPartialDiscordChannelWithThrowingGetters } from "../test-support/partial-channel.js";

@@ -1,4 +1,3 @@
-// Coverage for location context formatting.
 import { describe, expect, it } from "vitest";
 import { formatLocationText, toLocationContext } from "./location.js";
 

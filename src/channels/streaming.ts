@@ -13,7 +13,6 @@ import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { normalizeTrimmedStringList } from "../shared/string-normalization.js";
 import { asBoolean } from "../utils/boolean.js";
 
-/** Shared channel streaming config types re-exported for channel adapters. */
 export type {
   ChannelDeliveryStreamingConfig,
   ChannelPreviewStreamingConfig,
@@ -25,7 +24,6 @@ export type {
   StreamingMode,
   TextChunkMode,
 } from "../config/types.base.js";
-/** Slack-specific streaming config shape re-exported for channel setup code. */
 export type { SlackChannelStreamingConfig } from "../config/types.slack.js";
 
 type StreamingCompatEntry = {

@@ -1,4 +1,3 @@
-// Extracts low-cardinality diagnostic metadata from nested provider/runtime errors.
 import crypto from "node:crypto";
 
 const HTTP_STATUS_MIN = 100;

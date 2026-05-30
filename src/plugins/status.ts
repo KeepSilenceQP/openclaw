@@ -1,5 +1,4 @@
 // Builds plugin status, diagnostics, inspect, and compatibility reports from
-// metadata snapshots or runtime-loaded registries.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import { resolveDefaultAgentWorkspaceDir } from "../agents/workspace.js";
 import { getRuntimeConfig } from "../config/config.js";

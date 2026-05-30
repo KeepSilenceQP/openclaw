@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server run attempt dynamic tools test behavior.
 import path from "node:path";
 import { onAgentEvent, type AgentEventPayload } from "openclaw/plugin-sdk/agent-harness-runtime";
 import {

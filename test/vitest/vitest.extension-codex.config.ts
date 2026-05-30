@@ -1,4 +1,3 @@
-// Vitest project config for Codex plugin tests.
 import { codexExtensionTestRoots } from "./vitest.extension-codex-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

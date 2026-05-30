@@ -1,4 +1,3 @@
-// Runtime import type contracts for command detection lazy boundaries.
 import type { OpenClawConfig } from "../config/types.js";
 import type { CommandNormalizeOptions } from "./commands-registry.types.js";
 

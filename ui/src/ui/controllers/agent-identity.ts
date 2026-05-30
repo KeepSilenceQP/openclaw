@@ -1,5 +1,4 @@
 // Controller helpers for lazy-loading agent identity display data. Results are
-// cached by agent id so repeated panels can share the same gateway response.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { AgentIdentityResult } from "../types.ts";
 

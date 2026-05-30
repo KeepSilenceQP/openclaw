@@ -1,5 +1,4 @@
 // App mount harness for Control UI tests. It mocks storage, WebSocket, media
-// queries, and teardown timing around mounted openclaw-app elements.
 import { afterEach, beforeEach, vi } from "vitest";
 import { i18n } from "../../i18n/index.ts";
 import { getSafeLocalStorage, getSafeSessionStorage } from "../../local-storage.ts";

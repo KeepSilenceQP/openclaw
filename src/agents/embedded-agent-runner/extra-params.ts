@@ -1049,5 +1049,4 @@ export function applyExtraParamsToAgent(
 
   return { effectiveExtraParams };
 }
-/** Stable test-only alias for provider extra-param dependency injection hooks. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Tests config config legacy config detection accepts imessage dmpolicy test behavior.
 import { describe, expect, it } from "vitest";
 import {
   expectSchemaConfigValue,

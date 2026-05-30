@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src comment shared test behavior.
 import { describe, expect, it } from "vitest";
 import {
   parseCommentContentElements,

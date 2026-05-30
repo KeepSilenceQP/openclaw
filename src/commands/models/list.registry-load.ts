@@ -1,4 +1,3 @@
-// Loads registry-backed model-list data and configured-entry availability.
 import { loadAgentModelRegistry } from "../../agents/model-registry-loader.js";
 import { shouldSuppressBuiltInModel } from "../../agents/model-suppression.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src tool actions test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { handleMatrixAction } from "./tool-actions.js";
 import type { CoreConfig } from "./types.js";

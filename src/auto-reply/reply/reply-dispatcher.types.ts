@@ -1,4 +1,3 @@
-// Shared reply dispatcher types.
 import type { ReplyPayload } from "../types.js";
 
 export type ReplyDispatchKind = "tool" | "block" | "final";

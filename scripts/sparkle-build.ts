@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Sparkle build helpers derive monotonic macOS build numbers from OpenClaw calver versions.
-
 import { pathToFileURL } from "node:url";
 
 /** Numeric floors derived from a calver version for Sparkle build numbering. */

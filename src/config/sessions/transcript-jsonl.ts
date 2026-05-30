@@ -1,4 +1,3 @@
-// JSONL serialization and append/write helpers for session transcript files.
 import { appendFileSync, writeFileSync } from "node:fs";
 import fs from "node:fs/promises";
 

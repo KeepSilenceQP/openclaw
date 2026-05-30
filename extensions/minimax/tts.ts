@@ -1,4 +1,3 @@
-// MiniMax text-to-speech provider runtime and request normalization.
 import { resolveTimerTimeoutMs } from "openclaw/plugin-sdk/number-runtime";
 import { assertOkOrThrowProviderError } from "openclaw/plugin-sdk/provider-http";
 import {

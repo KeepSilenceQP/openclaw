@@ -1,4 +1,3 @@
-// WebSocket gateway client: connection assembly, auth, request routing, and reconnect handling.
 import { randomUUID } from "node:crypto";
 import {
   type ConnectParams,

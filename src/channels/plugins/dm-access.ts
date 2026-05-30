@@ -1,4 +1,3 @@
-// Direct-message access helpers for channel plugins.
 import { normalizeStringEntries } from "../../shared/string-normalization.js";
 
 /** Where DM allowlist/policy fields are stored for a channel config. */

@@ -1,4 +1,3 @@
-// OpenAI provider extension Vitest config adds the ws wrapper alias required by provider tests.
 import path from "node:path";
 import { providerOpenAiExtensionTestRoots } from "./vitest.extension-provider-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";

@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src monitor handler feedback authz test behavior.
 import { access, mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";

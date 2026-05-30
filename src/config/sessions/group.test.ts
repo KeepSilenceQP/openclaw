@@ -1,4 +1,3 @@
-// Tests config/sessions group test behavior.
 import { describe, expect, it } from "vitest";
 import type { MsgContext } from "../../auto-reply/templating.js";
 import { resolveGroupSessionKey } from "./group.js";

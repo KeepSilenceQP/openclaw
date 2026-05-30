@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src inbound test behavior.
 import { describe, expect, it } from "vitest";
 import {
   decodeHtmlEntities,

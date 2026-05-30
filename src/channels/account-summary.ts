@@ -1,4 +1,3 @@
-// Channel account summary and allowlist formatting helpers.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 import { isRecord } from "../utils.js";

@@ -1,5 +1,4 @@
 // Durable queue storage for session-bound delivery events.
-// Agent turns and system events use idempotent JSON entries until acked or failed.
 import { createHash } from "node:crypto";
 import path from "node:path";
 import {

@@ -1,5 +1,4 @@
 // Diagnostic stability bundle persistence: writes payload-free snapshots for
-// fatal errors, memory pressure, and support export troubleshooting.
 import fs from "node:fs";
 import path from "node:path";
 import process from "node:process";

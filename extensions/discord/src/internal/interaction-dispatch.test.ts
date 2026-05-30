@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/internal interaction dispatch test behavior.
 import {
   ApplicationCommandOptionType,
   InteractionResponseType,

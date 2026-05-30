@@ -1,4 +1,3 @@
-// Tests talk activation name test behavior.
 import { describe, expect, it } from "vitest";
 import {
   isSupportedRealtimeVoiceActivationName,

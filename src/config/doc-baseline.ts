@@ -1,4 +1,3 @@
-// Config docs baseline generator used to detect schema and help-text drift.
 import { createHash } from "node:crypto";
 import fsSync from "node:fs";
 import os from "node:os";

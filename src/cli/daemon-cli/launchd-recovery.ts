@@ -38,5 +38,4 @@ export async function recoverInstalledLaunchAgent(params: {
   };
 }
 
-/** Message emitted when LaunchAgent bootstrap recovery succeeds. */
 export { LAUNCH_AGENT_RECOVERY_MESSAGE };

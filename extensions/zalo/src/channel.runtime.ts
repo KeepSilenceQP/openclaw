@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/zalo/src channel runtime behavior.
 import { createAccountStatusSink } from "openclaw/plugin-sdk/channel-outbound";
 import { probeZalo } from "./probe.js";
 import { resolveZaloProxyFetch } from "./proxy.js";

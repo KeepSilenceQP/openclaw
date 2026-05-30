@@ -1,4 +1,3 @@
-// Tests gateway ws log test behavior.
 import { describe, expect, test } from "vitest";
 import { formatForLog, shortId, summarizeAgentEventForWsLog } from "./ws-log.js";
 

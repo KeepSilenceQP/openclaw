@@ -1,4 +1,3 @@
-// Tests config io owner display secret test behavior.
 import { describe, expect, it } from "vitest";
 import {
   type OwnerDisplaySecretRuntimeState,

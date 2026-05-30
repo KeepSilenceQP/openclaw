@@ -1,5 +1,4 @@
 // Control UI auth header resolver. It chooses header-safe bearer credentials
-// from the live hello payload, saved settings token, or configured password.
 import { normalizeOptionalString, uniqueStrings } from "./string-coerce.ts";
 
 type ControlUiAuthSource = {

@@ -1,4 +1,3 @@
-// Process-global in-memory task registry state shared by task-store implementations.
 import type { TaskDeliveryState, TaskRecord } from "./task-registry.types.js";
 
 /** In-memory indexes used by task registry stores within one Node.js process. */

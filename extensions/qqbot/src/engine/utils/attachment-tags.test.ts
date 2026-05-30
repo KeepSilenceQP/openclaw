@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/utils attachment tags test behavior.
 import { describe, expect, it } from "vitest";
 import {
   formatAttachmentTags,

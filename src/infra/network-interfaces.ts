@@ -1,5 +1,4 @@
 // Network interface discovery helpers.
-// Callers can inject snapshots for tests while production reads node:os directly.
 import os from "node:os";
 
 /** Raw network interface snapshot shape returned by node:os. */

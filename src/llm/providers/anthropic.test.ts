@@ -1,4 +1,3 @@
-// Tests llm/providers anthropic test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { Context, Model } from "../types.js";
 

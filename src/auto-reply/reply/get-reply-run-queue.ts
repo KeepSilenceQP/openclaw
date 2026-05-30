@@ -1,4 +1,3 @@
-// Queue helpers for delayed get-reply runs.
 import { logVerbose } from "../../globals.js";
 import type { ReplyPayload } from "../types.js";
 import type { ActiveRunQueueAction } from "./queue-policy.js";

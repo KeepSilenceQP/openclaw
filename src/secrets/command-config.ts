@@ -1,4 +1,3 @@
-// Command-time secret assignment analysis for resolved config snapshots.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { coerceSecretRef, resolveSecretInputRef } from "../config/types.secrets.js";
 import { getPath } from "./path-utils.js";

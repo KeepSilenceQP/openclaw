@@ -1,4 +1,3 @@
-// QA Lab web runtime helpers drive Playwright browser sessions for scenario flows.
 import { randomUUID } from "node:crypto";
 import { chromium, type Browser, type BrowserContext, type Page } from "playwright-core";
 

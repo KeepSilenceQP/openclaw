@@ -1,4 +1,3 @@
-// Builds the gateway method registry from core handlers and plugin descriptors.
 import type { PluginRegistry } from "../../plugins/registry-types.js";
 import { normalizePluginGatewayMethodScope } from "../../shared/gateway-method-policy.js";
 import { ADMIN_SCOPE, type OperatorScope } from "../operator-scopes.js";
@@ -18,7 +17,6 @@ import {
 
 /** Read-only gateway method registry view used by dispatch and discovery. */
 export type GatewayMethodRegistry = GatewayMethodRegistryView;
-/** Core gateway method descriptor helpers used during registry construction. */
 export { createCoreGatewayMethodDescriptors, isCoreGatewayMethodClassified };
 
 function normalizeMethodName(name: string): string {

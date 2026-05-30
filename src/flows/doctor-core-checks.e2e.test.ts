@@ -1,4 +1,3 @@
-// Tests flows doctor core checks e2e test behavior.
 import { promises as fs } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";

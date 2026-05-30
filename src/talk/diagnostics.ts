@@ -1,4 +1,3 @@
-// Trusted diagnostic event adapter for realtime Talk events.
 import {
   emitTrustedDiagnosticEvent,
   type DiagnosticEventInput,

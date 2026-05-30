@@ -1,4 +1,3 @@
-// Tests tasks task registry process state test behavior.
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";
 import { describe, expect, it } from "vitest";
 

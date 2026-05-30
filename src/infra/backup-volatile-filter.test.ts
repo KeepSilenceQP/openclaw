@@ -1,4 +1,3 @@
-// Tests infra backup volatile filter test behavior.
 import { describe, expect, it } from "vitest";
 import { isVolatileBackupPath } from "./backup-volatile-filter.js";
 

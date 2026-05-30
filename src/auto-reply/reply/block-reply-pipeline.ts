@@ -1,4 +1,3 @@
-// Pipeline that prepares block reply payloads for channel delivery.
 import {
   hasOutboundReplyContent,
   resolveSendableOutboundReplyParts,

@@ -1,4 +1,3 @@
-// Test context builders for reply tests.
 import type { FinalizedMsgContext, MsgContext } from "../templating.js";
 import { finalizeInboundContext } from "./inbound-context.js";
 

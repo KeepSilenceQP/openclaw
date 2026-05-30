@@ -1,4 +1,3 @@
-// Tests infra tmp openclaw dir browser import test behavior.
 import { Buffer } from "node:buffer";
 import crypto from "node:crypto";
 import { build, type Plugin } from "esbuild";

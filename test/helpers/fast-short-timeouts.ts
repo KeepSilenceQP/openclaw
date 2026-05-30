@@ -1,4 +1,3 @@
-// Test helper shortens small timers while leaving long timeout behavior intact.
 import { setTimeout as nativeSetTimeout } from "node:timers";
 import { vi } from "vitest";
 

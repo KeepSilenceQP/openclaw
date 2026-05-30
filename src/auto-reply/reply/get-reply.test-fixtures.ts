@@ -1,4 +1,3 @@
-// Shared fixtures for get-reply tests.
 import { expect, vi, type Mock } from "vitest";
 import type { MsgContext } from "../templating.js";
 

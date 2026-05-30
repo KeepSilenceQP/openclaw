@@ -1,5 +1,4 @@
 // Persistent audit helpers for config reads/writes. Records include process and
-// filesystem metadata, with argv/env-like secrets redacted before persistence.
 import path from "node:path";
 import { redactSecrets, redactToolPayloadText } from "../logging/redact.js";
 import { resolveStateDir } from "./paths.js";

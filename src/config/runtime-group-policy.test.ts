@@ -1,4 +1,3 @@
-// Tests config runtime group policy test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import {
   GROUP_POLICY_BLOCKED_LABEL,

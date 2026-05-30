@@ -1,4 +1,3 @@
-// Voice-call manager context types collect runtime state, deps, hooks, and timers.
 import type { VoiceCallConfig } from "../config.js";
 import type { VoiceCallProvider } from "../providers/base.js";
 import type { CallId, CallRecord } from "../types.js";

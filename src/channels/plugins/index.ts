@@ -1,4 +1,3 @@
-// Public channel plugin registry facade.
 export {
   getChannelPlugin,
   getLoadedChannelPlugin,

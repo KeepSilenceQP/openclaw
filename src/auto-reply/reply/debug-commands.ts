@@ -1,4 +1,3 @@
-// Debug command parsing and formatting helpers.
 import { parseStandardSetUnsetSlashCommand } from "./commands-setunset-standard.js";
 
 export type DebugCommand =

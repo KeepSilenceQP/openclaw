@@ -1,4 +1,3 @@
-// Tests extensions/deepseek deepseek live test behavior.
 import {
   completeSimple,
   streamSimple,

@@ -1,4 +1,3 @@
-// Tests QQ reminder parsing, scheduling payloads, and timer cleanup.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   parseRelativeTime,

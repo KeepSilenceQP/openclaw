@@ -1,4 +1,3 @@
-// Sanitizes music generation overrides against provider/model capabilities before dispatch.
 import {
   hasMediaNormalizationEntry,
   normalizeDurationToClosestMax,

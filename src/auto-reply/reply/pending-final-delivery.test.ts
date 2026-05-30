@@ -1,4 +1,3 @@
-// Coverage for pending final delivery tracking.
 import { describe, expect, it } from "vitest";
 import {
   INTERNAL_RUNTIME_CONTEXT_BEGIN,

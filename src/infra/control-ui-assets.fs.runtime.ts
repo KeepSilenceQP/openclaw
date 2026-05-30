@@ -1,4 +1,3 @@
-// Lazy fs boundary for serving bundled Control UI assets.
 import fs from "node:fs";
 
 /** Bound fs.existsSync for asset lookup. */

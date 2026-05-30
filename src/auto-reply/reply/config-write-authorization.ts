@@ -1,4 +1,3 @@
-// Authorization helpers for config writes initiated from chat.
 import {
   authorizeConfigWrite,
   canBypassConfigWritePolicy,

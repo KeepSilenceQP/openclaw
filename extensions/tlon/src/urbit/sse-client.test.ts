@@ -1,4 +1,3 @@
-// Tests extensions/tlon/src/urbit sse client test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { urbitFetch } from "./fetch.js";
 import { UrbitSSEClient } from "./sse-client.js";

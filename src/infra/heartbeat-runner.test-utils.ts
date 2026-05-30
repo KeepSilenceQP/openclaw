@@ -1,4 +1,3 @@
-// Shared test fixtures for heartbeat runner session stores and plugin runtimes.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

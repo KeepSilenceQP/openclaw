@@ -22,5 +22,4 @@ export function normalizeAgentRunTimeoutPhase(value: unknown): AgentRunTimeoutPh
     : undefined;
 }
 
-/** Normalize provider-started timeout metadata from legacy boolean-like values. */
 export { asBoolean as normalizeProviderStarted } from "../utils/boolean.js";

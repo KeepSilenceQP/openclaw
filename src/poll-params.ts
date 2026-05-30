@@ -1,4 +1,3 @@
-// Detects shared and channel-specific poll creation params before channel routing validates them.
 import { readSnakeCaseParamRaw } from "./param-key.js";
 import { parseStrictFiniteNumber } from "./shared/number-coercion.js";
 import { normalizeLowercaseStringOrEmpty } from "./shared/string-coerce.js";

@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src gateway log sentinel test behavior.
 import { describe, expect, it } from "vitest";
 import {
   assertNoGatewayLogSentinels,

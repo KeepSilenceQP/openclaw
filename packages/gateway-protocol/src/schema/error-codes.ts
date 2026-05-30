@@ -1,4 +1,3 @@
-// Shared gateway error-code constants and response envelope helper.
 import type { ErrorShape } from "./types.js";
 
 /** Stable gateway error codes used by clients for recovery decisions. */

@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/telegram/src approval handler runtime behavior.
 import type {
   ChannelApprovalCapabilityHandlerContext,
   PendingApprovalView,

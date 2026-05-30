@@ -1,4 +1,3 @@
-// Coverage for queue cleanup behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { testing, clearSessionQueues } from "./cleanup.js";
 

@@ -6,9 +6,7 @@
 import { resolveOpenProviderRuntimeGroupPolicy } from "../config/runtime-group-policy.js";
 import type { GroupPolicy } from "../config/types.base.js";
 
-/** Resolves provider group policy with provider-missing fallback semantics. */
 export { resolveOpenProviderRuntimeGroupPolicy };
-/** Shared group policy type used by channel ingress compatibility helpers. */
 export type { GroupPolicy };
 
 /** Reason code for sender-level group access decisions. */

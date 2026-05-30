@@ -1,4 +1,3 @@
-// Inbound message dispatcher that prepares channel context and runs reply handling.
 import { normalizeChatType } from "../channels/chat-type.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {

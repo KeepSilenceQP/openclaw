@@ -1,4 +1,3 @@
-// Tests ui/src/ui lazy view browser test behavior.
 import { render } from "lit";
 import { describe, expect, it, vi } from "vitest";
 import { createLazyView, renderLazyView } from "./lazy-view.ts";

@@ -1,4 +1,3 @@
-// Terminal link helpers for OpenClaw documentation URLs.
 import { formatTerminalLink } from "./terminal-link.js";
 
 function resolveDocsRoot(): string {

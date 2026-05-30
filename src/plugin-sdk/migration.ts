@@ -1,5 +1,3 @@
-// Shared migration-provider helpers for plan/apply item bookkeeping.
-
 import type {
   MigrationDetection,
   MigrationItem,
@@ -10,7 +8,6 @@ import type {
 } from "../plugins/types.js";
 import { isRecord } from "../shared/record-coerce.js";
 
-/** Public migration provider contracts re-exported from the plugin runtime. */
 export type {
   MigrationDetection,
   MigrationItem,

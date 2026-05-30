@@ -1,4 +1,3 @@
-// Telegram extension Vitest config scopes tests to Telegram plugin shards and env filters.
 import { telegramExtensionTestRoots } from "./vitest.extension-telegram-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

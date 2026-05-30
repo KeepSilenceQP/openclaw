@@ -1,4 +1,3 @@
-// Tests config redact snapshot restore test behavior.
 import { describe, expect, it } from "vitest";
 import { redactSnapshotTestHints as mainSchemaHints } from "../../test/helpers/config/redact-snapshot-test-hints.js";
 import {

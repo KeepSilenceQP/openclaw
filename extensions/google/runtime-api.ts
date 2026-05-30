@@ -1,4 +1,3 @@
-/** Re-exported google plugin public API. */
 export {
   DEFAULT_GOOGLE_API_BASE_URL,
   createGoogleThinkingPayloadWrapper,
@@ -17,5 +16,4 @@ export {
   sanitizeGoogleThinkingPayload,
   stripInvalidGoogleThinkingBudget,
 } from "./api.js";
-/** Re-exported google plugin public API, starting with Google Thinking Input Level. */
 export type { GoogleThinkingInputLevel, GoogleThinkingLevel } from "./api.js";

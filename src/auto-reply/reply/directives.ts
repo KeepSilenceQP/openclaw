@@ -1,4 +1,3 @@
-// Inline directive extractors for reply control tokens.
 import { escapeRegExp } from "../../utils.js";
 import type { NoticeLevel, ReasoningLevel, TraceLevel } from "../thinking.js";
 import {
@@ -228,7 +227,5 @@ export function extractStatusDirective(body?: string): {
   return extractSimpleDirective(body, STATUS_DIRECTIVE_PATTERN);
 }
 
-/** Directive level types shared with reply thinking controls. */
 export type { ElevatedLevel, NoticeLevel, ReasoningLevel, ThinkLevel, TraceLevel, VerboseLevel };
-/** Exec directive extractor exposed from the reply directive barrel. */
 export { extractExecDirective } from "./exec/directive.js";

@@ -16,7 +16,6 @@ import {
   listLegacyRuntimeModelProviderAliases,
   migrateLegacyRuntimeModelRef,
 } from "./legacy-runtime-model-providers.js";
-/** Legacy talk config normalizer included in the core doctor normalizer set. */
 export { normalizeLegacyTalkConfig } from "./legacy-talk-config-normalizer.js";
 
 /** Removes deprecated command config keys. */

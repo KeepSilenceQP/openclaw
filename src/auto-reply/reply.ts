@@ -1,4 +1,3 @@
-// Public reply facade that preserves legacy import paths.
 export {
   extractElevatedDirective,
   extractReasoningDirective,

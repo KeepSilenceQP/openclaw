@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server side question test behavior.
 import { nativeHookRelayTesting } from "openclaw/plugin-sdk/agent-harness-runtime";
 import {
   onInternalDiagnosticEvent,

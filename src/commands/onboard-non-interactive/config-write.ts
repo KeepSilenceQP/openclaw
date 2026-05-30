@@ -1,4 +1,3 @@
-// Writes non-interactive onboard config while preserving pending plugin install records.
 import {
   commitConfigWriteWithPendingPluginInstalls,
   hasPendingPluginInstallRecords,

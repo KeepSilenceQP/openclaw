@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/voice transcripts source test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { DiscordVoiceManager } from "./manager.js";
 import {

@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/brave/src brave web search provider runtime behavior.
 import {
   assertOkOrThrowProviderError,
   readProviderJsonResponse,

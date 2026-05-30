@@ -1,5 +1,3 @@
-// Re-export shared image fixture builders for tests outside the plugin SDK tree.
-/** Shared image fixture builders used by media and plugin tests. */
 export {
   createGrayscaleAlphaPngBuffer,
   createNoisyPngBuffer,

@@ -1,4 +1,3 @@
-// Memory backend config resolver for builtin search and QMD integration.
 import fs from "node:fs";
 import path from "node:path";
 import {

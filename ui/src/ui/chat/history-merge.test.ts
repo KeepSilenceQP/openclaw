@@ -1,4 +1,3 @@
-// Tests ui/src/ui/chat history merge test behavior.
 import { describe, expect, it } from "vitest";
 import { preserveOptimisticTailMessages } from "../controllers/chat.ts";
 

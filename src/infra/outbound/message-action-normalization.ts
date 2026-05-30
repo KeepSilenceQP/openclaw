@@ -1,4 +1,3 @@
-// Normalizes message action tool args before channel dispatch.
 import type {
   ChannelMessageActionName,
   ChannelThreadingToolContext,

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser control auth test behavior.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../test-support.js";
 import { ensureBrowserControlAuth } from "./control-auth.js";

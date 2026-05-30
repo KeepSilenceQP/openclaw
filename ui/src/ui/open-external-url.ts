@@ -1,5 +1,4 @@
 // Safe external URL opener. It allows only browser-safe external protocols and
-// optionally data image URLs while blocking SVG and non-image data payloads.
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";
 
 const DATA_URL_PREFIX = "data:";

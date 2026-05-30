@@ -1,4 +1,3 @@
-// Text formatting helpers for subagent command output.
 import { sanitizeTextContent } from "../../agents/tools/chat-history-text.js";
 import { extractTextFromChatContent } from "../../shared/chat-content.js";
 

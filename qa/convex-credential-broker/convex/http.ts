@@ -1,4 +1,3 @@
-// qa/convex-credential-broker/convex http helpers and runtime behavior.
 import { httpRouter } from "convex/server";
 import { internal } from "./_generated/api";
 import type { Id } from "./_generated/dataModel";

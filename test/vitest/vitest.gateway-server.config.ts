@@ -1,4 +1,3 @@
-// Gateway server Vitest config groups server and HTTP-backed gateway tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 const gatewayServerBackedHttpTests = [

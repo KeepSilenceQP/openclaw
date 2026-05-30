@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/client config test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { LookupFn } from "../../runtime-api.js";
 import { installMatrixTestRuntime } from "../../test-runtime.js";

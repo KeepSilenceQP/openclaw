@@ -1,4 +1,3 @@
-// Fetches Gemini quota buckets and summarizes Pro/Flash usage.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import {
   buildUsageHttpErrorSnapshot,

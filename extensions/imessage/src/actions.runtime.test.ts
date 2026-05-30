@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src actions runtime test behavior.
 import { EventEmitter } from "node:events";
 import { afterEach, describe, expect, it, vi } from "vitest";
 

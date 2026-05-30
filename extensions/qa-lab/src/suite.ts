@@ -1,4 +1,3 @@
-// QA Lab suite runner starts lab/gateway services, executes scenarios, and writes reports.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";

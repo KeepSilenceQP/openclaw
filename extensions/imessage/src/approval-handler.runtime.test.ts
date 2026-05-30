@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src approval handler runtime test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { imessageApprovalNativeRuntime } from "./approval-handler.runtime.js";
 

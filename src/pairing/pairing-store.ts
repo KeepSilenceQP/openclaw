@@ -1,4 +1,3 @@
-// Pairing request store and allow-list mutation helpers for channel access control.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -28,7 +27,6 @@ import {
   type AllowFromStore,
 } from "./allow-from-store-file.js";
 import type { PairingChannel } from "./pairing-store.types.js";
-/** Pairing channel type re-exported for command and plugin callers. */
 export type { PairingChannel } from "./pairing-store.types.js";
 
 const PAIRING_CODE_LENGTH = 8;

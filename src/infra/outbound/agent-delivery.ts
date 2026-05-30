@@ -1,5 +1,4 @@
 // Agent outbound delivery planning.
-// Keeps replies on the turn source channel when shared sessions span channels.
 import type { ChannelOutboundTargetMode } from "../../channels/plugins/types.public.js";
 import type { ChannelId } from "../../channels/plugins/types.public.js";
 import type { SessionEntry } from "../../config/sessions.js";

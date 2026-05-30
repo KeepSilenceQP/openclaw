@@ -1,5 +1,4 @@
 // Session-store persistence facade for loading, updating, pruning, archiving,
-// and cache-coherent writes of sessions.json.
 import fs from "node:fs";
 import path from "node:path";
 import type { MsgContext } from "../../auto-reply/templating.js";
@@ -66,28 +65,23 @@ import {
   type SessionSkillPromptRef,
 } from "./types.js";
 
-/** Test-only controls for draining and inspecting the serialized writer queues. */
 export {
   clearSessionStoreCacheForTest,
   drainSessionStoreWriterQueuesForTest,
   getSessionStoreWriterQueueSizeForTest,
 } from "./store-writer-state.js";
-/** Test helper that swaps the session-store writer implementation. */
 export { withSessionStoreWriterForTest } from "./store-writer.js";
-/** Read-only store loading helpers exposed through the store facade. */
 export {
   loadSessionStore,
   readSessionEntries,
   readSessionEntry,
   readSessionStoreSnapshot,
 } from "./store-load.js";
-/** Snapshot cache contracts returned by read-only store loaders. */
 export type {
   SessionStoreSnapshot,
   SessionStoreSnapshotEntries,
   SessionStoreSnapshotEntry,
 } from "./store-cache.js";
-/** Session-key normalization helpers used before store lookup or migration. */
 export { normalizeStoreSessionKey, resolveSessionStoreEntry } from "./store-entry.js";
 
 const log = createSubsystemLogger("sessions/store");
@@ -147,7 +141,6 @@ export type SessionMaintenanceApplyReport = {
   diskBudget: SessionDiskBudgetSweepResult | null;
 };
 
-/** Maintenance primitives reused by commands and save-time store cleanup. */
 export {
   capEntryCount,
   getActiveSessionMaintenanceWarning,
@@ -155,7 +148,6 @@ export {
   pruneStaleEntries,
   resolveMaintenanceConfig,
 };
-/** Resolved maintenance contracts exposed to callers that pre-load config. */
 export type { ResolvedSessionMaintenanceConfig, SessionMaintenanceWarning };
 
 type SaveSessionStoreOptions = {

@@ -1,4 +1,3 @@
-// Session fork helpers for creating branched conversations.
 import type { SessionEntry } from "../../config/sessions/types.js";
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 

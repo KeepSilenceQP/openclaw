@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src setup surface test behavior.
 import {
   createPluginSetupWizardStatus,
   createQueuedWizardPrompter,

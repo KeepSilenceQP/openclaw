@@ -1,4 +1,3 @@
-// QA Lab suite runtime transport helpers expose wait/read transcript utilities.
 import { setTimeout as sleep } from "node:timers/promises";
 import {
   createFailureAwareTransportWaitForCondition,
@@ -145,7 +144,6 @@ async function waitForNoTransportOutbound(state: QaTransportState, timeoutMs = 1
   await waitForNoOutbound(state, timeoutMs);
 }
 
-/** Transport helpers injected into QA scenario runtime fixtures. */
 export {
   createScenarioWaitForCondition,
   findFailureOutboundMessage,

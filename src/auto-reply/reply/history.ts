@@ -1,4 +1,3 @@
-// Reply history entry formatting for prompt context.
 import type { HistoryEntry, HistoryMediaEntry } from "./history.types.js";
 import { CURRENT_MESSAGE_MARKER } from "./mentions.js";
 
@@ -31,7 +30,6 @@ export function evictOldHistoryKeys<T>(
   }
 }
 
-/** History entry and media entry types exported with history helpers. */
 export type { HistoryEntry, HistoryMediaEntry } from "./history.types.js";
 
 /** Build the prompt section that separates history from the current message. */

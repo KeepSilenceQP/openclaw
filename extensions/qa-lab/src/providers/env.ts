@@ -1,4 +1,3 @@
-// QA Lab provider env helpers scrub mock runs and forward live-provider credentials safely.
 import { existsSync } from "node:fs";
 import os from "node:os";
 import path from "node:path";

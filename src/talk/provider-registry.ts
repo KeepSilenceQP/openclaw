@@ -1,4 +1,3 @@
-// Realtime voice provider registry lookup over plugin capability metadata.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   resolvePluginCapabilityProvider,

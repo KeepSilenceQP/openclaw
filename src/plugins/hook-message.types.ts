@@ -1,4 +1,3 @@
-// Plugin hook event/context contracts for inbound and outbound channel messages.
 import type { DiagnosticTraceContext } from "../infra/diagnostic-trace-context.js";
 import type { PluginConversationBinding } from "./conversation-binding.types.js";
 

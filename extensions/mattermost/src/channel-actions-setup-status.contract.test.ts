@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src channel actions setup status contract test behavior.
 import {
   installChannelActionsContractSuite,
   installChannelSetupContractSuite,

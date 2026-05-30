@@ -1,4 +1,3 @@
-// Codex CI config writer renders a minimal trusted-project config for CI runners.
 import fs from "node:fs/promises";
 import path from "node:path";
 

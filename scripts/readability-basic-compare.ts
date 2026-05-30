@@ -1,4 +1,3 @@
-// Manual web-fetch readability probe compares extraction output across representative URLs.
 import { createWebFetchTool } from "../src/agents/tools/web-tools.js";
 
 const DEFAULT_URLS = [

@@ -1,4 +1,3 @@
-// Tests tui tui stream assembler test behavior.
 import { describe, expect, it } from "vitest";
 import { TuiStreamAssembler } from "./tui-stream-assembler.js";
 

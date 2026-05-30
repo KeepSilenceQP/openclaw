@@ -1,4 +1,3 @@
-// Tests gateway/server-methods sessions send deleted agent test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { ErrorCodes } from "../../../packages/gateway-protocol/src/index.js";
 import {

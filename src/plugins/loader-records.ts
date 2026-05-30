@@ -1,4 +1,3 @@
-// Builds plugin registry records and loader diagnostics from manifest/discovery state.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import type { PluginCompatCode } from "./compat/registry.js";
 import type { PluginActivationState } from "./config-state.js";

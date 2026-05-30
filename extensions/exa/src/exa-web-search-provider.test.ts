@@ -1,4 +1,3 @@
-// Tests extensions/exa/src exa web search provider test behavior.
 import { describe, expect, it } from "vitest";
 import { testing } from "../test-api.js";
 import { createExaWebSearchProvider as createContractExaWebSearchProvider } from "../web-search-contract-api.js";

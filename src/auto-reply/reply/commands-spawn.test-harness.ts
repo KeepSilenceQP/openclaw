@@ -1,4 +1,3 @@
-// Test harness for command-spawned agent runs.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { MsgContext } from "../templating.js";
 import { buildCommandTestParams as buildBaseCommandTestParams } from "./commands.test-harness.js";

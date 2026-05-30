@@ -1,4 +1,3 @@
-// Coverage for channel config match resolution.
 import { describe, expect, it } from "vitest";
 import type { MsgContext } from "../auto-reply/templating.js";
 import { typedCases } from "../test-utils/typed-cases.js";

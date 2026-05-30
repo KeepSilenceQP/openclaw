@@ -1,4 +1,3 @@
-// Configured binding target resolution helpers.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { ConfiguredBindingResolution } from "./binding-types.js";
 import {

@@ -1,4 +1,3 @@
-// Channel registry fixture with conversation resolvers for session-routing tests.
 import { parseThreadSessionSuffix } from "../sessions/session-key-utils.js";
 import { createTestRegistry } from "./channel-plugins.js";
 

@@ -1,4 +1,3 @@
-// Tests gateway role policy test behavior.
 import { describe, expect, test } from "vitest";
 import {
   isRoleAuthorizedForMethod,

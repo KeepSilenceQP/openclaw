@@ -1,4 +1,3 @@
-// Tests extensions/zalo/src monitor lifecycle test behavior.
 import {
   createEmptyPluginRegistry,
   createRuntimeEnv,

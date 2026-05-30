@@ -1,4 +1,3 @@
-// Tests media base64 test behavior.
 import { describe, expect, it } from "vitest";
 import { canonicalizeBase64, estimateBase64DecodedBytes } from "./base64.js";
 

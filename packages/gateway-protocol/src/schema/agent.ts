@@ -1,4 +1,3 @@
-// Gateway protocol schemas for agent runs, sends, polls, and run-stream events.
 import { Type } from "typebox";
 import { InputProvenanceSchema, NonEmptyString, SessionLabelString } from "./primitives.js";
 

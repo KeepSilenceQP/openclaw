@@ -1,4 +1,3 @@
-// gh-read mints GitHub App installation tokens and forwards read-only gh commands.
 import { execFileSync, spawnSync } from "node:child_process";
 import { createPrivateKey, createSign } from "node:crypto";
 import { readFileSync } from "node:fs";

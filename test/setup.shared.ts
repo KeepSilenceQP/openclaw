@@ -1,4 +1,3 @@
-// Shared Vitest setup installs global mocks, isolated home state, and warning filters once per worker.
 import { vi } from "vitest";
 
 const openAiCodexTokenRefreshTestHook = "__OPENCLAW_TEST_REFRESH_OPENAI_CODEX_TOKEN__";

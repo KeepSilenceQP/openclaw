@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/discord/src approval handler runtime behavior.
 import { ButtonStyle } from "discord-api-types/v10";
 import type {
   ChannelApprovalCapabilityHandlerContext,

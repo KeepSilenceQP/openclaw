@@ -20,7 +20,6 @@ const lsSchema = Type.Object({
     Type.Number({ description: "Maximum number of entries to return (default: 500)" }),
   ),
 });
-/** Ls tool input/details contracts shared with renderers and callers. */
 export type { LsToolDetails, LsToolInput } from "./tool-contracts.js";
 
 const DEFAULT_LIMIT = 500;

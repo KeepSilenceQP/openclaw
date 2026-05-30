@@ -1,4 +1,3 @@
-// Voice-call timer helpers manage max-duration cutoffs and transcript waiters.
 import { TerminalStates, type CallId } from "../types.js";
 import type { CallManagerContext } from "./context.js";
 import { persistCallRecord } from "./store.js";

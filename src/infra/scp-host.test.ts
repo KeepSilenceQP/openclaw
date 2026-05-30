@@ -1,4 +1,3 @@
-// Tests infra scp host test behavior.
 import { describe, expect, it } from "vitest";
 import {
   isSafeScpRemoteHost,

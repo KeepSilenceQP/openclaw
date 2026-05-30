@@ -1,4 +1,3 @@
-// CLI entry for Crestodian: JSON overview, one-shot message handling, or interactive TUI mode.
 import { stdin as defaultStdin, stdout as defaultStdout } from "node:process";
 import { withProgress } from "../cli/progress.js";
 import { defaultRuntime, writeRuntimeJson, type RuntimeEnv } from "../runtime.js";

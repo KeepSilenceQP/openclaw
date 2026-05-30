@@ -1,4 +1,3 @@
-// Validates stdin-only safe-bin argv against per-binary policy profiles.
 import { parseExecArgvToken } from "./exec-command-resolution.js";
 import {
   buildLongFlagPrefixMap,

@@ -1,4 +1,3 @@
-// Inbound event media normalization helpers.
 import type { HistoryMediaEntry } from "../../auto-reply/reply/history.types.js";
 import { normalizeOptionalString as normalizeString } from "../../shared/string-coerce.js";
 import type { InboundMediaFacts } from "../turn/types.js";

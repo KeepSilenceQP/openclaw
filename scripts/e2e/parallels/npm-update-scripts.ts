@@ -1,4 +1,3 @@
-// Parallels npm update scripts render platform-specific guest update smoke commands.
 import { posixAgentWorkspaceScript, windowsAgentWorkspaceScript } from "./agent-workspace.ts";
 import { shellQuote } from "./host-command.ts";
 import { posixProviderOnlyPluginIsolationScript } from "./plugin-isolation.ts";

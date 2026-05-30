@@ -1,4 +1,3 @@
-// CLI startup metadata writer precomputes channel catalogs and help text for packaged startup.
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";

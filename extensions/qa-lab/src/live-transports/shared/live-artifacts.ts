@@ -1,4 +1,3 @@
-// QA Lab live-transport artifact helpers format failure details and file paths.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 
 /** Appends a formatted live-lane issue without throwing away the original label. */

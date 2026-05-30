@@ -1,4 +1,3 @@
-// Resolves the effective tool inventory after config, policy, and model compatibility filters.
 import {
   findNormalizedProviderValue,
   normalizeProviderId,
@@ -29,7 +28,6 @@ import type {
   ResolveEffectiveToolInventoryParams,
 } from "./tools-effective-inventory.types.js";
 
-/** Inventory builders shared with callers that already resolved policy inputs. */
 export {
   buildEffectiveToolInventoryEntries,
   buildEffectiveToolInventoryGroups,

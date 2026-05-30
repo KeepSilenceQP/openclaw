@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser session tab cleanup test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   isPrimaryTrackedBrowserSessionKey,

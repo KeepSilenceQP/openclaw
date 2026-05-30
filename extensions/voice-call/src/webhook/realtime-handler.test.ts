@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src/webhook realtime handler test behavior.
 import http from "node:http";
 import type {
   RealtimeVoiceBridge,

@@ -1,4 +1,3 @@
-// Tests config commands test behavior.
 import path from "node:path";
 import { beforeEach, describe, expect, it } from "vitest";
 import { setActivePluginRegistry } from "../plugins/runtime.js";

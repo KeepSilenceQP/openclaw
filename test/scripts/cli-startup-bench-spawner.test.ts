@@ -1,4 +1,3 @@
-// Tests test/scripts cli startup bench spawner test behavior.
 import { execFileSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";

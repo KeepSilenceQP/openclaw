@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager embedding policy test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   buildMemoryEmbeddingBatches,

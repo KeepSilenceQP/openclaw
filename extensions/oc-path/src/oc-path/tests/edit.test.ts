@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests edit test behavior.
 import { describe, expect, it } from "vitest";
 import { setMdOcPath as setOcPath } from "../edit.js";
 import { parseOcPath } from "../oc-path.js";

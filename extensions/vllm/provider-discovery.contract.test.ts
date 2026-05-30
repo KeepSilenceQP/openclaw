@@ -1,4 +1,3 @@
-// Tests extensions/vllm provider discovery contract test behavior.
 import { fileURLToPath } from "node:url";
 import { registerSingleProviderPlugin } from "openclaw/plugin-sdk/plugin-test-runtime";
 import { describeVllmProviderDiscoveryContract } from "openclaw/plugin-sdk/provider-test-contracts";

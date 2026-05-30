@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run fallback policy test behavior.
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

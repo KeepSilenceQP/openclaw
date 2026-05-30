@@ -49,7 +49,6 @@ type MidTurnPrecheckOptions = {
   onMidTurnPrecheck?: (request: MidTurnPrecheckRequest) => void;
 };
 
-/** Re-export context-limit truncation marker helpers for guard callers. */
 export { CONTEXT_LIMIT_TRUNCATION_NOTICE, formatContextLimitTruncationNotice };
 
 /** Records prompt-visible transcript text for later context-size accounting. */

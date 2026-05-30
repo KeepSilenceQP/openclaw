@@ -1,4 +1,3 @@
-// Dispatch helpers for subagent command operations.
 import type { SubagentRunRecord } from "../../agents/subagent-registry.types.js";
 import type { HandleCommandsParams } from "./commands-types.js";
 

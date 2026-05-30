@@ -1,4 +1,3 @@
-// Session-store pruning, cap warnings, and quota-suspension TTL maintenance.
 import { parseByteSize } from "../../cli/parse-bytes.js";
 import { parseDurationMs } from "../../cli/parse-duration.js";
 import { createSubsystemLogger } from "../../logging/subsystem.js";

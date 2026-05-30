@@ -1,5 +1,4 @@
 // Thin ffmpeg/ffprobe execution wrappers shared by media inspection and
-// transform code. All binaries resolve through trusted system paths.
 import { execFile, type ExecFileOptions } from "node:child_process";
 import { promisify } from "node:util";
 import { resolveSystemBin } from "../infra/resolve-system-bin.js";

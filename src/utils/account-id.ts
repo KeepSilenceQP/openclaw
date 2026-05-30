@@ -1,4 +1,3 @@
-// Compatibility wrapper for canonical account id normalization.
 import { normalizeOptionalAccountId } from "../routing/account-id.js";
 
 /** Normalizes optional account ids through the routing account-id helper. */

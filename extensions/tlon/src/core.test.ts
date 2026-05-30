@@ -1,4 +1,3 @@
-// Tests extensions/tlon/src core test behavior.
 import {
   createPluginSetupWizardConfigure,
   createPluginSetupWizardStatus,

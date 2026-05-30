@@ -1,6 +1,5 @@
 // Controller helpers for loading instance presence into Control UI state. The
 // controller owns loading/error flags and translates missing read-scope errors
-// into user-facing status text.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { PresenceEntry } from "../types.ts";
 import {

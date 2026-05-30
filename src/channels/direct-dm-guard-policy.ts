@@ -1,4 +1,3 @@
-// Direct-DM pre-crypto guardrail policy defaults.
 import { resolveIntegerOption } from "../shared/number-coercion.js";
 
 /** Limits applied before direct-message ciphertext is decrypted or trusted. */

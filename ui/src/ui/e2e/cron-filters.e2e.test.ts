@@ -1,4 +1,3 @@
-// Tests ui/src/ui/e2e cron filters e2e test behavior.
 import { chromium, type Browser, type Page } from "playwright";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import {

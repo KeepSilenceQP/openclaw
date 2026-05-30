@@ -1,4 +1,3 @@
-// Shared test harness for dispatch-from-config suites.
 import { vi } from "vitest";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { SessionBindingRecord } from "../../infra/outbound/session-binding-service.js";
@@ -145,7 +144,6 @@ const threadInfoMocks = vi.hoisted(() => ({
   >(),
 }));
 
-/** Hoisted mocks shared by dispatch-from-config test suites. */
 export {
   acpManagerRuntimeMocks,
   acpMocks,

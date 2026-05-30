@@ -1,4 +1,3 @@
-// Tests infra npm integrity test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   resolveNpmIntegrityDrift,

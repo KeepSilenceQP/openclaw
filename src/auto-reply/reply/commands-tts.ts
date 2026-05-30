@@ -1,4 +1,3 @@
-// Chat command handlers for text-to-speech settings and playback.
 import crypto from "node:crypto";
 import { readLatestAssistantTextFromSessionTranscript } from "../../config/sessions.js";
 import { logVerbose } from "../../globals.js";

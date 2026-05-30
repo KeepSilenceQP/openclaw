@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src monitor media policy test behavior.
 import type { waitForTransportReady } from "openclaw/plugin-sdk/transport-ready-runtime";
 import { describe, expect, it, vi } from "vitest";
 import type { createIMessageRpcClient } from "./client.js";

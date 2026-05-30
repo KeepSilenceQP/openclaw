@@ -1,4 +1,3 @@
-// Chat command handler for Crestodian integration controls.
 import { logVerbose } from "../../globals.js";
 import type { CommandHandler } from "./commands-types.js";
 

@@ -1,4 +1,3 @@
-// Mock plugin runtime environments for command/runtime unit tests.
 import type { OutputRuntimeEnv, RuntimeEnv } from "openclaw/plugin-sdk/runtime";
 import { vi } from "vitest";
 

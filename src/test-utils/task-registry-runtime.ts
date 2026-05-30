@@ -1,4 +1,3 @@
-// In-memory task registry runtime for task scheduler tests.
 import {
   configureTaskRegistryRuntime,
   type TaskRegistryStore,

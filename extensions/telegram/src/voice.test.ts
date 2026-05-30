@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src voice test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { splitTelegramCaption, TELEGRAM_MAX_CAPTION_LENGTH } from "./caption.js";
 import { resolveTelegramVoiceSend } from "./voice.js";

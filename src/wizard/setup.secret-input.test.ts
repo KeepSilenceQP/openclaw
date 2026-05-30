@@ -1,4 +1,3 @@
-// Tests wizard setup secret input test behavior.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 import { resolveSetupSecretInputString } from "./setup.secret-input.js";

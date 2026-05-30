@@ -1,4 +1,3 @@
-// Assistant/chat message text extraction and phase-signature helpers.
 import { readStringValue } from "./string-coerce.js";
 
 /** Returns inline content text or the first text block from a chat message. */

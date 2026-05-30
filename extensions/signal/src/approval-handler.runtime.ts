@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/signal/src approval handler runtime behavior.
 import { DEFAULT_ACCOUNT_ID } from "openclaw/plugin-sdk/account-id";
 import {
   buildChannelApprovalExpiredText,

@@ -1,4 +1,3 @@
-// Context text formatting for model-visible reply prompts.
 import type { FinalizedMsgContext } from "../templating.js";
 
 export type ContextTextKey =

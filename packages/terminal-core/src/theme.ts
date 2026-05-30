@@ -1,4 +1,3 @@
-// Terminal color theme helpers that respect NO_COLOR and FORCE_COLOR.
 import chalk, { Chalk } from "chalk";
 import { LOBSTER_PALETTE } from "./palette.js";
 

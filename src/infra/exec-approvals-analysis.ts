@@ -1,5 +1,4 @@
 // Shell and argv analysis for exec approval decisions.
-// Splits commands conservatively, resolves executable targets, and rebuilds enforced argv.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { splitShellArgs } from "../utils/shell-argv.js";
 import {
@@ -12,7 +11,6 @@ import {
 } from "./exec-wrapper-resolution.js";
 import { POSIX_INLINE_COMMAND_FLAGS, resolveInlineCommandMatch } from "./shell-inline-command.js";
 
-/** Command-resolution helpers re-exported for exec approval policy callers. */
 export {
   matchAllowlist,
   parseExecArgvToken,

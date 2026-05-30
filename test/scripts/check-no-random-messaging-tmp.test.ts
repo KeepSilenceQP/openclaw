@@ -1,4 +1,3 @@
-// Tests test/scripts check no random messaging tmp test behavior.
 import { describe, expect, it } from "vitest";
 import {
   findMessagingTmpdirCallLines,

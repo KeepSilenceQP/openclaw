@@ -1,4 +1,3 @@
-// Tests logging logger browser import test behavior.
 import { importFreshModule } from "openclaw/plugin-sdk/test-fixtures";
 import { afterEach, describe, expect, it, vi } from "vitest";
 

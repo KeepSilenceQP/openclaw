@@ -1,4 +1,3 @@
-// Session abort helpers shared by stop and session commands.
 import type { SessionEntry } from "../../config/sessions.js";
 import { logVerbose } from "../../globals.js";
 import { createInternalHookEvent, triggerInternalHook } from "../../hooks/internal-hooks.js";

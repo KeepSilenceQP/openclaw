@@ -1,4 +1,3 @@
-// Chat composer run controls for new-session, export, send/queue, and stop.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { icons } from "../icons.ts";

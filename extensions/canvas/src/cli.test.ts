@@ -1,4 +1,3 @@
-// Tests extensions/canvas/src cli test behavior.
 import { Command } from "commander";
 import { describe, expect, it, vi } from "vitest";
 import { registerNodesCanvasCommands, type CanvasCliDependencies } from "./cli.js";

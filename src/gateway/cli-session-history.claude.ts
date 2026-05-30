@@ -1,4 +1,3 @@
-// Reads Claude CLI JSONL history and converts it into OpenClaw transcript messages.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

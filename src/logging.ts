@@ -1,4 +1,3 @@
-// Public logging facade for console settings, file logger settings, subsystem loggers, and test overrides.
 import type { ConsoleLoggerSettings, ConsoleStyle } from "./logging/console.js";
 import {
   enableConsoleCapture,
@@ -33,7 +32,6 @@ import {
   stripRedundantSubsystemPrefixForConsole,
 } from "./logging/subsystem.js";
 
-/** Re-export logging runtime helpers and constants from the narrow logging modules. */
 export {
   enableConsoleCapture,
   getConsoleSettings,
@@ -62,7 +60,6 @@ export {
   stripRedundantSubsystemPrefixForConsole,
 };
 
-/** Re-export logging type contracts for consumers of the facade. */
 export type {
   ConsoleLoggerSettings,
   ConsoleStyle,

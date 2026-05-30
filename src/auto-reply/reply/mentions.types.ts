@@ -1,4 +1,3 @@
-// Shared mention detection types.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 
 export type BuildMentionRegexes = (cfg: OpenClawConfig | undefined, agentId?: string) => RegExp[];

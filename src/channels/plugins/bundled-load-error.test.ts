@@ -1,4 +1,3 @@
-// Coverage for bundled channel load error formatting.
 import { describe, it, expect } from "vitest";
 import { describeBundledChannelLoadError } from "./bundled.js";
 

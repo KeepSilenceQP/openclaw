@@ -1,4 +1,3 @@
-// MCP stdio server for OpenClaw channel conversations and approval events.
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -7,7 +6,6 @@ import { OpenClawChannelBridge } from "./channel-bridge.js";
 import { ClaudePermissionRequestSchema, type ClaudeChannelMode } from "./channel-shared.js";
 import { getChannelMcpCapabilities, registerChannelMcpTools } from "./channel-tools.js";
 
-/** Bridge class re-exported for tests and embedders that build their own server. */
 export { OpenClawChannelBridge } from "./channel-bridge.js";
 
 /** Startup options for the channel MCP server and gateway bridge. */

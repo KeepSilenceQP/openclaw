@@ -1,5 +1,4 @@
 // Shared skill metadata, command, exposure, and snapshot contracts used by
-// loading, install, and runtime prompt assembly.
 import type { Skill } from "./loading/skill-contract.js";
 
 /** Declarative install recipe embedded in skill metadata. */

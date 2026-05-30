@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run diagnostic events test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { onDiagnosticEvent, resetDiagnosticEventsForTest } from "../../infra/diagnostic-events.js";
 import { resetDiagnosticStateForTest } from "../../logging/diagnostic.js";

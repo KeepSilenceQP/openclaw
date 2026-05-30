@@ -1,4 +1,3 @@
-// QA Lab agentic parity report helpers score suite summaries and render Markdown gates.
 import {
   QA_AGENTIC_PARITY_SCENARIO_TITLES,
   QA_AGENTIC_PARITY_TOOL_BACKED_SCENARIO_TITLES,

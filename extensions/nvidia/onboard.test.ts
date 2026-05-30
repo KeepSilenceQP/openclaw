@@ -1,4 +1,3 @@
-// Tests extensions/nvidia onboard test behavior.
 import {
   expectProviderOnboardMergedLegacyConfig,
   expectProviderOnboardPrimaryModel,

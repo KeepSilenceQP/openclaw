@@ -1,5 +1,4 @@
 // Resolves provider credentials for usage/cost queries from plugins, profiles,
-// config, and environment sources.
 import {
   dedupeProfileIds,
   ensureAuthProfileStore,

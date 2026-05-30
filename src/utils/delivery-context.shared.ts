@@ -1,5 +1,4 @@
 // Delivery-context normalization shared by sessions, queues, and channel route
-// metadata. Keeps legacy last* fields aligned with canonical channel routes.
 import {
   channelRouteCompactKey,
   channelRouteThreadId,
@@ -16,7 +15,6 @@ import {
 } from "./message-channel-constants.js";
 import { normalizeMessageChannel } from "./message-channel-core.js";
 import { isDeliverableMessageChannel } from "./message-channel-normalize.js";
-/** Delivery context types re-exported for callers using the shared helpers. */
 export type { DeliveryContext, DeliveryContextSessionSource } from "./delivery-context.types.js";
 
 /** Normalize a delivery context into a canonical channel route target shape. */

@@ -1,4 +1,3 @@
-// Gateway protocol schemas for secret reloads and command-scoped secret resolution.
 import { Type, type Static } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

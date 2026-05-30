@@ -1,5 +1,4 @@
 // Vitest-only contract registry loaders for bundled speech, media, and generation
-// providers, with source fallbacks when generated capability snapshots are stale.
 import { loadBundledCapabilityRuntimeRegistry } from "../bundled-capability-runtime.js";
 import type {
   ImageGenerationProviderPlugin,

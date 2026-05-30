@@ -1,4 +1,3 @@
-// Shell execution helpers that capture bounded output while preserving full logs when needed.
 import {
   type ExecutionEnv,
   type ExecutionEnvExecOptions,

@@ -1,4 +1,3 @@
-// Shared implementation for text and image model fallback list/add/remove commands.
 import { buildModelAliasIndex, resolveModelRefFromString } from "../../agents/model-selection.js";
 import { formatCliCommand } from "../../cli/command-format.js";
 import { logConfigUpdated } from "../../config/logging.js";

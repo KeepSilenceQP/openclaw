@@ -1,4 +1,3 @@
-// Channel config write target resolution and mutation helpers.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import {

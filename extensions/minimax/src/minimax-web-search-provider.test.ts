@@ -1,4 +1,3 @@
-// Tests extensions/minimax/src minimax web search provider test behavior.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { minimaxWebSearchTesting } from "../test-api.js";
 

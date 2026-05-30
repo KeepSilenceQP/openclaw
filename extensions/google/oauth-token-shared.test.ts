@@ -1,4 +1,3 @@
-// Tests extensions/google oauth token shared test behavior.
 import { describe, expect, it } from "vitest";
 import {
   formatGoogleOauthApiKey,

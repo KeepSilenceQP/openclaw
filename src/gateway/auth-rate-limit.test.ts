@@ -1,4 +1,3 @@
-// Tests gateway auth rate limit test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   AUTH_RATE_LIMIT_SCOPE_DEVICE_TOKEN,

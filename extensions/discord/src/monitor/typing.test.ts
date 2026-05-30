@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor typing test behavior.
 import { Routes } from "discord-api-types/v10";
 import { describe, expect, it, vi } from "vitest";
 import { sendTyping } from "./typing.js";

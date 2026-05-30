@@ -1,4 +1,3 @@
-// Emits lightweight runtime diagnostics when process diagnostics are enabled.
 import {
   areDiagnosticsEnabledForProcess,
   emitInternalDiagnosticEvent as emitDiagnosticEvent,

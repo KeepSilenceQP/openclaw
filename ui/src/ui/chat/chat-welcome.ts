@@ -1,4 +1,3 @@
-// Chat welcome-state renderer shown before a session has visible messages.
 import { html } from "lit";
 import { t } from "../../i18n/index.ts";
 import {

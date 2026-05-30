@@ -1,4 +1,3 @@
-// Tests utils directive tags test behavior.
 import { describe, expect, test } from "vitest";
 import {
   parseInlineDirectives,

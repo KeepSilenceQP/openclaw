@@ -1,4 +1,3 @@
-// Anthropic-family cache-retention eligibility and provider-family detection.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,

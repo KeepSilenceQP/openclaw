@@ -1,4 +1,3 @@
-// Shared types for extensions/clickclack/src types behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 
 export type ClickClackAccountConfig = {

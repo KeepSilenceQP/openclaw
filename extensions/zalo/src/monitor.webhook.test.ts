@@ -1,4 +1,3 @@
-// Tests extensions/zalo/src monitor webhook test behavior.
 import type { RequestListener } from "node:http";
 import {
   createEmptyPluginRegistry,

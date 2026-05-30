@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/slack/src actions runtime behavior.
 export {
   deleteSlackMessage,
   downloadSlackFile,

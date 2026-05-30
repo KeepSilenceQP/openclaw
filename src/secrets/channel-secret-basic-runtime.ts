@@ -1,5 +1,4 @@
 // Channel secret assignment helpers shared by resolvers. They walk top-level and
-// account-scoped config surfaces while preserving active/inactive diagnostics.
 import { coerceSecretRef } from "../config/types.secrets.js";
 import {
   collectSecretInputAssignment,

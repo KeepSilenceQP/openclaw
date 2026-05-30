@@ -1,4 +1,3 @@
-// Tests extensions/opencode opencode live test behavior.
 import {
   completeSimple,
   type AssistantMessage,

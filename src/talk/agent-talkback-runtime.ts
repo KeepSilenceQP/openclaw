@@ -1,4 +1,3 @@
-// Debounced realtime voice talkback queue for consulting the embedded agent.
 import type { RuntimeLogger } from "../plugins/runtime/types-core.js";
 
 /** Text result returned by an agent talkback consultation. */

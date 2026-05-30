@@ -1,4 +1,3 @@
-// Tests gateway gateway stability test behavior.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   emitDiagnosticEvent,

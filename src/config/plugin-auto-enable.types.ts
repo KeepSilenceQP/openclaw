@@ -1,4 +1,3 @@
-// Shared types for config plugin auto enable types behavior.
 import type { OpenClawConfig } from "./types.openclaw.js";
 
 export type PluginAutoEnableCandidate =

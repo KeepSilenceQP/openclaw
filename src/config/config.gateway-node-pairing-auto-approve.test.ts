@@ -1,4 +1,3 @@
-// Tests config config gateway node pairing auto approve test behavior.
 import { describe, expect, it } from "vitest";
 import { validateConfigObject } from "./config.js";
 

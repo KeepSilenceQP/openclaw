@@ -1,4 +1,3 @@
-// Tests infra ports format test behavior.
 import { describe, expect, it } from "vitest";
 import { formatCliCommand } from "../cli/command-format.js";
 import {

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/sdk crypto node runtime test behavior.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { build } from "esbuild";

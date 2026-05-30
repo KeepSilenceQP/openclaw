@@ -1,4 +1,3 @@
-// Tests infra/outbound target errors test behavior.
 import { describe, expect, it } from "vitest";
 import {
   ambiguousTargetError,

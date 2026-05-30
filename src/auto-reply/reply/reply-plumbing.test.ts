@@ -1,4 +1,3 @@
-// Coverage for reply plumbing between orchestration helpers.
 import { afterEach, describe, expect, it } from "vitest";
 import type { SubagentRunRecord } from "../../agents/subagent-registry.js";
 import type { ChannelPlugin } from "../../channels/plugins/types.js";

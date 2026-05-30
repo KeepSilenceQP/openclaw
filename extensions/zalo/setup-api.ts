@@ -26,12 +26,9 @@ function loadSetupSurfaceModule(): SetupSurfaceModule {
   });
 }
 
-/** Re-exported zalo plugin public API, starting with zalo Dm Policy. */
 export { zaloDmPolicy, zaloSetupAdapter, createZaloSetupWizardProxy } from "./src/setup-core.js";
-/** Re-exported zalo plugin public API, starting with resolve Zalo Runtime Group Policy. */
 export { resolveZaloRuntimeGroupPolicy } from "./src/group-access.js";
 
-/** Public zalo plugin constant for zalo Setup Wizard behavior. */
 export const zaloSetupWizard: SetupSurfaceModule["zaloSetupWizard"] = createLazyObjectValue(
   () => loadSetupSurfaceModule().zaloSetupWizard as object,
 ) as SetupSurfaceModule["zaloSetupWizard"];

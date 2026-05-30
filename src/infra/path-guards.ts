@@ -1,5 +1,4 @@
 import "./fs-safe-defaults.js";
-/** Public path containment and node-error guards from fs-safe. */
 export {
   isNotFoundPathError,
   hasNodeErrorCode,

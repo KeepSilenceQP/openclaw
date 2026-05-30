@@ -1,4 +1,3 @@
-// Coverage for safe channel account snapshot projection.
 import { describe, expect, it } from "vitest";
 import { projectSafeChannelAccountSnapshotFields } from "./account-snapshot-fields.js";
 

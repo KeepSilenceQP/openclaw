@@ -1,4 +1,3 @@
-// Mistral provider streaming adapter and provider-specific request options.
 import { Mistral } from "@mistralai/mistralai";
 import type {
   ChatCompletionStreamRequest,

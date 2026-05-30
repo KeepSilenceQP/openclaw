@@ -1,4 +1,3 @@
-// Tests extensions/synology-chat/src channel integration test behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import {

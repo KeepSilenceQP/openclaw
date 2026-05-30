@@ -1,4 +1,3 @@
-// Runtime provider selection and execution helpers for the web_search tool.
 import { resolveDefaultAgentDir } from "../agents/agent-scope-config.js";
 import { hasAuthProfileForProvider } from "../agents/tools/model-config.helpers.js";
 import {
@@ -39,7 +38,6 @@ import type {
   RuntimeWebSearchConfig as WebSearchConfig,
 } from "./runtime-types.js";
 
-/** Public request/response and provider-entry types for runtime web_search callers. */
 export type {
   ListWebSearchProvidersParams,
   ResolveWebSearchDefinitionParams,
@@ -519,5 +517,4 @@ export const testing = {
   resolveExplicitWebSearchProviderPluginIds,
   hasExplicitWebSearchSelection,
 };
-/** Internal test seam for provider selection and fallback behavior. */
 export { testing as __testing };

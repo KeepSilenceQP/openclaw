@@ -1,4 +1,3 @@
-// Telegram channel configuration types for accounts, groups, topics, and DMs.
 import type {
   ChannelPreviewStreamingConfig,
   ChannelStreamingPreviewConfig,

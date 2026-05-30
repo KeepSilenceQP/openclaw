@@ -1,4 +1,3 @@
-// Tests extensions/openai base url test behavior.
 import { describe, expect, it } from "vitest";
 import {
   canonicalizeCodexResponsesBaseUrl,

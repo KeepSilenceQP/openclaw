@@ -1,4 +1,3 @@
-// OpenAI-compatible remote embedding provider adapter.
 import {
   resolveRemoteEmbeddingBearerClient,
   type RemoteEmbeddingProviderId,

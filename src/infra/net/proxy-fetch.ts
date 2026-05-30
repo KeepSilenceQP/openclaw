@@ -1,5 +1,4 @@
 // Creates fetch implementations that route through explicit or env-selected
-// HTTP proxies while preserving proxy metadata for diagnostics.
 import { logWarn } from "../../logger.js";
 import { formatErrorMessage } from "../errors.js";
 import { normalizeHeadersInitForFetch } from "../fetch-headers.js";

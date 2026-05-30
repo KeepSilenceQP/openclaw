@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src/auto-reply monitor state test behavior.
 import { describe, expect, it } from "vitest";
 import { createWebChannelStatusController } from "./monitor-state.js";
 

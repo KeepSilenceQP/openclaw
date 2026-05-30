@@ -1,6 +1,4 @@
-// Applies fs-safe defaults before exposing cross-platform permission inspection helpers.
 import "./fs-safe-defaults.js";
-/** POSIX-style permission inspection and remediation formatting helpers. */
 export {
   formatPermissionDetail,
   formatPermissionRemediation,
@@ -9,7 +7,6 @@ export {
   type PermissionCheck,
   type PermissionCheckOptions,
 } from "@openclaw/fs-safe/permissions";
-/** Windows ACL inspection and icacls remediation helpers. */
 export {
   createIcaclsResetCommand,
   formatIcaclsResetCommand,

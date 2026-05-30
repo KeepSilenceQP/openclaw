@@ -1,4 +1,3 @@
-// Tests daemon runtime binary test behavior.
 import { describe, expect, it } from "vitest";
 import { isBunRuntime, isNodeRuntime } from "./runtime-binary.js";
 

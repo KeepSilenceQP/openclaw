@@ -1,4 +1,3 @@
-// Vitest system-load helpers detect other active Vitest processes for local throttling.
 import { spawnSync } from "node:child_process";
 
 type EnvMap = Record<string, string | undefined>;

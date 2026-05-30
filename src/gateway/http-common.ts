@@ -1,4 +1,3 @@
-// Shared Gateway HTTP response, JSON body, SSE, and disconnect helpers.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import {
   logRejectedLargePayload,

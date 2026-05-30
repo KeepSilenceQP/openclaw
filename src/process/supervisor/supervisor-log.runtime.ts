@@ -1,4 +1,3 @@
-// Runtime boundary for process/supervisor supervisor log runtime behavior.
 import { createSubsystemLogger } from "../../logging/subsystem.js";
 
 const log = createSubsystemLogger("process/supervisor");

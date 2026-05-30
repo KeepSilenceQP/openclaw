@@ -1,5 +1,4 @@
 // Provider tool-schema compatibility helpers normalize model tool schemas to
-// provider-specific subsets and report the fields each provider cannot accept.
 import type { TSchema } from "typebox";
 import {
   cleanSchemaForGemini,
@@ -12,8 +11,6 @@ import type {
   ProviderToolSchemaDiagnostic,
 } from "./plugin-entry.js";
 
-// Shared provider-tool helpers for plugin-owned schema compatibility rewrites.
-/** Re-export schema cleanup primitives for provider plugins that need custom handling. */
 export { cleanSchemaForGemini, GEMINI_UNSUPPORTED_SCHEMA_KEYWORDS, stripUnsupportedSchemaKeywords };
 
 /** Recursively reports unsupported JSON-schema keywords with stable diagnostic paths. */

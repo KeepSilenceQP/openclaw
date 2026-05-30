@@ -1,4 +1,3 @@
-// Tests infra/net hostname test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeHostname } from "./hostname.js";
 

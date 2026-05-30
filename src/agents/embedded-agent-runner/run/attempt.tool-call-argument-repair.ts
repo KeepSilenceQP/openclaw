@@ -800,5 +800,4 @@ export function wrapStreamFnDecodeXaiToolCallArguments(baseFn: StreamFn): Stream
   return createHtmlEntityToolCallArgumentDecodingWrapper(baseFn);
 }
 
-/** Expose the low-level decoder for focused tool-call repair tests. */
 export { decodeHtmlEntitiesInObject };

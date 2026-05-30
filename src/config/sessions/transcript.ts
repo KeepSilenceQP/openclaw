@@ -1,4 +1,3 @@
-// Session transcript helpers for resolving files, reading assistant tails, and appending messages.
 import fs from "node:fs";
 import path from "node:path";
 import type { AgentMessage } from "../../agents/runtime/index.js";

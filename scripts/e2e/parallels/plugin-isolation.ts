@@ -1,4 +1,3 @@
-// Parallels plugin isolation helpers generate guest scripts that restrict provider plugins.
 import { shellQuote } from "./host-command.ts";
 import { providerIdFromModelId } from "./provider-auth.ts";
 

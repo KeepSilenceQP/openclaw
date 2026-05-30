@@ -1,5 +1,4 @@
 // Test helpers for outbound delivery queue recovery tests.
-// They create isolated queue roots and expose small file-level state mutations.
 import fs from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, beforeEach, vi } from "vitest";

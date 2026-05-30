@@ -1,4 +1,3 @@
-// Legacy type facade for reply payload imports.
 export type {
   BlockReplyContext,
   GetReplyOptions,

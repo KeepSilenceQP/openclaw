@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/whatsapp/src outbound media runtime behavior.
 import { loadWebMedia } from "openclaw/plugin-sdk/web-media";
 
 export async function loadOutboundMediaFromUrl(

@@ -1,4 +1,3 @@
-// Evaluates descriptor availability expressions against runtime context snapshots.
 import type {
   JsonObject,
   JsonPrimitive,

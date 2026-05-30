@@ -1,4 +1,3 @@
-// Selects local Claude/Codex runtimes that can translate a Crestodian request when configured model planning is unavailable.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { CrestodianOverview } from "./overview.js";
 

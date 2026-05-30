@@ -1,4 +1,3 @@
-// Tests test/scripts package acceptance workflow test behavior.
 import { readdirSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parse } from "yaml";

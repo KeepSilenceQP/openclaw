@@ -1,4 +1,3 @@
-// Shared model command helpers for config mutation, model refs, aliases, and display formatting.
 import { listAgentIds } from "../../agents/agent-scope.js";
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "../../agents/defaults.js";
 import {
@@ -20,9 +19,7 @@ import type { AgentModelEntryConfig } from "../../config/types.agent-defaults.js
 import type { AgentModelConfig } from "../../config/types.agents-shared.js";
 import { normalizeAgentId } from "../../routing/session-key.js";
 import { canonicalizeModelCatalogProviderRef } from "./provider-aliases.js";
-/** Alias-name normalizer shared by model add/remove/list commands. */
 export { normalizeAlias } from "./alias-name.js";
-/** Local URL detector used when displaying provider endpoints. */
 export { isLocalBaseUrl } from "./list.local-url.js";
 
 /** Rejects mutually exclusive model command output modes. */
@@ -290,9 +287,7 @@ export function applyDefaultModelPrimaryUpdate(params: {
   };
 }
 
-/** Canonical provider/model key builder shared with model command output. */
 export { modelKey };
-/** Built-in provider/model defaults used by model command resolution. */
 export { DEFAULT_MODEL, DEFAULT_PROVIDER };
 
 /**

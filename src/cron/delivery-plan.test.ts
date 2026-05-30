@@ -1,4 +1,3 @@
-// Tests cron delivery plan test behavior.
 import { describe, expect, it } from "vitest";
 import { hasExplicitCronDeliveryTarget, resolveCronDeliveryPlan } from "./delivery-plan.js";
 import { makeCronJob } from "./delivery.test-helpers.js";

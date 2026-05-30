@@ -1,5 +1,4 @@
 // ClawHub API client types, downloads, and compatibility checks.
-// Normalizes package/skill metadata, auth tokens, artifact integrity, and gateway ranges.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -14,7 +13,6 @@ import { parseStrictPositiveInteger } from "./parse-finite-number.js";
 import { isAtLeast, parseSemver } from "./runtime-guard.js";
 import { compareComparableSemver, parseComparableSemver } from "./semver-compare.js";
 import { createTempDownloadTarget } from "./temp-download.js";
-/** Parse ClawHub plugin specs shared by install and discovery callers. */
 export { parseClawHubPluginSpec } from "./clawhub-spec.js";
 
 const DEFAULT_CLAWHUB_URL = "https://clawhub.ai";

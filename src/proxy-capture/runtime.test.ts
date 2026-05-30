@@ -1,4 +1,3 @@
-// Tests proxy-capture runtime test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import type { DebugProxySettings } from "./env.js";
 import {

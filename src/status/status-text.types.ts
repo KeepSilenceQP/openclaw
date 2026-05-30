@@ -1,4 +1,3 @@
-// Shared input contract for building status text.
 import type {
   ElevatedLevel,
   ReasoningLevel,

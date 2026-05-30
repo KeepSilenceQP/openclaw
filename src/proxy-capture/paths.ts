@@ -1,4 +1,3 @@
-// Default state paths for debug proxy capture databases, blobs, and certs.
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";
 

@@ -1,5 +1,4 @@
 // Media model defaults derived from plugin manifest metadata and user config.
-// Keeps provider selection deterministic for automatic media capability runs.
 import { resolveRuntimeConfigCacheKey } from "../config/runtime-snapshot.js";
 import type { OpenClawConfig } from "../config/types.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
@@ -11,7 +10,6 @@ import {
 } from "./provider-registry.js";
 import { providerSupportsCapability } from "./provider-supports.js";
 import type { MediaUnderstandingCapability, MediaUnderstandingProvider } from "./types.js";
-/** Public media limit defaults shared by runners, provider adapters, and CLI config. */
 export {
   CLI_OUTPUT_MAX_BUFFER,
   DEFAULT_MAX_BYTES,

@@ -1,4 +1,3 @@
-// Tests ui/src/ui/views workboard test behavior.
 import { render } from "lit";
 import { describe, expect, it, vi } from "vitest";
 import { getWorkboardState } from "../controllers/workboard.ts";

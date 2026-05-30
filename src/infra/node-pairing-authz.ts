@@ -1,4 +1,3 @@
-// Resolves authorization scopes requested during node pairing.
 import { NODE_SYSTEM_RUN_COMMANDS } from "./node-commands.js";
 
 /** Scope granted to a paired operator node. */

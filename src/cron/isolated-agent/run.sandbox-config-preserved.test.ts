@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run sandbox config preserved test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveSandboxConfigForAgent } from "../../agents/sandbox/config.js";
 import { buildCronAgentDefaultsConfig } from "./run-config.js";

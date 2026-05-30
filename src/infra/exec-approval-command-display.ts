@@ -1,5 +1,4 @@
 // Exec approval display sanitization.
-// Redacts secrets and escapes invisible characters before commands are shown to users.
 import { redactSensitiveText, resolveRedactOptions } from "../logging/redact.js";
 import type { ExecApprovalRequestPayload } from "./exec-approvals.js";
 

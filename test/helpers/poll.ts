@@ -1,4 +1,3 @@
-// Polling helper retries async assertions until they return a value or time out.
 import { sleep } from "../../src/utils.js";
 
 /** Polling options for async test wait helpers. */

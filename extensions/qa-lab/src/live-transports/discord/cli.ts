@@ -1,4 +1,3 @@
-// QA Lab Discord live-transport CLI registration lazy-loads the Discord lane.
 import {
   createLazyCliRuntimeLoader,
   createLiveTransportQaCliRegistration,

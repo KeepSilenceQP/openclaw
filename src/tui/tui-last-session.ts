@@ -1,4 +1,3 @@
-// TUI remembered-session persistence scoped by connection, agent, and session mode.
 import { createHash } from "node:crypto";
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";

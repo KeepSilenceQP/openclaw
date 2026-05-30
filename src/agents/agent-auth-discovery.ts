@@ -84,7 +84,6 @@ export function resolveAgentCredentialsForDiscovery(
   return credentials;
 }
 
-/** Core env-backed auth discovery helpers exposed through the facade. */
 export {
   addEnvBackedAgentCredentials,
   scrubLegacyStaticAuthJsonEntriesForDiscovery,

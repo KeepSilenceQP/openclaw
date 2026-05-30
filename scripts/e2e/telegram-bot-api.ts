@@ -1,4 +1,3 @@
-// Telegram Bot API helper posts bounded JSON requests for E2E user-credential scenarios.
 import { readBoundedResponseText } from "../lib/bounded-response.ts";
 import { readPositiveIntEnv } from "./lib/env-limits.mjs";
 

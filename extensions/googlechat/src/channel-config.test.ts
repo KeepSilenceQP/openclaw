@@ -1,4 +1,3 @@
-// Tests extensions/googlechat/src channel config test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it } from "vitest";
 import { googlechatPlugin } from "./channel.js";

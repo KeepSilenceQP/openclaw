@@ -1,4 +1,3 @@
-// Boundary Vitest config runs module-boundary unit tests with optional isolation.
 import { defineProject } from "vitest/config";
 import { loadPatternListFromEnv, narrowIncludePatternsForCli } from "./vitest.pattern-file.ts";
 import { resolveVitestIsolation } from "./vitest.scoped-config.ts";

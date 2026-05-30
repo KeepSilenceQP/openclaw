@@ -1,4 +1,3 @@
-// Gateway-client transport adapter used by the public SDK.
 import { GatewayClient } from "@openclaw/gateway-client";
 import { EventHub } from "./event-hub.js";
 import type {

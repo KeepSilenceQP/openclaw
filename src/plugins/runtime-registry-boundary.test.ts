@@ -1,4 +1,3 @@
-// Tests plugins runtime registry boundary test behavior.
 import { spawnSync } from "node:child_process";
 import fs, { readFileSync } from "node:fs";
 import { dirname, relative, resolve } from "node:path";

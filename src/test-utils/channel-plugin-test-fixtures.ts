@@ -1,4 +1,3 @@
-// Small channel plugin fixtures shared by direct-message channel tests.
 import type { ChannelPlugin } from "../channels/plugins/types.plugin.js";
 
 /** Build a direct-message-only channel plugin fixture. */

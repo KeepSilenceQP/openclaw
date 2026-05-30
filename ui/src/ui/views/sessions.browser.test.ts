@@ -1,4 +1,3 @@
-// Tests ui/src/ui/views sessions browser test behavior.
 import { existsSync } from "node:fs";
 import { chromium, type Browser, type Page } from "playwright";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";

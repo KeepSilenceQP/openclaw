@@ -1,4 +1,3 @@
-// Small TTL/LRU cache for channel directory lookups.
 import type { ChannelDirectoryEntryKind, ChannelId } from "../../channels/plugins/types.public.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { resolveNonNegativeIntegerOption } from "../numeric-options.js";

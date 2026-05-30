@@ -1,4 +1,3 @@
-// Plugin version sync aligns publishable extension package metadata with the root version.
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 

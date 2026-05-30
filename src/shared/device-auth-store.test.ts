@@ -1,4 +1,3 @@
-// Tests shared device auth store test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   clearDeviceAuthTokenFromStore,

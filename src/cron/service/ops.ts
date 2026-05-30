@@ -1,5 +1,4 @@
 // Public cron service operations. All store mutations run under the service
-// lock; manual runs reserve jobs before executing outside the lock.
 import { enqueueCommandInLane } from "../../process/command-queue.js";
 import { CommandLane } from "../../process/lanes.js";
 import { DEFAULT_AGENT_ID } from "../../routing/session-key.js";

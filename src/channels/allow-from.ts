@@ -1,4 +1,3 @@
-// Channel allowFrom parsing and source merging helpers.
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 
 /** Prefix used to reference access groups in allowFrom lists. */

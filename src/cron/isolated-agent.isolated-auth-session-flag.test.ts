@@ -1,4 +1,3 @@
-// Tests cron isolated agent isolated auth session flag test behavior.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
   clearFastTestEnv,

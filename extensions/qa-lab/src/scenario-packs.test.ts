@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src scenario packs test behavior.
 import { describe, expect, it } from "vitest";
 import {
   QA_OBSERVABILITY_SCENARIO_IDS,

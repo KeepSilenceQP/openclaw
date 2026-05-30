@@ -1,4 +1,3 @@
-// Process environment snapshot and scoped mutation helpers for tests.
 import path from "node:path";
 
 /** Captures selected env vars and returns a restore handle. */

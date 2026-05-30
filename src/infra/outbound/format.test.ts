@@ -1,4 +1,3 @@
-// Tests infra/outbound format test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   buildOutboundDeliveryJson,

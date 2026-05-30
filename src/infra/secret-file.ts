@@ -2,7 +2,6 @@ import "./fs-safe-defaults.js";
 import { readSecretFileSync as readSecretFileSyncImpl } from "@openclaw/fs-safe/secret";
 import { resolveUserPath } from "../utils.js";
 
-/** Secret-file read constants and helpers from fs-safe. */
 export {
   DEFAULT_SECRET_FILE_MAX_BYTES,
   PRIVATE_SECRET_DIR_MODE,
@@ -11,7 +10,6 @@ export {
   tryReadSecretFileSync,
   type SecretFileReadOptions,
 } from "@openclaw/fs-safe/secret";
-/** Atomic private secret-file writer exposed under the infra naming convention. */
 export { writeSecretFileAtomic as writePrivateSecretFileAtomic } from "@openclaw/fs-safe/secret";
 
 /** Legacy result shape for callers that still need message/error fields instead of throws. */

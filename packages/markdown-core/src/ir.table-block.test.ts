@@ -1,4 +1,3 @@
-// Tests markdown ir table block test behavior.
 import { describe, expect, it } from "vitest";
 import { markdownToIRWithMeta } from "./ir.js";
 

@@ -20,7 +20,6 @@ import type {
 } from "./plugin-state-store.types.js";
 import { PluginStateStoreError } from "./plugin-state-store.types.js";
 
-/** Re-exports plugin-state store contracts and diagnostics. */
 export type {
   OpenKeyedStoreOptions,
   PluginStateEntry,
@@ -31,9 +30,7 @@ export type {
   PluginStateStoreProbeResult,
   PluginStateStoreProbeStep,
 } from "./plugin-state-store.types.js";
-/** Re-exports the structured plugin-state storage error. */
 export { PluginStateStoreError } from "./plugin-state-store.types.js";
-/** Re-exports SQLite store diagnostics, probes, and maintenance helpers. */
 export {
   closePluginStateDatabase,
   closePluginStateSqliteStore,

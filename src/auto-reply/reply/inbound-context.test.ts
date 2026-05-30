@@ -1,4 +1,3 @@
-// Coverage for inbound context finalization.
 import { describe, expect, it } from "vitest";
 import { expectChannelInboundContextContract as expectInboundContextContract } from "../../channels/plugins/contracts/test-helpers.js";
 import type { MsgContext } from "../templating.js";

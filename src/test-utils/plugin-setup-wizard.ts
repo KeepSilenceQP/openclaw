@@ -1,11 +1,9 @@
-// Test harness helpers for declarative plugin setup wizards.
 import { vi, type Mock } from "vitest";
 import { buildChannelSetupWizardAdapterFromSetupWizard } from "../channels/plugins/setup-wizard.js";
 import type { ChannelPlugin } from "../channels/plugins/types.js";
 import type { WizardPrompter } from "../wizard/prompts.js";
 import { createRuntimeEnv } from "./plugin-runtime-env.js";
 
-/** Re-export the wizard prompter contract used by setup wizard tests. */
 export type { WizardPrompter } from "../wizard/prompts.js";
 type UnknownMock = Mock<(...args: unknown[]) => unknown>;
 type AsyncUnknownMock = Mock<(...args: unknown[]) => Promise<unknown>>;

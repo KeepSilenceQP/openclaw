@@ -1,7 +1,6 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { homedir } from "node:os";
 import { basename, dirname, isAbsolute, join, resolve, sep } from "node:path";
-/** Prompt argument parser/substitution helpers shared with agent-core. */
 export {
   parseCommandArgs,
   substituteArgs,

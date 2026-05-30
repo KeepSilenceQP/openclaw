@@ -1,4 +1,3 @@
-// Tests infra/net undici runtime test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   resetActiveManagedProxyStateForTests,

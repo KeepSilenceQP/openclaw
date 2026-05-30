@@ -1,4 +1,3 @@
-// Parallels host command helpers normalize process execution across host platforms.
 import { spawn, spawnSync, type SpawnOptions } from "node:child_process";
 import { writeFile } from "node:fs/promises";
 import path from "node:path";

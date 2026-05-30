@@ -3,7 +3,6 @@
  * The server manages auth and proxies requests to LLM providers.
  */
 
-// Internal import for JSON parsing utility
 import {
   type AssistantMessage,
   type AssistantMessageEvent,

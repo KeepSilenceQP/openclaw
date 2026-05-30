@@ -1,4 +1,3 @@
-// Cron delivery plan resolution for announce, webhook, none, and legacy deliver modes.
 import type { CronFailureDestinationConfig } from "../config/types.cron.js";
 import { resolveTargetPrefixedChannel } from "../infra/outbound/channel-target-prefix.js";
 import {

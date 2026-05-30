@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser server context remote profile tab ops playwright test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   installRemoteProfileTestLifecycle,

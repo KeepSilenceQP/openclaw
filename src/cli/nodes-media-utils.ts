@@ -6,9 +6,7 @@ import { resolvePreferredOpenClawTmpDir } from "../infra/tmp-openclaw-dir.js";
  */
 export { asFiniteNumber as asNumber } from "../shared/number-coercion.js";
 import { readStringValue } from "../shared/string-coerce.js";
-/** Re-export record coercion for node media payload parsing. */
 export { asRecord } from "../shared/record-coerce.js";
-/** Re-export boolean coercion for node media payload parsing. */
 export { asBoolean } from "../utils/boolean.js";
 
 /** String coercion helper shared by node media payload parsers. */

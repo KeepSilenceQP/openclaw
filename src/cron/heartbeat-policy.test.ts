@@ -1,4 +1,3 @@
-// Tests cron heartbeat policy test behavior.
 import { describe, expect, it } from "vitest";
 import {
   shouldEnqueueCronMainSummary,

@@ -1,4 +1,3 @@
-// Gateway diagnostics for status-all: health probes, log tails, and compact summaries.
 import fs from "node:fs/promises";
 import { classifyOAuthRefreshFailureReason } from "../../agents/auth-profiles/oauth-refresh-failure.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";

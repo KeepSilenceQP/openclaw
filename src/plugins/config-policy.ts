@@ -1,4 +1,3 @@
-// Plugin config normalization, activation policy, and memory-slot decisions.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   resolveMemorySlotDecisionShared,
@@ -18,7 +17,6 @@ import {
 import type { PluginKind } from "./plugin-kind.types.js";
 import type { PluginOrigin } from "./plugin-origin.types.js";
 
-/** Source config type used while explaining plugin activation decisions. */
 export type { PluginActivationSource };
 /** Public activation state returned by plugin policy evaluation. */
 export type PluginActivationState = PluginActivationStateLike;

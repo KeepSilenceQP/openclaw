@@ -1,6 +1,4 @@
-// Applies fs-safe defaults before exposing archive extraction/merge helpers.
 import "./fs-safe-defaults.js";
-/** Archive safety limits, errors, preflight, and extraction helpers from fs-safe. */
 export {
   ARCHIVE_LIMIT_ERROR_CODE,
   ArchiveLimitError,

@@ -1,4 +1,3 @@
-// Vitest project config for shared messaging plugin tests.
 import { messagingExtensionTestRoots } from "./vitest.extension-messaging-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

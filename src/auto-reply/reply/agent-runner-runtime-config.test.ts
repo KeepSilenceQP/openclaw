@@ -1,4 +1,3 @@
-// Coverage for runtime config resolution in reply agent runs.
 import { afterEach, describe, expect, it } from "vitest";
 import {
   clearRuntimeConfigSnapshot,

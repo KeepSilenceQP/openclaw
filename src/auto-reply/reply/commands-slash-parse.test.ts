@@ -1,4 +1,3 @@
-// Coverage for generic slash command parsing.
 import { describe, expect, it } from "vitest";
 import { parseSlashCommandOrNull } from "./commands-slash-parse.js";
 

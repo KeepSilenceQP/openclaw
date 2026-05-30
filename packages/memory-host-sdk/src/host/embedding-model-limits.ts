@@ -1,4 +1,3 @@
-// Embedding model input token limit resolution.
 import type { EmbeddingProvider } from "./embeddings.js";
 
 const DEFAULT_EMBEDDING_MAX_INPUT_TOKENS = 8192;

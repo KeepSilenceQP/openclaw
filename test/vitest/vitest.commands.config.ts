@@ -1,4 +1,3 @@
-// Vitest project config for command tests outside the commands-light lane.
 import { commandsLightTestFiles } from "./vitest.commands-light-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

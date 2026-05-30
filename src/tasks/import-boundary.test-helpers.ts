@@ -1,4 +1,3 @@
-// Test helpers for scanning task-module import boundaries.
 import fs from "node:fs/promises";
 import path from "node:path";
 

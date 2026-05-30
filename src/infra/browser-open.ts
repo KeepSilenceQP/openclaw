@@ -1,4 +1,3 @@
-// Detects the platform browser-open command and opens safe HTTP(S) URLs when available.
 import path from "node:path";
 import { runCommandWithTimeout } from "../process/exec.js";
 import { detectBinary } from "./detect-binary.js";

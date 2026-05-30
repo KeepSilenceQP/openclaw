@@ -1,5 +1,4 @@
 // OpenAI Codex Responses provider transport, including WebSocket reuse,
-// SSE fallback, retry handling, and ChatGPT account header setup.
 import type * as NodeOs from "node:os";
 import type {
   Tool as OpenAITool,

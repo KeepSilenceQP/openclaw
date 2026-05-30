@@ -1,4 +1,3 @@
-// Tests extensions/policy/src policy state test behavior.
 import { describe, expect, it } from "vitest";
 import { scanPolicyChannels, scanPolicyTools } from "./policy-state.js";
 

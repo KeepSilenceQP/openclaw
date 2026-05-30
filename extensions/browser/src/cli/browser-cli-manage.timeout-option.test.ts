@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/cli browser cli manage timeout option test behavior.
 import { beforeEach, describe, expect, it } from "vitest";
 import {
   createBrowserManageProgram,

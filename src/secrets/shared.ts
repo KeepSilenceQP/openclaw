@@ -1,9 +1,7 @@
-// Shared filesystem, dot-path, and scalar parsing helpers for secret stores.
 import fs from "node:fs";
 import path from "node:path";
 import { privateFileStoreSync } from "../infra/private-file-store.js";
 import { replaceFileAtomicSync } from "../infra/replace-file.js";
-/** Runtime object guard shared by secret config readers and resolvers. */
 export { isRecord } from "../utils.js";
 
 /** Narrows unknown input to a trimmed non-empty string. */

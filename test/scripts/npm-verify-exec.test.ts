@@ -1,4 +1,3 @@
-// Tests test/scripts npm verify exec test behavior.
 import { mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";

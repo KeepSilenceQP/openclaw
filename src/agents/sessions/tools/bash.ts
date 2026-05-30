@@ -23,10 +23,8 @@ const bashSchema = Type.Object({
     Type.Number({ description: "Timeout in seconds (optional, no default timeout)" }),
   ),
 });
-/** Bash tool input/details contracts shared with renderers and callers. */
 export type { BashToolDetails, BashToolInput } from "./tool-contracts.js";
 
-/** Bash operation hooks used to replace local shell execution. */
 export type { BashOperations } from "./bash-operations.js";
 
 /** Convert a positive timeout in seconds to a bounded millisecond timeout. */

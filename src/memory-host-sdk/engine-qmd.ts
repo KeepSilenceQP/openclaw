@@ -1,5 +1,3 @@
-// Re-exports QMD binary availability helpers for memory host integrations.
-/** Public QMD availability checks and unavailable-reason types. */
 export {
   checkQmdBinaryAvailability,
   resolveQmdBinaryUnavailableReason,

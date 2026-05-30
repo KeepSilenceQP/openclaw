@@ -1,4 +1,3 @@
-// Tests hooks message hooks test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   clearInternalHooks,

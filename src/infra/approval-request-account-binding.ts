@@ -1,4 +1,3 @@
-// Resolves approval request channel/account binding from turn source or session state.
 import { resolveStorePath } from "../config/sessions/paths.js";
 import { loadSessionStore } from "../config/sessions/store-load.js";
 import { resolveMaintenanceConfigFromInput } from "../config/sessions/store-maintenance.js";

@@ -1,4 +1,3 @@
-// Coverage for context report generation.
 import { readFile, unlink } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
 import type { SessionEntry } from "../../config/sessions.js";

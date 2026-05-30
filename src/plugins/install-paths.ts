@@ -1,5 +1,4 @@
 // Safe path helpers for plugin installs. All public resolvers keep plugin ids
-// inside managed OpenClaw directories and avoid package-name path traversal.
 import path from "node:path";
 import {
   resolveSafeInstallDir,

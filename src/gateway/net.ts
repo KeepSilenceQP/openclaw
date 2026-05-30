@@ -1,4 +1,3 @@
-// Gateway network helpers for host parsing, proxy IP resolution, and bind/listen choices.
 import type { IncomingMessage } from "node:http";
 import net from "node:net";
 import {
@@ -251,7 +250,6 @@ export function resolveRequestClientIp(
   });
 }
 
-/** Container environment detector re-exported for gateway bind-mode tests and startup code. */
 export {
   isContainerEnvironment,
   resetContainerEnvironmentCacheForTest as __resetContainerCacheForTest,

@@ -1,4 +1,3 @@
-// Tests extensions/google-meet/src voice call gateway test behavior.
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { resolveGoogleMeetConfig } from "./config.js";
 import {

@@ -1,4 +1,3 @@
-// Parallels guest transports wrap prlctl exec for Linux, macOS, and Windows guests.
 import { run } from "./host-command.ts";
 import type { PhaseRunner } from "./phase-runner.ts";
 import { encodePowerShell, psSingleQuote } from "./powershell.ts";

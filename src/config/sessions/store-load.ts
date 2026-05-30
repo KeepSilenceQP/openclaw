@@ -1,4 +1,3 @@
-// Loads, normalizes, migrates, maintains, and snapshots persisted session stores.
 import fs from "node:fs";
 import { createSubsystemLogger } from "../../logging/subsystem.js";
 import type { ChannelRouteRef } from "../../plugin-sdk/channel-route.js";

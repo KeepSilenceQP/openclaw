@@ -1,4 +1,3 @@
-// Resolves stable conversation ids from thread ids and outbound targets.
 import { stringifyRouteThreadId } from "../../plugin-sdk/channel-route.js";
 import {
   normalizeLowercaseStringOrEmpty,

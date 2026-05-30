@@ -1,4 +1,3 @@
-// Bundled media provider tests load public plugin surfaces through this helper.
 import type { OpenClawPluginApi } from "../../../src/plugins/types.js";
 import { loadBundledPluginPublicSurfaceSync } from "../../../src/test-utils/bundled-plugin-public-surface.js";
 

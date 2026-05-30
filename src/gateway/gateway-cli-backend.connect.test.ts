@@ -1,4 +1,3 @@
-// Tests gateway gateway cli backend connect test behavior.
 import fs from "node:fs/promises";
 import { createServer } from "node:http";
 import type { AddressInfo } from "node:net";

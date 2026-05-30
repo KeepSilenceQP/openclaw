@@ -1,4 +1,3 @@
-// Tests infra/format-time parse offsetless zoned datetime test behavior.
 import { describe, expect, it } from "vitest";
 import {
   isOffsetlessIsoDateTime,

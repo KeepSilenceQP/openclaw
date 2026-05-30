@@ -1,4 +1,3 @@
-// Tests extensions/qa-matrix/src/substrate config test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it } from "vitest";
 import {

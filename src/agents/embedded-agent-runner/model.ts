@@ -419,7 +419,6 @@ function findInlineModelMatch(params: {
   );
 }
 
-/** Re-export model alias rendering and inline provider expansion helpers. */
 export { buildModelAliasLines, buildInlineProviderModels };
 
 function resolveConfiguredProviderConfig(

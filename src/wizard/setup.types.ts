@@ -1,4 +1,3 @@
-// Shared setup wizard configuration shapes.
 import type { GatewayAuthChoice } from "../commands/onboard-types.js";
 import type { SecretInput } from "../config/types.secrets.js";
 

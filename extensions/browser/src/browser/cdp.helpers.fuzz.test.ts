@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser cdp helpers fuzz test behavior.
 import { describe, expect, it } from "vitest";
 import {
   appendCdpPath,

@@ -1,4 +1,3 @@
-// Tests test/scripts check runtime sidecar loaders test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectTsdownEntrySources,

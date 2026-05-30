@@ -1,4 +1,3 @@
-// Tests extensions/browser/src security audit test behavior.
 import { describe, expect, it } from "vitest";
 import { collectBrowserSecurityAuditFindings } from "./security-audit.js";
 

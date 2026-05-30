@@ -1,4 +1,3 @@
-// Resolves diagnostics feature flags from config and environment overrides.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { normalizeUniqueStringEntriesLower } from "../shared/string-normalization.js";

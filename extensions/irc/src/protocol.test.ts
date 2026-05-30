@@ -1,4 +1,3 @@
-// Tests extensions/irc/src protocol test behavior.
 import { describe, expect, it } from "vitest";
 import {
   parseIrcLine,

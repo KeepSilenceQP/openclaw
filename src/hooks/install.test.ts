@@ -1,4 +1,3 @@
-// Tests hooks install test behavior.
 import { createHash, randomUUID } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

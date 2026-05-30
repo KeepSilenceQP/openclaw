@@ -1,4 +1,3 @@
-// Gateway method descriptor contracts for registry ownership and scopes.
 import type { OperatorScope } from "../operator-scopes.js";
 
 /** Scope marker for node-owned gateway methods. */

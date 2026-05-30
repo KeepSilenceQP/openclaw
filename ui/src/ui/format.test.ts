@@ -1,4 +1,3 @@
-// Tests ui/src/ui format test behavior.
 import { describe, expect, it } from "vitest";
 import {
   formatDateTimeMs,

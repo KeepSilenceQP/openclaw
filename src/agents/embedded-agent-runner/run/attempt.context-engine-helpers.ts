@@ -5,7 +5,6 @@ import type { AgentMessage } from "../../runtime/index.js";
 import { normalizeUsage, type NormalizedUsage } from "../../usage.js";
 import type { PromptCacheChange } from "../prompt-cache-observability.js";
 import type { EmbeddedRunAttemptResult } from "./types.js";
-/** Re-export context-engine lifecycle helpers under attempt-scoped names. */
 export {
   assembleHarnessContextEngine as assembleAttemptContextEngine,
   bootstrapHarnessContextEngine as runAttemptContextEngineBootstrap,

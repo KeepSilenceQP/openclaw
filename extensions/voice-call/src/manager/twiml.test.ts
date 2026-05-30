@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src/manager twiml test behavior.
 import { describe, expect, it } from "vitest";
 import { generateNotifyTwiml } from "./twiml.js";
 

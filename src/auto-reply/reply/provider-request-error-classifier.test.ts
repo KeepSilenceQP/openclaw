@@ -1,4 +1,3 @@
-// Coverage for provider request error classification.
 import { describe, expect, it } from "vitest";
 import {
   classifyProviderRequestError,

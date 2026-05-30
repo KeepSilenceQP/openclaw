@@ -22,7 +22,6 @@ const CONTENT_BLOCK_OVERHEAD_TOKENS = 6;
 const IMAGE_BLOCK_TOKENS = 2_000;
 const TRUNCATION_ROUTE_BUFFER_TOKENS = 512;
 
-/** Re-export the route enum used by callers that handle preflight pressure. */
 export type { PreemptiveCompactionRoute } from "./preemptive-compaction.types.js";
 
 /** Decision returned before provider submission when prompt pressure is known. */

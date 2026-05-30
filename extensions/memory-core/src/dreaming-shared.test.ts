@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src dreaming shared test behavior.
 import { describe, expect, it } from "vitest";
 import { includesSystemEventToken } from "./dreaming-shared.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src/memory manager async search test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { awaitPendingManagerWork, startAsyncSearchSync } from "./manager-async-state.js";
 

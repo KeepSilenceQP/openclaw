@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src suite runtime flow test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 const createQaScenarioRuntimeApi = vi.hoisted(() => vi.fn());

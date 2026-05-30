@@ -1,4 +1,3 @@
-// Gateway benchmark child helpers stop spawned processes and report teardown state.
 import type { ChildProcessWithoutNullStreams } from "node:child_process";
 
 const TEARDOWN_GRACE_MS = 2_000;

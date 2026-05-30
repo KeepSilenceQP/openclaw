@@ -1,4 +1,3 @@
-// Runtime re-export for compaction command handlers.
 export {
   abortEmbeddedAgentRun,
   compactEmbeddedAgentSession,

@@ -1,4 +1,3 @@
-// Resolves channel-owned inbound attachment roots from bundled plugin contracts.
 import type { MsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.js";
 import { loadBundledPluginPublicArtifactModuleSync } from "../plugins/public-surface-loader.js";

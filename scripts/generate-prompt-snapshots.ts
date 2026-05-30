@@ -1,4 +1,3 @@
-// Prompt snapshot generator writes and checks formatted happy-path prompt artifacts.
 import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import os from "node:os";

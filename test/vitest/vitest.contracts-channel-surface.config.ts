@@ -1,4 +1,3 @@
-// Vitest project config for channel surface contract tests.
 import {
   channelSurfaceContractPatterns,
   createContractsVitestConfig,

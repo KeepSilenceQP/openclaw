@@ -1,4 +1,3 @@
-// Tests infra file identity test behavior.
 import { describe, expect, it } from "vitest";
 import { sameFileIdentity, type FileIdentityStat } from "./fs-safe-advanced.js";
 

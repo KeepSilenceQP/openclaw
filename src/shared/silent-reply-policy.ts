@@ -1,4 +1,3 @@
-// Silent-reply policy helpers for channel and internal conversation contexts.
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.js";
 
 /** Whether a silent reply token is allowed in a conversation class. */

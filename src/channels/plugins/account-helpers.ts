@@ -1,4 +1,3 @@
-// Channel plugin account helper functions.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import {
   resolveAccountEntry,

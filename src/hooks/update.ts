@@ -1,4 +1,3 @@
-// Updates npm-installed hook packs while preserving install records and integrity checks.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { buildNpmResolutionFields } from "../infra/install-source-utils.js";
 import {

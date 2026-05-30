@@ -1,4 +1,3 @@
-// Group policy warning helpers for channel setup/status.
 import {
   resolveAllowlistProviderRuntimeGroupPolicy,
   resolveDefaultGroupPolicy,

@@ -1,4 +1,3 @@
-// Conversation binding record facade backed by the outbound session binding service.
 import {
   getSessionBindingService,
   type ConversationRef,

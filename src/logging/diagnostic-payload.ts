@@ -1,4 +1,3 @@
-// Emits diagnostic records for payloads that are rejected, truncated, or chunked.
 import { emitInternalDiagnosticEvent as emitDiagnosticEvent } from "../infra/diagnostic-events.js";
 import { parseStrictNonNegativeInteger } from "../infra/parse-finite-number.js";
 

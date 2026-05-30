@@ -1,4 +1,3 @@
-// Public gateway-client package barrel for connection, auth, readiness, and timeout APIs.
 export * from "./client.js";
 export * from "./device-auth.js";
 export * from "./event-loop-ready.js";

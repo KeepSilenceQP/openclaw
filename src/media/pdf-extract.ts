@@ -1,4 +1,3 @@
-// PDF extraction facade over document-extractor plugins.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {
   DocumentExtractedImage,

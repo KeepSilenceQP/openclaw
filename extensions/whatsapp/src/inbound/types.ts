@@ -1,4 +1,3 @@
-// Shared types for extensions/whatsapp/src/inbound types behavior.
 import type { AnyMessageContent, MiscMessageGenerationOptions } from "baileys";
 import type { NormalizedLocation } from "openclaw/plugin-sdk/channel-inbound";
 import type { PollInput } from "openclaw/plugin-sdk/poll-runtime";

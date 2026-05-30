@@ -1,4 +1,3 @@
-// Shared channel metadata builder backed by bundled channel catalog entries.
 import type { PluginPackageChannel } from "../plugins/manifest.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { listBundledChannelCatalogEntries } from "./bundled-channel-catalog-read.js";

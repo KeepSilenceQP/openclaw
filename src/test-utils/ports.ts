@@ -1,4 +1,3 @@
-// Port allocation helpers that reduce derived-port collisions in parallel tests.
 import { createServer } from "node:net";
 import { isMainThread, threadId } from "node:worker_threads";
 

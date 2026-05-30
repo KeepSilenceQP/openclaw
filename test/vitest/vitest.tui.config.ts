@@ -1,4 +1,3 @@
-// Vitest project config for terminal UI tests.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the scoped Vitest config for TUI tests. */

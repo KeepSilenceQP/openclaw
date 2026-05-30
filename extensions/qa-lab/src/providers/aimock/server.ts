@@ -1,4 +1,3 @@
-// QA Lab AIMock server wraps LLMock with debug endpoints for provider-request inspection.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import {
   LLMock,

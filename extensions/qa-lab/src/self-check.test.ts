@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src self check test behavior.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { resolveQaSelfCheckOutputPath } from "./self-check.js";

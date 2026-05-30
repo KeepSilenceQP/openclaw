@@ -1,4 +1,3 @@
-// Tests infra fixed window rate limit test behavior.
 import { describe, expect, it } from "vitest";
 import { createFixedWindowRateLimiter } from "./fixed-window-rate-limit.js";
 

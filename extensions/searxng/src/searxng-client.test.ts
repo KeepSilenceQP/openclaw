@@ -1,4 +1,3 @@
-// Tests extensions/searxng/src searxng client test behavior.
 import type { LookupFn } from "openclaw/plugin-sdk/ssrf-runtime";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

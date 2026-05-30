@@ -1,4 +1,3 @@
-// Tests test/scripts ts topology test behavior.
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { analyzeTopology, filterRecordsForReport } from "../../scripts/lib/ts-topology/analyze.js";

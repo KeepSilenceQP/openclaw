@@ -1,4 +1,3 @@
-// Crestodian overview helpers for config, agents, tools, gateway, and references.
 import {
   listAgentEntries,
   resolveAgentEffectiveModelPrimary,

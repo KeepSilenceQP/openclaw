@@ -1,4 +1,3 @@
-// Parallels lane runner records fresh/upgrade smoke lane pass or failure state.
 import { warn } from "./host-command.ts";
 
 /** Smoke lane names tracked by Parallels update/install runs. */

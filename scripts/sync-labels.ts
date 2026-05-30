@@ -1,4 +1,3 @@
-// GitHub label sync creates repository labels declared by labeler config.
 import { execFileSync } from "node:child_process";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";

@@ -1,4 +1,3 @@
-// Dashboard header component with tab title, agent label, and overview navigation.
 import { LitElement, html, nothing } from "lit";
 import { property } from "lit/decorators.js";
 import { pathForTab, titleForTab, type Tab } from "../navigation.js";

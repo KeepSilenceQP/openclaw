@@ -1,6 +1,4 @@
 // Load session runtime model metadata so we can infer context windows when the
-// agent reports a model id. This includes custom models.json entries.
-
 import { getRuntimeConfig } from "../config/config.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { computeBackoff, type BackoffPolicy } from "../infra/backoff.js";
@@ -15,7 +13,6 @@ import { lookupCachedContextTokens, MODEL_CONTEXT_TOKEN_CACHE } from "./context-
 import { CONTEXT_WINDOW_RUNTIME_STATE } from "./context-runtime-state.js";
 import { normalizeProviderId } from "./model-selection.js";
 
-/** Test helper that clears context-window runtime cache state. */
 export { resetContextWindowCacheForTest } from "./context-runtime-state.js";
 
 type ModelEntry = {

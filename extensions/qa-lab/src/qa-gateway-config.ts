@@ -1,4 +1,3 @@
-// QA Lab gateway config helpers build isolated runtime configs for scenarios.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
@@ -13,7 +12,6 @@ import { DEFAULT_QA_PROVIDER_MODE } from "./providers/index.js";
 import type { QaThinkingLevel } from "./qa-thinking.js";
 import type { QaTransportGatewayConfig } from "./qa-transport.js";
 
-/** Thinking-level helpers re-exported for QA gateway config callers. */
 export { normalizeQaThinkingLevel, type QaThinkingLevel } from "./qa-thinking.js";
 
 /** Control UI origins allowed by default for local QA dashboards. */

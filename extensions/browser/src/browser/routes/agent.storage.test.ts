@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser/routes agent storage test behavior.
 import { describe, expect, it } from "vitest";
 import {
   parseCookieSetOptions,

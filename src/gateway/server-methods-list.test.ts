@@ -1,4 +1,3 @@
-// Tests gateway server methods list test behavior.
 import { describe, expect, it } from "vitest";
 import { GATEWAY_EVENTS, listGatewayMethods } from "./server-methods-list.js";
 

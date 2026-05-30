@@ -1,5 +1,4 @@
 // Gateway startup update checks and optional auto-update scheduling.
-// State is persisted so notifications, rollout jitter, and retry attempts survive restarts.
 import { createHash, randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

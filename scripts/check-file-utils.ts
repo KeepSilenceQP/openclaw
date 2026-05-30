@@ -1,4 +1,3 @@
-// Shared file-walking helpers for repo check scripts.
 import fs from "node:fs";
 import path from "node:path";
 

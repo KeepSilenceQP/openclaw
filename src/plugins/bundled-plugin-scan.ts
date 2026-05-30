@@ -12,7 +12,6 @@ const RUNTIME_SIDECAR_ARTIFACTS = new Set([
   "thread-bindings-runtime.js",
 ]);
 
-/** Trim helper kept under the bundled-plugin naming used by scan callers. */
 export { normalizeOptionalString as trimBundledPluginString };
 
 /** Normalizes manifest string arrays used by bundled plugin scan metadata. */

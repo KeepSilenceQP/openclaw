@@ -1,4 +1,3 @@
-// Tests gateway hooks test behavior.
 import type { IncomingMessage } from "node:http";
 import { afterEach, beforeEach, describe, expect, test } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";

@@ -1,4 +1,3 @@
-// Tests plugins web provider runtime shared test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({

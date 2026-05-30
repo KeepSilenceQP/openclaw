@@ -1,4 +1,3 @@
-// Tests plugins official external plugin repair hints test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { resolveMissingOfficialExternalChannelPluginRepairHint } from "./official-external-plugin-repair-hints.js";
 

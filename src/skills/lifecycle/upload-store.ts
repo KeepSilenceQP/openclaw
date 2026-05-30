@@ -1,5 +1,4 @@
 // Durable skill archive upload store. Handles chunked uploads, idempotency,
-// expiry cleanup, sha256 verification, and committed archive handoff.
 import { createHash, randomUUID } from "node:crypto";
 import { createReadStream } from "node:fs";
 import fs from "node:fs/promises";

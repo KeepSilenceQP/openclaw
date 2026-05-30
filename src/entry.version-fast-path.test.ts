@@ -1,4 +1,3 @@
-// Tests OpenClaw entry version fast path test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { tryHandleRootVersionFastPath } from "./entry.version-fast-path.js";
 

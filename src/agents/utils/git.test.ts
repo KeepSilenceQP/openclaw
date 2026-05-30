@@ -1,4 +1,3 @@
-// Regression coverage for git source parsing and checkout path safety.
 import { describe, expect, it } from "vitest";
 import { parseGitUrl } from "./git.js";
 

@@ -1,4 +1,3 @@
-// Tests terminal decorative emoji test behavior.
 import { describe, expect, it } from "vitest";
 import {
   decorativeEmoji,

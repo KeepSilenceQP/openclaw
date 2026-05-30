@@ -1,5 +1,4 @@
 // Process-local plugin registry runtime state for active, HTTP route, and
-// channel surfaces.
 import { onAgentEvent } from "../infra/agent-events.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import {

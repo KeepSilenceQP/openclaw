@@ -1,4 +1,3 @@
-// Tests gateway node connect reconcile test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   GATEWAY_CLIENT_IDS,

@@ -1,4 +1,3 @@
-// Persists Matrix thread bindings between chat threads and OpenClaw sessions.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

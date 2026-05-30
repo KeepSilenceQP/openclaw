@@ -10,11 +10,8 @@ import type { TtsConfigResolutionContext } from "../tts/tts-config.js";
 import type { ResolvedTtsConfig, ResolvedTtsModelOverrides } from "../tts/tts-types.js";
 import type { ReplyPayload } from "./reply-payload.js";
 
-/** Resolved TTS config and model override contracts from core TTS runtime. */
 export type { ResolvedTtsConfig, ResolvedTtsModelOverrides };
-/** Context used when resolving agent/channel/account-specific TTS config. */
 export type { TtsConfigResolutionContext };
-/** Parsed inline TTS directive contracts exposed to plugin runtime callers. */
 export type { TtsDirectiveOverrides, TtsDirectiveParseResult };
 
 /** Normalized reason code for one TTS provider attempt. */

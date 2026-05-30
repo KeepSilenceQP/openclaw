@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor events test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { CoreConfig } from "../../types.js";
 import type { MatrixAuth } from "../client.js";

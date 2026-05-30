@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/google/src gemini web search provider runtime behavior.
 import {
   createProviderHttpError,
   formatProviderHttpErrorMessage,

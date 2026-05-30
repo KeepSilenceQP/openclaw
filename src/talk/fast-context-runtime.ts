@@ -1,4 +1,3 @@
-// Fast realtime voice memory lookup path before falling back to full agent consult.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { formatErrorMessage } from "../infra/errors.js";
 import { getActiveMemorySearchManager } from "../plugins/memory-runtime.js";

@@ -1,4 +1,3 @@
-// Tests gateway openai http usage test behavior.
 import { describe, expect, it } from "vitest";
 import { testOnlyOpenAiHttp } from "./openai-http.js";
 

@@ -1,4 +1,3 @@
-// Plugin-facing task-flow runtime contracts for managed background work.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { JsonValue, TaskFlowRecord } from "../../tasks/task-flow-registry.types.js";
 import type {

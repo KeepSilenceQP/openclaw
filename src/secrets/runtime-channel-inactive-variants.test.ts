@@ -1,4 +1,3 @@
-// Tests secrets runtime channel inactive variants test behavior.
 import { describe, expect, it } from "vitest";
 import "./runtime-channel-inactive-variants.test-support.ts";
 import {

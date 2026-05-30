@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor sync lifecycle test behavior.
 import { EventEmitter } from "node:events";
 import { describe, expect, it, vi } from "vitest";
 import { createMatrixMonitorStatusController } from "./status.js";

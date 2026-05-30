@@ -1,4 +1,3 @@
-// Sender gate builders for channel ingress access graphs.
 import {
   allowlistFailureReason,
   applyMutableIdentifierPolicy,

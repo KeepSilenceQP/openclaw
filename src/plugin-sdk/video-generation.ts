@@ -1,8 +1,6 @@
 // Public video-generation helpers and types for provider plugins.
 //
 // Keep these public type declarations local to the plugin-sdk entrypoint so the
-// emitted declaration surface stays stable for package-boundary consumers.
-
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {
@@ -236,7 +234,6 @@ const videoGenerationSdkCompat: [
 ] = [] as never;
 void videoGenerationSdkCompat;
 
-/** DashScope-compatible video generation helpers and default capability declarations. */
 export {
   DASHSCOPE_WAN_VIDEO_CAPABILITIES,
   DASHSCOPE_WAN_VIDEO_MODELS,
@@ -253,5 +250,4 @@ export {
   runDashscopeVideoGenerationTask,
 } from "../video-generation/dashscope-compatible.js";
 
-/** DashScope-compatible async video task response payload. */
 export type { DashscopeVideoGenerationResponse } from "../video-generation/dashscope-compatible.js";

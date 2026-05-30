@@ -1,5 +1,4 @@
 // System-run approval context normalization.
-// Prepared node-host plans and fallback command args are converted into approval/runtime facts.
 import type { ExecAsk, ExecSecurity, SystemRunApprovalPlan } from "./exec-approvals.js";
 import { normalizeSystemRunApprovalPlan } from "./system-run-approval-binding.js";
 import { formatExecCommand, resolveSystemRunCommandRequest } from "./system-run-command.js";

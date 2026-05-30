@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/scenarios jsonc byte fidelity test behavior.
 import { describe, expect, it } from "vitest";
 import type { JsoncValue } from "../../jsonc/ast.js";
 import { emitJsonc } from "../../jsonc/emit.js";

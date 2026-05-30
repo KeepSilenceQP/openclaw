@@ -1,4 +1,3 @@
-// Session store disk-budget enforcement and orphaned artifact cleanup.
 import fs from "node:fs";
 import path from "node:path";
 import {

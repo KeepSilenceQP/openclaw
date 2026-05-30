@@ -1,4 +1,3 @@
-// Public embedding provider contracts shared by memory host implementations.
 import type { OpenClawConfig, SecretInput } from "../engine-foundation.js";
 import type { EmbeddingInput } from "./embedding-inputs.js";
 

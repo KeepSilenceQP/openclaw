@@ -1,4 +1,3 @@
-// Tests pairing allow from store file test behavior.
 import fs from "node:fs";
 import { describe, expect, it, vi } from "vitest";
 import {

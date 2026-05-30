@@ -1,4 +1,3 @@
-// Tests extensions/slack/src streaming test behavior.
 import type { ChatStreamer } from "@slack/web-api/dist/chat-stream.js";
 import { describe, expect, it, vi } from "vitest";
 import {

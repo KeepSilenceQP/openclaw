@@ -1,4 +1,3 @@
-// Control-runtime contracts for cancelling ACP sessions and killing subagent runs.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 
 /** Admin hook that cancels an ACP session with a reason. */

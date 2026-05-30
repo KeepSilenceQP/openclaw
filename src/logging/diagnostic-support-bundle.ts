@@ -1,5 +1,4 @@
 // Support bundle writer: builds safe relative files and writes either an
-// unpacked diagnostics directory or a zip archive.
 import fsp from "node:fs/promises";
 import path from "node:path";
 import { isPathInside } from "../infra/path-guards.js";

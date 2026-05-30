@@ -1,4 +1,3 @@
-// Live Docker config normalizer applies doctor migrations non-interactively.
 import { loadAndMaybeMigrateDoctorConfig } from "../src/commands/doctor-config-flow.js";
 import { replaceConfigFile } from "../src/config/config.js";
 

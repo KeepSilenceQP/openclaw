@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server native hook relay test behavior.
 import type { NativeHookRelayRegistrationHandle } from "openclaw/plugin-sdk/agent-harness-runtime";
 import { describe, expect, it } from "vitest";
 import {

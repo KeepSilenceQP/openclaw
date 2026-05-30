@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser pw tools core interactions batch test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 let page: {

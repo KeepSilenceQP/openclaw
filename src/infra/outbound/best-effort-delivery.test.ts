@@ -1,4 +1,3 @@
-// Tests infra/outbound best effort delivery test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   resolveExternalBestEffortDeliveryTarget,

@@ -28,7 +28,6 @@ export type TailscaleMode = "off" | "serve" | "funnel";
 export type NodeManagerChoice = "npm" | "pnpm" | "bun";
 /** Channel id selected for messaging-channel setup. */
 export type ChannelChoice = ChannelId;
-/** Secret input/persistence modes accepted by provider auth setup. */
 export type { SecretInputMode } from "../plugins/provider-auth-types.js";
 
 type OnboardDynamicProviderOptions = {

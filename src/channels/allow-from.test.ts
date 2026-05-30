@@ -1,4 +1,3 @@
-// Coverage for channel allowFrom source merging.
 import { describe, expect, it } from "vitest";
 import {
   firstDefined,

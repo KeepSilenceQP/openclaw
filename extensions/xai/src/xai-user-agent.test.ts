@@ -1,4 +1,3 @@
-// Tests extensions/xai/src xai user agent test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { xaiUserAgent, xaiUserAgentHeaderFor } from "./xai-user-agent.js";
 

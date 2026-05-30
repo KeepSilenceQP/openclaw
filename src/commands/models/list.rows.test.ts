@@ -1,4 +1,3 @@
-// Tests row-source builders for catalog and suppression edge cases.
 import { describe, expect, it, vi } from "vitest";
 import type { ModelRow } from "./list.types.js";
 

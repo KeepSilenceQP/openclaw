@@ -1,4 +1,3 @@
-// Tests logging parse log line test behavior.
 import { describe, expect, it } from "vitest";
 import { parseLogLine } from "./parse-log-line.js";
 

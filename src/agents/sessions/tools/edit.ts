@@ -55,7 +55,6 @@ const editSchema = Type.Object(
   },
   { additionalProperties: false },
 );
-/** Edit tool input/details contracts shared with renderers and callers. */
 export type { EditToolDetails, EditToolInput } from "./tool-contracts.js";
 
 type LegacyEditToolInput = Record<string, unknown> & {

@@ -1,4 +1,3 @@
-// Subagent command action for help output.
 import type { CommandHandlerResult } from "../commands-types.js";
 import { buildSubagentsHelp, stopWithText } from "./shared.js";
 

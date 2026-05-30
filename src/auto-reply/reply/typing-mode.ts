@@ -1,4 +1,3 @@
-// Typing mode normalization helpers.
 import type { TypingMode } from "../../config/types.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import type { SourceReplyDeliveryMode } from "../get-reply-options.types.js";

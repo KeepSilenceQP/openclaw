@@ -1,4 +1,3 @@
-// Config resolution helpers for media-understanding provider/model execution.
 import type { MsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.js";
 import type {

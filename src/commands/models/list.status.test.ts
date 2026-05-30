@@ -1,4 +1,3 @@
-// Tests model-list status command output and probe integration.
 import { describe, expect, it, type Mock, vi } from "vitest";
 
 const mocks = vi.hoisted(() => {

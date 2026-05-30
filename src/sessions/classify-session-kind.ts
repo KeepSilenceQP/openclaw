@@ -1,4 +1,3 @@
-// Classifies session keys into display categories for listings and diagnostics.
 import { isCronSessionKey } from "./session-key-utils.js";
 
 /** Display category derived from session key shape and session metadata. */

@@ -1,4 +1,3 @@
-// Builds auth health summaries for stored provider credentials and provider rollups.
 import {
   findNormalizedProviderValue,
   normalizeProviderId,

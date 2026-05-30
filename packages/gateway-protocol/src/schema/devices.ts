@@ -1,4 +1,3 @@
-// TypeBox schemas for device pairing, token rotation, and pairing events.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

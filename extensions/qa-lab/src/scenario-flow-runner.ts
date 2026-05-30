@@ -1,4 +1,3 @@
-// QA Lab scenario-flow runner executes declarative flow steps against transport APIs.
 import { isRecord as isPlainObject } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { QaTransportState } from "./qa-transport.js";
 import type { QaScenarioFlow, QaSeedScenarioWithSource } from "./scenario-catalog.js";

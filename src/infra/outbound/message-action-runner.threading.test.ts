@@ -1,4 +1,3 @@
-// Tests infra/outbound message action runner threading test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import {

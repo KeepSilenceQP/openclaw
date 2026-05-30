@@ -1,4 +1,3 @@
-// Tests talk talk session controller test behavior.
 import { describe, expect, it } from "vitest";
 import type { TalkEvent } from "./talk-events.js";
 import { createTalkSessionController, normalizeTalkTransport } from "./talk-session-controller.js";

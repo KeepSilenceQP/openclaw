@@ -1,4 +1,3 @@
-// Tests plugins provider auth choices test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const pluginRegistryMocks = vi.hoisted(() => ({

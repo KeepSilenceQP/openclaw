@@ -1,4 +1,3 @@
-// QA Lab Docker harness helpers render compose scaffolds and build local QA images.
 import { execFile } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";

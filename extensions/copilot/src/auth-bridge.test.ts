@@ -1,4 +1,3 @@
-// Tests extensions/copilot/src auth bridge test behavior.
 import { createHash } from "node:crypto";
 import { resolve, join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

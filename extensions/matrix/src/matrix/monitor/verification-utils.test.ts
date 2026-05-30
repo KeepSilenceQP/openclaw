@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor verification utils test behavior.
 import { describe, expect, it } from "vitest";
 import {
   isMatrixVerificationEventType,

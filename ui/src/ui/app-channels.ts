@@ -1,6 +1,5 @@
 // Channel action handlers for the app shell. They coordinate controller reloads,
 // WhatsApp login lifecycle calls, and Nostr profile save/import requests through
-// the gateway.
 import { resolveControlUiAuthHeader } from "./control-ui-auth.ts";
 import {
   loadChannels,

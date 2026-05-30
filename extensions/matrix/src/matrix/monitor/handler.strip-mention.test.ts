@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor handler strip mention test behavior.
 import { describe, expect, it } from "vitest";
 import { stripMatrixMentionPrefix } from "./mentions.js";
 

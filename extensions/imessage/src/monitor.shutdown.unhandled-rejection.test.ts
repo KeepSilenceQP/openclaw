@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src monitor shutdown unhandled rejection test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { attachIMessageMonitorAbortHandler } from "./monitor/abort-handler.js";
 

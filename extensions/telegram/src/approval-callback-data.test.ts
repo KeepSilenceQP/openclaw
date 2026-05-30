@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src approval callback data test behavior.
 import { describe, expect, it } from "vitest";
 import {
   fitsTelegramCallbackData,

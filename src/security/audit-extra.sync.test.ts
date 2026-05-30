@@ -1,4 +1,3 @@
-// Tests security audit extra sync test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 import {

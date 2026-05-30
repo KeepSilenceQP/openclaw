@@ -1,5 +1,4 @@
 // Gateway operator-scope classification and authorization helpers. Core,
-// reserved, and plugin-declared methods all resolve through this policy seam.
 import { getPluginRegistryState } from "../plugins/runtime-state.js";
 import { resolveReservedGatewayMethodScope } from "../shared/gateway-method-policy.js";
 import { normalizeOptionalString as normalizeSessionActionParam } from "../shared/string-coerce.js";
@@ -20,7 +19,6 @@ import {
   type OperatorScope,
 } from "./operator-scopes.js";
 
-/** Operator scope constants and type used by gateway auth policy. */
 export {
   ADMIN_SCOPE,
   APPROVALS_SCOPE,

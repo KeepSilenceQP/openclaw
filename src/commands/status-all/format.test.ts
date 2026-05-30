@@ -1,4 +1,3 @@
-// Tests status-all formatting helpers used in plain and rich output.
 import { describe, expect, it } from "vitest";
 import {
   baseStatusExpectedUpdateChannelInfo,

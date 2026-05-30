@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/amazon-bedrock-mantle mantle anthropic runtime behavior.
 import Anthropic from "@anthropic-ai/sdk";
 import type { StreamFn } from "openclaw/plugin-sdk/agent-core";
 import { stream, type Model, type SimpleStreamOptions } from "openclaw/plugin-sdk/llm";

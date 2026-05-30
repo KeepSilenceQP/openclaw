@@ -1,4 +1,3 @@
-// LLM stream mock helper provides a minimal async stream shape for agent tests.
 import { vi } from "vitest";
 
 type LlmMockModule = Record<string, unknown>;

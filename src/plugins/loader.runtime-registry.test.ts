@@ -1,4 +1,3 @@
-// Tests plugins loader runtime registry test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { getCompactionProvider, registerCompactionProvider } from "./compaction-provider.js";
 import { getEmbeddingProvider, registerEmbeddingProvider } from "./embedding-providers.js";

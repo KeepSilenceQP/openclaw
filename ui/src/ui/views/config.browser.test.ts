@@ -1,4 +1,3 @@
-// Tests ui/src/ui/views config browser test behavior.
 import { render } from "lit";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ThemeMode, ThemeName } from "../theme.ts";

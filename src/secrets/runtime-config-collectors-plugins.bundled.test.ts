@@ -1,4 +1,3 @@
-// Tests secrets runtime config collectors plugins bundled test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import type { OpenClawConfig } from "../config/config.js";

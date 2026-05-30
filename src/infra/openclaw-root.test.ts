@@ -1,4 +1,3 @@
-// Tests infra openclaw root test behavior.
 import actualFs from "node:fs";
 import actualFsPromises from "node:fs/promises";
 import path from "node:path";

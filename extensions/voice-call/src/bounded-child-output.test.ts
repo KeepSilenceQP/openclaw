@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src bounded child output test behavior.
 import { describe, expect, it } from "vitest";
 import {
   appendBoundedChildOutput,

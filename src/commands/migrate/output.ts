@@ -1,4 +1,3 @@
-// Formats migration plans/results and writes redacted migration reports.
 import { log } from "@clack/prompts";
 import { theme } from "../../../packages/terminal-core/src/theme.js";
 import { redactMigrationPlan } from "../../plugin-sdk/migration.js";

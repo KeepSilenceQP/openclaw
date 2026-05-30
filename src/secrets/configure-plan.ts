@@ -1,4 +1,3 @@
-// Secret configuration planning for moving config/auth values into secret refs.
 import { isDeepStrictEqual } from "node:util";
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

@@ -1,4 +1,3 @@
-// Dev tooling safety helpers redact secrets and normalize previews before logging.
 import path from "node:path";
 import { redactSensitiveText } from "../../src/logging/redact.js";
 

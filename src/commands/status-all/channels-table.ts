@@ -1,4 +1,3 @@
-// Converts channel status rows and gateway issue overlays into terminal-table records.
 import { groupChannelIssuesByChannel } from "./channel-issues.js";
 
 type ChannelTableRowInput = {

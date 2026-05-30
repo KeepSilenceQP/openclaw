@@ -1,4 +1,3 @@
-// QA agent workspace seeding writes mission, identity, scenario, and repo-link files.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { buildQaScenarioPlanMarkdown, readQaAgentIdentityMarkdown } from "./qa-agent-bootstrap.js";

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser server context lifecycle test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveIdleProfileStopOutcome } from "./server-context.lifecycle.js";
 import { makeBrowserProfile } from "./server-context.test-harness.js";

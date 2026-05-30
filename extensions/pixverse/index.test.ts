@@ -1,4 +1,3 @@
-// Tests extensions/pixverse index test behavior.
 import { capturePluginRegistration } from "openclaw/plugin-sdk/plugin-test-runtime";
 import { describe, expect, it, vi } from "vitest";
 import {

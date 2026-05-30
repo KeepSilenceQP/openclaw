@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra speech provider test behavior.
 import { afterAll, afterEach, describe, expect, it, vi } from "vitest";
 import { buildDeepInfraSpeechProvider } from "./speech-provider.js";
 

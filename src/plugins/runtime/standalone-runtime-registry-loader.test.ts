@@ -1,4 +1,3 @@
-// Tests plugins/runtime standalone runtime registry loader test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { clearPluginLoaderCache, testing } from "../loader.js";
 import { createEmptyPluginRegistry } from "../registry-empty.js";

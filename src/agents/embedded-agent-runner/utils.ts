@@ -22,5 +22,4 @@ export function mapThinkingLevel(level?: ThinkLevel): ThinkingLevel {
   return level;
 }
 
-/** Re-export thinking/reasoning level types used by runner callers. */
 export type { ReasoningLevel, ThinkLevel };

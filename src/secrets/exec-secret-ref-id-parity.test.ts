@@ -1,4 +1,3 @@
-// Tests secrets exec secret ref id parity test behavior.
 import { Compile } from "typebox/compile";
 import { describe, expect, it } from "vitest";
 import { SecretRefSchema as GatewaySecretRefSchema } from "../../packages/gateway-protocol/src/schema.js";

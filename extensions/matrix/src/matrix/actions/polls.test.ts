@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/actions polls test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { MatrixClient } from "../sdk.js";
 import { voteMatrixPoll } from "./polls.js";

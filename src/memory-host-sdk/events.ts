@@ -1,4 +1,3 @@
-// JSONL event log for memory recall, promotion, and dreaming activity.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { appendRegularFile } from "../infra/fs-safe.js";

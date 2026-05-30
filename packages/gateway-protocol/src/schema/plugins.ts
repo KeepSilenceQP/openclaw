@@ -1,4 +1,3 @@
-// TypeBox schemas for plugin UI descriptors and session action RPCs.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

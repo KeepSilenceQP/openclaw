@@ -1,4 +1,3 @@
-// Tests extensions/nextcloud-talk/src channel core test behavior.
 import { describe, expect, it } from "vitest";
 import {
   nextcloudTalkConfigAdapter,

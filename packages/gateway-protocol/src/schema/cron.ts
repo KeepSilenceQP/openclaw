@@ -1,4 +1,3 @@
-// TypeBox schemas for cron job scheduling, delivery, state, and run history RPCs.
 import { Type, type TSchema } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

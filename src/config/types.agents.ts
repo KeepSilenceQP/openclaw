@@ -1,4 +1,3 @@
-// Agent routing, runtime, and per-agent override config types.
 import type { ChatType } from "../channels/chat-type.js";
 import type {
   AgentContextLimitsConfig,

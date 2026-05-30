@@ -1,5 +1,4 @@
 // Opens an HTTP CONNECT tunnel through a proxy, then upgrades the tunnel to the
-// APNs HTTP/2 TLS socket expected by push delivery.
 import * as net from "node:net";
 import * as tls from "node:tls";
 import { resolveTimerTimeoutMs } from "../../shared/number-coercion.js";

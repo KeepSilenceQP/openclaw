@@ -1,4 +1,3 @@
-// Gateway helpers for capturing, retaining, and restoring session compaction checkpoints.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

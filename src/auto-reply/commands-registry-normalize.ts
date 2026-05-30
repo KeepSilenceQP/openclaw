@@ -1,4 +1,3 @@
-// Command body normalization and alias resolution for text command routing.
 import type { OpenClawConfig } from "../config/types.js";
 import {
   normalizeLowercaseStringOrEmpty,

@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser pw session page cdp test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   BROWSER_REF_MARKER_ATTRIBUTE,

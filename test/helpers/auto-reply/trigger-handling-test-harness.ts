@@ -1,4 +1,3 @@
-// Shared trigger-handling reply harness for auto-reply tests with mocked agents, catalogs, and temp homes.
 import { rmSync } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

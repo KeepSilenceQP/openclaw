@@ -1,4 +1,3 @@
-// Coverage for command gating and permission behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { isCommandFlagEnabled } from "../../config/commands.js";
 import type { OpenClawConfig } from "../../config/config.js";

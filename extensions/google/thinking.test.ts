@@ -1,4 +1,3 @@
-// Tests extensions/google thinking test behavior.
 import { describe, expect, it } from "vitest";
 import {
   resolveGoogleGemini3ThinkingLevel,

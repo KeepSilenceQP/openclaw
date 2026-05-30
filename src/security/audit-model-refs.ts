@@ -1,4 +1,3 @@
-// Collects configured model references for security and provider audit checks.
 import { DEFAULT_PROVIDER } from "../agents/defaults.js";
 import { modelKey } from "../agents/model-selection-normalize.js";
 import {

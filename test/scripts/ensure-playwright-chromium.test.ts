@@ -1,4 +1,3 @@
-// Tests test/scripts ensure playwright chromium test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   ensurePlaywrightChromium,

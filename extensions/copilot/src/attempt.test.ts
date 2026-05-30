@@ -1,4 +1,3 @@
-// Tests extensions/copilot/src attempt test behavior.
 import fsp from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";

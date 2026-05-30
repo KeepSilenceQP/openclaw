@@ -1,4 +1,3 @@
-// Utility for stream wrappers that patch outgoing provider payloads.
 import type { StreamFn } from "../../../agents/runtime/index.js";
 
 /** Run a stream with an `onPayload` hook that mutates object payloads before caller hooks run. */

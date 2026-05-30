@@ -1,4 +1,3 @@
-// Tests security dangerous config flags current snapshot test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/config.js";
 import { resolvePluginConfigContractsById } from "../plugins/config-contracts.js";

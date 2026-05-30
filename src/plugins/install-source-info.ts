@@ -1,4 +1,3 @@
-// Plugin install source parser and warning generator for package metadata.
 import { parseClawHubPluginSpec } from "../infra/clawhub-spec.js";
 import { parseRegistryNpmSpec, type ParsedRegistryNpmSpec } from "../infra/npm-registry-spec.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";

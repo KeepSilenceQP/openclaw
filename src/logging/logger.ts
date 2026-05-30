@@ -1,5 +1,4 @@
 // File logger runtime: resolves logging config, writes rolling redacted logs,
-// and mirrors safe records into diagnostic events.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -27,7 +26,6 @@ import { redactSecrets, redactSensitiveText } from "./redact.js";
 import { loggingState } from "./state.js";
 import { formatTimestamp } from "./timestamps.js";
 import type { LoggerSettings } from "./types.js";
-/** User/configurable logging settings before runtime defaults are applied. */
 export type { LoggerSettings } from "./types.js";
 
 type ProcessWithBuiltinModule = NodeJS.Process & {
@@ -727,7 +725,6 @@ export const testApi = {
   resolveActiveLogFile,
   shouldSkipMutatingLoggingConfigRead,
 };
-/** Test-only namespace for logger path resolution and config-read guards. */
 export { testApi as __test__ };
 
 function formatLocalDate(date: Date): string {

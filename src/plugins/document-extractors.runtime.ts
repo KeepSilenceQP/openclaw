@@ -1,4 +1,3 @@
-// Runtime boundary for plugins document extractors runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeStringEntries, sortUniqueStrings } from "../shared/string-normalization.js";
 import { resolveEnabledBundledManifestContractPlugins } from "./bundled-manifest-contract-plugins.js";

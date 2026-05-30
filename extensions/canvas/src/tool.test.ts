@@ -1,4 +1,3 @@
-// Tests extensions/canvas/src tool test behavior.
 import { mkdtemp, mkdir, rm, symlink, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

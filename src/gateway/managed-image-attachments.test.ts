@@ -1,4 +1,3 @@
-// Tests gateway managed image attachments test behavior.
 import fs from "node:fs/promises";
 import http from "node:http";
 import type { AddressInfo } from "node:net";

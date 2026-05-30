@@ -1,4 +1,3 @@
-// Tests extensions/video-generation-core/src runtime test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { generateVideo, listRuntimeVideoGenerationProviders } from "./runtime.js";
 

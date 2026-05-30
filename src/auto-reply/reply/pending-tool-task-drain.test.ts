@@ -1,4 +1,3 @@
-// Coverage for pending tool task drain behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { drainPendingToolTasks } from "./pending-tool-task-drain.js";
 

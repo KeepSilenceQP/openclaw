@@ -1,4 +1,3 @@
-// Tests extensions/google media understanding provider video test behavior.
 import {
   createRequestCaptureJsonFetch,
   installPinnedHostnameTestHooks,

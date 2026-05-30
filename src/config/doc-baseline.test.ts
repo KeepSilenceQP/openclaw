@@ -1,4 +1,3 @@
-// Tests config doc baseline test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectConfigDocBaselineEntries,

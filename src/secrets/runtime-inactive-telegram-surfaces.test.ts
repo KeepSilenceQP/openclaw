@@ -1,4 +1,3 @@
-// Tests secrets runtime inactive telegram surfaces test behavior.
 import { describe, expect, it } from "vitest";
 import "./runtime-telegram.test-support.ts";
 import { asConfig, setupSecretsRuntimeSnapshotTestHooks } from "./runtime.test-support.ts";

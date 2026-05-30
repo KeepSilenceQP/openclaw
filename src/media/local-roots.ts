@@ -1,5 +1,4 @@
 // Local filesystem roots from which media attachments may be read. These roots
-// are the boundary between host files and model/channel media payloads.
 import path from "node:path";
 import { resolveAgentWorkspaceDir } from "../agents/agent-scope.js";
 import {

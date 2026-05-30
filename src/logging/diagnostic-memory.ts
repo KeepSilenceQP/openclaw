@@ -1,5 +1,4 @@
 // Diagnostic memory sampler: emits bounded process memory events, detects
-// threshold/growth pressure, and optionally writes critical support bundles.
 import {
   emitInternalDiagnosticEvent as emitDiagnosticEvent,
   type DiagnosticMemoryPressureEvent,

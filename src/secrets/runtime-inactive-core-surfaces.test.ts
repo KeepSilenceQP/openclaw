@@ -1,4 +1,3 @@
-// Tests secrets runtime inactive core surfaces test behavior.
 import { describe, expect, it } from "vitest";
 import { asConfig, setupSecretsRuntimeSnapshotTestHooks } from "./runtime.test-support.ts";
 

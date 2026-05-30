@@ -1,4 +1,3 @@
-// Tests extensions/zalo/src outbound media test behavior.
 import { stat } from "node:fs/promises";
 import { join } from "node:path";
 import { resolvePreferredOpenClawTmpDir } from "openclaw/plugin-sdk/temp-path";

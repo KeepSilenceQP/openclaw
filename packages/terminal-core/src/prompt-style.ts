@@ -1,4 +1,3 @@
-// Prompt text styling helpers for Clack-based terminal prompts.
 import { isRich, theme } from "./theme.js";
 
 /** Style a prompt message with the terminal accent color when available. */

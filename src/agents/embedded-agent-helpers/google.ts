@@ -11,5 +11,4 @@ export function isGemma4ModelRequiringReasoningStrip(modelId?: string | null): b
   return isGemma4ModelId(modelId);
 }
 
-/** Google turn-order sanitizer used before embedded-agent provider calls. */
 export { sanitizeGoogleTurnOrdering };

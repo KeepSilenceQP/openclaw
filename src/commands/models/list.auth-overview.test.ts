@@ -1,4 +1,3 @@
-// Tests model-list auth overview rows and probe summary rendering.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { NON_ENV_SECRETREF_MARKER } from "../../agents/model-auth-markers.js";
 import { resolveEnvApiKey } from "../../agents/model-auth.js";

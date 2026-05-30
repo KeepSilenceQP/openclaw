@@ -1,4 +1,3 @@
-// Runtime callback and maintenance types shared by session store modules.
 import type { MsgContext } from "../../auto-reply/templating.js";
 import type { ChannelRouteRef } from "../../plugin-sdk/channel-route.js";
 import type { DeliveryContext } from "../../utils/delivery-context.types.js";

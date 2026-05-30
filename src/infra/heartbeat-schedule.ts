@@ -1,5 +1,4 @@
 // Deterministic heartbeat scheduling helpers.
-// Agents get stable phase offsets so periodic heartbeats spread across the interval.
 import { createHash } from "node:crypto";
 import { resolveIntegerOption } from "./numeric-options.js";
 

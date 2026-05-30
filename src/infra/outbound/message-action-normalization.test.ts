@@ -1,4 +1,3 @@
-// Tests infra/outbound message action normalization test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { normalizeMessageActionInput } from "./message-action-normalization.js";
 

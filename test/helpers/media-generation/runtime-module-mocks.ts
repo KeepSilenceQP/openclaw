@@ -1,4 +1,3 @@
-// Media-generation runtime tests share hoisted provider/auth/model mocks from this module.
 import { vi } from "vitest";
 import type { OpenClawConfig } from "../../../src/config/config.js";
 import type { ImageGenerationProvider } from "../../../src/image-generation/types.js";

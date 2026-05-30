@@ -29,7 +29,6 @@ type RunCommandOptions = {
   signal?: AbortSignal;
 };
 
-/** Public filesystem bridge path/stat operation contracts. */
 export type { SandboxFsBridge, SandboxFsStat, SandboxResolvedPath } from "./fs-bridge.types.js";
 
 /** Creates a filesystem bridge for resolving and mutating sandbox paths. */

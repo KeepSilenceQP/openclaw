@@ -1,4 +1,3 @@
-// Tests extensions/mattermost/src doctor test behavior.
 import { describe, expect, it } from "vitest";
 import { mattermostDoctor } from "./doctor.js";
 

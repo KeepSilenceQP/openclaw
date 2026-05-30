@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src probe contract test behavior.
 import type { BaseProbeResult } from "openclaw/plugin-sdk/channel-contract";
 import { describe, expectTypeOf, it } from "vitest";
 import type { IMessageProbe } from "./probe.js";

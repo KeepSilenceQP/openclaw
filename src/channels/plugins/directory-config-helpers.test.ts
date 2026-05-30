@@ -1,4 +1,3 @@
-// Coverage for channel directory config helpers.
 import { describe, expect, it } from "vitest";
 import {
   createInspectedDirectoryEntriesLister,

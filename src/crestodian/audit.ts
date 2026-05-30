@@ -1,4 +1,3 @@
-// Appends JSONL audit records for Crestodian actions that changed local OpenClaw state.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";

@@ -1,5 +1,3 @@
-// Runtime speech-core barrel for OpenClaw internals and bundled plugins.
-/** Runtime TTS configuration, synthesis, streaming, and test exports. */
 export {
   buildTtsSystemPromptHint,
   getLastTtsAttempt,

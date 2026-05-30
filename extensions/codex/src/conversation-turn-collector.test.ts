@@ -1,4 +1,3 @@
-// Tests extensions/codex/src conversation turn collector test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { createCodexConversationTurnCollector } from "./conversation-turn-collector.js";
 

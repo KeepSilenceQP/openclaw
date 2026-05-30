@@ -1,4 +1,3 @@
-// Loads node:sqlite with warning filtering and a clearer runtime error.
 import { createRequire } from "node:module";
 import { formatErrorMessage } from "./errors.js";
 import { installProcessWarningFilter } from "./warning-filter.js";

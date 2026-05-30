@@ -1,4 +1,3 @@
-// QA Lab mock OpenAI provider entry registers the local Responses-compatible server.
 import { createMockQaProviderDefinition } from "../shared/mock-provider-definition.js";
 
 /** Provider definition for the QA mock OpenAI mode. */

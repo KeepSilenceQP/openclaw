@@ -1,4 +1,3 @@
-// Tests extensions/browser/src/browser pw tools core last file chooser arm wins test behavior.
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

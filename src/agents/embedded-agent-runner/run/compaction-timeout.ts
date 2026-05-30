@@ -1,4 +1,3 @@
-// Compaction timeout grace-period helpers for embedded agent runs.
 import type { AgentMessage } from "../../runtime/index.js";
 
 /** Exported API contract used by runtime callers and tests. */

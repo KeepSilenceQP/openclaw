@@ -1,4 +1,3 @@
-// Tests infra ports probe test behavior.
 import net from "node:net";
 import { describe, expect, it } from "vitest";
 import { tryListenOnPort } from "./ports-probe.js";

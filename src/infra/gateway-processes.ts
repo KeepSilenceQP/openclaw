@@ -1,4 +1,3 @@
-// Process inspection helpers for finding and signaling running gateway instances.
 import { spawnSync } from "node:child_process";
 import fsSync from "node:fs";
 import { uniqueValues } from "../shared/string-normalization.js";

@@ -1,4 +1,3 @@
-// Tests extensions/memory-wiki/src claim health test behavior.
 import { describe, expect, it } from "vitest";
 import { buildPageContradictionClusters } from "./claim-health.js";
 import type { WikiPageSummary } from "./markdown.js";

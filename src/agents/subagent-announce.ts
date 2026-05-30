@@ -73,11 +73,8 @@ function loadSubagentRegistryRuntime() {
   return subagentRegistryRuntimeLoader.load();
 }
 
-/** Subagent system prompt builder used by announcement runs. */
 export { buildSubagentSystemPrompt } from "./subagent-system-prompt.js";
-/** Captures concise completion replies from subagent announcement output. */
 export { captureSubagentCompletionReply } from "./subagent-announce-output.js";
-/** Subagent run outcome contract returned after announcement processing. */
 export type { SubagentRunOutcome } from "./subagent-announce-output.js";
 
 /** Human-readable source kind used in parent announcement prompts. */
@@ -642,5 +639,4 @@ export const testing = {
       : defaultSubagentAnnounceDeps;
   },
 };
-/** Test-only dependency override hooks for subagent announcement delivery. */
 export { testing as __testing };

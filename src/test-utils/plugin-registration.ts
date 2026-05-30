@@ -1,4 +1,3 @@
-// Test helpers for capturing provider registrations from plugin register hooks.
 import { createCapturedPluginRegistration } from "../plugins/captured-registration.js";
 import type {
   ImageGenerationProviderPlugin,
@@ -12,7 +11,6 @@ import type {
   VideoGenerationProviderPlugin,
 } from "../plugins/types.js";
 
-/** Capture plugin-sdk registrations without starting the full plugin runtime. */
 export { createCapturedPluginRegistration };
 
 type RegistrablePlugin = {

@@ -182,5 +182,4 @@ export const testing = {
     precomputedSubcommandHelpText = undefined;
   },
 };
-/** Private test-only alias for root help metadata cache hooks. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// Current-turn image extraction helpers for model input.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { logVerbose } from "../../globals.js";
 import { formatErrorMessage } from "../../infra/errors.js";

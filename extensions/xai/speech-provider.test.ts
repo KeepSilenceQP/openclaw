@@ -1,4 +1,3 @@
-// Tests extensions/xai speech provider test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { buildXaiSpeechProvider } from "./speech-provider.js";
 

@@ -1,4 +1,3 @@
-// Group chat activation mode parsing and command handling.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
 export type GroupActivationMode = "mention" | "always";

@@ -1,4 +1,3 @@
-// Inspects port listeners and established connections across platforms.
 import os from "node:os";
 import { runCommandWithTimeout } from "../process/exec.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

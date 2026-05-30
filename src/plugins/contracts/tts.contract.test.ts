@@ -1,4 +1,3 @@
-// Tests plugins/contracts tts contract test behavior.
 import {
   describeTtsAutoApplyContract,
   describeTtsConfigContract,

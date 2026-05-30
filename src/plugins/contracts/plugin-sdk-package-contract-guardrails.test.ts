@@ -1,4 +1,3 @@
-// Tests plugins/contracts plugin sdk package contract guardrails test behavior.
 import fs from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";

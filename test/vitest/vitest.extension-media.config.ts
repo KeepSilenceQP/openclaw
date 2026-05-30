@@ -1,4 +1,3 @@
-// Vitest project config for media-related extension tests.
 import { mediaExtensionTestRoots } from "./vitest.extension-media-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

@@ -1,4 +1,3 @@
-// Computes cleanup deadlines for terminal task records.
 import type { TaskRecord, TaskStatus } from "./task-registry.types.js";
 
 /** Default retention window for completed task records. */

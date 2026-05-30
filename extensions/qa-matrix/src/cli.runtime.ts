@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-matrix/src cli runtime behavior.
 import {
   printLiveTransportQaArtifacts,
   startLiveTransportQaOutputTee,

@@ -1,4 +1,3 @@
-// Tests gateway http utils authorize request test behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 

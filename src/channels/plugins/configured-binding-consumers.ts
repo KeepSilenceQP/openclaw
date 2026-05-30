@@ -1,4 +1,3 @@
-// Configured binding consumer lookup and dispatch helpers.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type {
   CompiledConfiguredBinding,

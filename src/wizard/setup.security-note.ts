@@ -1,4 +1,3 @@
-// Builds localized security guidance shown during setup.
 import chalk from "chalk";
 import { formatCliCommand } from "../cli/command-format.js";
 import { t } from "./i18n/index.js";

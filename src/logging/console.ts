@@ -1,5 +1,4 @@
 // Console logging bridge: resolves user-visible console settings and mirrors
-// console.* output into structured file logs without stealing stdout.
 import util from "node:util";
 import { stripAnsi } from "../../packages/terminal-core/src/ansi.js";
 import type { OpenClawConfig } from "../config/types.js";
@@ -13,7 +12,6 @@ import { loggingState } from "./state.js";
 import { formatLocalIsoWithOffset, formatTimestamp } from "./timestamps.js";
 import type { ConsoleStyle, LoggerSettings } from "./types.js";
 
-/** Console output formatting mode accepted by the logging configuration. */
 export type { ConsoleStyle } from "./types.js";
 type ConsoleSettings = {
   level: LogLevel;

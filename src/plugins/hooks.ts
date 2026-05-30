@@ -91,8 +91,6 @@ import type {
   PluginHookBeforeInstallResult,
 } from "./hook-types.js";
 
-// Re-export types for consumers
-/** Hook event/result types exported for plugin SDK consumers. */
 export type {
   PluginHookAgentContext,
   PluginHookBeforeAgentReplyEvent,

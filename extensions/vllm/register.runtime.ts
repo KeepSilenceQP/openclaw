@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/vllm register runtime behavior.
 export {
   buildVllmProvider,
   VLLM_DEFAULT_API_KEY_ENV_VAR,

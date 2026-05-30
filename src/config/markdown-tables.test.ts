@@ -1,4 +1,3 @@
-// Tests config markdown tables test behavior.
 import { describe, expect, it, vi } from "vitest";
 
 const listChannelPluginsMock = vi.hoisted(() =>

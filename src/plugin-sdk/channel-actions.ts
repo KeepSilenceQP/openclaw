@@ -2,14 +2,11 @@ import { Type } from "typebox";
 import type { TSchema } from "typebox";
 import { stringEnum as createStringEnum } from "../agents/schema/typebox.js";
 
-/** Shared action-gate and account helpers for channel action tools. */
 export {
   createUnionActionGate,
   listTokenSourcedAccounts,
 } from "../channels/plugins/actions/shared.js";
-/** Resolves reaction action message ids from channel-specific parameters. */
 export { resolveReactionMessageId } from "../channels/plugins/actions/reaction-message-id.js";
-/** Common tool result, schema, and parameter helpers for channel actions. */
 export {
   createActionGate,
   imageResultFromFile,
@@ -24,15 +21,10 @@ export {
   readStringParam,
   ToolAuthorizationError,
 } from "../agents/tools/common.js";
-/** Action gate type used by channel action tools. */
 export type { ActionGate } from "../agents/tools/common.js";
-/** Timestamp normalizer shared by channel action payloads. */
 export { withNormalizedTimestamp } from "../agents/date-time.js";
-/** Media input guard shared by channel action tools. */
 export { assertMediaNotDataUrl } from "../agents/sandbox-paths.js";
-/** Poll selection limit helper shared by poll-capable channel actions. */
 export { resolvePollMaxSelections } from "../polls.js";
-/** TypeBox schema helpers shared by channel action tool definitions. */
 export {
   optionalFiniteNumberSchema,
   optionalNonNegativeIntegerSchema,

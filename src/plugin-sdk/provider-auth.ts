@@ -1,5 +1,3 @@
-// Public auth/onboarding helpers for provider plugins.
-
 import path from "node:path";
 import { resolveDefaultAgentDir } from "../agents/agent-scope-config.js";
 import { externalCliDiscoveryForProviderAuth } from "../agents/auth-profiles/external-cli-discovery.js";
@@ -29,44 +27,31 @@ import {
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { resolveProviderEndpoint } from "./provider-model-shared.js";
 
-/** OpenClaw config type used by provider auth helpers. */
 export type { OpenClawConfig } from "../config/config.js";
-/** Secret input type accepted by provider auth config. */
 export type { SecretInput } from "../config/types.secrets.js";
-/** Secret input mode selected during provider setup. */
 export type { SecretInputMode } from "../plugins/provider-auth-types.js";
-/** Provider auth result returned by auth methods. */
 export type { ProviderAuthResult } from "../plugins/types.js";
-/** Provider auth context passed to plugin auth methods. */
 export type { ProviderAuthContext } from "../plugins/types.js";
-/** Auth profile store and OAuth credential types exposed to provider plugins. */
 export type { AuthProfileStore, OAuthCredential } from "../agents/auth-profiles/types.js";
 
-/** Built-in CLI auth profile ids exposed for provider auth integrations. */
 export { CLAUDE_CLI_PROFILE_ID, CODEX_CLI_PROFILE_ID } from "../agents/auth-profiles/constants.js";
-/** Auth profile store helpers for loading and locked updates. */
 export {
   ensureAuthProfileStore,
   ensureAuthProfileStoreForLocalUpdate,
   updateAuthProfileStoreWithLock,
 } from "../agents/auth-profiles/store.js";
-/** Auth profile list/upsert/remove helpers for provider setup flows. */
 export {
   listProfilesForProvider,
   removeProviderAuthProfilesWithLock,
   upsertAuthProfile,
   upsertAuthProfileWithLock,
 } from "../agents/auth-profiles/profiles.js";
-/** Resolves provider API keys from supported environment variables. */
 export { resolveEnvApiKey } from "../agents/model-auth-env.js";
-/** Cached external CLI credential readers for provider auth integrations. */
 export {
   readClaudeCliCredentialsCached,
   readCodexCliCredentialsCached,
 } from "../agents/cli-credentials.js";
-/** Suggests OAuth profile ids for repairing legacy default auth state. */
 export { suggestOAuthProfileIdForLegacyDefault } from "../agents/auth-profiles/repair.js";
-/** API key marker helpers used to distinguish env, OAuth, and local auth sentinels. */
 export {
   CUSTOM_LOCAL_AUTH_MARKER,
   MINIMAX_OAUTH_MARKER,
@@ -75,13 +60,11 @@ export {
   resolveOAuthApiKeyMarker,
   resolveNonEnvSecretRefApiKeyMarker,
 } from "../agents/model-auth-markers.js";
-/** API key input preview, normalization, and validation helpers. */
 export {
   formatApiKeyPreview,
   normalizeApiKeyInput,
   validateApiKeyInput,
 } from "../plugins/provider-auth-input.js";
-/** Prompt/env helpers for collecting API keys during provider setup. */
 export {
   ensureApiKeyFromEnvOrPrompt,
   ensureApiKeyFromOptionEnvOrPrompt,
@@ -89,14 +72,11 @@ export {
   promptSecretRefForSetup,
   resolveSecretInputModeForEnvSelection,
 } from "../plugins/provider-auth-input.js";
-/** Normalizes API key config into the canonical SecretInput shape. */
 export { normalizeApiKeyConfig } from "../agents/models-config.providers.secrets.js";
-/** Token profile id and Anthropic setup-token validation helpers. */
 export {
   buildTokenProfileId,
   validateAnthropicSetupToken,
 } from "../plugins/provider-auth-token.js";
-/** Provider auth profile mutation and credential persistence helpers. */
 export {
   applyAuthProfileConfig,
   buildApiKeyCredential,
@@ -105,29 +85,20 @@ export {
   type ApiKeyStorageOptions,
   type WriteOAuthCredentialsOptions,
 } from "../plugins/provider-auth-helpers.js";
-/** Creates a provider auth method backed by API key setup/resolution. */
 export { createProviderApiKeyAuthMethod } from "../plugins/provider-api-key-auth.js";
-/** SecretRef coercion and configured SecretInput checks. */
 export { coerceSecretRef, hasConfiguredSecretInput } from "../config/types.secrets.js";
-/** Resolves the default provider alias for a SecretRef source. */
 export { resolveDefaultSecretProviderAlias } from "../secrets/ref-contract.js";
-/** Resolves the required home directory for provider auth files. */
 export { resolveRequiredHomeDir } from "../infra/home-dir.js";
-/** Resolves the OpenClaw agent directory through the SDK compatibility seam. */
 export { resolveOpenClawAgentDir } from "./agent-dir-compat.js";
-/** Optional/required SecretInput normalizers used by provider setup. */
 export {
   normalizeOptionalSecretInput,
   normalizeSecretInput,
 } from "../utils/normalize-secret-input.js";
-/** Provider environment variable helpers for auth-sensitive env filtering. */
 export {
   listKnownProviderAuthEnvVarNames,
   omitEnvKeysCaseInsensitive,
 } from "../secrets/provider-env-vars.js";
-/** Builds provider auth results from OAuth profile state. */
 export { buildOauthProviderAuthResult } from "./provider-auth-result.js";
-/** PKCE and form-url-encoding helpers for OAuth provider flows. */
 export {
   buildOpenAICodexCredentialExtra,
   decodeOpenAICodexJwtPayload,
@@ -141,12 +112,10 @@ export {
   generatePkceVerifierChallenge,
   toFormUrlEncoded,
 } from "./oauth-utils.js";
-/** OAuth credential freshness helpers and refresh margin constants. */
 export {
   DEFAULT_OAUTH_REFRESH_MARGIN_MS,
   hasUsableOAuthCredential,
 } from "../agents/auth-profiles/credential-state.js";
-/** GitHub Copilot dynamic header constants and builder. */
 export {
   COPILOT_EDITOR_PLUGIN_VERSION,
   COPILOT_EDITOR_VERSION,

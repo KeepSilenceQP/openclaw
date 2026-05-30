@@ -1,4 +1,3 @@
-// Tests infra/net proxy fetch test behavior.
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   resetActiveManagedProxyStateForTests,

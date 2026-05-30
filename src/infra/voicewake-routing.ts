@@ -1,5 +1,4 @@
 // Voice wake routing configuration.
-// Trigger words map wake events to current conversation, agent id, or canonical session key.
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";
 import {

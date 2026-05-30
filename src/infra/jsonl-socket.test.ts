@@ -1,4 +1,3 @@
-// Tests infra jsonl socket test behavior.
 import net from "node:net";
 import path from "node:path";
 import { describe, expect, it } from "vitest";

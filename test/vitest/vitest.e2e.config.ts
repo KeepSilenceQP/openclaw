@@ -1,4 +1,3 @@
-// Vitest config for repository E2E tests with bounded worker defaults.
 import os from "node:os";
 import { defineConfig } from "vitest/config";
 import { BUNDLED_PLUGIN_E2E_TEST_GLOB } from "./vitest.bundled-plugin-paths.ts";

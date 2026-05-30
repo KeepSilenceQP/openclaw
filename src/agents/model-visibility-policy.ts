@@ -54,5 +54,4 @@ export function createModelVisibilityPolicy(
   });
 }
 
-/** Effective provider/model visibility policy used by selection and fallback callers. */
 export type { ModelVisibilityPolicy };

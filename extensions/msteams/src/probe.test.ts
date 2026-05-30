@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src probe test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { MSTeamsConfig } from "../runtime-api.js";
 

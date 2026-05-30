@@ -1,4 +1,3 @@
-// Tests llm/providers openai responses shared test behavior.
 import type { Tool as OpenAIResponsesTool } from "openai/resources/responses/responses.js";
 import { describe, expect, it } from "vitest";
 import type { Model, Tool } from "../types.js";

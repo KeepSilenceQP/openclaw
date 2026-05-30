@@ -1,4 +1,3 @@
-// Message adapter definition helper with default manual receive behavior.
 import type {
   ChannelMessageAdapter,
   ChannelMessageAdapterShape,

@@ -1,4 +1,3 @@
-// Tests infra heartbeat reason test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeHeartbeatWakeReason } from "./heartbeat-reason.js";
 

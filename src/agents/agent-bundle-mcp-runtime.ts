@@ -1122,5 +1122,4 @@ export const testing = {
   },
   resolveSessionMcpRuntimeIdleTtlMs,
 };
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

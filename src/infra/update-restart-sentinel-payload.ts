@@ -1,4 +1,3 @@
-// Builds restart sentinel payloads emitted after self-update handoff.
 import {
   buildRestartSuccessContinuation,
   formatDoctorNonInteractiveHint,

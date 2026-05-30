@@ -1,4 +1,3 @@
-// Tests gateway/server-methods channels status test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { GatewayRequestHandlerOptions } from "./types.js";
 

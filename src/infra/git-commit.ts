@@ -263,5 +263,4 @@ export const resolveCommitHash = (
 export const testing = {
   clearCachedGitCommits,
 };
-/** Stable test-only alias for commit metadata cache hooks. */
 export { testing as __testing };

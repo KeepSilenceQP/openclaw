@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src oauth test behavior.
 import { createHash } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 

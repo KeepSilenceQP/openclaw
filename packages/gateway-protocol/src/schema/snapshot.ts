@@ -1,4 +1,3 @@
-// TypeBox schemas for gateway status snapshots sent to clients.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

@@ -2,9 +2,7 @@ export { asFiniteNumber } from "../shared/number-coercion.js";
 import { redactSensitiveText } from "../logging/redact.js";
 import { readResponseWithLimit } from "../media/read-response-with-limit.js";
 import { normalizeOptionalString as trimToUndefined } from "../shared/string-coerce.js";
-/** Boolean coercion helper used while parsing provider response metadata. */
 export { asBoolean } from "../utils/boolean.js";
-/** Trim string-like provider error fields to undefined when empty. */
 export { normalizeOptionalString as trimToUndefined } from "../shared/string-coerce.js";
 
 const ERROR_BODY_METADATA_LIMIT = 500;

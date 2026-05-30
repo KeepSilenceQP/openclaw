@@ -1,8 +1,6 @@
-// Shared JSON-file and pending-request helpers for device/node pairing stores.
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";
 
-/** JSON persistence primitives reused by pairing state stores. */
 export { createAsyncLock, readJsonIfExists, tryReadJson, writeJson } from "./json-files.js";
 
 /** Resolves pending/paired JSON file paths for a pairing state subdirectory. */

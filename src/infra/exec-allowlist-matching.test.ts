@@ -1,4 +1,3 @@
-// Tests infra exec allowlist matching test behavior.
 import { describe, expect, it } from "vitest";
 import { matchAllowlist, type ExecAllowlistEntry } from "./exec-approvals.js";
 

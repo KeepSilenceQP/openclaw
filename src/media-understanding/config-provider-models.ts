@@ -1,4 +1,3 @@
-// Helpers for discovering image-capable providers declared directly in config.
 import type { OpenClawConfig } from "../config/types.js";
 import { normalizeMediaProviderId } from "./provider-id.js";
 

@@ -1,4 +1,3 @@
-// Drives setup wizards over a request/response session API instead of a terminal.
 import { randomUUID } from "node:crypto";
 import { WizardCancelledError, type WizardProgress, type WizardPrompter } from "./prompts.js";
 

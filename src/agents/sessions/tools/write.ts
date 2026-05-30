@@ -26,7 +26,6 @@ const writeSchema = Type.Object({
   path: Type.String({ description: "Path to the file to write (relative or absolute)" }),
   content: Type.String({ description: "Content to write to the file" }),
 });
-/** Write tool input contract shared with tool-call consumers. */
 export type { WriteToolInput } from "./tool-contracts.js";
 
 /**

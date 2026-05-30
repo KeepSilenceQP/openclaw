@@ -1,4 +1,3 @@
-// Tests scripts test projects test behavior.
 import fs from "node:fs";
 import { createRequire } from "node:module";
 import os from "node:os";

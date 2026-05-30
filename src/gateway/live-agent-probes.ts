@@ -1,4 +1,3 @@
-// Live gateway probe helpers for exercising agent image replies and cron MCP calls.
 import { execFile } from "node:child_process";
 import { randomBytes } from "node:crypto";
 import { promisify } from "node:util";

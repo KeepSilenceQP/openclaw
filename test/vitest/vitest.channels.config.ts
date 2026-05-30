@@ -1,4 +1,3 @@
-// Channels Vitest config scopes core channel tests and supports env-provided narrowed globs.
 import { coreChannelTestInclude } from "./vitest.channel-paths.mjs";
 import { loadPatternListFromEnv } from "./vitest.pattern-file.ts";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";

@@ -1,4 +1,3 @@
-// Tests test/scripts rtt harness test behavior.
 import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import { createServer, type Server } from "node:http";

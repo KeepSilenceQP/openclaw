@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests universal test behavior.
 import { describe, expect, it } from "vitest";
 import { emitMd } from "../emit.js";
 import { emitJsonc } from "../jsonc/emit.js";

@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src approval auth test behavior.
 import { describe, expect, it } from "vitest";
 import { getWhatsAppApprovalApprovers, whatsappApprovalAuth } from "./approval-auth.js";
 

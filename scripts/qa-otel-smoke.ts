@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// QA OTEL smoke validates telemetry shape and privacy from QA-lab scenarios.
-
 import { spawn, type ChildProcess } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import { existsSync } from "node:fs";

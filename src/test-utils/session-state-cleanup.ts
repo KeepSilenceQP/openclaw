@@ -1,4 +1,3 @@
-// Test cleanup hooks for session stores, writer queues, and lock state.
 import { drainSessionWriteLockStateForTest } from "../agents/session-write-lock.js";
 import { clearSessionStoreCaches } from "../config/sessions/store-cache.js";
 import { drainSessionStoreWriterQueuesForTest } from "../config/sessions/store-writer-state.js";

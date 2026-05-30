@@ -1,4 +1,3 @@
-// Shared types for dispatch-from-config orchestration.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { GetReplyOptions, SourceReplyDeliveryMode } from "../get-reply-options.types.js";
 import type { FinalizedMsgContext } from "../templating.js";

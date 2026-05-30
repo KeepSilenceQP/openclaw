@@ -1,4 +1,3 @@
-// ACP dispatch orchestration for reply runs.
 import { resolveAcpAgentPolicyError, resolveAcpDispatchPolicyError } from "../../acp/policy.js";
 import { formatAcpRuntimeErrorText } from "../../acp/runtime/error-text.js";
 import { type AcpRuntimeError, toAcpRuntimeError } from "../../acp/runtime/errors.js";

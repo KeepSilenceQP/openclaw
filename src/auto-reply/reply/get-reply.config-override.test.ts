@@ -1,4 +1,3 @@
-// Coverage for get-reply config override behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../config/config.js";
 import {

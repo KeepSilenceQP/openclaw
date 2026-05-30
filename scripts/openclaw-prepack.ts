@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// OpenClaw prepack verifies built artifacts and refreshes package metadata before packing.
-
 import { spawnSync, type SpawnSyncOptions } from "node:child_process";
 import { existsSync, readdirSync } from "node:fs";
 import { pathToFileURL } from "node:url";

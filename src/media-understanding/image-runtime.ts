@@ -1,5 +1,4 @@
 // Lazy image-runtime facade so callers can import image helpers without loading
-// provider-heavy image modules during non-image media runs.
 import { createLazyRuntimeMethodBinder, createLazyRuntimeModule } from "../shared/lazy-runtime.js";
 
 const loadImageRuntime = createLazyRuntimeModule(() => import("./image.js"));

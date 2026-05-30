@@ -1,4 +1,3 @@
-// Moonshot docs sync rewrites generated Kimi K2 model blocks from UI model metadata.
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

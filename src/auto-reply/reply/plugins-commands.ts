@@ -1,4 +1,3 @@
-// Plugin command parsing helpers.
 import {
   normalizeOptionalLowercaseString,
   normalizeOptionalString,

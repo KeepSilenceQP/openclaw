@@ -1,4 +1,3 @@
-// Tests extensions/oc-path/src/oc-path/tests/scenarios edit emit roundtrip test behavior.
 import { describe, expect, it } from "vitest";
 import { setMdOcPath } from "../../edit.js";
 import { emitMd } from "../../emit.js";

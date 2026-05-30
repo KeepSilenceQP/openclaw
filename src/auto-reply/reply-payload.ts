@@ -1,4 +1,3 @@
-// Reply payload shape and metadata helpers shared across delivery paths.
 import type {
   InteractiveReply,
   MessagePresentation,

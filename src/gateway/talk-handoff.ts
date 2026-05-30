@@ -1,4 +1,3 @@
-// Issues temporary Gateway talk-room handoffs and tracks token-protected room state.
 import { createHash, randomBytes, randomUUID } from "node:crypto";
 import {
   asDateTimestampMs,

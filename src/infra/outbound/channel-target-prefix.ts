@@ -1,5 +1,4 @@
 // Channel target prefix helpers.
-// Provider prefixes like `slack:` are validated separately from target-kind prefixes like `user:`.
 import { getActivePluginChannelRegistryFromState } from "../../plugins/runtime-channel-state.js";
 import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js";
 import { normalizeMessageChannel } from "../../utils/message-channel-core.js";

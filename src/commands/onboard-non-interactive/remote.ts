@@ -1,4 +1,3 @@
-// Remote non-interactive onboarding writes gateway connection config without local daemon setup.
 import { formatCliCommand } from "../../cli/command-format.js";
 import { logConfigUpdated } from "../../config/logging.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

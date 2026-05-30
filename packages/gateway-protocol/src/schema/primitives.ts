@@ -1,4 +1,3 @@
-// Shared TypeBox primitives reused across gateway protocol schemas.
 import { Type } from "typebox";
 import { GATEWAY_CLIENT_IDS, GATEWAY_CLIENT_MODES } from "../client-info.js";
 import {

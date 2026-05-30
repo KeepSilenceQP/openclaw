@@ -1,4 +1,3 @@
-// QA Lab suite-runtime types describe gateway, transport, config, and session state.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type { QaProviderMode } from "./model-selection.js";
 import type { QaTransportActionName, QaTransportAdapter } from "./qa-transport.js";
@@ -87,5 +86,4 @@ export type QaRawSessionStoreEntry = {
 
 /** Minimal runtime environment needed by transport action handlers. */
 export type QaRuntimeActionHandlerEnv = Pick<QaSuiteRuntimeEnv, "cfg" | "transport">;
-/** QA transport action names accepted by runtime action handlers. */
 export type { QaTransportActionName };

@@ -1,4 +1,3 @@
-// Fetch mocks for provider usage/telemetry tests.
 import { vi } from "vitest";
 import { withFetchPreconnect } from "./fetch-mock.js";
 

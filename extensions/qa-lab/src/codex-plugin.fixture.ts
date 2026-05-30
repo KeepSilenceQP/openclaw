@@ -1,4 +1,3 @@
-// QA Lab Codex plugin fixture seeds plugin states and evaluates install lifecycle gates.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { resolveCodexAuthProfile, type QaAuthProfileSnapshot } from "./auth-profile.fixture.js";

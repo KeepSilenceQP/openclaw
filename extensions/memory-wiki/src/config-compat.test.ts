@@ -1,4 +1,3 @@
-// Tests extensions/memory-wiki/src config compat test behavior.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../api.js";
 import {

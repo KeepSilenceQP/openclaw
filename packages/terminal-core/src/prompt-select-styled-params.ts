@@ -1,4 +1,3 @@
-// Applies OpenClaw styling to Clack select prompt parameter objects.
 import { stylePromptHint, stylePromptMessage } from "./prompt-style.js";
 
 type SelectParamsLike = {

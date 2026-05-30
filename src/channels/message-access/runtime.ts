@@ -1,4 +1,3 @@
-// Runtime resolver for channel message ingress access.
 import { readChannelAllowFromStore } from "../../pairing/pairing-store.js";
 import type { PairingChannel } from "../../pairing/pairing-store.types.js";
 import { normalizeStringEntries, uniqueStrings } from "../../shared/string-normalization.js";

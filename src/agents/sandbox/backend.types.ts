@@ -52,9 +52,7 @@ export type RegisteredSandboxBackend = {
   manager?: SandboxBackendManager;
 };
 
-/** Sandbox backend handle and id contracts exposed by backend factories. */
 export type { SandboxBackendHandle, SandboxBackendId } from "./backend-handle.types.js";
-/** Command and filesystem bridge contracts exposed by sandbox backends. */
 export type {
   SandboxBackendCommandParams,
   SandboxBackendCommandResult,

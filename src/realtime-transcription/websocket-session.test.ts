@@ -1,4 +1,3 @@
-// Tests realtime-transcription websocket session test behavior.
 import { createServer } from "node:http";
 import type { AddressInfo } from "node:net";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

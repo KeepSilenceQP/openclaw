@@ -24,7 +24,6 @@ import {
   type SubCliDescriptor,
 } from "./subcli-descriptors.js";
 
-/** Re-export sub-CLI help metadata for root help assembly. */
 export { getSubCliCommandsWithSubcommands };
 
 /** Context that distinguishes runtime command loading from completion cache loading. */

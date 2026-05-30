@@ -1,4 +1,3 @@
-// Process-local config snapshot state for runtime-safe config writes and reloads.
 import { createHash } from "node:crypto";
 import type { OpenClawConfig } from "./types.js";
 

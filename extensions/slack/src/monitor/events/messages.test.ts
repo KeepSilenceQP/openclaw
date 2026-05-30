@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/events messages test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   createSlackSystemEventTestHarness,

@@ -1,4 +1,3 @@
-// Markdown-style YAML frontmatter parsing helpers.
 import { parse } from "yaml";
 
 type ParsedFrontmatter<T extends Record<string, unknown>> = {

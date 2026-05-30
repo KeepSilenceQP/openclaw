@@ -1,4 +1,3 @@
-// Tracks inbound Matrix events that were already claimed or processed.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

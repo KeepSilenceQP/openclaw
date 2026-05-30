@@ -1,4 +1,3 @@
-// Remote node capability cache used to advertise macOS skills from paired nodes.
 import { listAgentWorkspaceDirs } from "../../agents/workspace-dirs.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { NodeRegistry } from "../../gateway/node-registry.js";

@@ -1,4 +1,3 @@
-// Vitest project config for unit tests that depend on bundled plugins.
 import path from "node:path";
 import {
   bundledPluginDependentUnitTestFiles,

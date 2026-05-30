@@ -1,5 +1,4 @@
 // Session binding service for conversation/session routing.
-// Manages plugin adapters, generic current-conversation fallback, and binding errors.
 import { resolveGlobalMap } from "../../shared/global-singleton.js";
 import { uniqueValues } from "../../shared/string-normalization.js";
 import {
@@ -25,7 +24,6 @@ import type {
   SessionBindingUnbindInput,
 } from "./session-binding.types.js";
 
-/** Session binding contract types exposed to channel and outbound callers. */
 export type {
   BindingStatus,
   BindingTargetKind,
@@ -418,5 +416,4 @@ export const testing = {
     return [...ADAPTERS_BY_CHANNEL_ACCOUNT.keys()];
   },
 };
-/** Test-only session binding service controls. */
 export { testing as __testing };

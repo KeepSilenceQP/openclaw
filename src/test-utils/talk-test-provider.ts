@@ -1,4 +1,3 @@
-// Shared talk provider fixture values for speech config tests.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 
 /** Stable id for the fake speech provider used in tests. */

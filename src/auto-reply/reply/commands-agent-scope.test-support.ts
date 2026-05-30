@@ -1,4 +1,3 @@
-// Test support for mocking agent scope resolution in command tests.
 import { vi } from "vitest";
 
 export const resolveSessionAgentIdMock = vi.fn(() => "main");

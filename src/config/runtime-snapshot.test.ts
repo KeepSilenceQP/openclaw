@@ -1,4 +1,3 @@
-// Tests config runtime snapshot test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   finalizeRuntimeSnapshotWrite,

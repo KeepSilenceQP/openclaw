@@ -1,4 +1,3 @@
-// Body text helpers for reply prompt and command handling.
 import type { SessionEntry } from "../../config/sessions/types.js";
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 import { setAbortMemory } from "./abort-primitives.js";

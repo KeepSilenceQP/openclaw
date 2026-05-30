@@ -1,5 +1,4 @@
 // Outbound message policy enforcement.
-// Handles per-agent action allowlists and cross-context messaging guards/markers.
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type {
   ChannelId,

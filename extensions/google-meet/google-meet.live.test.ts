@@ -1,4 +1,3 @@
-// Tests extensions/google-meet google meet live test behavior.
 import { isLiveTestEnabled } from "openclaw/plugin-sdk/test-env";
 import { describe, expect, it } from "vitest";
 import { buildGoogleMeetExportManifest, googleMeetExportFileNames } from "./src/cli.js";

@@ -1,4 +1,3 @@
-// Tests extensions/memory-core/src dreaming command test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type {
   OpenClawPluginCommandDefinition,

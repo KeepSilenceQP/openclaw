@@ -1,4 +1,3 @@
-// Helpers for rendering discovered harness skills into system-prompt instructions.
 import type { Skill } from "./types.js";
 
 /** Format model-visible skill metadata, omitting skills hidden from model invocation. */

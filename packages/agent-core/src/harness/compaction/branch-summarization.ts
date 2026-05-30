@@ -31,7 +31,6 @@ export interface BranchSummaryDetails {
   modifiedFiles: string[];
 }
 
-/** Re-export file-operation metadata used by branch and compaction summaries. */
 export type { FileOperations } from "./utils.js";
 
 /** Prepared branch content for summarization. */

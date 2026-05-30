@@ -1,4 +1,3 @@
-// Tests plugins web provider public artifacts test behavior.
 import { describe, expect, it } from "vitest";
 import { loadPluginManifestRegistry } from "./manifest-registry.js";
 import {

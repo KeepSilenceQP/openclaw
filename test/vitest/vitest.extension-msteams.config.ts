@@ -1,4 +1,3 @@
-// Vitest project config for Microsoft Teams plugin tests.
 import { msTeamsExtensionTestRoots } from "./vitest.extension-msteams-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

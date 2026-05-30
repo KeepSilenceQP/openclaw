@@ -1,4 +1,3 @@
-// Tests ui/src/ui/views usage metrics test behavior.
 import { describe, expect, it, vi, afterEach } from "vitest";
 import {
   buildPeakErrorHours,

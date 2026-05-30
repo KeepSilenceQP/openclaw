@@ -1,4 +1,3 @@
-// Validates serialized secret-configuration plans before applying mutations.
 import type { SecretProviderConfig, SecretRef } from "../config/types.secrets.js";
 import { SecretProviderSchema } from "../config/zod-schema.core.js";
 import { isRecord as isObjectRecord } from "../shared/record-coerce.js";

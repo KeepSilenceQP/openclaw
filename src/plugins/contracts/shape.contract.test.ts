@@ -1,4 +1,3 @@
-// Tests plugins/contracts shape contract test behavior.
 import {
   createPluginRegistryFixture,
   registerVirtualTestPlugin,

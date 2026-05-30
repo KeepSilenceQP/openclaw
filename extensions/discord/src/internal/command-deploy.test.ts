@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/internal command deploy test behavior.
 import type { APIApplicationCommand } from "discord-api-types/v10";
 import { describe, expect, test } from "vitest";
 import { testing } from "./command-deploy.js";

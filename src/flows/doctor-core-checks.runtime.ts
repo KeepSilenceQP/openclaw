@@ -1,4 +1,3 @@
-// Runtime boundary for flows doctor core checks runtime behavior.
 import { TOOL_NAME_SEPARATOR } from "../agents/agent-bundle-mcp-names.js";
 import {
   type McpToolCatalogDiagnostic,

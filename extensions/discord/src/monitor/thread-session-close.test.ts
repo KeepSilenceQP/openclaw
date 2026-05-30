@@ -1,4 +1,3 @@
-// Tests extensions/discord/src/monitor thread session close test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const hoisted = vi.hoisted(() => {

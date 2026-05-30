@@ -1,4 +1,3 @@
-// Tests gateway/server-methods artifacts test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { artifactsHandlers, collectArtifactsFromMessages } from "./artifacts.js";
 

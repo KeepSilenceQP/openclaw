@@ -1,4 +1,3 @@
-// Tests manifest-backed model catalog rows for models list.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const mocks = vi.hoisted(() => ({

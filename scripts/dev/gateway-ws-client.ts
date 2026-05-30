@@ -1,4 +1,3 @@
-// Gateway WebSocket dev client sends request frames and dispatches responses/events.
 import { randomUUID } from "node:crypto";
 import WebSocket from "ws";
 

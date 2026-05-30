@@ -46,5 +46,4 @@ export type NodesRpcOpts = {
   audio?: boolean;
 };
 
-/** Shared parsed node list result types used by nodes CLI renderers. */
 export type { NodeListNode, PairedNode, PendingRequest } from "../../shared/node-list-types.js";

@@ -1,5 +1,4 @@
 // Shared realtime-talk contracts and tool-call helpers used by all browser
-// transports.
 import { REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME } from "../../../../src/talk/agent-consult-tool.js";
 import {
   buildRealtimeVoiceAgentCancelProviderResult,
@@ -529,7 +528,6 @@ function isAbortError(error: unknown): boolean {
   );
 }
 
-/** Shared realtime voice tool names and auto-control text detector. */
 export {
   REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME,
   REALTIME_VOICE_AGENT_CONTROL_TOOL_NAME,

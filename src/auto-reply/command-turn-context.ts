@@ -1,4 +1,3 @@
-// Normalized command turn context shared by text and native command paths.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 /** Command turn source folded into its runtime handling kind. */

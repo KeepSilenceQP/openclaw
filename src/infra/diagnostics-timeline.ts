@@ -1,5 +1,4 @@
 // Diagnostics timeline writer for lightweight JSONL performance traces.
-// Spans are tracked with AsyncLocalStorage so nested operations inherit phase/parent ids.
 import { AsyncLocalStorage } from "node:async_hooks";
 import { randomUUID } from "node:crypto";
 import { mkdirSync } from "node:fs";

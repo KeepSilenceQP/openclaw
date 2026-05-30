@@ -1,4 +1,3 @@
-// Renders QR code PNGs as base64/data URLs or private temporary files.
 import path from "node:path";
 import { tempWorkspace } from "../infra/private-temp-workspace.js";
 import { loadQrCodeRuntime, normalizeQrText } from "./qr-runtime.ts";

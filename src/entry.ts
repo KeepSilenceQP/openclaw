@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 // CLI entrypoint bootstrap: env normalization, respawn handling, fast help
-// paths, and lazy import of the full command runner.
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { getCommandPathWithRootOptions, hasFlag, isRootHelpInvocation } from "./cli/argv.js";

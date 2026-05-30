@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src session route test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveWhatsAppOutboundSessionRoute } from "./session-route.js";
 

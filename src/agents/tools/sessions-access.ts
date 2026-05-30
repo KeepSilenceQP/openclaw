@@ -4,7 +4,6 @@ import { isSubagentSessionKey } from "../../routing/session-key.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import { resolveInternalSessionKey, resolveMainSessionAlias } from "./sessions-resolution.js";
 
-/** Session visibility policy helpers shared with sandboxed session tools. */
 export {
   createAgentToAgentPolicy,
   createSessionVisibilityChecker,

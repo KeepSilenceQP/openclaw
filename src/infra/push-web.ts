@@ -1,5 +1,4 @@
 // Persists browser Web Push subscriptions and VAPID keys, then delivers gateway
-// notifications through the optional web-push runtime.
 import { createHash, randomUUID } from "node:crypto";
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";

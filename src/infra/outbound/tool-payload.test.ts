@@ -1,4 +1,3 @@
-// Tests infra/outbound tool payload test behavior.
 import { describe, expect, it } from "vitest";
 import { extractToolPayload as extractSharedToolPayload } from "../../plugin-sdk/tool-payload.js";
 import { extractToolPayload } from "./tool-payload.js";

@@ -1,4 +1,3 @@
-// Secret target registry compilation, lookup, and config discovery helpers.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { loadChannelSecretContractApi } from "./channel-contract-api.js";
 import { getPath } from "./path-utils.js";
@@ -419,7 +418,6 @@ export function listAuthProfileSecretTargetEntries(): SecretTargetRegistryEntry[
   );
 }
 
-/** Public secret target registry and discovery result types. */
 export type {
   AuthProfileType,
   DiscoveredConfigSecretTarget,

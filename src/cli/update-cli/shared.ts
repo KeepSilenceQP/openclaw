@@ -96,7 +96,6 @@ function normalizeVersionTag(tag: string): string | null {
   return parseSemver(cleaned) ? cleaned : null;
 }
 
-/** Package metadata readers used by update install detection. */
 export { readPackageName, readPackageVersion };
 
 /** Resolves a version or npm dist-tag to the target package version. */

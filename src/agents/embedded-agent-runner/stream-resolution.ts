@@ -271,5 +271,4 @@ function wrapEmbeddedAgentStreamFn(
     });
   };
 }
-/** Re-export test-only stream resolution hooks for colocated tests. */
 export { testing as __testing };

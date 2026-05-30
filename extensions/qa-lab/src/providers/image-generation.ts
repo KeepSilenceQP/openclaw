@@ -1,4 +1,3 @@
-// QA Lab image-generation provider helper builds config patches for image fixtures.
 import {
   normalizeTrimmedStringList,
   uniqueStrings,

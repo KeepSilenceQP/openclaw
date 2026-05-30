@@ -1,4 +1,3 @@
-// Creates isolated OpenClaw state/home/config layouts for integration-style tests.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

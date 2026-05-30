@@ -1,4 +1,3 @@
-// CLI-agent dispatch adapter for reply agent execution.
 import { runCliAgent } from "../../agents/cli-runner.js";
 import type { RunCliAgentParams } from "../../agents/cli-runner/types.js";
 import { clearCliSession } from "../../agents/cli-session.js";

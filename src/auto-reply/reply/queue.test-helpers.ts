@@ -1,4 +1,3 @@
-// Shared helpers for reply queue tests.
 import { afterAll, beforeAll } from "vitest";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { defaultRuntime } from "../../runtime.js";

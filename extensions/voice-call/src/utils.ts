@@ -1,4 +1,3 @@
-// Voice Call utility helpers normalize user-provided filesystem paths.
 import os from "node:os";
 import path from "node:path";
 

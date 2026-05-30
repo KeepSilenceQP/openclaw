@@ -1,4 +1,3 @@
-// Builds commitment extraction prompts, parses model output, and persists valid candidates.
 import { resolveAgentConfig } from "../agents/agent-scope.js";
 import type { OpenClawConfig } from "../config/config.js";
 import { resolveHeartbeatIntervalMs } from "../infra/heartbeat-summary.js";

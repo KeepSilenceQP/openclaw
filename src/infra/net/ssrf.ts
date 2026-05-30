@@ -1,4 +1,3 @@
-// SSRF policy, DNS pinning, and dispatcher helpers for guarded outbound HTTP.
 import { lookup as dnsLookupCb, type LookupAddress } from "node:dns";
 import { lookup as dnsLookup } from "node:dns/promises";
 import {

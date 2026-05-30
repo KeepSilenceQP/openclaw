@@ -1,4 +1,3 @@
-// Tests extensions/irc/src send test behavior.
 import { verifyChannelMessageAdapterCapabilityProofs } from "openclaw/plugin-sdk/channel-outbound";
 import { createSendCfgThreadingRuntime } from "openclaw/plugin-sdk/channel-test-helpers";
 import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vitest";

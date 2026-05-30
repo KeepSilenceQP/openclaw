@@ -1,4 +1,3 @@
-// Runtime boundary for cron/isolated-agent delivery outbound runtime behavior.
 export { createOutboundSendDeps } from "../../cli/outbound-send-deps.js";
 export { sendDurableMessageBatch } from "../../channels/message/runtime.js";
 export { type OutboundDeliveryResult } from "../../infra/outbound/deliver.js";

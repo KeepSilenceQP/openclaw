@@ -150,7 +150,6 @@ function collectPendingMediaFromInternalEvents(
   return pending;
 }
 
-/** Embedded-agent subscription parameters shared with lifecycle handlers. */
 export type { SubscribeEmbeddedAgentSessionParams } from "./embedded-agent-subscribe.types.js";
 
 /** Attach reply/event handlers to an embedded-agent session stream. */

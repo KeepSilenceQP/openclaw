@@ -1,4 +1,3 @@
-// Tests config config compaction settings test behavior.
 import { describe, expect, it } from "vitest";
 import { applyCompactionDefaults } from "./defaults.js";
 import type { OpenClawConfig } from "./types.js";

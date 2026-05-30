@@ -1,4 +1,3 @@
-// Tests security windows acl test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   DEFAULT_WINDOWS_SYSTEM_ROOT,

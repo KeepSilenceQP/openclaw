@@ -1,4 +1,3 @@
-// Tests model-catalog provider index planner test behavior.
 import { describe, expect, it } from "vitest";
 import { planProviderIndexModelCatalogRows } from "./index.js";
 

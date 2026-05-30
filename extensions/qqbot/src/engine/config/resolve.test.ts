@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/config resolve test behavior.
 import { describe, expect, it } from "vitest";
 import {
   DEFAULT_ACCOUNT_ID,

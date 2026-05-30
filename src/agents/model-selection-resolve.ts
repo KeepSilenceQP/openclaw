@@ -9,7 +9,6 @@ import {
   type ModelRefStatus,
 } from "./model-selection-shared.js";
 
-/** Model selection normalization helpers shared with config and UI callers. */
 export {
   buildConfiguredAllowlistKeys,
   buildModelAliasIndex,
@@ -18,7 +17,6 @@ export {
   resolveHooksGmailModel,
   resolveModelRefFromString,
 } from "./model-selection-shared.js";
-/** Model ref status result returned by catalog/allowlist resolution. */
 export type { ModelRefStatus } from "./model-selection-shared.js";
 
 function resolveDefaultFallbackModels(cfg: OpenClawConfig): string[] {

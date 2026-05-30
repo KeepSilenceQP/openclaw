@@ -1,5 +1,4 @@
 // Account-scoped conversation binding manager for channel-specific thread routing.
-// Records are mirrored into the generic session binding service for shared routing code.
 import { resolveThreadBindingConversationIdFromBindingId } from "../../channels/thread-binding-id.js";
 import {
   resolveThreadBindingIdleTimeoutMsForChannel,

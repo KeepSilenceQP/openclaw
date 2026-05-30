@@ -1,4 +1,3 @@
-// Tests gateway/server http listen test behavior.
 import { EventEmitter } from "node:events";
 import type { Server as HttpServer } from "node:http";
 import { describe, expect, it, vi } from "vitest";

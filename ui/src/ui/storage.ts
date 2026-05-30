@@ -110,7 +110,6 @@ export type UiSettings = {
   locale?: string;
 };
 
-/** Public identity type re-exported with the storage helpers that persist it. */
 export type { LocalUserIdentity } from "./user-identity.ts";
 
 function isViteDevPage(): boolean {

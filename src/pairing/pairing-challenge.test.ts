@@ -1,4 +1,3 @@
-// Tests pairing pairing challenge test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { issuePairingChallenge } from "./pairing-challenge.js";
 

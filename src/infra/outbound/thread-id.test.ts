@@ -1,4 +1,3 @@
-// Tests infra/outbound thread id test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeOutboundThreadId } from "./thread-id.js";
 

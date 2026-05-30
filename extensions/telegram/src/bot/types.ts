@@ -1,4 +1,3 @@
-// Shared types for extensions/telegram/src/bot types behavior.
 import type { ChatFullInfo, Message, UserFromGetMe } from "grammy/types";
 
 /** App-specific stream mode for Telegram stream previews. */

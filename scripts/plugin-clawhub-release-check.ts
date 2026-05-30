@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// ClawHub release check validates publishable plugin metadata and changed-version gates.
-
 import { pathToFileURL } from "node:url";
 import {
   collectClawHubPublishablePluginPackages,

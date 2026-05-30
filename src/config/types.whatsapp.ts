@@ -1,4 +1,3 @@
-// WhatsApp channel configuration types shared by config parsing and docs.
 import type { ReactionLevel } from "../utils/reaction-level.js";
 import type {
   BlockStreamingCoalesceConfig,

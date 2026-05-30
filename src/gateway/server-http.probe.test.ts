@@ -1,4 +1,3 @@
-// Tests gateway server http probe test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   AUTH_TOKEN,

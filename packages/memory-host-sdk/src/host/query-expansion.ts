@@ -1,4 +1,3 @@
-// Multilingual keyword extraction helpers for fallback FTS memory search.
 import { normalizeLowercaseStringOrEmpty } from "./string-utils.js";
 
 /**

@@ -1,5 +1,4 @@
 // Manages approval-gated plugin conversation bindings, including persistent
-// approvals, pending channel replies, and plugin-owned session records.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -1030,5 +1029,4 @@ export const testing = {
     state.fallbackNoticeBindingIds.clear();
   },
 };
-/** Legacy test-only alias used by existing plugin binding tests. */
 export { testing as __testing };

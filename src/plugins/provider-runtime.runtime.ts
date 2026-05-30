@@ -1,4 +1,3 @@
-// Runtime boundary for plugins provider runtime runtime behavior.
 import { createLazyImportLoader } from "../shared/lazy-promise.js";
 
 type ProviderRuntimeModule = typeof import("./provider-runtime.js");

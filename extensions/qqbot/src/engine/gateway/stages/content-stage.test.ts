@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/gateway/stages content stage test behavior.
 import { describe, expect, it } from "vitest";
 import type { QueuedMessage } from "../message-queue.js";
 import { buildUserContent } from "./content-stage.js";

@@ -1,4 +1,3 @@
-// Classifies diagnostic session activity as long-running, stalled, or recoverably stuck.
 import type { DiagnosticSessionActiveWorkKind } from "../infra/diagnostic-events.js";
 import type { DiagnosticSessionActivitySnapshot } from "./diagnostic-run-activity.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix draft stream test behavior.
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { PluginRuntime } from "../runtime-api.js";
 

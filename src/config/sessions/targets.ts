@@ -1,4 +1,3 @@
-// Session store target resolution for configured, per-agent, and discovered stores.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

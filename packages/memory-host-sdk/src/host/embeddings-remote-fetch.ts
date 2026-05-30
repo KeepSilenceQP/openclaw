@@ -1,4 +1,3 @@
-// Remote embedding response fetch and validation helpers.
 import { postJson } from "./post-json.js";
 import type { SsrFPolicy } from "./ssrf-policy.js";
 

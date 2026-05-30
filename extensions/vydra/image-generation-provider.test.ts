@@ -1,4 +1,3 @@
-// Tests extensions/vydra image generation provider test behavior.
 import { installPinnedHostnameTestHooks } from "openclaw/plugin-sdk/test-env";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { buildVydraImageGenerationProvider } from "./image-generation-provider.js";

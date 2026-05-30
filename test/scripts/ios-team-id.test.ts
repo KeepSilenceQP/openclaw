@@ -1,4 +1,3 @@
-// Tests test/scripts ios team id test behavior.
 import { execFileSync } from "node:child_process";
 import { chmodSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";

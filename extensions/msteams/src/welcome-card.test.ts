@@ -1,4 +1,3 @@
-// Tests extensions/msteams/src welcome card test behavior.
 import { describe, expect, it } from "vitest";
 import { buildMSTeamsPresentationCard } from "./presentation.js";
 import { buildGroupWelcomeText, buildWelcomeCard } from "./welcome-card.js";

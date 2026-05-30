@@ -1,4 +1,3 @@
-// QA suite gateway helpers mutate config, wait for readiness, and call gateway APIs.
 import { setTimeout as sleep } from "node:timers/promises";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import { fetchWithSsrFGuard } from "openclaw/plugin-sdk/ssrf-runtime";
@@ -341,7 +340,6 @@ async function applyConfig(params: {
   });
 }
 
-/** Test exports for QA gateway readiness, config patching, and fetch helpers. */
 export {
   applyConfig,
   fetchJson,

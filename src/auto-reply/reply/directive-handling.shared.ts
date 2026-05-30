@@ -1,4 +1,3 @@
-// Shared directive formatting and parsing helpers.
 import { formatCliCommand } from "../../cli/command-format.js";
 import { SYSTEM_MARK, prefixSystemMessage } from "../../infra/system-message.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";

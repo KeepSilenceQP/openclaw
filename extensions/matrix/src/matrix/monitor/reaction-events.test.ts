@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor reaction events test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   clearMatrixApprovalReactionTargetsForTest,

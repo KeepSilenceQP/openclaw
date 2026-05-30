@@ -1,5 +1,4 @@
 // Control UI controller for exec approval files. Loads, edits, and saves
-// gateway or node-scoped approvals while tracking dirty form state.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import { cloneConfigObject, removePathValue, setPathValue } from "./config/form-utils.ts";
 

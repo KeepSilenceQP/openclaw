@@ -1,4 +1,3 @@
-/** Re-exported zalo plugin public API. */
 export {
   type BaseProbeResult,
   type BaseTokenResolution,

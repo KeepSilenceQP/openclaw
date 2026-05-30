@@ -1,4 +1,3 @@
-// Tests process/supervisor registry test behavior.
 import { describe, expect, it } from "vitest";
 import { createRunRegistry } from "./registry.js";
 

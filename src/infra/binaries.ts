@@ -1,4 +1,3 @@
-// Validates required external CLI binaries before optional setup flows run.
 import { runExec } from "../process/exec.js";
 import { defaultRuntime, type RuntimeEnv } from "../runtime.js";
 

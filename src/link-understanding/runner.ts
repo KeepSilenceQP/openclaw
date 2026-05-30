@@ -1,4 +1,3 @@
-// Fetches message links safely and runs configured link-understanding adapters.
 import type { MsgContext } from "../auto-reply/templating.js";
 import { applyTemplate } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

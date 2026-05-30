@@ -1,4 +1,3 @@
-// Tests provider-specific migrate option filtering.
 import { describe, expect, it } from "vitest";
 import { buildMigrationProviderOptions } from "./providers.js";
 

@@ -1,4 +1,3 @@
-// QA suite summary helpers count failed scenarios from summary JSON shapes.
 import type { QaProviderMode } from "./model-selection.js";
 import type { RuntimeId, RuntimeParityResult } from "./runtime-parity.js";
 

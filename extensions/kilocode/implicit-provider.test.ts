@@ -1,4 +1,3 @@
-// Tests extensions/kilocode implicit provider test behavior.
 import { describe, expect, it } from "vitest";
 import { buildKilocodeProvider } from "./provider-catalog.js";
 

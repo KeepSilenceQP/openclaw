@@ -1,4 +1,3 @@
-// Converts internal task and flow records into plugin-facing read models.
 import type {
   TaskFlowDetail,
   TaskFlowView,

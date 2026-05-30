@@ -1,4 +1,3 @@
-// Gateway plugin loading plus in-process dispatch/runtime bridges for plugin APIs.
 import { randomUUID } from "node:crypto";
 import { performance } from "node:perf_hooks";
 import {

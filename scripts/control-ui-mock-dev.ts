@@ -1,4 +1,3 @@
-// Control UI mock dev server injects deterministic gateway data into the Vite app.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { createServer, type Plugin, type ViteDevServer } from "vite";

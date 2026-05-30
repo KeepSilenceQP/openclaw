@@ -1,4 +1,3 @@
-// Tests secrets unsupported surface policy test behavior.
 import { describe, expect, it } from "vitest";
 import {
   collectUnsupportedSecretRefConfigCandidates,

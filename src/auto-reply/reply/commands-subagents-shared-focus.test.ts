@@ -1,4 +1,3 @@
-// Coverage for shared subagent focus helpers.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { resolveFocusTargetSession } from "./commands-subagents/shared.js";
 

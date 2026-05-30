@@ -1,4 +1,3 @@
-// Vitest project config for Matrix plugin tests.
 import { matrixExtensionTestRoots } from "./vitest.extension-matrix-paths.mjs";
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 

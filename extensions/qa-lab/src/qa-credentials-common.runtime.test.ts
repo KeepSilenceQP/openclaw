@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src qa credentials common runtime test behavior.
 import { describe, expect, it } from "vitest";
 import { parseQaCredentialPositiveIntegerEnv } from "./qa-credentials-common.runtime.js";
 

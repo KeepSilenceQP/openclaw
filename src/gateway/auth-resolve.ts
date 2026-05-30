@@ -1,4 +1,3 @@
-// Resolves effective gateway auth mode and shared-secret material from config/env/overrides.
 import type {
   GatewayAuthConfig,
   GatewayTailscaleMode,

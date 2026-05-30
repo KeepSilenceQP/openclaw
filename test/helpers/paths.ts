@@ -1,4 +1,3 @@
-// Cross-platform path containment checks shared by filesystem-oriented tests.
 import path from "node:path";
 
 /** Return true when target resolves inside base on the current platform. */

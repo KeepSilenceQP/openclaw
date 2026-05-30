@@ -1,4 +1,3 @@
-// Tests config/sessions artifacts test behavior.
 import { describe, expect, it } from "vitest";
 import {
   formatSessionArchiveTimestamp,

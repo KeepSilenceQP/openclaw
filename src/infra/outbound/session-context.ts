@@ -1,4 +1,3 @@
-// Builds session metadata passed through outbound delivery hooks and policy.
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import { normalizeChatType } from "../../channels/chat-type.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

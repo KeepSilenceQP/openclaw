@@ -1,4 +1,3 @@
-// Tests test/scripts release scenarios assertions test behavior.
 import { spawnSync } from "node:child_process";
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";

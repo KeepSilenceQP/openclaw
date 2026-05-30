@@ -1,4 +1,3 @@
-// Output helpers for non-interactive onboarding JSON and gateway health failures.
 import { type RuntimeEnv, writeRuntimeJson } from "../../../runtime.js";
 import type { OnboardOptions } from "../../onboard-types.js";
 

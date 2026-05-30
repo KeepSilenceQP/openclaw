@@ -1,4 +1,3 @@
-// Runtime boundary for plugins setup registry runtime behavior.
 import { createRequire } from "node:module";
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

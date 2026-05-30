@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src media test behavior.
 import { realpathSync } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

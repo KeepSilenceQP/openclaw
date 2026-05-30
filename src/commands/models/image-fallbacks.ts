@@ -1,4 +1,3 @@
-// Image model fallback command wrappers around the shared fallback implementation.
 import type { RuntimeEnv } from "../../runtime.js";
 import {
   addFallbackCommand,

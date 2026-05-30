@@ -1,4 +1,3 @@
-// Tests OpenClaw ui app settings agents files refresh test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const loadAgentsMock = vi.hoisted(() =>

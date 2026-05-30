@@ -1,4 +1,3 @@
-// Bundle manifest parsing for Codex, Claude, and Cursor plugin formats.
 import fs from "node:fs";
 import path from "node:path";
 import JSON5 from "json5";

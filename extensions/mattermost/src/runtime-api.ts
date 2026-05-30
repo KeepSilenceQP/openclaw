@@ -1,6 +1,4 @@
 // Legacy map-helper exports in this facade stay for older plugin consumers.
-// New message-turn code should use createChannelHistoryWindow.
-/** Re-exported mattermost plugin public API. */
 export {
   applyAccountNameToChannelSection,
   applySetupAccountConfigPatch,

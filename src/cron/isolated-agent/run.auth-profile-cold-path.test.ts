@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run auth profile cold path test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const hasAnyAuthProfileStoreSourceMock = vi.fn(() => false);

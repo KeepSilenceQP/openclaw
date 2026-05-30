@@ -1,4 +1,3 @@
-// Channel plugin conversation binding helpers.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { getChannelPlugin } from "./registry.js";
 import type { ChannelId } from "./types.public.js";

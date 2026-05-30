@@ -1,4 +1,3 @@
-// Compressed blob storage for captured proxy payloads too large for inline rows.
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

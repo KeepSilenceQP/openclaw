@@ -1,5 +1,4 @@
 // Kimi web search provider descriptor: keeps setup/tool metadata lightweight and
-// lazy-loads the runtime only when setup or search execution runs.
 import {
   createWebSearchProviderContractFields,
   type WebSearchProviderPlugin,

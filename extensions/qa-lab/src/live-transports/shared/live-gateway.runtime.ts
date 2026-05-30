@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/qa-lab/src/live-transports/shared live gateway runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   startQaGatewayChild,

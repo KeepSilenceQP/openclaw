@@ -1,4 +1,3 @@
-// Voice-call manager store persists call records as JSONL and rebuilds active-call indexes.
 import path from "node:path";
 import {
   appendRegularFile,

@@ -1,4 +1,3 @@
-// Agent list, tool catalog, and selected-session controller helpers.
 import {
   normalizeChatModelOverrideValue,
   resolvePreferredServerChatModelValue,

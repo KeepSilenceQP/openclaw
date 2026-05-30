@@ -42,5 +42,4 @@ export const testing = {
     startupMetadataByPath.clear();
   },
 };
-/** Test-only startup metadata cache helpers. */
 export { testing as __testing };

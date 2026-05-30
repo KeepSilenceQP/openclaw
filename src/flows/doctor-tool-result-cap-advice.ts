@@ -1,4 +1,3 @@
-// Doctor advice for live tool-result caps relative to model context windows.
 import {
   calculateMaxToolResultCharsWithCap,
   resolveAutoLiveToolResultMaxChars,

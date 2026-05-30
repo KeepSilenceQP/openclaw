@@ -1,4 +1,3 @@
-// User-visible conversation label resolution for inbound context.
 import type { MsgContext } from "../auto-reply/templating.js";
 import {
   normalizeLowercaseStringOrEmpty,

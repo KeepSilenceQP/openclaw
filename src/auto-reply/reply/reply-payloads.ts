@@ -1,4 +1,3 @@
-// Public reply payload facade.
 export {
   applyReplyTagsToPayload,
   applyReplyThreading,

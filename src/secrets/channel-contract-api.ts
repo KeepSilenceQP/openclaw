@@ -1,4 +1,3 @@
-// Loads bundled and external channel contract APIs for secret and security metadata.
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";

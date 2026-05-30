@@ -1,4 +1,3 @@
-// Wraps fs-safe JSON readers/writers with OpenClaw error and durability defaults.
 import "./fs-safe-defaults.js";
 import {
   JsonFileReadError,
@@ -12,7 +11,6 @@ type WriteTextAtomicBeforeRename = (params: {
   tempPath: string;
 }) => Promise<void>;
 
-/** fs-safe JSON primitives exposed through infra's configured safe-fs facade. */
 export {
   JsonFileReadError,
   readJsonSync,
@@ -76,7 +74,6 @@ export async function readJsonFile<T>(filePath: string): Promise<T | null> {
   return tryReadJson<T>(filePath);
 }
 
-/** Async lock primitive from fs-safe for serializing file mutations. */
 export { createAsyncLock } from "@openclaw/fs-safe/advanced";
 
 /** Options controlling atomic text writes and crash-durable replacement. */

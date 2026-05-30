@@ -1,5 +1,4 @@
 // Controller helpers for node-host discovery in Control UI. Node rows are raw
-// gateway objects because plugin-provided node metadata can vary by provider.
 import type { GatewayBrowserClient } from "../gateway.ts";
 
 /** Mutable node-list state for the Nodes view. */

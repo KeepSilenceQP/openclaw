@@ -1,4 +1,3 @@
-// Heartbeat config honor inventory records schema, merge, reload, consumer, and test proof paths.
 import type { ConfigHonorInventoryRow } from "./config-honor-audit.js";
 
 /** Config prefixes covered by the heartbeat honor inventory audit. */

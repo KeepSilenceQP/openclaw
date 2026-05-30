@@ -1,4 +1,3 @@
-// QA Lab runtime tool fixture runs happy and failure prompts against one exposed tool.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { readRuntimeToolCoverageMetadata } from "./runtime-tool-metadata.js";

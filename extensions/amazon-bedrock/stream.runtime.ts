@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/amazon-bedrock stream runtime behavior.
 import {
   CachePointType,
   CacheTTL,

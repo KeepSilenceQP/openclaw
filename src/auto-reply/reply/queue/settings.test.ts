@@ -1,4 +1,3 @@
-// Coverage for queue setting normalization.
 import { describe, expect, it } from "vitest";
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import { resolveQueueSettings } from "./settings.js";

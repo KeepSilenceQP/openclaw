@@ -1,4 +1,3 @@
-// Vitest project config for task tests that must run serialized.
 import { createScopedVitestConfig } from "./vitest.scoped-config.ts";
 
 /** Create the scoped Vitest config for task tests with serialized execution. */

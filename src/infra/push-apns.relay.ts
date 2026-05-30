@@ -1,5 +1,4 @@
 // Hosted APNs relay client.
-// Gateway requests are device-signed before relay send grants can be used.
 import { URL } from "node:url";
 import type { GatewayConfig } from "../config/types.gateway.js";
 import { resolveTimerTimeoutMs } from "../shared/number-coercion.js";

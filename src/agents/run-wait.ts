@@ -327,5 +327,4 @@ export const testing = {
       : defaultRunWaitDeps;
   },
 };
-/** Backward-compatible test hook export for callers that import underscored internals. */
 export { testing as __testing };

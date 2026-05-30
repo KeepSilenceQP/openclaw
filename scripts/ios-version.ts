@@ -1,4 +1,3 @@
-// iOS version CLI prints pinned app version metadata as JSON or shell variables.
 import path from "node:path";
 import { resolveIosVersion } from "./lib/ios-version.ts";
 

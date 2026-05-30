@@ -1,4 +1,3 @@
-// Tests extensions/google-meet node host test behavior.
 import { spawnSync } from "node:child_process";
 import { EventEmitter } from "node:events";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";

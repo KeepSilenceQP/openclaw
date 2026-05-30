@@ -1,4 +1,3 @@
-// Tests extensions/azure-speech azure speech live test behavior.
 import {
   registerProviderPlugin,
   requireRegisteredProvider,

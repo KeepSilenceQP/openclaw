@@ -2,7 +2,6 @@ import fs from "node:fs";
 import { saveJsonFile } from "../../infra/json-file.js";
 import { AUTH_STORE_VERSION } from "./constants.js";
 import type { AuthProfileSecretsStore } from "./types.js";
-/** Auth profile path resolution helpers. */
 export {
   resolveAuthStatePath,
   resolveAuthStatePathForDisplay,

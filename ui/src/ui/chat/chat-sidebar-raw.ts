@@ -1,4 +1,3 @@
-// Raw-sidebar content builder for inspecting markdown or JSON backing content.
 import type { SidebarContent } from "../sidebar-content.ts";
 
 function toPlainTextCodeFence(value: string, language = ""): string {

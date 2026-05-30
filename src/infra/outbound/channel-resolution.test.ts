@@ -1,4 +1,3 @@
-// Tests infra/outbound channel resolution test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const resolveDefaultAgentIdMock = vi.hoisted(() => vi.fn());

@@ -1,5 +1,4 @@
 // Heartbeat wake coalescing and retry scheduling.
-// Multiple wake requests collapse by target and retry when the heartbeat runner is busy.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { normalizeHeartbeatWakeReason } from "./heartbeat-reason.js";
 

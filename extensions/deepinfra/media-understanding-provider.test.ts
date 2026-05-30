@@ -1,4 +1,3 @@
-// Tests extensions/deepinfra media understanding provider test behavior.
 import {
   describeImagesWithModel,
   describeImageWithModel,

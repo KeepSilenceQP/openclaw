@@ -1,6 +1,5 @@
 // Startup helpers for Node's compile cache. Packaged installs opt into a
 // version-scoped cache directory, while source checkouts respawn without the
-// cache so local edits are never shadowed by stale compiled output.
 import { spawn, type ChildProcess } from "node:child_process";
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { enableCompileCache, getCompileCacheDir } from "node:module";

@@ -1,4 +1,3 @@
-// Tests extensions/feishu/src send reply fallback test behavior.
 import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const resolveFeishuSendTargetMock = vi.hoisted(() => vi.fn());

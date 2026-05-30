@@ -11,7 +11,6 @@ import type {
   SessionsListResultBase,
   SessionsPatchResultBase,
 } from "../../../src/shared/session-types.js";
-/** Config UI hint metadata shared by schema and settings views. */
 export type { ConfigUiHint, ConfigUiHints } from "../../../src/shared/config-ui-hints-types.js";
 export type { SessionGoal } from "../../../src/config/sessions/types.js";
 
@@ -577,7 +576,6 @@ export type SessionsPatchResult = SessionsPatchResultBase<{
   };
 };
 
-/** Usage and cost DTOs rendered by Control UI charts. */
 export type {
   CostUsageDailyEntry,
   CostUsageSummary,

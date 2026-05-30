@@ -1,4 +1,3 @@
-// Memory host config types plus path, agent, and duration resolution helpers.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -8,7 +7,6 @@ import {
   normalizeStringEntries,
   uniqueStrings,
 } from "./string-utils.js";
-/** Shell argument splitter re-exported for QMD command config parsing. */
 export { splitShellArgs } from "./openclaw-runtime-io.js";
 
 /** Chat context category used by session memory send-policy rules. */

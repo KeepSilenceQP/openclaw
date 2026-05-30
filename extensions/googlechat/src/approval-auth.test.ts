@@ -1,4 +1,3 @@
-// Tests extensions/googlechat/src approval auth test behavior.
 import { describe, expect, it } from "vitest";
 import { googleChatApprovalAuth } from "./approval-auth.js";
 

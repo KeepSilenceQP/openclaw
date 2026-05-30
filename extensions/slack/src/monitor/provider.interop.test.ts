@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor provider interop test behavior.
 import { describe, expect, it } from "vitest";
 import {
   createSlackBoltApp,

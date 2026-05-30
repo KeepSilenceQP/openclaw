@@ -1,4 +1,3 @@
-// Tests extensions/slack/src channel actions setup status contract test behavior.
 import {
   installChannelActionsContractSuite,
   installChannelSetupContractSuite,

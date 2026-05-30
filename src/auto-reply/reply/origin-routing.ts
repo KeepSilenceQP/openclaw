@@ -1,4 +1,3 @@
-// Origin routing helpers for inter-session and source-directed replies.
 import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js";
 import type { OriginatingChannelType } from "../templating.js";
 

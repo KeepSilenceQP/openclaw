@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor/events home test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 let buildSlackHomeView: typeof import("./home.js").buildSlackHomeView;

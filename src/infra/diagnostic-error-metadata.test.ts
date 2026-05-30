@@ -1,4 +1,3 @@
-// Tests infra diagnostic error metadata test behavior.
 import { describe, expect, it } from "vitest";
 import {
   diagnosticErrorCategory,

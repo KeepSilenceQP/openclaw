@@ -1,4 +1,3 @@
-// Tests gateway session utils fs test behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

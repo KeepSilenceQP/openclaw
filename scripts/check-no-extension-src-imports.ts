@@ -1,4 +1,3 @@
-// Guardrail script rejects production plugin imports that reach directly into repo src.
 import fs from "node:fs";
 import path from "node:path";
 import { collectFilesSync, isCodeFile, relativeToCwd } from "./check-file-utils.js";

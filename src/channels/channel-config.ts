@@ -1,4 +1,3 @@
-// Channel config match helpers for direct, parent, and wildcard entries.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { normalizeUniqueSingleOrTrimmedStringList } from "../shared/string-normalization.js";
 

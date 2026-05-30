@@ -1,4 +1,3 @@
-// Tests infra vitest e2e config test behavior.
 import { describe, expect, it } from "vitest";
 import {
   normalizeConfigPath,

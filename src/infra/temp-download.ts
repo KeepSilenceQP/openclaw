@@ -1,5 +1,4 @@
 // Temporary download path helpers backed by private temp workspaces.
-// Names are sanitized before paths are exposed to download/copy flows.
 import "./fs-safe-defaults.js";
 import crypto from "node:crypto";
 import path from "node:path";
@@ -9,7 +8,6 @@ import { resolvePreferredOpenClawTmpDir } from "./tmp-openclaw-dir.js";
 
 const logger = createSubsystemLogger("infra:temp-download");
 
-/** Preferred OpenClaw temp root used by download helpers and tests. */
 export { resolvePreferredOpenClawTmpDir } from "./tmp-openclaw-dir.js";
 
 type TempDownloadTarget = {

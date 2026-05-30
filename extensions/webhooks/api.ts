@@ -1,4 +1,3 @@
-/** Re-exported webhooks plugin public API. */
 export {
   definePluginEntry,
   type OpenClawPluginApi,

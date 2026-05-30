@@ -1,4 +1,3 @@
-// Tests test package scripts test behavior.
 import fs from "node:fs";
 import { describe, expect, it } from "vitest";
 

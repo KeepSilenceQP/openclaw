@@ -1,6 +1,5 @@
 // Controller helpers for channel status and WhatsApp login actions. Channel
 // refreshes can return early on a soft timeout so the UI remains responsive
-// while the underlying gateway request finishes in the background.
 import type { ChannelsStatusSnapshot } from "../types.ts";
 import type { ChannelsState } from "./channels.types.ts";
 import {
@@ -8,7 +7,6 @@ import {
   isMissingOperatorReadScopeError,
 } from "./scope-errors.ts";
 
-/** Channel controller state contract shared with the Channels view. */
 export type { ChannelsState };
 
 type LoadChannelsOptions = {

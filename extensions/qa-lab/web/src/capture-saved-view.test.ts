@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/web/src capture saved view test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeCaptureSavedView, normalizeCaptureSavedViews } from "./capture-saved-view.js";
 

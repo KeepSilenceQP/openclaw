@@ -192,5 +192,4 @@ export const testing = {
     messageActionTesting.resetLoggedMessageActionErrors();
   },
 };
-/** Backward-compatible test hook export for channel tool discovery state. */
 export { testing as __testing };

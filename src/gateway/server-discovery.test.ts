@@ -1,4 +1,3 @@
-// Tests gateway server discovery test behavior.
 import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 
 const getTailnetHostname = vi.hoisted(() => vi.fn());

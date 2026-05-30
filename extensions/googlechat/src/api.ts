@@ -133,7 +133,6 @@ async function fetchBuffer(
   });
 }
 
-/** Public googlechat plugin helper for send Google Chat Message behavior. */
 export async function sendGoogleChatMessage(params: {
   account: ResolvedGoogleChatAccount;
   space: string;
@@ -169,7 +168,6 @@ export async function sendGoogleChatMessage(params: {
   return result ? { messageName: result.name } : null;
 }
 
-/** Public googlechat plugin helper for update Google Chat Message behavior. */
 export async function updateGoogleChatMessage(params: {
   account: ResolvedGoogleChatAccount;
   messageName: string;
@@ -184,7 +182,6 @@ export async function updateGoogleChatMessage(params: {
   return { messageName: result.name };
 }
 
-/** Public googlechat plugin helper for delete Google Chat Message behavior. */
 export async function deleteGoogleChatMessage(params: {
   account: ResolvedGoogleChatAccount;
   messageName: string;
@@ -194,7 +191,6 @@ export async function deleteGoogleChatMessage(params: {
   await fetchOk(account, url, { method: "DELETE" });
 }
 
-/** Public googlechat plugin helper for upload Google Chat Attachment behavior. */
 export async function uploadGoogleChatAttachment(params: {
   account: ResolvedGoogleChatAccount;
   space: string;
@@ -240,7 +236,6 @@ export async function uploadGoogleChatAttachment(params: {
   };
 }
 
-/** Public googlechat plugin helper for download Google Chat Media behavior. */
 export async function downloadGoogleChatMedia(params: {
   account: ResolvedGoogleChatAccount;
   resourceName: string;
@@ -251,7 +246,6 @@ export async function downloadGoogleChatMedia(params: {
   return await fetchBuffer(account, url, undefined, { maxBytes });
 }
 
-/** Public googlechat plugin helper for create Google Chat Reaction behavior. */
 export async function createGoogleChatReaction(params: {
   account: ResolvedGoogleChatAccount;
   messageName: string;
@@ -265,7 +259,6 @@ export async function createGoogleChatReaction(params: {
   });
 }
 
-/** Public googlechat plugin helper for list Google Chat Reactions behavior. */
 export async function listGoogleChatReactions(params: {
   account: ResolvedGoogleChatAccount;
   messageName: string;
@@ -282,7 +275,6 @@ export async function listGoogleChatReactions(params: {
   return result.reactions ?? [];
 }
 
-/** Public googlechat plugin helper for delete Google Chat Reaction behavior. */
 export async function deleteGoogleChatReaction(params: {
   account: ResolvedGoogleChatAccount;
   reactionName: string;
@@ -292,7 +284,6 @@ export async function deleteGoogleChatReaction(params: {
   await fetchOk(account, url, { method: "DELETE" });
 }
 
-/** Public googlechat plugin helper for find Google Chat Direct Message behavior. */
 export async function findGoogleChatDirectMessage(params: {
   account: ResolvedGoogleChatAccount;
   userName: string;
@@ -305,7 +296,6 @@ export async function findGoogleChatDirectMessage(params: {
   });
 }
 
-/** Public googlechat plugin helper for probe Google Chat behavior. */
 export async function probeGoogleChat(account: ResolvedGoogleChatAccount): Promise<{
   ok: boolean;
   status?: number;

@@ -1,4 +1,3 @@
-// Tests config config nix integration u3 u5 u9 test behavior.
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {

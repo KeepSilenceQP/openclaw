@@ -1,4 +1,3 @@
-// Voice Call WebSocket test support creates upgrade servers and waits on socket events.
 import { once } from "node:events";
 import http from "node:http";
 import { WebSocket } from "ws";

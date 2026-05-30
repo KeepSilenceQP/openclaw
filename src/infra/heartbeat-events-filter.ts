@@ -1,5 +1,4 @@
 // Heartbeat and scheduled-event prompt filtering.
-// Separates real reminders, exec completions, and heartbeat noise before agent replay.
 import { HEARTBEAT_RESPONSE_TOOL_INSTRUCTIONS } from "../auto-reply/heartbeat.js";
 import { HEARTBEAT_TOKEN } from "../auto-reply/tokens.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

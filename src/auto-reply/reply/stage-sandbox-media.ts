@@ -1,4 +1,3 @@
-// Sandbox media staging for agent-accessible workspaces.
 import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";

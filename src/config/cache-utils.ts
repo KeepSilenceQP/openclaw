@@ -1,4 +1,3 @@
-// Small TTL caches and file snapshots used by config/discovery read paths.
 import fs from "node:fs";
 import { parseStrictNonNegativeInteger } from "../infra/parse-finite-number.js";
 

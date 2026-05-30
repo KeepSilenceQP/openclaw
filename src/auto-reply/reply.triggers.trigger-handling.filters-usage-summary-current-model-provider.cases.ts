@@ -1,4 +1,3 @@
-// Table-driven coverage for trigger handling with usage summary filtering.
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";

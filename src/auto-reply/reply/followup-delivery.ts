@@ -1,4 +1,3 @@
-// Follow-up delivery helpers for message tool sends.
 import type { MessagingToolSend } from "../../agents/embedded-agent-messaging.types.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { stripHeartbeatToken } from "../heartbeat.js";

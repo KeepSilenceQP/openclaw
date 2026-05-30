@@ -1,4 +1,3 @@
-// iOS versioning sync CLI keeps generated iOS version artifacts aligned with the pinned version.
 import path from "node:path";
 import { syncIosVersioning } from "./lib/ios-version.ts";
 

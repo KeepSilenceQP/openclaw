@@ -1,5 +1,4 @@
 // Agent-scoped host file read capability for outbound media. This module keeps
-// media file access aligned with workspace and group tool policy.
 import path from "node:path";
 import { resolveAgentWorkspaceDir } from "../agents/agent-scope.js";
 import { resolveGroupToolPolicy } from "../agents/agent-tools.policy.js";

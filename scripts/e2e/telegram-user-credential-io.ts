@@ -1,4 +1,3 @@
-// Telegram user E2E credential helpers run bounded commands and HTTP JSON requests.
 import { spawn } from "node:child_process";
 import { readBoundedResponseText } from "../lib/bounded-response.ts";
 

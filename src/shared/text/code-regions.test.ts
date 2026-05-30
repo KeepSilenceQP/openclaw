@@ -1,4 +1,3 @@
-// Tests shared/text code regions test behavior.
 import { describe, expect, it } from "vitest";
 import { findCodeRegions, isInsideCode } from "./code-regions.js";
 

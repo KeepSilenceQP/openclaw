@@ -1,4 +1,3 @@
-// Modal-dialog test helpers for environments without native dialog behavior.
 import { expect } from "vitest";
 import type { OpenClawModalDialog } from "../ui/components/modal-dialog.ts";
 

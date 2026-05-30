@@ -1,4 +1,3 @@
-// Native approval prompt formatting for channel plugins.
 import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js";
 import { resolveChannelApprovalCapability } from "./approvals.js";
 import type { ChannelPlugin } from "./types.plugin.js";

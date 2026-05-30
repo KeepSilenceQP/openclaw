@@ -1,4 +1,3 @@
-// Identity helpers that let callers declare descriptor objects with tool contract types.
 import type { ToolDescriptor } from "./types.js";
 
 /** Returns a descriptor unchanged while preserving `ToolDescriptor` type checking. */

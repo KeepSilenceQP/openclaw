@@ -34,9 +34,7 @@ import type { AgentHarness, AgentHarnessSupport } from "./types.js";
 import { adaptAgentHarnessToV2, runAgentHarnessV2LifecycleAttempt } from "./v2.js";
 
 const log = createSubsystemLogger("agents/harness");
-/** Runtime policy resolver shared with harness selection callers. */
 export { resolveAgentHarnessPolicy } from "./policy.js";
-/** Effective runtime policy shape for harness selection. */
 export type { AgentHarnessPolicy };
 
 const PLUGIN_HARNESS_SENDER_DENY_ALL_PROMPT =

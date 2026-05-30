@@ -1,4 +1,3 @@
-// Tests test/scripts check extension wildcard reexports test behavior.
 import { describe, expect, it } from "vitest";
 import { findLocalWildcardReexports } from "../../scripts/check-extension-wildcard-reexports.mjs";
 

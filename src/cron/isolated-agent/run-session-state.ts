@@ -1,4 +1,3 @@
-// Cron isolated-agent session persistence and live model-selection bookkeeping.
 import fs from "node:fs";
 import type { LiveSessionModelSelection } from "../../agents/live-model-switch.js";
 import type { SessionEntry } from "../../config/sessions.js";

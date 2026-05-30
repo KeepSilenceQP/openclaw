@@ -1,4 +1,3 @@
-// Tests extensions/ollama/src provider base url test behavior.
 import { describe, expect, it } from "vitest";
 import { readProviderBaseUrl } from "./provider-base-url.js";
 

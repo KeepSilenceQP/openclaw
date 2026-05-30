@@ -1,4 +1,3 @@
-// Collects raw status-all data before rendering report sections.
 import { canExecRequestNode } from "../../agents/exec-defaults.js";
 import { readConfigFileSnapshot, resolveGatewayPort } from "../../config/config.js";
 import { readLastGatewayErrorLine } from "../../daemon/diagnostics.js";

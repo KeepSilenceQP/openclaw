@@ -1,4 +1,3 @@
-// Gateway protocol schemas for interactive setup wizard sessions.
 import { Type } from "typebox";
 import { NonEmptyString } from "./primitives.js";
 

@@ -1,4 +1,3 @@
-// Shared media understanding decision fixtures for auto-reply tests.
 import type { MediaUnderstandingDecision } from "../media-understanding/types.js";
 
 function createSuccessfulMediaDecision(

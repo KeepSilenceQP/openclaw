@@ -1,4 +1,3 @@
-// Script for test/scripts test helpers behavior.
 import fs from "node:fs";
 import fsPromises from "node:fs/promises";
 import os from "node:os";

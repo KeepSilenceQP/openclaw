@@ -1,4 +1,3 @@
-// Control UI renderer for the selected agent's overview, files, tools, channels, and cron panels.
 import { html, nothing } from "lit";
 import { keyed } from "lit/directives/keyed.js";
 import { t } from "../../i18n/index.ts";
@@ -20,7 +19,6 @@ import {
   renderAgentChannels,
   renderAgentCron,
 } from "./agents-panels-status-files.ts";
-/** Panel ids shared between the agent view and its navigation helpers. */
 export type { AgentsPanel } from "./agents.types.ts";
 import { renderAgentTools, renderAgentSkills } from "./agents-panels-tools-skills.ts";
 import { agentBadgeText, buildAgentContext, normalizeAgentLabel } from "./agents-utils.ts";

@@ -1,4 +1,3 @@
-// Tests infra unhandled rejections fatal detection test behavior.
 import process from "node:process";
 import { describe, it, expect, vi, beforeAll, afterAll, beforeEach, afterEach } from "vitest";
 

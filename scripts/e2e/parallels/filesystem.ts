@@ -1,4 +1,3 @@
-// Parallels filesystem helpers manage smoke artifacts, summaries, and executable scripts.
 import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { access, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";

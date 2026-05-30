@@ -1,4 +1,3 @@
-// Shared helpers for exporting session artifacts from chat commands.
 import {
   resolveDefaultSessionStorePath,
   resolveSessionFilePath,

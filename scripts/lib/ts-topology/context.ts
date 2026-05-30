@@ -1,4 +1,3 @@
-// TypeScript topology context helpers build program state and symbol usage facts.
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import ts from "typescript";

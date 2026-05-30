@@ -25,9 +25,7 @@ import type {
 } from "../security/dm-policy-shared.js";
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 
-/** Core channel ingress decision function. */
 export { decideChannelIngress };
-/** Public channel ingress graph, policy, event, and diagnostic types. */
 export type {
   AccessGraph,
   AccessGraphGate,

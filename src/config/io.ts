@@ -1,5 +1,4 @@
 // Config I/O owns parsing, validation, runtime/source snapshot projection, safe
-// writes, rollback, and recovery for the canonical OpenClaw config file.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";
@@ -116,7 +115,6 @@ import {
 } from "./validation.js";
 import { shouldWarnOnTouchedVersion } from "./version.js";
 
-/** Runtime config snapshot facade exported from the config I/O module. */
 export {
   clearRuntimeConfigSnapshotState as clearRuntimeConfigSnapshot,
   getRuntimeConfigSnapshotMetadataState as getRuntimeConfigSnapshotMetadata,
@@ -129,12 +127,8 @@ export {
   setRuntimeConfigSnapshotRefreshHandlerState as setRuntimeConfigSnapshotRefreshHandler,
 };
 
-// Re-export for backwards compatibility
-/** Include parsing errors kept available through the historical config I/O barrel. */
 export { CircularIncludeError, ConfigIncludeError } from "./includes.js";
-/** Env-substitution error kept available through the historical config I/O barrel. */
 export { MissingEnvVarError } from "./env-substitution.js";
-/** Shell-env expected-key resolver kept available through the config I/O barrel. */
 export { resolveShellEnvExpectedKeys } from "./shell-env-expected-keys.js";
 
 type ShippedPluginInstallConfigWriteMigration =

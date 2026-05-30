@@ -1,4 +1,3 @@
-// Integration tests use this helper to launch isolated OpenClaw gateway instances and CLI commands.
 import { type ChildProcessWithoutNullStreams, spawn } from "node:child_process";
 import { randomUUID } from "node:crypto";
 import fs from "node:fs/promises";

@@ -1,6 +1,5 @@
 // Chat run lifecycle reconciliation. It clears local stream/indicator state when
 // runs finish, mirrors terminal session row state, and publishes transient run
-// status toasts.
 import { resetToolStream, type CompactionStatus, type FallbackStatus } from "../app-tool-stream.ts";
 import { isSessionRunActive } from "../session-run-state.ts";
 import type { SessionRunStatus, SessionsListResult } from "../types.ts";

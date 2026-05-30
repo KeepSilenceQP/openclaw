@@ -24,7 +24,6 @@ import {
   resolveSubagentSessionStatus,
 } from "./subagent-session-metrics.js";
 
-/** Subagent session timing and status helpers shared with registry maintenance. */
 export {
   getSubagentSessionRuntimeMs,
   getSubagentSessionStartedAt,

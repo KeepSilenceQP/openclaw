@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/actions profile test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const loadWebMediaMock = vi.fn();

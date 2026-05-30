@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/sdk http client test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const { performMatrixRequestMock } = vi.hoisted(() => ({

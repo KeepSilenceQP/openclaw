@@ -1,4 +1,3 @@
-// Tests extensions/discord/src security audit test behavior.
 import { describe, expect, it, vi } from "vitest";
 import type { ResolvedDiscordAccount } from "./accounts.js";
 import type { OpenClawConfig } from "./runtime-api.js";

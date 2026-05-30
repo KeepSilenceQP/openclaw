@@ -1,4 +1,3 @@
-// Test harness for directive behavior E2E-style reply flows.
 import { afterEach, beforeEach, vi } from "vitest";
 import { clearRuntimeAuthProfileStoreSnapshots } from "../agents/auth-profiles.js";
 import { clearSessionStoreCacheForTest } from "../config/sessions.js";

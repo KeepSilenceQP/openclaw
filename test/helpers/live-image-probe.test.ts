@@ -1,4 +1,3 @@
-// Tests test/helpers live image probe test behavior.
 import { describe, expect, it } from "vitest";
 import { renderCatFacePngBase64, renderSolidColorPngBase64 } from "./live-image-probe.js";
 

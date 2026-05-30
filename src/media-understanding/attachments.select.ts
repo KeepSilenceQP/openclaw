@@ -1,4 +1,3 @@
-// Media attachment selection policy for image, audio, and video understanding.
 import type { MediaUnderstandingAttachmentsConfig } from "../config/types.tools.js";
 import {
   isAudioAttachment,

@@ -1,4 +1,3 @@
-// Tests shared chat message content test behavior.
 import { describe, expect, it } from "vitest";
 import {
   extractAssistantTextForPhase,

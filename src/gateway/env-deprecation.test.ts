@@ -1,4 +1,3 @@
-// Tests gateway env deprecation test behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   resetLegacyOpenClawEnvWarningForTest,

@@ -1,4 +1,3 @@
-// Tests extensions/voice-call/src webhook hangup once lifecycle test behavior.
 import { afterEach, describe, expect, it } from "vitest";
 import { VoiceCallConfigSchema, type VoiceCallConfig } from "./config.js";
 import { CallManager } from "./manager.js";

@@ -1,4 +1,3 @@
-// Cross-platform process-tree termination helpers for harness shell commands.
 import { spawn } from "node:child_process";
 
 const DEFAULT_GRACE_MS = 3000;

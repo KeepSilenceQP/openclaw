@@ -1,4 +1,3 @@
-// Tests cron delivery context test behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 

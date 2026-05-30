@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src connection controller test behavior.
 import { EventEmitter } from "node:events";
 import { DisconnectReason } from "baileys";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";

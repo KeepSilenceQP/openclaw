@@ -1,6 +1,5 @@
 // Helpers for displaying extra channel config fields that do not have bespoke
 // card rows. They support both current `channels.<id>` shape and older top-level
-// channel config snapshots.
 import { t } from "../../i18n/index.ts";
 
 /** Resolve one channel's raw config object from current or legacy form state. */

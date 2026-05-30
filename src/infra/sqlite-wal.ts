@@ -1,4 +1,3 @@
-// Configures SQLite WAL pragmas and periodic checkpoints for local stores.
 import type { DatabaseSync } from "node:sqlite";
 
 /** Default page threshold for SQLite automatic WAL checkpoints. */

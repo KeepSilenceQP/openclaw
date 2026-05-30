@@ -1,4 +1,3 @@
-// Model registry interface shared by provider routing and catalog callers.
 import type { Model } from "./types.js";
 
 /** Query surface for available models and their configured auth state. */

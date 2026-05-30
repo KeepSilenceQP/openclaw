@@ -1,8 +1,6 @@
 #!/usr/bin/env -S node --import tsx
 // Cross-OS release checks validate packaged installs, upgrades, gateways, and smoke runs.
 
-// Executed directly via Node.js + tsx in the release workflow.
-
 import { spawn } from "node:child_process";
 import {
   appendFileSync,

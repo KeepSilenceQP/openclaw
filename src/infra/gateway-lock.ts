@@ -1,4 +1,3 @@
-// Acquires per-config gateway process locks and detects stale lock owners.
 import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import fsSync from "node:fs";

@@ -1,4 +1,3 @@
-// Tests extensions/qqbot/src/engine/utils format test behavior.
 import { describe, expect, it } from "vitest";
 import { formatErrorMessage, formatDuration } from "./format.js";
 

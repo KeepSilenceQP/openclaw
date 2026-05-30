@@ -1,4 +1,3 @@
-// Tests trajectory metadata test behavior.
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { REDACTED_SENTINEL } from "../config/redact-snapshot.js";
 import {

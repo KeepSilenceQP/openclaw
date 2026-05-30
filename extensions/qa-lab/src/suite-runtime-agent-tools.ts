@@ -1,4 +1,3 @@
-// QA suite agent-tool runtime helpers bridge scenario actions to plugin MCP tools and skills.
 import fs from "node:fs/promises";
 import { createRequire } from "node:module";
 import path from "node:path";
@@ -115,5 +114,4 @@ async function handleQaAction(params: {
   return extractQaToolPayload(result as Parameters<typeof extractQaToolPayload>[0]);
 }
 
-/** Test exports for QA suite action handlers and workspace skill helpers. */
 export { callPluginToolsMcp, findSkill, handleQaAction, writeWorkspaceSkill };

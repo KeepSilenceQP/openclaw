@@ -1,4 +1,3 @@
-// ACP command runtime option resolution.
 import { getAcpSessionManager } from "../../../acp/control-plane/manager.js";
 import {
   parseRuntimeTimeoutSecondsInput,

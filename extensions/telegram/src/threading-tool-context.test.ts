@@ -1,4 +1,3 @@
-// Tests extensions/telegram/src threading tool context test behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { describe, expect, it } from "vitest";
 import { buildTelegramThreadingToolContext } from "./threading-tool-context.js";

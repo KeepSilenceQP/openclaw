@@ -1,4 +1,3 @@
-// Text command routing rules that decide whether slash commands are handled in chat.
 import { listChannelPlugins } from "../channels/plugins/index.js";
 import {
   getActivePluginChannelRegistryVersion,

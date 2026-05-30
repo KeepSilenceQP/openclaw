@@ -1,21 +1,16 @@
 export { resolveChunkMode } from "../auto-reply/chunk.js";
-/** Conversation-label helper used by plugins that dispatch replies directly. */
 export { generateConversationLabel } from "../auto-reply/reply/conversation-label-generator.js";
-/** Finalize inbound reply context before dispatching plugin-generated replies. */
 export { finalizeInboundContext } from "../auto-reply/reply/inbound-context.js";
-/** Command turn context type shared with reply dispatch helpers. */
 export type { CommandTurnContext } from "../auto-reply/command-turn-context.js";
 import type {
   DispatchReplyWithBufferedBlockDispatcher,
   DispatchReplyWithDispatcher,
 } from "../auto-reply/reply/provider-dispatcher.types.js";
 
-/** Dispatcher function types mirrored from the runtime implementation. */
 export type {
   DispatchReplyWithBufferedBlockDispatcher,
   DispatchReplyWithDispatcher,
 } from "../auto-reply/reply/provider-dispatcher.types.js";
-/** Reply payload shape accepted by dispatch helpers. */
 export type { ReplyPayload } from "./reply-payload.js";
 
 let providerDispatcherRuntimeModulePromise: Promise<

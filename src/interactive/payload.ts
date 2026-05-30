@@ -1,4 +1,3 @@
-// Portable interactive message payloads shared by channel adapters.
 import { asOptionalRecord as toRecord } from "../shared/record-coerce.js";
 import {
   normalizeOptionalLowercaseString,

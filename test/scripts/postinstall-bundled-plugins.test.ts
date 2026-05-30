@@ -1,4 +1,3 @@
-// Tests test/scripts postinstall bundled plugins test behavior.
 import { existsSync as existsSyncOriginal, readFileSync as readFileSyncOriginal } from "node:fs";
 import fs from "node:fs/promises";
 import { tmpdir } from "node:os";

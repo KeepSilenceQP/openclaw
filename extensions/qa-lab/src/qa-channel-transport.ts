@@ -1,4 +1,3 @@
-// QA channel transport runs qa-channel scenarios through the gateway and QA bus.
 import { setTimeout as sleep } from "node:timers/promises";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";

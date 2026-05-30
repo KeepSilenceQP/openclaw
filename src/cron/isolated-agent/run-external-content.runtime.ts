@@ -1,4 +1,3 @@
-// Runtime boundary for cron/isolated-agent run external content runtime behavior.
 export {
   buildSafeExternalPrompt,
   detectSuspiciousPatterns,

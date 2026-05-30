@@ -1,4 +1,3 @@
-// Core gateway method descriptor table and scope lookup helpers.
 import type { OperatorScope } from "../operator-scopes.js";
 import {
   DYNAMIC_GATEWAY_METHOD_SCOPE,

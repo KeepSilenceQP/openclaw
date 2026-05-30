@@ -1,4 +1,3 @@
-// QA Lab web entrypoint mounts the debugger UI into the page root.
 import "./styles.css";
 import { createQaLabApp } from "./app.js";
 

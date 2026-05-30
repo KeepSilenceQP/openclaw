@@ -10,8 +10,6 @@
 //
 // This module owns the single decision: "given this wake, should we run now or
 // defer it?" Both the targeted and broadcast dispatch branches must call
-// `shouldDeferWake` so the gate can never be forgotten on one path.
-
 import type { HeartbeatWakeIntent, HeartbeatWakeSource } from "./heartbeat-wake.js";
 
 // Default minimum spacing between heartbeat runs for the same agent, regardless

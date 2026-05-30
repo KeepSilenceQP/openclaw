@@ -1,4 +1,3 @@
-// Root MEMORY.md path policy and legacy filename repair helpers.
 import fs from "node:fs/promises";
 import path from "node:path";
 

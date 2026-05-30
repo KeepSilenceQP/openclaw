@@ -1,4 +1,3 @@
-// Built-in provider index used before provider plugins are installed.
 import type { OpenClawProviderIndex } from "./types.js";
 
 // OpenClaw-owned preview metadata for providers whose plugins may not be

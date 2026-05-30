@@ -1,4 +1,3 @@
-// Tests extensions/slack/src/monitor allow list test behavior.
 import { describe, expect, it } from "vitest";
 import {
   normalizeAllowList,

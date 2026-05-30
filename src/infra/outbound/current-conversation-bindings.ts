@@ -1,5 +1,4 @@
 // Generic current-conversation binding storage.
-// Channels can opt into this fallback when they support binding the active conversation.
 import fs from "node:fs";
 import path from "node:path";
 import { normalizeConversationText } from "../../acp/conversation-id.js";
@@ -311,5 +310,4 @@ export const testing = {
   },
   resolveBindingsFilePath,
 };
-/** Stable test hook alias for current-conversation binding tests. */
 export { testing as __testing };

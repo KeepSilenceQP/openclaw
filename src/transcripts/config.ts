@@ -1,4 +1,3 @@
-// Transcript feature config normalization and auto-start defaults.
 import { normalizeOptionalString as readString } from "../shared/string-coerce.js";
 
 /** Raw config entry describing a transcript source to start automatically. */

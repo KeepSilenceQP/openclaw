@@ -1,5 +1,4 @@
 // Normalizers for session binding conversation references.
-// They canonicalize channel/account ids before lookup keys are built.
 import { normalizeAccountId } from "../../routing/session-key.js";
 import {
   normalizeLowercaseStringOrEmpty,

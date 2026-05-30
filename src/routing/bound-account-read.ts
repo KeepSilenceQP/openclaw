@@ -1,4 +1,3 @@
-// Resolves the first route-bound account for a channel/agent/peer context.
 import { normalizeChatType, type ChatType } from "../channels/chat-type.js";
 import { listRouteBindings } from "../config/bindings.js";
 import type { AgentRouteBinding } from "../config/types.agents.js";

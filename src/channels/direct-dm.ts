@@ -1,4 +1,3 @@
-// Direct-DM inbound dispatch compatibility facade.
 import type { DispatchReplyWithBufferedBlockDispatcher } from "../auto-reply/reply/provider-dispatcher.types.js";
 import type { FinalizedMsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -9,7 +8,6 @@ import {
 } from "../plugin-sdk/reply-payload.js";
 import { createChannelReplyPipeline } from "./message/reply-pipeline.js";
 import { runPreparedInboundReply } from "./turn/kernel.js";
-/** Re-export legacy direct-DM authorization helpers for compatibility callers. */
 export {
   createPreCryptoDirectDmAuthorizer,
   resolveInboundDirectDmAccessWithRuntime,
@@ -17,7 +15,6 @@ export {
   type DirectDmCommandAuthorizationRuntime,
   type ResolvedInboundDirectDmAccess,
 } from "./direct-dm-access.js";
-/** Re-export pre-crypto direct-DM guard policy helpers. */
 export {
   createDirectDmPreCryptoGuardPolicy,
   type DirectDmPreCryptoGuardPolicy,

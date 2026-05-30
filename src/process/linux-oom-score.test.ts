@@ -1,4 +1,3 @@
-// Tests process linux oom score test behavior.
 import { describe, expect, it } from "vitest";
 import {
   hardenedEnvForChildOomWrap,

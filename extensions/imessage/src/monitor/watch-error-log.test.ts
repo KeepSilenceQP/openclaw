@@ -1,4 +1,3 @@
-// Tests extensions/imessage/src/monitor watch error log test behavior.
 import { describe, expect, it } from "vitest";
 import { sanitizeIMessageWatchErrorPayload } from "./watch-error-log.js";
 

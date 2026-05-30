@@ -1,4 +1,3 @@
-// Tests gateway channel status patches test behavior.
 import { describe, expect, it } from "vitest";
 import {
   createConnectedChannelStatusPatch,

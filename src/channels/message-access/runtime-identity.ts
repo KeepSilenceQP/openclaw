@@ -1,4 +1,3 @@
-// Identity adapter helpers for stable channel ingress matching.
 import type {
   ChannelIngressAdapter,
   ChannelIngressAdapterEntry,

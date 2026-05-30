@@ -1,4 +1,3 @@
-// Image-generation override normalization against provider/model capabilities.
 import {
   hasMediaNormalizationEntry,
   resolveClosestAspectRatio,

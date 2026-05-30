@@ -1,4 +1,3 @@
-// Tests extensions/google model id test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeAntigravityModelId, normalizeGoogleModelId } from "./api.js";
 

@@ -1,4 +1,3 @@
-// Reply queue policy helpers.
 import type { QueueSettings } from "./queue.js";
 
 export type ActiveRunQueueAction = "run-now" | "enqueue-followup" | "drop";

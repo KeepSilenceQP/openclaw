@@ -1,4 +1,3 @@
-// Tests extensions/openshell/src backend e2e test behavior.
 import { spawn } from "node:child_process";
 import fs from "node:fs/promises";
 import net from "node:net";

@@ -1,4 +1,3 @@
-// Context report builder for sessions and agent workspaces.
 import { resolveSessionAgentIds } from "../../agents/agent-scope.js";
 import { analyzeBootstrapBudget } from "../../agents/bootstrap-budget.js";
 import {

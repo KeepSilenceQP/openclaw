@@ -1,4 +1,3 @@
-// Shared remote embedding batch provider contracts.
 import type { EmbeddingBatchOutputLine } from "./batch-output.js";
 
 /** Minimal provider batch status shape used by batch polling and completion code. */

@@ -1,4 +1,3 @@
-// Cron time parsing helpers for absolute run-at inputs.
 import { parseStrictPositiveInteger } from "../infra/parse-finite-number.js";
 
 const ISO_TZ_RE = /(Z|[+-]\d{2}:?\d{2})$/i;

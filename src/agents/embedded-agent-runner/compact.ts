@@ -170,7 +170,6 @@ import { readTranscriptFileState } from "./transcript-file-state.js";
 import type { EmbeddedAgentCompactResult } from "./types.js";
 import { mapThinkingLevel, normalizeContextTokenBudget } from "./utils.js";
 import { flushPendingToolResultsAfterIdle } from "./wait-for-idle-before-flush.js";
-/** Public parameter contract for callers that compact an embedded-agent session. */
 export type { CompactEmbeddedAgentSessionParams } from "./compact.types.js";
 
 function hasRealConversationContent(
@@ -1556,7 +1555,5 @@ export const testing = {
   runPostCompactionSideEffects,
 } as const;
 
-/** Allow orchestration tests to run the same post-compaction side-effect pipeline. */
 export { runPostCompactionSideEffects } from "./compaction-hooks.js";
-/** Stable test-only alias for compaction internals. */
 export { testing as __testing };

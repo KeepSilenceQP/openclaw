@@ -1,4 +1,3 @@
-// Tests cron/isolated-agent run session key test behavior.
 import { describe, expect, it } from "vitest";
 import { resolveCronAgentSessionKey } from "./session-key.js";
 

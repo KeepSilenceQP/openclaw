@@ -1,4 +1,3 @@
-// Validates plugin manifest host-version floors against the running OpenClaw host.
 import { isAtLeast, parseSemver } from "../infra/runtime-guard.js";
 
 /** Human-readable contract for manifest `openclaw.install.minHostVersion`. */

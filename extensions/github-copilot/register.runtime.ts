@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/github-copilot register runtime behavior.
 import {
   coerceSecretRef,
   ensureAuthProfileStore,

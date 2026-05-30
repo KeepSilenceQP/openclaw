@@ -119,5 +119,4 @@ export const testing = {
   resolveSearchProvider: (search?: Parameters<typeof resolveWebSearchProviderId>[0]["search"]) =>
     resolveWebSearchProviderId({ search }),
 };
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

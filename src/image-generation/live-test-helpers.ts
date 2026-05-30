@@ -1,4 +1,3 @@
-// Live image-generation test configuration and auth helpers.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   parseLiveCsvFilter,
@@ -9,7 +8,6 @@ import {
 } from "../media-generation/live-test-helpers.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
-/** Shared live-test provider/model parsing and key redaction helpers. */
 export { parseProviderModelMap, redactLiveApiKey };
 
 /** Default provider/model refs used when live image tests do not override models. */

@@ -1,4 +1,3 @@
-// Telephony TTS provider merges voice-call overrides, applies directives, and emits mu-law audio.
 import {
   parseTtsDirectives,
   type SpeechModelOverridePolicy,

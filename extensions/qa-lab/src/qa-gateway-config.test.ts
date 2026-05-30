@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src qa gateway config test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildQaGatewayConfig,

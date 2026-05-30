@@ -1,4 +1,3 @@
-// Abort cutoff helpers for ignoring stale events after a stop request.
 import type { SessionEntry } from "../../config/sessions/types.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import type { MsgContext } from "../templating.js";

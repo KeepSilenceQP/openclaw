@@ -11,5 +11,4 @@ export {
   runDaemonStop,
   runDaemonUninstall,
 } from "./lifecycle.js";
-/** Re-export daemon status runner for the service command surface. */
 export { runDaemonStatus } from "./status.js";

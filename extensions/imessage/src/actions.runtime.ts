@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/imessage/src actions runtime behavior.
 import { spawn } from "node:child_process";
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import { extname, join } from "node:path";

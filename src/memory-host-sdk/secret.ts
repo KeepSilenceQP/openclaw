@@ -1,5 +1,3 @@
-// Re-exports memory secret-input helpers for core imports.
-/** Public helpers for detecting and resolving configured memory secret input. */
 export {
   hasConfiguredMemorySecretInput,
   resolveMemorySecretInputString,

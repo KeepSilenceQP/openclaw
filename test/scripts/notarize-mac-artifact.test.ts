@@ -1,4 +1,3 @@
-// Tests test/scripts notarize mac artifact test behavior.
 import { spawnSync } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";

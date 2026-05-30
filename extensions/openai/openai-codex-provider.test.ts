@@ -1,4 +1,3 @@
-// Tests extensions/openai openai codex provider test behavior.
 import { beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 const refreshOpenAICodexTokenMock = vi.hoisted(() => vi.fn());

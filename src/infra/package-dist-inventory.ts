@@ -1,12 +1,10 @@
 // Package dist inventory generation and validation helpers.
-// Inventory excludes local build debris, private QA surfaces, and externalized bundled plugins.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { isLocalBuildMetadataDistPath } from "../../scripts/lib/local-build-metadata-paths.mjs";
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 import { readJsonIfExists, writeJson } from "./json-files.js";
 
-/** Local build metadata paths intentionally omitted from package inventories. */
 export { LOCAL_BUILD_METADATA_DIST_PATHS } from "../../scripts/lib/local-build-metadata-paths.mjs";
 
 /** Relative path of the generated postinstall package inventory. */

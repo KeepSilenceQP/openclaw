@@ -1,4 +1,3 @@
-// Coverage for message hooks in get-reply.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { logVerbose } from "../../globals.js";
 import type { MsgContext } from "../templating.js";

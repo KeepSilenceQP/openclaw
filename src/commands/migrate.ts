@@ -47,7 +47,6 @@ import type {
   MigrateDefaultOptions,
 } from "./migrate/types.js";
 
-/** Migration command option types shared with command registration. */
 export type { MigrateApplyOptions, MigrateCommonOptions, MigrateDefaultOptions };
 
 function selectMigrationItems(plan: MigrationPlan, opts: MigrateCommonOptions): MigrationPlan {

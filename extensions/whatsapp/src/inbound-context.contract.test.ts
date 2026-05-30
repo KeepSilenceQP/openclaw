@@ -1,4 +1,3 @@
-// Tests extensions/whatsapp/src inbound context contract test behavior.
 import { expectChannelInboundContextContract } from "openclaw/plugin-sdk/channel-contract-testing";
 import { describe, it } from "vitest";
 

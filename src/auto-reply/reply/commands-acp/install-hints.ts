@@ -1,4 +1,3 @@
-// ACP install hint helpers for missing runtime dependencies.
 import { existsSync } from "node:fs";
 import path from "node:path";
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";

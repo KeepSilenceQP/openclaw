@@ -1,4 +1,3 @@
-// Shared configured binding record types.
 import type { AgentBinding } from "../../config/types.js";
 import type {
   ConversationRef,

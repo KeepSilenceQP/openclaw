@@ -1,4 +1,3 @@
-// Runtime boundary for extensions/slack/src/monitor slash skill commands runtime behavior.
 import { listSkillCommandsForAgents as listSkillCommandsForAgentsImpl } from "openclaw/plugin-sdk/command-auth-native";
 
 type ListSkillCommandsForAgents =

@@ -1,5 +1,4 @@
 // Runtime policy assembly for exec safe-bin allowlists, profiles, and trusted dirs.
-// The merged result feeds approval decisions and operator warnings.
 import { resolveSafeBins } from "./exec-approvals-allowlist.js";
 import {
   normalizeSafeBinProfileFixtures,

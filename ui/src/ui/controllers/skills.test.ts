@@ -1,4 +1,3 @@
-// Tests ui/src/ui/controllers skills test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   installSkill,

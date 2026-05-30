@@ -25,7 +25,6 @@ import {
   type SubCliDescriptor,
 } from "./subcli-descriptors.js";
 
-/** Re-export sub-CLI help metadata from the core registry. */
 export { getSubCliCommandsWithSubcommands };
 
 type SubCliRegistrar = (

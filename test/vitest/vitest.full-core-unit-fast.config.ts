@@ -1,4 +1,3 @@
-// Full core fast Vitest config wraps the unit-fast project in the shared config envelope.
 import { defineConfig } from "vitest/config";
 import { sharedVitestConfig } from "./vitest.shared.config.ts";
 

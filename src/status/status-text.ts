@@ -1,4 +1,3 @@
-// Status text builder for chat-visible runtime, model, context, task, and usage summaries.
 import os from "node:os";
 import {
   resolveAgentConfig,
@@ -44,7 +43,6 @@ import {
   formatTaskStatusTitle,
 } from "../tasks/task-status.js";
 import type { BuildStatusTextParams } from "./status-text.types.js";
-/** Input contract for building status text. */
 export type { BuildStatusTextParams } from "./status-text.types.js";
 
 const USAGE_OAUTH_ONLY_PROVIDERS = new Set([

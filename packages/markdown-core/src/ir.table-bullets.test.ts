@@ -1,4 +1,3 @@
-// Tests markdown ir table bullets test behavior.
 import { describe, expect, it } from "vitest";
 import { markdownToIR } from "./ir.js";
 

@@ -1,4 +1,3 @@
-// Tests extensions/clickclack/src inbound test behavior.
 import { createPluginRuntimeMock } from "openclaw/plugin-sdk/channel-test-helpers";
 import type { PluginRuntime } from "openclaw/plugin-sdk/core";
 import { describe, expect, it, vi } from "vitest";

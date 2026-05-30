@@ -1,6 +1,4 @@
 #!/usr/bin/env -S node --import tsx
-// Release check validates pack contents, installed tarballs, appcast metadata, and SDK surfaces.
-
 import { execFileSync } from "node:child_process";
 import {
   copyFileSync,
@@ -56,9 +54,7 @@ import { listStaticExtensionAssetOutputs } from "./runtime-postbuild.mjs";
 import { sparkleBuildFloorsFromShortVersion, type SparkleBuildFloors } from "./sparkle-build.ts";
 import { buildCmdExeCommandLine } from "./windows-cmd-helpers.mjs";
 
-/** Re-export bundled extension manifest validation for release-check tests. */
 export { collectBundledExtensionManifestErrors } from "./lib/bundled-extension-manifest.ts";
-/** Re-export package-name parsing for release-check tests. */
 export { packageNameFromSpecifier } from "./lib/plugin-package-dependencies.mjs";
 
 type PackFile = { path: string };
@@ -959,7 +955,6 @@ export function collectForbiddenPackContentPaths(
     .toSorted((left, right) => left.localeCompare(right));
 }
 
-/** Re-export npm pack unpacked-size budget checks for release-check tests. */
 export { collectPackUnpackedSizeErrors } from "./lib/npm-pack-budget.mjs";
 
 function extractTag(item: string, tag: string): string | null {

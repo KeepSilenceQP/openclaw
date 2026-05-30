@@ -1,4 +1,3 @@
-// Tests extensions/admin-http-rpc index test behavior.
 import { describe, expect, it } from "vitest";
 import plugin from "./index.js";
 import manifest from "./openclaw.plugin.json" with { type: "json" };

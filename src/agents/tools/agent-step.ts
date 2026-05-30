@@ -6,7 +6,6 @@ import { retireSessionMcpRuntimeForSessionKey } from "../agent-bundle-mcp-tools.
 import { resolveNestedAgentLaneForSession } from "../lanes.js";
 import { waitForAgentRunAndReadUpdatedAssistantReply } from "../run-wait.js";
 
-/** Read the latest assistant reply after a nested agent step completes. */
 export { readLatestAssistantReply } from "../run-wait.js";
 
 type GatewayCaller = typeof callGateway;
@@ -134,5 +133,4 @@ export const testing = {
       : defaultAgentStepDeps;
   },
 };
-/** Backward-compatible test hook export for underscored internal imports. */
 export { testing as __testing };

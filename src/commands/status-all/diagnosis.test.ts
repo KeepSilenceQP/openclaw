@@ -1,4 +1,3 @@
-// Tests status-all diagnosis branches with gateway log dependencies mocked out.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ProgressReporter } from "../../cli/progress.js";
 

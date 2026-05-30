@@ -1,4 +1,3 @@
-// Subagent command action for focusing a session route.
 import {
   resolveAcpSessionCwd,
   resolveAcpThreadSessionDetailLines,

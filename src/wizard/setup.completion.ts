@@ -1,4 +1,3 @@
-// Installs or repairs shell completion during setup.
 import os from "node:os";
 import path from "node:path";
 import { resolveCliName } from "../cli/cli-name.js";

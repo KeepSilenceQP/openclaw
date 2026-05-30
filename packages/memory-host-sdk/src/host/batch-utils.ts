@@ -1,4 +1,3 @@
-// Shared HTTP and grouping helpers for remote embedding batch providers.
 import type { SsrFPolicy } from "./ssrf-policy.js";
 
 /** Auth, base URL, and SSRF policy for embedding batch HTTP calls. */

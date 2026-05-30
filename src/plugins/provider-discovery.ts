@@ -1,4 +1,3 @@
-// Provider discovery orchestration for manifest and runtime plugin providers.
 import { normalizeProviderId } from "../agents/model-selection.js";
 import type { ModelProviderConfig } from "../config/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";

@@ -1,4 +1,3 @@
-// Coverage for task command behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { resolveSessionAgentId } from "../../agents/agent-scope.js";
 import {

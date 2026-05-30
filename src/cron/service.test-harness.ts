@@ -1,5 +1,4 @@
 // Cron service test harness. Provides temp stores, fake-timer hooks, service
-// factories, completion barriers, and state fixtures for cron unit tests.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

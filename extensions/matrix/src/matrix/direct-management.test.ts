@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix direct management test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   inspectMatrixDirectRooms,

@@ -1,4 +1,3 @@
-// Exec override extraction for get-reply runs.
 import type { ExecToolDefaults } from "../../agents/bash-tools.js";
 import type { SessionEntry } from "../../config/sessions.js";
 import type { InlineDirectives } from "./directive-handling.parse.js";

@@ -1,10 +1,8 @@
-// Moonshot/SiliconFlow payload compatibility wrappers for thinking controls.
 import type { StreamFn } from "../../../agents/runtime/index.js";
 import type { ThinkLevel } from "../../../auto-reply/thinking.js";
 import { streamSimple } from "../../stream.js";
 import { streamWithPayloadPatch } from "./stream-payload-utils.js";
 
-/** Re-export Moonshot thinking payload helpers. */
 export {
   createMoonshotThinkingWrapper,
   resolveMoonshotThinkingKeep,

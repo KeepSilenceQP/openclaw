@@ -1,4 +1,3 @@
-// Tests infra push apns test behavior.
 import { generateKeyPairSync } from "node:crypto";
 import { createServer, type Server as HttpServer } from "node:http";
 import http2 from "node:http2";

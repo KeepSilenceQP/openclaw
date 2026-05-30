@@ -1,4 +1,3 @@
-// Tests extensions/github-copilot connection bound ids live test behavior.
 import { stream as streamModel, type AssistantMessage, type Model } from "openclaw/plugin-sdk/llm";
 import { describe, expect, it } from "vitest";
 import { resolveFirstGithubToken } from "./auth.js";

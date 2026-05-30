@@ -1,4 +1,3 @@
-// Tests extensions/qa-lab/src qa transport registry test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeQaTransportId } from "./qa-transport-registry.js";
 

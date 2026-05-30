@@ -1,4 +1,3 @@
-// Fanout point for Talk observability sinks.
 import { recordTalkDiagnosticEvent } from "./diagnostics.js";
 import { recordTalkLogEvent } from "./logging.js";
 import type { TalkEvent } from "./talk-events.js";

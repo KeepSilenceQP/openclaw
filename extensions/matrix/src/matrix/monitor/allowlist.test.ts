@@ -1,4 +1,3 @@
-// Tests extensions/matrix/src/matrix/monitor allowlist test behavior.
 import { describe, expect, it } from "vitest";
 import { normalizeMatrixAllowList, resolveMatrixAllowListMatch } from "./allowlist.js";
 

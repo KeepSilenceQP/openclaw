@@ -1,4 +1,3 @@
-// Provider request error classifier for retry/fallback decisions.
 import { formatErrorMessage } from "../../infra/errors.js";
 import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 

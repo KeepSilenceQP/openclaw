@@ -1,5 +1,4 @@
 // Target-resolution test plugin fixtures.
-// These helpers provide deterministic channel behavior for outbound target/session tests.
 import type {
   ChannelMessagingAdapter,
   ChannelOutboundAdapter,

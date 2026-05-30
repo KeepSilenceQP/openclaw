@@ -1,6 +1,4 @@
-// Applies fs-safe defaults before exposing guarded root-file open helpers.
 import "./fs-safe-defaults.js";
-/** Root-file open helpers that classify permission and boundary failures. */
 export {
   canUseRootFileOpen,
   matchRootFileOpenFailure,

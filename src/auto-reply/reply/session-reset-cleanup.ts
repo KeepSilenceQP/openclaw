@@ -1,4 +1,3 @@
-// Cleanup helpers for session reset side effects.
 import { drainSystemEventEntries } from "../../infra/system-events.js";
 import { clearSessionQueues, type ClearSessionQueueResult } from "./queue/cleanup.js";
 

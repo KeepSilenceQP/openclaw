@@ -1,4 +1,3 @@
-// Tests ui/src/ui chat model ref test behavior.
 import { describe, expect, it } from "vitest";
 import {
   buildChatModelOption,

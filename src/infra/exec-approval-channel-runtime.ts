@@ -1,5 +1,4 @@
 // Shared gateway-backed runtime for native exec/plugin approval notifications.
-// It handles replay, expiration, and out-of-order request/resolution delivery.
 import { readConnectErrorDetailCode } from "../../packages/gateway-protocol/src/connect-error-details.js";
 import type { EventFrame } from "../../packages/gateway-protocol/src/index.js";
 import { startGatewayClientWhenEventLoopReady } from "../gateway/client-start-readiness.js";
@@ -14,7 +13,6 @@ import type {
 } from "./exec-approval-channel-runtime.types.js";
 import type { ExecApprovalRequest, ExecApprovalResolved } from "./exec-approvals.js";
 import type { PluginApprovalRequest, PluginApprovalResolved } from "./plugin-approvals.js";
-/** Approval-channel runtime contracts shared by native adapters and tests. */
 export type {
   ExecApprovalChannelRuntime,
   ExecApprovalChannelRuntimeAdapter,

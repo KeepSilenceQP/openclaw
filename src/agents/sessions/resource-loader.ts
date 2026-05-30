@@ -6,7 +6,6 @@ import { CONFIG_DIR_NAME } from "../config.js";
 import { loadThemeFromPath, type Theme } from "../modes/interactive/theme/theme.js";
 import type { ResourceDiagnostic } from "./diagnostics.js";
 
-/** Resource loading diagnostics re-exported with the loader surface. */
 export type { ResourceCollision, ResourceDiagnostic } from "./diagnostics.js";
 
 import type { Skill } from "../../skills/loading/session.js";

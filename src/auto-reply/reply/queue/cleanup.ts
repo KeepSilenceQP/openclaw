@@ -1,4 +1,3 @@
-// Queue cleanup helpers for stale queued replies.
 import { resolveEmbeddedSessionLane } from "../../../agents/embedded-agent-runner/lanes.js";
 import { clearCommandLane } from "../../../process/command-queue.js";
 import { normalizeOptionalString } from "../../../shared/string-coerce.js";

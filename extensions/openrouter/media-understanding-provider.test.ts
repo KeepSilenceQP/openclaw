@@ -1,4 +1,3 @@
-// Tests extensions/openrouter media understanding provider test behavior.
 import {
   describeImageWithModel,
   describeImagesWithModel,

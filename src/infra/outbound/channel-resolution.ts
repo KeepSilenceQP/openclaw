@@ -1,5 +1,4 @@
 // Outbound channel plugin resolution facade.
-// It exposes a narrow runtime view and can bootstrap external plugins on send paths.
 import type { ChannelMessageAdapterShape } from "../../channels/message/types.js";
 import { getChannelPlugin, getLoadedChannelPlugin } from "../../channels/plugins/index.js";
 import { channelPluginHasNativeApprovalPromptUi } from "../../channels/plugins/native-approval-prompt.js";

@@ -1,4 +1,3 @@
-// Resolves shell/dispatch wrapper layers before exec approval policy checks.
 import {
   MAX_DISPATCH_WRAPPER_DEPTH,
   resolveDispatchWrapperTrustPlan,

@@ -1,4 +1,3 @@
-// Public realtime voice provider contracts shared by gateway, browser, and plugin runtimes.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { TalkTransport } from "./talk-events.js";
 

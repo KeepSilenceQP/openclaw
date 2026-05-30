@@ -1,4 +1,3 @@
-// Public runtime types for channel message ingress access resolution.
 import type { AccessGroupConfig } from "../../config/types.access-groups.js";
 import type {
   AccessGroupMembershipFact,

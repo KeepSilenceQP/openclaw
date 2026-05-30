@@ -1,4 +1,3 @@
-// Transcript provider registry backed by plugin capability providers.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   resolvePluginCapabilityProvider,

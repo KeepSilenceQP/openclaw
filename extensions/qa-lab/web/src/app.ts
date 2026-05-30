@@ -1,4 +1,3 @@
-// QA Lab web app wires API calls, persisted UI state, and renderer callbacks.
 import { defaultQaModelForMode, isQaFastModeEnabled } from "../../model-selection.js";
 import { normalizeCaptureSavedView, normalizeCaptureSavedViews } from "./capture-saved-view.js";
 import { formatErrorMessage } from "./errors.js";

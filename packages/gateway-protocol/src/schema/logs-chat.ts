@@ -1,4 +1,3 @@
-// Gateway protocol schemas for log tailing and WebSocket-native chat streaming.
 import { Type } from "typebox";
 import { ChatSendSessionKeyString, InputProvenanceSchema, NonEmptyString } from "./primitives.js";
 

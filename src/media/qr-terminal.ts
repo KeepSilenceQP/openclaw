@@ -1,4 +1,3 @@
-// Renders QR payloads as terminal-safe ANSI blocks for pairing flows.
 import { loadQrCodeRuntime, normalizeQrText } from "./qr-runtime.ts";
 
 type QrTerminalModules = {

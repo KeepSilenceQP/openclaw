@@ -1,4 +1,3 @@
-// Live generation test helpers for loading provider credentials from shell env.
 import { loadShellEnvFallback } from "../infra/shell-env.js";
 import { getProviderEnvVars } from "../secrets/provider-env-vars.js";
 

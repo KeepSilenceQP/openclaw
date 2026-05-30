@@ -13,7 +13,6 @@ import { mediaKindFromMime } from "../../../../src/media/constants.js";
 import { splitMediaFromOutput } from "../../../../src/media/parse.js";
 import { parseInlineDirectives } from "../../../../src/utils/directive-tags.js";
 import type { NormalizedMessage, MessageContentItem } from "../types/chat-types.ts";
-/** Role normalization and tool-result detection shared by chat renderers. */
 export { isToolResultMessage, normalizeRoleForGrouping } from "./role-normalizer.ts";
 
 function coerceCanvasPreview(

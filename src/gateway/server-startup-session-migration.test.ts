@@ -1,4 +1,3 @@
-// Tests gateway server startup session migration test behavior.
 import { describe, expect, it, vi } from "vitest";
 import { runStartupSessionMigration } from "./server-startup-session-migration.js";
 

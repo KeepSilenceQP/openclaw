@@ -1,4 +1,3 @@
-// Generic allowlist matching helpers for channel sender identifiers.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,

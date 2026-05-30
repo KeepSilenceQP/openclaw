@@ -1,4 +1,3 @@
-// Allowlist diagnostics and mutable identifier policy helpers for channel ingress.
 import { uniqueStrings } from "../../shared/string-normalization.js";
 import type {
   ChannelIngressPolicyInput,

@@ -1,4 +1,3 @@
-// Tests extensions/discord/src approval handler runtime test behavior.
 import { describe, expect, it } from "vitest";
 import { discordApprovalNativeRuntime } from "./approval-handler.runtime.js";
 

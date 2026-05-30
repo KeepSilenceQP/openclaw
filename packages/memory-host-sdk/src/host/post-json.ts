@@ -1,4 +1,3 @@
-// JSON POST helper with SSRF-guarded fetch and bounded response parsing.
 import { withRemoteHttpResponse } from "./remote-http.js";
 import { readResponseJsonWithLimit, readResponseTextSnippet } from "./response-snippet.js";
 import type { SsrFPolicy } from "./ssrf-policy.js";

@@ -1,4 +1,3 @@
-// Tests extensions/codex/src/app-server native subagent task mirror test behavior.
 import { describe, expect, it, vi } from "vitest";
 import {
   codexNativeSubagentRunId,

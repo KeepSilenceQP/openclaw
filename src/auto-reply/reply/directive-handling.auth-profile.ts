@@ -1,4 +1,3 @@
-// Auth profile directive handling for reply runs.
 import {
   ensureAuthProfileStore,
   findPersistedAuthProfileCredential,

@@ -1,4 +1,3 @@
-// Tests gateway gateway cli backend live test behavior.
 import { randomBytes, randomUUID } from "node:crypto";
 import fs from "node:fs/promises";
 import os from "node:os";

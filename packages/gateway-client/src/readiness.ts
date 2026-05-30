@@ -1,4 +1,3 @@
-// Helpers for delaying gateway-client start until the event loop is responsive.
 import type { GatewayClientOptions } from "./client.js";
 import {
   waitForEventLoopReady,

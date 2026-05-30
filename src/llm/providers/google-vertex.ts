@@ -1,4 +1,3 @@
-// Google Vertex AI stream adapter.
 import {
   type GenerateContentParameters,
   GoogleGenAI,

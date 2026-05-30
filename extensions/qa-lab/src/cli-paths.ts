@@ -1,4 +1,3 @@
-// QA Lab CLI path helpers constrain output paths to the repository boundary.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { assertNoSymlinkParents, pathScope } from "openclaw/plugin-sdk/security-runtime";

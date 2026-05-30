@@ -5,7 +5,6 @@ import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import { normalizeText } from "../normalize-text.js";
 import { AcpRuntimeError } from "../runtime/errors.js";
 
-/** Text normalizer shared by ACP runtime option parsing. */
 export { normalizeText } from "../normalize-text.js";
 
 const MAX_RUNTIME_MODE_LENGTH = 64;

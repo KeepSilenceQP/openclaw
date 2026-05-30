@@ -1,4 +1,3 @@
-// Tests ui/src/ui app defaults test behavior.
 import { describe, expect, it } from "vitest";
 import { DEFAULT_SESSIONS_FILTERS } from "./app-defaults.ts";
 

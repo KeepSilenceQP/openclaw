@@ -1,9 +1,7 @@
 // Chat model reference helpers. They normalize raw and provider-qualified model
 // refs, preserve ambiguous server values, and build display labels/options from
-// the model catalog.
 import type { ChatModelOverride } from "./chat-model-ref.types.ts";
 import type { ModelCatalogEntry } from "./types.ts";
-/** Stored chat model override shape shared with controller state. */
 export type { ChatModelOverride } from "./chat-model-ref.types.ts";
 
 /** Prefix a model id with its provider unless it is already qualified by that provider. */
