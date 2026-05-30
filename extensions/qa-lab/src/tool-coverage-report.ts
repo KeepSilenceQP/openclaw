@@ -254,7 +254,6 @@ function coverageFailureForRow(row: QaToolCoverageRow): string | undefined {
   return undefined;
 }
 
-/** Builds a tool coverage report from scenarios and optional runtime parity summary. */
 export function buildQaToolCoverageReport(params: {
   scenarios: readonly QaSeedScenarioWithSource[];
   summary?: QaToolCoverageSuiteSummary;
@@ -304,7 +303,6 @@ export function buildQaToolCoverageReport(params: {
   };
 }
 
-/** Renders a tool coverage report as Markdown. */
 export function renderQaToolCoverageMarkdownReport(report: QaToolCoverageReport): string {
   const lines = [
     `# OpenClaw Runtime Tool Coverage — ${report.runtimePair[0]} vs ${report.runtimePair[1]}`,

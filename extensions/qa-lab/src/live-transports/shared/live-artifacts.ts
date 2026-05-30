@@ -1,11 +1,9 @@
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 
-/** Appends a formatted live-lane issue without throwing away the original label. */
 export function appendQaLiveLaneIssue(issues: string[], label: string, error: unknown) {
   issues.push(`${label}: ${formatErrorMessage(error)}`);
 }
 
-/** Builds an error message that points maintainers at generated QA artifacts. */
 export function buildQaLiveLaneArtifactsError(params: {
   heading: string;
   artifacts: Record<string, string>;
@@ -19,7 +17,6 @@ export function buildQaLiveLaneArtifactsError(params: {
   ].join("\n");
 }
 
-/** Prints generated artifact paths in the stable format consumed by CI logs. */
 export function printLiveTransportQaArtifacts(
   laneLabel: string,
   artifacts: Record<string, string>,

@@ -1,7 +1,6 @@
 import path from "node:path";
 import { defineConfig } from "vite";
 
-/** Default Vite config for the QA Lab web app. */
 export default defineConfig({
   root: path.resolve(import.meta.dirname),
   base: "./",

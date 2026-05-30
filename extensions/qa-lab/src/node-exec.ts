@@ -24,7 +24,6 @@ function isNodeExecPath(execPath: string, platform: NodeJS.Platform): boolean {
   );
 }
 
-/** Resolves the Node executable QA child processes should use, even when launched under Bun. */
 export async function resolveQaNodeExecPath(params?: {
   execPath?: string;
   platform?: NodeJS.Platform;

@@ -315,7 +315,6 @@ export function scanGatewayLogSentinels(
   return filterGatewayLogSentinelFindings(findings, options);
 }
 
-/** Scans transcript bytes for direct-reply self-message sentinel behavior. */
 export function scanDirectReplyTranscriptSentinels(
   transcriptBytes: string,
 ): GatewayLogSentinelFinding[] {
@@ -335,7 +334,6 @@ export function scanDirectReplyTranscriptSentinels(
   ];
 }
 
-/** Formats sentinel findings for error output. */
 export function formatGatewayLogSentinelSummary(findings: readonly GatewayLogSentinelFinding[]) {
   if (findings.length === 0) {
     return "no gateway log sentinels";
@@ -348,7 +346,6 @@ export function formatGatewayLogSentinelSummary(findings: readonly GatewayLogSen
     .join("\n");
 }
 
-/** Throws when disallowed gateway log sentinels are present. */
 export function assertNoGatewayLogSentinels(
   logs: string | undefined,
   options?: GatewayLogSentinelAssertOptions,

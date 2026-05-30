@@ -7,7 +7,6 @@ type QaLiveTimeoutProfile = {
   alternateModel: string;
 };
 
-/** Resolves the live turn timeout for the selected provider profile and model. */
 export function resolveQaLiveTurnTimeoutMs(
   profile: QaLiveTimeoutProfile,
   fallbackMs: number,

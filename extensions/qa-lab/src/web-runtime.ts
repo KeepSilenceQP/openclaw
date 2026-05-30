@@ -78,7 +78,6 @@ function resolveSession(pageId: string): QaWebSession {
   return session;
 }
 
-/** Opens a browser page and registers it as a QA web session. */
 export async function qaWebOpenPage(params: QaWebOpenPageParams) {
   const timeoutMs = resolveTimeoutMs(params.timeoutMs);
   const browser = await chromium.launch({
@@ -122,7 +121,6 @@ export async function qaWebOpenPage(params: QaWebOpenPageParams) {
   };
 }
 
-/** Waits for selector or text visibility in a QA web session. */
 export async function qaWebWait(params: QaWebWaitParams) {
   const session = resolveSession(params.pageId);
   const timeoutMs = resolveTimeoutMs(params.timeoutMs);
@@ -141,7 +139,6 @@ export async function qaWebWait(params: QaWebWaitParams) {
   throw new Error("web wait requires selector or text");
 }
 
-/** Types text into a selector in a QA web session. */
 export async function qaWebType(params: QaWebTypeParams) {
   const session = resolveSession(params.pageId);
   const timeoutMs = resolveTimeoutMs(params.timeoutMs);
@@ -154,7 +151,6 @@ export async function qaWebType(params: QaWebTypeParams) {
   return { ok: true };
 }
 
-/** Captures page text and browser diagnostics for a QA web session. */
 export async function qaWebSnapshot(params: QaWebSnapshotParams) {
   const session = resolveSession(params.pageId);
   const timeoutMs = resolveTimeoutMs(params.timeoutMs);
@@ -173,7 +169,6 @@ export async function qaWebSnapshot(params: QaWebSnapshotParams) {
   };
 }
 
-/** Evaluates a JavaScript expression in a QA web session. */
 export async function qaWebEvaluate<T = unknown>(params: QaWebEvaluateParams): Promise<T> {
   const session = resolveSession(params.pageId);
   const timeoutMs = resolveTimeoutMs(params.timeoutMs);
@@ -187,7 +182,6 @@ export async function qaWebEvaluate<T = unknown>(params: QaWebEvaluateParams): P
   ])) as T;
 }
 
-/** Closes selected QA web sessions, or all sessions when no ids are provided. */
 export async function closeQaWebSessions(pageIds?: Iterable<string>): Promise<void> {
   const active = pageIds
     ? [...pageIds].flatMap((pageId) => {
@@ -205,7 +199,6 @@ export async function closeQaWebSessions(pageIds?: Iterable<string>): Promise<vo
   }
 }
 
-/** Closes every active QA web session. */
 export async function closeAllQaWebSessions(): Promise<void> {
   await closeQaWebSessions();
 }

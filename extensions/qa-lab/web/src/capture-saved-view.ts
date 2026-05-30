@@ -65,7 +65,6 @@ function readTimelineZoom(value: unknown): CaptureSavedView["timelineZoom"] {
     : 100;
 }
 
-/** Normalizes one persisted capture saved view, dropping invalid records. */
 export function normalizeCaptureSavedView(value: unknown): CaptureSavedView | null {
   const record =
     typeof value === "object" && value !== null ? (value as Record<string, unknown>) : null;
@@ -106,7 +105,6 @@ export function normalizeCaptureSavedView(value: unknown): CaptureSavedView | nu
   };
 }
 
-/** Normalizes and bounds the persisted capture saved-view list. */
 export function normalizeCaptureSavedViews(value: unknown): CaptureSavedView[] {
   if (!Array.isArray(value)) {
     return [];

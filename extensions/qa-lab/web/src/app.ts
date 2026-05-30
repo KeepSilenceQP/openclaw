@@ -158,7 +158,6 @@ function isEditableElement(target: EventTarget | null): boolean {
   );
 }
 
-/** Creates and starts the QA Lab browser app in the provided root element. */
 export async function createQaLabApp(root: HTMLDivElement) {
   const state: UiState = {
     theme: detectTheme(),

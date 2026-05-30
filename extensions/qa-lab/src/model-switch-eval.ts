@@ -1,6 +1,5 @@
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
-/** Returns whether text looks like a valid model-switch continuity handoff. */
 export function hasModelSwitchContinuitySignal(text: string) {
   const lower = normalizeLowercaseStringOrEmpty(text);
   const mentionsHandoff =

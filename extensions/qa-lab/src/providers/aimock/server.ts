@@ -182,7 +182,6 @@ function createDebugMount(mock: LLMock): Mountable {
   };
 }
 
-/** Starts the local AIMock provider server used by QA Lab mock runs. */
 export async function startQaAimockServer(params?: { host?: string; port?: number }) {
   const mock = new LLMock({
     host: params?.host ?? "127.0.0.1",

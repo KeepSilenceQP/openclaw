@@ -15,7 +15,6 @@ type QaLabLiveTransportQaCliRegistrationOptions = Omit<
   "allowFailuresHelp" | "defaultProviderMode" | "providerModeHelp"
 >;
 
-/** Creates a live-transport QA command registration with QA Lab provider defaults. */
 export function createLiveTransportQaCliRegistration(
   params: QaLabLiveTransportQaCliRegistrationOptions,
 ) {

@@ -9,7 +9,6 @@ type QaSuiteSummaryScenario = {
   runtimeParity?: RuntimeParityResult;
 };
 
-/** JSON artifact shape written by QA suite runs. */
 export type QaSuiteSummaryJson = {
   scenarios: QaSuiteSummaryScenario[];
   counts: {
@@ -57,7 +56,6 @@ export type QaSuiteSummaryJson = {
 
 type QaSuiteScenarioStatus = Pick<QaSuiteSummaryScenario, "status">;
 
-/** Count failed scenarios from normalized QA summary scenario entries. */
 export function countQaSuiteFailedScenarios(
   scenarios: ReadonlyArray<QaSuiteScenarioStatus>,
 ): number {
@@ -70,7 +68,6 @@ export function countQaSuiteFailedScenarios(
   return failed;
 }
 
-/** Read failed scenario count from counts.failed or derive it from scenario statuses. */
 export function readQaSuiteFailedScenarioCountFromSummary(summary: unknown): number | null {
   if (!summary || typeof summary !== "object") {
     return null;

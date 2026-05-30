@@ -29,7 +29,6 @@ type QaRuntimeGatewayClient = {
 
 type QaRuntimeTransport = QaTransportAdapter;
 
-/** Runtime environment passed to QA Lab scenario handlers. */
 export type QaSuiteRuntimeEnv = {
   gateway: QaRuntimeGatewayClient;
   transport: QaRuntimeTransport;
@@ -43,7 +42,6 @@ export type QaSuiteRuntimeEnv = {
   cfg: OpenClawConfig;
 };
 
-/** Skill status row returned by the gateway skill-status call. */
 export type QaSkillStatusEntry = {
   name?: string;
   eligible?: boolean;
@@ -51,13 +49,11 @@ export type QaSkillStatusEntry = {
   blockedByAllowlist?: boolean;
 };
 
-/** Snapshot of gateway config used by stateful QA checks. */
 export type QaConfigSnapshot = {
   hash?: string;
   config?: Record<string, unknown>;
 };
 
-/** Memory dreaming status summary read from runtime diagnostics. */
 export type QaDreamingStatus = {
   enabled?: boolean;
   shortTermCount?: number;
@@ -73,7 +69,6 @@ export type QaDreamingStatus = {
   };
 };
 
-/** Raw session-store entry read from the QA agent state directory. */
 export type QaRawSessionStoreEntry = {
   sessionId?: string;
   sessionFile?: string;
@@ -84,6 +79,5 @@ export type QaRawSessionStoreEntry = {
   updatedAt?: number;
 };
 
-/** Minimal runtime environment needed by transport action handlers. */
 export type QaRuntimeActionHandlerEnv = Pick<QaSuiteRuntimeEnv, "cfg" | "transport">;
 export type { QaTransportActionName };

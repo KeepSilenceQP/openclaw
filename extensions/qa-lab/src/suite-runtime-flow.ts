@@ -217,7 +217,6 @@ function createQaSuiteScenarioDeps(params: QaSuiteScenarioDepsParams) {
   };
 }
 
-/** Creates the runtime API object used to execute one QA scenario flow. */
 export function createQaSuiteScenarioFlowApi(params: QaSuiteScenarioFlowApiParams) {
   return createQaScenarioRuntimeApi({
     env: params.env,

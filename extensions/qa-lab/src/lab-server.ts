@@ -64,7 +64,6 @@ export type {
   QaLabServerStartParams,
 } from "./lab-server.types.js";
 
-/** Writes a QA Lab server error, preserving body-limit errors when applicable. */
 export function writeQaLabServerError(res: Parameters<typeof writeError>[0], error: unknown): void {
   if (writeQaRequestBodyLimitError(res, error)) {
     return;
@@ -210,7 +209,6 @@ async function startQaGatewayLoop(params: { state: QaBusState; baseUrl: string }
   };
 }
 
-/** Starts the QA Lab HTTP server and returns its lifecycle handle. */
 export async function startQaLabServer(
   params?: QaLabServerStartParams,
 ): Promise<QaLabServerHandle> {

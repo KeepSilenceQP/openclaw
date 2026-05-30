@@ -1,6 +1,5 @@
 import type { RuntimeId, RuntimeParityCell, RuntimeParityResult } from "./runtime-parity.js";
 
-/** Normalized token/tool usage for one runtime in a QA scenario. */
 export type TokenEfficiencyRuntimeUsage = {
   inputTokens: number;
   outputTokens: number;
@@ -8,7 +7,6 @@ export type TokenEfficiencyRuntimeUsage = {
   toolCallCount: number;
 };
 
-/** Per-scenario token comparison row for the efficiency report. */
 export type TokenEfficiencyRow = {
   scenarioId: string;
   usageSource: "live-usage" | "mock-estimate";
@@ -20,7 +18,6 @@ export type TokenEfficiencyRow = {
   toolsUsed: string[];
 };
 
-/** Complete token-efficiency report including aggregate verdict and notes. */
 export type TokenEfficiencyReport = {
   status: "evaluated" | "estimated" | "skipped";
   runtimePair: [RuntimeId, RuntimeId];
@@ -41,7 +38,6 @@ export type TokenEfficiencyReport = {
   notes: string[];
 };
 
-/** Minimal QA suite summary shape consumed by token-efficiency reporting. */
 export type TokenEfficiencySuiteSummary = {
   scenarios: Array<{
     name: string;
@@ -54,7 +50,6 @@ export type TokenEfficiencySuiteSummary = {
   };
 };
 
-/** Input options for building a token-efficiency report. */
 export type BuildTokenEfficiencyReportParams = {
   summary: TokenEfficiencySuiteSummary;
   generatedAt?: string;
@@ -185,7 +180,6 @@ function liveEvidenceFailures(row: TokenEfficiencyRow): string[] {
   return failures;
 }
 
-/** Build token-efficiency rows, aggregate metrics, and failure messages from a suite summary. */
 export function buildTokenEfficiencyReport(
   params: BuildTokenEfficiencyReportParams,
 ): TokenEfficiencyReport {
@@ -252,7 +246,6 @@ export function buildTokenEfficiencyReport(
   };
 }
 
-/** Render a token-efficiency report as Markdown for QA artifacts. */
 export function renderTokenEfficiencyMarkdownReport(report: TokenEfficiencyReport): string {
   const lines = [
     `# OpenClaw Runtime Token Efficiency - ${report.runtimePair[0]} vs ${report.runtimePair[1]}`,
