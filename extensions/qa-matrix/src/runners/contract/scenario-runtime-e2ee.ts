@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime e2ee helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import { chmod, mkdir, mkdtemp, readFile, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";

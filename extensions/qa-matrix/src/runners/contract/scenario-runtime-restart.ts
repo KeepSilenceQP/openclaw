@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime restart helpers and runtime behavior.
 import {
   MATRIX_QA_HOMESERVER_ROOM_KEY,
   MATRIX_QA_RESTART_ROOM_KEY,

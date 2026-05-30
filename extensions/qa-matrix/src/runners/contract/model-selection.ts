@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract model selection helpers and runtime behavior.
 import { loadQaRuntimeModule } from "openclaw/plugin-sdk/qa-runner-runtime";
 import { normalizeQaProviderMode, type QaProviderModeInput } from "../../run-config.js";
 

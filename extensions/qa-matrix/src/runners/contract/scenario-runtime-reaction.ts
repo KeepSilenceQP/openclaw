@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime reaction helpers and runtime behavior.
 import type { MatrixQaObservedEvent } from "../../substrate/events.js";
 import {
   advanceMatrixQaActorCursor,
