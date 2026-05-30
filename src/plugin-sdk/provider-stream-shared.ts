@@ -1,4 +1,3 @@
-/** Shared provider stream wrapper utilities for thinking, tool, and payload compatibility. */
 import { randomUUID } from "node:crypto";
 import {
   extractStandalonePlainTextToolCallText,
