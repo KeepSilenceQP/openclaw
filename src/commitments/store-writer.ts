@@ -1,5 +1,3 @@
-// Per-store-path mutation gate for the commitments store. Mirrors the
-// in-process queue + cross-process file-lock pattern in
 import fs from "node:fs/promises";
 import path from "node:path";
 import { type FileLockOptions, withFileLock } from "../plugin-sdk/file-lock.js";

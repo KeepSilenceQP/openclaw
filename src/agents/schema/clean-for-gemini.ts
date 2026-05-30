@@ -1,4 +1,3 @@
-// Cloud Code Assist API rejects a subset of JSON Schema keywords.
 import type { TSchema } from "typebox";
 
 // Keywords that Cloud Code Assist API rejects (not compliant with their JSON Schema subset).

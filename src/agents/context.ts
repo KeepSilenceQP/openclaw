@@ -1,4 +1,3 @@
-// Load session runtime model metadata so we can infer context windows when the
 import { getRuntimeConfig } from "../config/config.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { computeBackoff, type BackoffPolicy } from "../infra/backoff.js";

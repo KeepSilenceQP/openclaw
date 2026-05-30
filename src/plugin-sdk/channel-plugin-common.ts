@@ -1,5 +1,3 @@
-// Canonical shared prelude for channel-oriented plugin SDK surfaces.
-// Keep `core` and channel-specific SDK entrypoints derived from this module
 export type { ChannelPlugin } from "../channels/plugins/types.plugin.js";
 export type { ChannelMessageActionContext } from "../channels/plugins/types.public.js";
 export type { PluginRuntime } from "../plugins/runtime/types.js";

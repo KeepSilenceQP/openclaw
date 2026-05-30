@@ -1,4 +1,3 @@
-// Legacy map-helper exports in this facade stay for older plugin consumers.
 export {
   applyAccountNameToChannelSection,
   applySetupAccountConfigPatch,

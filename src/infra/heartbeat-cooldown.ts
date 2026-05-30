@@ -1,15 +1,3 @@
-// Centralized cooldown decision for heartbeat wakes.
-//
-// Background: a heartbeat run can be triggered by many wake sources — the
-// scheduler's interval tick, a manual user request, a backgrounded `process.start`
-// exit, a cron tick, an ACP spawn stream event, etc. Different sources used to
-// take different code paths through the dispatcher, and historically the
-// `nextDueMs` cooldown gate was only enforced on the `interval` branch. That let
-// event-driven wakes (especially `exec-event`) fire heartbeat runs back-to-back
-// when a heartbeat agent's tools triggered more wakes (#17797 → #75436).
-//
-// This module owns the single decision: "given this wake, should we run now or
-// defer it?" Both the targeted and broadcast dispatch branches must call
 import type { HeartbeatWakeIntent, HeartbeatWakeSource } from "./heartbeat-wake.js";
 
 // Default minimum spacing between heartbeat runs for the same agent, regardless

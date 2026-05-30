@@ -1,6 +1,3 @@
-// Shared provider catalog helpers for provider plugins.
-//
-// Keep provider-owned exports out of this subpath so plugin loaders can import it
 import { createHash } from "node:crypto";
 import { normalizeModelCatalog } from "@openclaw/model-catalog-core/model-catalog-normalize";
 import type {

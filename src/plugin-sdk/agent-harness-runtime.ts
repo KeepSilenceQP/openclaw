@@ -1,5 +1,3 @@
-// Lightweight runtime surface for plugin-owned agent harnesses.
-// Keep heavyweight tool construction out of this module so harness imports can
 import type {
   CodexBundleMcpThreadConfig,
   LoadCodexBundleMcpThreadConfigParams,

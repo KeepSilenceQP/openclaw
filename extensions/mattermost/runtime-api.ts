@@ -1,6 +1,3 @@
-// Private runtime barrel for the bundled Mattermost extension.
-// Keep this barrel thin and generic-only.
-
 export type {
   BaseProbeResult,
   ChannelAccountSnapshot,

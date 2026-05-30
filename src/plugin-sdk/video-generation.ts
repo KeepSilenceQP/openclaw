@@ -1,6 +1,3 @@
-// Public video-generation helpers and types for provider plugins.
-//
-// Keep these public type declarations local to the plugin-sdk entrypoint so the
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {
