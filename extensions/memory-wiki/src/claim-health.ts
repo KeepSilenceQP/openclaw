@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src claim health helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { WikiClaim, WikiPageSummary } from "./markdown.js";
 

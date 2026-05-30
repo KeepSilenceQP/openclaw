@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk/src message adapter helpers and runtime behavior.
 import { defineChannelMessageAdapter } from "openclaw/plugin-sdk/channel-outbound";
 import { sendMessageNextcloudTalk } from "./send.js";
 import type { CoreConfig } from "./types.js";

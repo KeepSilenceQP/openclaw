@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk/src config schema helpers and runtime behavior.
 import {
   DmPolicySchema,
   GroupPolicySchema,

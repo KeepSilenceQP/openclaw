@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk/src policy helpers and runtime behavior.
 import {
   buildChannelKeyCandidates,
   normalizeChannelSlug,

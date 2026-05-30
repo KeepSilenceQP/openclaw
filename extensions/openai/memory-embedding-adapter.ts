@@ -1,4 +1,3 @@
-// extensions/openai memory embedding adapter helpers and runtime behavior.
 import {
   isMissingEmbeddingApiKeyError,
   mapBatchEmbeddingsByIndex,

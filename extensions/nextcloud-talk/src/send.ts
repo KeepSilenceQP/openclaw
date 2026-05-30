@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk/src send helpers and runtime behavior.
 import { createMessageReceiptFromOutboundResults } from "openclaw/plugin-sdk/channel-outbound";
 import { stripNextcloudTalkTargetPrefix } from "./normalize.js";
 import {

@@ -1,4 +1,3 @@
-// extensions/deepinfra provider catalog helpers and runtime behavior.
 import {
   buildSingleProviderApiKeyCatalog,
   type ProviderCatalogContext,

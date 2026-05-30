@@ -1,4 +1,3 @@
-// extensions/deepinfra api helpers and runtime behavior.
 /** Re-exported deepinfra plugin public API, starting with build Deep Infra Provider. */
 export { buildDeepInfraProvider, buildStaticDeepInfraProvider } from "./provider-catalog.js";
 /** Re-exported deepinfra plugin public API, starting with apply Deep Infra Config. */

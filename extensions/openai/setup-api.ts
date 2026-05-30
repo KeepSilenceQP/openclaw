@@ -1,4 +1,3 @@
-// extensions/openai setup api helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import type { ProviderAuthContext, ProviderAuthResult } from "openclaw/plugin-sdk/plugin-entry";
 import type { ProviderAuthMethod } from "openclaw/plugin-sdk/plugin-entry";

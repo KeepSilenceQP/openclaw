@@ -4,7 +4,6 @@ import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { hasActiveApprovalNativeRouteRuntime } from "../../infra/approval-native-route-coordinator.js";
 import { getChannelPlugin, normalizeChannelId } from "./registry.js";
 
-/** Reused helper for should Suppress Local Exec Approval Prompt behavior in src/channels/plugins. */
 export function shouldSuppressLocalExecApprovalPrompt(params: {
   channel?: string | null;
   cfg: OpenClawConfig;

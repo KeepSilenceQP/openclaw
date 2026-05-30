@@ -8,7 +8,6 @@ import {
   resolveCompiledBindingChannel,
 } from "./configured-binding-match.js";
 
-/** Reused helper for resolve Configured Binding Record By Session Key From Registry behavior in src/channels/plugins. */
 export function resolveConfiguredBindingRecordBySessionKeyFromRegistry(params: {
   registry: CompiledConfiguredBindingRegistry;
   sessionKey: string;

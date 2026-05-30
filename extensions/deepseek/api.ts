@@ -1,4 +1,3 @@
-// extensions/deepseek api helpers and runtime behavior.
 /** Re-exported deepseek plugin public API. */
 export {
   buildDeepSeekModelDefinition,

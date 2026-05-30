@@ -1,4 +1,3 @@
-// extensions/exa/src exa web search provider helpers and runtime behavior.
 import type { WebSearchProviderPlugin } from "openclaw/plugin-sdk/provider-web-search-contract";
 import { createExaWebSearchProviderBase } from "./exa-web-search-provider.shared.js";
 

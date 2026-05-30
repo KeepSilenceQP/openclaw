@@ -1,4 +1,3 @@
-// extensions/deepinfra embedding provider helpers and runtime behavior.
 import {
   createRemoteEmbeddingProvider,
   resolveRemoteEmbeddingClient,

@@ -1,12 +1,10 @@
 // Channel runtime surface key types for plugin lifecycle caches.
-/** Shared type for Channel Runtime Context Key in src/channels/plugins. */
 export type ChannelRuntimeContextKey = {
   channelId: string;
   accountId?: string | null;
   capability: string;
 };
 
-/** Shared type for Channel Runtime Context Event in src/channels/plugins. */
 export type ChannelRuntimeContextEvent = {
   type: "registered" | "unregistered";
   key: {
@@ -17,7 +15,6 @@ export type ChannelRuntimeContextEvent = {
   context?: unknown;
 };
 
-/** Shared type for Channel Runtime Context Registry in src/channels/plugins. */
 export type ChannelRuntimeContextRegistry = {
   register: (
     params: ChannelRuntimeContextKey & {

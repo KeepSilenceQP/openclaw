@@ -1,4 +1,3 @@
-// extensions/deepinfra speech provider helpers and runtime behavior.
 import {
   asObject,
   createOpenAiCompatibleSpeechProvider,

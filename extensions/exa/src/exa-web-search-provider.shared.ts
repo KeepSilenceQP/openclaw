@@ -1,4 +1,3 @@
-// extensions/exa/src exa web search provider shared helpers and runtime behavior.
 import { createWebSearchProviderContractFields } from "openclaw/plugin-sdk/provider-web-search-contract";
 
 const EXA_CREDENTIAL_PATH = "plugins.entries.exa.config.webSearch.apiKey";

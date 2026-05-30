@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src log helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { appendRegularFile } from "openclaw/plugin-sdk/security-runtime";

@@ -8,13 +8,11 @@ import type {
 } from "./binding-types.js";
 import type { ChannelConfiguredBindingConversationRef } from "./types.adapters.js";
 
-/** Shared type for Parsed Configured Binding Session Key in src/channels/plugins. */
 export type ParsedConfiguredBindingSessionKey = {
   channel: string;
   accountId: string;
 };
 
-/** Shared type for Configured Binding Consumer in src/channels/plugins. */
 export type ConfiguredBindingConsumer = {
   id: string;
   supports: (binding: ConfiguredBindingRuleConfig) => boolean;
@@ -37,12 +35,10 @@ export type ConfiguredBindingConsumer = {
 
 const registeredConfiguredBindingConsumers = new Map<string, ConfiguredBindingConsumer>();
 
-/** Reused helper for list Configured Binding Consumers behavior in src/channels/plugins. */
 export function listConfiguredBindingConsumers(): ConfiguredBindingConsumer[] {
   return [...registeredConfiguredBindingConsumers.values()];
 }
 
-/** Reused helper for resolve Configured Binding Consumer behavior in src/channels/plugins. */
 export function resolveConfiguredBindingConsumer(
   binding: ConfiguredBindingRuleConfig,
 ): ConfiguredBindingConsumer | null {
@@ -54,7 +50,6 @@ export function resolveConfiguredBindingConsumer(
   return null;
 }
 
-/** Reused helper for register Configured Binding Consumer behavior in src/channels/plugins. */
 export function registerConfiguredBindingConsumer(consumer: ConfiguredBindingConsumer): void {
   const id = consumer.id.trim();
   if (!id) {

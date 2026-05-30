@@ -1,4 +1,3 @@
-// extensions/openai realtime transcription provider helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   isProviderAuthProfileConfigured,

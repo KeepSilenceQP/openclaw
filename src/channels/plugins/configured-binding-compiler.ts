@@ -18,7 +18,6 @@ import type {
 // Configured bindings are channel-owned rules compiled from config, separate
 // from runtime plugin-owned conversation bindings.
 
-/** Shared type for Compiled Configured Binding Registry in src/channels/plugins. */
 export type CompiledConfiguredBindingRegistry = {
   rulesByChannel: Map<ConfiguredBindingChannel, CompiledConfiguredBinding[]>;
 };
@@ -164,21 +163,18 @@ function compileConfiguredBindingRegistry(params: {
   };
 }
 
-/** Reused helper for resolve Compiled Binding Registry behavior in src/channels/plugins. */
 export function resolveCompiledBindingRegistry(
   cfg: OpenClawConfig,
 ): CompiledConfiguredBindingRegistry {
   return compileConfiguredBindingRegistry({ cfg });
 }
 
-/** Reused helper for prime Compiled Binding Registry behavior in src/channels/plugins. */
 export function primeCompiledBindingRegistry(
   cfg: OpenClawConfig,
 ): CompiledConfiguredBindingRegistry {
   return compileConfiguredBindingRegistry({ cfg });
 }
 
-/** Reused helper for count Compiled Binding Registry behavior in src/channels/plugins. */
 export function countCompiledBindingRegistry(registry: CompiledConfiguredBindingRegistry): {
   bindingCount: number;
   channelCount: number;

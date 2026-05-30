@@ -1,4 +1,3 @@
-// extensions/openai api helpers and runtime behavior.
 /** Re-exported openai plugin public API. */
 export {
   applyOpenAIConfig,

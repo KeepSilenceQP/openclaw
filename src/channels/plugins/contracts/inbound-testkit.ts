@@ -1,6 +1,5 @@
 import { vi } from "vitest";
 
-/** Reused helper for build Dispatch Inbound Capture Mock behavior in src/channels/plugins. */
 export function buildDispatchInboundCaptureMock<T extends Record<string, unknown>>(
   actual: T,
   setCtx: (ctx: unknown) => void,

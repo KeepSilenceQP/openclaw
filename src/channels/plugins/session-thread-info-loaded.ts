@@ -38,7 +38,6 @@ function resolveLoadedSessionConversationThreadInfo(
   };
 }
 
-/** Reused helper for resolve Loaded Session Thread Info behavior in src/channels/plugins. */
 export function resolveLoadedSessionThreadInfo(
   sessionKey: string | undefined | null,
 ): ParsedThreadSessionSuffix {

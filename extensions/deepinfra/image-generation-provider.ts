@@ -1,4 +1,3 @@
-// extensions/deepinfra image generation provider helpers and runtime behavior.
 import {
   createOpenAiCompatibleImageGenerationProvider,
   imageSourceUploadFileName,

@@ -1,4 +1,3 @@
-// extensions/deepinfra index helpers and runtime behavior.
 import {
   type ProviderCatalogContext,
   type ConfiguredProviderCatalogEntry,

@@ -1,4 +1,3 @@
-// extensions/openai replay policy helpers and runtime behavior.
 import type {
   ProviderReplayPolicy,
   ProviderReplayPolicyContext,

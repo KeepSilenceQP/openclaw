@@ -1,4 +1,3 @@
-// extensions/openai thinking policy helpers and runtime behavior.
 import type { ProviderThinkingProfile } from "openclaw/plugin-sdk/plugin-entry";
 
 const OPENAI_THINKING_BASE_LEVELS = [

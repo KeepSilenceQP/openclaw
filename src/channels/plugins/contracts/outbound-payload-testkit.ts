@@ -26,7 +26,6 @@ type OutboundPayloadHarness = {
   to: string;
 };
 
-/** Shared type for Outbound Payload Harness Params in src/channels/plugins. */
 export type OutboundPayloadHarnessParams = {
   payload: PayloadLike;
   sendResults?: SendResultLike[];
@@ -40,7 +39,6 @@ function sendCall(sendMock: Mock, index: number): unknown[] {
   return call;
 }
 
-/** Reused helper for install Channel Outbound Payload Contract Suite behavior in src/channels/plugins. */
 export function installChannelOutboundPayloadContractSuite(params: {
   channel: string;
   chunking: ChunkingMode;

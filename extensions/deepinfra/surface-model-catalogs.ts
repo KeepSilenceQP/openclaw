@@ -1,4 +1,3 @@
-// extensions/deepinfra surface model catalogs helpers and runtime behavior.
 import type {
   UnifiedModelCatalogEntry,
   UnifiedModelCatalogProviderContext,

@@ -1,4 +1,3 @@
-// extensions/openai embedding batch helpers and runtime behavior.
 import {
   applyEmbeddingBatchOutputLine,
   buildBatchHeaders,

@@ -1,4 +1,3 @@
-// extensions/openai shared helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { findCatalogTemplate } from "openclaw/plugin-sdk/provider-catalog-shared";
 import {

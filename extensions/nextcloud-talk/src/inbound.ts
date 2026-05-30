@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk/src inbound helpers and runtime behavior.
 import {
   channelIngressRoutes,
   resolveStableChannelMessageIngress,

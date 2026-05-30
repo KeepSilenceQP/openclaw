@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src query helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { MemorySearchResult } from "openclaw/plugin-sdk/memory-core-host-runtime-files";

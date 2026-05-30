@@ -1,4 +1,3 @@
-// extensions/openai tts helpers and runtime behavior.
 import {
   assertOkOrThrowProviderError,
   resolveProviderRequestHeaders,

@@ -1,7 +1,6 @@
 import type { ChannelMessageAdapterShape } from "../message/types.js";
 import type { ChannelSetupWizard, ChannelSetupWizardAdapter } from "./setup-wizard-types.js";
 import type { ChannelConfigSchema } from "./types.config.js";
-/** Re-exported API for src/channels/plugins. */
 export type {
   ChannelConfigRuntimeIssue,
   ChannelConfigRuntimeParseResult,
@@ -50,7 +49,6 @@ import type {
 /** Full capability contract for a native channel plugin. */
 type ChannelPluginSetupWizard = ChannelSetupWizard | ChannelSetupWizardAdapter;
 
-/** Shared type for Channel Gateway Method Descriptor in src/channels/plugins. */
 export type ChannelGatewayMethodDescriptor = {
   name: string;
   scope?: OperatorScope;
@@ -60,7 +58,6 @@ export type ChannelGatewayMethodDescriptor = {
 // Omitted generic means "plugin with some account shape", not "plugin whose
 // account is literally Record<string, unknown>".
 // oxlint-disable-next-line typescript/no-explicit-any
-/** Shared type for Channel Plugin in src/channels/plugins. */
 export type ChannelPlugin<ResolvedAccount = any, Probe = unknown, Audit = unknown> = {
   id: ChannelId;
   meta: ChannelMeta;

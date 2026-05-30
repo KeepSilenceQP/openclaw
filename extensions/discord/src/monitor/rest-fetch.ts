@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor rest fetch helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import {

@@ -4,12 +4,10 @@ import type { ChannelThreadingAdapter } from "./types.core.js";
 
 type ReplyToModeResolver = NonNullable<ChannelThreadingAdapter["resolveReplyToMode"]>;
 
-/** Reused helper for create Static Reply To Mode Resolver behavior in src/channels/plugins. */
 export function createStaticReplyToModeResolver(mode: ReplyToMode): ReplyToModeResolver {
   return () => mode;
 }
 
-/** Reused helper for create Top Level Channel Reply To Mode Resolver behavior in src/channels/plugins. */
 export function createTopLevelChannelReplyToModeResolver(channelId: string): ReplyToModeResolver {
   return ({ cfg }) => {
     const channelConfig = (
@@ -19,7 +17,6 @@ export function createTopLevelChannelReplyToModeResolver(channelId: string): Rep
   };
 }
 
-/** Reused helper for create Scoped Account Reply To Mode Resolver behavior in src/channels/plugins. */
 export function createScopedAccountReplyToModeResolver<TAccount>(params: {
   resolveAccount: (cfg: OpenClawConfig, accountId?: string | null) => TAccount;
   resolveReplyToMode: (

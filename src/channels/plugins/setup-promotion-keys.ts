@@ -64,17 +64,14 @@ const SETUP_SINGLE_ACCOUNT_PROMOTION_KEYS = [
 const commonSingleAccountPromotionKeys = new Set<string>(COMMON_SINGLE_ACCOUNT_PROMOTION_KEYS);
 const setupSingleAccountPromotionKeys = new Set<string>(SETUP_SINGLE_ACCOUNT_PROMOTION_KEYS);
 
-/** Reused helper for is Common Single Account Promotion Key behavior in src/channels/plugins. */
 export function isCommonSingleAccountPromotionKey(key: string): boolean {
   return commonSingleAccountPromotionKeys.has(key);
 }
 
-/** Reused helper for is Setup Single Account Promotion Key behavior in src/channels/plugins. */
 export function isSetupSingleAccountPromotionKey(key: string): boolean {
   return setupSingleAccountPromotionKeys.has(key);
 }
 
-/** Reused helper for collect Single Account Promotion Entries behavior in src/channels/plugins. */
 export function collectSingleAccountPromotionEntries(channel: Record<string, unknown>): {
   entries: string[];
   hasNamedAccounts: boolean;

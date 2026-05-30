@@ -1,4 +1,3 @@
-// extensions/deepseek provider discovery helpers and runtime behavior.
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 import { buildDeepSeekProvider } from "./provider-catalog.js";
 
