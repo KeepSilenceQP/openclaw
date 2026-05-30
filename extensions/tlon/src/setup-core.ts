@@ -1,4 +1,3 @@
-// extensions/tlon/src setup core helpers and runtime behavior.
 import {
   DEFAULT_ACCOUNT_ID,
   formatDocsLink,

@@ -1,4 +1,3 @@
-// extensions/tlon/src targets helpers and runtime behavior.
 type TlonTarget =
   | { kind: "dm"; ship: string }
   | { kind: "group"; nest: string; hostShip: string; channelName: string };

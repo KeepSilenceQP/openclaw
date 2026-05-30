@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src docker runtime helpers and runtime behavior.
 import {
   createQaDockerRuntime,
   type QaDockerFetchLike as FetchLike,

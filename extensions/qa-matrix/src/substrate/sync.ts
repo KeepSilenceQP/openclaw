@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/substrate sync helpers and runtime behavior.
 import {
   findMatrixQaObservedEventMatch,
   normalizeMatrixQaObservedEvent,

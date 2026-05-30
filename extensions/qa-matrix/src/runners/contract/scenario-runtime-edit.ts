@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime edit helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import {
   assertNoSutReplyWindow,

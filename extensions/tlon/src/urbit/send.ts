@@ -1,4 +1,3 @@
-// extensions/tlon/src/urbit send helpers and runtime behavior.
 import { scot, da } from "@urbit/aura";
 import {
   createMessageReceiptFromOutboundResults,

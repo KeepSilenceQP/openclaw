@@ -1,4 +1,3 @@
-// terminal safe text helpers and runtime behavior.
 import { stripAnsi } from "./ansi.js";
 
 /**

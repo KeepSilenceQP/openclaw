@@ -1,5 +1,3 @@
-// ui/src/ui usage helpers helpers and runtime behavior.
-/** Shared type for Usage Query Term in ui/src/ui. */
 export type UsageQueryTerm = {
   key?: string;
   value: string;
@@ -90,7 +88,6 @@ const parseQueryNumber = (value: string): number | null => {
   return normalized;
 };
 
-/** Reused constant for extract Query Terms behavior in ui/src/ui. */
 export const extractQueryTerms = (query: string): UsageQueryTerm[] => {
   // Tokenize by whitespace, but allow quoted values with spaces.
   const rawTokens = query.match(/"[^"]+"|\S+/g) ?? [];
@@ -250,7 +247,6 @@ const matchesUsageQuery = (session: UsageSessionQueryTarget, term: UsageQueryTer
   }
 };
 
-/** Reused constant for filter Sessions By Query behavior in ui/src/ui. */
 export const filterSessionsByQuery = <TSession extends UsageSessionQueryTarget>(
   sessions: TSession[],
   query: string,
@@ -296,7 +292,6 @@ export const filterSessionsByQuery = <TSession extends UsageSessionQueryTarget>(
   return { sessions: filtered, warnings };
 };
 
-/** Reused helper for parse Tool Summary behavior in ui/src/ui. */
 export function parseToolSummary(content: string) {
   const lines = content.split("\n");
   const toolCounts = new Map<string, number>();

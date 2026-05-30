@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime e2ee destructive helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import { chmod, copyFile, mkdir, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";

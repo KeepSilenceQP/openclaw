@@ -1,7 +1,6 @@
 const ANTIGRAVITY_BARE_PRO_IDS = new Set(["gemini-3-pro", "gemini-3.1-pro", "gemini-3-1-pro"]);
 const GOOGLE_PROVIDER_PREFIX = "google/";
 
-/** Reused helper for normalize Google Preview Model Id behavior in src/plugin-sdk. */
 export function normalizeGooglePreviewModelId(id: string): string {
   if (id.startsWith(GOOGLE_PROVIDER_PREFIX)) {
     const modelId = id.slice(GOOGLE_PROVIDER_PREFIX.length);
@@ -29,7 +28,6 @@ export function normalizeGooglePreviewModelId(id: string): string {
   return id;
 }
 
-/** Reused helper for normalize Together Model Id behavior in src/plugin-sdk. */
 export function normalizeTogetherModelId(id: string): string {
   if (id === "moonshotai/Kimi-K2.5") {
     return "moonshotai/Kimi-K2.6";
@@ -37,7 +35,6 @@ export function normalizeTogetherModelId(id: string): string {
   return id;
 }
 
-/** Reused helper for normalize Antigravity Preview Model Id behavior in src/plugin-sdk. */
 export function normalizeAntigravityPreviewModelId(id: string): string {
   if (ANTIGRAVITY_BARE_PRO_IDS.has(id)) {
     return `${id}-low`;
