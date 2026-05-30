@@ -1,4 +1,3 @@
-// extensions/zalouser/src accounts test mocks helpers and runtime behavior.
 import { vi } from "vitest";
 import { createDefaultResolvedZalouserAccount } from "./test-helpers.js";
 

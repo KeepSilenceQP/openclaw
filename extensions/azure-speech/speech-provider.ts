@@ -1,4 +1,3 @@
-// extensions/azure-speech speech provider helpers and runtime behavior.
 import { normalizeResolvedSecretInputString } from "openclaw/plugin-sdk/secret-input";
 import type {
   SpeechDirectiveTokenParseContext,

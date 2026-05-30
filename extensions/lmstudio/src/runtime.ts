@@ -1,4 +1,3 @@
-// extensions/lmstudio/src runtime helpers and runtime behavior.
 import {
   CUSTOM_LOCAL_AUTH_MARKER,
   isKnownEnvApiKeyMarker,

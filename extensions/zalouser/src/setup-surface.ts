@@ -1,4 +1,3 @@
-// extensions/zalouser/src setup surface helpers and runtime behavior.
 import {
   addWildcardAllowFrom,
   DEFAULT_ACCOUNT_ID,

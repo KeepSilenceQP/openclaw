@@ -1,4 +1,3 @@
-// extensions/lmstudio/src provider auth helpers and runtime behavior.
 import {
   CUSTOM_LOCAL_AUTH_MARKER,
   hasConfiguredSecretInput,

@@ -1,4 +1,3 @@
-// extensions/feishu/src secret contract helpers and runtime behavior.
 import {
   collectConditionalChannelFieldAssignments,
   collectSimpleChannelFieldAssignments,

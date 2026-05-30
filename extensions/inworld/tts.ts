@@ -1,4 +1,3 @@
-// extensions/inworld tts helpers and runtime behavior.
 import type { SpeechVoiceOption } from "openclaw/plugin-sdk/speech-core";
 import { fetchWithSsrFGuard, type SsrFPolicy } from "openclaw/plugin-sdk/ssrf-runtime";
 

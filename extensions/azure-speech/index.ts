@@ -1,4 +1,3 @@
-// extensions/azure-speech index helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { buildAzureSpeechProvider } from "./speech-provider.js";
 

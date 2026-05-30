@@ -1,4 +1,3 @@
-// extensions/feishu/src channel runtime api helpers and runtime behavior.
 export type {
   ChannelMessageActionName,
   ChannelMeta,

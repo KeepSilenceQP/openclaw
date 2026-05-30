@@ -1,4 +1,3 @@
-// extensions/memory-lancedb cli metadata helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/core";
 
 export default definePluginEntry({
