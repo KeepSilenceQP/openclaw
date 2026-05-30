@@ -147,7 +147,6 @@ function formatKnownHarnessGapDetails(toolName: string, config: QaRuntimeToolFix
     .join("\n");
 }
 
-/** Runs a runtime tool fixture and returns diagnostic details for the QA scenario. */
 export async function runRuntimeToolFixture(
   env: QaSuiteRuntimeEnv,
   config: QaRuntimeToolFixtureConfig,

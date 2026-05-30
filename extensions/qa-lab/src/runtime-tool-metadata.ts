@@ -5,19 +5,16 @@ import {
 } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { QaRuntimeParityTier, QaSeedScenarioWithSource } from "./scenario-catalog.js";
 
-/** High-level coverage bucket for a runtime tool scenario. */
 export type QaRuntimeToolBucket =
   | "codex-native-workspace"
   | "openclaw-dynamic-integration"
   | "optional-profile-or-plugin";
 
-/** Runtime layer a scenario expects a tool to be available through. */
 export type QaRuntimeToolExpectedLayer =
   | "codex-native-workspace"
   | "openclaw-dynamic"
   | "profile-or-plugin";
 
-/** More specific capability layer used by tool coverage reports. */
 export type QaRuntimeCapabilityLayer =
   | "codex-native-workspace"
   | "openclaw-dynamic-direct"
@@ -25,13 +22,10 @@ export type QaRuntimeCapabilityLayer =
   | "optional-profile-or-plugin"
   | "structural-text";
 
-/** Codex tool loading mode represented in QA runtime metadata. */
 export type QaCodexToolLoading = "direct" | "searchable";
 
-/** Comparison strictness for runtime parity scenarios. */
 export type RuntimeParityComparisonMode = "default" | "codex-native-workspace" | "outcome-only";
 
-/** Normalized coverage metadata attached to QA runtime tool scenarios. */
 export type QaRuntimeToolCoverageMetadata = {
   bucket: QaRuntimeToolBucket;
   expectedLayer: QaRuntimeToolExpectedLayer;
@@ -44,21 +38,18 @@ export type QaRuntimeToolCoverageMetadata = {
   action?: string;
 };
 
-/** Allowed runtime tool buckets for config validation and reports. */
 export const QA_RUNTIME_TOOL_BUCKETS: readonly QaRuntimeToolBucket[] = [
   "codex-native-workspace",
   "openclaw-dynamic-integration",
   "optional-profile-or-plugin",
 ] as const;
 
-/** Allowed expected layers for runtime tool coverage metadata. */
 export const QA_RUNTIME_TOOL_EXPECTED_LAYERS: readonly QaRuntimeToolExpectedLayer[] = [
   "codex-native-workspace",
   "openclaw-dynamic",
   "profile-or-plugin",
 ] as const;
 
-/** Allowed capability layers for runtime tool coverage metadata. */
 export const QA_RUNTIME_CAPABILITY_LAYERS: readonly QaRuntimeCapabilityLayer[] = [
   "codex-native-workspace",
   "openclaw-dynamic-direct",
@@ -67,7 +58,6 @@ export const QA_RUNTIME_CAPABILITY_LAYERS: readonly QaRuntimeCapabilityLayer[] =
   "structural-text",
 ] as const;
 
-/** Allowed Codex tool loading modes for report classification. */
 export const QA_CODEX_TOOL_LOADING_MODES: readonly QaCodexToolLoading[] = [
   "direct",
   "searchable",
@@ -97,7 +87,6 @@ function isQaRuntimeCapabilityLayer(value: string): value is QaRuntimeCapability
   return QA_RUNTIME_CAPABILITY_LAYERS.includes(value as QaRuntimeCapabilityLayer);
 }
 
-/** Reads the raw `toolCoverage` object from scenario config when present. */
 export function readRuntimeToolCoverageConfig(
   config: Record<string, unknown> | undefined,
 ): Record<string, unknown> | undefined {
@@ -126,7 +115,6 @@ function inferRuntimeToolBucket(params: {
   return "openclaw-dynamic-integration";
 }
 
-/** Normalizes scenario tool coverage config into report-ready metadata. */
 export function readRuntimeToolCoverageMetadata(params: {
   config?: Record<string, unknown>;
   runtimeParityTier?: QaRuntimeParityTier;
@@ -176,7 +164,6 @@ export function readRuntimeToolCoverageMetadata(params: {
   };
 }
 
-/** Reads normalized tool coverage metadata from a catalog scenario. */
 export function readScenarioRuntimeToolCoverageMetadata(
   scenario: QaSeedScenarioWithSource,
 ): QaRuntimeToolCoverageMetadata {
@@ -186,7 +173,6 @@ export function readScenarioRuntimeToolCoverageMetadata(
   });
 }
 
-/** Determines whether parity should compare exact tool layer behavior or only outcomes. */
 export function runtimeToolComparisonModeForScenario(
   scenario: QaSeedScenarioWithSource,
 ): RuntimeParityComparisonMode {

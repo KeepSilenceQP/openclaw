@@ -1,7 +1,6 @@
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import type { QaTransportActionName, QaTransportState } from "./qa-transport.js";
 
-/** Runtime context passed to each QA scenario step. */
 export type QaScenarioStepContext = {
   state: QaTransportState;
   performAction?: (
@@ -10,26 +9,22 @@ export type QaScenarioStepContext = {
   ) => Promise<unknown>;
 };
 
-/** One named QA scenario step. */
 export type QaScenarioStep = {
   name: string;
   run: (ctx: QaScenarioStepContext) => Promise<string | void>;
 };
 
-/** QA scenario definition with ordered executable steps. */
 export type QaScenarioDefinition = {
   name: string;
   steps: QaScenarioStep[];
 };
 
-/** Result for one QA scenario step. */
 export type QaScenarioStepResult = {
   name: string;
   status: "pass" | "fail";
   details?: string;
 };
 
-/** Aggregated result for a full QA scenario execution. */
 export type QaScenarioResult = {
   name: string;
   status: "pass" | "fail";
@@ -37,7 +32,6 @@ export type QaScenarioResult = {
   details?: string;
 };
 
-/** Runs a QA scenario until all steps pass or the first step fails. */
 export async function runQaScenario(
   definition: QaScenarioDefinition,
   ctx: QaScenarioStepContext,

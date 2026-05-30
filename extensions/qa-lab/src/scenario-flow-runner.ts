@@ -281,7 +281,6 @@ async function runFlowAction(action: unknown, api: QaFlowApi, vars: QaFlowVars) 
   throw new Error(`unknown qa flow action: ${JSON.stringify(action)}`);
 }
 
-/** Runs a declarative QA scenario flow and returns the suite result from the host API. */
 export async function runScenarioFlow(params: {
   api: QaFlowApi;
   flow: QaScenarioFlow;

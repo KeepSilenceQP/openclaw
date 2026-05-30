@@ -1,6 +1,5 @@
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 
-/** Definition for a named QA scenario pack. */
 export type QaScenarioPackDefinition = {
   id: string;
   title: string;
@@ -8,7 +7,6 @@ export type QaScenarioPackDefinition = {
   scenarioIds: readonly string[];
 };
 
-/** Scenario ids included in the personal-agent benchmark pack. */
 export const QA_PERSONAL_AGENT_SCENARIO_IDS = [
   "personal-reminder-roundtrip",
   "personal-channel-thread-reply",
@@ -22,13 +20,11 @@ export const QA_PERSONAL_AGENT_SCENARIO_IDS = [
   "personal-failure-recovery",
 ] as const;
 
-/** Scenario ids included in the observability smoke pack. */
 export const QA_OBSERVABILITY_SCENARIO_IDS = [
   "otel-trace-smoke",
   "docker-prometheus-smoke",
 ] as const;
 
-/** Built-in QA scenario packs available to the runner. */
 export const QA_SCENARIO_PACKS = [
   {
     id: "personal-agent",
@@ -46,7 +42,6 @@ export const QA_SCENARIO_PACKS = [
   },
 ] as const satisfies readonly QaScenarioPackDefinition[];
 
-/** Resolves explicit scenario ids plus any ids from a named pack. */
 export function resolveQaScenarioPackScenarioIds(params: {
   pack?: string;
   scenarioIds?: string[];

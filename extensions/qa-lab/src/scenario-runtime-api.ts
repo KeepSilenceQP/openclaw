@@ -5,7 +5,6 @@ import type { QaSeedScenarioWithSource } from "./scenario-catalog.js";
 
 type QaScenarioRuntimeFunction = (...args: never[]) => unknown;
 
-/** Runtime environment exposed to declarative and scripted QA scenario fixtures. */
 export type QaScenarioRuntimeEnv<
   TLab = unknown,
   TTransportState extends QaTransportState = QaTransportState,
@@ -24,7 +23,6 @@ export type QaScenarioRuntimeEnv<
   };
 };
 
-/** Host-provided helpers available to scenario runtime fixtures. */
 export type QaScenarioRuntimeDeps = {
   fs: typeof NodeFs;
   path: typeof NodePath;
@@ -100,7 +98,6 @@ export type QaScenarioRuntimeDeps = {
   hasModelSwitchContinuitySignal: QaScenarioRuntimeFunction;
 };
 
-/** Static fixture payloads injected into the QA scenario runtime API. */
 export type QaScenarioRuntimeConstants = {
   imageUnderstandingPngBase64: string;
   imageUnderstandingLargePngBase64: string;
@@ -202,7 +199,6 @@ type QaScenarioRuntimeApi<
   reset: () => Promise<void>;
 };
 
-/** Builds the scenario runtime API object consumed by evaluated QA fixtures. */
 export function createQaScenarioRuntimeApi<
   TEnv extends QaScenarioRuntimeEnv,
   TDeps extends QaScenarioRuntimeDeps,
