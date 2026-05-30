@@ -1,4 +1,3 @@
-// ui/src/ui/views overview hints helpers and runtime behavior.
 import {
   ConnectErrorDetailCodes,
   readConnectPairingRequiredMessage,
@@ -36,7 +35,6 @@ const INSECURE_CONTEXT_CODES = new Set<string>([
 
 type AuthHintKind = "required" | "failed";
 
-/** Shared type for Pairing Hint in ui/src/ui/views. */
 export type PairingHint =
   | {
       kind: "pairing-required";
@@ -47,7 +45,6 @@ export type PairingHint =
       requestId: string | null;
     };
 
-/** Reused helper for resolve Pairing Hint behavior in ui/src/ui/views. */
 export function resolvePairingHint(
   connected: boolean,
   lastError: string | null,
@@ -115,7 +112,6 @@ export function resolveAuthHintKind(params: {
   return !params.hasToken && !params.hasPassword ? "required" : "failed";
 }
 
-/** Reused helper for should Show Insecure Context Hint behavior in ui/src/ui/views. */
 export function shouldShowInsecureContextHint(
   connected: boolean,
   lastError: string | null,

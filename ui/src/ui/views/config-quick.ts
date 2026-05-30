@@ -31,7 +31,6 @@ import {
 
 // ── Types ──
 
-/** Shared type for Quick Settings Channel in ui/src/ui/views. */
 export type QuickSettingsChannel = {
   id: string;
   label: string;
@@ -39,14 +38,12 @@ export type QuickSettingsChannel = {
   detail?: string;
 };
 
-/** Shared type for Quick Settings Automation in ui/src/ui/views. */
 export type QuickSettingsAutomation = {
   cronJobCount: number;
   skillCount: number;
   mcpServerCount: number;
 };
 
-/** Shared type for Quick Settings Security in ui/src/ui/views. */
 export type QuickSettingsSecurity = {
   gatewayAuth: string;
   execPolicy: string;
@@ -55,7 +52,6 @@ export type QuickSettingsSecurity = {
   toolProfile: string;
 };
 
-/** Shared type for Quick Settings Props in ui/src/ui/views. */
 export type QuickSettingsProps = {
   // Model & Thinking
   currentModel: string;
@@ -1078,7 +1074,6 @@ function renderConnectionFooter(props: QuickSettingsProps) {
 
 // ── Main render ──
 
-/** Reused helper for render Quick Settings behavior in ui/src/ui/views. */
 export function renderQuickSettings(props: QuickSettingsProps) {
   return html`
     <div class="qs-container">

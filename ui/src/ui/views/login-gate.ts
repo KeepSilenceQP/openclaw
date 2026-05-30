@@ -1,4 +1,3 @@
-// ui/src/ui/views login gate helpers and runtime behavior.
 import { html } from "lit";
 import { ConnectErrorDetailCodes } from "../../../../packages/gateway-protocol/src/connect-error-details.js";
 import { t } from "../../i18n/index.ts";
@@ -25,7 +24,6 @@ type LoginFailureKind =
   | "protocol-mismatch"
   | "network";
 
-/** Shared type for Login Failure Feedback in ui/src/ui/views. */
 export type LoginFailureFeedback = {
   kind: LoginFailureKind;
   title: string;
@@ -88,7 +86,6 @@ function buildFeedback(params: {
   };
 }
 
-/** Reused helper for resolve Login Failure Feedback behavior in ui/src/ui/views. */
 export function resolveLoginFailureFeedback(
   params: LoginFailureFeedbackParams,
 ): LoginFailureFeedback | null {
@@ -272,7 +269,6 @@ function renderLoginFailure(feedback: LoginFailureFeedback) {
   `;
 }
 
-/** Reused helper for render Login Gate behavior in ui/src/ui/views. */
 export function renderLoginGate(state: AppViewState) {
   const basePath = normalizeBasePath(state.basePath ?? "");
   const faviconSrc = agentLogoUrl(basePath);
