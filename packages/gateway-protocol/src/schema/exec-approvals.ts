@@ -70,7 +70,6 @@ export const ExecApprovalsSnapshotSchema = Type.Object(
 /** Empty params contract for reading the local exec approvals file. */
 export const ExecApprovalsGetParamsSchema = Type.Object({}, { additionalProperties: false });
 
-/** Write params for replacing the local exec approvals file with optional hash guarding. */
 export const ExecApprovalsSetParamsSchema = Type.Object(
   {
     file: ExecApprovalsFileSchema,
@@ -87,7 +86,6 @@ export const ExecApprovalsNodeGetParamsSchema = Type.Object(
   { additionalProperties: false },
 );
 
-/** Write params for replacing a paired node's exec approvals file. */
 export const ExecApprovalsNodeSetParamsSchema = Type.Object(
   {
     nodeId: NonEmptyString,

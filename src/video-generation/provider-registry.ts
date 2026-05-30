@@ -66,7 +66,6 @@ export function listVideoGenerationProviders(
   return [...buildProviderMaps(cfg).canonical.values()];
 }
 
-/** Resolves a provider id or alias after normalizing and rejecting prototype-polluting keys. */
 export function getVideoGenerationProvider(
   providerId: string | undefined,
   cfg?: OpenClawConfig,

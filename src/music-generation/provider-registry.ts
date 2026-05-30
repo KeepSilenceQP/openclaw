@@ -66,7 +66,6 @@ export function listMusicGenerationProviders(
   return [...buildProviderMaps(cfg).canonical.values()];
 }
 
-/** Resolves a provider id or alias after normalizing and rejecting prototype-polluting keys. */
 export function getMusicGenerationProvider(
   providerId: string | undefined,
   cfg?: OpenClawConfig,

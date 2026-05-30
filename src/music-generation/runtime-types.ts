@@ -39,10 +39,8 @@ export type GenerateMusicRuntimeResult = {
   ignoredOverrides: MusicGenerationIgnoredOverride[];
 };
 
-/** Input for provider listing; config is needed to include plugin capability providers. */
 export type ListRuntimeMusicGenerationProvidersParams = {
   config?: OpenClawConfig;
 };
 
-/** Runtime-visible provider shape, currently identical to the plugin provider contract. */
 export type RuntimeMusicGenerationProvider = MusicGenerationProvider;

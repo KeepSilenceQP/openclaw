@@ -649,7 +649,6 @@ function runPackedPluginSdkTypescriptSmoke(tarballPath: string, tmpRoot: string)
   );
 }
 
-/** Write minimal config that activates a bundled plugin for packed tarball smoke tests. */
 export function writePackedBundledPluginActivationConfig(homeDir: string): void {
   const configPath = join(homeDir, ".openclaw", "openclaw.json");
   mkdirSync(join(homeDir, ".openclaw"), { recursive: true });

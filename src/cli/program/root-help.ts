@@ -73,7 +73,6 @@ export async function renderRootHelpText(renderOptions?: RootHelpRenderOptions):
   return output;
 }
 
-/** Write rendered root help directly to stdout. */
 export async function outputRootHelp(renderOptions?: RootHelpRenderOptions): Promise<void> {
   process.stdout.write(await renderRootHelpText(renderOptions));
 }

@@ -104,7 +104,6 @@ export function markCallAnswered(manager: CallManager, callId: string, eventId: 
   });
 }
 
-/** Write raw call records into the manager JSONL store fixture. */
 export function writeCallsToStore(storePath: string, calls: Record<string, unknown>[]): void {
   fs.mkdirSync(storePath, { recursive: true });
   const logPath = path.join(storePath, "calls.jsonl");

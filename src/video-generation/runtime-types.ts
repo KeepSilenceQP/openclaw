@@ -44,10 +44,8 @@ export type GenerateVideoRuntimeResult = {
   ignoredOverrides: VideoGenerationIgnoredOverride[];
 };
 
-/** Input for provider listing; config is needed to include plugin capability providers. */
 export type ListRuntimeVideoGenerationProvidersParams = {
   config?: OpenClawConfig;
 };
 
-/** Runtime-visible provider shape, currently identical to the plugin provider contract. */
 export type RuntimeVideoGenerationProvider = VideoGenerationProvider;

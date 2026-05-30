@@ -95,7 +95,6 @@ export function loadPrecomputedSubcommandHelpText(commandName: string): string |
   return null;
 }
 
-/** Writes precomputed root help to stdout when metadata contains it. */
 export function outputPrecomputedRootHelpText(): boolean {
   const rootHelpText = loadPrecomputedRootHelpText();
   if (!rootHelpText) {
@@ -105,7 +104,6 @@ export function outputPrecomputedRootHelpText(): boolean {
   return true;
 }
 
-/** Writes precomputed browser help to stdout when metadata contains it. */
 export function outputPrecomputedBrowserHelpText(): boolean {
   const browserHelpText = loadPrecomputedBrowserHelpText();
   if (!browserHelpText) {
@@ -115,7 +113,6 @@ export function outputPrecomputedBrowserHelpText(): boolean {
   return true;
 }
 
-/** Writes precomputed secrets help to stdout when metadata contains it. */
 export function outputPrecomputedSecretsHelpText(): boolean {
   const secretsHelpText = loadPrecomputedSecretsHelpText();
   if (!secretsHelpText) {
@@ -125,7 +122,6 @@ export function outputPrecomputedSecretsHelpText(): boolean {
   return true;
 }
 
-/** Writes precomputed nodes help to stdout when metadata contains it. */
 export function outputPrecomputedNodesHelpText(): boolean {
   const nodesHelpText = loadPrecomputedNodesHelpText();
   if (!nodesHelpText) {
@@ -135,7 +131,6 @@ export function outputPrecomputedNodesHelpText(): boolean {
   return true;
 }
 
-/** Writes precomputed subcommand help to stdout when metadata contains it. */
 export function outputPrecomputedSubcommandHelpText(commandName: string): boolean {
   const helpText = loadPrecomputedSubcommandHelpText(commandName);
   if (!helpText) {
