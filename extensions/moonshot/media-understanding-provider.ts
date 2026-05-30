@@ -1,4 +1,3 @@
-// Moonshot media-understanding provider for image and OpenAI-compatible video
 import {
   buildOpenAiCompatibleVideoRequestBody,
   coerceOpenAiCompatibleVideoText,

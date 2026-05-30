@@ -1,5 +1,3 @@
-// Realtime voice output playback activity tracker for barge-in and watchdog logic.
-/** Clock injection options for deterministic playback activity tests. */
 export type RealtimeVoiceOutputActivityTrackerOptions = {
   now?: () => number;
 };

@@ -1,4 +1,3 @@
-// Parser for side-channel chat results such as `btw` follow-up answers. It
 import { normalizeOptionalString } from "../string-coerce.ts";
 
 /** Normalized side-result message rendered alongside a chat run. */

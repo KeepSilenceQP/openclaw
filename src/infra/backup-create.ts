@@ -1,4 +1,3 @@
-// Builds OpenClaw backup archives from the resolved config/state/workspace plan,
 import { randomUUID } from "node:crypto";
 import { constants as fsConstants } from "node:fs";
 import fs from "node:fs/promises";

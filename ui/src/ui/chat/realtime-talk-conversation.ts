@@ -1,7 +1,3 @@
-// Realtime-talk transcript state. It merges partial/final user and assistant
-// transcript updates into bounded conversation entries while handling provider
-// rewrites and overlapping text fragments.
-/** Speaker role used by realtime-talk conversation entries. */
 export type RealtimeTalkConversationRole = "user" | "assistant";
 
 /** One visible realtime-talk transcript entry. */

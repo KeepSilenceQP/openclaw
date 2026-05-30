@@ -1,4 +1,3 @@
-// Test helpers for message action runner routing and target resolution.
 import type {
   ChannelDirectoryEntryKind,
   ChannelMessageActionName,

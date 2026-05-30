@@ -1,5 +1,3 @@
-/** Sanitizes model transport URLs for debug output. */
-/** Format a URL without credentials, query, or hash for debug logs. */
 export function formatModelTransportDebugUrl(rawUrl: string): string {
   try {
     const parsed = new URL(rawUrl);

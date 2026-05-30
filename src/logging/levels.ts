@@ -1,5 +1,3 @@
-// Defines OpenClaw log levels and maps them to the tslog runtime filter.
-/** Ordered list of accepted log-level strings for config and CLI parsing. */
 export const ALLOWED_LOG_LEVELS = [
   "silent",
   "fatal",

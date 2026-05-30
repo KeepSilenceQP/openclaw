@@ -1,4 +1,3 @@
-// Usage metrics helpers for aggregation, formatting, insight stats, and compact
 import { html } from "lit";
 import {
   buildUsageAggregateTail,

@@ -1,5 +1,3 @@
-// Minimal HTML entity decoder for highlight.js output normalization.
-/** Decoded entity text plus the consumed source length. */
 export interface DecodedHtmlEntity {
   text: string;
   length: number;

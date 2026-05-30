@@ -1,4 +1,3 @@
-// Shared reply history entry types.
 export type HistoryEntry = {
   sender: string;
   body: string;

@@ -1,4 +1,3 @@
-// Host compatibility contracts for deciding whether a context engine can run
 import type {
   ContextEngine,
   ContextEngineHostCapability,

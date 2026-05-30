@@ -1,4 +1,3 @@
-// Normalizes shared install/update option defaults for installer helpers.
 type InstallMode = "install" | "update";
 
 type InstallModeOptions<TLogger> = {

@@ -1,5 +1,3 @@
-// Small formatting helpers shared across Control UI views. The module keeps
-// browser rendering code on one set of timestamp, text, cost, token, and session
 import { formatDurationHuman } from "../../../src/infra/format-time/format-duration.ts";
 import { formatRelativeTimestamp } from "../../../src/infra/format-time/format-relative.ts";
 import { asDateTimestampMs } from "../../../src/shared/number-coercion.js";

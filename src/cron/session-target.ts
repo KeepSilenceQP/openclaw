@@ -1,4 +1,3 @@
-// Cron session target normalization shared by scheduler storage, delivery, and notifications.
 const INVALID_CRON_SESSION_TARGET_ID_ERROR = "invalid cron sessionTarget session id";
 
 /** Identify the sentinel error thrown for unsafe cron session target ids. */

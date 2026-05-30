@@ -1,5 +1,3 @@
-// Normalizes reaction feature levels into explicit ACK and agent-reaction switches.
-/** Configured reaction behavior level. */
 export type ReactionLevel = "off" | "ack" | "minimal" | "extensive";
 
 /** Derived reaction switches consumed by channel/runtime code. */

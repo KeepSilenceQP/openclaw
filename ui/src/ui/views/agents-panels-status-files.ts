@@ -1,5 +1,3 @@
-// Agent detail panels for status-adjacent surfaces. This module renders channel
-// health, cron jobs, and workspace files while sharing context cards and preview
 import { applyPreviewTheme } from "@create-markdown/preview";
 import DOMPurify from "dompurify";
 import { html, nothing } from "lit";

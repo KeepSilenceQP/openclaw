@@ -1,5 +1,3 @@
-// Throttled live draft stream loop for send-or-edit message updates.
-/** Controls for a throttled draft stream loop. */
 export type DraftStreamLoop = {
   update: (text: string) => void;
   flush: () => Promise<void>;

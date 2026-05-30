@@ -1,4 +1,3 @@
-// Controller helpers for lazy-loading agent identity display data. Results are
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { AgentIdentityResult } from "../types.ts";
 

@@ -1,5 +1,3 @@
-// Parser for CLI option tokens that may carry an inline `--flag=value` payload.
-/** Parsed option token, preserving whether a value was supplied inline. */
 export type InlineOptionToken =
   | {
       name: string;

@@ -1,4 +1,3 @@
-// Outbound send service shared by message and poll actions.
 import type { AgentToolResult } from "../../agents/runtime/index.js";
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import type { InboundEventKind } from "../../channels/inbound-event/kind.js";

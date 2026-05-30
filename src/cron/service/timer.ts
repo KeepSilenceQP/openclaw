@@ -1,4 +1,3 @@
-// Cron scheduler timer and execution loop. Owns wake timers, missed-run catchup,
 import { formatEmbeddedAgentExecutionPhase } from "../../agents/embedded-agent-runner/execution-phase.js";
 import { resolveFailoverReasonFromError } from "../../agents/failover-error.js";
 import { readSessionEntry } from "../../config/sessions/store-load.js";

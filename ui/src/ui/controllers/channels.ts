@@ -1,5 +1,3 @@
-// Controller helpers for channel status and WhatsApp login actions. Channel
-// refreshes can return early on a soft timeout so the UI remains responsive
 import type { ChannelsStatusSnapshot } from "../types.ts";
 import type { ChannelsState } from "./channels.types.ts";
 import {

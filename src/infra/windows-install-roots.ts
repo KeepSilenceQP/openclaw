@@ -1,4 +1,3 @@
-// Windows install-root discovery for trusted system/package directories.
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";

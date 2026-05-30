@@ -1,4 +1,3 @@
-// Webhook reachability checks for providers that need public callback URLs.
 import { isBlockedHostnameOrIp } from "../api.js";
 
 type VoiceCallWebhookExposureConfig = {

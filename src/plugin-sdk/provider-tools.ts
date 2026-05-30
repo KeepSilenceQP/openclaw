@@ -1,4 +1,3 @@
-// Provider tool-schema compatibility helpers normalize model tool schemas to
 import type { TSchema } from "typebox";
 import {
   cleanSchemaForGemini,

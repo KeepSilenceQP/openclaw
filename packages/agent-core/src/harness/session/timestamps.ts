@@ -1,5 +1,3 @@
-// Session timestamp parsing helpers shared by JSONL repositories.
-/** Parse an ISO-like session timestamp into epoch milliseconds when valid. */
 export function parseSessionTimestampMs(value: unknown): number | undefined {
   if (typeof value !== "string" || !value.trim()) {
     return undefined;

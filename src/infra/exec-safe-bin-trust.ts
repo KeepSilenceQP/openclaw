@@ -1,4 +1,3 @@
-// Trusted-directory checks for exec safe-bin policy.
 import fs from "node:fs";
 import path from "node:path";
 import {

@@ -1,5 +1,3 @@
-// Queue overflow, debounce, and drain helpers shared by channel/runtime batching code.
-/** Mutable summary state used when a capped queue drops old items and preserves a compact prompt. */
 export type QueueSummaryState = {
   dropPolicy: "summarize" | "old" | "new";
   droppedCount: number;

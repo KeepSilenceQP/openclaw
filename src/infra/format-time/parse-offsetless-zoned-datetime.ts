@@ -1,4 +1,3 @@
-// Parses offsetless ISO wall-clock datetimes in a caller-specified IANA time zone.
 const OFFSETLESS_ISO_DATETIME_RE = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(:\d{2})?(\.\d+)?$/;
 const OFFSETLESS_ISO_DATETIME_PARTS_RE =
   /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?$/;

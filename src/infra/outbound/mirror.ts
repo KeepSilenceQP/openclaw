@@ -1,5 +1,3 @@
-// Shared transcript mirror payloads for outbound delivery.
-/** Message content mirrored into a session transcript after outbound delivery. */
 export type OutboundMirror = {
   sessionKey: string;
   agentId?: string;

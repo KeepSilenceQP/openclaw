@@ -1,5 +1,3 @@
-// Voice-call plugin config schema and normalization helpers. Provider configs,
-// inbound policy, webhook exposure, TTS, and realtime settings are validated
 import { REALTIME_VOICE_AGENT_CONSULT_TOOL_POLICIES } from "openclaw/plugin-sdk/realtime-voice";
 import {
   buildSecretInputSchema,

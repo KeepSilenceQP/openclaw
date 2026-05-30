@@ -1,5 +1,3 @@
-// Shared string normalization helpers for memory host config and IO boundaries.
-/** Returns a trimmed non-empty string, or null for non-strings and blank values. */
 export function normalizeNullableString(value: unknown): string | null {
   if (typeof value !== "string") {
     return null;

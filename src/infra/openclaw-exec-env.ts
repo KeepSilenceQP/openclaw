@@ -1,5 +1,3 @@
-/** Marks child processes as launched by the OpenClaw CLI. */
-/** Environment variable used by child processes to detect OpenClaw CLI launch context. */
 export const OPENCLAW_CLI_ENV_VAR = "OPENCLAW_CLI";
 /** Canonical marker value for OpenClaw CLI launch context. */
 export const OPENCLAW_CLI_ENV_VALUE = "1";

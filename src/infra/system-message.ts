@@ -1,5 +1,3 @@
-// Prefixes user-visible internal/system messages consistently.
-/** Marker used to identify OpenClaw-generated system messages. */
 export const SYSTEM_MARK = "⚙️";
 
 function normalizeSystemText(value: string): string {

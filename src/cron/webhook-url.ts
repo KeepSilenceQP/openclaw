@@ -1,4 +1,3 @@
-// Cron webhook URL normalization and scheme validation.
 function isAllowedWebhookProtocol(protocol: string) {
   return protocol === "http:" || protocol === "https:";
 }

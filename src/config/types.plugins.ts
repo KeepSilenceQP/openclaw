@@ -1,5 +1,3 @@
-// Plugin config contracts for load policy, per-plugin permissions, and install records.
-/** Per-plugin config entry controlling enablement, hook permissions, and plugin-owned config. */
 export type PluginEntryConfig = {
   enabled?: boolean;
   hooks?: {

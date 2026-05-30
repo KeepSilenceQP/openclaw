@@ -1,4 +1,3 @@
-// Outbound message policy enforcement.
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type {
   ChannelId,

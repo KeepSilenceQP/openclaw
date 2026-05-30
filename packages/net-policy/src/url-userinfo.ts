@@ -1,5 +1,3 @@
-// URL userinfo stripping helper for safe display of endpoint values.
-/** Remove username/password credentials from a parseable URL. */
 export function stripUrlUserInfo(value: string): string {
   try {
     const parsed = new URL(value);

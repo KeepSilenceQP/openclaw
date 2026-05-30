@@ -1,4 +1,3 @@
-// Channel target CLI/action normalization.
 import {
   hasNonEmptyString as sharedHasNonEmptyString,
   normalizeOptionalString,

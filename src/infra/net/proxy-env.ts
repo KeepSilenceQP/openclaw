@@ -1,5 +1,3 @@
-// Mirrors undici proxy-env selection for OpenClaw's trusted env proxy gates.
-/** Proxy environment variables that can affect outbound HTTP(S) routing. */
 export const PROXY_ENV_KEYS = [
   "HTTP_PROXY",
   "HTTPS_PROXY",

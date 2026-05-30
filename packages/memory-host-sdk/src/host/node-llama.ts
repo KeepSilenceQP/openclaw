@@ -1,5 +1,3 @@
-// node-llama-cpp dynamic import contracts for local embedding provider support.
-/** Embedding vector shape returned by node-llama-cpp. */
 export type LlamaEmbedding = {
   vector: Float32Array | number[];
 };

@@ -1,5 +1,3 @@
-// Public facade for the voice-call plugin. Keep this barrel limited to SDK
-// contracts and narrow runtime helpers that core/plugin discovery can import
 export {
   definePluginEntry,
   fetchWithSsrFGuard,

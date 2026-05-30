@@ -1,4 +1,3 @@
-// Builds Node http/https agents backed by proxyline for env or explicit proxy
 import type { Agent as HttpAgent } from "node:http";
 import { createRequire } from "node:module";
 import { matchesNoProxy, resolveEnvHttpProxyAgentOptions } from "./proxy-env.js";

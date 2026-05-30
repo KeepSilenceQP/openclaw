@@ -1,4 +1,3 @@
-// Diagnostic event contracts and process-local emitter state.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { TalkBrain, TalkEventType, TalkMode, TalkTransport } from "../talk/talk-events.js";
 import {

@@ -1,5 +1,3 @@
-// Gateway-facing node.invoke dispatcher. Built-in system commands, plugin
-// node-host commands, and exec approval updates all flow through this boundary
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";

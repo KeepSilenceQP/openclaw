@@ -1,5 +1,3 @@
-// Public contracts for planning, gating, and exposing OpenClaw tools.
-/** JSON scalar accepted in tool schemas, annotations, and availability context. */
 export type JsonPrimitive = string | number | boolean | null;
 
 /** Recursive JSON value accepted by tool metadata contracts. */

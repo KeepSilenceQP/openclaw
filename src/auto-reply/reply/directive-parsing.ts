@@ -1,4 +1,3 @@
-// Low-level directive argument parsing helpers.
 export function skipDirectiveArgPrefix(raw: string): number {
   let i = 0;
   const len = raw.length;

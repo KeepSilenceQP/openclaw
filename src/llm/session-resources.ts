@@ -1,5 +1,3 @@
-// Session-scoped LLM resource cleanup registry.
-/** Cleanup callback invoked when a session or all sessions release provider resources. */
 export type SessionResourceCleanup = (sessionId?: string) => void;
 
 const sessionResourceCleanups = new Set<SessionResourceCleanup>();

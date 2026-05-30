@@ -1,4 +1,3 @@
-// Shared error inspection and formatting helpers for logs, diagnostics, and
 import { redactSensitiveText } from "../logging/redact.js";
 
 /** Reads a string or numeric `code` field from unknown error-like values. */

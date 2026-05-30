@@ -1,6 +1,3 @@
-// Markdown fenced-code scanner used by chunking/rendering logic to avoid unsafe
-// split points inside code fences.
-/** Source range and opener metadata for a Markdown fenced-code block. */
 export type FenceSpan = {
   start: number;
   end: number;

@@ -1,4 +1,3 @@
-// Filesystem helpers shared by state migration scripts.
 import fs from "node:fs";
 import JSON5 from "json5";
 

@@ -1,4 +1,3 @@
-// qa/convex-credential-broker/convex payload validation helpers and runtime behavior.
 export class CredentialPayloadValidationError extends Error {
   code: string;
   httpStatus: number;

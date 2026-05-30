@@ -1,4 +1,3 @@
-// Identifies live-mutating state files that should be skipped while building a
 import path from "node:path";
 
 /**

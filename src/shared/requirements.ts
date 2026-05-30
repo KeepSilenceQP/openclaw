@@ -1,6 +1,3 @@
-// Requirement evaluation helpers for plugin/channel availability checks. They
-// compare local facts with optional remote facts without performing IO here.
-/** Requirement lists that gate whether a feature can run in this environment. */
 export type Requirements = {
   bins: string[];
   anyBins: string[];

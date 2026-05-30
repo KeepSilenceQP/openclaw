@@ -1,4 +1,3 @@
-// Detail renderers for the Usage page selected-session panel, including
 import { html, svg, nothing } from "lit";
 import { formatDurationCompact } from "../../../../src/infra/format-time/format-duration.ts";
 import { t } from "../../i18n/index.ts";

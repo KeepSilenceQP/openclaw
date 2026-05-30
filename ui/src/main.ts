@@ -1,4 +1,3 @@
-// Control UI browser entrypoint: loads the app shell and manages the production
 import "./styles.css";
 import "./ui/app.ts";
 

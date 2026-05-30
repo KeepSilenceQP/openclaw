@@ -1,4 +1,3 @@
-// Plugin runtime public types. Native plugins receive this trusted in-process
 import type { PluginRuntimeChannel } from "./types-channel.js";
 import type { PluginRuntimeCore, RuntimeLogger } from "./types-core.js";
 

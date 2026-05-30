@@ -1,4 +1,3 @@
-// Socket client for delegating command execution to the local exec host.
 import crypto from "node:crypto";
 import { requestJsonlSocket } from "./jsonl-socket.js";
 

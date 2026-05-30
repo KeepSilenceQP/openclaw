@@ -1,4 +1,3 @@
-// Local user identity normalizer for chat display. It bounds names, text avatars,
 import { coerceIdentityValue } from "../../../src/shared/assistant-identity-values.js";
 import { normalizeOptionalString } from "./string-coerce.ts";
 import {

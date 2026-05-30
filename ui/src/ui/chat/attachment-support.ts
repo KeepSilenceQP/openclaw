@@ -1,6 +1,3 @@
-// Chat attachment accept/filter helpers. Video attachments are excluded from the
-// current composer even when the browser provides a generic file type.
-/** Browser file input accept string for supported chat attachments. */
 export const CHAT_ATTACHMENT_ACCEPT =
   "image/*,audio/*,application/pdf,text/*,.csv,.json,.md,.txt,.zip," +
   ".doc,.docx,.xls,.xlsx,.ppt,.pptx";

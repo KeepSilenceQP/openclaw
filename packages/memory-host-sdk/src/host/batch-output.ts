@@ -1,5 +1,3 @@
-// OpenAI-compatible embedding batch output line normalization.
-/** Provider batch output line for one embedding request. */
 export type EmbeddingBatchOutputLine = {
   custom_id?: string;
   error?: { message?: string };

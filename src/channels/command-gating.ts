@@ -1,5 +1,3 @@
-// Command authorization gates shared by channel ingress paths.
-/** One configured command authorization source and its decision. */
 export type CommandAuthorizer = {
   configured: boolean;
   allowed: boolean;

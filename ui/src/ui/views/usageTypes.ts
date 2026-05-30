@@ -1,5 +1,3 @@
-// Shared Usage view state contracts. These types separate loaded usage data,
-// filters, display preferences, detail-panel state, and callbacks so the large
 import type {
   CostUsageDailyEntry,
   SessionsUsageEntry,

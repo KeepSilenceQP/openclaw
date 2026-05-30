@@ -1,4 +1,3 @@
-// Lightweight CLI metadata entry used by discovery without loading the full
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 
 export default definePluginEntry({

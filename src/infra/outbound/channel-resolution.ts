@@ -1,4 +1,3 @@
-// Outbound channel plugin resolution facade.
 import type { ChannelMessageAdapterShape } from "../../channels/message/types.js";
 import { getChannelPlugin, getLoadedChannelPlugin } from "../../channels/plugins/index.js";
 import { channelPluginHasNativeApprovalPromptUi } from "../../channels/plugins/native-approval-prompt.js";

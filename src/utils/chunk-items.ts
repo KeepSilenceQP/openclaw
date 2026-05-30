@@ -1,5 +1,3 @@
-// Small array chunking helper for batching list-like output.
-/** Splits items into fixed-size chunks, returning one chunk when size is not positive. */
 export function chunkItems<T>(items: readonly T[], size: number): T[][] {
   if (size <= 0) {
     return [Array.from(items)];

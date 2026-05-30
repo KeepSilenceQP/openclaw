@@ -1,4 +1,3 @@
-// Safe path helpers for plugin installs. All public resolvers keep plugin ids
 import path from "node:path";
 import {
   resolveSafeInstallDir,

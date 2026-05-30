@@ -1,5 +1,3 @@
-// Device-auth payload canonicalization shared by gateway clients and tests.
-/** Normalize optional metadata before it is included in signed auth payloads. */
 export function normalizeDeviceMetadataForAuth(value?: string | null): string {
   if (typeof value !== "string") {
     return "";

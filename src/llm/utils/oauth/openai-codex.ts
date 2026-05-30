@@ -1,4 +1,3 @@
-// OpenAI Codex OAuth adapter that bridges legacy callback-driven callers to the
 import { loadActivatedBundledPluginPublicSurfaceModuleSync } from "../../../plugin-sdk/facade-runtime.js";
 import type { RuntimeEnv } from "../../../runtime.js";
 import type { WizardPrompter } from "../../../wizard/prompts.js";

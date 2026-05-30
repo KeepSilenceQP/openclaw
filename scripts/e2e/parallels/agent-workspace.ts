@@ -1,5 +1,3 @@
-// Parallels agent workspace scripts seed deterministic identity and setup state in guests.
-/** Renders a POSIX shell script that prepares a guest OpenClaw workspace. */
 export function posixAgentWorkspaceScript(purpose: string): string {
   return `set -eu
 workspace="\${OPENCLAW_WORKSPACE_DIR:-$HOME/.openclaw/workspace}"

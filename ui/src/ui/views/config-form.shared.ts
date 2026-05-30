@@ -1,5 +1,3 @@
-// Shared schema and hint helpers for the generated config form. These helpers
-// keep path matching, defaults, labels, and sensitivity detection consistent
 import { normalizeLowercaseStringOrEmpty } from "../string-coerce.ts";
 import type { ConfigUiHint, ConfigUiHints } from "../types.ts";
 

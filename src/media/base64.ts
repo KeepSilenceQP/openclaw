@@ -1,6 +1,3 @@
-// Base64 helpers for media ingestion paths that need to budget decoded bytes
-// before allocating buffers.
-/** Estimate decoded bytes without normalizing or copying a large base64 payload. */
 export function estimateBase64DecodedBytes(base64: string): number {
   // Avoid `trim()`/`replace()` here: they allocate a second (potentially huge) string.
   // We only need a conservative decoded-size estimate to enforce budgets before Buffer.from(..., "base64").

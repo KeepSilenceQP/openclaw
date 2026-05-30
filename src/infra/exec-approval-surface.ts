@@ -1,4 +1,3 @@
-// Native approval surface capability helpers.
 import {
   getChannelPlugin,
   listChannelPlugins,

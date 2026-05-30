@@ -1,5 +1,3 @@
-// Session binding contracts shared by channel adapters and outbound routing.
-/** Target kind stored by a conversation binding. */
 export type BindingTargetKind = "subagent" | "session";
 /** Lifecycle status of a session binding. */
 export type BindingStatus = "active" | "ending" | "ended";

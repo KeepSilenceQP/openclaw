@@ -1,4 +1,3 @@
-// Shared realtime-talk contracts and tool-call helpers used by all browser
 import { REALTIME_VOICE_AGENT_CONSULT_TOOL_NAME } from "../../../../src/talk/agent-consult-tool.js";
 import {
   buildRealtimeVoiceAgentCancelProviderResult,

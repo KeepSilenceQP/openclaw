@@ -1,4 +1,3 @@
-// Channel target prefix helpers.
 import { getActivePluginChannelRegistryFromState } from "../../plugins/runtime-channel-state.js";
 import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js";
 import { normalizeMessageChannel } from "../../utils/message-channel-core.js";

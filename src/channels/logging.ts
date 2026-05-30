@@ -1,5 +1,3 @@
-// Shared log message helpers for channel ingress and delivery failures.
-/** Logger function accepted by channel helper utilities. */
 export type LogFn = (message: string) => void;
 
 /** Log a dropped inbound event with optional target context. */

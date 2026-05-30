@@ -1,5 +1,3 @@
-// Routing plan for converting legacy doctor contributions into health checks.
-/** Migration category for one legacy doctor contribution. */
 export type DoctorHealthConversionKind =
   | "already-detect"
   | "detect-only"

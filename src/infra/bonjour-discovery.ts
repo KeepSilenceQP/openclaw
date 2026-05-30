@@ -1,4 +1,3 @@
-// Discovers OpenClaw gateways advertised via Bonjour/mDNS, Avahi, or wide-area
 import { runCommandWithTimeout } from "../process/exec.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { normalizeStringEntries, uniqueStrings } from "../shared/string-normalization.js";

@@ -1,5 +1,3 @@
-// Usage-tab adapter for the app shell. It maps AppViewState into the usage view
-// model, merges cache freshness from session/cost queries, and wires callbacks
 import { nothing } from "lit";
 import type { AppViewState } from "./app-view-state.ts";
 import type { UsageState } from "./controllers/usage.ts";

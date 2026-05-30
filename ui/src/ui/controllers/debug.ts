@@ -1,4 +1,3 @@
-// Controller helpers for the Debug view. It loads common gateway diagnostics and
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { HealthSnapshot, StatusSummary } from "../types.ts";
 

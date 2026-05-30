@@ -1,5 +1,3 @@
-// Reads async byte streams while enforcing a hard maximum size.
-/** Size details passed to byte-stream overflow error factories. */
 export type ByteStreamLimitOverflow = {
   size: number;
   maxBytes: number;

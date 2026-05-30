@@ -1,4 +1,3 @@
-// Small per-session LRU cache helper for chat UI state maps.
 const MAX_CACHED_CHAT_SESSIONS = 20;
 
 /** Return a cached session value or create one, evicting oldest sessions past the cap. */

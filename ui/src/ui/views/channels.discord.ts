@@ -1,4 +1,3 @@
-// Discord channel card renderer. It presents bot runtime/probe status and
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { formatRelativeTimestamp } from "../format.ts";

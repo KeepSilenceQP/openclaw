@@ -1,4 +1,3 @@
-// OpenClaw package-root discovery for CLI, package, and symlinked binary launches.
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { openClawRootFs, openClawRootFsSync } from "./openclaw-root.fs.runtime.js";

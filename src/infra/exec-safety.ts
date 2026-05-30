@@ -1,4 +1,3 @@
-// Screens executable tokens before binary probing or execution.
 const SHELL_METACHARS = /[;&|`$<>]/;
 const CONTROL_CHARS = /[\r\n]/;
 const QUOTE_CHARS = /["']/;

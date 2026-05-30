@@ -1,4 +1,3 @@
-// Plugin approval request/response contracts.
 import type { ExecApprovalDecision } from "./exec-approvals.js";
 
 /** Button/command descriptor shown with a plugin approval request. */

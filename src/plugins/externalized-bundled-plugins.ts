@@ -1,5 +1,3 @@
-// Metadata helpers for migrating formerly bundled plugins to external packages.
-/** Preferred install source for an externalized bundled plugin bridge. */
 export type ExternalizedBundledPluginPreferredSource = "npm" | "clawhub";
 
 /** Mapping from a legacy bundled plugin id to its external package metadata. */

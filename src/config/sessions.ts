@@ -1,4 +1,3 @@
-/** Barrel exports for persisted session stores, metadata, transcripts, and cleanup. */
 export * from "./sessions/combined-store-gateway.js";
 export * from "./sessions/group.js";
 export * from "./sessions/goals.js";

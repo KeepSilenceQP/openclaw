@@ -1,5 +1,3 @@
-// Browser Gateway client for the Control UI. It manages WebSocket connect auth,
-// request/response correlation, event sequencing, reconnect behavior, and
 import {
   GATEWAY_CLIENT_MODES,
   GATEWAY_CLIENT_NAMES,

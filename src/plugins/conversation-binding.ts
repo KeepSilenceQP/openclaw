@@ -1,4 +1,3 @@
-// Manages approval-gated plugin conversation bindings, including persistent
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

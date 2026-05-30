@@ -1,5 +1,3 @@
-// Realtime-talk audio encoding helpers for base64 and PCM16/float conversion.
-/** Encode bytes as base64 without overflowing the argument stack. */
 export function bytesToBase64(bytes: Uint8Array): string {
   let binary = "";
   const chunkSize = 0x8000;

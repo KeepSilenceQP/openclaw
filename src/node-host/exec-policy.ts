@@ -1,4 +1,3 @@
-// Policy decisions for node-host SYSTEM_RUN requests after command analysis and
 import { requiresExecApproval, type ExecAsk, type ExecSecurity } from "../infra/exec-approvals.js";
 
 type ExecApprovalDecision = "allow-once" | "allow-always" | null;

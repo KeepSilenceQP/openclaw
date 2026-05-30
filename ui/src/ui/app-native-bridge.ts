@@ -1,4 +1,3 @@
-// WebView2 native bridge helpers for host-driven chat draft updates.
 type WebView2Bridge = {
   postMessage(message: unknown): void;
   addEventListener(type: "message", listener: (event: MessageEvent) => void): void;

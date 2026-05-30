@@ -1,6 +1,3 @@
-// Node-side command method names used by gateway/tool dispatch.
-// Keep these constants aligned with registered node handlers.
-/** System command methods that prepare/run commands or resolve executables. */
 export const NODE_SYSTEM_RUN_COMMANDS = [
   "system.run.prepare",
   "system.run",

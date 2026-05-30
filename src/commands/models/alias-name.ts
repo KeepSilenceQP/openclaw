@@ -1,4 +1,3 @@
-// Normalizes user-defined model aliases for config storage and lookup.
 export function normalizeAlias(alias: string): string {
   const trimmed = alias.trim();
   if (!trimmed) {

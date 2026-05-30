@@ -1,6 +1,3 @@
-// Canvas iframe URL sanitizer. It allows only OpenClaw canvas routes by default
-// and scopes accepted entries through a capability host when the gateway issues
-// one for the active surface.
 const A2UI_PATH = "/__openclaw__/a2ui";
 const CANVAS_HOST_PATH = "/__openclaw__/canvas";
 const CANVAS_CAPABILITY_PATH_PREFIX = "/__openclaw__/cap";

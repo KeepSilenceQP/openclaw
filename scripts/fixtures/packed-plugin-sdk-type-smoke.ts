@@ -1,4 +1,3 @@
-// Packed plugin SDK type smoke imports public entrypoints from an installed package.
 type PublicPluginSdkModules = [
   typeof import("openclaw/plugin-sdk"),
   typeof import("openclaw/plugin-sdk/channel-entry-contract"),

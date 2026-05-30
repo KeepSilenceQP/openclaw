@@ -1,5 +1,3 @@
-// Hook-related configuration contracts shared by config loading and hook runtimes.
-/** Match criteria that selects a hook mapping from request path or source metadata. */
 export type HookMappingMatch = {
   path?: string;
   source?: string;

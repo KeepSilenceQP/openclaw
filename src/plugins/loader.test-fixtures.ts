@@ -1,4 +1,3 @@
-// Test fixtures for plugin loader suites. Helpers create isolated temp plugins,
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

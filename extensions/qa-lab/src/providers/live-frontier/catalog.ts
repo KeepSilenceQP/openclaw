@@ -1,5 +1,3 @@
-// QA Lab live-frontier catalog helpers name the provider set and default models.
-/** Live provider ids expected in the frontier catalog lane. */
 export const QA_FRONTIER_PROVIDER_IDS = ["anthropic", "google", "openai"] as const;
 /** Preferred model for live-frontier catalog validation. */
 export const QA_FRONTIER_CATALOG_PRIMARY_MODEL = "openai/gpt-5.5";

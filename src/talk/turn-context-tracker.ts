@@ -1,4 +1,3 @@
-// Tracks per-turn realtime voice context until audio proves which turn should consume it.
 const DEFAULT_REALTIME_VOICE_TURN_CONTEXT_LIMIT = 32;
 const DEFAULT_REALTIME_VOICE_IGNORED_CONTEXT_TTL_MS = 10_000;
 

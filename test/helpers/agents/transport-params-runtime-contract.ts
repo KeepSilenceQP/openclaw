@@ -1,5 +1,3 @@
-// Transport contract fixtures define expected GPT-5 request defaults across provider APIs.
-/** Expected transport defaults for OpenAI-family GPT-5 models. */
 export const OPENAI_GPT5_TRANSPORT_DEFAULTS = {
   parallel_tool_calls: true,
   text_verbosity: "low",

@@ -1,4 +1,3 @@
-// Connect-command display for the login gate. The whole command block acts as a
 import { html } from "lit";
 import { t } from "../../i18n/index.ts";
 import { renderCopyButton } from "../chat/copy-as-markdown.ts";

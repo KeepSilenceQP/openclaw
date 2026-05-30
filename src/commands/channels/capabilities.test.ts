@@ -1,4 +1,3 @@
-/** Tests channel capabilities command output. */
 process.env.NO_COLOR = "1";
 
 import { beforeEach, describe, expect, it, vi } from "vitest";

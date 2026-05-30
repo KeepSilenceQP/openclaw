@@ -1,4 +1,3 @@
-// Exec approval policy, durable allowlists, and approval socket requests.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// Exec approval reply payload builders and parsers.
 import type { ReplyPayload } from "../auto-reply/types.js";
 import type {
   InteractiveReply,

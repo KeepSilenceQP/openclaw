@@ -1,4 +1,3 @@
-// PCM16 resampling and G.711 mu-law conversion for realtime voice transports.
 const TELEPHONY_SAMPLE_RATE = 8000;
 const RESAMPLE_FILTER_TAPS = 31;
 const RESAMPLE_CUTOFF_GUARD = 0.94;

@@ -1,5 +1,3 @@
-// Plugin SDK doc metadata classifies public entrypoints for generated documentation.
-/** Documentation category assigned to public Plugin SDK entrypoints. */
 export type PluginSdkDocCategory =
   | "channel"
   | "core"

@@ -1,4 +1,3 @@
-// Reply-to policy helpers for outbound fanout.
 import { isSingleUseReplyToMode } from "../../auto-reply/reply/reply-reference.js";
 import type { ReplyPayload } from "../../auto-reply/types.js";
 import type { ReplyToMode } from "../../config/types.js";

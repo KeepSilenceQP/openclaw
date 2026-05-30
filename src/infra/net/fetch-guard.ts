@@ -1,4 +1,3 @@
-// Guarded fetch implementation with SSRF checks, DNS pinning, redirect policy,
 import type { Dispatcher } from "undici";
 import { logWarn } from "../../logger.js";
 import { buildTimeoutAbortSignal } from "../../utils/fetch-timeout.js";

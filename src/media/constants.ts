@@ -1,6 +1,3 @@
-// Shared media size ceilings used before loading or generating attachment
-// buffers. Keep these defaults conservative for provider and channel limits.
-/** Default maximum image attachment size in bytes. */
 export const MAX_IMAGE_BYTES = 6 * 1024 * 1024; // 6MB
 /** Default maximum audio attachment size in bytes. */
 export const MAX_AUDIO_BYTES = 16 * 1024 * 1024; // 16MB

@@ -1,4 +1,3 @@
-// Groups channel diagnostics so status-all can overlay them onto table rows.
 export function groupChannelIssuesByChannel<T extends { channel: string }>(
   issues: readonly T[],
 ): Map<string, T[]> {

@@ -1,4 +1,3 @@
-// Bound delivery router for task-completion replies.
 import { normalizeConversationRef } from "./session-binding-normalization.js";
 import {
   getSessionBindingService,

@@ -1,4 +1,3 @@
-// Canonical builders and normalizers for routing session keys across agents,
 import type { ChatType } from "../channels/chat-type.js";
 import {
   isCronRunSessionKey,

@@ -1,4 +1,3 @@
-// Account action gating helpers for channel plugin status/actions.
 export type ActionGate<T extends Record<string, boolean | undefined>> = (
   key: keyof T,
   defaultValue?: boolean,

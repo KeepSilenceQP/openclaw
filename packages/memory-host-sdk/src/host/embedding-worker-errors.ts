@@ -1,5 +1,3 @@
-// Typed error helpers for failures from the local embedding worker process.
-/** Stable error codes for local embedding worker process and IPC failures. */
 export const LOCAL_EMBEDDING_WORKER_ERROR_CODES = {
   exited: "LOCAL_EMBEDDING_WORKER_EXITED",
   processError: "LOCAL_EMBEDDING_WORKER_PROCESS_ERROR",

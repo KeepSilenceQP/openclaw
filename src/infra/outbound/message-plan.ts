@@ -1,4 +1,3 @@
-// Outbound message unit planning.
 import {
   chunkByParagraph,
   chunkMarkdownTextWithMode,

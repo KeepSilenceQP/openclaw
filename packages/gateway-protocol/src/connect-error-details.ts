@@ -1,4 +1,3 @@
-// Helpers for normalizing gateway connect errors into stable client recovery details.
 function normalizeOptionalString(value: unknown): string | undefined {
   if (typeof value !== "string") {
     return undefined;

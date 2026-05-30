@@ -1,4 +1,3 @@
-// Runtime resolver for web-fetch providers and their model-facing tool
 import type { OpenClawConfig } from "../config/types.js";
 import { logVerbose } from "../globals.js";
 import type {

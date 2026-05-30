@@ -1,5 +1,3 @@
-// Safe terminal stream writer that suppresses repeated broken-pipe failures.
-/** Hooks for safe stream writes and broken-pipe notifications. */
 export type SafeStreamWriterOptions = {
   beforeWrite?: () => void;
   onBrokenPipe?: (err: NodeJS.ErrnoException, stream: NodeJS.WriteStream) => void;

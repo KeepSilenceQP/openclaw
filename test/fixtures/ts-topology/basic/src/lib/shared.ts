@@ -1,5 +1,3 @@
-// Shared fixture exports for TypeScript topology ownership and import-boundary tests.
-/** Fixture function representing a shared library export. */
 export function sharedThing() {
   return "shared";
 }

@@ -1,5 +1,3 @@
-// OSC 8 terminal hyperlink formatting with plain-text fallback.
-/** Format a terminal hyperlink when supported, otherwise return a readable fallback. */
 export function formatTerminalLink(
   label: string,
   url: string,

@@ -1,4 +1,3 @@
-// Generic async retry helper with bounded exponential backoff.
 import { asFiniteNumber } from "../shared/number-coercion.js";
 import { sleep } from "../utils.js";
 import { MAX_SAFE_TIMEOUT_DELAY_MS, resolveSafeTimeoutDelayMs } from "../utils/timer-delay.js";

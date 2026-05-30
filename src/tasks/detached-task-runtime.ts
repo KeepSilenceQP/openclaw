@@ -1,4 +1,3 @@
-// Delegates detached task lifecycle operations to the registered runtime, with
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import type {
   DetachedTaskRecoveryAttemptParams,

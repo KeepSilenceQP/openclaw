@@ -1,5 +1,3 @@
-// In-process pub/sub for session creation and lifecycle transitions.
-/** Session lifecycle payload emitted to gateway/TUI observers. */
 export type SessionLifecycleEvent = {
   sessionKey: string;
   reason: string;

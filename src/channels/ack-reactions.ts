@@ -1,5 +1,3 @@
-// Acknowledgement reaction policy and cleanup helpers.
-/** Configured scope for when inbound messages receive an acknowledgement reaction. */
 export type AckReactionScope = "all" | "direct" | "group-all" | "group-mentions" | "off" | "none";
 
 /** WhatsApp-specific ack reaction setting kept for plugin compatibility. */

@@ -1,5 +1,3 @@
-// Auth profile config contracts used by provider auth selection and backoff policy.
-/** Auth profile metadata stored separately from provider secrets. */
 export type AuthProfileConfig = {
   provider: string;
   /**

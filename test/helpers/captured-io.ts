@@ -1,5 +1,3 @@
-// CLI tests use this helper to capture stdout/stderr writes without real console output.
-/** Create an IO stub with readers for accumulated stdout and stderr text. */
 export function createCapturedIo() {
   let stdout = "";
   let stderr = "";

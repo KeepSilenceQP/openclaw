@@ -1,4 +1,3 @@
-// Sessions table view. It filters, sorts, paginates, edits per-session model
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { formatRelativeTimestamp, parseSessionKeyParts } from "../format.ts";

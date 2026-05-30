@@ -1,4 +1,3 @@
-// Shared mutation helper for rejecting pending pairing records in state files.
 type PendingState<TPending> = {
   pendingById: Record<string, TPending>;
 };

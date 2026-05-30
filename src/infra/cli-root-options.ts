@@ -1,5 +1,3 @@
-// Parses root-level CLI flags before subcommand dispatch.
-/** CLI token that stops root option parsing. */
 export const FLAG_TERMINATOR = "--";
 
 const ROOT_BOOLEAN_FLAGS = new Set(["--dev", "--no-color"]);

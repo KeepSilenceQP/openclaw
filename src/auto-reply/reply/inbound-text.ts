@@ -1,4 +1,3 @@
-// Inbound text normalization helpers.
 export function normalizeInboundTextNewlines(input: string): string {
   // Normalize actual newline characters (CR+LF and CR to LF).
   // Do NOT replace literal backslash-n sequences (\\n) as they may be part of

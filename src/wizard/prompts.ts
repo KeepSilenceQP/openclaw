@@ -1,5 +1,3 @@
-// Prompt abstraction shared by terminal and session-backed setup wizards.
-/** Selectable wizard option with optional secondary hint text. */
 export type WizardSelectOption<T = string> = {
   value: T;
   label: string;

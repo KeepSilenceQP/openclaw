@@ -1,4 +1,3 @@
-// Config I/O owns parsing, validation, runtime/source snapshot projection, safe
 import crypto from "node:crypto";
 import fs from "node:fs";
 import os from "node:os";

@@ -1,5 +1,3 @@
-// Validates user-visible labels attached to sessions.
-/** Maximum stored session label length after trimming. */
 export const SESSION_LABEL_MAX_LENGTH = 512;
 
 /** Result from parsing and validating a requested session label. */

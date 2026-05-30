@@ -1,4 +1,3 @@
-// Gateway relay for browser Talk realtime sessions, bridging provider audio,
 import { randomUUID } from "node:crypto";
 import type { OpenClawConfig } from "../config/types.js";
 import type { RealtimeVoiceProviderPlugin } from "../plugins/types.js";

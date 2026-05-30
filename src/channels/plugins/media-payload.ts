@@ -1,5 +1,3 @@
-// Channel media payload normalization helpers.
-/** Media attachment input accepted by channel plugin prompt payload builders. */
 export type MediaPayloadInput = {
   path: string;
   contentType?: string;

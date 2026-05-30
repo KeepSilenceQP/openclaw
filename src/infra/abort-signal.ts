@@ -1,5 +1,3 @@
-// Small helpers for awaiting abort-controller cancellation.
-/** Resolves when the signal aborts, or immediately when no live signal exists. */
 export async function waitForAbortSignal(signal?: AbortSignal): Promise<void> {
   if (!signal || signal.aborted) {
     return;

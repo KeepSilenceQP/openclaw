@@ -1,4 +1,3 @@
-/** Shared formatting helpers for subagent status and token displays. */
 export { formatDurationCompact } from "../infra/format-time/format-duration.ts";
 
 /** Formats token counts into compact k/m units for status lines. */

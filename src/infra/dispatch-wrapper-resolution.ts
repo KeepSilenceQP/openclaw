@@ -1,4 +1,3 @@
-// Dispatch-wrapper unwrapping for exec policy resolution.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 import {

@@ -1,5 +1,3 @@
-// Internal channel identifiers used by gateway/runtime paths that do not map to a deliverable plugin channel.
-/** Canonical internal channel for webchat and non-plugin control surfaces. */
 export const INTERNAL_MESSAGE_CHANNEL = "webchat" as const;
 /** Type for the canonical internal message channel. */
 export type InternalMessageChannel = typeof INTERNAL_MESSAGE_CHANNEL;

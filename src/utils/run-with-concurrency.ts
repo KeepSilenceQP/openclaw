@@ -1,5 +1,3 @@
-// Small bounded-concurrency runner for independent async tasks.
-/** Error handling mode for bounded concurrent task execution. */
 export type ConcurrencyErrorMode = "continue" | "stop";
 
 /** Run async task factories with a concurrency limit and ordered result slots. */

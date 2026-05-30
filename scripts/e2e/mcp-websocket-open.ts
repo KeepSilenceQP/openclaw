@@ -1,4 +1,3 @@
-// MCP E2E helper waits for WebSocket open while cleaning up timeout listeners.
 type WebSocketOpenHandle = {
   close?: () => void;
   off?: (event: "open" | "error" | "close", listener: (...args: unknown[]) => void) => void;

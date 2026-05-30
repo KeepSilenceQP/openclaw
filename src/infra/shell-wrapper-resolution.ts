@@ -1,4 +1,3 @@
-// Shell wrapper detection and inline payload extraction.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import {
   MAX_DISPATCH_WRAPPER_DEPTH,

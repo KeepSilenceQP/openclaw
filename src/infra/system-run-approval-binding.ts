@@ -1,4 +1,3 @@
-// Binds system-run approvals to argv/cwd/agent/session/env facts so approval
 import crypto from "node:crypto";
 import type {
   SystemRunApprovalBinding,

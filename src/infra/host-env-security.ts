@@ -1,4 +1,3 @@
-// Sanitizes inherited and request-provided environment variables before host
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 import { HOST_ENV_SECURITY_POLICY } from "./host-env-security-policy.js";
 import { markOpenClawExecEnv } from "./openclaw-exec-env.js";

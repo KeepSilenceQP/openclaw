@@ -1,5 +1,3 @@
-// JSON-RPC helpers and protocol metadata for the gateway MCP loopback server.
-/** MCP server name announced by the gateway loopback endpoint. */
 export const MCP_LOOPBACK_SERVER_NAME = "openclaw";
 /** MCP loopback server protocol-facing version. */
 export const MCP_LOOPBACK_SERVER_VERSION = "0.1.0";

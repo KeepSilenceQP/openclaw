@@ -1,4 +1,3 @@
-// Image probing and resizing helpers backed by rastermill plus trusted system
 import {
   createRastermill,
   isRastermillUnavailableError,

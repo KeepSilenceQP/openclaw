@@ -1,4 +1,3 @@
-// Package dist inventory generation and validation helpers.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { isLocalBuildMetadataDistPath } from "../../scripts/lib/local-build-metadata-paths.mjs";

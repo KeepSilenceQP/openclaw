@@ -1,4 +1,3 @@
-// Device pairing state, approvals, and scoped auth tokens.
 import { randomUUID } from "node:crypto";
 import { normalizeDeviceAuthScopes } from "../shared/device-auth.js";
 import {

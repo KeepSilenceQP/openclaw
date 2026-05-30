@@ -1,5 +1,3 @@
-// Top-level Usage page renderer. It composes usage data filters, query helpers,
-// overview charts, session cards, and detail panels without owning gateway
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { getUsageCacheRefreshTitle } from "../usage-cache-status.ts";

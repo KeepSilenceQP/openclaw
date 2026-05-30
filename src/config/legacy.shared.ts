@@ -1,5 +1,3 @@
-// Shared primitives for detecting and migrating legacy config shapes.
-/** Legacy config detector used to produce warnings before migration. */
 export type LegacyConfigRule = {
   path: string[];
   message: string;

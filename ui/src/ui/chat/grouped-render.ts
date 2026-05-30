@@ -1,4 +1,3 @@
-// Grouped chat renderer. It renders normalized message groups, attachments,
 import { html, nothing } from "lit";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import { until } from "lit/directives/until.js";

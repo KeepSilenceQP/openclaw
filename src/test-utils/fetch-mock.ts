@@ -1,5 +1,3 @@
-// Fetch mock helpers that emulate OpenClaw's preconnect-capable fetch shape.
-/** Fetch-compatible mock signature accepted by network helper tests. */
 export type FetchMock = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
 
 type FetchPreconnectOptions = {

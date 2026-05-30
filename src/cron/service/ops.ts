@@ -1,4 +1,3 @@
-// Public cron service operations. All store mutations run under the service
 import { enqueueCommandInLane } from "../../process/command-queue.js";
 import { CommandLane } from "../../process/lanes.js";
 import { DEFAULT_AGENT_ID } from "../../routing/session-key.js";

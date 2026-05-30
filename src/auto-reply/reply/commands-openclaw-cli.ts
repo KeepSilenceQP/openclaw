@@ -1,4 +1,3 @@
-// OpenClaw CLI command construction helpers.
 function quoteShellArg(value: string): string {
   if (process.platform === "win32") {
     return `'${value.replaceAll("'", "''")}'`;

@@ -1,4 +1,3 @@
-// Control UI controller for exec approval files. Loads, edits, and saves
 import type { GatewayBrowserClient } from "../gateway.ts";
 import { cloneConfigObject, removePathValue, setPathValue } from "./config/form-utils.ts";
 

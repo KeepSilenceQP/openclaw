@@ -1,4 +1,3 @@
-// Plugin uninstall planner and executor. Config cleanup is pure; filesystem and
 import { realpathSync } from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

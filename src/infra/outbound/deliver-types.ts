@@ -1,4 +1,3 @@
-// Outbound delivery result and failure contracts.
 import type { MessageReceipt } from "../../channels/message/types.js";
 import type { ChannelId } from "../../channels/plugins/channel-id.types.js";
 

@@ -1,4 +1,3 @@
-// Target-resolution test plugin fixtures.
 import type {
   ChannelMessagingAdapter,
   ChannelOutboundAdapter,

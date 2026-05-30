@@ -1,5 +1,3 @@
-// Chat composer input-history state machine. It merges transcript-backed user
-// messages with local unsent command history, then handles arrow-key recall
 import { CHAT_HISTORY_RENDER_LIMIT } from "./history-limits.ts";
 import { extractText } from "./message-extract.ts";
 

@@ -1,5 +1,3 @@
-// Speaker selection compatibility helpers for legacy voice/voiceId config keys.
-/** Mutable provider config object containing speaker selection aliases. */
 export type SpeakerSelectionConfig = Record<string, unknown>;
 
 function readString(value: unknown): string | undefined {

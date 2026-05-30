@@ -1,4 +1,3 @@
-// Normalizes Gateway exec/plugin approval events and manages the Control UI
 import { normalizeOptionalString } from "../string-coerce.ts";
 
 /** Normalized command approval request fields shown by the approval prompt. */

@@ -1,4 +1,3 @@
-// fs-safe facade and compatibility helpers.
 import "./fs-safe-defaults.js";
 import fs from "node:fs/promises";
 import path from "node:path";

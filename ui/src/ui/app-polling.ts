@@ -1,4 +1,3 @@
-// Tab-scoped polling helpers for Control UI panes that need quiet background
 import type { DebugState } from "./controllers/debug.ts";
 import { loadDebug } from "./controllers/debug.ts";
 import type { LogsState } from "./controllers/logs.ts";

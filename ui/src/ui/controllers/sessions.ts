@@ -1,5 +1,3 @@
-// Controller helpers for the Sessions view and active chat-session integration.
-// This module owns list loading, live session-change reconciliation, selected
 import {
   reconcileChatRunFromCurrentSessionRow,
   type ChatRunUiStatus,

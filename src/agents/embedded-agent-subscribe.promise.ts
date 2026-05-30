@@ -1,5 +1,3 @@
-/** Promise-like guard shared by subscription event scheduling code. */
-/** Return whether an unknown value exposes a callable `then`. */
 export function isPromiseLike<T>(value: unknown): value is PromiseLike<T> {
   return Boolean(
     value &&

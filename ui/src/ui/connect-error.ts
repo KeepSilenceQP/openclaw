@@ -1,4 +1,3 @@
-// Gateway connection-error formatter. It translates structured gateway detail
 import {
   ConnectErrorDetailCodes,
   describePairingConnectRequirement,

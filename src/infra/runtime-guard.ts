@@ -1,4 +1,3 @@
-// Startup runtime guard for supported Node versions.
 import process from "node:process";
 import { defaultRuntime, type RuntimeEnv } from "../runtime.js";
 

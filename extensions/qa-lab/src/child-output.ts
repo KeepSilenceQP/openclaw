@@ -1,5 +1,3 @@
-// QA Lab child-output helpers bound stdout captures and stderr tails from subprocesses.
-/** Maximum captured stdout bytes for QA child processes. */
 export const QA_CHILD_STDOUT_MAX_BYTES = 1024 * 1024;
 /** Maximum retained stderr tail bytes for QA child processes. */
 export const QA_CHILD_STDERR_TAIL_BYTES = 64 * 1024;

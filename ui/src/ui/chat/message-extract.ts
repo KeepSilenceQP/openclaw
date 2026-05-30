@@ -1,5 +1,3 @@
-// Chat message text extraction. It strips internal/runtime metadata, preserves
-// assistant-visible text, extracts thinking blocks separately, and caches results
 import { stripInternalRuntimeContext } from "../../../../src/agents/internal-runtime-context.js";
 import { stripInboundMetadata } from "../../../../src/auto-reply/reply/strip-inbound-meta.js";
 import { stripEnvelope } from "../../../../src/shared/chat-envelope.js";

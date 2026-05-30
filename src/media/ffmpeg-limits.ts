@@ -1,5 +1,3 @@
-// Shared ffmpeg/ffprobe limits used by media probing and transcoding helpers.
-/** Maximum buffered stderr/stdout size allowed for ffmpeg child processes. */
 export const MEDIA_FFMPEG_MAX_BUFFER_BYTES = 10 * 1024 * 1024;
 /** Default timeout for ffprobe metadata reads. */
 export const MEDIA_FFPROBE_TIMEOUT_MS = 10_000;

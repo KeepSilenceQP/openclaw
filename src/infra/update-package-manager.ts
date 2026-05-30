@@ -1,4 +1,3 @@
-// Package manager resolution for update/build flows.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

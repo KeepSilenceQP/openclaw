@@ -1,4 +1,3 @@
-// OSC 9;4 progress reporting for terminals that support task progress escape codes.
 const OSC_PROGRESS_PREFIX = "\u001b]9;4;";
 const OSC_PROGRESS_ST = "\u001b\\";
 const OSC_PROGRESS_BEL = "\u0007";

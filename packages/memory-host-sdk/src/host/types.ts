@@ -1,5 +1,3 @@
-// Public memory host result, status, debug, and manager contracts.
-/** Source family for an indexed memory hit. */
 export type MemorySource = "memory" | "sessions";
 
 /** Search hit returned from memory_search with location, score, and snippet metadata. */

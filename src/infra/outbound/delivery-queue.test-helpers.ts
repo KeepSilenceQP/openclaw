@@ -1,4 +1,3 @@
-// Test helpers for outbound delivery queue recovery tests.
 import fs from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, beforeEach, vi } from "vitest";

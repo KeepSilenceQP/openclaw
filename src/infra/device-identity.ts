@@ -1,4 +1,3 @@
-// Persists the local gateway/device Ed25519 identity and provides signing and
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

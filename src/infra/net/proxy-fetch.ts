@@ -1,4 +1,3 @@
-// Creates fetch implementations that route through explicit or env-selected
 import { logWarn } from "../../logger.js";
 import { formatErrorMessage } from "../errors.js";
 import { normalizeHeadersInitForFetch } from "../fetch-headers.js";

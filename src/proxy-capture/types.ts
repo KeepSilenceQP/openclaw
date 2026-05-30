@@ -1,5 +1,3 @@
-// Debug proxy capture record types shared by storage, coverage, and reporting.
-/** Network protocol represented by a captured event. */
 export type CaptureProtocol = "http" | "https" | "sse" | "ws" | "wss" | "connect";
 
 /** Direction of captured traffic relative to OpenClaw. */

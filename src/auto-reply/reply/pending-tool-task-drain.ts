@@ -1,4 +1,3 @@
-// Drain helper for pending tool tasks before final delivery.
 const DEFAULT_PENDING_TOOL_DRAIN_IDLE_TIMEOUT_MS = 30_000;
 
 export type PendingToolTaskDrainResult =

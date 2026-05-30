@@ -1,5 +1,3 @@
-// Shared metadata types for media-generation request normalization.
-/** Primitive value types tracked in media normalization metadata. */
 export type MediaNormalizationValue = string | number | boolean;
 
 /** Requested/applied value pair plus derivation metadata for one normalized field. */

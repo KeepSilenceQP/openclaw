@@ -1,5 +1,3 @@
-/** Types for registry entries that locate secret-bearing config fields. */
-/** Config files that can contain registered secret targets. */
 export type SecretTargetConfigFile = "openclaw.json" | "auth-profiles.json"; // pragma: allowlist secret
 /** Storage shape expected for a registered secret target. */
 export type SecretTargetShape = "secret_input" | "sibling_ref"; // pragma: allowlist secret

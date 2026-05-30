@@ -1,4 +1,3 @@
-// Provider-facing contracts for describing, transcribing, and extracting
 import type { AuthProfileStore } from "../agents/auth-profiles/types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 

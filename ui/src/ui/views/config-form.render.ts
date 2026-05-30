@@ -1,5 +1,3 @@
-// Full generated config-form renderer. It arranges top-level schema sections,
-// applies section metadata/icons, filters by search, and delegates each field
 import { html, nothing } from "lit";
 import { icons } from "../icons.ts";
 import { normalizeLowercaseStringOrEmpty } from "../string-coerce.ts";

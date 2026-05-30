@@ -1,5 +1,3 @@
-// Google Live realtime-talk transport. It validates the gateway-issued WebSocket
-// URL, pumps microphone PCM to Google Live, plays PCM output, and routes tool
 import { base64ToBytes, bytesToBase64, floatToPcm16 } from "./realtime-talk-audio.ts";
 import { RealtimeTalkPcmOutputQueue } from "./realtime-talk-pcm-output.ts";
 import type { RealtimeTalkJsonPcmWebSocketSessionResult } from "./realtime-talk-shared.ts";

@@ -1,5 +1,3 @@
-// Public helpers for validating OpenClaw external code plugin package metadata.
-/** Generic JSON object shape accepted at the package metadata boundary. */
 export type JsonObject = Record<string, unknown>;
 
 /** Normalized compatibility metadata read from an external plugin package.json. */

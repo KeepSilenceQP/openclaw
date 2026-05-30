@@ -1,6 +1,3 @@
-// Normalizes Gemini API base URLs from config/env into the versioned endpoint
-// expected by provider calls.
-/** Default Gemini API endpoint used when no override is configured. */
 export const DEFAULT_GOOGLE_API_BASE_URL = "https://generativelanguage.googleapis.com/v1beta";
 const GOOGLE_GENERATIVE_LANGUAGE_HOST = "generativelanguage.googleapis.com";
 

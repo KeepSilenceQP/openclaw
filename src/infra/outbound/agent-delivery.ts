@@ -1,4 +1,3 @@
-// Agent outbound delivery planning.
 import type { ChannelOutboundTargetMode } from "../../channels/plugins/types.public.js";
 import type { ChannelId } from "../../channels/plugins/types.public.js";
 import type { SessionEntry } from "../../config/sessions.js";

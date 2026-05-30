@@ -1,4 +1,3 @@
-// Environment normalization and diagnostic logging.
 import type { SubsystemLogger } from "../logging/subsystem.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 

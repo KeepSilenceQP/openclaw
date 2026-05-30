@@ -1,5 +1,3 @@
-// Bundled plugin Vitest path constants centralize extension test glob roots.
-/** Repository root directory for bundled plugins. */
 export const BUNDLED_PLUGIN_ROOT_DIR = "extensions";
 /** Path prefix shared by bundled plugin files. */
 export const BUNDLED_PLUGIN_PATH_PREFIX = `${BUNDLED_PLUGIN_ROOT_DIR}/`;

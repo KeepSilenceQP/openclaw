@@ -1,5 +1,3 @@
-// Computes retry backoff delays and abortable sleeps.
-/** Parameters controlling exponential backoff and jitter. */
 export type BackoffPolicy = {
   initialMs: number;
   maxMs: number;

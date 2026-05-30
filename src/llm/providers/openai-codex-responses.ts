@@ -1,4 +1,3 @@
-// OpenAI Codex Responses provider transport, including WebSocket reuse,
 import type * as NodeOs from "node:os";
 import type {
   Tool as OpenAITool,

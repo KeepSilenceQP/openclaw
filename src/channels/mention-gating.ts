@@ -1,4 +1,3 @@
-// Group mention gating policy for deciding whether an inbound turn should run.
 /** @deprecated Prefer `resolveInboundMentionDecision({ facts, policy })`. */
 export type MentionGateParams = {
   requireMention: boolean;

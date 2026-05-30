@@ -1,5 +1,3 @@
-// Shared gateway session/agent DTO base types used by core, TUI, and UI clients.
-/** Agent identity fields surfaced through gateway session APIs. */
 export type GatewayAgentIdentity = {
   name?: string;
   theme?: string;

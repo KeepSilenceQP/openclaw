@@ -1,5 +1,3 @@
-/** Resolves which model payload content may be captured in diagnostics. */
-/** Fine-grained diagnostic capture permissions for model and tool content. */
 export type DiagnosticModelContentCapturePolicy = {
   inputMessages: boolean;
   outputMessages: boolean;

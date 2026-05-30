@@ -1,5 +1,3 @@
-// Shared trajectory event and export manifest schema types.
-/** Origin category for a trajectory event row. */
 export type TrajectoryEventSource = "runtime" | "transcript" | "export";
 
 /** Tool schema captured with a compiled context trajectory event. */

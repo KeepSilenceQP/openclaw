@@ -1,4 +1,3 @@
-// Remote embedding batch completion and failure helpers.
 const TERMINAL_FAILURE_STATES = new Set(["failed", "expired", "cancelled", "canceled"]);
 
 type BatchStatusLike = {

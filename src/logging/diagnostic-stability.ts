@@ -1,4 +1,3 @@
-// Diagnostic stability recorder: keeps a bounded, payload-free event ring for
 import {
   onDiagnosticEvent,
   type DiagnosticEventPayload,

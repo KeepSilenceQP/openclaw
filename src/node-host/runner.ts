@@ -1,4 +1,3 @@
-// Node-host gateway client runtime. It registers local system/skill capabilities
 import fs from "node:fs";
 import {
   GATEWAY_CLIENT_MODES,

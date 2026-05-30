@@ -1,4 +1,3 @@
-// HTTP request body size/timeout guards.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { clearTimeout as clearNodeTimeout, setTimeout as setNodeTimeout } from "node:timers";
 import { resolveTimerTimeoutMs } from "../shared/number-coercion.js";

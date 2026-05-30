@@ -1,4 +1,3 @@
-// Process-level unhandled rejection/exception classification.
 import process from "node:process";
 import { restoreTerminalState } from "../../packages/terminal-core/src/restore.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

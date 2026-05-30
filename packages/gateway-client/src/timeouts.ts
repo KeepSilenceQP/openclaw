@@ -1,4 +1,3 @@
-// Gateway client timeout constants and normalization helpers.
 function parseStrictPositiveInteger(value: string): number | undefined {
   const trimmed = value.trim();
   if (!/^\+?\d+$/u.test(trimmed)) {

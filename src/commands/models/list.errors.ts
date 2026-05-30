@@ -1,4 +1,3 @@
-// Error helpers for model-list availability fallbacks and diagnostics.
 export const MODEL_AVAILABILITY_UNAVAILABLE_CODE = "MODEL_AVAILABILITY_UNAVAILABLE";
 
 export function formatErrorWithStack(err: unknown): string {

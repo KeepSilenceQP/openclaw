@@ -1,4 +1,3 @@
-// Session binding service for conversation/session routing.
 import { resolveGlobalMap } from "../../shared/global-singleton.js";
 import { uniqueValues } from "../../shared/string-normalization.js";
 import {

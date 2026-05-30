@@ -1,4 +1,3 @@
-// Gateway HTTP/upgrade dispatch for plugin-owned routes, including auth and
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Duplex } from "node:stream";
 import {

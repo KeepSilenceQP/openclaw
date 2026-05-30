@@ -1,4 +1,3 @@
-// Parser for config values entered through chat commands.
 export function parseConfigValue(raw: string): {
   value?: unknown;
   error?: string;

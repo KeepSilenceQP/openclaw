@@ -1,4 +1,3 @@
-// Thinking-level helpers for model controls. They normalize provider aliases and
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";
 
 /** Minimal catalog row used to decide whether a model supports reasoning. */

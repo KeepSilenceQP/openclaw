@@ -1,4 +1,3 @@
-// Durable queue storage for session-bound delivery events.
 import { createHash } from "node:crypto";
 import path from "node:path";
 import {

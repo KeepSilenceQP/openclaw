@@ -1,4 +1,3 @@
-// Process-wide heartbeat event state.
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import { notifyListeners, registerListener } from "../shared/listeners.js";
 

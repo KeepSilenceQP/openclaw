@@ -1,5 +1,3 @@
-// Azure OpenAI deployment-name mapping helpers.
-/** Parse a comma-separated `model=deployment` mapping string. */
 export function parseAzureDeploymentNameMap(value: string | undefined): Map<string, string> {
   const map = new Map<string, string>();
   if (!value) {

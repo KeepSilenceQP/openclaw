@@ -1,4 +1,3 @@
-// Bounded regex compilation and testing helpers for untrusted config patterns.
 type QuantifierRead = {
   consumed: number;
   minRepeat: number;

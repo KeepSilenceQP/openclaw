@@ -1,4 +1,3 @@
-// Heartbeat config summary helpers for CLI/status display.
 import { resolveAgentConfig, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import {
   DEFAULT_HEARTBEAT_ACK_MAX_CHARS,

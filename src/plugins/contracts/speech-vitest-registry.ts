@@ -1,4 +1,3 @@
-// Vitest-only contract registry loaders for bundled speech, media, and generation
 import { loadBundledCapabilityRuntimeRegistry } from "../bundled-capability-runtime.js";
 import type {
   ImageGenerationProviderPlugin,

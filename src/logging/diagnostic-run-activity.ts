@@ -1,4 +1,3 @@
-// Diagnostic run activity tracker: correlates internal model/tool/run events
 import {
   onInternalDiagnosticEvent,
   type DiagnosticEventPayload,

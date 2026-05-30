@@ -1,5 +1,3 @@
-// Activation-name parsing for wake-word style realtime voice transcripts.
-/** Maximum supported activation-name word count for fuzzy transcript matching. */
 export const REALTIME_VOICE_ACTIVATION_NAME_MAX_WORDS = 2;
 
 /** Which edge of the transcript contained the activation name. */

@@ -1,4 +1,3 @@
-// Outbound delivery after-commit hooks.
 import { createSubsystemLogger } from "../../logging/subsystem.js";
 import { formatErrorMessage } from "../errors.js";
 import type { OutboundDeliveryResult } from "./deliver-types.js";

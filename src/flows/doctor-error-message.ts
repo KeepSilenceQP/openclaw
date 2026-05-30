@@ -1,4 +1,3 @@
-// Doctor-safe error message normalization for display and structured findings.
 const ERR_MESSAGE_MAX_LEN = 256;
 
 /** Strip control characters and cap error text before showing doctor output. */

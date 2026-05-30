@@ -1,4 +1,3 @@
-// Shell and argv analysis for exec approval decisions.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { splitShellArgs } from "../utils/shell-argv.js";
 import {

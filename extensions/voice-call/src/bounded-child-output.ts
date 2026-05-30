@@ -1,4 +1,3 @@
-// Bounded child-output helpers keep CLI subprocess diagnostics within error-size limits.
 const DEFAULT_MAX_OUTPUT_CHARS = 16_384;
 
 /** Captured subprocess output with truncation state. */

@@ -1,5 +1,3 @@
-/** Shared hook metadata and registry entry types. */
-/** Install source descriptor for hook packs declared in hook metadata. */
 export type HookInstallSpec = {
   id?: string;
   kind: "bundled" | "npm" | "git";

@@ -1,4 +1,3 @@
-// Top-level app lifecycle hooks. They connect/disconnect the gateway, start
 import { connectGateway } from "./app-gateway.ts";
 import {
   startLogsPolling,

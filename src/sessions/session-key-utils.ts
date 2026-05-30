@@ -1,4 +1,3 @@
-// Session-key normalization and parsing helpers, including opaque peer IDs that
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,

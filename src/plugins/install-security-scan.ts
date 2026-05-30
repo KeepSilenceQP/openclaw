@@ -1,4 +1,3 @@
-// Lazy public entrypoints for plugin and skill install security scans.
 type InstallScanLogger = {
   warn?: (message: string) => void;
 };

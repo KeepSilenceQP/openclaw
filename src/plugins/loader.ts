@@ -1,4 +1,3 @@
-// Loads plugin manifests and runtime modules, builds registries, applies
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";

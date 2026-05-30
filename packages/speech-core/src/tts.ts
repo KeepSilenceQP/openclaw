@@ -1,5 +1,3 @@
-// Public TTS runtime surface for speech providers, user preferences, synthesis
-// fallbacks, and reply-payload attachment. This module keeps channel-facing
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { resolveChannelTtsVoiceDelivery } from "openclaw/plugin-sdk/channel-targets";

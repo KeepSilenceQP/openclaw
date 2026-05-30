@@ -1,5 +1,3 @@
-// Controller helpers for model auth status in Control UI. The low-level loader
-// preserves transport errors, while the state wrapper stores a fallback snapshot
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { ModelAuthStatusResult } from "../types.ts";
 

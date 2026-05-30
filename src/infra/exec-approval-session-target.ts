@@ -1,4 +1,3 @@
-// Approval request session-target resolution.
 import { resolveSessionConversationRef } from "../channels/plugins/session-conversation.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";

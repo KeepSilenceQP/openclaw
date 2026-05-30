@@ -1,4 +1,3 @@
-// User-input provenance helpers: tag routed/inter-session prompts and add
 import type { AgentMessage } from "../agents/runtime/index.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

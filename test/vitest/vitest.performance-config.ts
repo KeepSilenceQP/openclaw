@@ -1,4 +1,3 @@
-// Vitest performance config enables optional import/cache diagnostics from env.
 type EnvMap = Record<string, string | undefined>;
 
 const isEnabled = (value: string | undefined): boolean => {

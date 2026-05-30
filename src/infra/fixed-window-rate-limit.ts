@@ -1,5 +1,3 @@
-// Small in-memory fixed-window limiter for local polling and request guards.
-/** Mutable limiter state exposed as consume/reset operations. */
 export type FixedWindowRateLimiter = {
   consume: () => {
     allowed: boolean;

@@ -1,5 +1,3 @@
-// Node-host bridge for plugin-provided commands. The gateway loads plugin
-// command metadata once, then this module exposes the registered capability and
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { getActivePluginRegistry } from "../plugins/runtime.js";
 

@@ -1,4 +1,3 @@
-// MCP connect timeout helper aborts stuck stdio transport startup in E2E probes.
 type McpConnectTransport = {
   close?(): Promise<void> | void;
 };

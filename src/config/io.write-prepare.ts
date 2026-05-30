@@ -1,4 +1,3 @@
-// Config write preparation helpers. Build minimal merge patches, preserve
 import { isDeepStrictEqual } from "node:util";
 import { normalizeConfiguredProviderCatalogModelId } from "@openclaw/model-catalog-core/provider-model-id-normalization";
 import { parseConfigPathArrayIndex } from "../shared/path-array-index.js";

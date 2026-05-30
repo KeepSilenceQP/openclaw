@@ -1,4 +1,3 @@
-// Shared setup-flow contribution types and sorting helper.
 type FlowDocsLink = {
   path: string;
   label?: string;

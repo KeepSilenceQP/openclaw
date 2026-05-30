@@ -1,5 +1,3 @@
-// Node `require` resolver used by logging code that runs from ESM modules.
-/** Builds a CommonJS require function for an ESM meta URL when Node exposes `getBuiltinModule`. */
 export function resolveNodeRequireFromMeta(metaUrl: string): NodeJS.Require | null {
   const getBuiltinModule = (
     process as NodeJS.Process & {

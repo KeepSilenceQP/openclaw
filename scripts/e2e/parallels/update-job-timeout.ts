@@ -1,4 +1,3 @@
-// Parallels update job timeout helper records timeout failures in guest update logs.
 interface TimedUpdateJobOptions {
   append(this: void, chunk: string): void;
   label: string;

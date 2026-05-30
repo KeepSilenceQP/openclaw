@@ -1,5 +1,3 @@
-// Location attachment formatting helpers for channel inbound context.
-/** Source category for a normalized location payload. */
 export type LocationSource = "pin" | "place" | "live";
 
 /** Normalized location payload shared by channel adapters. */

@@ -1,4 +1,3 @@
-// Diagnostics timeline writer for lightweight JSONL performance traces.
 import { AsyncLocalStorage } from "node:async_hooks";
 import { randomUUID } from "node:crypto";
 import { mkdirSync } from "node:fs";

@@ -1,5 +1,3 @@
-// Theme selection and resolution helpers for Control UI palettes.
-/** Configured theme family selected by the user. */
 export type ThemeName = "claw" | "knot" | "dash" | "custom";
 /** Light/dark/system mode selected for a theme family. */
 export type ThemeMode = "system" | "light" | "dark";

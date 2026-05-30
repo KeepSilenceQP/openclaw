@@ -1,5 +1,3 @@
-// Embedding vector sanitization and normalization helpers.
-/** Replaces non-finite values with zero and L2-normalizes nonzero vectors. */
 export function sanitizeAndNormalizeEmbedding(vec: number[]): number[] {
   const sanitized = vec.map((value) => (Number.isFinite(value) ? value : 0));
   const magnitude = Math.sqrt(sanitized.reduce((sum, value) => sum + value * value, 0));

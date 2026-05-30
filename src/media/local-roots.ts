@@ -1,4 +1,3 @@
-// Local filesystem roots from which media attachments may be read. These roots
 import path from "node:path";
 import { resolveAgentWorkspaceDir } from "../agents/agent-scope.js";
 import {

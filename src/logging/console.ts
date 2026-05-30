@@ -1,4 +1,3 @@
-// Console logging bridge: resolves user-visible console settings and mirrors
 import util from "node:util";
 import { stripAnsi } from "../../packages/terminal-core/src/ansi.js";
 import type { OpenClawConfig } from "../config/types.js";

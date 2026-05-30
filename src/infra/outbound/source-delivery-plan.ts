@@ -1,4 +1,3 @@
-// Source-visible delivery planning for replies and completion notifications.
 import type { SourceReplyDeliveryMode } from "../../auto-reply/get-reply-options.types.js";
 import { stringifyRouteThreadId } from "../../plugin-sdk/channel-route.js";
 import { normalizeTargetForProvider } from "./target-normalization.js";

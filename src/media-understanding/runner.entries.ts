@@ -1,4 +1,3 @@
-// Executes individual media-understanding model entries, covering provider
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

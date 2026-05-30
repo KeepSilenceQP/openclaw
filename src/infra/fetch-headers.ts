@@ -1,4 +1,3 @@
-// Normalizes Fetch header init objects for older Node runtime compatibility.
 type HeadersLike = {
   entries: () => IterableIterator<[string, string]>;
   get: (name: string) => string | null;

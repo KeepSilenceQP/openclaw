@@ -1,4 +1,3 @@
-// HTTP hook configuration and payload normalization for external gateway
 import { randomUUID } from "node:crypto";
 import type { IncomingMessage } from "node:http";
 import { listAgentIds, resolveDefaultAgentId } from "../agents/agent-scope-config.js";

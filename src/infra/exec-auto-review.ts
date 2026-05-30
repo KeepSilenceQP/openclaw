@@ -1,6 +1,3 @@
-// Exec approval auto-review contracts.
-// Model-backed reviewers can approve low-risk commands; fallback always asks.
-/** Risk level returned by an exec auto reviewer. */
 export type ExecAutoReviewRisk = "unknown" | "low" | "medium" | "high";
 
 /** Auto-review decision used before falling back to human approval. */

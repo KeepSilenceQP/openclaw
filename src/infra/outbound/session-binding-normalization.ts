@@ -1,4 +1,3 @@
-// Normalizers for session binding conversation references.
 import { normalizeAccountId } from "../../routing/session-key.js";
 import {
   normalizeLowercaseStringOrEmpty,

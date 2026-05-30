@@ -1,4 +1,3 @@
-// Diagnostic message lifecycle helper: emits queue, processing, idle, and
 import { logMessageProcessed, logMessageQueued, logSessionStateChange } from "./diagnostic.js";
 
 type MessageLifecycleRef = {

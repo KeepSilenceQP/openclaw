@@ -1,4 +1,3 @@
-// Loads undici runtime constructors behind a testable boundary and creates
 import { createRequire } from "node:module";
 import net from "node:net";
 import { isRecord as isObjectRecord } from "../../shared/record-coerce.js";

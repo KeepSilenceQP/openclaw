@@ -1,5 +1,3 @@
-// Test fixtures for Control UI model/session tests. These helpers build small
-// gateway-shaped payloads so tests can exercise model-selection behavior without
 import type {
   GatewaySessionRow,
   ModelCatalogEntry,

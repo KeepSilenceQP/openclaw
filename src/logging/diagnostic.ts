@@ -1,4 +1,3 @@
-// Diagnostic event facade: records webhook/message/session/run health events,
 import { monitorEventLoopDelay, performance } from "node:perf_hooks";
 import { getRuntimeConfig } from "../config/config.js";
 import { resolveAllAgentSessionStoreTargetsSync } from "../config/sessions/targets.js";

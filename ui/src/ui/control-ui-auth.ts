@@ -1,4 +1,3 @@
-// Control UI auth header resolver. It chooses header-safe bearer credentials
 import { normalizeOptionalString, uniqueStrings } from "./string-coerce.ts";
 
 type ControlUiAuthSource = {

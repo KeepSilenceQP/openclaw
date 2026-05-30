@@ -1,5 +1,3 @@
-// Shared secret reference grammar used by gateway schema and resolver code.
-/** Reserved ref id for file-backed secrets that expose one scalar value. */
 export const SINGLE_VALUE_FILE_REF_ID = "value";
 
 /** Provider aliases are short lowercase handles safe for config keys and URLs. */

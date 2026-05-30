@@ -1,4 +1,3 @@
-// Gateway operator-scope classification and authorization helpers. Core,
 import { getPluginRegistryState } from "../plugins/runtime-state.js";
 import { resolveReservedGatewayMethodScope } from "../shared/gateway-method-policy.js";
 import { normalizeOptionalString as normalizeSessionActionParam } from "../shared/string-coerce.js";

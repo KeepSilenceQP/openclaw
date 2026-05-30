@@ -1,4 +1,3 @@
-// Deterministic heartbeat scheduling helpers.
 import { createHash } from "node:crypto";
 import { resolveIntegerOption } from "./numeric-options.js";
 

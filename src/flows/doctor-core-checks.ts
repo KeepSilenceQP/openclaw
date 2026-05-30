@@ -1,4 +1,3 @@
-// Core doctor health checks and adapters that turn legacy note-based probes into
 import path from "node:path";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import {

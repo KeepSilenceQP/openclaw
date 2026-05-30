@@ -1,4 +1,3 @@
-// Public delivery queue barrel.
 export {
   ackDelivery,
   enqueueDelivery,

@@ -1,5 +1,3 @@
-// Shared i18n locale and nested translation-map contracts.
-/** Recursive map of dot-addressable UI translation strings. */
 export type TranslationMap = { [key: string]: string | TranslationMap };
 
 /** Locale ids supported by the bundled UI translation registry. */

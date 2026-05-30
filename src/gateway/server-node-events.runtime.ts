@@ -1,4 +1,3 @@
-// Lazy runtime boundary for gateway node-event handling; keeps server startup
 export { resolveSessionAgentId } from "../agents/agent-scope.js";
 export { sanitizeInboundSystemTags } from "../auto-reply/reply/inbound-text.js";
 export { normalizeChannelId } from "../channels/plugins/index.js";

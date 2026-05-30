@@ -1,5 +1,3 @@
-// Port diagnostics contracts shared by probing, inspection, and formatting helpers.
-/** Process/socket metadata for a listener using a local port. */
 export type PortListener = {
   pid?: number;
   ppid?: number;

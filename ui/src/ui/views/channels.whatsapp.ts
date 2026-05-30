@@ -1,4 +1,3 @@
-// WhatsApp channel card renderer. It includes link/QR actions in addition to
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { formatRelativeTimestamp, formatDurationHuman } from "../format.ts";

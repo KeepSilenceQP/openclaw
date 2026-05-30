@@ -1,4 +1,3 @@
-// Browser local-storage adapter for device-auth tokens. Core store helpers own
 import {
   clearDeviceAuthTokenFromStore,
   type DeviceAuthEntry,

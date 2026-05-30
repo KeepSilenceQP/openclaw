@@ -1,5 +1,3 @@
-// Structured embedding input parts for text and inline multimodal data.
-/** Text part in a structured embedding input. */
 export type EmbeddingInputTextPart = {
   type: "text";
   text: string;

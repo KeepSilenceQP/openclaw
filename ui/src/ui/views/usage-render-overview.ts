@@ -1,4 +1,3 @@
-// Overview renderers for the Usage page: totals, daily charts, insights,
 import { html, nothing } from "lit";
 import { formatDurationCompact } from "../../../../src/infra/format-time/format-duration.ts";
 import { t } from "../../i18n/index.ts";

@@ -1,4 +1,3 @@
-// Session model override helpers: apply live model/profile selections and repair
 import type { SessionEntry } from "../config/sessions.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 

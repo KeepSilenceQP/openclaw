@@ -1,4 +1,3 @@
-// Shared plugin activation policy and enablement-result helpers.
 type EnableStateLike = {
   enabled: boolean;
   reason?: string;

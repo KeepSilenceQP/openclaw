@@ -1,4 +1,3 @@
-// Runs regex redaction in chunks so huge log payloads do not monopolize the event loop.
 const REDACT_REGEX_CHUNK_THRESHOLD = 32_768;
 const REDACT_REGEX_CHUNK_SIZE = 16_384;
 

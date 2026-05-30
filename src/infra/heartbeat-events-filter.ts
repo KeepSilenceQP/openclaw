@@ -1,4 +1,3 @@
-// Heartbeat and scheduled-event prompt filtering.
 import { HEARTBEAT_RESPONSE_TOOL_INSTRUCTIONS } from "../auto-reply/heartbeat.js";
 import { HEARTBEAT_TOKEN } from "../auto-reply/tokens.js";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";

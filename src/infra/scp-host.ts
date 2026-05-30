@@ -1,4 +1,3 @@
-// SCP host/path safety checks for remote copy commands.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
 const SSH_TOKEN = /^[A-Za-z0-9._-]+$/;

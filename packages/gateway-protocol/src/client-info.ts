@@ -1,4 +1,3 @@
-// Shared client identity contract sent by gateway clients during connection setup.
 function normalizeOptionalLowercaseString(raw?: string | null): string | undefined {
   if (typeof raw !== "string") {
     return undefined;

@@ -1,5 +1,3 @@
-// Public contracts for plugin-scoped, TTL-aware keyed state storage.
-/** Stored plugin-state entry with creation time and optional expiry. */
 export type PluginStateEntry<T> = {
   key: string;
   value: T;

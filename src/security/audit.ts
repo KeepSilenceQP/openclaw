@@ -1,4 +1,3 @@
-// Security audit orchestration and shared collectors. Heavy channel/plugin and
 import path from "node:path";
 import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";

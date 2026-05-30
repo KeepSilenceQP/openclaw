@@ -1,4 +1,3 @@
-// ANSI escape helpers used to clean terminal output before display or storage.
 /*
  * Portions of this file are derived from:
  * - ansi-regex (https://github.com/chalk/ansi-regex)

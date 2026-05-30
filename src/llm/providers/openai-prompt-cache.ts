@@ -1,5 +1,3 @@
-// OpenAI prompt-cache key helpers.
-/** Maximum prompt-cache key length accepted by OpenAI-compatible APIs. */
 export const OPENAI_PROMPT_CACHE_KEY_MAX_LENGTH = 64;
 
 /** Clamp a prompt-cache key by Unicode code point count. */

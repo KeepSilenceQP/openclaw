@@ -1,4 +1,3 @@
-// Network interface discovery helpers.
 import os from "node:os";
 
 /** Raw network interface snapshot shape returned by node:os. */

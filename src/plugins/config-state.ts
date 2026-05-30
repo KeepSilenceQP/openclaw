@@ -1,4 +1,3 @@
-// Normalizes plugin config ids and resolves activation state, test defaults,
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   normalizeOptionalLowercaseString,

@@ -1,5 +1,3 @@
-// Centralized current and legacy product names used by compatibility code.
-/** Canonical package/config/product key for current OpenClaw compatibility code. */
 export const PROJECT_NAME = "openclaw" as const;
 
 const LEGACY_PROJECT_NAMES = ["clawdbot"] as const;

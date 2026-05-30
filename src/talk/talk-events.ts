@@ -1,5 +1,3 @@
-// Typed Talk event stream contract and monotonic per-session sequencer.
-/** Closed event type set emitted by realtime Talk sessions. */
 export const TALK_EVENT_TYPES = [
   "session.started",
   "session.ready",

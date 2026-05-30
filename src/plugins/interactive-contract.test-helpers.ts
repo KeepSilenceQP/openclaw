@@ -1,4 +1,3 @@
-// Shared test-only shapes for validating interactive channel handler contracts.
 type ConversationBindingHelpers = {
   requestConversationBinding: (...args: unknown[]) => unknown;
   detachConversationBinding: (...args: unknown[]) => unknown;

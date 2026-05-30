@@ -1,4 +1,3 @@
-// Formats operator guidance for missing or ambiguous default channel accounts.
 function formatChannelDefaultAccountPath(channelKey: string): string {
   return `channels.${channelKey}.defaultAccount`;
 }

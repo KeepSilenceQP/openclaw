@@ -1,4 +1,3 @@
-// Activity model for live tool-event summaries. It redacts sensitive output,
 import { formatUnknownText, truncateText } from "./format.ts";
 
 /** Maximum number of recent tool activity rows retained in app state. */

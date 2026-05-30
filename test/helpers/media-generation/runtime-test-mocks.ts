@@ -1,4 +1,3 @@
-// Media-generation runtime mock reset helpers keep image/music/video tests isolated.
 type ClearableMock = {
   mockClear(): unknown;
 };

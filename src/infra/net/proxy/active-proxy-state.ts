@@ -1,4 +1,3 @@
-// Process-local active managed proxy registry.
 import type { ProxyConfig } from "../../../config/zod-schema.proxy.js";
 import type { ManagedProxyTlsOptions } from "./proxy-tls.js";
 

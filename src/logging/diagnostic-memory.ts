@@ -1,4 +1,3 @@
-// Diagnostic memory sampler: emits bounded process memory events, detects
 import {
   emitInternalDiagnosticEvent as emitDiagnosticEvent,
   type DiagnosticMemoryPressureEvent,

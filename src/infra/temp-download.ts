@@ -1,4 +1,3 @@
-// Temporary download path helpers backed by private temp workspaces.
 import "./fs-safe-defaults.js";
 import crypto from "node:crypto";
 import path from "node:path";

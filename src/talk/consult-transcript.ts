@@ -1,4 +1,3 @@
-// Transcript filters that avoid consulting on incomplete or non-actionable voice fragments.
 const REALTIME_VOICE_CONSULT_TRAILING_FRAGMENT_WORDS = new Set([
   "a",
   "about",

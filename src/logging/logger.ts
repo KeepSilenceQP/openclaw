@@ -1,4 +1,3 @@
-// File logger runtime: resolves logging config, writes rolling redacted logs,
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

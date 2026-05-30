@@ -1,4 +1,3 @@
-// Browser device identity helpers for Control UI pairing. A persisted Ed25519
 import { getPublicKeyAsync, signAsync, utils } from "@noble/ed25519";
 import { getSafeLocalStorage } from "../local-storage.ts";
 

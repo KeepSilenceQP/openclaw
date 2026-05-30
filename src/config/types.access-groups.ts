@@ -1,5 +1,3 @@
-// Access group config contracts for dynamic Discord audiences and static sender allowlists.
-/** Dynamic access group backed by Discord channel visibility. */
 export type DiscordChannelAudienceAccessGroup = {
   /**
    * Discord dynamic audience backed by the users who can currently view a guild

@@ -1,4 +1,3 @@
-// Runtime facade for isolated cron agent execution. Keeps the main runner on
 export {
   resolveEffectiveModelFallbacks,
   resolveSubagentModelFallbacksOverride,

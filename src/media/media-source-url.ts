@@ -1,4 +1,3 @@
-// Identifies remote media URLs that should pass through instead of being treated as local paths.
 const HTTP_URL_RE = /^https?:\/\//i;
 const MXC_URL_RE = /^mxc:\/\//i;
 

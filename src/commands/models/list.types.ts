@@ -1,4 +1,3 @@
-// Shared row and configured-entry types for model-list assembly.
 export type ConfiguredEntry = {
   key: string;
   ref: { provider: string; model: string };

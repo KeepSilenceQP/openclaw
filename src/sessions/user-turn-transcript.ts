@@ -1,4 +1,3 @@
-// User-turn transcript persistence: builds user messages with media/provenance,
 import path from "node:path";
 import type { AgentMessage } from "../agents/runtime/index.js";
 import { appendSessionTranscriptMessage } from "../config/sessions/transcript-append.js";

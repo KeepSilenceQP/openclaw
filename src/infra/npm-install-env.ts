@@ -1,4 +1,3 @@
-// npm install environment sanitizer.
 import { execFileSync } from "node:child_process";
 import fsSync from "node:fs";
 import os from "node:os";

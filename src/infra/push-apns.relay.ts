@@ -1,4 +1,3 @@
-// Hosted APNs relay client.
 import { URL } from "node:url";
 import type { GatewayConfig } from "../config/types.gateway.js";
 import { resolveTimerTimeoutMs } from "../shared/number-coercion.js";

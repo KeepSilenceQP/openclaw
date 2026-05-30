@@ -1,5 +1,3 @@
-// Embedding model id normalization helpers.
-/** Removes supported provider prefixes from configured model refs, or returns the default. */
 export function normalizeEmbeddingModelWithPrefixes(params: {
   model: string;
   defaultModel: string;

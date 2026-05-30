@@ -1,4 +1,3 @@
-// Installed plugin index schema types. The generated index snapshots manifest,
 import type { OpenClawConfig } from "../config/types.js";
 import type { PluginInstallRecord } from "../config/types.plugins.js";
 import type { PluginCompatCode } from "./compat/registry.js";

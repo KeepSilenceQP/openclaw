@@ -1,5 +1,3 @@
-// Status tone and state helpers for memory health summaries.
-/** Small status tone vocabulary used by memory UI/CLI surfaces. */
 export type Tone = "ok" | "warn" | "muted";
 
 /** Converts vector-search availability into display tone and state. */

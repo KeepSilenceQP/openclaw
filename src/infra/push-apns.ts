@@ -1,4 +1,3 @@
-// APNs registration storage and push delivery.
 import { createHash, createPrivateKey, sign as signJwt } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

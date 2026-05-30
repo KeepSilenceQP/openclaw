@@ -1,4 +1,3 @@
-// Control UI render helpers for navigation, chat session controls, refresh
 import { html, nothing } from "lit";
 import { t } from "../i18n/index.ts";
 import {

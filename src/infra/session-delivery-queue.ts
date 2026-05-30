@@ -1,4 +1,3 @@
-// Session delivery queue barrel.
 export {
   ackSessionDelivery,
   enqueueSessionDelivery,

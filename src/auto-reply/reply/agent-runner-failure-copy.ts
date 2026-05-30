@@ -1,4 +1,3 @@
-// User-visible fallback copy for agent run failures.
 export const GENERIC_EXTERNAL_RUN_FAILURE_TEXT =
   "⚠️ Something went wrong while processing your request. Please try again, or use /new to start a fresh session.";
 

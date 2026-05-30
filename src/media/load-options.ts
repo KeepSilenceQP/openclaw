@@ -1,6 +1,3 @@
-// Option normalization for outbound media loading. This keeps callers explicit
-// about whether host file reads are allowed and which local roots are trusted.
-/** Host-file read hook used when a channel/provider may load local media paths. */
 export type OutboundMediaReadFile = (filePath: string) => Promise<Buffer>;
 
 /** Local media access boundary supplied by agent/channel runtime code. */

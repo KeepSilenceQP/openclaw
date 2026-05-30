@@ -1,4 +1,3 @@
-// Overview log-tail panel renderer. It presents a short, ANSI-stripped slice of
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { icons } from "../icons.ts";

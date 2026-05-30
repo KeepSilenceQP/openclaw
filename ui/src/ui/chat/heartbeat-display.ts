@@ -1,4 +1,3 @@
-// Heartbeat display filters. They hide assistant heartbeat acknowledgements while
 import { normalizeLowercaseStringOrEmpty } from "../string-coerce.ts";
 
 const HEARTBEAT_TOKEN = "HEARTBEAT_OK";

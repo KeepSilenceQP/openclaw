@@ -1,5 +1,3 @@
-// Sidebar content model for markdown notes and canvas embeds.
-/** Markdown sidebar content rendered from a text payload. */
 export type MarkdownSidebarContent = {
   kind: "markdown";
   content: string;

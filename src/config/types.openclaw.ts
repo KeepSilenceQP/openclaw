@@ -1,4 +1,3 @@
-// Central OpenClaw config type surface. Composes domain-specific config blocks,
 import type { SilentReplyPolicyShape } from "../shared/silent-reply-policy.js";
 import type { TranscriptsConfig } from "../transcripts/config.js";
 import type { AccessGroupsConfig } from "./types.access-groups.js";

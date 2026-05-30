@@ -1,5 +1,3 @@
-// Shared valid/invalid secret reference ids for parser and validator tests.
-/** Valid JSON-pointer style file secret reference ids. */
 export const VALID_FILE_SECRET_REF_IDS = [
   "value",
   "/",

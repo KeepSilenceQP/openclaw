@@ -1,5 +1,3 @@
-/** Tiny keyed runtime registry used by agent hook modules to avoid direct imports. */
-/** Creates a process-local runtime registry with set/get/clear operations. */
 export function createSessionManagerRuntimeRegistry<TValue>() {
   // Session-scoped runtime registry keyed by object identity.
   // The SessionManager instance must stay stable across set/get calls.

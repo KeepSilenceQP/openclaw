@@ -1,5 +1,3 @@
-// Secret input normalization and unresolved SecretRef handling for memory config.
-/** Supported secret reference backends accepted by memory config. */
 export type SecretRefSource = "env" | "file" | "exec";
 
 /** Structured secret reference resolved by an active OpenClaw runtime snapshot. */

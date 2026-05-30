@@ -1,5 +1,3 @@
-/** Helpers for OpenAI Responses embedded-agent subscription tests. */
-/** Text phase variants used by OpenAI Responses subscription test events. */
 export type OpenAiResponsesTextEventPhase = "commentary" | "final_answer";
 
 /** Build an OpenAI Responses text block fixture. */

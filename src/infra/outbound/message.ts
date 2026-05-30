@@ -1,4 +1,3 @@
-// Core outbound message and poll send helpers.
 import type { ReplyPayload } from "../../auto-reply/reply-payload.js";
 import { deriveDurableFinalDeliveryRequirements } from "../../channels/message/capabilities.js";
 import { sendDurableMessageBatch } from "../../channels/message/runtime.js";

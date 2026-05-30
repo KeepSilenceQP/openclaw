@@ -1,5 +1,3 @@
-// Approval forwarding config contracts for exec and plugin approvals.
-/** Enablement mode for native exec approval delivery. */
 export type NativeExecApprovalEnableMode = boolean | "auto";
 
 /** Delivery fanout mode for forwarded approvals. */

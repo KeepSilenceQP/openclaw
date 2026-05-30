@@ -1,5 +1,3 @@
-// Public data contracts for `@openclaw/sdk` requests, results, events, and transports.
-/** JSON object payload accepted by SDK request helpers. */
 export type JsonObject = Record<string, unknown>;
 
 /** Per-request gateway behavior controls for final responses and timeouts. */

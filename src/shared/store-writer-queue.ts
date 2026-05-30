@@ -1,5 +1,3 @@
-// Per-store async write queue that serializes file updates by store path.
-/** Pending write task held by a store writer queue. */
 export type StoreWriterTask = {
   fn: () => Promise<unknown>;
   resolve: (value: unknown) => void;

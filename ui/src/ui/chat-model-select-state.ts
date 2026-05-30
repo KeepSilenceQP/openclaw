@@ -1,4 +1,3 @@
-// Chat model select-state builder. It combines session overrides, server
 import type { AppViewState } from "./app-view-state.ts";
 import {
   buildCatalogDisplayLookup,

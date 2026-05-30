@@ -1,4 +1,3 @@
-// Reads fetch responses with bounded bytes and optional per-chunk idle timeouts.
 async function readChunkWithIdleTimeout(
   reader: ReadableStreamDefaultReader<Uint8Array>,
   chunkTimeoutMs: number,

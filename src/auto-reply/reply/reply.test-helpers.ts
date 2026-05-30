@@ -1,4 +1,3 @@
-// Shared helpers for reply tests.
 export function createMockTypingController() {
   return {
     onReplyStart: async () => undefined,

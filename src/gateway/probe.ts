@@ -1,4 +1,3 @@
-// Gateway diagnostic probe client. Connects with read scope, derives auth
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import {

@@ -1,4 +1,3 @@
-// Command secret-target maps keep CLI secret resolution scoped to the command
 import { listReadOnlyChannelPluginsForConfig } from "../channels/plugins/read-only.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type {

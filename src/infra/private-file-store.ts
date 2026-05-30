@@ -1,4 +1,3 @@
-// Private fs-safe file-store factories.
 import "./fs-safe-defaults.js";
 import {
   fileStore,

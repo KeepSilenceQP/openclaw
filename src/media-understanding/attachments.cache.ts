@@ -1,4 +1,3 @@
-// Attachment cache for media understanding runners, with local-path validation,
 import fs from "node:fs/promises";
 import path from "node:path";
 import { logVerbose, shouldLogVerbose } from "../globals.js";

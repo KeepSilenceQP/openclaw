@@ -1,4 +1,3 @@
-// In-process command lane queue. Serializes work per lane, supports priority,
 import {
   diagnosticLogger as diag,
   logLaneDequeue,

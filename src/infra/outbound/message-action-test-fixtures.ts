@@ -1,5 +1,3 @@
-// Shared fixtures for message action target alias tests.
-/** Creates a bootstrap registry mock with Pinboard and iMessage action aliases. */
 export function createPinboardMessageActionBootstrapRegistryMock() {
   return (channel: string) => {
     if (channel === "pinboard") {

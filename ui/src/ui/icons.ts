@@ -1,4 +1,3 @@
-// Inline SVG icon registry for the Control UI. Icons are Lit templates using
 import { html, type TemplateResult } from "lit";
 
 // Lucide-style SVG icons

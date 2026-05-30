@@ -1,4 +1,3 @@
-// Cron/session diagnostic context: pulls bounded transcript/job details for
 import fs from "node:fs";
 import path from "node:path";
 import { resolveStateDir } from "../config/paths.js";

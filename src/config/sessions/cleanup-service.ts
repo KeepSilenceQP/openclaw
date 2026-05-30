@@ -1,4 +1,3 @@
-// Session cleanup service for pruning stale entries, repairing missing rows,
 import fs from "node:fs";
 import path from "node:path";
 import { resolveDefaultAgentId } from "../../agents/agent-scope.js";

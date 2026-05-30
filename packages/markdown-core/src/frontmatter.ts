@@ -1,4 +1,3 @@
-// Markdown frontmatter parser with YAML support plus line-parser fallbacks for
 import YAML from "yaml";
 
 type ParsedFrontmatter = Record<string, string>;

@@ -1,4 +1,3 @@
-// Cron service test harness. Provides temp stores, fake-timer hooks, service
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";

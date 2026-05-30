@@ -1,6 +1,3 @@
-// Command explainer result contracts.
-// Parsers fill these shapes so approval logic can reason about command structure and risk.
-/** Syntactic context where a command step was found. */
 export type CommandContext =
   | "top-level"
   | "command-substitution"

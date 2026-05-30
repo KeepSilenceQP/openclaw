@@ -1,4 +1,3 @@
-// Exec approval allowlist evaluation.
 import path from "node:path";
 import {
   normalizeLowercaseStringOrEmpty,

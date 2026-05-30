@@ -1,5 +1,3 @@
-/** MCP config types for server transports, tool filters, and Codex projection. */
-/** Codex MCP tool approval mode values emitted to Codex config. */
 export type McpCodexToolApprovalMode = "auto" | "prompt" | "approve";
 
 /** Codex-specific projection controls for one MCP server. */

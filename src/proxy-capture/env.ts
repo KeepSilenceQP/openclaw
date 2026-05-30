@@ -1,4 +1,3 @@
-// Environment contract for debug proxy capture. These helpers propagate proxy
 import { randomUUID } from "node:crypto";
 import type { Agent } from "node:http";
 import process from "node:process";

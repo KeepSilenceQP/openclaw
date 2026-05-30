@@ -1,4 +1,3 @@
-// Queued chat-message renderer. It shows pending, failed, and steerable messages
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import { icons } from "../icons.ts";

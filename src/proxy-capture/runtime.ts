@@ -1,4 +1,3 @@
-// Runtime capture hooks for debug proxy sessions. Installs a global fetch patch,
 import { randomUUID } from "node:crypto";
 import { URL } from "node:url";
 import { normalizeRequestInitHeadersForFetch } from "../infra/fetch-headers.js";

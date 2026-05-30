@@ -1,5 +1,3 @@
-// Report types shared by security audit collection and presentation.
-/** Severity buckets used by security audit findings and summaries. */
 export type SecurityAuditSeverity = "info" | "warn" | "critical";
 
 /** One actionable security audit finding. */

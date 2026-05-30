@@ -1,4 +1,3 @@
-// Confirmation dialog for restarting the Dreaming service from Control UI.
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import "../components/modal-dialog.ts";

@@ -1,4 +1,3 @@
-// Config schema assembly and lookup helpers for UI/Gateway callers. Base schema
 import crypto from "node:crypto";
 import { CHANNEL_IDS } from "../channels/ids.js";
 import { parseConfigPathArrayIndex } from "../shared/path-array-index.js";

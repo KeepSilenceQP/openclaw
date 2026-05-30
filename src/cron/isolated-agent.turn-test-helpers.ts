@@ -1,4 +1,3 @@
-// Test helpers for isolated cron agent turns. Provides mocked embedded-agent
 import "./isolated-agent.mocks.js";
 import fs from "node:fs/promises";
 import { expect, vi } from "vitest";

@@ -1,5 +1,3 @@
-// In-memory diagnostic session state used by stuck-session and loop-detection watchdogs.
-/** Coarse processing state for a diagnostic session. */
 export type SessionStateValue = "idle" | "processing" | "waiting";
 
 /** Mutable diagnostic state tracked per session key/id. */

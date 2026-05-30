@@ -1,4 +1,3 @@
-// Process-global plugin command registry state. Commands are keyed by slash
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { normalizeAgentPromptSurfaceKind } from "./agent-prompt-surface-kind.js";

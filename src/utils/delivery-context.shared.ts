@@ -1,4 +1,3 @@
-// Delivery-context normalization shared by sessions, queues, and channel route
 import {
   channelRouteCompactKey,
   channelRouteThreadId,

@@ -1,4 +1,3 @@
-// Outbound messaging target resolver.
 import { getChannelPlugin } from "../../channels/plugins/index.js";
 import type {
   ChannelDirectoryEntry,

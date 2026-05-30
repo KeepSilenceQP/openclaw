@@ -1,5 +1,3 @@
-/** Baseline floors for live prompt-cache regression checks. */
-/** Minimum or warning floor for a live cache regression lane. */
 export type LiveCacheFloor = {
   observedCacheRead?: number;
   observedCacheWrite?: number;

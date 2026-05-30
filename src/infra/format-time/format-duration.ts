@@ -1,5 +1,3 @@
-// Formats millisecond durations into short CLI and UI display strings.
-/** Options for decimal second duration formatting. */
 export type FormatDurationSecondsOptions = {
   decimals?: number;
   unit?: "s" | "seconds";

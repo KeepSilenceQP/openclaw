@@ -1,4 +1,3 @@
-// Exec approval display sanitization.
 import { redactSensitiveText, resolveRedactOptions } from "../logging/redact.js";
 import type { ExecApprovalRequestPayload } from "./exec-approvals.js";
 

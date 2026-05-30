@@ -1,4 +1,3 @@
-// Kimi web search provider descriptor: keeps setup/tool metadata lightweight and
 import {
   createWebSearchProviderContractFields,
   type WebSearchProviderPlugin,

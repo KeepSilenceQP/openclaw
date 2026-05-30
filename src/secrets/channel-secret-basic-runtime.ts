@@ -1,4 +1,3 @@
-// Channel secret assignment helpers shared by resolvers. They walk top-level and
 import { coerceSecretRef } from "../config/types.secrets.js";
 import {
   collectSecretInputAssignment,

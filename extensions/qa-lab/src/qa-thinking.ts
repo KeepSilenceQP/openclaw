@@ -1,5 +1,3 @@
-// QA Lab thinking helpers normalize user-facing reasoning effort labels.
-/** Thinking effort levels accepted by QA Lab runtime and CLI options. */
 export type QaThinkingLevel =
   | "off"
   | "minimal"

@@ -1,4 +1,3 @@
-// Provider usage reporting barrel.
 export {
   formatUsageReportLines,
   formatUsageSummaryLine,

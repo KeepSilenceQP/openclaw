@@ -1,5 +1,3 @@
-// JSON value validation for data crossing plugin host hook boundaries.
-/** Primitive JSON values accepted by plugin host hooks. */
 export type PluginJsonPrimitive = string | number | boolean | null;
 /** Recursive JSON value shape accepted by plugin host hooks. */
 export type PluginJsonValue =

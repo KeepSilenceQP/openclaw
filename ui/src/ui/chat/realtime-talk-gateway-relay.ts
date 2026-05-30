@@ -1,5 +1,3 @@
-// Gateway-relay realtime-talk transport. It streams microphone PCM through the
-// gateway, plays relayed audio, handles barge-in cancellation, and submits tool
 import { bytesToBase64, floatToPcm16 } from "./realtime-talk-audio.ts";
 import { RealtimeTalkPcmOutputQueue } from "./realtime-talk-pcm-output.ts";
 import {

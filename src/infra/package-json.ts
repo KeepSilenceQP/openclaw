@@ -1,4 +1,3 @@
-// Package metadata readers for install/update diagnostics.
 import path from "node:path";
 import { normalizeNullableString as normalizeString } from "../shared/string-coerce.js";
 import { tryReadJson } from "./json-files.js";

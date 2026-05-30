@@ -1,5 +1,3 @@
-// In-memory registry for active realtime/transcription/managed Talk sessions.
-/** Stored ownership record for one active Talk session id. */
 export type UnifiedTalkSessionRecord =
   | {
       kind: "realtime-relay";

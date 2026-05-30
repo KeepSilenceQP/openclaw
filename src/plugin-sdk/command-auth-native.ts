@@ -1,4 +1,3 @@
-// Native command authorization SDK surface. Exposes command registry parsing,
 export {
   buildCommandTextFromArgs,
   findCommandByNativeName,

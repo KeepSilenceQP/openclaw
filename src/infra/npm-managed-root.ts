@@ -1,4 +1,3 @@
-// Managed npm root manifest and lockfile helpers.
 import type { Stats } from "node:fs";
 import fs from "node:fs/promises";
 import os from "node:os";

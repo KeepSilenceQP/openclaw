@@ -1,4 +1,3 @@
-// Crestodian config contracts for gated remote message rescue.
 type CrestodianRescueConfig = {
   /**
    * Remote message rescue gate.

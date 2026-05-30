@@ -1,5 +1,3 @@
-// Node wake reconnect timing, in-flight state, and test inspection helpers.
-/** Initial wait after sending a node wake request before reconnect polling. */
 export const NODE_WAKE_RECONNECT_WAIT_MS = 3_000;
 /** Backoff wait before retrying a throttled or failed node wake reconnect. */
 export const NODE_WAKE_RECONNECT_RETRY_WAIT_MS = 12_000;

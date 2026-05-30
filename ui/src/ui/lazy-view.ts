@@ -1,4 +1,3 @@
-// Lazy view loader for code-split Control UI panes. It keeps module, pending,
 import { html } from "lit";
 import { t } from "../i18n/index.ts";
 

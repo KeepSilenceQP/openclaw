@@ -1,5 +1,3 @@
-// Shared provider usage summary types.
-/** Usage percentage and reset metadata for one provider quota window. */
 export type UsageWindow = {
   label: string;
   usedPercent: number;

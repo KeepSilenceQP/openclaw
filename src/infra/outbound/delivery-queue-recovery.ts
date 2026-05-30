@@ -1,4 +1,3 @@
-// Durable outbound delivery recovery.
 import type {
   ChannelMessageSendCommitContext,
   ChannelMessageUnknownSendReconciliationResult,

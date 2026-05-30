@@ -1,6 +1,3 @@
-// Shared outbound target error messages.
-// Helpers keep CLI/tool errors consistent across channel target resolvers.
-/** Build the message for a missing outbound target. */
 export function missingTargetMessage(provider: string, hint?: string): string {
   return `Delivering to ${provider} requires target${formatTargetHint(hint)}`;
 }

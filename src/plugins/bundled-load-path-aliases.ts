@@ -1,4 +1,3 @@
-// Bundled plugin load path alias helpers. Maps packaged dist extension paths
 import path from "node:path";
 import { isPathInside } from "./path-safety.js";
 

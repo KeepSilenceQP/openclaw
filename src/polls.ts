@@ -1,6 +1,3 @@
-// Poll normalization helpers shared by channel plugins that expose native poll
-// creation with different duration and option limits.
-/** Raw poll request shape accepted by channel-facing helpers. */
 export type PollInput = {
   question: string;
   options: string[];

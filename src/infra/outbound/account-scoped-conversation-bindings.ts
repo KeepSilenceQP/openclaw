@@ -1,4 +1,3 @@
-// Account-scoped conversation binding manager for channel-specific thread routing.
 import { resolveThreadBindingConversationIdFromBindingId } from "../../channels/thread-binding-id.js";
 import {
   resolveThreadBindingIdleTimeoutMsForChannel,

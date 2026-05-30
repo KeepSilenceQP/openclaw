@@ -1,5 +1,3 @@
-// Memory host SDK input shapes for text and multimodal embedding providers.
-/** Text part included in an embedding input. */
 export type EmbeddingInputTextPart = {
   type: "text";
   text: string;

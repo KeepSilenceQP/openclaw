@@ -1,6 +1,3 @@
-// JSON UTF-8 byte accounting helpers.
-// Bounded counting avoids fully serializing large values when only a size limit matters.
-/** Return JSON UTF-8 byte length, falling back to string conversion on serialization errors. */
 export function jsonUtf8Bytes(value: unknown): number {
   try {
     return Buffer.byteLength(JSON.stringify(value), "utf8");

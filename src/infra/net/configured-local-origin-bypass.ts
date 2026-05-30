@@ -1,4 +1,3 @@
-// Allows managed proxy callers to bypass proxying only for an explicitly
 import { isLoopbackIpAddress } from "@openclaw/net-policy/ip";
 import { getActiveManagedProxyLoopbackMode } from "./proxy/active-proxy-state.js";
 import { SsrFBlockedError } from "./ssrf.js";

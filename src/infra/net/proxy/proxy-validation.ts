@@ -1,4 +1,3 @@
-// Validates managed proxy configuration by proving allowed, denied, and APNs
 import { randomUUID } from "node:crypto";
 import { createServer, type Server } from "node:http";
 import type { ProxyConfig } from "../../../config/zod-schema.proxy.js";

@@ -1,4 +1,3 @@
-// Generic current-conversation binding storage.
 import fs from "node:fs";
 import path from "node:path";
 import { normalizeConversationText } from "../../acp/conversation-id.js";

@@ -1,5 +1,3 @@
-// Operator scope constants used by gateway clients and route authorization.
-/** Full operator access, including privileged gateway mutations. */
 export const ADMIN_SCOPE = "operator.admin" as const;
 /** Read-only operator access for status and inspection methods. */
 export const READ_SCOPE = "operator.read" as const;

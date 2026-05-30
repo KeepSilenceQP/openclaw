@@ -1,4 +1,3 @@
-// Thin runtime facade for isolated cron agents; keeps the cron runner on stable
 export {
   resolveAgentConfig,
   resolveAgentDir,

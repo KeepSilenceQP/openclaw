@@ -1,5 +1,3 @@
-// Errors raised when registered descriptors violate tool-planning invariants.
-/** Contract violation codes detected while building a tool plan. */
 export type ToolPlanContractErrorCode = "duplicate-tool-name" | "missing-executor";
 
 /** Error type that preserves the offending tool name and machine-readable code. */

@@ -1,5 +1,3 @@
-// Process supervisor contracts for child/PTY run lifecycle management.
-/** Lifecycle state persisted for a managed process run. */
 export type RunState = "starting" | "running" | "exiting" | "exited";
 
 /** Reason a managed run stopped or was stopped by the supervisor. */

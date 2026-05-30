@@ -1,5 +1,3 @@
-/** Shared constants and enums for internal agent events. */
-/** Internal event type for child task completion. */
 export const AGENT_INTERNAL_EVENT_TYPE_TASK_COMPLETION = "task_completion" as const;
 
 /** Sources that can emit internal task-completion events. */

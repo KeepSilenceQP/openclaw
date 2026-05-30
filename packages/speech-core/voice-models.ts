@@ -1,6 +1,3 @@
-// Voice model catalog helpers: resolve provider/model refs, fallback order, and
-// static catalog entries for TTS/realtime voice providers.
-/** Voice capability category advertised by a provider model. */
 export type VoiceModelCapability = "tts" | "realtime_transcription" | "realtime_voice";
 
 /** Capability flags supported by a voice model. */

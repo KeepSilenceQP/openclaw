@@ -1,4 +1,3 @@
-// Channel runtime surface key types for plugin lifecycle caches.
 export type ChannelRuntimeContextKey = {
   channelId: string;
   accountId?: string | null;

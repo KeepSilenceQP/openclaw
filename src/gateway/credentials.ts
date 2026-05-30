@@ -1,4 +1,3 @@
-// Gateway credential resolution. Merges explicit auth, env, local/remote config,
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
   createGatewayCredentialPlan,

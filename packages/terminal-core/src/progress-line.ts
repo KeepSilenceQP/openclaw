@@ -1,4 +1,3 @@
-// Tracks the active one-line terminal progress display so other output can clear it.
 let activeStream: NodeJS.WriteStream | null = null;
 
 /** Register a TTY stream as owning the active progress line. */

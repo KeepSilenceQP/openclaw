@@ -1,4 +1,3 @@
-// Windows console encoding detection and output decoding.
 import { spawnSync } from "node:child_process";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 

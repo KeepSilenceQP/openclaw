@@ -1,5 +1,3 @@
-// Text-to-speech config contracts for auto playback, personas, and provider overrides.
-/** TTS provider id selected by config or persona. */
 export type TtsProvider = string;
 
 /** Reply phases eligible for TTS playback. */

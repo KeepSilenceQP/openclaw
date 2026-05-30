@@ -1,4 +1,3 @@
-// Heartbeat wake coalescing and retry scheduling.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { normalizeHeartbeatWakeReason } from "./heartbeat-reason.js";
 

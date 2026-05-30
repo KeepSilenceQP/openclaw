@@ -1,4 +1,3 @@
-// Session routing helpers for scheduled events and heartbeat wakes.
 import type { SessionScope } from "../config/types.base.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveAgentRoute } from "../routing/resolve-route.js";

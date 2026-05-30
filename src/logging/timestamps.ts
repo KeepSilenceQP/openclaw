@@ -1,5 +1,3 @@
-// Formats timestamps with local timezone offsets for console and file logs.
-/** Returns true when Intl can format using the supplied timezone identifier. */
 export function isValidTimeZone(tz: string): boolean {
   try {
     new Intl.DateTimeFormat("en", { timeZone: tz }).format();

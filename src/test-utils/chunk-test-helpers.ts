@@ -1,5 +1,3 @@
-// Text chunk assertions shared by streaming and markdown tests.
-/** Count newline-separated lines in a text chunk. */
 export function countLines(text: string): number {
   return text.split("\n").length;
 }

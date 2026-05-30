@@ -1,5 +1,3 @@
-// Shared startup-unavailable constants and readers for retryable gateway connections.
-/** Details reason used when startup sidecars are not ready to accept work. */
 export const GATEWAY_STARTUP_UNAVAILABLE_REASON = "startup-sidecars";
 /** Close cause emitted while the gateway is still waiting on startup sidecars. */
 export const GATEWAY_STARTUP_PENDING_CLOSE_CAUSE = "startup-sidecars-pending";

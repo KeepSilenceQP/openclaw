@@ -1,5 +1,3 @@
-// JWT helpers for extracting ChatGPT account metadata from OpenAI Codex OAuth
-// tokens. These decode claims only; they do not verify token signatures.
 const OPENAI_CODEX_AUTH_CLAIM = "https://api.openai.com/auth";
 
 /** Minimal OpenAI Codex JWT payload shape used by account selection. */

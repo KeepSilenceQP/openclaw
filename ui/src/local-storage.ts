@@ -1,5 +1,3 @@
-// Browser storage guards for Control UI code that also runs in tests or
-// restricted browser contexts where storage access can throw.
 function isStorage(value: unknown): value is Storage {
   return (
     Boolean(value) &&

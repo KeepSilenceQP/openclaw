@@ -1,4 +1,3 @@
-// URL redaction helpers for logs, config previews, and diagnostics.
 type ConfigUiHintTags = {
   tags?: string[];
 };

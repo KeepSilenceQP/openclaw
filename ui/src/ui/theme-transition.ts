@@ -1,4 +1,3 @@
-// Theme transition entry point. Current UI applies themes immediately while
 import type { ResolvedTheme } from "./theme.ts";
 
 /** Pointer/element metadata retained for theme transition callers. */

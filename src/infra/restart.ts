@@ -1,4 +1,3 @@
-// Gateway restart orchestration and SIGUSR1 authorization.
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import os from "node:os";

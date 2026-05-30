@@ -1,4 +1,3 @@
-// Process-local secret runtime snapshot state. Runtime consumers read cloned
 import {
   clearRuntimeAuthProfileStoreSnapshots,
   getRuntimeAuthProfileStoreSnapshot,

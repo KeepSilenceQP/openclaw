@@ -1,4 +1,3 @@
-// Support redaction policy for diagnostic exports: removes secrets, payloads,
 import path from "node:path";
 import { isSensitiveUrlQueryParamName } from "@openclaw/net-policy/redact-sensitive-url";
 import { isSecretRefShape } from "../config/redact-snapshot.secret-ref.js";

@@ -1,6 +1,3 @@
-// Control UI DTOs for gateway status, sessions, cron, skills, tools, logs, and health.
-// Mirrors backend response shapes so UI controllers can stay typed without importing runtime code.
-/** Update availability payload returned by startup/update checks. */
 export type UpdateAvailable = import("../../../src/infra/update-startup.js").UpdateAvailable;
 import type { SessionGoal } from "../../../src/config/sessions/types.js";
 import type { CronJobBase } from "../../../src/cron/types-shared.js";

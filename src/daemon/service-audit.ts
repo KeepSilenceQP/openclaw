@@ -1,4 +1,3 @@
-// Gateway service audit checks for launchd/systemd units, runtime binaries,
 import fs from "node:fs/promises";
 import path from "node:path";
 import { normalizeEnvVarKey } from "../infra/host-env-security.js";

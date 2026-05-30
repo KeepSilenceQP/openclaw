@@ -1,5 +1,3 @@
-// Shared helpers for RPC failures caused by missing operator scopes. Some
-// gateway responses still expose scope misses only through messages, so callers
 import { ConnectErrorDetailCodes } from "../../../../packages/gateway-protocol/src/connect-error-details.js";
 import { GatewayRequestError, resolveGatewayErrorDetailCode } from "../gateway.ts";
 

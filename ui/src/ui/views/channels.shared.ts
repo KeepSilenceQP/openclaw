@@ -1,5 +1,3 @@
-// Shared channel-card helpers for the Control UI. These normalize per-channel
-// status snapshots and account lists into display state that single-channel
 import { html, nothing } from "lit";
 import { t } from "../../i18n/index.ts";
 import type { ChannelAccountSnapshot } from "../types.ts";

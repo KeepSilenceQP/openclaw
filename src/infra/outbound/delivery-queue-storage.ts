@@ -1,4 +1,3 @@
-// Durable outbound delivery queue storage.
 import path from "node:path";
 import {
   ackJsonDurableQueueEntry,

@@ -1,4 +1,3 @@
-// Process-local runtime state for plugin host hooks. Stores per-run plugin JSON
 import type { AgentEventPayload } from "../infra/agent-events.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import { resolveGlobalSingleton } from "../shared/global-singleton.js";

@@ -1,4 +1,3 @@
-// Public plugin contract types for OpenClaw runtime and SDK surfaces.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { Duplex } from "node:stream";
 import type {

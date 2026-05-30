@@ -1,4 +1,3 @@
-// Controller helpers for Control UI device pairing and device-token management.
 import { clearDeviceAuthToken, storeDeviceAuthToken } from "../device-auth.ts";
 import { loadOrCreateDeviceIdentity } from "../device-identity.ts";
 import type { GatewayBrowserClient } from "../gateway.ts";

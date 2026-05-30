@@ -1,4 +1,3 @@
-// Safe external URL opener. It allows only browser-safe external protocols and
 import { normalizeLowercaseStringOrEmpty } from "./string-coerce.ts";
 
 const DATA_URL_PREFIX = "data:";

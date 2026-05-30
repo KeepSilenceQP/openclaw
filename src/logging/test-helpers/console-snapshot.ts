@@ -1,5 +1,3 @@
-// Test helper for saving and restoring patched console methods.
-/** Snapshot of console methods that may be patched by logging tests. */
 export type ConsoleSnapshot = {
   log: typeof console.log;
   info: typeof console.info;

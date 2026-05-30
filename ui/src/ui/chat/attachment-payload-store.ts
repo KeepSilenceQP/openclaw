@@ -1,4 +1,3 @@
-// In-memory chat attachment payload store. Metadata can be persisted in UI state
 import type { ChatAttachment } from "../ui-types.ts";
 
 type AttachmentPayload = {

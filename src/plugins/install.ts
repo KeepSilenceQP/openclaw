@@ -1,4 +1,3 @@
-// Plugin install pipeline for local dirs/files/archives/npm specs. Heavy
 import { createHash } from "node:crypto";
 import type { Dirent } from "node:fs";
 import fs from "node:fs/promises";

@@ -1,4 +1,3 @@
-// Minimal POSIX-like shell argument splitter for config snippets and command parsing.
 const DOUBLE_QUOTE_ESCAPES = new Set(["\\", '"', "$", "`", "\n", "\r"]);
 
 function isDoubleQuoteEscape(next: string | undefined): next is string {

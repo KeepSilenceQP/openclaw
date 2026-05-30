@@ -1,4 +1,3 @@
-// UUIDv7 generator used for session and transcript entry ids.
 let lastTimestamp = -Infinity;
 let sequence = 0;
 

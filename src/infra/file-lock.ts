@@ -1,4 +1,3 @@
-/** Re-exports file-lock primitives from the plugin SDK for infra callers. */
 export type {
   FileLockHandle,
   FileLockOptions,

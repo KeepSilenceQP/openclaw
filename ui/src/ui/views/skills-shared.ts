@@ -1,5 +1,3 @@
-// Shared Skills view formatting helpers for eligibility reasons and status
-// chips. These keep list and detail panels using the same blocked/eligible
 import { html, nothing } from "lit";
 import type { SkillStatusEntry } from "../types.ts";
 

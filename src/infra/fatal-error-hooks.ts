@@ -1,6 +1,3 @@
-// Fatal-error hook registry.
-// Hooks can append final diagnostics without throwing through shutdown paths.
-/** Context passed to fatal-error hooks before process exit/reporting. */
 export type FatalErrorHookContext = {
   reason: string;
   error?: unknown;

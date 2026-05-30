@@ -1,5 +1,3 @@
-/** Provider error classifiers used by live model tests. */
-/** Return whether an error message means the model id is unavailable. */
 export function isModelNotFoundErrorMessage(raw: string): boolean {
   const msg = raw.trim();
   if (!msg) {

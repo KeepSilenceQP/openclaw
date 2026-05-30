@@ -1,4 +1,3 @@
-// Shell inline-command flag parsing.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 
 /** POSIX shell flags that take an inline command string. */

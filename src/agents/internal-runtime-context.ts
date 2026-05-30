@@ -1,5 +1,3 @@
-/** Delimited internal runtime-context helpers and transcript sanitizers. */
-/** Begin delimiter for internal runtime context blocks. */
 export const INTERNAL_RUNTIME_CONTEXT_BEGIN = "<<<BEGIN_OPENCLAW_INTERNAL_CONTEXT>>>";
 /** End delimiter for internal runtime context blocks. */
 export const INTERNAL_RUNTIME_CONTEXT_END = "<<<END_OPENCLAW_INTERNAL_CONTEXT>>>";

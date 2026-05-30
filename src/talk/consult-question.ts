@@ -1,4 +1,3 @@
-// Question/result extraction helpers for realtime voice agent consult tools.
 const REALTIME_VOICE_CONSULT_QUESTION_STOPWORDS = new Set([
   "a",
   "an",

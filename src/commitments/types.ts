@@ -1,5 +1,3 @@
-// Public commitment domain types shared by extraction, storage, and heartbeat delivery.
-/** Category of follow-up opportunity inferred from a conversation turn. */
 export type CommitmentKind = "event_check_in" | "deadline_check" | "care_check_in" | "open_loop";
 
 /** Sensitivity bucket used to tune confidence thresholds and delivery tone. */

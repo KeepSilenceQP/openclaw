@@ -1,4 +1,3 @@
-// Agent-scope helpers resolve the effective agent, workspace, model, fallback,
 import fs from "node:fs";
 import path from "node:path";
 import { resolveAgentModelFallbackValues } from "../config/model-input.js";

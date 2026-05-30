@@ -1,5 +1,3 @@
-// Shared string normalization helpers for loosely typed config and API values.
-/** Returns a value only when it is already a string. */
 export function readStringValue(value: unknown): string | undefined {
   return typeof value === "string" ? value : undefined;
 }

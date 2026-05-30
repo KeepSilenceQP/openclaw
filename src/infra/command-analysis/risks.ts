@@ -1,4 +1,3 @@
-// Command-risk helpers for exec approval analysis.
 import { uniqueStrings } from "../../shared/string-normalization.js";
 import { splitShellArgs } from "../../utils/shell-argv.js";
 import {

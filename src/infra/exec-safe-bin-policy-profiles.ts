@@ -1,4 +1,3 @@
-// Safe-bin policy profiles for exec approval auto-allow.
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import { sortUniqueStrings } from "../shared/string-normalization.js";
 

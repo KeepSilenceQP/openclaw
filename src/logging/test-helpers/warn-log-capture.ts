@@ -1,4 +1,3 @@
-// Test helper for capturing warning-level diagnostic log records while routing
 import path from "node:path";
 import { resolvePreferredOpenClawTmpDir } from "../../infra/tmp-openclaw-dir.js";
 import { resetLogger, setLoggerOverride } from "../logger.js";

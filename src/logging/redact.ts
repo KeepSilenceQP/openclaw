@@ -1,4 +1,3 @@
-// Logging redaction policy: masks common credentials in text, tool payloads,
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { compileConfigRegex } from "../security/config-regex.js";
 import { readLoggingConfig } from "./config.js";

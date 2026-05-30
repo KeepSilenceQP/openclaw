@@ -1,4 +1,3 @@
-// Message action naming and normalization helpers.
 export const CHANNEL_MESSAGE_ACTION_NAMES = [
   "send",
   "broadcast",

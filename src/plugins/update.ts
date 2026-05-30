@@ -1,4 +1,3 @@
-// Plugin update and update-channel synchronization helpers. Supports npm,
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { PluginInstallRecord } from "../config/types.plugins.js";

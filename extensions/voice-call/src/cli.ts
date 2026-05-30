@@ -1,5 +1,3 @@
-// CLI command registration and gateway fallbacks for the voice-call plugin.
-// Operator commands prefer the gateway path, with local runtime fallback only
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";

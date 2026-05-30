@@ -1,5 +1,3 @@
-// Browser UUID helper. It requires Web Crypto so UI-generated identifiers do not
-// silently fall back to weak randomness.
 type CryptoLike = {
   randomUUID?: (() => string) | undefined;
   getRandomValues?: (<T extends Exclude<BufferSource, ArrayBuffer>>(array: T) => T) | undefined;
