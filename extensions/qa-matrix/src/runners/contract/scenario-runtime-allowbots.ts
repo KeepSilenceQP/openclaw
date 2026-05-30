@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime allowbots helpers and runtime behavior.
 import { MATRIX_QA_BOT_DM_ROOM_KEY, resolveMatrixQaScenarioRoomId } from "./scenario-catalog.js";
 import {
   buildExactMarkerPrompt,

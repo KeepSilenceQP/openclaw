@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario runtime media helpers and runtime behavior.
 import type { MatrixQaObservedEvent } from "../../substrate/events.js";
 import { MATRIX_QA_MEDIA_ROOM_KEY, resolveMatrixQaScenarioRoomId } from "./scenario-catalog.js";
 import {

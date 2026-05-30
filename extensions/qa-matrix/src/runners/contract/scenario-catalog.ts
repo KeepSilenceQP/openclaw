@@ -1,4 +1,3 @@
-// extensions/qa-matrix/src/runners/contract scenario catalog helpers and runtime behavior.
 import { type QaProviderModeInput } from "../../run-config.js";
 import {
   collectLiveTransportStandardScenarioCoverage,

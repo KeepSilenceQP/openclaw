@@ -1,4 +1,3 @@
-// ui/src/ui/controllers models helpers and runtime behavior.
 import type { GatewayBrowserClient } from "../gateway.ts";
 import type { ModelCatalogEntry } from "../types.ts";
 
