@@ -3,14 +3,12 @@ import {
   readQaBootstrapScenarioCatalog,
 } from "./scenario-catalog.js";
 
-/** Reads the QA agent identity Markdown from the scenario catalog. */
 export function readQaAgentIdentityMarkdown(): string {
   return (
     readQaBootstrapScenarioCatalog().agentIdentityMarkdown || DEFAULT_QA_AGENT_IDENTITY_MARKDOWN
   );
 }
 
-/** Builds a Markdown scenario plan for seeding the QA agent workspace. */
 export function buildQaScenarioPlanMarkdown(): string {
   const catalog = readQaBootstrapScenarioCatalog();
   const lines = ["# QA Scenario Plan", ""];

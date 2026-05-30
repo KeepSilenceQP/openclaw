@@ -1,6 +1,5 @@
 import { createMockQaProviderDefinition } from "../shared/mock-provider-definition.js";
 
-/** Provider definition for the AIMock QA backend. */
 export const aimockProviderDefinition = createMockQaProviderDefinition({
   mode: "aimock",
   commandName: "aimock",

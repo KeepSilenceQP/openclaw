@@ -62,7 +62,6 @@ type StreamEvent =
  */
 export type MockOpenAiProviderVariant = "openai" | "anthropic" | "unknown";
 
-/** Classifies a mock model name into the provider lane used by parity fixtures. */
 export function resolveProviderVariant(model: string | undefined): MockOpenAiProviderVariant {
   if (typeof model !== "string") {
     return "unknown";
@@ -3005,7 +3004,6 @@ async function buildMessagesPayload(
   return { events, input, extracted, responseBody, streamEvents, model: normalizedModel };
 }
 
-/** Starts the deterministic mock provider server used by QA Lab local and parity runs. */
 export async function startQaMockOpenAiServer(params?: { host?: string; port?: number }) {
   const host = params?.host ?? "127.0.0.1";
   const scenarioState: MockScenarioState = {

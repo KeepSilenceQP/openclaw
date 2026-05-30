@@ -15,7 +15,6 @@ async function startAimockProviderServer(params: QaProviderServerParams) {
   return await startQaAimockServer(params);
 }
 
-/** Starts the mock provider server for a provider mode, or returns null for live modes. */
 export async function startQaProviderServer(
   input: QaProviderModeInput,
   params?: { host?: string; port?: number },

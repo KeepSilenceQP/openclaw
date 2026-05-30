@@ -20,7 +20,6 @@ function isClaudeOpusModel(modelRef: string) {
   return isAnthropicModel(modelRef) && modelRef.includes("claude-opus");
 }
 
-/** Provider definition for live frontier-model QA lanes. */
 export const liveFrontierProviderDefinition: QaProviderDefinition = {
   mode: "live-frontier",
   kind: "live",

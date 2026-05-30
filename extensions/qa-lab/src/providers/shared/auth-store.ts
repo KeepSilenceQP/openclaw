@@ -43,12 +43,10 @@ type QaLegacyOAuthRef = {
   id: string;
 };
 
-/** Resolves the agent auth directory under a QA Lab state root. */
 export function resolveQaAgentAuthDir(params: { stateDir: string; agentId: string }): string {
   return path.join(params.stateDir, "agents", params.agentId, "agent");
 }
 
-/** Merges QA fixture auth profiles into `auth-profiles.json` for one agent. */
 export async function writeQaAuthProfiles(params: {
   agentDir: string;
   profiles: Record<string, QaAuthProfileCredential>;

@@ -1,6 +1,5 @@
 import { createMockQaProviderDefinition } from "../shared/mock-provider-definition.js";
 
-/** Provider definition for the QA mock OpenAI mode. */
 export const mockOpenAiProviderDefinition = createMockQaProviderDefinition({
   mode: "mock-openai",
   commandName: "mock-openai",

@@ -14,9 +14,7 @@ import { qaChannelPlugin } from "./runtime-api.js";
 
 const QA_CHANNEL_ID = "qa-channel";
 const QA_CHANNEL_ACCOUNT_ID = "default";
-/** Plugin IDs required for the QA channel transport lane. */
 export const QA_CHANNEL_REQUIRED_PLUGIN_IDS = Object.freeze([QA_CHANNEL_ID]);
-/** Default concurrency for QA channel transport scenario workers. */
 export const QA_CHANNEL_DEFAULT_SUITE_CONCURRENCY = 4;
 
 async function waitForQaChannelReady(params: {
@@ -75,7 +73,6 @@ async function waitForQaChannelReady(params: {
   );
 }
 
-/** Build the gateway config patch needed to enable the QA channel transport. */
 export function createQaChannelGatewayConfig(params: {
   baseUrl: string;
 }): QaTransportGatewayConfig {
@@ -149,7 +146,6 @@ class QaChannelTransport extends QaStateBackedTransportAdapter {
   createReportNotes = createQaChannelReportNotes;
 }
 
-/** Create a QA channel transport backed by the in-memory QA bus state. */
 export function createQaChannelTransport(state: QaBusState) {
   return new QaChannelTransport(state);
 }
