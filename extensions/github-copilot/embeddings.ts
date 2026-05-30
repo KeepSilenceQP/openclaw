@@ -1,4 +1,3 @@
-// extensions/github-copilot embeddings helpers and runtime behavior.
 import {
   buildRemoteBaseUrlPolicy,
   sanitizeAndNormalizeEmbedding,

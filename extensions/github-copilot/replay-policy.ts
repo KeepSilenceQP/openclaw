@@ -1,4 +1,3 @@
-// extensions/github-copilot replay policy helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 export function buildGithubCopilotReplayPolicy(modelId?: string) {
