@@ -1,4 +1,3 @@
-// extensions/codex/src/migration apply helpers and runtime behavior.
 import path from "node:path";
 import {
   applyMigrationManualItem,

@@ -1,4 +1,3 @@
-// extensions/migrate-hermes auth helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import { loadAuthProfileStoreWithoutExternalProfiles } from "openclaw/plugin-sdk/agent-runtime";
 import {

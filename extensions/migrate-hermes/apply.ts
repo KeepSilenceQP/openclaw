@@ -1,4 +1,3 @@
-// extensions/migrate-hermes apply helpers and runtime behavior.
 import path from "node:path";
 import { markMigrationItemSkipped, summarizeMigrationItems } from "openclaw/plugin-sdk/migration";
 import {

@@ -1,4 +1,3 @@
-// extensions/google/src gemini web search provider shared helpers and runtime behavior.
 import {
   isRecord,
   normalizeOptionalString as trimToUndefined,

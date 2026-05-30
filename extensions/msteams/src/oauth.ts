@@ -1,4 +1,3 @@
-// extensions/msteams/src oauth helpers and runtime behavior.
 import {
   buildMSTeamsAuthUrl,
   generateOAuthState,

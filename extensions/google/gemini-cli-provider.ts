@@ -1,4 +1,3 @@
-// extensions/google gemini cli provider helpers and runtime behavior.
 import type {
   OpenClawPluginApi,
   ProviderAuthContext,

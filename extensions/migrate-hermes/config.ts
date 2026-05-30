@@ -1,4 +1,3 @@
-// extensions/migrate-hermes config helpers and runtime behavior.
 import {
   applyMigrationConfigPatchItem,
   applyMigrationManualItem,

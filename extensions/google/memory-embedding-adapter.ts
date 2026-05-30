@@ -1,4 +1,3 @@
-// extensions/google memory embedding adapter helpers and runtime behavior.
 import {
   hasNonTextEmbeddingParts,
   isMissingEmbeddingApiKeyError,

@@ -1,4 +1,3 @@
-// extensions/fal provider contract api helpers and runtime behavior.
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 
 const PROVIDER_ID = "fal";

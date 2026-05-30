@@ -1,4 +1,3 @@
-// extensions/clickclack api helpers and runtime behavior.
 /** Re-exported clickclack plugin public API. */
 export {
   DEFAULT_ACCOUNT_ID,

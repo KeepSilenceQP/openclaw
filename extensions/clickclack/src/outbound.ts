@@ -1,4 +1,3 @@
-// extensions/clickclack/src outbound helpers and runtime behavior.
 import { resolveClickClackAccount } from "./accounts.js";
 import { createClickClackClient } from "./http-client.js";
 import { resolveChannelId, resolveWorkspaceId } from "./resolve.js";

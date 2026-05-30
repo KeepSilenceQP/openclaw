@@ -1,4 +1,3 @@
-// extensions/migrate-hermes/test provider helpers helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import type { MigrationProviderContext } from "openclaw/plugin-sdk/plugin-entry";

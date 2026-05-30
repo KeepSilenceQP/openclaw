@@ -1,4 +1,3 @@
-// extensions/google media understanding provider helpers and runtime behavior.
 import {
   describeImageWithModel,
   describeImagesWithModel,

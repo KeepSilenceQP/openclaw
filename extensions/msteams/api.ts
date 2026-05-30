@@ -1,4 +1,3 @@
-// extensions/msteams api helpers and runtime behavior.
 /** Re-exported msteams plugin public API, starting with msteams Plugin. */
 export { msteamsPlugin } from "./src/channel.js";
 /** Re-exported msteams plugin public API, starting with create MSTeams Setup Wizard Base. */

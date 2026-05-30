@@ -1,4 +1,3 @@
-// extensions/clickclack/src accounts helpers and runtime behavior.
 import {
   createAccountListHelpers,
   hasConfiguredAccountValue,

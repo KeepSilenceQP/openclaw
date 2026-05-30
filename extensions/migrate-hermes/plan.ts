@@ -1,4 +1,3 @@
-// extensions/migrate-hermes plan helpers and runtime behavior.
 import path from "node:path";
 import {
   createMigrationItem,

@@ -1,4 +1,3 @@
-// extensions/google oauth settings helpers and runtime behavior.
 import { existsSync, readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";

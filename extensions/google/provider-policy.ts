@@ -1,4 +1,3 @@
-// extensions/google provider policy helpers and runtime behavior.
 import type {
   ProviderDefaultThinkingPolicyContext,
   ProviderThinkingProfile,

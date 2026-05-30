@@ -1,4 +1,3 @@
-// extensions/codex provider helpers and runtime behavior.
 import { createSubsystemLogger } from "openclaw/plugin-sdk/core";
 import { resolvePluginConfigObject } from "openclaw/plugin-sdk/plugin-config-runtime";
 import type { ProviderRuntimeModel } from "openclaw/plugin-sdk/plugin-entry";

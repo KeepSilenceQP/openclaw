@@ -1,4 +1,3 @@
-// extensions/google vertex adc helpers and runtime behavior.
 import { existsSync, readFileSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import os from "node:os";

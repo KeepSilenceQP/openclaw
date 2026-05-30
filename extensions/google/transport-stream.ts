@@ -1,4 +1,3 @@
-// extensions/google transport stream helpers and runtime behavior.
 import type { StreamFn } from "openclaw/plugin-sdk/agent-core";
 import {
   calculateCost,

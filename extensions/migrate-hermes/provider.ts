@@ -1,4 +1,3 @@
-// extensions/migrate-hermes provider helpers and runtime behavior.
 import type {
   MigrationPlan,
   MigrationProviderContext,

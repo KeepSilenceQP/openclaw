@@ -1,4 +1,3 @@
-// extensions/msteams contract api helpers and runtime behavior.
 export {
   collectRuntimeConfigAssignments,
   secretTargetRegistryEntries,

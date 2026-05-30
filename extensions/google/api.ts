@@ -1,4 +1,3 @@
-// extensions/google api helpers and runtime behavior.
 import {
   resolveProviderHttpRequestConfig,
   type ProviderRequestTransportOverrides,

@@ -1,4 +1,3 @@
-// extensions/senseaudio media understanding provider helpers and runtime behavior.
 import {
   transcribeOpenAiCompatibleAudio,
   type AudioTranscriptionRequest,

@@ -1,4 +1,3 @@
-// extensions/microsoft index helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { buildMicrosoftSpeechProvider } from "./speech-provider.js";
 

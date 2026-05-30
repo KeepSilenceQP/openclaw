@@ -1,4 +1,3 @@
-// extensions/codex provider discovery helpers and runtime behavior.
 import type { ProviderCatalogContext } from "openclaw/plugin-sdk/provider-catalog-shared";
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 import {

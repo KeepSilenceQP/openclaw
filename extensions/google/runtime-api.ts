@@ -1,4 +1,3 @@
-// extensions/google runtime api helpers and runtime behavior.
 /** Re-exported google plugin public API. */
 export {
   DEFAULT_GOOGLE_API_BASE_URL,

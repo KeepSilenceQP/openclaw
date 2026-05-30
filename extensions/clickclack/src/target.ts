@@ -1,4 +1,3 @@
-// extensions/clickclack/src target helpers and runtime behavior.
 import type { ClickClackTarget } from "./types.js";
 
 export function parseClickClackTarget(raw: string): ClickClackTarget {

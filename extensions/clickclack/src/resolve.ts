@@ -1,4 +1,3 @@
-// extensions/clickclack/src resolve helpers and runtime behavior.
 import type { ClickClackClient } from "./http-client.js";
 
 export async function resolveWorkspaceId(client: ClickClackClient, workspace: string) {

@@ -1,4 +1,3 @@
-// extensions/codex harness helpers and runtime behavior.
 import type {
   AgentHarness,
   ContextEngineHostCapability,

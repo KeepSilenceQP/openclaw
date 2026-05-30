@@ -1,4 +1,3 @@
-// extensions/migrate-hermes source helpers and runtime behavior.
 import path from "node:path";
 import { exists, isDirectory, resolveHomePath } from "./helpers.js";
 

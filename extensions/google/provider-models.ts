@@ -1,4 +1,3 @@
-// extensions/google provider models helpers and runtime behavior.
 import type {
   ProviderResolveDynamicModelContext,
   ProviderRuntimeModel,

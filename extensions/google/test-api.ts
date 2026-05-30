@@ -1,4 +1,3 @@
-// extensions/google test api helpers and runtime behavior.
 export { buildGoogleGeminiCliBackend } from "./cli-backend.js";
 export { buildGoogleImageGenerationProvider } from "./image-generation-provider.js";
 export { buildGoogleMusicGenerationProvider } from "./music-generation-provider.js";

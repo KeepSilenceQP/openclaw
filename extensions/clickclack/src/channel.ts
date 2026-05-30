@@ -1,4 +1,3 @@
-// extensions/clickclack/src channel helpers and runtime behavior.
 import {
   buildChannelOutboundSessionRoute,
   buildThreadAwareOutboundSessionRoute,

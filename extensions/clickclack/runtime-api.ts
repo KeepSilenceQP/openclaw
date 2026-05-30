@@ -1,4 +1,3 @@
-// extensions/clickclack runtime api helpers and runtime behavior.
 /** Re-exported clickclack plugin public API. */
 export {
   type ClickClackAccountConfig,

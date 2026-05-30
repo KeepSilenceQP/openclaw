@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server attempt notification state helpers and runtime behavior.
 import {
   codexExecutionToolName,
   describeNotificationActivity,

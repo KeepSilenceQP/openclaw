@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server event projector helpers and runtime behavior.
 import {
   classifyAgentHarnessTerminalOutcome,
   embeddedAgentLog,

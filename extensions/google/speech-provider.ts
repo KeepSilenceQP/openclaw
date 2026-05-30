@@ -1,4 +1,3 @@
-// extensions/google speech provider helpers and runtime behavior.
 import { transcodeAudioBufferToOpus } from "openclaw/plugin-sdk/media-runtime";
 import {
   assertOkOrThrowProviderError,

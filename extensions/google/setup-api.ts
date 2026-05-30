@@ -1,4 +1,3 @@
-// extensions/google setup api helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { buildGoogleGeminiCliBackend } from "./cli-backend.js";
 import { createGoogleVertexProvider } from "./provider-contract-api.js";

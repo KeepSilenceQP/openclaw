@@ -1,4 +1,3 @@
-// extensions/google generation provider metadata helpers and runtime behavior.
 import type { MusicGenerationProvider } from "openclaw/plugin-sdk/music-generation";
 import { isProviderApiKeyConfigured } from "openclaw/plugin-sdk/provider-auth";
 import type {

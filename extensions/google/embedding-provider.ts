@@ -1,4 +1,3 @@
-// extensions/google embedding provider helpers and runtime behavior.
 import {
   buildRemoteBaseUrlPolicy,
   debugEmbeddingsLog,
