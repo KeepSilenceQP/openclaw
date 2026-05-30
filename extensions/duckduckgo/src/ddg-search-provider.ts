@@ -1,4 +1,3 @@
-// extensions/duckduckgo/src ddg search provider helpers and runtime behavior.
 import { readPositiveIntegerParam, readStringParam } from "openclaw/plugin-sdk/param-readers";
 import type { WebSearchProviderPlugin } from "openclaw/plugin-sdk/provider-web-search-contract";
 import { createDuckDuckGoWebSearchProviderBase } from "./ddg-search-provider.shared.js";

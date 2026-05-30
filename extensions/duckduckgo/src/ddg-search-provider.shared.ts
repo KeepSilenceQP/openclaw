@@ -1,4 +1,3 @@
-// extensions/duckduckgo/src ddg search provider shared helpers and runtime behavior.
 import { createWebSearchProviderContractFields } from "openclaw/plugin-sdk/provider-web-search-contract";
 
 const DUCKDUCKGO_ONBOARDING_SCOPES: Array<"text-inference"> = ["text-inference"];
