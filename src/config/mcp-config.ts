@@ -235,7 +235,7 @@ export async function setConfiguredMcpServer(params: {
   };
 }
 
-/** Removes one configured MCP server from config. */
+/** Remove one configured MCP server and persist validated config. */
 export async function unsetConfiguredMcpServer(params: {
   name: string;
 }): Promise<ConfigMcpWriteResult> {
