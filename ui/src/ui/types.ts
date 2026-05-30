@@ -247,13 +247,11 @@ export type SignalStatus = {
   lastProbeAt?: number | null;
 };
 
-/** iMessage bridge probe result. */
 export type IMessageProbe = {
   ok: boolean;
   error?: string | null;
 };
 
-/** iMessage channel status shown by Control UI. */
 export type IMessageStatus = {
   configured: boolean;
   running: boolean;

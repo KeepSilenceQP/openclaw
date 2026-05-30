@@ -60,7 +60,6 @@ export type EnvironmentsListResult = {
   environments: EnvironmentSummary[];
 };
 
-/** Workspace selector for future per-run workspace placement. */
 export type WorkspaceSelection = {
   cwd?: string;
   repo?: string;

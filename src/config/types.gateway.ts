@@ -24,10 +24,8 @@ export type WideAreaDiscoveryConfig = {
   domain?: string;
 };
 
-/** mDNS/Bonjour gateway discovery broadcast detail level. */
 export type MdnsDiscoveryMode = "off" | "minimal" | "full";
 
-/** mDNS/Bonjour discovery settings for local gateway clients. */
 export type MdnsDiscoveryConfig = {
   /**
    * mDNS/Bonjour discovery broadcast mode (default: minimal).

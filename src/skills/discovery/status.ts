@@ -73,7 +73,6 @@ export type SkillStatusEntry = {
   skillCard?: LocalSkillCardStatus;
 };
 
-/** Workspace-level skill status report with optional agent filter context. */
 export type SkillStatusReport = {
   workspaceDir: string;
   managedSkillsDir: string;

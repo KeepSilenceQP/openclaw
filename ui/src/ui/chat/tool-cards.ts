@@ -423,7 +423,6 @@ export function renderToolPreview(
   `;
 }
 
-/** Wrap markdown text as side-panel content. */
 export function buildSidebarContent(
   value: string,
   options?: { rawText?: string | null },

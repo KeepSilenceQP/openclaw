@@ -3,7 +3,6 @@ export type SafeStreamWriterOptions = {
   onBrokenPipe?: (err: NodeJS.ErrnoException, stream: NodeJS.WriteStream) => void;
 };
 
-/** Writer facade that tracks whether the destination stream has closed. */
 export type SafeStreamWriter = {
   write: (stream: NodeJS.WriteStream, text: string) => boolean;
   writeLine: (stream: NodeJS.WriteStream, text: string) => boolean;

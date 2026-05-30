@@ -30,7 +30,6 @@ export type IMessageActionConfig = {
 /** Inbound tapback notification fanout policy. */
 export type IMessageReactionNotificationMode = "off" | "own" | "all";
 
-/** iMessage account config for inbound policy, delivery, media, and catchup behavior. */
 export type IMessageAccountConfig = {
   /** Optional display name for this account (used in CLI/UI lists). */
   name?: string;

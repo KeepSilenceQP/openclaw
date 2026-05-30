@@ -557,7 +557,6 @@ export function detachThemeListener(host: SettingsHost) {
 
 const BASE_RADII = { sm: 6, md: 10, lg: 14, xl: 20, full: 9999, default: 10 };
 
-/** Write CSS radius variables from the stored radius scale. */
 export function applyBorderRadius(value: number) {
   if (typeof document === "undefined") {
     return;
@@ -572,7 +571,6 @@ export function applyBorderRadius(value: number) {
   root.style.setProperty("--radius", `${Math.round(BASE_RADII.default * scale)}px`);
 }
 
-/** Write the root text-scale CSS variable from user settings. */
 export function applyTextScale(value: unknown) {
   if (typeof document === "undefined") {
     return;

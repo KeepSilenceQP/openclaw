@@ -61,7 +61,6 @@ export type OpenAiChatCompletionsUsage = {
   completion_tokens_details?: { reasoning_tokens: number };
 };
 
-/** Zero-or-more token and cost counters captured for assistant status. */
 export type AssistantUsageSnapshot = {
   input: number;
   output: number;

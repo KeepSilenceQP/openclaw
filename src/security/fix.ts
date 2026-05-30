@@ -10,7 +10,6 @@ import { runExec } from "../process/exec.js";
 import { normalizeAgentId } from "../routing/session-key.js";
 import { createIcaclsResetCommand, formatIcaclsResetCommand, type ExecFn } from "./windows-acl.js";
 
-/** chmod repair result for one file or directory target. */
 export type SecurityFixChmodAction = {
   kind: "chmod";
   path: string;
