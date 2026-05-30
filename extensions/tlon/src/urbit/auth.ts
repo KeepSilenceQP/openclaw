@@ -1,4 +1,3 @@
-// extensions/tlon/src/urbit auth helpers and runtime behavior.
 import type { LookupFn, SsrFPolicy } from "openclaw/plugin-sdk/ssrf-runtime";
 import { UrbitAuthError } from "./errors.js";
 import { urbitFetch } from "./fetch.js";

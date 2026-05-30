@@ -1,4 +1,3 @@
-// extensions/arcee models helpers and runtime behavior.
 import type { ModelDefinitionConfig } from "openclaw/plugin-sdk/provider-model-shared";
 
 export const ARCEE_BASE_URL = "https://api.arcee.ai/api/v1";

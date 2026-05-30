@@ -1,4 +1,3 @@
-// extensions/opencode-go reasoning sanitizer helpers and runtime behavior.
 const REASONING_REPLAY_FIELDS = [
   "reasoning_details",
   "reasoning_content",

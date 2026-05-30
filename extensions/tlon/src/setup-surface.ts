@@ -1,4 +1,3 @@
-// extensions/tlon/src setup surface helpers and runtime behavior.
 import { createSetupTranslator } from "openclaw/plugin-sdk/setup-runtime";
 import { normalizeStringEntries } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {

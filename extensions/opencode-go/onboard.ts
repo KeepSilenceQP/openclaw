@@ -1,4 +1,3 @@
-// extensions/opencode-go onboard helpers and runtime behavior.
 import {
   applyAgentDefaultModelPrimary,
   type OpenClawConfig,
