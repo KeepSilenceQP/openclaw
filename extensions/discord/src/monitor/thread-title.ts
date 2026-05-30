@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor thread title helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { logVerbose } from "openclaw/plugin-sdk/runtime-env";
 import {

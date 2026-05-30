@@ -1,4 +1,3 @@
-// extensions/discord/src error body helpers and runtime behavior.
 const DISCORD_RESPONSE_BODY_SUMMARY_MAX_CHARS = 240;
 
 export function summarizeDiscordResponseBody(

@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor thread bindings config helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   resolveThreadBindingIdleTimeoutMs,

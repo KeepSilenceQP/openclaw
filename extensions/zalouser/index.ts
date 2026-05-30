@@ -1,4 +1,3 @@
-// extensions/zalouser index helpers and runtime behavior.
 import {
   type AnyAgentTool,
   defineBundledChannelEntry,

@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor agent components data helpers and runtime behavior.
 import { logError } from "openclaw/plugin-sdk/logging-core";
 import {
   parseDiscordComponentCustomId,

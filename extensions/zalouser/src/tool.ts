@@ -1,4 +1,3 @@
-// extensions/zalouser/src tool helpers and runtime behavior.
 import { stringEnum } from "openclaw/plugin-sdk/channel-actions";
 import type { AnyAgentTool, OpenClawPluginToolContext } from "openclaw/plugin-sdk/core";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";

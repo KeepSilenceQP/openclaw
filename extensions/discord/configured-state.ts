@@ -1,4 +1,3 @@
-// extensions/discord configured state helpers and runtime behavior.
 export function hasDiscordConfiguredState(params: { env?: NodeJS.ProcessEnv }): boolean {
   return (
     typeof params.env?.DISCORD_BOT_TOKEN === "string" &&

@@ -1,4 +1,3 @@
-// extensions/discord/src components helpers and runtime behavior.
 export {
   DISCORD_COMPONENT_CUSTOM_ID_KEY,
   DISCORD_MODAL_CUSTOM_ID_KEY,

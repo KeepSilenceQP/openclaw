@@ -1,4 +1,3 @@
-// extensions/discord/src send target parsing helpers and runtime behavior.
 import {
   parseDiscordTarget,
   type DiscordTarget,

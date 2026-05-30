@@ -1,4 +1,3 @@
-// extensions/memory-core/src/memory manager vector write helpers and runtime behavior.
 import type { SQLInputValue } from "node:sqlite";
 
 type VectorWriteDb = {

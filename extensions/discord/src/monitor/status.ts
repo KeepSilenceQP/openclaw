@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor status helpers and runtime behavior.
 type DiscordMonitorStatusPatch = {
   connected?: boolean;
   lastEventAt?: number | null;

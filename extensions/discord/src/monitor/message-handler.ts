@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor message handler helpers and runtime behavior.
 import {
   createChannelInboundDebouncer,
   shouldDebounceTextInbound,

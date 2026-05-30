@@ -1,4 +1,3 @@
-// extensions/zalouser api helpers and runtime behavior.
 /** Re-exported zalouser plugin public API, starting with zalouser Plugin. */
 export { zalouserPlugin } from "./src/channel.js";
 /** Re-exported zalouser plugin public API, starting with zalouser Setup Plugin. */

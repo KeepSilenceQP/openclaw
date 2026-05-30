@@ -1,4 +1,3 @@
-// extensions/discord/src send emojis stickers helpers and runtime behavior.
 import {
   normalizeOptionalLowercaseString,
   normalizeStringEntries,

@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor threading auto thread helpers and runtime behavior.
 import type { OpenClawConfig, ReplyToMode } from "openclaw/plugin-sdk/config-contracts";
 import { resolveChannelModelOverride } from "openclaw/plugin-sdk/model-session-runtime";
 import { buildAgentSessionKey } from "openclaw/plugin-sdk/routing";

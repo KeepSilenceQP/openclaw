@@ -1,4 +1,3 @@
-// extensions/discord/src approval native helpers and runtime behavior.
 import { createLazyChannelApprovalNativeRuntimeAdapter } from "openclaw/plugin-sdk/approval-handler-adapter-runtime";
 import type { ChannelApprovalNativeRuntimeAdapter } from "openclaw/plugin-sdk/approval-handler-runtime";
 import { resolveApprovalRequestSessionConversation } from "openclaw/plugin-sdk/approval-native-runtime";

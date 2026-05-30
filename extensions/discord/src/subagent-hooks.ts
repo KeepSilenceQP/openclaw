@@ -1,4 +1,3 @@
-// extensions/discord/src subagent hooks helpers and runtime behavior.
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk/channel-plugin-common";
 import {
   formatThreadBindingDisabledError,

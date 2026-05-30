@@ -1,4 +1,3 @@
-// extensions/discord/src/voice transcripts source helpers and runtime behavior.
 import type {
   TranscriptSourceProvider,
   TranscriptStartRequest,

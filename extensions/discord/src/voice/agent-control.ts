@@ -1,4 +1,3 @@
-// extensions/discord/src/voice agent control helpers and runtime behavior.
 import {
   controlRealtimeVoiceAgentRun,
   shouldAutoControlRealtimeVoiceAgentText,

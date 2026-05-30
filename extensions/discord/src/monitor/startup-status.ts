@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor startup status helpers and runtime behavior.
 export function formatDiscordStartupStatusMessage(params: {
   gatewayReady: boolean;
   botIdentity?: string;

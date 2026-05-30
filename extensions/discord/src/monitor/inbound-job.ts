@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor inbound job helpers and runtime behavior.
 import {
   resolveDiscordChannelIdSafe,
   resolveDiscordChannelInfoSafe,

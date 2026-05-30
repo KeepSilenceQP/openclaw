@@ -1,4 +1,3 @@
-// extensions/discord/src interactive dispatch helpers and runtime behavior.
 import type { ChannelStructuredComponents } from "openclaw/plugin-sdk/channel-contract";
 import {
   createInteractiveConversationBindingHelpers,

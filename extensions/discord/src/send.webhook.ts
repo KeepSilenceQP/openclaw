@@ -1,4 +1,3 @@
-// extensions/discord/src send webhook helpers and runtime behavior.
 import { recordChannelActivity } from "openclaw/plugin-sdk/channel-activity-runtime";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";

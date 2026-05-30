@@ -1,4 +1,3 @@
-// extensions/zalouser runtime api helpers and runtime behavior.
 /** Re-exported zalouser plugin public API. */
 export {
   collectZalouserSecurityAuditFindings,

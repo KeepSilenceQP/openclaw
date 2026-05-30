@@ -1,4 +1,3 @@
-// extensions/zalouser/src doctor contract helpers and runtime behavior.
 import type {
   ChannelDoctorConfigMutation,
   ChannelDoctorLegacyConfigRule,

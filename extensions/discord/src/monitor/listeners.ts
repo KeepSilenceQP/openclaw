@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor listeners helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { danger } from "openclaw/plugin-sdk/runtime-env";
 import {

@@ -1,4 +1,3 @@
-// extensions/discord/src/voice capture state helpers and runtime behavior.
 import type { Readable } from "node:stream";
 
 type VoiceCaptureEntry = {

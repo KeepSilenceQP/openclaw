@@ -1,4 +1,3 @@
-// extensions/discord/src/voice ingress helpers and runtime behavior.
 import { agentCommandFromIngress } from "openclaw/plugin-sdk/agent-runtime";
 import type { DiscordAccountConfig, OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { resolveRealtimeBootstrapContextInstructions } from "openclaw/plugin-sdk/realtime-bootstrap-context";

@@ -1,4 +1,3 @@
-// extensions/discord/src send message request helpers and runtime behavior.
 import { MessageFlags, type APIEmbed } from "discord-api-types/v10";
 import {
   Embed,

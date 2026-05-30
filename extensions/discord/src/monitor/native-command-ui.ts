@@ -1,4 +1,3 @@
-// extensions/discord/src/monitor native command ui helpers and runtime behavior.
 export {
   buildDiscordCommandArgCustomId,
   buildDiscordCommandArgMenu,
