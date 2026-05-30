@@ -1,4 +1,3 @@
-// extensions/msteams/src polls store memory helpers and runtime behavior.
 import {
   type MSTeamsPoll,
   type MSTeamsPollStore,

@@ -1,4 +1,3 @@
-// extensions/qwen api helpers and runtime behavior.
 /** Re-exported qwen plugin public API. */
 export {
   applyQwenNativeStreamingUsageCompat,

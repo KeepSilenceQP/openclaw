@@ -1,4 +1,3 @@
-// extensions/openai transport policy helpers and runtime behavior.
 import type {
   ProviderResolveTransportTurnStateContext,
   ProviderResolveWebSocketSessionPolicyContext,

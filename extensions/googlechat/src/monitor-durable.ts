@@ -1,4 +1,3 @@
-// extensions/googlechat/src monitor durable helpers and runtime behavior.
 import type { ReplyPayload } from "openclaw/plugin-sdk/reply-runtime";
 
 export type GoogleChatDurableReplyOptions = {

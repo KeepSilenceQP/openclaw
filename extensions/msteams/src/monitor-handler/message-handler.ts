@@ -1,4 +1,3 @@
-// extensions/msteams/src/monitor-handler message handler helpers and runtime behavior.
 import { formatAllowlistMatchMeta } from "openclaw/plugin-sdk/allow-from";
 import {
   buildChannelInboundEventContext,

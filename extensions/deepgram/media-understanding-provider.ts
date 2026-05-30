@@ -1,4 +1,3 @@
-// extensions/deepgram media understanding provider helpers and runtime behavior.
 import type { MediaUnderstandingProvider } from "openclaw/plugin-sdk/media-understanding";
 import { transcribeDeepgramAudio } from "./audio.js";
 

@@ -1,4 +1,3 @@
-// extensions/googlechat/src secret contract helpers and runtime behavior.
 import {
   getChannelSurface,
   hasOwnProperty,

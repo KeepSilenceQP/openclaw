@@ -1,4 +1,3 @@
-// extensions/googlechat/src monitor helpers and runtime behavior.
 import {
   recordChannelBotPairLoopAndCheckSuppression,
   type ChannelBotLoopProtectionFacts,

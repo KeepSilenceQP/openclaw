@@ -1,4 +1,3 @@
-// extensions/googlechat/src monitor webhook helpers and runtime behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {

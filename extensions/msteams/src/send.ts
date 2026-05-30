@@ -1,4 +1,3 @@
-// extensions/msteams/src send helpers and runtime behavior.
 import {
   createMessageReceiptFromOutboundResults,
   type MessageReceipt,

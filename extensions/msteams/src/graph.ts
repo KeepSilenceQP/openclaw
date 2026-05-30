@@ -1,4 +1,3 @@
-// extensions/msteams/src graph helpers and runtime behavior.
 import { readProviderJsonResponse } from "openclaw/plugin-sdk/provider-http";
 import { fetchWithSsrFGuard, type MSTeamsConfig } from "../runtime-api.js";
 import { GRAPH_ROOT } from "./attachments/shared.js";

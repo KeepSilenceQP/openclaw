@@ -11,7 +11,6 @@ import {
 // Thin public wrapper around the configured-binding registry. Runtime plugin
 // conversation bindings use a separate approval-driven path in src/plugins/.
 
-/** Reused helper for prime Configured Binding Registry behavior in src/channels/plugins. */
 export function primeConfiguredBindingRegistry(
   ...args: Parameters<typeof primeConfiguredBindingRegistryRaw>
 ): ReturnType<typeof primeConfiguredBindingRegistryRaw> {
@@ -19,7 +18,6 @@ export function primeConfiguredBindingRegistry(
   return primeConfiguredBindingRegistryRaw(...args);
 }
 
-/** Reused helper for resolve Configured Binding Record behavior in src/channels/plugins. */
 export function resolveConfiguredBindingRecord(
   ...args: Parameters<typeof resolveConfiguredBindingRecordRaw>
 ): ReturnType<typeof resolveConfiguredBindingRecordRaw> {
@@ -27,7 +25,6 @@ export function resolveConfiguredBindingRecord(
   return resolveConfiguredBindingRecordRaw(...args);
 }
 
-/** Reused helper for resolve Configured Binding Record For Conversation behavior in src/channels/plugins. */
 export function resolveConfiguredBindingRecordForConversation(
   ...args: Parameters<typeof resolveConfiguredBindingRecordForConversationRaw>
 ): ReturnType<typeof resolveConfiguredBindingRecordForConversationRaw> {
@@ -35,7 +32,6 @@ export function resolveConfiguredBindingRecordForConversation(
   return resolveConfiguredBindingRecordForConversationRaw(...args);
 }
 
-/** Reused helper for resolve Configured Binding behavior in src/channels/plugins. */
 export function resolveConfiguredBinding(
   ...args: Parameters<typeof resolveConfiguredBindingRaw>
 ): ReturnType<typeof resolveConfiguredBindingRaw> {
@@ -43,7 +39,6 @@ export function resolveConfiguredBinding(
   return resolveConfiguredBindingRaw(...args);
 }
 
-/** Reused helper for resolve Configured Binding Record By Session Key behavior in src/channels/plugins. */
 export function resolveConfiguredBindingRecordBySessionKey(
   ...args: Parameters<typeof resolveConfiguredBindingRecordBySessionKeyRaw>
 ): ReturnType<typeof resolveConfiguredBindingRecordBySessionKeyRaw> {

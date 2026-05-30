@@ -1,4 +1,3 @@
-// extensions/googlechat index helpers and runtime behavior.
 import { defineBundledChannelEntry } from "openclaw/plugin-sdk/channel-entry-contract";
 
 export default defineBundledChannelEntry({

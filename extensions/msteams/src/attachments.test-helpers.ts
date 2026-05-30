@@ -1,4 +1,3 @@
-// extensions/msteams/src attachments test helpers helpers and runtime behavior.
 export async function readRemoteMediaResponse(
   res: Response,
   params: { maxBytes?: number; filePathHint?: string },

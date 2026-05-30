@@ -1,4 +1,3 @@
-// extensions/workboard/src store helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import {
   isFutureDateTimestampMs,

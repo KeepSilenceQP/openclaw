@@ -1,4 +1,3 @@
-// extensions/googlechat contract api helpers and runtime behavior.
 export {
   collectRuntimeConfigAssignments,
   secretTargetRegistryEntries,

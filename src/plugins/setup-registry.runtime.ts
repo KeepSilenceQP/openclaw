@@ -40,7 +40,6 @@ let setupRegistryRuntimeModule: SetupRegistryRuntimeModule | null | undefined;
 let cachedSetupCliBackendDescriptors: SetupCliBackendDescriptorCache | undefined;
 let cachedBundledSetupCliBackends: SetupCliBackendDescriptorCache | undefined;
 
-/** Reused constant for testing behavior in src/plugins. */
 export const testing = {
   resetRuntimeState(): void {
     setupRegistryRuntimeModule = undefined;
@@ -152,7 +151,6 @@ function loadSetupRegistryRuntime(): SetupRegistryRuntimeModule | null {
   return null;
 }
 
-/** Reused helper for resolve Plugin Setup Cli Backend Descriptor behavior in src/plugins. */
 export function resolvePluginSetupCliBackendDescriptor(params: SetupCliBackendRuntimeLookupParams) {
   const normalized = normalizeProviderId(params.backend);
   return resolveSetupCliBackendDescriptors(params).find(
@@ -160,7 +158,6 @@ export function resolvePluginSetupCliBackendDescriptor(params: SetupCliBackendRu
   );
 }
 
-/** Reused helper for resolve Plugin Setup Cli Backend Runtime behavior in src/plugins. */
 export function resolvePluginSetupCliBackendRuntime(params: SetupCliBackendRuntimeLookupParams) {
   const normalized = normalizeProviderId(params.backend);
   const runtime = loadSetupRegistryRuntime();
@@ -171,5 +168,4 @@ export function resolvePluginSetupCliBackendRuntime(params: SetupCliBackendRunti
     (entry) => normalizeProviderId(entry.backend.id) === normalized,
   );
 }
-/** Re-exported API for src/plugins, starting with testing. */
 export { testing as __testing };

@@ -1,4 +1,3 @@
-// extensions/msteams/src/monitor-handler access helpers and runtime behavior.
 import {
   channelIngressRoutes,
   resolveStableChannelMessageIngress,

@@ -1,4 +1,3 @@
-// extensions/qwen video generation provider helpers and runtime behavior.
 import { isProviderApiKeyConfigured } from "openclaw/plugin-sdk/provider-auth";
 import { resolveApiKeyForProvider } from "openclaw/plugin-sdk/provider-auth-runtime";
 import { resolveProviderHttpRequestConfig } from "openclaw/plugin-sdk/provider-http";

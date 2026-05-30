@@ -1,6 +1,5 @@
 import type { ChannelResolveResult } from "./types.adapters.js";
 
-/** Reused helper for build Unresolved Target Results behavior in src/channels/plugins. */
 export function buildUnresolvedTargetResults(
   inputs: string[],
   note: string,
@@ -12,7 +11,6 @@ export function buildUnresolvedTargetResults(
   }));
 }
 
-/** Reused helper for resolve Targets With Optional Token behavior in src/channels/plugins. */
 export async function resolveTargetsWithOptionalToken<TResult>(params: {
   token?: string | null;
   inputs: string[];

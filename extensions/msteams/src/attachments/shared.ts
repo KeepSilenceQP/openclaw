@@ -1,4 +1,3 @@
-// extensions/msteams/src/attachments shared helpers and runtime behavior.
 import { Buffer } from "node:buffer";
 import { lookup } from "node:dns/promises";
 import {

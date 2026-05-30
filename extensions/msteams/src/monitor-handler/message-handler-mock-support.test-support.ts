@@ -1,4 +1,3 @@
-// extensions/msteams/src/monitor-handler message handler mock support test support helpers and runtime behavior.
 import { vi } from "vitest";
 
 const runtimeApiMockState = vi.hoisted(() => ({

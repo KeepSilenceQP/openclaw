@@ -1,4 +1,3 @@
-// extensions/workboard/src gateway helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import type { OpenClawPluginApi } from "../api.js";
 import { WorkboardStore } from "./store.js";

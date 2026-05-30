@@ -46,7 +46,6 @@ function normalizeThreadBindingPlacement(value: unknown): ThreadBindingPlacement
   return normalized === "current" || normalized === "child" ? normalized : undefined;
 }
 
-/** Reused helper for resolve Bundled Channel Thread Binding Default Placement behavior in src/channels/plugins. */
 export function resolveBundledChannelThreadBindingDefaultPlacement(
   channelId: string,
 ): ThreadBindingPlacement | undefined {
@@ -55,7 +54,6 @@ export function resolveBundledChannelThreadBindingDefaultPlacement(
   );
 }
 
-/** Reused helper for resolve Bundled Channel Thread Binding Inbound Conversation behavior in src/channels/plugins. */
 export function resolveBundledChannelThreadBindingInboundConversation(
   params: ThreadBindingInboundConversationParams & { channelId: string },
 ): ThreadBindingConversationRef | null | undefined {

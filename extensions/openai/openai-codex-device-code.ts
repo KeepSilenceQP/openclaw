@@ -1,4 +1,3 @@
-// extensions/openai openai codex device code helpers and runtime behavior.
 import {
   positiveSecondsToSafeMilliseconds,
   resolveExpiresAtMsFromDurationSeconds,

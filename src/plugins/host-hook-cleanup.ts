@@ -1,4 +1,3 @@
-// plugins host hook cleanup helpers and runtime behavior.
 import fs from "node:fs";
 import { getRuntimeConfig } from "../config/config.js";
 import { updateSessionStore } from "../config/sessions/store.js";
@@ -17,14 +16,12 @@ import type { PluginRegistry } from "./registry-types.js";
 import { getActivePluginRegistry } from "./runtime.js";
 import { normalizeSessionEntrySlotKey } from "./session-entry-slot-keys.js";
 
-/** Shared type for Plugin Host Cleanup Failure in src/plugins. */
 export type PluginHostCleanupFailure = {
   pluginId: string;
   hookId: string;
   error: unknown;
 };
 
-/** Shared type for Plugin Host Cleanup Result in src/plugins. */
 export type PluginHostCleanupResult = {
   cleanupCount: number;
   failures: PluginHostCleanupFailure[];
@@ -119,7 +116,6 @@ function clearPromotedSessionEntrySlots(
   }
 }
 
-/** Reused helper for clear Plugin Owned Session State behavior in src/plugins. */
 export function clearPluginOwnedSessionState(
   entry: SessionEntry,
   pluginId?: string,
@@ -343,7 +339,6 @@ function collectSessionEntrySlotKeys(
   return slotKeys;
 }
 
-/** Reused helper for run Plugin Host Cleanup behavior in src/plugins. */
 export async function runPluginHostCleanup(params: {
   cfg?: OpenClawConfig;
   registry?: PluginRegistry | null;
@@ -554,7 +549,6 @@ function collectRestartPromotedSessionEntrySlotKeys(
   return staleSlotKeys;
 }
 
-/** Reused helper for cleanup Replaced Plugin Host Registry behavior in src/plugins. */
 export async function cleanupReplacedPluginHostRegistry(params: {
   cfg: OpenClawConfig;
   previousRegistry?: PluginRegistry | null;

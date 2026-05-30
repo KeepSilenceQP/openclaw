@@ -71,7 +71,6 @@ function collectRelevantChannelIdsForTouchedPaths(params: {
   return filteredChannelIds.filter((channelId) => touchedChannelIds.has(channelId));
 }
 
-/** Reused helper for collect Channel Legacy Config Rules behavior in src/channels/plugins. */
 export function collectChannelLegacyConfigRules(
   raw?: unknown,
   touchedPaths?: ReadonlyArray<ReadonlyArray<string>>,

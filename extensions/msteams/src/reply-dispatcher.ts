@@ -1,4 +1,3 @@
-// extensions/msteams/src reply dispatcher helpers and runtime behavior.
 import {
   buildChannelProgressDraftLine,
   buildChannelProgressDraftLineForEntry,

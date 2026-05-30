@@ -1,4 +1,3 @@
-// extensions/googlechat/src accounts helpers and runtime behavior.
 import {
   createAccountListHelpers,
   DEFAULT_ACCOUNT_ID,

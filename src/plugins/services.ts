@@ -1,4 +1,3 @@
-// plugins services helpers and runtime behavior.
 import { STATE_DIR } from "../config/paths.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
@@ -83,7 +82,6 @@ function createScopedPluginServiceStartupTrace(
   };
 }
 
-/** Shared type for Plugin Services Handle in src/plugins. */
 export type PluginServicesHandle = {
   stop: () => Promise<void>;
 };
@@ -93,7 +91,6 @@ type PluginServiceStartupTrace = {
   measure: <T>(name: string, run: () => T | Promise<T>) => Promise<T>;
 };
 
-/** Reused helper for start Plugin Services behavior in src/plugins. */
 export async function startPluginServices(params: {
   registry: PluginRegistry;
   config: OpenClawConfig;

@@ -1,4 +1,3 @@
-// extensions/msteams/src secret contract helpers and runtime behavior.
 import {
   collectSecretInputAssignment,
   getChannelRecord,

@@ -1,4 +1,3 @@
-// extensions/googlechat/src doctor helpers and runtime behavior.
 import { createDangerousNameMatchingMutableAllowlistWarningCollector } from "openclaw/plugin-sdk/channel-policy";
 
 function asObjectRecord(value: unknown): Record<string, unknown> | null {

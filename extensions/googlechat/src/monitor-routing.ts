@@ -1,4 +1,3 @@
-// extensions/googlechat/src monitor routing helpers and runtime behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import {
   createFixedWindowRateLimiter,

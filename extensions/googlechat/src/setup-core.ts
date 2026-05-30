@@ -1,4 +1,3 @@
-// extensions/googlechat/src setup core helpers and runtime behavior.
 import {
   createPatchedAccountSetupAdapter,
   createSetupInputPresenceValidator,

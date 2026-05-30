@@ -1,4 +1,3 @@
-// extensions/msteams/src monitor helpers and runtime behavior.
 import type { Request, Response } from "express";
 import {
   DEFAULT_WEBHOOK_MAX_BODY_BYTES,
