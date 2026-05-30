@@ -15,7 +15,6 @@ export function resolveApiKeyForProfileInTest(
   return resolver({ cfg: {}, ...params });
 }
 
-/** Builds an OAuth credential fixture. */
 export function oauthCred(params: {
   provider: string;
   access: string;
@@ -57,12 +56,10 @@ export function createExpiredOauthStore(params: {
   };
 }
 
-/** Creates a temp root for OAuth profile filesystem tests. */
 export async function createOAuthTestTempRoot(prefix: string): Promise<string> {
   return fs.mkdtemp(path.join(os.tmpdir(), prefix));
 }
 
-/** Creates and exports the main agent dir under a test state directory. */
 export async function createOAuthMainAgentDir(stateDir: string): Promise<string> {
   const agentDir = path.join(stateDir, "agents", "main", "agent");
   process.env.OPENCLAW_STATE_DIR = stateDir;
@@ -123,7 +120,6 @@ export function randomAsciiString(rng: () => number, maxLen: number): string {
   return chars.join("");
 }
 
-/** Returns a fixture value roughly half the time. */
 export function maybe<T>(rng: () => number, value: T): T | undefined {
   return rng() < 0.5 ? value : undefined;
 }
