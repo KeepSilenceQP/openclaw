@@ -1,4 +1,3 @@
-// extensions/acpx/src runtime proxy helpers and runtime behavior.
 import type { AcpRuntime } from "../runtime-api.js";
 import { lazyStartRuntimeTurn } from "./runtime-turn.js";
 

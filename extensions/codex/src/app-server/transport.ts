@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server transport helpers and runtime behavior.
 export type CodexAppServerTransport = {
   stdin: {
     write: (data: string, callback?: (error?: Error | null) => void) => unknown;

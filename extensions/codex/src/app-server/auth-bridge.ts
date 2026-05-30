@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server auth bridge helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import fsSync from "node:fs";
 import fs from "node:fs/promises";

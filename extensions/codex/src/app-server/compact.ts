@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server compact helpers and runtime behavior.
 import {
   embeddedAgentLog,
   type CompactEmbeddedAgentSessionParams,

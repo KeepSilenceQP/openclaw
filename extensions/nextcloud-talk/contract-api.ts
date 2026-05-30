@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk contract api helpers and runtime behavior.
 export {
   collectRuntimeConfigAssignments,
   secretTargetRegistryEntries,

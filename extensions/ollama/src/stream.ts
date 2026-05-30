@@ -1,4 +1,3 @@
-// extensions/ollama/src stream helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import type { StreamFn } from "openclaw/plugin-sdk/agent-core";
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";

@@ -1,4 +1,3 @@
-// extensions/volcengine tts helpers and runtime behavior.
 import * as crypto from "node:crypto";
 import { fetchWithSsrFGuard } from "openclaw/plugin-sdk/ssrf-runtime";
 

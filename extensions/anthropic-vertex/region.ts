@@ -1,4 +1,3 @@
-// extensions/anthropic-vertex region helpers and runtime behavior.
 import { readFileSync } from "node:fs";
 import { homedir, platform } from "node:os";
 import { join } from "node:path";

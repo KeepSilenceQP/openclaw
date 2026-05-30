@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server dynamic tool profile helpers and runtime behavior.
 import type { CodexDynamicToolsLoading, CodexPluginConfig } from "./config.js";
 
 export const CODEX_APP_SERVER_OWNED_DYNAMIC_TOOL_EXCLUDES = [

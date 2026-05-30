@@ -1,4 +1,3 @@
-// extensions/ollama/src setup helpers and runtime behavior.
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import type {
   OpenClawConfig,

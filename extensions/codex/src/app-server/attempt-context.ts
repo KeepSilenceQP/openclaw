@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server attempt context helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import path from "node:path";
 import {

@@ -1,4 +1,3 @@
-// extensions/policy/src policy conformance helpers and runtime behavior.
 import { promises as fs } from "node:fs";
 import { basename, isAbsolute, resolve } from "node:path";
 import JSON5 from "json5";

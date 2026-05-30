@@ -1,4 +1,3 @@
-// extensions/searxng index helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { createSearxngWebSearchProvider } from "./src/searxng-search-provider.js";
 

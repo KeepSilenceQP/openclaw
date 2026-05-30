@@ -1,4 +1,3 @@
-// extensions/vercel-ai-gateway api helpers and runtime behavior.
 /** Re-exported vercel-ai-gateway plugin public API. */
 export {
   discoverVercelAiGatewayModels,

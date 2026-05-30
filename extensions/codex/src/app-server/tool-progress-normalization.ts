@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server tool progress normalization helpers and runtime behavior.
 import {
   inferToolMetaFromArgs,
   type EmbeddedRunAttemptParams,

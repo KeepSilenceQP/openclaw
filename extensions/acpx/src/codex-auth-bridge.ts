@@ -1,4 +1,3 @@
-// extensions/acpx/src codex auth bridge helpers and runtime behavior.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import { createRequire } from "node:module";

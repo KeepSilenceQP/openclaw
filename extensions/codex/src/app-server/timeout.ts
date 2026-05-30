@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server timeout helpers and runtime behavior.
 import { withTimeout as withSharedTimeout } from "openclaw/plugin-sdk/security-runtime";
 
 export async function withTimeout<T>(

@@ -1,4 +1,3 @@
-// extensions/synthetic api helpers and runtime behavior.
 /** Re-exported synthetic plugin public API, starting with apply Synthetic Config. */
 export { applySyntheticConfig, applySyntheticProviderConfig } from "./onboard.js";
 /** Re-exported synthetic plugin public API. */

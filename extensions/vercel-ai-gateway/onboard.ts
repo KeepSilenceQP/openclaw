@@ -1,4 +1,3 @@
-// extensions/vercel-ai-gateway onboard helpers and runtime behavior.
 import {
   applyAgentDefaultModelPrimary,
   type OpenClawConfig,

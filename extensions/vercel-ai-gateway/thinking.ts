@@ -1,4 +1,3 @@
-// extensions/vercel-ai-gateway thinking helpers and runtime behavior.
 import type { ProviderThinkingProfile } from "openclaw/plugin-sdk/core";
 import {
   matchesExactOrPrefix,

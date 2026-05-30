@@ -1,4 +1,3 @@
-// extensions/nextcloud-talk/src monitor runtime helpers and runtime behavior.
 import os from "node:os";
 import { resolveLoggerBackedRuntime } from "openclaw/plugin-sdk/extension-shared";
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime";

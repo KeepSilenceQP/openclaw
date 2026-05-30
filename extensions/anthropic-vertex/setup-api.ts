@@ -1,4 +1,3 @@
-// extensions/anthropic-vertex setup api helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { resolveAnthropicVertexConfigApiKey } from "./region.js";
 

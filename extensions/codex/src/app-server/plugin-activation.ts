@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server plugin activation helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import {

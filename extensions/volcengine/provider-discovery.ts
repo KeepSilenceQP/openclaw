@@ -1,4 +1,3 @@
-// extensions/volcengine provider discovery helpers and runtime behavior.
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 import { buildDoubaoCodingProvider, buildDoubaoProvider } from "./provider-catalog.js";
 

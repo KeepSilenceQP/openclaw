@@ -1,4 +1,3 @@
-// extensions/zai api helpers and runtime behavior.
 /** Re-exported zai plugin public API, starting with apply Zai Config. */
 export { applyZaiConfig, applyZaiProviderConfig, ZAI_DEFAULT_MODEL_REF } from "./onboard.js";
 /** Re-exported zai plugin public API, starting with detect Zai Endpoint. */

@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server shared client helpers and runtime behavior.
 import { resolveDefaultAgentDir } from "openclaw/plugin-sdk/agent-runtime";
 import {
   applyCodexAppServerAuthProfile,

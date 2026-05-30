@@ -1,4 +1,3 @@
-// extensions/synthetic models helpers and runtime behavior.
 import type { ModelDefinitionConfig } from "openclaw/plugin-sdk/provider-model-shared";
 
 export const SYNTHETIC_BASE_URL = "https://api.synthetic.new/anthropic";

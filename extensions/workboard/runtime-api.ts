@@ -1,4 +1,3 @@
-// extensions/workboard runtime api helpers and runtime behavior.
 /** Re-exported workboard plugin public API, starting with register Workboard Gateway Methods. */
 export { registerWorkboardGatewayMethods } from "./src/gateway.js";
 /** Re-exported workboard plugin public API. */

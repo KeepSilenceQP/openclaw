@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server thread lifecycle helpers and runtime behavior.
 import {
   embeddedAgentLog,
   formatErrorMessage,

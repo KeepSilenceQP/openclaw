@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/access resolve policy helpers and runtime behavior.
 import type { QQBotDmPolicy, QQBotGroupPolicy } from "./types.js";
 
 export interface EffectivePolicyInput {

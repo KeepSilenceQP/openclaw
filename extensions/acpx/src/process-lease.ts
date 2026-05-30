@@ -1,4 +1,3 @@
-// extensions/acpx/src process lease helpers and runtime behavior.
 import { randomUUID, createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

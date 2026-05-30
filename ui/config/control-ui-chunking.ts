@@ -1,4 +1,3 @@
-// ui/config control ui chunking helpers and runtime behavior.
 export function normalizeModuleId(id: string): string {
   return id.replace(/\\/g, "/");
 }

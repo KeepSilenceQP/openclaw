@@ -1,4 +1,3 @@
-// extensions/tts-local-cli speech provider helpers and runtime behavior.
 import { spawn } from "node:child_process";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";

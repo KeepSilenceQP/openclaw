@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server local runtime attribution helpers and runtime behavior.
 import type { EmbeddedRunAttemptParams } from "openclaw/plugin-sdk/agent-harness-runtime";
 
 const OPENAI_PROVIDER_ID = "openai";

@@ -1,4 +1,3 @@
-// extensions/anthropic-vertex stream runtime helpers and runtime behavior.
 import { AnthropicVertex as AnthropicVertexSdk } from "@anthropic-ai/vertex-sdk";
 import type { StreamFn } from "openclaw/plugin-sdk/agent-core";
 import {

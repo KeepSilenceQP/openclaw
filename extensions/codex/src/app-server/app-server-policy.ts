@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server app server policy helpers and runtime behavior.
 import type {
   CodexAppServerRuntimeOptions,
   CodexPluginConfig,

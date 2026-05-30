@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server dynamic tool build helpers and runtime behavior.
 import {
   buildAgentHookContextChannelFields,
   buildEmbeddedAttemptToolRunContext,

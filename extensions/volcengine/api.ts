@@ -1,4 +1,3 @@
-// extensions/volcengine api helpers and runtime behavior.
 import type { ModelCompatConfig } from "openclaw/plugin-sdk/provider-model-shared";
 import { uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 

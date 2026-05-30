@@ -1,4 +1,3 @@
-// extensions/acpx runtime api helpers and runtime behavior.
 /** Re-exported acpx plugin public API, starting with Acp Runtime Error Code. */
 export type { AcpRuntimeErrorCode } from "openclaw/plugin-sdk/acp-runtime-backend";
 /** Re-exported acpx plugin public API. */

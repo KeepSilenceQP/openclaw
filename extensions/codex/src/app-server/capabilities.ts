@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server capabilities helpers and runtime behavior.
 import { CodexAppServerRpcError } from "./client.js";
 
 export const CODEX_CONTROL_METHODS = {

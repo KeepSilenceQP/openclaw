@@ -1,4 +1,3 @@
-// extensions/perplexity/src perplexity web search provider helpers and runtime behavior.
 import {
   mergeScopedSearchConfig,
   resolveProviderWebSearchPluginConfig,

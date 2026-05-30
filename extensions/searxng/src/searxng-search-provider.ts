@@ -1,4 +1,3 @@
-// extensions/searxng/src searxng search provider helpers and runtime behavior.
 import { readPositiveIntegerParam, readStringParam } from "openclaw/plugin-sdk/param-readers";
 import {
   createWebSearchProviderContractFields,

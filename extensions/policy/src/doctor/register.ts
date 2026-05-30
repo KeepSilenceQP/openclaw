@@ -1,4 +1,3 @@
-// extensions/policy/src/doctor register helpers and runtime behavior.
 import { basename, isAbsolute, resolve } from "node:path";
 import JSON5 from "json5";
 import {

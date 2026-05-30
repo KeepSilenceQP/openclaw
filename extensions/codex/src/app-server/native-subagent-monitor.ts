@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server native subagent monitor helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";

@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server elicitation bridge helpers and runtime behavior.
 import {
   embeddedAgentLog,
   type EmbeddedRunAttemptParams,

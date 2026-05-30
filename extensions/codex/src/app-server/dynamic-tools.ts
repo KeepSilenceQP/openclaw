@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server dynamic tools helpers and runtime behavior.
 import type { AgentToolResult } from "openclaw/plugin-sdk/agent-core";
 import {
   createAgentToolResultMiddlewareRunner,

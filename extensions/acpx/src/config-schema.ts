@@ -1,4 +1,3 @@
-// extensions/acpx/src config schema helpers and runtime behavior.
 import { z } from "zod";
 
 const ACPX_PERMISSION_MODES = ["approve-all", "approve-reads", "deny-all"] as const;

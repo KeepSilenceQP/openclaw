@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server plugin inventory helpers and runtime behavior.
 import { embeddedAgentLog } from "openclaw/plugin-sdk/agent-harness-runtime";
 import {
   type CodexAppInventoryCache,

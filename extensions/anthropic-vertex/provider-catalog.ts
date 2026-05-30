@@ -1,4 +1,3 @@
-// extensions/anthropic-vertex provider catalog helpers and runtime behavior.
 import type {
   ModelDefinitionConfig,
   ModelProviderConfig,

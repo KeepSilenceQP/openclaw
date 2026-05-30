@@ -1,4 +1,3 @@
-// extensions/opencode api helpers and runtime behavior.
 /** Re-exported opencode plugin public API. */
 export {
   applyOpencodeZenModelDefault,
