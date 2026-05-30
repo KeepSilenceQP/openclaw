@@ -1,4 +1,3 @@
-// media-understanding image helpers and runtime behavior.
 import { resolveModelAsync } from "../agents/embedded-agent-runner/model.js";
 import { isMinimaxVlmModel, minimaxUnderstandImage } from "../agents/minimax-vlm.js";
 import {
@@ -559,14 +558,12 @@ async function describeImagesWithModelInternal(
   return { text, model: model.id };
 }
 
-/** Reused helper for describe Images With Model behavior in src/media-understanding. */
 export async function describeImagesWithModel(
   params: ImagesDescriptionRequest,
 ): Promise<ImagesDescriptionResult> {
   return await describeImagesWithModelInternal(params);
 }
 
-/** Reused helper for describe Images With Model Payload Transform behavior in src/media-understanding. */
 export async function describeImagesWithModelPayloadTransform(
   params: ImagesDescriptionRequest,
   onPayload: ProviderStreamOptions["onPayload"],
@@ -574,7 +571,6 @@ export async function describeImagesWithModelPayloadTransform(
   return await describeImagesWithModelInternal(params, { onPayload });
 }
 
-/** Reused helper for describe Image With Model behavior in src/media-understanding. */
 export async function describeImageWithModel(
   params: ImageDescriptionRequest,
 ): Promise<ImageDescriptionResult> {
@@ -600,7 +596,6 @@ export async function describeImageWithModel(
   });
 }
 
-/** Reused helper for describe Image With Model Payload Transform behavior in src/media-understanding. */
 export async function describeImageWithModelPayloadTransform(
   params: ImageDescriptionRequest,
   onPayload: ProviderStreamOptions["onPayload"],

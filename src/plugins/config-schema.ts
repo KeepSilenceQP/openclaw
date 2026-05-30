@@ -1,4 +1,3 @@
-// plugins config schema helpers and runtime behavior.
 import { z, type ZodTypeAny } from "zod";
 import type { JsonSchemaObject } from "../shared/json-schema.types.js";
 import { parseConfigPathArrayIndex } from "../shared/path-array-index.js";
@@ -120,7 +119,6 @@ function safeParseJsonSchema(
   };
 }
 
-/** Reused helper for build Json Plugin Config Schema behavior in src/plugins. */
 export function buildJsonPluginConfigSchema(
   schema: JsonSchemaObject,
   options?: BuildJsonPluginConfigSchemaOptions,
@@ -136,7 +134,6 @@ export function buildJsonPluginConfigSchema(
   };
 }
 
-/** Reused helper for build Plugin Config Schema behavior in src/plugins. */
 export function buildPluginConfigSchema(
   schema: ZodTypeAny,
   options?: BuildPluginConfigSchemaOptions,
@@ -167,7 +164,6 @@ export function buildPluginConfigSchema(
   };
 }
 
-/** Reused helper for empty Plugin Config Schema behavior in src/plugins. */
 export function emptyPluginConfigSchema(): OpenClawPluginConfigSchema {
   return {
     safeParse(value: unknown): SafeParseResult {

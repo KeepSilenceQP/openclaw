@@ -1,4 +1,3 @@
-// extensions/mattermost/src secret contract helpers and runtime behavior.
 import {
   collectSimpleChannelFieldAssignments,
   getChannelSurface,

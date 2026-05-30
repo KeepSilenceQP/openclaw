@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/sdk verification manager helpers and runtime behavior.
 import {
   VerificationPhase,
   VerificationRequestEvent,

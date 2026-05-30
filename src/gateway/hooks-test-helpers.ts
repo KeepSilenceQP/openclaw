@@ -1,8 +1,6 @@
-// gateway hooks test helpers helpers and runtime behavior.
 import type { IncomingMessage } from "node:http";
 import type { HooksConfigResolved } from "./hooks.js";
 
-/** Reused helper for create Hooks Config behavior in src/gateway. */
 export function createHooksConfig(): HooksConfigResolved {
   return {
     basePath: "/hooks",
@@ -22,7 +20,6 @@ export function createHooksConfig(): HooksConfigResolved {
   };
 }
 
-/** Reused helper for create Gateway Request behavior in src/gateway. */
 export function createGatewayRequest(params: {
   path: string;
   authorization?: string;

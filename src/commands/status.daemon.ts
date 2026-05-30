@@ -34,12 +34,10 @@ async function buildDaemonStatusSummary(
   };
 }
 
-/** Reused helper for get Daemon Status Summary behavior in src/commands. */
 export async function getDaemonStatusSummary(): Promise<DaemonStatusSummary> {
   return await buildDaemonStatusSummary("gateway");
 }
 
-/** Reused helper for get Node Daemon Status Summary behavior in src/commands. */
 export async function getNodeDaemonStatusSummary(): Promise<DaemonStatusSummary> {
   return await buildDaemonStatusSummary("node");
 }

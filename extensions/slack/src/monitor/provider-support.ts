@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor provider support helpers and runtime behavior.
 import { asOptionalRecord as asRecord } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { SlackChannelResolution } from "../resolve-channels.js";
 import type { SlackUserResolution } from "../resolve-users.js";

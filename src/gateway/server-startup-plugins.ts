@@ -1,4 +1,3 @@
-// gateway server startup plugins helpers and runtime behavior.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import { initSubagentRegistry } from "../agents/subagent-registry.js";
 import { applyPluginAutoEnable } from "../config/plugin-auto-enable.js";
@@ -23,7 +22,6 @@ type GatewayStartupTrace = {
   detail: (name: string, metrics: ReadonlyArray<readonly [string, number | string]>) => void;
 };
 
-/** Reused helper for resolve Gateway Startup Maintenance Config behavior in src/gateway. */
 export function resolveGatewayStartupMaintenanceConfig(params: {
   cfgAtStart: OpenClawConfig;
   startupRuntimeConfig: OpenClawConfig;
@@ -37,7 +35,6 @@ export function resolveGatewayStartupMaintenanceConfig(params: {
     : params.cfgAtStart;
 }
 
-/** Reused helper for prepare Gateway Plugin Bootstrap behavior in src/gateway. */
 export async function prepareGatewayPluginBootstrap(params: {
   cfgAtStart: OpenClawConfig;
   activationSourceConfig?: OpenClawConfig;
@@ -172,7 +169,6 @@ export async function prepareGatewayPluginBootstrap(params: {
   };
 }
 
-/** Reused helper for load Gateway Startup Plugin Runtime behavior in src/gateway. */
 export async function loadGatewayStartupPluginRuntime(params: {
   cfg: OpenClawConfig;
   activationSourceConfig?: OpenClawConfig;

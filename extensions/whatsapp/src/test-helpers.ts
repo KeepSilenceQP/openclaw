@@ -1,4 +1,3 @@
-// extensions/whatsapp/src test helpers helpers and runtime behavior.
 import fsSync from "node:fs";
 import fs from "node:fs/promises";
 import path from "node:path";

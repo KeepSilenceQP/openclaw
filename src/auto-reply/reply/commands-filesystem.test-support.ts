@@ -3,7 +3,6 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 
-/** Reused helper for create Command Workspace Harness behavior in src/auto-reply/reply. */
 export function createCommandWorkspaceHarness(prefix: string) {
   const tempDirs: string[] = [];
 

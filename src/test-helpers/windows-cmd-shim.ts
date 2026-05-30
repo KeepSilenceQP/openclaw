@@ -1,4 +1,3 @@
-// test-helpers windows cmd shim helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 

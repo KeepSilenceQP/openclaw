@@ -1,4 +1,3 @@
-// extensions/telegram/src sequential key helpers and runtime behavior.
 import type { Message, UserFromGetMe } from "grammy/types";
 import { parseExecApprovalCommandText } from "openclaw/plugin-sdk/approval-reply-runtime";
 import {

@@ -1,4 +1,3 @@
-// extensions/whatsapp/src group intro helpers and runtime behavior.
 const WHATSAPP_GROUP_INTRO_HINT =
   "WhatsApp IDs: SenderId is the participant JID (group participant id).";
 

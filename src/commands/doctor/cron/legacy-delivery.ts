@@ -20,7 +20,6 @@ function parseLegacyDeliveryHintsInput(payload: Record<string, unknown>) {
   };
 }
 
-/** Reused helper for has Legacy Delivery Hints behavior in src/commands. */
 export function hasLegacyDeliveryHints(payload: Record<string, unknown>) {
   const hints = parseLegacyDeliveryHintsInput(payload);
   return (
@@ -33,7 +32,6 @@ export function hasLegacyDeliveryHints(payload: Record<string, unknown>) {
   );
 }
 
-/** Reused helper for build Delivery From Legacy Payload behavior in src/commands. */
 export function buildDeliveryFromLegacyPayload(
   payload: Record<string, unknown>,
 ): Record<string, unknown> {
@@ -55,7 +53,6 @@ export function buildDeliveryFromLegacyPayload(
   return next;
 }
 
-/** Reused helper for build Delivery Patch From Legacy Payload behavior in src/commands. */
 export function buildDeliveryPatchFromLegacyPayload(payload: Record<string, unknown>) {
   const hints = parseLegacyDeliveryHintsInput(payload);
   const next: Record<string, unknown> = {};
@@ -95,7 +92,6 @@ export function buildDeliveryPatchFromLegacyPayload(payload: Record<string, unkn
   return hasPatch ? next : null;
 }
 
-/** Reused helper for merge Legacy Delivery Into behavior in src/commands. */
 export function mergeLegacyDeliveryInto(
   delivery: Record<string, unknown>,
   payload: Record<string, unknown>,
@@ -132,7 +128,6 @@ export function mergeLegacyDeliveryInto(
   return { delivery: next, mutated };
 }
 
-/** Reused helper for normalize Legacy Delivery Input behavior in src/commands. */
 export function normalizeLegacyDeliveryInput(params: {
   delivery?: Record<string, unknown> | null;
   payload?: Record<string, unknown> | null;

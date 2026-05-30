@@ -1,4 +1,3 @@
-// extensions/mistral api helpers and runtime behavior.
 /** Re-exported mistral plugin public API, starting with build Mistral Provider. */
 export { buildMistralProvider } from "./provider-catalog.js";
 /** Re-exported mistral plugin public API. */

@@ -41,7 +41,6 @@ import { handleTtsCommands } from "./commands-tts.js";
 import type { CommandHandler } from "./commands-types.js";
 import { handleWhoamiCommand } from "./commands-whoami.js";
 
-/** Reused helper for load Command Handlers behavior in src/auto-reply/reply. */
 export function loadCommandHandlers(): CommandHandler[] {
   return [
     handlePluginCommand,

@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src prompt section helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import type { MemoryPromptSectionBuilder } from "openclaw/plugin-sdk/memory-host-core";

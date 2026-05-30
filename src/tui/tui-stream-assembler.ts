@@ -1,4 +1,3 @@
-// tui tui stream assembler helpers and runtime behavior.
 import {
   composeThinkingAndContent,
   extractContentFromMessage,
@@ -101,7 +100,6 @@ function shouldPreserveBoundaryDroppedText(params: {
   });
 }
 
-/** Reused class for Tui Stream Assembler behavior in src/tui. */
 export class TuiStreamAssembler {
   private runs = new Map<string, RunStreamState>();
 

@@ -1,4 +1,3 @@
-// extensions/qqbot/src/bridge sdk adapter helpers and runtime behavior.
 import { parseAccessGroupAllowFromEntry } from "openclaw/plugin-sdk/access-groups";
 import {
   createChannelIngressResolver,

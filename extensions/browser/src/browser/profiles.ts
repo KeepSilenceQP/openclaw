@@ -1,4 +1,3 @@
-// extensions/browser/src/browser profiles helpers and runtime behavior.
 import { parseBrowserHttpUrl } from "openclaw/plugin-sdk/browser-config";
 
 /**

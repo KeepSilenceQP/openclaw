@@ -1,4 +1,3 @@
-// extensions/line/src template messages helpers and runtime behavior.
 import type { messagingApi } from "@line/bot-sdk";
 import { messageAction, postbackAction, uriAction, type Action } from "./actions.js";
 import type { LineTemplateMessagePayload } from "./types.js";

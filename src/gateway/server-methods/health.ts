@@ -1,4 +1,3 @@
-// gateway/server-methods health helpers and runtime behavior.
 import { ErrorCodes, errorShape } from "../../../packages/gateway-protocol/src/index.js";
 import type { ChannelAccountSnapshot } from "../../channels/plugins/types.public.js";
 import type { ChannelHealthSummary, HealthSummary } from "../../commands/health.types.js";
@@ -115,7 +114,6 @@ function mergeCachedHealthRuntimeState(params: {
   };
 }
 
-/** Reused constant for health Handlers behavior in src/gateway/server-methods. */
 export const healthHandlers: GatewayRequestHandlers = {
   health: async ({ respond, context, params, client }) => {
     const { getHealthCache, refreshHealthSnapshot, logHealth } = context;

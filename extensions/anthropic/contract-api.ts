@@ -1,4 +1,3 @@
-// extensions/anthropic contract api helpers and runtime behavior.
 export {
   createAnthropicBetaHeadersWrapper,
   createAnthropicFastModeWrapper,

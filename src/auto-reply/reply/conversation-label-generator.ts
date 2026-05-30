@@ -12,7 +12,6 @@ import { getRuntimeAuthForModel } from "../../plugins/runtime/runtime-model-auth
 const DEFAULT_MAX_LABEL_LENGTH = 128;
 const TIMEOUT_MS = 15_000;
 
-/** Shared type for Conversation Label Params in src/auto-reply/reply. */
 export type ConversationLabelParams = {
   userMessage: string;
   prompt: string;
@@ -40,7 +39,6 @@ function extractSimpleCompletionError(result: {
   return result.errorMessage?.trim() || "unknown error";
 }
 
-/** Reused helper for generate Conversation Label behavior in src/auto-reply/reply. */
 export async function generateConversationLabel(
   params: ConversationLabelParams,
 ): Promise<string | null> {

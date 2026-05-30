@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix credentials helpers and runtime behavior.
 import { writeJsonFileAtomically } from "openclaw/plugin-sdk/json-store";
 import { createAsyncLock, type AsyncLock } from "./async-lock.js";
 import { loadMatrixCredentials, resolveMatrixCredentialsPath } from "./credentials-read.js";

@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/client env auth helpers and runtime behavior.
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "openclaw/plugin-sdk/account-id";
 import { getMatrixScopedEnvVarNames } from "../../env-vars.js";
 

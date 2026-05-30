@@ -1,4 +1,3 @@
-// extensions/mistral media understanding provider helpers and runtime behavior.
 import {
   transcribeOpenAiCompatibleAudio,
   type MediaUnderstandingProvider,

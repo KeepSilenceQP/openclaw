@@ -1,4 +1,3 @@
-// extensions/matrix/src actions helpers and runtime behavior.
 import {
   createActionGate,
   readPositiveIntegerParam,

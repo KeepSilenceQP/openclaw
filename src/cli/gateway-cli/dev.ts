@@ -99,7 +99,6 @@ async function ensureDevWorkspace(dir: string) {
   await writeFileIfMissing(path.join(resolvedDir, "USER.md"), user);
 }
 
-/** Reused helper for ensure Dev Gateway Config behavior in src/cli/gateway-cli. */
 export async function ensureDevGatewayConfig(opts: { reset?: boolean }) {
   const workspace = resolveDevWorkspaceDir();
   if (opts.reset) {

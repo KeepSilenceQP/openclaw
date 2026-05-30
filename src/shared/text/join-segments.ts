@@ -1,5 +1,3 @@
-// shared/text join segments helpers and runtime behavior.
-/** Reused helper for concat Optional Text Segments behavior in src/shared/text. */
 export function concatOptionalTextSegments(params: {
   left?: string;
   right?: string;
@@ -12,7 +10,6 @@ export function concatOptionalTextSegments(params: {
   return params.right ?? params.left;
 }
 
-/** Reused helper for join Present Text Segments behavior in src/shared/text. */
 export function joinPresentTextSegments(
   segments: ReadonlyArray<string | null | undefined>,
   options?: {

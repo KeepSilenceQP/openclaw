@@ -1,4 +1,3 @@
-// tui/components hyperlink markdown helpers and runtime behavior.
 import type { Component, DefaultTextStyle, MarkdownTheme } from "@earendil-works/pi-tui";
 import { Markdown } from "@earendil-works/pi-tui";
 import { addOsc8Hyperlinks, extractUrls } from "../osc8-hyperlinks.js";

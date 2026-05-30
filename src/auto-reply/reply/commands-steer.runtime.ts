@@ -1,5 +1,4 @@
 // Runtime re-export for steering command helpers.
-/** Re-exported API for src/auto-reply/reply. */
 export {
   formatEmbeddedAgentQueueFailureSummary,
   isEmbeddedAgentRunActive,

@@ -1,4 +1,3 @@
-// config version helpers and runtime behavior.
 import {
   comparePrereleaseIdentifiers,
   normalizeLegacyDotBetaVersion,
@@ -14,7 +13,6 @@ type OpenClawVersion = {
 
 const VERSION_RE = /^v?(\d+)\.(\d+)\.(\d+)(?:-([0-9A-Za-z.-]+))?$/;
 
-/** Reused helper for parse Open Claw Version behavior in src/config. */
 export function parseOpenClawVersion(raw: string | null | undefined): OpenClawVersion | null {
   if (!raw) {
     return null;
@@ -35,7 +33,6 @@ export function parseOpenClawVersion(raw: string | null | undefined): OpenClawVe
   };
 }
 
-/** Reused helper for normalize Open Claw Version Base behavior in src/config. */
 export function normalizeOpenClawVersionBase(raw: string | null | undefined): string | null {
   const parsed = parseOpenClawVersion(raw);
   if (!parsed) {
@@ -44,7 +41,6 @@ export function normalizeOpenClawVersionBase(raw: string | null | undefined): st
   return `${parsed.major}.${parsed.minor}.${parsed.patch}`;
 }
 
-/** Reused helper for is Same Open Claw Stable Family behavior in src/config. */
 export function isSameOpenClawStableFamily(
   a: string | null | undefined,
   b: string | null | undefined,
@@ -64,7 +60,6 @@ export function isSameOpenClawStableFamily(
   );
 }
 
-/** Reused helper for compare Open Claw Versions behavior in src/config. */
 export function compareOpenClawVersions(
   a: string | null | undefined,
   b: string | null | undefined,
@@ -105,7 +100,6 @@ export function compareOpenClawVersions(
   return 0;
 }
 
-/** Reused helper for should Warn On Touched Version behavior in src/config. */
 export function shouldWarnOnTouchedVersion(
   current: string | null | undefined,
   touched: string | null | undefined,

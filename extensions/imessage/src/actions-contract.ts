@@ -1,4 +1,3 @@
-// extensions/imessage/src actions contract helpers and runtime behavior.
 export const IMESSAGE_ACTIONS = {
   react: { gate: "reactions" },
   edit: { gate: "edit" },

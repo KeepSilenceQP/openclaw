@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply monitor state helpers and runtime behavior.
 import {
   createConnectedChannelStatusPatch,
   createTransportActivityStatusPatch,

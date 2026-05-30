@@ -1,4 +1,3 @@
-// extensions/browser/src/browser control auth helpers and runtime behavior.
 import crypto from "node:crypto";
 import {
   normalizeLowercaseStringOrEmpty,

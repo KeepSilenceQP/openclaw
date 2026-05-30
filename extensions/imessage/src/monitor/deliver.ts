@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor deliver helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   deliverTextOrMediaReply,

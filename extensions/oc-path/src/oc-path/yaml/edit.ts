@@ -1,4 +1,3 @@
-// extensions/oc-path/src/oc-path/yaml edit helpers and runtime behavior.
 import {
   Document,
   isMap,

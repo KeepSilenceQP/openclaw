@@ -1,4 +1,3 @@
-// extensions/line/src accounts helpers and runtime behavior.
 import {
   DEFAULT_ACCOUNT_ID,
   normalizeAccountId as normalizeSharedAccountId,

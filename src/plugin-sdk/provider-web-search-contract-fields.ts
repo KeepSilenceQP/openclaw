@@ -10,19 +10,16 @@ import {
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { WebSearchProviderPlugin } from "../plugins/types.js";
 
-/** Shared type for Web Search Provider Contract Credential in src/plugin-sdk. */
 export type WebSearchProviderContractCredential =
   | { type: "none" }
   | { type: "top-level" }
   | { type: "scoped"; scopeId: string };
 
-/** Shared type for Web Search Provider Configured Credential in src/plugin-sdk. */
 export type WebSearchProviderConfiguredCredential = {
   pluginId: string;
   field?: string;
 };
 
-/** Shared type for Create Web Search Provider Contract Fields Options in src/plugin-sdk. */
 export type CreateWebSearchProviderContractFieldsOptions = {
   credentialPath: string;
   inactiveSecretPaths?: string[];
@@ -30,7 +27,6 @@ export type CreateWebSearchProviderContractFieldsOptions = {
   configuredCredential?: WebSearchProviderConfiguredCredential;
 };
 
-/** Shared type for Web Search Provider Contract Fields in src/plugin-sdk. */
 export type WebSearchProviderContractFields = Pick<
   WebSearchProviderPlugin,
   "inactiveSecretPaths" | "getCredentialValue" | "setCredentialValue"
@@ -90,7 +86,6 @@ function createConfiguredCredentialFields(
   };
 }
 
-/** Reused helper for create Base Web Search Provider Contract Fields behavior in src/plugin-sdk. */
 export function createBaseWebSearchProviderContractFields(
   options: CreateWebSearchProviderContractFieldsOptions,
 ): WebSearchProviderContractFields {

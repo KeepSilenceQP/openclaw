@@ -264,7 +264,6 @@ async function readAllowlistConfig(params: {
   );
 }
 
-/** Reused constant for handle Allowlist Command behavior in src/auto-reply/reply. */
 export const handleAllowlistCommand: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;

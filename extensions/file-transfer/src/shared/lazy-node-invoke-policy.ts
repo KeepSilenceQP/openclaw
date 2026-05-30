@@ -1,4 +1,3 @@
-// extensions/file-transfer/src/shared lazy node invoke policy helpers and runtime behavior.
 import type { OpenClawPluginNodeInvokePolicy } from "openclaw/plugin-sdk/plugin-entry";
 import { FILE_TRANSFER_NODE_INVOKE_COMMANDS } from "./node-invoke-policy-commands.js";
 

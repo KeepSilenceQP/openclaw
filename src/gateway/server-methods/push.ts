@@ -1,4 +1,3 @@
-// gateway/server-methods push helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -28,7 +27,6 @@ import { respondInvalidParams, respondUnavailableOnThrow } from "./nodes.helpers
 import { normalizeTrimmedString } from "./record-shared.js";
 import type { GatewayRequestHandlers } from "./types.js";
 
-/** Reused constant for push Handlers behavior in src/gateway/server-methods. */
 export const pushHandlers: GatewayRequestHandlers = {
   "push.test": async ({ params, respond, context }) => {
     if (!validatePushTestParams(params)) {

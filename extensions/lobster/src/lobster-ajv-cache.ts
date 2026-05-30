@@ -1,4 +1,3 @@
-// extensions/lobster/src lobster ajv cache helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";

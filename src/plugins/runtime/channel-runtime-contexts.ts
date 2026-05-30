@@ -1,4 +1,3 @@
-// plugins/runtime channel runtime contexts helpers and runtime behavior.
 import type {
   ChannelRuntimeContextEvent,
   ChannelRuntimeContextKey,
@@ -70,7 +69,6 @@ function doesRuntimeContextWatcherMatch(params: {
   return true;
 }
 
-/** Reused helper for create Channel Runtime Context Registry behavior in src/plugins/runtime. */
 export function createChannelRuntimeContextRegistry(): ChannelRuntimeContextRegistry {
   const runtimeContexts = new Map<string, StoredRuntimeContext>();
   const runtimeContextWatchers = new Set<{

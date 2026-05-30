@@ -1,4 +1,3 @@
-// extensions/imessage contract api helpers and runtime behavior.
 export {
   DEFAULT_IMESSAGE_ATTACHMENT_ROOTS,
   resolveIMessageAttachmentRoots as resolveInboundAttachmentRoots,

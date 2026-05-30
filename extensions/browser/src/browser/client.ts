@@ -1,4 +1,3 @@
-// extensions/browser/src/browser client helpers and runtime behavior.
 import { buildProfileQuery, withBaseUrl } from "./client-actions-url.js";
 import { fetchBrowserJson } from "./client-fetch.js";
 import type {

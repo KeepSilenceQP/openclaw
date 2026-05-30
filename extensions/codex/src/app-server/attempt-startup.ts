@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server attempt startup helpers and runtime behavior.
 import {
   embeddedAgentLog,
   formatErrorMessage,

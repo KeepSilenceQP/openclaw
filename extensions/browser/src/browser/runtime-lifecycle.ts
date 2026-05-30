@@ -1,4 +1,3 @@
-// extensions/browser/src/browser runtime lifecycle helpers and runtime behavior.
 import type { Server } from "node:http";
 import { getPwAiModule } from "./pw-ai-module.js";
 import { isPwAiLoaded } from "./pw-ai-state.js";

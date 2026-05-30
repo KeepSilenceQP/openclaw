@@ -31,7 +31,6 @@ function normalizeCommandHandlerResult(result: CommandHandlerResult): CommandHan
   };
 }
 
-/** Reused helper for handle Commands behavior in src/auto-reply/reply. */
 export async function handleCommands(params: HandleCommandsParams): Promise<CommandHandlerResult> {
   if (HANDLERS === null) {
     HANDLERS = (await loadCommandHandlersRuntime()).loadCommandHandlers();

@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor rooms helpers and runtime behavior.
 import type { MatrixRoomConfig } from "../../types.js";
 import { buildChannelKeyCandidates, resolveChannelEntryMatch } from "./runtime-api.js";
 

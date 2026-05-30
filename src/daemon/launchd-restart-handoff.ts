@@ -1,4 +1,3 @@
-// daemon launchd restart handoff helpers and runtime behavior.
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";
@@ -93,7 +92,6 @@ function resolveLaunchdRestartTarget(
   };
 }
 
-/** Reused helper for is Current Process Launchd Service Label behavior in src/daemon. */
 export function isCurrentProcessLaunchdServiceLabel(
   label: string,
   env: NodeJS.ProcessEnv = process.env,
@@ -227,7 +225,6 @@ exit "$status"
 `;
 }
 
-/** Reused helper for schedule Detached Launchd Restart Handoff behavior in src/daemon. */
 export function scheduleDetachedLaunchdRestartHandoff(params: {
   env?: Record<string, string | undefined>;
   mode: LaunchdRestartHandoffMode;

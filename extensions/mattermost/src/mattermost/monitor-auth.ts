@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost monitor auth helpers and runtime behavior.
 import { parseAccessGroupAllowFromEntry } from "openclaw/plugin-sdk/access-groups";
 import {
   type ChannelIngressDecision,

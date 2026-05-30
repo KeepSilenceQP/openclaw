@@ -1,4 +1,3 @@
-// config/sessions reset helpers and runtime behavior.
 import { resolveLoadedSessionThreadInfo } from "../../channels/plugins/session-thread-info-loaded.js";
 import {
   normalizeLowercaseStringOrEmpty,
@@ -6,7 +5,6 @@ import {
 } from "../../shared/string-coerce.js";
 import { normalizeMessageChannel } from "../../utils/message-channel.js";
 import type { SessionConfig, SessionResetConfig } from "../types.base.js";
-/** Re-exported API for src/config/sessions. */
 export {
   DEFAULT_RESET_AT_HOUR,
   DEFAULT_RESET_MODE,
@@ -22,12 +20,10 @@ import type { SessionResetType } from "./reset-policy.js";
 
 const GROUP_SESSION_MARKERS = [":group:", ":channel:"];
 
-/** Reused helper for is Thread Session Key behavior in src/config/sessions. */
 export function isThreadSessionKey(sessionKey?: string | null): boolean {
   return Boolean(resolveLoadedSessionThreadInfo(sessionKey).threadId);
 }
 
-/** Reused helper for resolve Session Reset Type behavior in src/config/sessions. */
 export function resolveSessionResetType(params: {
   sessionKey?: string | null;
   isGroup?: boolean;
@@ -46,7 +42,6 @@ export function resolveSessionResetType(params: {
   return "direct";
 }
 
-/** Reused helper for resolve Thread Flag behavior in src/config/sessions. */
 export function resolveThreadFlag(params: {
   sessionKey?: string | null;
   messageThreadId?: string | number | null;
@@ -69,7 +64,6 @@ export function resolveThreadFlag(params: {
   return isThreadSessionKey(params.sessionKey);
 }
 
-/** Reused helper for resolve Channel Reset Config behavior in src/config/sessions. */
 export function resolveChannelResetConfig(params: {
   sessionCfg?: SessionConfig;
   channel?: string | null;

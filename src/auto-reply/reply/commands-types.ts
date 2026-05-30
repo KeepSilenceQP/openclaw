@@ -10,7 +10,6 @@ import type { GetReplyOptions, ReplyPayload } from "../types.js";
 import type { InlineDirectives } from "./directive-handling.parse.js";
 import type { TypingController } from "./typing.js";
 
-/** Shared type for Command Context in src/auto-reply/reply. */
 export type CommandContext = {
   surface: string;
   channel: string;
@@ -32,7 +31,6 @@ export type CommandContext = {
   softResetTail?: string;
 };
 
-/** Shared type for Handle Commands Params in src/auto-reply/reply. */
 export type HandleCommandsParams = {
   ctx: MsgContext;
   rootCtx?: MsgContext;
@@ -72,13 +70,11 @@ export type HandleCommandsParams = {
   typing?: TypingController;
 };
 
-/** Shared type for Command Handler Result in src/auto-reply/reply. */
 export type CommandHandlerResult = {
   reply?: ReplyPayload;
   shouldContinue: boolean;
 };
 
-/** Shared type for Command Handler in src/auto-reply/reply. */
 export type CommandHandler = (
   params: HandleCommandsParams,
   allowTextCommands: boolean,

@@ -1,4 +1,3 @@
-// extensions/telegram/src runtime helpers and runtime behavior.
 import { createPluginRuntimeStore } from "openclaw/plugin-sdk/runtime-store";
 import type { TelegramRuntime } from "./runtime.types.js";
 

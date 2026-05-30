@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor dm history helpers and runtime behavior.
 import {
   formatInboundEnvelope,
   type resolveEnvelopeFormatOptions,

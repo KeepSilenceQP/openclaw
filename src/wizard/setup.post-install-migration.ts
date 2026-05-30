@@ -1,4 +1,3 @@
-// wizard setup post install migration helpers and runtime behavior.
 import { formatCliCommand } from "../cli/command-format.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { formatErrorMessage } from "../infra/errors.js";
@@ -10,7 +9,6 @@ import type { MigrationProviderPlugin } from "../plugins/types.js";
 import type { RuntimeEnv } from "../runtime.js";
 import type { WizardPrompter } from "./prompts.js";
 
-/** Shared type for Post Install Migration Options in src/wizard. */
 export type PostInstallMigrationOptions = {
   config: OpenClawConfig;
   runtime: RuntimeEnv;
@@ -26,7 +24,6 @@ export type PostInstallMigrationOptions = {
   nonInteractive?: boolean;
 };
 
-/** Shared type for Post Install Migration Result in src/wizard. */
 export type PostInstallMigrationResult = {
   config: OpenClawConfig;
 };

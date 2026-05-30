@@ -1,4 +1,3 @@
-// config markdown tables helpers and runtime behavior.
 import { normalizeChannelId } from "../channels/plugins/index.js";
 import { listChannelPlugins } from "../channels/plugins/registry.js";
 import { getActivePluginChannelRegistryVersion } from "../plugins/runtime.js";
@@ -49,7 +48,6 @@ function bindDefaultTableModesMethod<TValue>(value: TValue): TValue {
   return value.bind(getDefaultTableModes()) as TValue;
 }
 
-/** Reused constant for DEFAULT TABLE MODES behavior in src/config. */
 export const DEFAULT_TABLE_MODES: ReadonlyMap<string, MarkdownTableMode> = new Proxy(
   EMPTY_DEFAULT_TABLE_MODES,
   {
@@ -82,13 +80,11 @@ function resolveMarkdownModeFromSection(
   return isMarkdownTableMode(sectionMode) ? sectionMode : undefined;
 }
 
-/** Re-exported API for src/config. */
 export type {
   ResolveMarkdownTableMode,
   ResolveMarkdownTableModeParams,
 } from "./markdown-tables.types.js";
 
-/** Reused helper for resolve Markdown Table Mode behavior in src/config. */
 export function resolveMarkdownTableMode(
   params: ResolveMarkdownTableModeParams,
 ): MarkdownTableMode {

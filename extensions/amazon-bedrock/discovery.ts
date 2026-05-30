@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock discovery helpers and runtime behavior.
 import {
   type BedrockClient,
   type ListFoundationModelsCommandOutput,

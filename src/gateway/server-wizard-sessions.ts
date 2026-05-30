@@ -1,7 +1,5 @@
-// gateway server wizard sessions helpers and runtime behavior.
 import type { WizardSession } from "../wizard/session.js";
 
-/** Reused helper for create Wizard Session Tracker behavior in src/gateway. */
 export function createWizardSessionTracker() {
   const wizardSessions = new Map<string, WizardSession>();
 

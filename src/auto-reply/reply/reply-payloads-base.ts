@@ -11,7 +11,6 @@ import {
   resolveImplicitCurrentMessageReplyAllowance,
 } from "./reply-threading.js";
 
-/** Reused helper for format Btw Text For External Delivery behavior in src/auto-reply/reply. */
 export function formatBtwTextForExternalDelivery(payload: ReplyPayload): string | undefined {
   const text = normalizeOptionalString(payload.text);
   if (!text) {
@@ -74,7 +73,6 @@ function resolveReplyThreadingForPayload(params: {
   return resolved;
 }
 
-/** Reused helper for apply Reply Tags To Payload behavior in src/auto-reply/reply. */
 export function applyReplyTagsToPayload(
   payload: ReplyPayload,
   currentMessageId?: string,
@@ -82,17 +80,14 @@ export function applyReplyTagsToPayload(
   return resolveReplyThreadingForPayload({ payload, currentMessageId });
 }
 
-/** Reused helper for is Renderable Payload behavior in src/auto-reply/reply. */
 export function isRenderablePayload(payload: ReplyPayload): boolean {
   return hasReplyPayloadContent(payload, { extraContent: payload.audioAsVoice });
 }
 
-/** Reused helper for should Suppress Reasoning Payload behavior in src/auto-reply/reply. */
 export function shouldSuppressReasoningPayload(payload: ReplyPayload): boolean {
   return payload.isReasoning === true;
 }
 
-/** Reused helper for apply Reply Threading behavior in src/auto-reply/reply. */
 export function applyReplyThreading(params: {
   payloads: ReplyPayload[];
   replyToMode: ReplyToMode;

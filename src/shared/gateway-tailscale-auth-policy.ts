@@ -1,7 +1,5 @@
-// shared gateway tailscale auth policy helpers and runtime behavior.
 import type { GatewayAuthMode, GatewayTailscaleMode } from "../config/types.gateway.js";
 
-/** Reused helper for is Unsafe Gateway Tailscale No Auth behavior in src/shared. */
 export function isUnsafeGatewayTailscaleNoAuth(params: {
   authMode?: GatewayAuthMode;
   tailscaleMode?: GatewayTailscaleMode;
@@ -12,7 +10,6 @@ export function isUnsafeGatewayTailscaleNoAuth(params: {
   );
 }
 
-/** Reused helper for format Unsafe Gateway Tailscale No Auth Message behavior in src/shared. */
 export function formatUnsafeGatewayTailscaleNoAuthMessage(
   tailscaleMode: GatewayTailscaleMode,
 ): string {

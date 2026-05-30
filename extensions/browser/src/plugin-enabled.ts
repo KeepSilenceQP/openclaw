@@ -1,4 +1,3 @@
-// extensions/browser/src plugin enabled helpers and runtime behavior.
 import type { OpenClawConfig } from "./sdk-config.js";
 import { normalizePluginsConfig, resolveEffectiveEnableState } from "./sdk-config.js";
 

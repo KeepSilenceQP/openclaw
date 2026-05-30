@@ -88,7 +88,6 @@ function formatRows(commitments: CommitmentRecord[], rich: boolean): string[] {
   return lines;
 }
 
-/** Reused helper for commitments List Command behavior in src/commands. */
 export async function commitmentsListCommand(
   opts: { json?: boolean; status?: string; all?: boolean; agent?: string },
   runtime: RuntimeEnv,
@@ -136,7 +135,6 @@ export async function commitmentsListCommand(
   }
 }
 
-/** Reused helper for commitments Dismiss Command behavior in src/commands. */
 export async function commitmentsDismissCommand(
   opts: { ids: string[]; json?: boolean },
   runtime: RuntimeEnv,

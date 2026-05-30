@@ -1,4 +1,3 @@
-// extensions/ollama/src/sanitizers visible content contract helpers and runtime behavior.
 export type OllamaVisibleContentStreamResolution =
   | { kind: "visible"; text: string }
   | { kind: "pending" };

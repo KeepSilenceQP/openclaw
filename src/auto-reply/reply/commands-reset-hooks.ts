@@ -14,7 +14,6 @@ function loadRouteReplyRuntime() {
   return routeReplyRuntimeLoader.load();
 }
 
-/** Shared type for Reset Command Action in src/auto-reply/reply. */
 export type ResetCommandAction = "new" | "reset";
 
 function parseTranscriptMessages(content: string): unknown[] {
@@ -94,7 +93,6 @@ async function loadBeforeResetTranscript(params: {
   }
 }
 
-/** Reused helper for emit Reset Command Hooks behavior in src/auto-reply/reply. */
 export async function emitResetCommandHooks(params: {
   action: ResetCommandAction;
   ctx: HandleCommandsParams["ctx"];

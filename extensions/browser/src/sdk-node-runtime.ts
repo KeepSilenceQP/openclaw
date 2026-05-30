@@ -1,4 +1,3 @@
-// extensions/browser/src sdk node runtime helpers and runtime behavior.
 export {
   addGatewayClientOptions,
   callGatewayFromCli,

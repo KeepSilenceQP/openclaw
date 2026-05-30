@@ -1,4 +1,3 @@
-// gateway/server-methods send helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -376,7 +375,6 @@ function scheduleDeliveredSourceReplyTranscriptMirror(params: {
   return queued;
 }
 
-/** Reused constant for send Handlers behavior in src/gateway/server-methods. */
 export const sendHandlers: GatewayRequestHandlers = {
   "message.action": async ({ params, respond, context, client }) => {
     const p = params;

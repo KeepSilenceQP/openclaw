@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers mock incoming request helpers and runtime behavior.
 import { EventEmitter } from "node:events";
 import type { IncomingMessage } from "node:http";
 

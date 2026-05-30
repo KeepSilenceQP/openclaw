@@ -52,7 +52,6 @@ async function runNonInteractiveMigrationImport(params: {
   });
 }
 
-/** Reused helper for run Non Interactive Setup behavior in src/commands. */
 export async function runNonInteractiveSetup(
   opts: OnboardOptions,
   runtime: RuntimeEnv = defaultRuntime,

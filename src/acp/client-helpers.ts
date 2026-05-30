@@ -100,7 +100,6 @@ function promptUserPermission(toolName: string | undefined, toolTitle?: string):
   });
 }
 
-/** Reused helper for resolve Permission Request behavior in src/acp. */
 export async function resolvePermissionRequest(
   params: RequestPermissionRequest,
   deps: PermissionResolverDeps = {},
@@ -164,7 +163,6 @@ export function resolveAcpClientSpawnEnv(
   return env;
 }
 
-/** Reused helper for should Strip Provider Auth Env Vars For Acp Server behavior in src/acp. */
 export function shouldStripProviderAuthEnvVarsForAcpServer(
   params: {
     serverCommand?: string;
@@ -215,7 +213,6 @@ const DEFAULT_ACP_SPAWN_RUNTIME: AcpSpawnRuntime = {
   execPath: process.execPath,
 };
 
-/** Reused helper for resolve Acp Client Spawn Invocation behavior in src/acp. */
 export function resolveAcpClientSpawnInvocation(
   params: { serverCommand: string; serverArgs: string[] },
   runtime: AcpSpawnRuntime = DEFAULT_ACP_SPAWN_RUNTIME,

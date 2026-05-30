@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers provider http mocks helpers and runtime behavior.
 import { afterEach, vi, type Mock } from "vitest";
 import type {
   fetchProviderDownloadResponse,

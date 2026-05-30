@@ -1,4 +1,3 @@
-// extensions/qa-channel api helpers and runtime behavior.
 /** Re-exported qa-channel plugin public API. */
 export {
   DEFAULT_ACCOUNT_ID,

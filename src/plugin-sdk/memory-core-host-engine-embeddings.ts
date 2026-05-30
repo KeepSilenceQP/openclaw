@@ -35,7 +35,6 @@ export {
   withRemoteHttpResponse,
 } from "../../packages/memory-host-sdk/src/engine-embeddings.js";
 
-/** Shared type for Embedding Batch Status in src/plugin-sdk. */
 export type EmbeddingBatchStatus = {
   id?: string;
   status?: string;
@@ -43,7 +42,6 @@ export type EmbeddingBatchStatus = {
   error_file_id?: string | null;
 };
 
-/** Re-exported API for src/plugin-sdk. */
 export type {
   BatchCompletionResult,
   BatchHttpClientConfig,
@@ -53,14 +51,12 @@ export type {
   RemoteEmbeddingClient,
   RemoteEmbeddingProviderId,
 } from "../../packages/memory-host-sdk/src/engine-embeddings.js";
-/** Re-exported API for src/plugin-sdk. */
 export {
   getMemoryEmbeddingProvider,
   listMemoryEmbeddingProviders,
   listRegisteredMemoryEmbeddingProviderAdapters,
   listRegisteredMemoryEmbeddingProviders,
 } from "../plugins/memory-embedding-provider-runtime.js";
-/** Re-exported API for src/plugin-sdk, starting with clear Memory Embedding Providers. */
 export { clearMemoryEmbeddingProviders } from "../plugins/memory-embedding-providers.js";
 /**
  * @deprecated New embedding providers should use `api.registerEmbeddingProvider(...)`
@@ -68,7 +64,6 @@ export { clearMemoryEmbeddingProviders } from "../plugins/memory-embedding-provi
  * available only for compatibility while existing providers migrate.
  */
 export { registerMemoryEmbeddingProvider } from "../plugins/memory-embedding-providers.js";
-/** Re-exported API for src/plugin-sdk. */
 export type {
   MemoryEmbeddingBatchChunk,
   MemoryEmbeddingBatchOptions,

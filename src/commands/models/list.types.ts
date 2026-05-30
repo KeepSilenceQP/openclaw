@@ -1,5 +1,4 @@
 // Shared row and configured-entry types for model-list assembly.
-/** Shared type for Configured Entry in src/commands/models. */
 export type ConfiguredEntry = {
   key: string;
   ref: { provider: string; model: string };
@@ -7,7 +6,6 @@ export type ConfiguredEntry = {
   aliases: string[];
 };
 
-/** Shared type for Model Row in src/commands/models. */
 export type ModelRow = {
   key: string;
   name: string;
@@ -20,7 +18,6 @@ export type ModelRow = {
   missing: boolean;
 };
 
-/** Shared type for Provider Auth Overview in src/commands/models. */
 export type ProviderAuthOverview = {
   provider: string;
   effective: {

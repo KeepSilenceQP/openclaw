@@ -1,4 +1,3 @@
-// extensions/matrix/src/test-support monitor route test support helpers and runtime behavior.
 export {
   registerSessionBindingAdapter,
   testing,

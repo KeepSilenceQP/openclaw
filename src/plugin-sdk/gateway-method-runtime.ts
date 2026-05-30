@@ -1,7 +1,6 @@
 import { dispatchGatewayMethodInProcessRaw } from "../gateway/server-plugins.js";
 import { getPluginRuntimeGatewayRequestScope } from "../plugins/runtime/gateway-request-scope.js";
 
-/** Shared type for Gateway Method Dispatch Error in src/plugin-sdk. */
 export type GatewayMethodDispatchError = {
   code: string;
   message: string;
@@ -10,7 +9,6 @@ export type GatewayMethodDispatchError = {
   retryAfterMs?: number;
 };
 
-/** Shared type for Gateway Method Dispatch Response in src/plugin-sdk. */
 export type GatewayMethodDispatchResponse = {
   ok: boolean;
   payload?: unknown;
@@ -18,7 +16,6 @@ export type GatewayMethodDispatchResponse = {
   meta?: Record<string, unknown>;
 };
 
-/** Shared type for Gateway Method Dispatch Options in src/plugin-sdk. */
 export type GatewayMethodDispatchOptions = {
   expectFinal?: boolean;
   timeoutMs?: number;

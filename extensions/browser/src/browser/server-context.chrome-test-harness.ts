@@ -1,4 +1,3 @@
-// extensions/browser/src/browser server context chrome test harness helpers and runtime behavior.
 import { vi } from "vitest";
 import { installChromeUserDataDirHooks } from "./chrome-user-data-dir.test-harness.js";
 

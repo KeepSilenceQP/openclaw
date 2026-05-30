@@ -16,7 +16,6 @@ function readAfterVersion(payload: RestartSentinelPayload): string | null {
   return typeof version === "string" && version.trim().length > 0 ? version : null;
 }
 
-/** Reused helper for format Update Restart Status Value behavior in src/commands. */
 export function formatUpdateRestartStatusValue(
   payload: RestartSentinelPayload | null | undefined,
   opts: {
@@ -60,7 +59,6 @@ export function formatUpdateRestartStatusValue(
   return ok(`verified${version ? ` · gateway ${version}` : ""}${age}`);
 }
 
-/** Reused helper for format Update Restart Action Lines behavior in src/commands. */
 export function formatUpdateRestartActionLines(
   payload: RestartSentinelPayload | null | undefined,
 ): string[] {

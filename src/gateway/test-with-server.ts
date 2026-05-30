@@ -1,4 +1,3 @@
-// gateway test with server helpers and runtime behavior.
 import { afterAll, beforeAll, beforeEach } from "vitest";
 import { connectOk, startServerWithClient, testState } from "./test-helpers.js";
 
@@ -6,7 +5,6 @@ type StartServerWithClient = typeof startServerWithClient;
 type GatewayWs = Awaited<ReturnType<StartServerWithClient>>["ws"];
 type GatewayServer = Awaited<ReturnType<StartServerWithClient>>["server"];
 
-/** Reused helper for with Server behavior in src/gateway. */
 export async function withServer<T>(run: (ws: GatewayWs) => Promise<T>): Promise<T> {
   const { server, ws, envSnapshot } = await startServerWithClient("secret");
   try {
@@ -18,7 +16,6 @@ export async function withServer<T>(run: (ws: GatewayWs) => Promise<T>): Promise
   }
 }
 
-/** Reused helper for install Connected Control Ui Server Suite behavior in src/gateway. */
 export function installConnectedControlUiServerSuite(
   onReady: (started: { server: GatewayServer; ws: GatewayWs; port: number }) => void,
 ): void {

@@ -1,4 +1,3 @@
-// extensions/imessage/src config accessors helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { resolveIMessageAccount } from "./accounts.js";
 

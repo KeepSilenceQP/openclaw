@@ -90,7 +90,6 @@ function buildLegacyManifestContractMigration(params: {
   };
 }
 
-/** Reused helper for collect Legacy Plugin Manifest Contract Migrations behavior in src/commands. */
 export function collectLegacyPluginManifestContractMigrations(params?: {
   config?: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -151,7 +150,6 @@ export function collectLegacyPluginManifestContractMigrations(params?: {
   return migrations.toSorted((left, right) => left.manifestPath.localeCompare(right.manifestPath));
 }
 
-/** Reused helper for maybe Repair Legacy Plugin Manifest Contracts behavior in src/commands. */
 export async function maybeRepairLegacyPluginManifestContracts(params: {
   config?: OpenClawConfig;
   env?: NodeJS.ProcessEnv;

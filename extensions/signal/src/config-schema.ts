@@ -1,4 +1,3 @@
-// extensions/signal/src config schema helpers and runtime behavior.
 import { buildChannelConfigSchema, SignalConfigSchema } from "../config-api.js";
 import { signalChannelConfigUiHints } from "./config-ui-hints.js";
 

@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers/agents auth profile runtime contract helpers and runtime behavior.
 import {
   resolveProviderIdForAuth,
   type ProviderAuthAliasLookupParams,

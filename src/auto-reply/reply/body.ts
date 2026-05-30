@@ -11,7 +11,6 @@ function loadSessionStoreRuntime() {
   return sessionStoreRuntimeLoader.load();
 }
 
-/** Reused helper for apply Session Hints behavior in src/auto-reply/reply. */
 export async function applySessionHints(params: {
   baseBody: string;
   abortedLastRun: boolean;

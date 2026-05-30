@@ -1,4 +1,3 @@
-// extensions/browser/src doctor browser helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";

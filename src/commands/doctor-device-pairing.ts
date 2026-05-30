@@ -488,7 +488,6 @@ function formatPairingStoreReadIssue(error: JsonFileReadError): string {
   return `- Device pairing store ${error.filePath} ${problem}. OpenClaw refused to treat it as empty to avoid overwriting approved pairings. Fix the JSON or file permissions, or move it aside and re-pair devices.`;
 }
 
-/** Reused helper for note Device Pairing Health behavior in src/commands. */
 export async function noteDevicePairingHealth(params: {
   cfg: OpenClawConfig;
   healthOk: boolean;

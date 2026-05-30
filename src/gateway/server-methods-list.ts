@@ -1,4 +1,3 @@
-// gateway server methods list helpers and runtime behavior.
 import { listLoadedChannelPlugins } from "../channels/plugins/registry-loaded.js";
 import { GATEWAY_EVENT_UPDATE_AVAILABLE } from "./events.js";
 import { listCoreAdvertisedGatewayMethodNames } from "./methods/core-descriptors.js";
@@ -9,7 +8,6 @@ type GatewayMethodChannelPlugin = {
   gatewayMethodDescriptors?: readonly { name: string }[];
 };
 
-/** Reused helper for list Core Gateway Methods behavior in src/gateway. */
 export function listCoreGatewayMethods(): string[] {
   return listCoreAdvertisedGatewayMethodNames();
 }
@@ -25,14 +23,12 @@ function listChannelGatewayMethods(): string[] {
   return methods;
 }
 
-/** Reused helper for list Gateway Methods behavior in src/gateway. */
 export function listGatewayMethods(): string[] {
   return Array.from(
     new Set([...listCoreGatewayMethods(), ...GATEWAY_AUX_METHODS, ...listChannelGatewayMethods()]),
   );
 }
 
-/** Reused constant for GATEWAY EVENTS behavior in src/gateway. */
 export const GATEWAY_EVENTS = [
   "connect.challenge",
   "agent",

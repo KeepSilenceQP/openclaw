@@ -1,4 +1,3 @@
-// gateway device authz test helpers helpers and runtime behavior.
 import os from "node:os";
 import path from "node:path";
 import { expect } from "vitest";
@@ -16,13 +15,11 @@ import {
 } from "../infra/device-pairing.js";
 import { trackConnectChallengeNonce } from "./test-helpers.js";
 
-/** Reused helper for resolve Device Identity Path behavior in src/gateway. */
 export function resolveDeviceIdentityPath(name: string): string {
   const root = process.env.OPENCLAW_STATE_DIR ?? process.env.HOME ?? os.tmpdir();
   return path.join(root, "test-device-identities", `${name}.json`);
 }
 
-/** Reused helper for load Device Identity behavior in src/gateway. */
 export function loadDeviceIdentity(name: string): {
   identityPath: string;
   identity: DeviceIdentity;
@@ -37,7 +34,6 @@ export function loadDeviceIdentity(name: string): {
   };
 }
 
-/** Reused helper for pair Device Identity behavior in src/gateway. */
 export async function pairDeviceIdentity(params: {
   name: string;
   role: "node" | "operator";
@@ -64,7 +60,6 @@ export async function pairDeviceIdentity(params: {
   return loaded;
 }
 
-/** Reused helper for issue Operator Token behavior in src/gateway. */
 export async function issueOperatorToken(params: {
   name: string;
   approvedScopes: string[];
@@ -114,7 +109,6 @@ export async function issueOperatorToken(params: {
   };
 }
 
-/** Reused helper for open Tracked Ws behavior in src/gateway. */
 export async function openTrackedWs(
   port: number,
   headers?: Record<string, string>,

@@ -42,7 +42,6 @@ type FilteredContainers = {
 
 // --- List Command ---
 
-/** Reused helper for sandbox List Command behavior in src/commands. */
 export async function sandboxListCommand(
   opts: SandboxListOptions,
   runtime: RuntimeEnv,
@@ -66,7 +65,6 @@ export async function sandboxListCommand(
 
 // --- Recreate Command ---
 
-/** Reused helper for sandbox Recreate Command behavior in src/commands. */
 export async function sandboxRecreateCommand(
   opts: SandboxRecreateOptions,
   runtime: RuntimeEnv,

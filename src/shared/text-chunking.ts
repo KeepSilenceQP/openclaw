@@ -1,5 +1,3 @@
-// shared text chunking helpers and runtime behavior.
-/** Reused helper for chunk Text By Break Resolver behavior in src/shared. */
 export function chunkTextByBreakResolver(
   text: string,
   limit: number,

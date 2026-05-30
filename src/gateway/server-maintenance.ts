@@ -1,4 +1,3 @@
-// gateway server maintenance helpers and runtime behavior.
 import type { HealthSummary } from "../commands/health.js";
 import { sweepStaleRunContexts } from "../infra/agent-events.js";
 import { cleanOldMedia } from "../media/store.js";
@@ -17,7 +16,6 @@ import type { DedupeEntry } from "./server-shared.js";
 import { formatError } from "./server-utils.js";
 import { setBroadcastHealthUpdate } from "./server/health-state.js";
 
-/** Reused helper for start Gateway Maintenance Timers behavior in src/gateway. */
 export function startGatewayMaintenanceTimers(params: {
   broadcast: (
     event: string,

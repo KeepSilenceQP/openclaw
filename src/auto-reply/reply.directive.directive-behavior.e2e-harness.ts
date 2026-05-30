@@ -90,7 +90,6 @@ function createDirectiveBehaviorProviderRegistry(): ReturnType<typeof createEmpt
   return registry;
 }
 
-/** Reused helper for install Directive Behavior E2 EHooks behavior in src/auto-reply. */
 export function installDirectiveBehaviorE2EHooks() {
   beforeEach(async () => {
     await resetSkillsRefreshForTest();

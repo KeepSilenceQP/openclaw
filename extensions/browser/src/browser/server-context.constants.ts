@@ -1,4 +1,3 @@
-// extensions/browser/src/browser server context constants helpers and runtime behavior.
 import { DEFAULT_BROWSER_LOCAL_CDP_READY_TIMEOUT_MS } from "./constants.js";
 
 export const MANAGED_BROWSER_PAGE_TAB_LIMIT = 8;

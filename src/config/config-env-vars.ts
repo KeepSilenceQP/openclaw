@@ -1,4 +1,3 @@
-// config config env vars helpers and runtime behavior.
 import {
   isDangerousHostEnvOverrideVarName,
   isDangerousHostEnvVarName,
@@ -55,17 +54,14 @@ function collectConfigEnvVarsByTarget(cfg?: OpenClawConfig): Record<string, stri
   return entries;
 }
 
-/** Reused helper for collect Config Runtime Env Vars behavior in src/config. */
 export function collectConfigRuntimeEnvVars(cfg?: OpenClawConfig): Record<string, string> {
   return collectConfigEnvVarsByTarget(cfg);
 }
 
-/** Reused helper for collect Config Service Env Vars behavior in src/config. */
 export function collectConfigServiceEnvVars(cfg?: OpenClawConfig): Record<string, string> {
   return collectConfigEnvVarsByTarget(cfg);
 }
 
-/** Reused helper for create Config Runtime Env behavior in src/config. */
 export function createConfigRuntimeEnv(
   cfg: OpenClawConfig,
   baseEnv: NodeJS.ProcessEnv = process.env,
@@ -75,7 +71,6 @@ export function createConfigRuntimeEnv(
   return env;
 }
 
-/** Reused helper for apply Config Env Vars behavior in src/config. */
 export function applyConfigEnvVars(
   cfg: OpenClawConfig,
   env: NodeJS.ProcessEnv = process.env,

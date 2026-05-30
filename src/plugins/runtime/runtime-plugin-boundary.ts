@@ -1,4 +1,3 @@
-// plugins/runtime runtime plugin boundary helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { getRuntimeConfig } from "../../config/config.js";
@@ -19,7 +18,6 @@ type PluginRuntimeRecord = {
   source: string;
 };
 
-/** Reused helper for read Plugin Boundary Config Safely behavior in src/plugins/runtime. */
 export function readPluginBoundaryConfigSafely() {
   try {
     return getRuntimeConfig();
@@ -28,7 +26,6 @@ export function readPluginBoundaryConfigSafely() {
   }
 }
 
-/** Reused helper for resolve Plugin Runtime Record behavior in src/plugins/runtime. */
 export function resolvePluginRuntimeRecord(
   pluginId: string,
   onMissing?: () => never,
@@ -50,7 +47,6 @@ export function resolvePluginRuntimeRecord(
   };
 }
 
-/** Reused helper for resolve Plugin Runtime Record By Entry Base Names behavior in src/plugins/runtime. */
 export function resolvePluginRuntimeRecordByEntryBaseNames(
   entryBaseNames: string[],
   onMissing?: () => never,
@@ -90,7 +86,6 @@ export function resolvePluginRuntimeRecordByEntryBaseNames(
   };
 }
 
-/** Reused helper for resolve Plugin Runtime Module Path behavior in src/plugins/runtime. */
 export function resolvePluginRuntimeModulePath(
   record: Pick<PluginRuntimeRecord, "rootDir" | "source">,
   entryBaseName: string,
@@ -127,7 +122,6 @@ function getPluginBoundarySourceLoader(modulePath: string, loaders: PluginModule
 }
 
 // oxlint-disable-next-line typescript/no-unnecessary-type-parameters -- Dynamic plugin boundary loaders use caller-supplied module types.
-/** Reused helper for load Plugin Boundary Module behavior in src/plugins/runtime. */
 export function loadPluginBoundaryModule<TModule>(
   modulePath: string,
   loaders: PluginModuleLoaderCache,

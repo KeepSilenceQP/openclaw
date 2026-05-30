@@ -73,7 +73,6 @@ function formatSummary(summary: AgentSummary) {
   return lines.join("\n");
 }
 
-/** Reused helper for agents List Command behavior in src/commands. */
 export async function agentsListCommand(
   opts: AgentsListOptions,
   runtime: RuntimeEnv = defaultRuntime,

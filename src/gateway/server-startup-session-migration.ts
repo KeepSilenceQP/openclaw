@@ -1,4 +1,3 @@
-// gateway server startup session migration helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { migrateOrphanedSessionKeys } from "../infra/state-migrations.js";
 

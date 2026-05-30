@@ -1,10 +1,8 @@
-// config config paths helpers and runtime behavior.
 import { isPlainObject } from "../utils.js";
 import { isBlockedObjectKey } from "./prototype-keys.js";
 
 type PathNode = Record<string, unknown>;
 
-/** Reused helper for parse Config Path behavior in src/config. */
 export function parseConfigPath(raw: string): {
   ok: boolean;
   path?: string[];
@@ -30,7 +28,6 @@ export function parseConfigPath(raw: string): {
   return { ok: true, path: parts };
 }
 
-/** Reused helper for set Config Value At Path behavior in src/config. */
 export function setConfigValueAtPath(root: PathNode, path: string[], value: unknown): void {
   let cursor: PathNode = root;
   for (let idx = 0; idx < path.length - 1; idx += 1) {
@@ -44,7 +41,6 @@ export function setConfigValueAtPath(root: PathNode, path: string[], value: unkn
   cursor[path[path.length - 1]] = value;
 }
 
-/** Reused helper for unset Config Value At Path behavior in src/config. */
 export function unsetConfigValueAtPath(root: PathNode, path: string[]): boolean {
   const stack: Array<{ node: PathNode; key: string }> = [];
   let cursor: PathNode = root;
@@ -74,7 +70,6 @@ export function unsetConfigValueAtPath(root: PathNode, path: string[]): boolean 
   return true;
 }
 
-/** Reused helper for get Config Value At Path behavior in src/config. */
 export function getConfigValueAtPath(root: PathNode, path: string[]): unknown {
   let cursor: unknown = root;
   for (const key of path) {

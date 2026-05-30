@@ -66,7 +66,6 @@ function buildModelPricingOverviewValue(params: {
   return params.warn(`warning · optional pricing refresh degraded${detail}`);
 }
 
-/** Reused helper for build Status Command Overview Rows behavior in src/commands. */
 export function buildStatusCommandOverviewRows(
   params: {
     opts: {
@@ -182,7 +181,6 @@ export function buildStatusCommandOverviewRows(
   });
 }
 
-/** Reused helper for build Status All Overview Rows behavior in src/commands. */
 export function buildStatusAllOverviewRows(params: {
   surface: StatusOverviewSurface;
   osLabel: string;

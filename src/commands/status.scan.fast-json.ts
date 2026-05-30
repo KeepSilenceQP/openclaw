@@ -76,7 +76,6 @@ function hasPotentialConfiguredChannelsForStatusJson(cfg: OpenClawConfig): boole
   return hasExplicitStatusJsonChannelConfig(cfg) || hasStatusJsonChannelEnvConfig();
 }
 
-/** Reused helper for scan Status Json With Policy behavior in src/commands. */
 export async function scanStatusJsonWithPolicy(
   opts: {
     timeoutMs?: number;
@@ -113,7 +112,6 @@ export async function scanStatusJsonWithPolicy(
   });
 }
 
-/** Reused helper for scan Status Json Fast behavior in src/commands. */
 export async function scanStatusJsonFast(
   opts: {
     timeoutMs?: number;

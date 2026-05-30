@@ -1,4 +1,3 @@
-// extensions/qa-channel/src channel actions helpers and runtime behavior.
 import { jsonResult, readStringParam } from "openclaw/plugin-sdk/channel-actions";
 import { extractToolSend } from "openclaw/plugin-sdk/tool-send";
 import { Type } from "typebox";

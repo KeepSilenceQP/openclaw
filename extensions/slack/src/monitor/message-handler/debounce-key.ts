@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor/message-handler debounce key helpers and runtime behavior.
 import type { SlackMessageEvent } from "../../types.js";
 
 function resolveSlackSenderId(message: SlackMessageEvent): string | null {

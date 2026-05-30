@@ -1,7 +1,6 @@
 import { resolveLegacyAuthChoiceAliasesForCli } from "./auth-choice-legacy.js";
 import type { AuthChoice, AuthChoiceGroupId } from "./onboard-types.js";
 
-/** Shared type for Auth Choice Option in src/commands. */
 export type AuthChoiceOption = {
   value: AuthChoice;
   label: string;
@@ -14,7 +13,6 @@ export type AuthChoiceOption = {
   onboardingFeatured?: boolean;
 };
 
-/** Shared type for Auth Choice Group in src/commands. */
 export type AuthChoiceGroup = {
   value: AuthChoiceGroupId;
   label: string;
@@ -22,7 +20,6 @@ export type AuthChoiceGroup = {
   options: AuthChoiceOption[];
 };
 
-/** Reused constant for CORE AUTH CHOICE OPTIONS behavior in src/commands. */
 export const CORE_AUTH_CHOICE_OPTIONS: ReadonlyArray<AuthChoiceOption> = [
   {
     value: "custom-api-key",
@@ -34,7 +31,6 @@ export const CORE_AUTH_CHOICE_OPTIONS: ReadonlyArray<AuthChoiceOption> = [
   },
 ];
 
-/** Reused helper for format Static Auth Choice Choices For Cli behavior in src/commands. */
 export function formatStaticAuthChoiceChoicesForCli(params?: {
   includeSkip?: boolean;
   includeLegacyAliases?: boolean;

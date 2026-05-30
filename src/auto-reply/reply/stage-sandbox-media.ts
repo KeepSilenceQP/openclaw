@@ -20,7 +20,6 @@ import { CONFIG_DIR } from "../../utils.js";
 import type { MsgContext, TemplateContext } from "../templating.js";
 
 const STAGED_MEDIA_MAX_BYTES = MEDIA_MAX_BYTES;
-/** Reused constant for SCP STDERR TAIL CHARS behavior in src/auto-reply/reply. */
 export const SCP_STDERR_TAIL_CHARS = 16_384;
 
 // `staged` maps every absolute source path that was copied into the sandbox
@@ -30,14 +29,12 @@ export const SCP_STDERR_TAIL_CHARS = 16_384;
 // input cannot distinguish "everything staged" from "silently skipped some"
 // (e.g. the 5MB cap in STAGED_MEDIA_MAX_BYTES rejecting files that the
 // chat.send RPC already admitted under its 20MB cap).
-/** Shared type for Stage Sandbox Media Result in src/auto-reply/reply. */
 export type StageSandboxMediaResult = {
   staged: ReadonlyMap<string, string>;
 };
 
 const EMPTY_STAGE_RESULT: StageSandboxMediaResult = { staged: new Map() };
 
-/** Reused helper for stage Sandbox Media behavior in src/auto-reply/reply. */
 export async function stageSandboxMedia(params: {
   ctx: MsgContext;
   sessionCtx: TemplateContext;
@@ -354,7 +351,6 @@ async function scpFile(remoteHost: string, remotePath: string, localPath: string
   });
 }
 
-/** Reused helper for append Scp Stderr Tail behavior in src/auto-reply/reply. */
 export function appendScpStderrTail(
   current: string,
   chunk: string,

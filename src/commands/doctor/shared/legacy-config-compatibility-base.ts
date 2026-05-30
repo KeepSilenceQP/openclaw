@@ -15,7 +15,6 @@ import { migrateLegacyWebFetchConfig } from "./legacy-web-fetch-migrate.js";
 import { migrateLegacyWebSearchConfig } from "./legacy-web-search-migrate.js";
 import { migrateLegacyXSearchConfig } from "./legacy-x-search-migrate.js";
 
-/** Reused helper for normalize Base Compatibility Config Values behavior in src/commands/doctor. */
 export function normalizeBaseCompatibilityConfigValues(
   cfg: OpenClawConfig,
   changes: string[],

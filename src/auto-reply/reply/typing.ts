@@ -4,7 +4,6 @@ import { createTypingStartGuard } from "../../channels/typing-start-guard.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import { isSilentReplyPrefixText, isSilentReplyText, SILENT_REPLY_TOKEN } from "../tokens.js";
 
-/** Shared type for Typing Controller in src/auto-reply/reply. */
 export type TypingController = {
   onReplyStart: () => Promise<void>;
   startTypingLoop: () => Promise<void>;
@@ -16,7 +15,6 @@ export type TypingController = {
   cleanup: () => void;
 };
 
-/** Reused helper for create Typing Controller behavior in src/auto-reply/reply. */
 export function createTypingController(params: {
   onReplyStart?: () => Promise<void> | void;
   onCleanup?: () => void;

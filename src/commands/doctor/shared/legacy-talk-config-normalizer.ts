@@ -40,7 +40,6 @@ function buildLegacyRealtimeTalkCompat(
   return normalizeTalkSection({ realtime: compat } as OpenClawConfig["talk"])?.realtime;
 }
 
-/** Reused helper for normalize Legacy Talk Config behavior in src/commands/doctor. */
 export function normalizeLegacyTalkConfig(cfg: OpenClawConfig, changes: string[]): OpenClawConfig {
   const rawTalk = cfg.talk;
   if (!isRecord(rawTalk)) {

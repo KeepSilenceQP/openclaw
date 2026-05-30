@@ -1,4 +1,3 @@
-// extensions/whatsapp/src command policy helpers and runtime behavior.
 import type { ChannelPlugin } from "openclaw/plugin-sdk/core";
 
 export const whatsappCommandPolicy: NonNullable<ChannelPlugin["commands"]> = {

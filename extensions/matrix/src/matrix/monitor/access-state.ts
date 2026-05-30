@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor access state helpers and runtime behavior.
 import {
   createChannelIngressResolver,
   defineStableChannelIngressIdentity,

@@ -1,4 +1,3 @@
-// extensions/fal image generation provider helpers and runtime behavior.
 import type {
   GeneratedImageAsset,
   ImageGenerationProvider,

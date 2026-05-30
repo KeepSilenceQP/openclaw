@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor verification events helpers and runtime behavior.
 import type { MatrixClient } from "../sdk.js";
 import { resolveMatrixMonitorAccessState } from "./access-state.js";
 import type { MatrixRawEvent } from "./types.js";

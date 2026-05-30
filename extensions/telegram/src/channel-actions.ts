@@ -1,4 +1,3 @@
-// extensions/telegram/src channel actions helpers and runtime behavior.
 import {
   createUnionActionGate,
   listTokenSourcedAccounts,

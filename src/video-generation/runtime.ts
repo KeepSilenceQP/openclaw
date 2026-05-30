@@ -1,4 +1,3 @@
-// video-generation runtime helpers and runtime behavior.
 import type { FallbackAttempt } from "../agents/model-fallback.types.js";
 import { resolveAgentModelTimeoutMsValue } from "../config/model-input.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -29,7 +28,6 @@ const MODEL_CAPABILITY_LOOKUP_TIMEOUT_MS = 5_000;
 // Internal request hint for providers that perform their own final snapping.
 const SUPPORTED_DURATIONS_HINT = Symbol.for("openclaw.videoGeneration.supportedDurations");
 
-/** Shared type for Video Generation Runtime Deps in src/video-generation. */
 export type VideoGenerationRuntimeDeps = {
   getProvider?: typeof getVideoGenerationProvider;
   listProviders?: typeof listVideoGenerationProviders;
@@ -37,7 +35,6 @@ export type VideoGenerationRuntimeDeps = {
   log?: Pick<typeof log, "debug" | "warn">;
 };
 
-/** Re-exported API for src/video-generation, starting with Generate Video Params. */
 export type { GenerateVideoParams, GenerateVideoRuntimeResult } from "./runtime-types.js";
 
 /**
@@ -107,7 +104,6 @@ function buildNoVideoGenerationModelConfiguredMessage(
   });
 }
 
-/** Reused helper for list Runtime Video Generation Providers behavior in src/video-generation. */
 export function listRuntimeVideoGenerationProviders(
   params?: { config?: OpenClawConfig },
   deps: VideoGenerationRuntimeDeps = {},
@@ -115,7 +111,6 @@ export function listRuntimeVideoGenerationProviders(
   return (deps.listProviders ?? listVideoGenerationProviders)(params?.config);
 }
 
-/** Reused helper for generate Video behavior in src/video-generation. */
 export async function generateVideo(
   params: GenerateVideoParams,
   deps: VideoGenerationRuntimeDeps = {},

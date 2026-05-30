@@ -1,4 +1,3 @@
-// extensions/elevenlabs test api helpers and runtime behavior.
 export {
   elevenLabsMediaUnderstandingProvider,
   transcribeElevenLabsAudio,

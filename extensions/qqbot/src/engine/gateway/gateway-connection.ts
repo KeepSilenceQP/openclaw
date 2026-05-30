@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/gateway gateway connection helpers and runtime behavior.
 import WebSocket from "ws";
 import type { EngineAdapters } from "../adapter/index.js";
 import {

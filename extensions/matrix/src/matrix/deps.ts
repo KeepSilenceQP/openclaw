@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix deps helpers and runtime behavior.
 import { spawn } from "node:child_process";
 import fs from "node:fs";
 import { createRequire } from "node:module";

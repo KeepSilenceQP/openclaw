@@ -8,7 +8,6 @@ import { loadModelRegistry } from "./list.registry.js";
 import type { ConfiguredEntry } from "./list.types.js";
 import { modelKey } from "./shared.js";
 
-/** Reused helper for load List Model Registry behavior in src/commands/models. */
 export async function loadListModelRegistry(
   cfg: OpenClawConfig,
   opts?: {
@@ -47,7 +46,6 @@ function findConfiguredRegistryModel(params: {
   return model;
 }
 
-/** Reused helper for load Configured List Model Registry behavior in src/commands/models. */
 export function loadConfiguredListModelRegistry(
   cfg: OpenClawConfig,
   entries: ConfiguredEntry[],

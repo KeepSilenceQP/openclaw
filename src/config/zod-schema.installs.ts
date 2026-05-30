@@ -1,4 +1,3 @@
-// config zod schema installs helpers and runtime behavior.
 import { z } from "zod";
 
 const InstallSourceSchema = z.union([
@@ -11,7 +10,6 @@ const InstallSourceSchema = z.union([
 
 const PluginInstallSourceSchema = z.union([InstallSourceSchema, z.literal("marketplace")]);
 
-/** Reused constant for Install Record Shape behavior in src/config. */
 export const InstallRecordShape = {
   source: InstallSourceSchema,
   spec: z.string().optional(),
@@ -45,7 +43,6 @@ export const InstallRecordShape = {
   gitCommit: z.string().optional(),
 } as const;
 
-/** Reused constant for Plugin Install Record Shape behavior in src/config. */
 export const PluginInstallRecordShape = {
   ...InstallRecordShape,
   source: PluginInstallSourceSchema,

@@ -4,7 +4,6 @@ import type { MsgContext } from "../templating.js";
 import type { InlineDirectives } from "./directive-handling.parse.js";
 import { stripMentions, stripStructuralPrefixes } from "./mentions.js";
 
-/** Reused helper for is Directive Only behavior in src/auto-reply/reply. */
 export function isDirectiveOnly(params: {
   directives: InlineDirectives;
   cleanedBody: string;

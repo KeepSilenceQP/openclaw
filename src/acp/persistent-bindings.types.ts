@@ -7,10 +7,8 @@ import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 import { normalizeText } from "./normalize-text.js";
 import type { AcpRuntimeSessionMode } from "./runtime/types.js";
 
-/** Re-exported API for src/acp, starting with normalize Text. */
 export { normalizeText } from "./normalize-text.js";
 
-/** Shared type for Configured Acp Binding Channel in src/acp. */
 export type ConfiguredAcpBindingChannel = ChannelId;
 
 /** Canonical config-derived ACP binding identity. */

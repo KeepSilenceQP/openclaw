@@ -203,5 +203,4 @@ export function createInMemorySessionStore(options: AcpSessionStoreOptions = {})
   };
 }
 
-/** Reused constant for default Acp Session Store behavior in src/acp. */
 export const defaultAcpSessionStore = createInMemorySessionStore();

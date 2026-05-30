@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor self chat cache helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import { formatIMessageChatTarget } from "../targets.js";
 

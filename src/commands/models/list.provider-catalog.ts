@@ -106,7 +106,6 @@ function resolveInstalledIndexPluginIdsForProviderFilter(params: {
   return disabledPluginIds.length > 0 ? [] : undefined;
 }
 
-/** Reused helper for resolve Provider Catalog Plugin Ids For Filter behavior in src/commands/models. */
 export async function resolveProviderCatalogPluginIdsForFilter(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -145,7 +144,6 @@ export async function resolveProviderCatalogPluginIdsForFilter(params: {
   return undefined;
 }
 
-/** Reused helper for has Provider Static Catalog For Filter behavior in src/commands/models. */
 export async function hasProviderStaticCatalogForFilter(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -214,7 +212,6 @@ function modelFromProviderCatalog(params: {
   } as Model;
 }
 
-/** Reused helper for load Provider Catalog Models For List behavior in src/commands/models. */
 export async function loadProviderCatalogModelsForList(params: {
   cfg: OpenClawConfig;
   agentDir: string;

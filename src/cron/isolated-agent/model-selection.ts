@@ -1,4 +1,3 @@
-// cron/isolated-agent model selection helpers and runtime behavior.
 import type { AgentConfig } from "../../config/types.agents.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import type { CronJob } from "../types.js";
@@ -21,7 +20,6 @@ type CronSessionModelOverrides = {
 
 type CronModelSelectionSource = "default" | "subagent" | "agent" | "hook" | "payload" | "session";
 
-/** Shared type for Resolve Cron Model Selection Params in src/cron/isolated-agent. */
 export type ResolveCronModelSelectionParams = {
   cfg: OpenClawConfig;
   cfgWithAgentDefaults: OpenClawConfig;
@@ -32,7 +30,6 @@ export type ResolveCronModelSelectionParams = {
   agentId?: string;
 };
 
-/** Shared type for Resolve Cron Model Selection Result in src/cron/isolated-agent. */
 export type ResolveCronModelSelectionResult =
   | {
       ok: true;
@@ -66,7 +63,6 @@ function formatCronPayloadModelRejection(params: {
   return `cron payload.model '${modelOverride}' rejected: ${error}`;
 }
 
-/** Reused helper for resolve Cron Model Selection behavior in src/cron/isolated-agent. */
 export async function resolveCronModelSelection(
   params: ResolveCronModelSelectionParams,
 ): Promise<ResolveCronModelSelectionResult> {

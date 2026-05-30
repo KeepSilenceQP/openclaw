@@ -20,7 +20,6 @@ import { createClackPrompter } from "../../wizard/clack-prompter.js";
 import { channelLabel } from "./runtime-label.js";
 import { type ChatChannel, requireValidConfigFileSnapshot, shouldUseWizard } from "./shared.js";
 
-/** Shared type for Channels Remove Options in src/commands/channels. */
 export type ChannelsRemoveOptions = {
   channel?: string;
   account?: string;
@@ -68,7 +67,6 @@ async function stopGatewayRuntimeBeforeRemove(params: {
   }
 }
 
-/** Reused helper for channels Remove Command behavior in src/commands/channels. */
 export async function channelsRemoveCommand(
   opts: ChannelsRemoveOptions,
   runtime: RuntimeEnv = defaultRuntime,

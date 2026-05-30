@@ -7,7 +7,6 @@ import type { MigrationProviderContext } from "../../plugins/types.js";
 import type { RuntimeEnv } from "../../runtime.js";
 import { timestampMsToIsoFileStamp } from "../../shared/number-coercion.js";
 
-/** Reused helper for create Migration Logger behavior in src/commands/migrate. */
 export function createMigrationLogger(runtime: RuntimeEnv, opts: { json?: boolean } = {}) {
   const info = opts.json ? runtime.error : runtime.log;
   return {
@@ -22,7 +21,6 @@ export function createMigrationLogger(runtime: RuntimeEnv, opts: { json?: boolea
   };
 }
 
-/** Reused helper for build Migration Report Dir behavior in src/commands/migrate. */
 export function buildMigrationReportDir(
   providerId: string,
   stateDir: string,
@@ -32,7 +30,6 @@ export function buildMigrationReportDir(
   return path.join(stateDir, "migration", providerId, stamp);
 }
 
-/** Reused helper for build Migration Context behavior in src/commands/migrate. */
 export function buildMigrationContext(params: {
   source?: string;
   includeSecrets?: boolean;

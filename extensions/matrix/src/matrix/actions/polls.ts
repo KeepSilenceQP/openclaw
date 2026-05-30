@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/actions polls helpers and runtime behavior.
 import { uniqueStrings, uniqueValues } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {
   buildPollResponseContent,

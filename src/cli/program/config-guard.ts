@@ -134,7 +134,6 @@ async function getConfigSnapshot() {
   return configSnapshotPromise;
 }
 
-/** Reused helper for ensure Config Ready behavior in src/cli/program. */
 export async function ensureConfigReady(params: {
   runtime: RuntimeEnv;
   commandPath?: string[];
@@ -256,9 +255,7 @@ export async function ensureConfigReady(params: {
   }
 }
 
-/** Reused constant for test Api behavior in src/cli/program. */
 export const testApi = {
   resetConfigGuardStateForTests,
 };
-/** Re-exported API for src/cli/program, starting with test Api. */
 export { testApi as __test__ };

@@ -1,4 +1,3 @@
-// plugins/test-helpers cold plugin fixtures helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";

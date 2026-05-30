@@ -1,4 +1,3 @@
-// extensions/slack/src resolve allowlist common helpers and runtime behavior.
 type SlackCursorResponse = {
   response_metadata?: { next_cursor?: string };
 };

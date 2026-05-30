@@ -1,4 +1,3 @@
-// extensions/imessage api helpers and runtime behavior.
 /** Re-exported imessage plugin public API, starting with imessage Plugin. */
 export { imessagePlugin } from "./src/channel.js";
 /** Re-exported imessage plugin public API, starting with imessage Setup Plugin. */

@@ -1,4 +1,3 @@
-// extensions/telegram/src send test harness helpers and runtime behavior.
 import { resolveMarkdownTableMode } from "openclaw/plugin-sdk/markdown-table-runtime";
 import {
   buildOutboundMediaLoadOptions,

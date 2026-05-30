@@ -26,7 +26,6 @@ import { isPlainObject } from "../utils.js";
 
 const ENV_VAR_NAME_PATTERN = /^[A-Z_][A-Z0-9_]*$/;
 
-/** Reused class for Missing Env Var Error behavior in src/config. */
 export class MissingEnvVarError extends Error {
   constructor(
     public readonly varName: string,
@@ -76,7 +75,6 @@ function parseEnvTokenAt(value: string, index: number): EnvToken | null {
   return null;
 }
 
-/** Shared type for Env Substitution Warning in src/config. */
 export type EnvSubstitutionWarning = {
   varName: string;
   configPath: string;
@@ -136,7 +134,6 @@ function substituteString(
   return chunks.join("");
 }
 
-/** Reused helper for contains Env Var Reference behavior in src/config. */
 export function containsEnvVarReference(value: string): boolean {
   if (!value.includes("$")) {
     return false;

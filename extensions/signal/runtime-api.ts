@@ -1,4 +1,3 @@
-// extensions/signal runtime api helpers and runtime behavior.
 /** Re-exported signal plugin public API. */
 export {
   applyAccountNameToChannelSection,

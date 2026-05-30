@@ -51,7 +51,6 @@ function seedUsageSummary(): void {
   });
 }
 
-/** Reused helper for register Trigger Handling Usage Summary Cases behavior in src/auto-reply. */
 export function registerTriggerHandlingUsageSummaryCases(params: {
   getReplyFromConfig: () => GetReplyFromConfig;
 }): void {

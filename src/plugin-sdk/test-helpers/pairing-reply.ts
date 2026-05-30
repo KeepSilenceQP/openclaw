@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers pairing reply helpers and runtime behavior.
 import { expect } from "vitest";
 
 export function extractPairingCode(text: string): string {

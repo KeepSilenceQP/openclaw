@@ -3,12 +3,9 @@ import type { DmScope } from "../config/types.base.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { ToolProfileId } from "../config/types.tools.js";
 
-/** Reused constant for ONBOARDING DEFAULT DM SCOPE behavior in src/commands. */
 export const ONBOARDING_DEFAULT_DM_SCOPE: DmScope = "per-channel-peer";
-/** Reused constant for ONBOARDING DEFAULT TOOLS PROFILE behavior in src/commands. */
 export const ONBOARDING_DEFAULT_TOOLS_PROFILE: ToolProfileId = "coding";
 
-/** Reused helper for apply Local Setup Workspace Config behavior in src/commands. */
 export function applyLocalSetupWorkspaceConfig(
   baseConfig: OpenClawConfig,
   workspaceDir: string,
@@ -37,7 +34,6 @@ export function applyLocalSetupWorkspaceConfig(
   };
 }
 
-/** Reused helper for apply Skip Bootstrap Config behavior in src/commands. */
 export function applySkipBootstrapConfig(cfg: OpenClawConfig): OpenClawConfig {
   const next = structuredClone(cfg);
   setConfigValueAtPath(

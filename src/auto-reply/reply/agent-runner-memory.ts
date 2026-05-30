@@ -131,7 +131,6 @@ const memoryDeps = {
   now: () => Date.now(),
 };
 
-/** Reused helper for set Agent Runner Memory Test Deps behavior in src/auto-reply/reply. */
 export function setAgentRunnerMemoryTestDeps(overrides?: Partial<typeof memoryDeps>): void {
   Object.assign(memoryDeps, {
     runWithModelFallback,
@@ -324,7 +323,6 @@ function buildMemoryFlushErrorPayload(err: unknown): ReplyPayload | undefined {
   };
 }
 
-/** Shared type for Session Transcript Usage Snapshot in src/auto-reply/reply. */
 export type SessionTranscriptUsageSnapshot = {
   promptTokens?: number;
   outputTokens?: number;
@@ -673,7 +671,6 @@ async function estimatePromptTokensFromSessionTranscript(params: {
   }
 }
 
-/** Reused helper for run Preflight Compaction If Needed behavior in src/auto-reply/reply. */
 export async function runPreflightCompactionIfNeeded(params: {
   cfg: OpenClawConfig;
   followupRun: FollowupRun;
@@ -956,7 +953,6 @@ export async function runPreflightCompactionIfNeeded(params: {
   return entry ?? params.sessionEntry;
 }
 
-/** Reused helper for run Memory Flush If Needed behavior in src/auto-reply/reply. */
 export async function runMemoryFlushIfNeeded(params: {
   cfg: OpenClawConfig;
   followupRun: FollowupRun;

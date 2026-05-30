@@ -42,7 +42,6 @@ function pruneBindingsForMissingAgents(cfg: OpenClawConfig, changes: string[]): 
   };
 }
 
-/** Reused helper for normalize Compatibility Config Values behavior in src/commands/doctor. */
 export function normalizeCompatibilityConfigValues(cfg: OpenClawConfig): {
   config: OpenClawConfig;
   changes: string[];

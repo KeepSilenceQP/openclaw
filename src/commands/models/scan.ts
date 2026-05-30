@@ -191,7 +191,6 @@ function parsePositiveIntegerOption(raw: unknown, label: string, fallback: numbe
   return parsed;
 }
 
-/** Reused helper for models Scan Command behavior in src/commands/models. */
 export async function modelsScanCommand(
   opts: {
     minParams?: string;

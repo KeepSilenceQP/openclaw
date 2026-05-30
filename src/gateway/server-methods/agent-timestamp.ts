@@ -1,4 +1,3 @@
-// gateway/server-methods agent timestamp helpers and runtime behavior.
 import { resolveUserTimezone } from "../../agents/date-time.js";
 import type { OpenClawConfig } from "../../config/types.js";
 import { formatZonedTimestamp } from "../../infra/format-time/format-datetime.ts";
@@ -17,7 +16,6 @@ const CRON_TIME_MARKER = "Current time: ";
  */
 const TIMESTAMP_ENVELOPE_PATTERN = /^\[.*\d{4}-\d{2}-\d{2} \d{2}:\d{2}/;
 
-/** Shared type for Timestamp Injection Options in src/gateway/server-methods. */
 export interface TimestampInjectionOptions {
   timezone?: string;
   now?: Date;

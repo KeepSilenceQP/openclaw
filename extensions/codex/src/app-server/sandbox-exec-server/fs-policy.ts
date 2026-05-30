@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server/sandbox-exec-server fs policy helpers and runtime behavior.
 import { posix as pathPosix } from "node:path";
 import type { JsonObject } from "../protocol.js";
 import { requireObject, requireString } from "./json-rpc.js";

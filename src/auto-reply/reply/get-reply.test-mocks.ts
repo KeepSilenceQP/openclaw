@@ -78,5 +78,4 @@ vi.mock("./typing.js", () => ({
   createTypingController: vi.fn(() => createMockTypingController()),
 }));
 
-/** Reused helper for register Get Reply Common Mocks behavior in src/auto-reply/reply. */
 export function registerGetReplyCommonMocks(): void {}

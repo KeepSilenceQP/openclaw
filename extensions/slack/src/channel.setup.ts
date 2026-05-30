@@ -1,4 +1,3 @@
-// extensions/slack/src channel setup helpers and runtime behavior.
 import { formatAllowFromLowercase } from "openclaw/plugin-sdk/allow-from";
 import {
   adaptScopedAccountAccessor,

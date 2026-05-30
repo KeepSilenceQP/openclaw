@@ -1,4 +1,3 @@
-// extensions/imessage/src channel setup helpers and runtime behavior.
 import { type ResolvedIMessageAccount } from "./accounts.js";
 import { type ChannelPlugin } from "./channel-api.js";
 import { imessageSetupAdapter } from "./setup-core.js";

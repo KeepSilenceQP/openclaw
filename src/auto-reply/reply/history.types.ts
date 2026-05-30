@@ -1,5 +1,4 @@
 // Shared reply history entry types.
-/** Shared type for History Entry in src/auto-reply/reply. */
 export type HistoryEntry = {
   sender: string;
   body: string;
@@ -8,7 +7,6 @@ export type HistoryEntry = {
   media?: HistoryMediaEntry[];
 };
 
-/** Shared type for History Media Entry in src/auto-reply/reply. */
 export type HistoryMediaEntry = {
   path?: string;
   url?: string;

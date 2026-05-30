@@ -39,7 +39,6 @@ function toOnboardingPluginInstallEntry(
   };
 }
 
-/** Reused helper for ensure Channel Setup Plugin Installed behavior in src/commands/channel-setup. */
 export async function ensureChannelSetupPluginInstalled(params: {
   cfg: OpenClawConfig;
   entry: ChannelPluginCatalogEntry;
@@ -68,7 +67,6 @@ export async function ensureChannelSetupPluginInstalled(params: {
   };
 }
 
-/** Reused helper for reload Channel Setup Plugin Registry behavior in src/commands/channel-setup. */
 export function reloadChannelSetupPluginRegistry(params: {
   cfg: OpenClawConfig;
   runtime: RuntimeEnv;
@@ -145,7 +143,6 @@ function resolveUniqueManifestScopedChannelPluginId(params: {
   return matches.length === 1 ? matches[0] : undefined;
 }
 
-/** Reused helper for reload Channel Setup Plugin Registry For Channel behavior in src/commands/channel-setup. */
 export function reloadChannelSetupPluginRegistryForChannel(params: {
   cfg: OpenClawConfig;
   runtime: RuntimeEnv;
@@ -165,7 +162,6 @@ export function reloadChannelSetupPluginRegistryForChannel(params: {
   });
 }
 
-/** Reused helper for load Channel Setup Plugin Registry Snapshot For Channel behavior in src/commands/channel-setup. */
 export function loadChannelSetupPluginRegistrySnapshotForChannel(params: {
   cfg: OpenClawConfig;
   runtime: RuntimeEnv;

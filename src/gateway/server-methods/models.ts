@@ -1,4 +1,3 @@
-// gateway/server-methods models helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -35,7 +34,6 @@ function omitRuntimeModelParamsFromCatalog(catalog: ModelCatalogEntry[]): ModelC
   return catalog.map(omitRuntimeModelParams);
 }
 
-/** Reused constant for models Handlers behavior in src/gateway/server-methods. */
 export const modelsHandlers: GatewayRequestHandlers = {
   "models.list": async ({ params, respond, context }) => {
     if (!validateModelsListParams(params)) {

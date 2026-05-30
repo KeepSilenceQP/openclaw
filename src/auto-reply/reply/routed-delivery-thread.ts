@@ -2,7 +2,6 @@
 import { parseSessionThreadInfoFast } from "../../config/sessions/thread-info.js";
 import type { MsgContext } from "../templating.js";
 
-/** Reused helper for resolve Routed Delivery Thread Id behavior in src/auto-reply/reply. */
 export function resolveRoutedDeliveryThreadId(params: {
   ctx: MsgContext;
   sessionKey?: string;

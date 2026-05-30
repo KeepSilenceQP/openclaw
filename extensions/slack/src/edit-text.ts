@@ -1,4 +1,3 @@
-// extensions/slack/src edit text helpers and runtime behavior.
 import type { Block, KnownBlock } from "@slack/web-api";
 import { buildSlackBlocksFallbackText } from "./blocks-fallback.js";
 import { SLACK_TEXT_LIMIT } from "./limits.js";

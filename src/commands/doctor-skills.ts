@@ -17,7 +17,6 @@ import {
   disableUnavailableSkillsInConfig,
 } from "./doctor-skills-core.js";
 
-/** Re-exported API for src/commands. */
 export {
   collectUnavailableAgentSkills,
   disableUnavailableSkillsInConfig,
@@ -58,12 +57,10 @@ function defaultGhConfigDiscoveryInput(): GhConfigDiscoveryInput {
   };
 }
 
-/** Reused helper for describe Gh Config Dir Hint behavior in src/commands. */
 export function describeGhConfigDirHint(skills: SkillStatusEntry[]): string[] {
   return describeGhConfigDirHintFromDiscovery(skills, defaultGhConfigDiscoveryInput());
 }
 
-/** Reused helper for describe Gh Config Dir Hint From Discovery behavior in src/commands. */
 export function describeGhConfigDirHintFromDiscovery(
   skills: SkillStatusEntry[],
   discoveryInput: GhConfigDiscoveryInput,
@@ -87,7 +84,6 @@ export function describeGhConfigDirHintFromDiscovery(
   return formatGhConfigDirMismatchHint(result);
 }
 
-/** Reused helper for format Unavailable Skill Doctor Lines behavior in src/commands. */
 export function formatUnavailableSkillDoctorLines(skills: SkillStatusEntry[]): string[] {
   const lines: string[] = [
     "Some skills are allowed for this agent but are not usable in the current runtime environment.",
@@ -103,7 +99,6 @@ export function formatUnavailableSkillDoctorLines(skills: SkillStatusEntry[]): s
   return lines;
 }
 
-/** Reused helper for maybe Repair Skill Readiness behavior in src/commands. */
 export async function maybeRepairSkillReadiness(params: {
   cfg: OpenClawConfig;
   prompter: DoctorPrompter;

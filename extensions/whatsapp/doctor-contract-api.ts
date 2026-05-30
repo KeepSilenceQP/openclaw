@@ -1,4 +1,3 @@
-// extensions/whatsapp doctor contract api helpers and runtime behavior.
 import type { ChannelDoctorLegacyConfigRule } from "openclaw/plugin-sdk/channel-contract";
 
 export { normalizeCompatibilityConfig } from "./src/doctor-contract.js";

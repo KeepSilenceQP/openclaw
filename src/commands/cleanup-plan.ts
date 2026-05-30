@@ -7,7 +7,6 @@ import {
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { buildCleanupPlan } from "./cleanup-utils.js";
 
-/** Reused helper for resolve Cleanup Plan From Disk behavior in src/commands. */
 export function resolveCleanupPlanFromDisk(): {
   cfg: OpenClawConfig;
   stateDir: string;

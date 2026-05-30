@@ -105,7 +105,6 @@ function resolveDirectiveCommandText(params: { ctx: MsgContext; sessionCtx: Temp
   };
 }
 
-/** Shared type for Reply Directive Continuation in src/auto-reply/reply. */
 export type ReplyDirectiveContinuation = {
   commandSource: string;
   command: ReturnType<typeof buildCommandContext>;
@@ -146,12 +145,10 @@ export type ReplyDirectiveContinuation = {
   };
 };
 
-/** Shared type for Reply Directive Result in src/auto-reply/reply. */
 export type ReplyDirectiveResult =
   | { kind: "reply"; reply: ReplyPayload | ReplyPayload[] | undefined }
   | { kind: "continue"; result: ReplyDirectiveContinuation };
 
-/** Reused helper for resolve Reply Directives behavior in src/auto-reply/reply. */
 export async function resolveReplyDirectives(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;

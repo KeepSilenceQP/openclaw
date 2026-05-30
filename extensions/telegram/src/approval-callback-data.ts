@@ -1,4 +1,3 @@
-// extensions/telegram/src approval callback data helpers and runtime behavior.
 const TELEGRAM_CALLBACK_DATA_MAX_BYTES = 64;
 
 const TELEGRAM_APPROVE_ALLOW_ALWAYS_PATTERN =

@@ -1,4 +1,3 @@
-// extensions/telegram/src accounts helpers and runtime behavior.
 import util from "node:util";
 import {
   createAccountActionGate,

@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/commands/builtin state helpers and runtime behavior.
 import type { ApproveRuntimeGetter, CommandsPort } from "../../adapter/commands.port.js";
 
 let resolveVersionGetter: () => string = () => "unknown";

@@ -1,7 +1,5 @@
-// gateway/server-methods attachment normalize helpers and runtime behavior.
 import type { ChatAttachment } from "../chat-attachments.js";
 
-/** Shared type for Rpc Attachment Input in src/gateway/server-methods. */
 export type RpcAttachmentInput = {
   type?: unknown;
   mimeType?: unknown;
@@ -23,7 +21,6 @@ function normalizeAttachmentContent(content: unknown): string | undefined {
   return undefined;
 }
 
-/** Reused helper for normalize Rpc Attachments To Chat Attachments behavior in src/gateway/server-methods. */
 export function normalizeRpcAttachmentsToChatAttachments(
   attachments: RpcAttachmentInput[] | undefined,
 ): ChatAttachment[] {

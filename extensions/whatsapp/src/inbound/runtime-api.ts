@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/inbound runtime api helpers and runtime behavior.
 /** Re-exported whatsapp plugin public API. */
 export {
   DisconnectReason,

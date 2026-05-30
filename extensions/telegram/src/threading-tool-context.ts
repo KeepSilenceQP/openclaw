@@ -1,4 +1,3 @@
-// extensions/telegram/src threading tool context helpers and runtime behavior.
 import type {
   ChannelThreadingContext,
   ChannelThreadingToolContext,

@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor reaction events helpers and runtime behavior.
 import { getSessionBindingService } from "openclaw/plugin-sdk/session-binding-runtime";
 import {
   resolveMatrixApprovalReactionTargetWithPersistence,

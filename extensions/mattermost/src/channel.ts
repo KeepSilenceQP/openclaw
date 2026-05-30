@@ -1,4 +1,3 @@
-// extensions/mattermost/src channel helpers and runtime behavior.
 import type {
   ChannelMessageActionAdapter,
   ChannelMessageActionName,

@@ -1,4 +1,3 @@
-// extensions/twitch/src config schema helpers and runtime behavior.
 import { MarkdownConfigSchema } from "openclaw/plugin-sdk/channel-config-primitives";
 import { z } from "zod";
 

@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw tools core activity helpers and runtime behavior.
 import type {
   BrowserConsoleMessage,
   BrowserNetworkRequest,

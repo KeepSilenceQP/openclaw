@@ -1,4 +1,3 @@
-// extensions/xai api helpers and runtime behavior.
 import { normalizeProviderId } from "openclaw/plugin-sdk/provider-model-shared";
 import {
   normalizeOptionalLowercaseString,

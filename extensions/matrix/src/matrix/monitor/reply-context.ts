@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor reply context helpers and runtime behavior.
 import type { MatrixClient } from "../sdk.js";
 import { summarizeMatrixMessageContextEvent, trimMatrixMaybeString } from "./context-summary.js";
 import type { MatrixRawEvent } from "./types.js";

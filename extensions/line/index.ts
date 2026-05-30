@@ -1,4 +1,3 @@
-// extensions/line index helpers and runtime behavior.
 import {
   defineBundledChannelEntry,
   type OpenClawPluginCommandDefinition,

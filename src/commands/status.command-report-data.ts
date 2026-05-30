@@ -29,7 +29,6 @@ import {
 import type { MemoryPluginStatus, MemoryStatusSnapshot } from "./status.scan.shared.js";
 import type { SessionStatus, StatusSummary } from "./status.types.js";
 
-/** Reused helper for build Status Command Report Data behavior in src/commands. */
 export async function buildStatusCommandReportData(
   params: {
     opts: {

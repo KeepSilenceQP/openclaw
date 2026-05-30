@@ -1,4 +1,3 @@
-// extensions/whatsapp/src monitor inbox test harness helpers and runtime behavior.
 import { EventEmitter } from "node:events";
 import fsSync from "node:fs";
 import os from "node:os";

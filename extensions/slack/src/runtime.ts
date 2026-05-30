@@ -1,4 +1,3 @@
-// extensions/slack/src runtime helpers and runtime behavior.
 import type { PluginRuntime } from "openclaw/plugin-sdk/channel-core";
 import { createPluginRuntimeStore } from "openclaw/plugin-sdk/runtime-store";
 

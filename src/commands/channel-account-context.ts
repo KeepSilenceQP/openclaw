@@ -39,7 +39,6 @@ function formatContextDiagnostic(params: {
   return `${prefix}channels.${params.pluginId}.accounts.${params.accountId}: ${params.message}`;
 }
 
-/** Reused helper for resolve Default Channel Account Context behavior in src/commands. */
 export async function resolveDefaultChannelAccountContext(
   plugin: ChannelPlugin,
   cfg: OpenClawConfig,

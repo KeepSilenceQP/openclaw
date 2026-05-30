@@ -1,4 +1,3 @@
-// plugins/runtime runtime task test harness helpers and runtime behavior.
 import { vi } from "vitest";
 import { resetDetachedTaskLifecycleRuntimeForTests } from "../../tasks/detached-task-runtime.js";
 import {
@@ -16,12 +15,10 @@ const runtimeTaskMocks = vi.hoisted(() => ({
   killSubagentRunAdminMock: vi.fn(),
 }));
 
-/** Reused helper for get Runtime Task Mocks behavior in src/plugins/runtime. */
 export function getRuntimeTaskMocks() {
   return runtimeTaskMocks;
 }
 
-/** Reused helper for install Runtime Task Delivery Mock behavior in src/plugins/runtime. */
 export function installRuntimeTaskDeliveryMock(): void {
   setTaskRegistryDeliveryRuntimeForTests({
     sendMessage: runtimeTaskMocks.sendMessageMock,
@@ -34,7 +31,6 @@ export function installRuntimeTaskDeliveryMock(): void {
   });
 }
 
-/** Reused helper for reset Runtime Task Test State behavior in src/plugins/runtime. */
 export function resetRuntimeTaskTestState(
   taskRegistryOptions?: Parameters<typeof resetTaskRegistryForTests>[0],
 ): void {

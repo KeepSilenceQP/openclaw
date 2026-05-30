@@ -1,4 +1,3 @@
-// plugins provider replay helpers helpers and runtime behavior.
 import type { AgentMessage } from "../agents/runtime/index.js";
 import { isGemma4ModelId } from "../shared/google-models.js";
 import { sanitizeGoogleAssistantFirstOrdering } from "../shared/google-turn-ordering.js";

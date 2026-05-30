@@ -6,7 +6,6 @@ import type { RuntimeEnv } from "../runtime.js";
 import { t } from "../wizard/i18n/index.js";
 import type { WizardPrompter } from "../wizard/prompts.js";
 
-/** Reused helper for setup Internal Hooks behavior in src/commands. */
 export async function setupInternalHooks(
   cfg: OpenClawConfig,
   _runtime: RuntimeEnv,

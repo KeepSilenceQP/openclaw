@@ -1,4 +1,3 @@
-// extensions/qqbot runtime api helpers and runtime behavior.
 /** Re-exported qqbot plugin public API, starting with Channel Plugin. */
 export type { ChannelPlugin, OpenClawPluginApi, PluginRuntime } from "openclaw/plugin-sdk/core";
 /** Re-exported qqbot plugin public API, starting with Open Claw Config. */

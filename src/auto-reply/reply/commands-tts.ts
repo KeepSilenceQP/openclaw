@@ -172,7 +172,6 @@ async function buildTtsAudioReply(params: {
   return { error: result.error ?? "unknown error" };
 }
 
-/** Reused constant for handle Tts Commands behavior in src/auto-reply/reply. */
 export const handleTtsCommands: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;

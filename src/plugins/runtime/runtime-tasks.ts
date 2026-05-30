@@ -1,4 +1,3 @@
-// plugins/runtime runtime tasks helpers and runtime behavior.
 import { listTasksForFlowId } from "../../tasks/runtime-internal.js";
 import {
   mapTaskFlowDetail,
@@ -31,7 +30,6 @@ import type {
   TaskFlowDetail,
   TaskRunCancelResult,
 } from "./runtime-tasks.types.js";
-/** Re-exported API for src/plugins/runtime. */
 export type {
   BoundTaskFlowsRuntime,
   BoundTaskRunsRuntime,
@@ -177,7 +175,6 @@ function createBoundTaskFlowsRuntime(params: {
   };
 }
 
-/** Reused helper for create Runtime Task Runs behavior in src/plugins/runtime. */
 export function createRuntimeTaskRuns(): PluginRuntimeTaskRuns {
   return {
     bindSession: (params) =>
@@ -196,7 +193,6 @@ export function createRuntimeTaskRuns(): PluginRuntimeTaskRuns {
   };
 }
 
-/** Reused helper for create Runtime Task Flows behavior in src/plugins/runtime. */
 export function createRuntimeTaskFlows(): PluginRuntimeTaskFlows {
   return {
     bindSession: (params) =>
@@ -215,7 +211,6 @@ export function createRuntimeTaskFlows(): PluginRuntimeTaskFlows {
   };
 }
 
-/** Reused helper for create Runtime Tasks behavior in src/plugins/runtime. */
 export function createRuntimeTasks(params: {
   legacyTaskFlow: PluginRuntimeTaskFlow;
 }): PluginRuntimeTasks {

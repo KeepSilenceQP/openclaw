@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw ai helpers and runtime behavior.
 import { markPwAiLoaded } from "./pw-ai-state.js";
 
 markPwAiLoaded();

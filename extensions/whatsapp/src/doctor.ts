@@ -1,4 +1,3 @@
-// extensions/whatsapp/src doctor helpers and runtime behavior.
 import type {
   ChannelDoctorAdapter,
   ChannelDoctorConfigMutation,

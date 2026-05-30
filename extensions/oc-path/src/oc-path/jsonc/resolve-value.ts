@@ -1,4 +1,3 @@
-// extensions/oc-path/src/oc-path/jsonc resolve value helpers and runtime behavior.
 import { isPositionalSeg, parseArrayIndexSegment, resolvePositionalSeg } from "../oc-path.js";
 import type { JsoncEntry, JsoncValue } from "./ast.js";
 

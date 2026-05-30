@@ -1,4 +1,3 @@
-// extensions/browser/src/browser server control server test harness helpers and runtime behavior.
 import { afterEach, beforeEach, vi } from "vitest";
 import { deriveDefaultBrowserCdpPortRange } from "../config/port-defaults.js";
 import type { SsrFPolicy } from "../infra/net/ssrf.js";

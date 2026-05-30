@@ -43,7 +43,6 @@ function loadSourcePlanModule(): Promise<SourcePlanModule> {
   return sourcePlanModuleLoader.load();
 }
 
-/** Reused helper for models List Command behavior in src/commands/models. */
 export async function modelsListCommand(
   opts: {
     all?: boolean;

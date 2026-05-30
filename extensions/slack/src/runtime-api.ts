@@ -1,4 +1,3 @@
-// extensions/slack/src runtime api helpers and runtime behavior.
 /** Re-exported slack plugin public API. */
 export {
   buildComputedAccountStatusSnapshot,

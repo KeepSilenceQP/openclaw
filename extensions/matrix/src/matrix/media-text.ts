@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix media text helpers and runtime behavior.
 import path from "node:path";
 import type {
   MatrixMessageAttachmentKind,

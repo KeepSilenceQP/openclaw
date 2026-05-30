@@ -19,7 +19,6 @@ import { isCatalogChannelInstalled } from "../channel-setup/discovery.js";
 import { listTrustedChannelPluginCatalogEntries } from "../channel-setup/trusted-catalog.js";
 import { formatChannelAccountLabel, requireValidConfig } from "./shared.js";
 
-/** Shared type for Channels List Options in src/commands/channels. */
 export type ChannelsListOptions = {
   json?: boolean;
   all?: boolean;
@@ -142,7 +141,6 @@ function formatCatalogOnlyLine(params: {
   return `- ${channelText}: ${bits.join(", ")}`;
 }
 
-/** Reused helper for channels List Command behavior in src/commands/channels. */
 export async function channelsListCommand(
   opts: ChannelsListOptions,
   runtime: RuntimeEnv = defaultRuntime,

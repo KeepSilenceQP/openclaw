@@ -20,7 +20,6 @@ type CachedScopedTools = {
   time: number;
 };
 
-/** Reused helper for resolve Mcp Loopback Scoped Tools behavior in src/gateway. */
 export function resolveMcpLoopbackScopedTools(params: {
   cfg: OpenClawConfig;
   sessionKey: string;
@@ -53,7 +52,6 @@ export function resolveMcpLoopbackScopedTools(params: {
   };
 }
 
-/** Reused class for Mcp Loopback Tool Cache behavior in src/gateway. */
 export class McpLoopbackToolCache {
   #entries = new Map<string, CachedScopedTools>();
 

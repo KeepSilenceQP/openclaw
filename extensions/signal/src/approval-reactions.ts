@@ -1,4 +1,3 @@
-// extensions/signal/src approval reactions helpers and runtime behavior.
 import { matchesApprovalRequestFilters } from "openclaw/plugin-sdk/approval-client-runtime";
 import {
   buildApprovalReactionHint,

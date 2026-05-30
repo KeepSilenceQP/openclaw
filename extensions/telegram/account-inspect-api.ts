@@ -1,4 +1,3 @@
-// extensions/telegram account inspect api helpers and runtime behavior.
 import type { OpenClawConfig } from "./runtime-api.js";
 import { inspectTelegramAccount } from "./src/account-inspect.js";
 

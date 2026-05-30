@@ -1,9 +1,7 @@
-// config channel configured shared helpers and runtime behavior.
 import { getChannelEnvVars } from "../secrets/channel-env-vars.js";
 import { isRecord } from "../utils.js";
 import type { OpenClawConfig } from "./config.js";
 
-/** Reused helper for resolve Channel Config Record behavior in src/config. */
 export function resolveChannelConfigRecord(
   cfg: OpenClawConfig,
   channelId: string,
@@ -13,7 +11,6 @@ export function resolveChannelConfigRecord(
   return isRecord(entry) ? entry : null;
 }
 
-/** Reused helper for has Meaningful Channel Config Shallow behavior in src/config. */
 export function hasMeaningfulChannelConfigShallow(value: unknown): boolean {
   if (!isRecord(value)) {
     return false;
@@ -25,7 +22,6 @@ export function hasMeaningfulChannelConfigShallow(value: unknown): boolean {
   return keys.some((key) => key !== "enabled");
 }
 
-/** Reused helper for is Statically Channel Configured behavior in src/config. */
 export function isStaticallyChannelConfigured(
   cfg: OpenClawConfig,
   channelId: string,

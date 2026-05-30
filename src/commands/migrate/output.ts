@@ -95,7 +95,6 @@ function formatPlanWarnings(plan: MigrationPlan): string[] {
   return lines;
 }
 
-/** Reused helper for format Migration Preview behavior in src/commands/migrate. */
 export function formatMigrationPreview(plan: MigrationPlan): string[] {
   return [
     ...formatPlanHeader(plan, "Migration preview:"),
@@ -104,7 +103,6 @@ export function formatMigrationPreview(plan: MigrationPlan): string[] {
   ];
 }
 
-/** Reused helper for format Migration Result behavior in src/commands/migrate. */
 export function formatMigrationResult(plan: MigrationPlan): string[] {
   const lines = [...formatPlanHeader(plan, "Migration plan:"), ...formatPlanItems(plan, "result")];
   if (plan.nextSteps && plan.nextSteps.length > 0) {
@@ -138,7 +136,6 @@ const REASON_CODE_MESSAGES: Record<string, string> = {
 // Phrase-form conflict reasons, used as-is in selection-prompt hints
 // (`<source label> <phrase>`) and wrapped into sentence form for preview
 // /result rows. Keep one map so the two surfaces never drift.
-/** Reused constant for MIGRATION CONFLICT REASON PHRASES behavior in src/commands/migrate. */
 export const MIGRATION_CONFLICT_REASON_PHRASES: Record<string, string> = {
   "target exists": "already installed in workspace",
   "plugin exists": "already installed in workspace",
@@ -232,7 +229,6 @@ function formatMigrationItem(item: MigrationItem, mode: FormatMode): string {
   return `${prefix}${name}${sensitive}${messageSuffix}`;
 }
 
-/** Reused helper for assert Conflict Free Plan behavior in src/commands/migrate. */
 export function assertConflictFreePlan(plan: MigrationPlan, providerId: string): void {
   if (plan.summary.conflicts > 0) {
     throw new Error(
@@ -241,7 +237,6 @@ export function assertConflictFreePlan(plan: MigrationPlan, providerId: string):
   }
 }
 
-/** Reused helper for write Apply Result behavior in src/commands/migrate. */
 export function writeApplyResult(
   runtime: RuntimeEnv,
   opts: MigrateApplyOptions,
@@ -262,7 +257,6 @@ export function writeApplyResult(
   }
 }
 
-/** Reused helper for assert Apply Succeeded behavior in src/commands/migrate. */
 export function assertApplySucceeded(result: MigrationApplyResult): void {
   if (result.summary.errors === 0 && result.summary.conflicts === 0) {
     return;

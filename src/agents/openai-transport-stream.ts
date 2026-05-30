@@ -231,7 +231,6 @@ type MutableAssistantOutput = {
   errorBody?: string;
 };
 
-/** Re-exported API for src/agents, starting with sanitize Transport Payload Text. */
 export { sanitizeTransportPayloadText } from "./transport-stream-shared.js";
 
 function stringifyUnknown(value: unknown, fallback = ""): string {
@@ -3813,5 +3812,4 @@ export const testing = {
   summarizeResponsesTools,
   withResponsesFirstEventTimeout,
 };
-/** Re-exported API for src/agents, starting with testing. */
 export { testing as __testing };

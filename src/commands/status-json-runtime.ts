@@ -48,7 +48,6 @@ type StatusJsonScanLike = {
   pluginCompatibility?: Array<Record<string, unknown>> | null | undefined;
 };
 
-/** Reused helper for resolve Status Json Output behavior in src/commands. */
 export async function resolveStatusJsonOutput(params: {
   scan: StatusJsonScanLike;
   opts: {

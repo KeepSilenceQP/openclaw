@@ -1,4 +1,3 @@
-// src/gateway/server-methods skills helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,

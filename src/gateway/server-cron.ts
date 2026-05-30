@@ -1,4 +1,3 @@
-// gateway server cron helpers and runtime behavior.
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";
 import { abortAndDrainEmbeddedAgentRun } from "../agents/embedded-agent.js";
 import { cleanupBrowserSessionsForLifecycleEnd } from "../browser-lifecycle-cleanup.js";
@@ -44,7 +43,6 @@ import {
   sendGatewayCronFailureAlert,
 } from "./server-cron-notifications.js";
 
-/** Shared type for Gateway Cron State in src/gateway. */
 export type GatewayCronState = {
   cron: CronServiceContract;
   storePath: string;
@@ -115,7 +113,6 @@ function toPluginCronJob(job: CronJob): PluginHookGatewayCronJob {
   };
 }
 
-/** Reused helper for build Gateway Cron Service behavior in src/gateway. */
 export function buildGatewayCronService(params: {
   cfg: OpenClawConfig;
   deps: CliDeps;

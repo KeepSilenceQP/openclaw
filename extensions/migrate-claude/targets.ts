@@ -1,4 +1,3 @@
-// extensions/migrate-claude targets helpers and runtime behavior.
 import path from "node:path";
 import {
   resolveAgentConfig,

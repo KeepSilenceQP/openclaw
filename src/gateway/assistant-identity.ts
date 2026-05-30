@@ -1,4 +1,3 @@
-// gateway assistant identity helpers and runtime behavior.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import { resolveAgentIdentity } from "../agents/identity.js";
 import { loadAgentIdentity } from "../commands/agents.config.js";
@@ -18,7 +17,6 @@ const MAX_ASSISTANT_NAME = 50;
 const MAX_ASSISTANT_AVATAR = 2_000_000;
 const MAX_ASSISTANT_EMOJI = 16;
 
-/** Reused constant for DEFAULT ASSISTANT IDENTITY behavior in src/gateway. */
 export const DEFAULT_ASSISTANT_IDENTITY: AssistantIdentity = {
   agentId: "main",
   name: "Assistant",
@@ -83,7 +81,6 @@ function normalizeEmojiValue(value: string | undefined): string | undefined {
   return trimmed;
 }
 
-/** Reused helper for resolve Assistant Identity behavior in src/gateway. */
 export function resolveAssistantIdentity(params: {
   cfg: OpenClawConfig;
   agentId?: string | null;

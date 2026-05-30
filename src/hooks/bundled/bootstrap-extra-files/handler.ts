@@ -1,4 +1,3 @@
-// hooks/bundled/bootstrap-extra-files handler helpers and runtime behavior.
 import {
   filterBootstrapFilesForSession,
   loadExtraBootstrapFilesWithDiagnostics,

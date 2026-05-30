@@ -73,7 +73,6 @@ function resolveDefaultModelRef(cfg: OpenClawConfig, agentId?: string): SessionD
   return parseModelRef(primary, DEFAULT_PROVIDER);
 }
 
-/** Reused helper for resolve Session Display Defaults behavior in src/commands. */
 export function resolveSessionDisplayDefaults(
   cfg: OpenClawConfig,
   agentId?: string,
@@ -114,7 +113,6 @@ function normalizeCliRuntimeDisplayRef(
   };
 }
 
-/** Reused helper for resolve Session Display Model behavior in src/commands. */
 export function resolveSessionDisplayModel(
   cfg: OpenClawConfig,
   row: SessionDisplayModelRow,
@@ -122,7 +120,6 @@ export function resolveSessionDisplayModel(
   return resolveSessionDisplayModelRef(cfg, row).model;
 }
 
-/** Reused helper for resolve Session Display Model Ref behavior in src/commands. */
 export function resolveSessionDisplayModelRef(
   cfg: OpenClawConfig,
   row: SessionDisplayModelRow,

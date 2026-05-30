@@ -7,7 +7,6 @@ const replaceConfigFileMock = vi.fn(async (params: { nextConfig: unknown }) => {
   await writeConfigFileMock(params.nextConfig);
 }) as unknown as MockFn;
 
-/** Reused constant for config Mocks behavior in src/commands. */
 export const configMocks: {
   readConfigFileSnapshot: MockFn;
   writeConfigFile: MockFn;
@@ -18,21 +17,18 @@ export const configMocks: {
   replaceConfigFile: replaceConfigFileMock,
 };
 
-/** Reused constant for offset Mocks behavior in src/commands. */
 export const offsetMocks: {
   deleteTelegramUpdateOffset: MockFn;
 } = {
   deleteTelegramUpdateOffset: vi.fn().mockResolvedValue(undefined) as unknown as MockFn,
 };
 
-/** Reused constant for lifecycle Mocks behavior in src/commands. */
 export const lifecycleMocks: {
   onAccountConfigChanged: MockFn;
 } = {
   onAccountConfigChanged: vi.fn().mockResolvedValue(undefined) as unknown as MockFn,
 };
 
-/** Reused constant for secret Mocks behavior in src/commands. */
 export const secretMocks = {
   resolveCommandConfigWithSecrets: vi.fn(async ({ config }: { config: unknown }) => ({
     resolvedConfig: config,

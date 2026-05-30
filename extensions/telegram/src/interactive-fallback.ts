@@ -1,4 +1,3 @@
-// extensions/telegram/src interactive fallback helpers and runtime behavior.
 import {
   interactiveReplyToPresentation,
   normalizeMessagePresentation,

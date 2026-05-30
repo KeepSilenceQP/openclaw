@@ -1,4 +1,3 @@
-// extensions/whatsapp/src monitor inbox captures media path image messages test support helpers and runtime behavior.
 import "./monitor-inbox.test-harness.js";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {

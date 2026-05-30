@@ -1,4 +1,3 @@
-// gateway server auth modes suite helpers and runtime behavior.
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, test } from "vitest";
 import {
   connectReq,
@@ -15,7 +14,6 @@ import {
   testTailscaleWhois,
 } from "./server.auth.shared.js";
 
-/** Reused helper for register Auth Modes Suite behavior in src/gateway. */
 export function registerAuthModesSuite(): void {
   describe("password auth", () => {
     let server: Awaited<ReturnType<typeof startGatewayServer>>;

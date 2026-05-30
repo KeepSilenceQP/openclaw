@@ -1,4 +1,3 @@
-// extensions/whatsapp config api helpers and runtime behavior.
 export {
   buildChannelConfigSchema,
   WhatsAppConfigSchema,

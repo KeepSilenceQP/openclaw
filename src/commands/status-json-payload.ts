@@ -4,7 +4,6 @@ import {
   type StatusOverviewSurface,
 } from "./status-overview-surface.ts";
 
-/** Reused helper for build Status Json Payload behavior in src/commands. */
 export function buildStatusJsonPayload(params: {
   summary: Record<string, unknown>;
   surface: StatusOverviewSurface;

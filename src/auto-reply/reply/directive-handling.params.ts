@@ -7,7 +7,6 @@ import type { MsgContext } from "../templating.js";
 import type { InlineDirectives } from "./directive-handling.parse.js";
 import type { ElevatedLevel, ReasoningLevel, ThinkLevel, VerboseLevel } from "./directives.js";
 
-/** Shared type for Handle Directive Only Core Params in src/auto-reply/reply. */
 export type HandleDirectiveOnlyCoreParams = {
   cfg: OpenClawConfig;
   directives: InlineDirectives;
@@ -34,7 +33,6 @@ export type HandleDirectiveOnlyCoreParams = {
   formatModelSwitchEvent: (label: string, alias?: string) => string;
 };
 
-/** Shared type for Handle Directive Only Params in src/auto-reply/reply. */
 export type HandleDirectiveOnlyParams = HandleDirectiveOnlyCoreParams & {
   ctx?: MsgContext;
   messageProvider?: string;
@@ -50,7 +48,6 @@ export type HandleDirectiveOnlyParams = HandleDirectiveOnlyCoreParams & {
   senderIsOwner?: boolean;
 };
 
-/** Shared type for Apply Inline Directives Fast Lane Params in src/auto-reply/reply. */
 export type ApplyInlineDirectivesFastLaneParams = HandleDirectiveOnlyCoreParams & {
   commandAuthorized: boolean;
   senderIsOwner: boolean;

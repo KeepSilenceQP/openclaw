@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor route helpers and runtime behavior.
 import { resolveConfiguredAcpBindingRecord } from "openclaw/plugin-sdk/acp-binding-resolve-runtime";
 import type { PluginRuntime } from "openclaw/plugin-sdk/plugin-runtime";
 import {

@@ -12,7 +12,6 @@ import {
   resetSkillsRefreshStateForTest,
   setSkillsChangeListenerErrorHandler,
 } from "./refresh-state.js";
-/** Re-exported API for src/agents/skills. */
 export {
   bumpSkillsSnapshotVersion,
   getSkillsSnapshotVersion,
@@ -65,7 +64,6 @@ setSkillsChangeListenerErrorHandler((err) => {
   log.warn(`skills change listener failed: ${String(err)}`);
 });
 
-/** Reused constant for DEFAULT SKILLS WATCH IGNORED behavior in src/agents/skills. */
 export const DEFAULT_SKILLS_WATCH_IGNORED: RegExp[] = [
   /(^|[\\/])\.git([\\/]|$)/,
   /(^|[\\/])node_modules([\\/]|$)/,

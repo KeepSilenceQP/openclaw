@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src apply helpers and runtime behavior.
 import path from "node:path";
 import {
   replaceManagedMarkdownBlock,

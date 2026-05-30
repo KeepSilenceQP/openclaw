@@ -1,4 +1,3 @@
-// extensions/slack/src directory config helpers and runtime behavior.
 import { normalizeAccountId } from "openclaw/plugin-sdk/account-resolution";
 import {
   createResolvedDirectoryEntriesLister,

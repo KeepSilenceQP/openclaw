@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock setup api helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { migrateAmazonBedrockLegacyConfig } from "./config-api.js";
 import { resolveBedrockConfigApiKey } from "./discovery-shared.js";

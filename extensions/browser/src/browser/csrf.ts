@@ -1,4 +1,3 @@
-// extensions/browser/src/browser csrf helpers and runtime behavior.
 import type { NextFunction, Request, Response } from "express";
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { isLoopbackHost } from "../gateway/net.js";

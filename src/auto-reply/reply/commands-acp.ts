@@ -86,7 +86,6 @@ const ACP_MUTATING_ACTIONS = new Set<AcpAction>([
   "reset-options",
 ]);
 
-/** Reused constant for handle Acp Command behavior in src/auto-reply/reply. */
 export const handleAcpCommand: CommandHandler = async (params, _allowTextCommands) => {
   const normalized = params.command.commandBodyNormalized;
   if (!normalized.startsWith(COMMAND)) {

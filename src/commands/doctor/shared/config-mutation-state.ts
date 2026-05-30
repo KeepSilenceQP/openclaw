@@ -1,6 +1,5 @@
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 
-/** Shared type for Doctor Config Mutation State in src/commands/doctor. */
 export type DoctorConfigMutationState = {
   cfg: OpenClawConfig;
   candidate: OpenClawConfig;
@@ -8,13 +7,11 @@ export type DoctorConfigMutationState = {
   fixHints: string[];
 };
 
-/** Shared type for Doctor Config Mutation Result in src/commands/doctor. */
 export type DoctorConfigMutationResult = {
   config: OpenClawConfig;
   changes: string[];
 };
 
-/** Reused helper for apply Doctor Config Mutation behavior in src/commands/doctor. */
 export function applyDoctorConfigMutation(params: {
   state: DoctorConfigMutationState;
   mutation: DoctorConfigMutationResult;

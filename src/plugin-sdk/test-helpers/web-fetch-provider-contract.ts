@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers web fetch provider contract helpers and runtime behavior.
 import { describe, expect, it } from "vitest";
 import {
   pluginRegistrationContractRegistry,

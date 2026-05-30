@@ -1,4 +1,3 @@
-// extensions/browser/src/browser trash helpers and runtime behavior.
 import os from "node:os";
 import { movePathToTrash as movePathToTrashWithAllowedRoots } from "openclaw/plugin-sdk/browser-config";
 import { resolvePreferredOpenClawTmpDir } from "openclaw/plugin-sdk/temp-path";

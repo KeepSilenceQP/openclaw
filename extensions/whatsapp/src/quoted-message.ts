@@ -1,4 +1,3 @@
-// extensions/whatsapp/src quoted message helpers and runtime behavior.
 import type { MiscMessageGenerationOptions } from "baileys";
 import { jidToE164 } from "./text-runtime.js";
 

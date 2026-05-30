@@ -1,4 +1,3 @@
-// extensions/whatsapp/src channel react action helpers and runtime behavior.
 import { jsonResult } from "openclaw/plugin-sdk/channel-actions";
 import {
   isWhatsAppGroupJid,

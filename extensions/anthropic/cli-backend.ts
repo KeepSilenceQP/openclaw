@@ -1,4 +1,3 @@
-// extensions/anthropic cli backend helpers and runtime behavior.
 import type { CliBackendPlugin } from "openclaw/plugin-sdk/cli-backend";
 import {
   CLI_FRESH_WATCHDOG_DEFAULTS,

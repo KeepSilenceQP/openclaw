@@ -1,4 +1,3 @@
-// extensions/whatsapp/src creds files helpers and runtime behavior.
 import path from "node:path";
 import {
   assertNoSymlinkParents,

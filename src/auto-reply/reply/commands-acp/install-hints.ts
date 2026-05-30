@@ -8,7 +8,6 @@ import {
   normalizeOptionalString,
 } from "../../../shared/string-coerce.js";
 
-/** Reused helper for resolve Acp Install Command Hint behavior in src/auto-reply/reply. */
 export function resolveAcpInstallCommandHint(cfg: OpenClawConfig): string {
   const configured = normalizeOptionalString(cfg.acp?.runtime?.installCommand);
   if (configured) {

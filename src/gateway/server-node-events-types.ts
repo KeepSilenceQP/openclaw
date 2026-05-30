@@ -1,4 +1,3 @@
-// gateway server node events types helpers and runtime behavior.
 import type { ModelCatalogEntry } from "../agents/model-catalog.js";
 import type { CliDeps } from "../cli/deps.types.js";
 import type { HealthSummary } from "../commands/health.js";
@@ -6,7 +5,6 @@ import type { ChatAbortControllerEntry } from "./chat-abort.js";
 import type { ChatRunEntry } from "./server-chat.js";
 import type { DedupeEntry } from "./server-shared.js";
 
-/** Shared type for Node Event Context in src/gateway. */
 export type NodeEventContext = {
   deps: CliDeps;
   broadcast: (event: string, payload: unknown, opts?: { dropIfSlow?: boolean }) => void;
@@ -42,7 +40,6 @@ export type NodeEventContext = {
   logGateway: { warn: (msg: string) => void };
 };
 
-/** Shared type for Node Event in src/gateway. */
 export type NodeEvent = {
   event: string;
   payloadJSON?: string | null;

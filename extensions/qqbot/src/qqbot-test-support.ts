@@ -1,4 +1,3 @@
-// extensions/qqbot/src qqbot test support helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 
 export function makeQqbotSecretRefConfig(): OpenClawConfig {

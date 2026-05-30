@@ -3,10 +3,8 @@ import type { ExecToolDefaults } from "../../agents/bash-tools.js";
 import type { SessionEntry } from "../../config/sessions.js";
 import type { InlineDirectives } from "./directive-handling.parse.js";
 
-/** Shared type for Reply Exec Overrides in src/auto-reply/reply. */
 export type ReplyExecOverrides = Pick<ExecToolDefaults, "host" | "security" | "ask" | "node">;
 
-/** Reused helper for resolve Reply Exec Overrides behavior in src/auto-reply/reply. */
 export function resolveReplyExecOverrides(params: {
   directives: InlineDirectives;
   sessionEntry?: SessionEntry;

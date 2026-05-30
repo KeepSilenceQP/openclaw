@@ -1,4 +1,3 @@
-// extensions/browser runtime api helpers and runtime behavior.
 /** Re-exported browser plugin public API, starting with create Browser Tool. */
 export { createBrowserTool } from "./src/browser-tool.js";
 /** Re-exported browser plugin public API. */

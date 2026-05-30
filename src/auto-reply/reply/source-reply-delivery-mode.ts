@@ -8,7 +8,6 @@ import { resolveCommandTurnContext, type CommandTurnContext } from "../command-t
 import { isExplicitCommandTurnContext } from "../command-turn-detection.js";
 import type { SourceReplyDeliveryMode } from "../get-reply-options.types.js";
 
-/** Shared type for Source Reply Delivery Mode Context in src/auto-reply/reply. */
 export type SourceReplyDeliveryModeContext = {
   ChatType?: string;
   InboundEventKind?: InboundEventKind;
@@ -22,7 +21,6 @@ export type SourceReplyDeliveryModeContext = {
   BotUsername?: string;
 };
 
-/** Reused helper for is Explicit Source Reply Command behavior in src/auto-reply/reply. */
 export function isExplicitSourceReplyCommand(
   ctx: SourceReplyDeliveryModeContext,
   cfg: OpenClawConfig,
@@ -43,7 +41,6 @@ function isInternalRoomEvent(ctx: SourceReplyDeliveryModeContext): boolean {
   return ctx.InboundEventKind === "room_event" && isInternalSourceReplyChannel(ctx);
 }
 
-/** Reused helper for is Internal Source Reply Channel behavior in src/auto-reply/reply. */
 export function isInternalSourceReplyChannel(ctx: SourceReplyDeliveryModeContext): boolean {
   const providerChannel = normalizeMessageChannel(ctx.Provider);
   const surfaceChannel = normalizeMessageChannel(ctx.Surface);
@@ -55,7 +52,6 @@ export function isInternalSourceReplyChannel(ctx: SourceReplyDeliveryModeContext
   );
 }
 
-/** Reused helper for resolve Source Reply Delivery Mode behavior in src/auto-reply/reply. */
 export function resolveSourceReplyDeliveryMode(params: {
   cfg: OpenClawConfig;
   ctx: SourceReplyDeliveryModeContext;
@@ -103,7 +99,6 @@ export function resolveSourceReplyDeliveryMode(params: {
   return mode;
 }
 
-/** Shared type for Source Reply Visibility Policy in src/auto-reply/reply. */
 export type SourceReplyVisibilityPolicy = {
   sourceReplyDeliveryMode: SourceReplyDeliveryMode;
   sendPolicyDenied: boolean;
@@ -115,7 +110,6 @@ export type SourceReplyVisibilityPolicy = {
   deliverySuppressionReason: string;
 };
 
-/** Reused helper for resolve Source Reply Visibility Policy behavior in src/auto-reply/reply. */
 export function resolveSourceReplyVisibilityPolicy(params: {
   cfg: OpenClawConfig;
   ctx: SourceReplyDeliveryModeContext;

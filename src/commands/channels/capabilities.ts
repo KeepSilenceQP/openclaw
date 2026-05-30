@@ -31,7 +31,6 @@ import {
 import { resolveInstallableChannelPlugin } from "../channel-setup/channel-plugin-resolution.js";
 import { formatChannelAccountLabel, requireValidConfig } from "./shared.js";
 
-/** Shared type for Channels Capabilities Options in src/commands/channels. */
 export type ChannelsCapabilitiesOptions = {
   channel?: string;
   account?: string;
@@ -210,7 +209,6 @@ async function resolveChannelReports(params: {
   return reports;
 }
 
-/** Reused helper for channels Capabilities Command behavior in src/commands/channels. */
 export async function channelsCapabilitiesCommand(
   opts: ChannelsCapabilitiesOptions,
   runtime: RuntimeEnv = defaultRuntime,

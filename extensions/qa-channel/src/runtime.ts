@@ -1,4 +1,3 @@
-// extensions/qa-channel/src runtime helpers and runtime behavior.
 import { createPluginRuntimeStore } from "openclaw/plugin-sdk/runtime-store";
 import type { PluginRuntime } from "./runtime-api.js";
 

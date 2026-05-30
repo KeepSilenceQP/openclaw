@@ -1,4 +1,3 @@
-// extensions/slack/src message tool api helpers and runtime behavior.
 import type {
   ChannelMessageActionAdapter,
   ChannelMessageActionName,

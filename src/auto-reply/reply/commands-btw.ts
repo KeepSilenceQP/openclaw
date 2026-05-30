@@ -7,7 +7,6 @@ import type { CommandHandler } from "./commands-types.js";
 
 const BTW_USAGE = "Usage: /btw [side question]";
 
-/** Reused constant for handle Btw Command behavior in src/auto-reply/reply. */
 export const handleBtwCommand: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;

@@ -3,14 +3,11 @@ import { formatDurationPrecise } from "../infra/format-time/format-duration.ts";
 import { formatRuntimeStatusWithDetails } from "../infra/runtime-status.ts";
 import { normalizeLowercaseStringOrEmpty } from "../shared/string-coerce.js";
 import type { SessionStatus } from "./status.types.js";
-/** Re-exported API for src/commands, starting with shorten Text. */
 export { shortenText } from "./text-format.js";
 
-/** Reused constant for format KTokens behavior in src/commands. */
 export const formatKTokens = (value: number) =>
   `${(value / 1000).toFixed(value >= 10_000 ? 0 : 1)}k`;
 
-/** Reused constant for format Duration behavior in src/commands. */
 export const formatDuration = (ms: number | null | undefined) => {
   if (ms == null || !Number.isFinite(ms)) {
     return "unknown";
@@ -18,7 +15,6 @@ export const formatDuration = (ms: number | null | undefined) => {
   return formatDurationPrecise(ms, { decimals: 1 });
 };
 
-/** Reused constant for format Tokens Compact behavior in src/commands. */
 export const formatTokensCompact = (
   sess: Pick<
     SessionStatus,
@@ -46,7 +42,6 @@ export const formatTokensCompact = (
   return result;
 };
 
-/** Reused constant for format Prompt Cache Compact behavior in src/commands. */
 export const formatPromptCacheCompact = (
   sess: Pick<SessionStatus, "inputTokens" | "totalTokens" | "cacheRead" | "cacheWrite">,
 ) => {
@@ -103,7 +98,6 @@ function resolvePromptCacheStats(
   };
 }
 
-/** Reused constant for format Daemon Runtime Short behavior in src/commands. */
 export const formatDaemonRuntimeShort = (runtime?: {
   status?: string;
   pid?: number;

@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers plugin registration contract cases helpers and runtime behavior.
 import { describePluginRegistrationContract } from "./plugin-registration-contract.js";
 
 type PluginRegistrationContractParams = Parameters<typeof describePluginRegistrationContract>[0];

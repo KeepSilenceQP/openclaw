@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix encryption guidance helpers and runtime behavior.
 import { normalizeOptionalAccountId } from "openclaw/plugin-sdk/account-id";
 import { resolveMatrixDefaultOrOnlyAccountId } from "../account-selection.js";
 import type { CoreConfig } from "../types.js";

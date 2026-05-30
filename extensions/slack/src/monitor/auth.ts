@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor auth helpers and runtime behavior.
 import {
   type ChannelIngressEventInput,
   type ChannelIngressIdentifierKind,

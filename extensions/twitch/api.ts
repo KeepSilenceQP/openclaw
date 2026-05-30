@@ -1,4 +1,3 @@
-// extensions/twitch api helpers and runtime behavior.
 /** Re-exported twitch plugin public API. */
 export {
   type ChannelAccountSnapshot,

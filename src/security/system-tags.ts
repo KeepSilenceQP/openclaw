@@ -1,4 +1,3 @@
-// security system tags helpers and runtime behavior.
 const BRACKETED_SYSTEM_TAG_RE = /\[\s*(System\s*Message|System|Assistant|Internal)\s*\]/gi;
 const LINE_SYSTEM_PREFIX_RE = /^(\s*)System:(?=\s|$)/gim;
 

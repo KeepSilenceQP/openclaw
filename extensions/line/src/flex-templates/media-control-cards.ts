@@ -1,4 +1,3 @@
-// extensions/line/src/flex-templates media control cards helpers and runtime behavior.
 import type {
   FlexBox,
   FlexBubble,

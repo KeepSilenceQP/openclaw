@@ -1,4 +1,3 @@
-// extensions/slack/src format helpers and runtime behavior.
 import type { MarkdownTableMode } from "openclaw/plugin-sdk/config-contracts";
 import {
   markdownToIR,

@@ -1,4 +1,3 @@
-// gateway/server-methods restart helpers and runtime behavior.
 import {
   createSafeGatewayRestartPreflight,
   requestSafeGatewayRestart,
@@ -13,7 +12,6 @@ function normalizeSkipDeferral(value: unknown): boolean {
   return value === true;
 }
 
-/** Reused constant for restart Handlers behavior in src/gateway/server-methods. */
 export const restartHandlers: GatewayRequestHandlers = {
   "gateway.restart.request": async ({ respond, params }) => {
     const result = requestSafeGatewayRestart({

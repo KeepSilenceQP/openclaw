@@ -1,4 +1,3 @@
-// extensions/browser/src/browser unhandled rejections helpers and runtime behavior.
 import { collectErrorGraphCandidates } from "openclaw/plugin-sdk/error-runtime";
 import { registerUnhandledRejectionHandler } from "openclaw/plugin-sdk/runtime-env";
 

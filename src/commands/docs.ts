@@ -104,7 +104,6 @@ function parseDocsSearchResults(raw: unknown): DocResult[] {
   return results;
 }
 
-/** Reused helper for docs Search Command behavior in src/commands. */
 export async function docsSearchCommand(queryParts: string[], runtime: RuntimeEnv) {
   const query = queryParts.join(" ").trim();
   if (!query) {

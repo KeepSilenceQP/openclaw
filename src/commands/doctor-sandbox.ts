@@ -271,7 +271,6 @@ async function handleMissingSandboxImage(
   }
 }
 
-/** Reused helper for maybe Repair Sandbox Images behavior in src/commands. */
 export async function maybeRepairSandboxImages(
   cfg: OpenClawConfig,
   runtime: RuntimeEnv,
@@ -375,7 +374,6 @@ function formatLegacyRegistryMigrationLine(result: LegacySandboxRegistryMigratio
   return "";
 }
 
-/** Reused helper for maybe Repair Sandbox Registry Files behavior in src/commands. */
 export async function maybeRepairSandboxRegistryFiles(prompter: DoctorPrompter): Promise<void> {
   const legacyFiles = (await inspectLegacySandboxRegistryFiles()).filter((file) => file.exists);
   if (legacyFiles.length === 0) {
@@ -403,7 +401,6 @@ export async function maybeRepairSandboxRegistryFiles(prompter: DoctorPrompter):
   }
 }
 
-/** Reused helper for note Sandbox Scope Warnings behavior in src/commands. */
 export function noteSandboxScopeWarnings(cfg: OpenClawConfig) {
   const globalSandbox = cfg.agents?.defaults?.sandbox;
   const agents = Array.isArray(cfg.agents?.list) ? cfg.agents.list : [];

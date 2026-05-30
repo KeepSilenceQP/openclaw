@@ -7,7 +7,6 @@ import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import { isRecord as hasRecord } from "../../../shared/record-coerce.js";
 import { normalizeOptionalLowercaseString as normalizeString } from "../../../shared/string-coerce.js";
 
-/** Shared type for Codex Native Asset Hit in src/commands/doctor. */
 export type CodexNativeAssetHit = {
   kind: "skill" | "plugin" | "config" | "hooks";
   path: string;
@@ -132,7 +131,6 @@ function shouldScanCodexNativeAssets(cfg: OpenClawConfig, env: NodeJS.ProcessEnv
   return isCodexRuntimeConfigured(cfg, env) || isCodexPluginConfigured(cfg);
 }
 
-/** Reused helper for scan Codex Native Assets behavior in src/commands/doctor. */
 export async function scanCodexNativeAssets(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -177,7 +175,6 @@ function plural(count: number, singular: string): string {
   return `${count} ${singular}${count === 1 ? "" : "s"}`;
 }
 
-/** Reused helper for collect Codex Native Asset Info Notes behavior in src/commands/doctor. */
 export async function collectCodexNativeAssetInfoNotes(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;

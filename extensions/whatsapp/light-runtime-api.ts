@@ -1,4 +1,3 @@
-// extensions/whatsapp light runtime api helpers and runtime behavior.
 export { getActiveWebListener } from "./src/active-listener.js";
 export {
   getWebAuthAgeMs,

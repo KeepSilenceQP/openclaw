@@ -1,4 +1,3 @@
-// extensions/ollama provider discovery helpers and runtime behavior.
 import type { ProviderCatalogContext } from "openclaw/plugin-sdk/provider-catalog-shared";
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 import {

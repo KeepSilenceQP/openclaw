@@ -1,4 +1,3 @@
-// extensions/telegram/src doctor helpers and runtime behavior.
 import {
   type ChannelDoctorAdapter,
   type ChannelDoctorEmptyAllowlistAccountContext,

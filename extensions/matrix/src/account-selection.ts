@@ -1,4 +1,3 @@
-// extensions/matrix/src account selection helpers and runtime behavior.
 import {
   listCombinedAccountIds,
   listConfiguredAccountIds,

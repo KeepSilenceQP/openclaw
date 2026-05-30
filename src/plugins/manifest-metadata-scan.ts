@@ -1,4 +1,3 @@
-// plugins manifest metadata scan helpers and runtime behavior.
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
@@ -165,7 +164,6 @@ function uniqueCandidateDirs(candidates: CandidateDir[]): CandidateDir[] {
   );
 }
 
-/** Reused helper for list Open Claw Plugin Manifest Metadata behavior in src/plugins. */
 export function listOpenClawPluginManifestMetadata(
   env: NodeJS.ProcessEnv = process.env,
 ): PluginManifestMetadataRecord[] {

@@ -3,7 +3,6 @@ import { resolveEffectiveModelFallbacks } from "../../agents/agent-scope.js";
 import type { resolveProviderScopedAuthProfile } from "./agent-runner-auth-profile.js";
 import type { FollowupRun } from "./queue.js";
 
-/** Shared type for Reasoning Tag Provider Resolver in src/auto-reply/reply. */
 export type ReasoningTagProviderResolver = (
   provider: string,
   options: {
@@ -13,7 +12,6 @@ export type ReasoningTagProviderResolver = (
   },
 ) => boolean;
 
-/** Reused constant for resolve Enforce Final Tag With Resolver behavior in src/auto-reply/reply. */
 export const resolveEnforceFinalTagWithResolver = (
   run: FollowupRun["run"],
   provider: string,
@@ -29,7 +27,6 @@ export const resolveEnforceFinalTagWithResolver = (
     }) ||
     false);
 
-/** Reused helper for resolve Model Fallback Options behavior in src/auto-reply/reply. */
 export function resolveModelFallbackOptions(
   run: FollowupRun["run"],
   configOverride: FollowupRun["run"]["config"] = run.config,
@@ -54,7 +51,6 @@ export function resolveModelFallbackOptions(
   };
 }
 
-/** Reused helper for build Embedded Run Base Params behavior in src/auto-reply/reply. */
 export function buildEmbeddedRunBaseParams(params: {
   run: FollowupRun["run"];
   provider: string;

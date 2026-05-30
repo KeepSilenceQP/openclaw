@@ -1,4 +1,3 @@
-// extensions/whatsapp/src inbound helpers and runtime behavior.
 export { resetWebInboundDedupe } from "./inbound/dedupe.js";
 export {
   extractContactContext,

@@ -1,4 +1,3 @@
-// extensions/matrix api helpers and runtime behavior.
 /** Re-exported matrix plugin public API, starting with matrix Plugin. */
 export { matrixPlugin } from "./src/channel.js";
 /** Re-exported matrix plugin public API, starting with create Matrix Setup Wizard Proxy. */

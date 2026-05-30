@@ -18,7 +18,6 @@ import { runCommandWithRuntime } from "../../cli-utils.js";
 import { createDefaultDeps } from "../../deps.js";
 import { ensurePluginRegistryLoaded, type PluginRegistryScope } from "../../plugin-registry.js";
 
-/** Shared type for Message Cli Helpers in src/cli/program. */
 export type MessageCliHelpers = {
   withMessageBase: (command: Command) => Command;
   withMessageTarget: (command: Command) => Command;
@@ -137,7 +136,6 @@ function resolveMessagePluginPreloadPlan(
   return { preload: false };
 }
 
-/** Reused helper for create Message Cli Helpers behavior in src/cli/program. */
 export function createMessageCliHelpers(
   message: Command,
   messageChannelOptions: string,

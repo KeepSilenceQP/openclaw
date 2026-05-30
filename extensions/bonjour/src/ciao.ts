@@ -1,4 +1,3 @@
-// extensions/bonjour/src ciao helpers and runtime behavior.
 import { collectErrorGraphCandidates } from "openclaw/plugin-sdk/error-runtime";
 import { formatBonjourError } from "./errors.js";
 

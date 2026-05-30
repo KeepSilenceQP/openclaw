@@ -1,4 +1,3 @@
-// extensions/telegram/src token fingerprint helpers and runtime behavior.
 import { createHash } from "node:crypto";
 
 /**

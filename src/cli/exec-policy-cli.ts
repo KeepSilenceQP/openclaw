@@ -362,7 +362,6 @@ async function applyLocalExecPolicy(policy: ExecPolicyResolved): Promise<ExecPol
   return await buildLocalExecPolicyShowPayload();
 }
 
-/** Reused helper for register Exec Policy Cli behavior in src/cli. */
 export function registerExecPolicyCli(program: Command) {
   const execPolicy = program
     .command("exec-policy")

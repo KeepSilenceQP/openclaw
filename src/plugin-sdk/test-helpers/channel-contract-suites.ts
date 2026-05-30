@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers channel contract suites helpers and runtime behavior.
 import { expect, it } from "vitest";
 import type {
   ChannelAccountSnapshot,

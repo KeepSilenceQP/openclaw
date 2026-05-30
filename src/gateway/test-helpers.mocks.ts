@@ -1,4 +1,3 @@
-// gateway test helpers mocks helpers and runtime behavior.
 import path from "node:path";
 import { vi } from "vitest";
 import {
@@ -27,9 +26,7 @@ import {
   type RunBtwSideQuestionFn,
 } from "./test-helpers.runtime-state.js";
 
-/** Re-exported API for src/gateway, starting with get Test Plugin Registry. */
 export { getTestPluginRegistry, resetTestPluginRegistry, setTestPluginRegistry };
-/** Re-exported API for src/gateway. */
 export {
   agentCommand,
   cronIsolatedRun,

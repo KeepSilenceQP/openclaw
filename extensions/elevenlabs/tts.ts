@@ -1,4 +1,3 @@
-// extensions/elevenlabs tts helpers and runtime behavior.
 import {
   assertOkOrThrowProviderError,
   assertProviderBinaryResponseContent,

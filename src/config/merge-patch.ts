@@ -1,4 +1,3 @@
-// config merge patch helpers and runtime behavior.
 import { isPlainObject } from "../infra/plain-object.js";
 import { isBlockedObjectKey } from "./prototype-keys.js";
 
@@ -60,7 +59,6 @@ function mergeObjectArraysById(
   return merged;
 }
 
-/** Reused helper for apply Merge Patch behavior in src/config. */
 export function applyMergePatch(
   base: unknown,
   patch: unknown,

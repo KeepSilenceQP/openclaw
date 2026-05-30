@@ -1,4 +1,3 @@
-// extensions/whatsapp/src approval reactions helpers and runtime behavior.
 import type { WAMessage } from "baileys";
 import {
   buildApprovalReactionHint,

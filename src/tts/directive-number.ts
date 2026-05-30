@@ -1,4 +1,3 @@
-// tts directive number helpers and runtime behavior.
 import { parseStrictFiniteNumber } from "../shared/number-coercion.js";
 import type {
   SpeechDirectiveTokenParseContext,
@@ -23,7 +22,6 @@ function isInDirectiveNumberRange(value: number, range: DirectiveNumberRange): b
   return true;
 }
 
-/** Reused helper for parse Speech Directive Number Override behavior in src/tts. */
 export function parseSpeechDirectiveNumberOverride(params: {
   ctx: SpeechDirectiveTokenParseContext;
   overrideKey: string;

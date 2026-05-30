@@ -1,4 +1,3 @@
-// tts status config helpers and runtime behavior.
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.js";
 import type { TtsAutoMode, TtsConfig, TtsProvider } from "../config/types.tts.js";
@@ -215,7 +214,6 @@ function resolveStatusProviderDetails(raw: TtsConfig, provider: TtsProvider) {
   return details;
 }
 
-/** Reused helper for resolve Status Tts Snapshot behavior in src/tts. */
 export function resolveStatusTtsSnapshot(params: {
   cfg: OpenClawConfig;
   sessionAuto?: string;

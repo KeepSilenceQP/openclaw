@@ -205,7 +205,6 @@ export function loadBundledPluginPublicSurfaceModuleSync<T extends object>(param
   });
 }
 
-/** Reused helper for load Bundled Plugin Public Surface Module behavior in src/plugin-sdk. */
 export async function loadBundledPluginPublicSurfaceModule<T extends object>(params: {
   dirName: string;
   artifactBasename: string;
@@ -261,7 +260,6 @@ export function listImportedBundledPluginFacadeIds(): string[] {
   return [...loadedFacadePluginIds].toSorted((left, right) => left.localeCompare(right));
 }
 
-/** Reused helper for reset Facade Loader State For Test behavior in src/plugin-sdk. */
 export function resetFacadeLoaderStateForTest(): void {
   loadedFacadeModules.clear();
   loadedFacadePluginIds.clear();
@@ -270,7 +268,6 @@ export function resetFacadeLoaderStateForTest(): void {
   cachedOpenClawPackageRoot = undefined;
 }
 
-/** Reused helper for set Facade Loader Source Transform Factory For Test behavior in src/plugin-sdk. */
 export function setFacadeLoaderSourceTransformFactoryForTest(
   factory: PluginModuleLoaderFactory | undefined,
 ): void {

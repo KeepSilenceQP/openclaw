@@ -1,4 +1,3 @@
-// extensions/matrix/src test helpers helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 

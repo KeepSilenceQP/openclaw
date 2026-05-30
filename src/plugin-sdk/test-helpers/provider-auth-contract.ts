@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers provider auth contract helpers and runtime behavior.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { clearRuntimeAuthProfileStoreSnapshots, type AuthProfileStore } from "../agent-runtime.js";
 import { createNonExitingRuntime } from "../runtime.js";

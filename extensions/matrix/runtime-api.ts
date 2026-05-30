@@ -1,4 +1,3 @@
-// extensions/matrix runtime api helpers and runtime behavior.
 /** Re-exported matrix plugin public API. */
 export {
   type MatrixResolvedStringField,

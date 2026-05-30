@@ -1,4 +1,3 @@
-// video-generation normalization helpers and runtime behavior.
 import {
   hasMediaNormalizationEntry,
   resolveClosestAspectRatio,
@@ -26,7 +25,6 @@ const VIDEO_RESOLUTION_ORDER: readonly VideoGenerationResolution[] = [
   "1080P",
 ];
 
-/** Shared type for Resolved Video Generation Overrides in src/video-generation. */
 export type ResolvedVideoGenerationOverrides = {
   size?: string;
   aspectRatio?: string;
@@ -39,7 +37,6 @@ export type ResolvedVideoGenerationOverrides = {
   normalization?: VideoGenerationNormalization;
 };
 
-/** Reused helper for resolve Video Generation Overrides behavior in src/video-generation. */
 export function resolveVideoGenerationOverrides(params: {
   provider: VideoGenerationProvider;
   model: string;

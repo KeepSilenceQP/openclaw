@@ -1,4 +1,3 @@
-// src/commands onboard skills helpers and runtime behavior.
 import { formatCliCommand } from "../cli/command-format.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveBrewExecutable } from "../infra/brew.js";
@@ -45,7 +44,6 @@ function isBrewOnlyInstallableSkill(skill: {
   );
 }
 
-/** Reused helper for setup Skills behavior in src/commands. */
 export async function setupSkills(
   cfg: OpenClawConfig,
   workspaceDir: string,

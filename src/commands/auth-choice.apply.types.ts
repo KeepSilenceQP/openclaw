@@ -3,7 +3,6 @@ import type { RuntimeEnv } from "../runtime.js";
 import type { WizardPrompter } from "../wizard/prompts.js";
 import type { AuthChoice, OnboardOptions } from "./onboard-types.js";
 
-/** Shared type for Apply Auth Choice Params in src/commands. */
 export type ApplyAuthChoiceParams = {
   authChoice: AuthChoice;
   config: OpenClawConfig;
@@ -17,7 +16,6 @@ export type ApplyAuthChoiceParams = {
   opts?: Partial<OnboardOptions>;
 };
 
-/** Shared type for Apply Auth Choice Result in src/commands. */
 export type ApplyAuthChoiceResult = {
   config: OpenClawConfig;
   agentModelOverride?: string;

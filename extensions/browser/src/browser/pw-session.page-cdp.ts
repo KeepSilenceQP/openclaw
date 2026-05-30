@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw session page cdp helpers and runtime behavior.
 import { uniqueValues } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { CDPSession, Page } from "playwright-core";
 

@@ -1,4 +1,3 @@
-// extensions/slack config api helpers and runtime behavior.
 export {
   buildChannelConfigSchema,
   SlackConfigSchema,

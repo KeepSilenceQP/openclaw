@@ -1,4 +1,3 @@
-// gateway/server-methods talk client helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -28,7 +27,6 @@ import {
 } from "./talk-shared.js";
 import type { GatewayRequestHandlers } from "./types.js";
 
-/** Reused constant for talk Client Handlers behavior in src/gateway/server-methods. */
 export const talkClientHandlers: GatewayRequestHandlers = {
   "talk.client.create": async ({ params, respond, context }) => {
     if (!validateTalkClientCreateParams(params)) {

@@ -33,7 +33,6 @@ function isTrustedWorkspaceChannelCatalogEntry(
   ).enabled;
 }
 
-/** Reused helper for get Trusted Channel Plugin Catalog Entry behavior in src/commands/channel-setup. */
 export function getTrustedChannelPluginCatalogEntry(
   channelId: string,
   params: {
@@ -80,7 +79,6 @@ function listChannelPluginCatalogEntriesWithTrustedFallback(
   });
 }
 
-/** Reused helper for list Trusted Channel Plugin Catalog Entries behavior in src/commands/channel-setup. */
 export function listTrustedChannelPluginCatalogEntries(params: {
   cfg: OpenClawConfig;
   workspaceDir?: string;
@@ -89,7 +87,6 @@ export function listTrustedChannelPluginCatalogEntries(params: {
   return listChannelPluginCatalogEntriesWithTrustedFallback(params, () => []);
 }
 
-/** Reused helper for list Setup Discovery Channel Plugin Catalog Entries behavior in src/commands/channel-setup. */
 export function listSetupDiscoveryChannelPluginCatalogEntries(params: {
   cfg: OpenClawConfig;
   workspaceDir?: string;

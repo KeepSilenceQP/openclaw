@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers start account context helpers and runtime behavior.
 import { vi } from "vitest";
 import { createRuntimeEnv } from "../testing.js";
 import type {

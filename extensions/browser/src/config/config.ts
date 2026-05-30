@@ -1,4 +1,3 @@
-// extensions/browser/src/config config helpers and runtime behavior.
 export {
   getRuntimeConfig,
   getRuntimeConfigSnapshot,

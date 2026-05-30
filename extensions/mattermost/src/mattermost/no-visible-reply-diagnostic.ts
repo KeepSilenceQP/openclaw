@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost no visible reply diagnostic helpers and runtime behavior.
 import { countOutboundMedia } from "openclaw/plugin-sdk/reply-payload";
 import type { ReplyPayload } from "openclaw/plugin-sdk/reply-runtime";
 import type { MattermostReplyDeliveryOutcome } from "./reply-delivery.js";

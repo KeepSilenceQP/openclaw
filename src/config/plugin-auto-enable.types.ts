@@ -1,7 +1,6 @@
 // Shared types for config plugin auto enable types behavior.
 import type { OpenClawConfig } from "./types.openclaw.js";
 
-/** Shared type for Plugin Auto Enable Candidate in src/config. */
 export type PluginAutoEnableCandidate =
   | {
       pluginId: string;
@@ -51,7 +50,6 @@ export type PluginAutoEnableCandidate =
       reason: string;
     };
 
-/** Shared type for Plugin Auto Enable Result in src/config. */
 export type PluginAutoEnableResult = {
   config: OpenClawConfig;
   changes: string[];

@@ -1,4 +1,3 @@
-// extensions/whatsapp/src connection controller helpers and runtime behavior.
 import { DisconnectReason, type WASocket } from "baileys";
 import { info } from "openclaw/plugin-sdk/runtime-env";
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime-env";

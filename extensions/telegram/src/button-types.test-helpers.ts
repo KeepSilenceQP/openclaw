@@ -1,4 +1,3 @@
-// extensions/telegram/src button types test helpers helpers and runtime behavior.
 import { describe, expect, it } from "vitest";
 import { buildTelegramInteractiveButtons, resolveTelegramInlineButtons } from "./button-types.js";
 

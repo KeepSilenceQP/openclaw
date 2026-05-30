@@ -6,7 +6,6 @@ import { isSilentReplyText, SILENT_REPLY_TOKEN } from "../tokens.js";
 import type { TypingPolicy } from "../types.js";
 import type { TypingController } from "./typing.js";
 
-/** Shared type for Typing Mode Context in src/auto-reply/reply. */
 export type TypingModeContext = {
   configured?: TypingMode;
   isGroupChat: boolean;
@@ -17,10 +16,8 @@ export type TypingModeContext = {
   sourceReplyDeliveryMode?: SourceReplyDeliveryMode;
 };
 
-/** Reused constant for DEFAULT GROUP TYPING MODE behavior in src/auto-reply/reply. */
 export const DEFAULT_GROUP_TYPING_MODE: TypingMode = "message";
 
-/** Reused helper for resolve Typing Mode behavior in src/auto-reply/reply. */
 export function resolveTypingMode({
   configured,
   isGroupChat,
@@ -51,7 +48,6 @@ export function resolveTypingMode({
   return DEFAULT_GROUP_TYPING_MODE;
 }
 
-/** Shared type for Typing Signaler in src/auto-reply/reply. */
 export type TypingSignaler = {
   mode: TypingMode;
   shouldStartImmediately: boolean;
@@ -65,7 +61,6 @@ export type TypingSignaler = {
   signalToolStart: () => Promise<void>;
 };
 
-/** Reused helper for create Typing Signaler behavior in src/auto-reply/reply. */
 export function createTypingSignaler(params: {
   typing: TypingController;
   mode: TypingMode;

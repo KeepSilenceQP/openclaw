@@ -1,4 +1,3 @@
-// extensions/browser/src sdk config helpers and runtime behavior.
 import { normalizeOptionalLowercaseString } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 export {

@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw tools core interactions helpers and runtime behavior.
 import { resolveNonNegativeIntegerOption } from "openclaw/plugin-sdk/number-runtime";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { Frame, Page } from "playwright-core";

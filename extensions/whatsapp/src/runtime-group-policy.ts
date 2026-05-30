@@ -1,4 +1,3 @@
-// extensions/whatsapp/src runtime group policy helpers and runtime behavior.
 import { resolveOpenProviderRuntimeGroupPolicy } from "openclaw/plugin-sdk/runtime-group-policy";
 
 export function resolveWhatsAppRuntimeGroupPolicy(params: {

@@ -14,7 +14,6 @@ type NodeOnlyServiceLike = {
   runtimeShort?: string | null;
 };
 
-/** Shared type for Node Only Gateway Info in src/commands. */
 export type NodeOnlyGatewayInfo = {
   gatewayTarget: string;
   gatewayValue: string;
@@ -54,7 +53,6 @@ function isNodeServiceActive(node: NodeOnlyServiceLike): boolean {
   return typeof node.runtimeShort === "string" && node.runtimeShort.startsWith("running");
 }
 
-/** Reused helper for resolve Node Only Gateway Info behavior in src/commands. */
 export async function resolveNodeOnlyGatewayInfo(params: {
   daemon: Pick<NodeOnlyServiceLike, "installed">;
   node: NodeOnlyServiceLike;

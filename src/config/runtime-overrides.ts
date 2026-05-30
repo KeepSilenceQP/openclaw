@@ -1,4 +1,3 @@
-// config runtime overrides helpers and runtime behavior.
 import { isPlainObject } from "../utils.js";
 import { parseConfigPath, setConfigValueAtPath, unsetConfigValueAtPath } from "./config-paths.js";
 import { isBlockedObjectKey } from "./prototype-keys.js";
@@ -44,17 +43,14 @@ function mergeOverrides(base: unknown, override: unknown): unknown {
   return next;
 }
 
-/** Reused helper for get Config Overrides behavior in src/config. */
 export function getConfigOverrides(): OverrideTree {
   return overrides;
 }
 
-/** Reused helper for reset Config Overrides behavior in src/config. */
 export function resetConfigOverrides(): void {
   overrides = {};
 }
 
-/** Reused helper for set Config Override behavior in src/config. */
 export function setConfigOverride(
   pathRaw: string,
   value: unknown,
@@ -70,7 +66,6 @@ export function setConfigOverride(
   return { ok: true };
 }
 
-/** Reused helper for unset Config Override behavior in src/config. */
 export function unsetConfigOverride(pathRaw: string): {
   ok: boolean;
   removed: boolean;
@@ -88,7 +83,6 @@ export function unsetConfigOverride(pathRaw: string): {
   return { ok: true, removed };
 }
 
-/** Reused helper for apply Config Overrides behavior in src/config. */
 export function applyConfigOverrides(cfg: OpenClawConfig): OpenClawConfig {
   if (!overrides || Object.keys(overrides).length === 0) {
     return cfg;

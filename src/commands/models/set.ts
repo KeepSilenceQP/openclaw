@@ -6,7 +6,6 @@ import { repairCodexRuntimePluginInstallForModelSelection } from "../codex-runti
 import { repairCopilotRuntimePluginInstallForModelSelection } from "../copilot-runtime-plugin-install.js";
 import { applyDefaultModelPrimaryUpdate, updateConfig } from "./shared.js";
 
-/** Reused helper for models Set Command behavior in src/commands/models. */
 export async function modelsSetCommand(modelRaw: string, runtime: RuntimeEnv) {
   const updated = await updateConfig((cfg, context) => {
     return applyDefaultModelPrimaryUpdate({

@@ -1,4 +1,3 @@
-// plugins plugin sdk native resolver helpers and runtime behavior.
 import fs from "node:fs";
 import Module from "node:module";
 import path from "node:path";
@@ -33,7 +32,6 @@ type NativeAliasEntry = {
   target: string;
 };
 
-/** Shared type for Install Open Claw Plugin Sdk Native Resolver Options in src/plugins. */
 export type InstallOpenClawPluginSdkNativeResolverOptions = {
   modulePath?: string;
   pluginModulePath?: string;
@@ -270,7 +268,6 @@ function registerNativeAlias(params: {
   }
 }
 
-/** Reused helper for install Open Claw Plugin Sdk Native Resolver behavior in src/plugins. */
 export function installOpenClawPluginSdkNativeResolver(
   options: InstallOpenClawPluginSdkNativeResolverOptions = {},
 ): string[] {
@@ -282,7 +279,6 @@ export function installOpenClawPluginSdkNativeResolver(
   return [...pluginSdkNativeAliases.keys()].toSorted();
 }
 
-/** Reused helper for reset Open Claw Plugin Sdk Native Resolver For Test behavior in src/plugins. */
 export function resetOpenClawPluginSdkNativeResolverForTest(): void {
   pluginSdkNativeAliases.clear();
   esmHooks?.deregister();

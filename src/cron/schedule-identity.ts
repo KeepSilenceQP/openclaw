@@ -1,4 +1,3 @@
-// cron schedule identity helpers and runtime behavior.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { coerceFiniteScheduleNumber } from "./schedule-number.js";
 import { normalizeCronStaggerMs } from "./stagger.js";
@@ -71,7 +70,6 @@ function resolveSchedulePayload(
   return schedulePayloadFromRecord(job);
 }
 
-/** Reused helper for try Cron Schedule Identity behavior in src/cron. */
 export function tryCronScheduleIdentity(job: CronScheduleIdentityInput): string | undefined {
   const schedule = resolveSchedulePayload(job);
   if (!schedule) {
@@ -84,7 +82,6 @@ export function tryCronScheduleIdentity(job: CronScheduleIdentityInput): string 
   });
 }
 
-/** Reused helper for cron Scheduling Inputs Equal behavior in src/cron. */
 export function cronSchedulingInputsEqual(
   previous: CronScheduleIdentityInput,
   next: CronScheduleIdentityInput,

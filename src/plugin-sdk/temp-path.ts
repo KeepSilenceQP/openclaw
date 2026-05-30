@@ -5,7 +5,6 @@ export {
   sanitizeTempFileName,
   withTempDownloadPath,
 } from "../infra/temp-download.js";
-/** Re-exported API for src/plugin-sdk. */
 export {
   tempWorkspace,
   tempWorkspaceSync,

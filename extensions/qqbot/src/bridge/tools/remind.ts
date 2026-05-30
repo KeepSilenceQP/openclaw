@@ -1,4 +1,3 @@
-// extensions/qqbot/src/bridge/tools remind helpers and runtime behavior.
 import { callGatewayTool } from "openclaw/plugin-sdk/agent-harness-runtime";
 import type {
   AnyAgentTool,

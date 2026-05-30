@@ -1,7 +1,6 @@
 import { parseStrictNonNegativeInteger } from "../infra/parse-finite-number.js";
 
 const DEFAULT_TAGLINE = "All your chats, one OpenClaw.";
-/** Shared type for Tagline Mode in src/cli. */
 export type TaglineMode = "random" | "default" | "off";
 
 const HOLIDAY_TAGLINES = {
@@ -248,7 +247,6 @@ function isTaglineActive(tagline: string, date: Date): boolean {
   return rule(date);
 }
 
-/** Shared type for Tagline Options in src/cli. */
 export interface TaglineOptions {
   env?: NodeJS.ProcessEnv;
   random?: () => number;
@@ -265,7 +263,6 @@ function activeTaglines(options: TaglineOptions = {}): string[] {
   return filtered.length > 0 ? filtered : TAGLINES;
 }
 
-/** Reused helper for pick Tagline behavior in src/cli. */
 export function pickTagline(options: TaglineOptions = {}): string {
   if (options.mode === "off") {
     return "";
@@ -288,5 +285,4 @@ export function pickTagline(options: TaglineOptions = {}): string {
   return pool[index];
 }
 
-/** Re-exported API for src/cli, starting with DEFAULT TAGLINE. */
 export { DEFAULT_TAGLINE };

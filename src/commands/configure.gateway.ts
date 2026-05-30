@@ -35,7 +35,6 @@ function validateGatewayPortInput(value: unknown): string | undefined {
   return undefined;
 }
 
-/** Reused helper for prompt Gateway Config behavior in src/commands. */
 export async function promptGatewayConfig(
   cfg: OpenClawConfig,
   runtime: RuntimeEnv,

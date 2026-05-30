@@ -2,7 +2,6 @@ import { isEnvironmentFileOnlySource } from "../daemon/service-managed-env.js";
 import type { GatewayServiceEnvironmentValueSource } from "../daemon/service-types.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
-/** Reused constant for test Service Audit Codes behavior in src/commands. */
 export const testServiceAuditCodes = {
   gatewayCommandMissing: "gateway-command-missing",
   gatewayEntrypointMismatch: "gateway-entrypoint-mismatch",
@@ -12,7 +11,6 @@ export const testServiceAuditCodes = {
   gatewayTokenMismatch: "gateway-token-mismatch",
 } as const;
 
-/** Reused helper for read Embedded Gateway Token For Test behavior in src/commands. */
 export function readEmbeddedGatewayTokenForTest(
   command: {
     environment?: Record<string, string>;

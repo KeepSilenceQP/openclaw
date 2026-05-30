@@ -6,7 +6,6 @@ import type { FormatAbortReplyText, TryFastAbortFromMessage } from "./abort.runt
 import type { GetReplyFromConfig } from "./get-reply.types.js";
 import type { ReplyDispatchKind, ReplyDispatcher } from "./reply-dispatcher.types.js";
 
-/** Shared type for Dispatch From Config Result in src/auto-reply/reply. */
 export type DispatchFromConfigResult = {
   queuedFinal: boolean;
   counts: Record<ReplyDispatchKind, number>;
@@ -15,7 +14,6 @@ export type DispatchFromConfigResult = {
   beforeAgentRunBlocked?: boolean;
 };
 
-/** Shared type for Dispatch From Config Params in src/auto-reply/reply. */
 export type DispatchFromConfigParams = {
   ctx: FinalizedMsgContext;
   cfg: OpenClawConfig;
@@ -28,7 +26,6 @@ export type DispatchFromConfigParams = {
   configOverride?: OpenClawConfig;
 };
 
-/** Shared type for Dispatch Reply From Config in src/auto-reply/reply. */
 export type DispatchReplyFromConfig = (
   params: DispatchFromConfigParams,
 ) => Promise<DispatchFromConfigResult>;

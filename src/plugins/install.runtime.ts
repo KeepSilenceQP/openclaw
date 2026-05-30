@@ -38,10 +38,8 @@ import {
 import { checkMinHostVersion } from "./min-host-version.js";
 import { isPathInside } from "./path-safety.js";
 
-/** Re-exported API for src/plugins, starting with Npm Integrity Drift. */
 export type { NpmIntegrityDrift, NpmSpecResolution };
 
-/** Re-exported API for src/plugins. */
 export {
   checkMinHostVersion,
   root,

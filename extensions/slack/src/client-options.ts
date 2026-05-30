@@ -1,4 +1,3 @@
-// extensions/slack/src client options helpers and runtime behavior.
 import type { Agent } from "node:http";
 import type { RetryOptions, WebClientOptions } from "@slack/web-api";
 import { createNodeProxyAgent } from "openclaw/plugin-sdk/fetch-runtime";

@@ -1,7 +1,6 @@
 // Untrusted inbound context formatting for model prompts.
 import { normalizeInboundTextNewlines } from "./inbound-text.js";
 
-/** Reused helper for append Untrusted Context behavior in src/auto-reply/reply. */
 export function appendUntrustedContext(base: string, untrusted?: string[]): string {
   if (!Array.isArray(untrusted) || untrusted.length === 0) {
     return base;

@@ -2,7 +2,6 @@ import type { RuntimeEnv } from "../runtime.js";
 import type { NodeOnlyGatewayInfo } from "./status.node-mode.js";
 import type { StatusScanOverviewResult } from "./status.scan-overview.ts";
 
-/** Reused helper for log Gateway Connection Details behavior in src/commands. */
 export function logGatewayConnectionDetails(params: {
   runtime: Pick<RuntimeEnv, "log">;
   info: (value: string) => string;
@@ -18,7 +17,6 @@ export function logGatewayConnectionDetails(params: {
   }
 }
 
-/** Reused helper for resolve Status All Connection Details behavior in src/commands. */
 export function resolveStatusAllConnectionDetails(params: {
   nodeOnlyGateway: NodeOnlyGatewayInfo | null;
   remoteUrlMissing: boolean;

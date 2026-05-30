@@ -1,9 +1,7 @@
-// plugins installed plugin index hash helpers and runtime behavior.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import type { PluginDiagnostic } from "./manifest-types.js";
 
-/** Shared type for Installed Plugin File Signature in src/plugins. */
 export type InstalledPluginFileSignature = {
   size: number;
   mtimeMs: number;
@@ -14,12 +12,10 @@ function hashString(value: string): string {
   return crypto.createHash("sha256").update(value).digest("hex");
 }
 
-/** Reused helper for hash Json behavior in src/plugins. */
 export function hashJson(value: unknown): string {
   return hashString(JSON.stringify(value));
 }
 
-/** Reused helper for safe Hash File behavior in src/plugins. */
 export function safeHashFile(params: {
   filePath: string;
   pluginId?: string;
@@ -43,7 +39,6 @@ export function safeHashFile(params: {
   }
 }
 
-/** Reused helper for safe File Signature behavior in src/plugins. */
 export function safeFileSignature(filePath: string): InstalledPluginFileSignature | undefined {
   try {
     const stat = fs.statSync(filePath);
@@ -60,7 +55,6 @@ export function safeFileSignature(filePath: string): InstalledPluginFileSignatur
   }
 }
 
-/** Reused helper for file Signature Matches behavior in src/plugins. */
 export function fileSignatureMatches(
   filePath: string,
   signature: InstalledPluginFileSignature | undefined,

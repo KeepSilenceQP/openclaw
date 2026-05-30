@@ -1,4 +1,3 @@
-// llm/providers anthropic helpers and runtime behavior.
 import Anthropic from "@anthropic-ai/sdk";
 import type {
   CacheControlEphemeral,
@@ -160,10 +159,8 @@ function convertContentBlocks(content: (TextContent | ImageContent)[]):
   return blocks;
 }
 
-/** Shared type for Anthropic Effort in src/llm/providers. */
 export type AnthropicEffort = "low" | "medium" | "high" | "xhigh" | "max";
 
-/** Shared type for Anthropic Thinking Display in src/llm/providers. */
 export type AnthropicThinkingDisplay = "summarized" | "omitted";
 
 const FINE_GRAINED_TOOL_STREAMING_BETA = "fine-grained-tool-streaming-2025-05-14";
@@ -183,7 +180,6 @@ function getAnthropicCompat(model: Model<"anthropic-messages">): Required<Anthro
   };
 }
 
-/** Shared type for Anthropic Options in src/llm/providers. */
 export interface AnthropicOptions extends StreamOptions {
   /**
    * Enable extended thinking.
@@ -434,7 +430,6 @@ async function* iterateAnthropicEvents(
   }
 }
 
-/** Reused constant for stream Anthropic behavior in src/llm/providers. */
 export const streamAnthropic: StreamFunction<"anthropic-messages", AnthropicOptions> = (
   model: Model<"anthropic-messages">,
   context: Context,
@@ -771,7 +766,6 @@ function mapThinkingLevelToEffort(
   }
 }
 
-/** Reused constant for stream Simple Anthropic behavior in src/llm/providers. */
 export const streamSimpleAnthropic: StreamFunction<"anthropic-messages", SimpleStreamOptions> = (
   model: Model<"anthropic-messages">,
   context: Context,

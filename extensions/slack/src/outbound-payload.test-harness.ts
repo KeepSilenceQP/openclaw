@@ -1,4 +1,3 @@
-// extensions/slack/src outbound payload test harness helpers and runtime behavior.
 import { primeChannelOutboundSendMock } from "openclaw/plugin-sdk/channel-contract-testing";
 import type { ReplyPayload } from "openclaw/plugin-sdk/reply-runtime";
 import { vi, type Mock } from "vitest";

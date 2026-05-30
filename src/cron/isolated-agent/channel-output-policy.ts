@@ -1,4 +1,3 @@
-// cron/isolated-agent channel output policy helpers and runtime behavior.
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js";
 
@@ -12,7 +11,6 @@ async function loadChannelPluginRuntime() {
   return await channelPluginRuntimeLoader.load();
 }
 
-/** Reused helper for resolve Cron Channel Output Policy behavior in src/cron/isolated-agent. */
 export async function resolveCronChannelOutputPolicy(channel: string | undefined): Promise<{
   preferFinalAssistantVisibleText: boolean;
 }> {
@@ -27,7 +25,6 @@ export async function resolveCronChannelOutputPolicy(channel: string | undefined
   };
 }
 
-/** Reused helper for resolve Current Channel Target behavior in src/cron/isolated-agent. */
 export async function resolveCurrentChannelTarget(params: {
   channel?: string;
   to?: string;

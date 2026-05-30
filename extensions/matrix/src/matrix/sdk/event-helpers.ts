@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/sdk event helpers helpers and runtime behavior.
 import type { MatrixEvent } from "matrix-js-sdk/lib/matrix.js";
 import type { MatrixRawEvent } from "./types.js";
 

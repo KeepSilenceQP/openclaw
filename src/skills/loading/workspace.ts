@@ -1347,7 +1347,6 @@ export function buildWorkspaceSkillsPrompt(
   return resolveWorkspaceSkillPromptState(workspaceDir, opts).prompt;
 }
 
-/** Reused constant for testing behavior in src/agents/skills. */
 export const testing = {
   compactHomePath,
 };
@@ -1616,5 +1615,4 @@ export function filterWorkspaceSkillEntriesWithOptions(
 ): SkillEntry[] {
   return filterSkillEntries(entries, opts?.config, opts?.skillFilter, opts?.eligibility);
 }
-/** Re-exported API for src/agents/skills, starting with testing. */
 export { testing as __testing };

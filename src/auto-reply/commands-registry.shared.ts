@@ -150,7 +150,6 @@ export function assertCommandRegistry(commands: ChatCommandDefinition[]): void {
   }
 }
 
-/** Reused helper for build Builtin Chat Commands behavior in src/auto-reply. */
 export function buildBuiltinChatCommands(
   params: { listThinkingLevels?: ListThinkingLevels } = {},
 ): ChatCommandDefinition[] {

@@ -1,4 +1,3 @@
-// extensions/browser test fetch helpers and runtime behavior.
 type FetchPreconnectOptions = {
   dns?: boolean;
   tcp?: boolean;

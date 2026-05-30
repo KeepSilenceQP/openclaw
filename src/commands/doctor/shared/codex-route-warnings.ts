@@ -2681,7 +2681,6 @@ function collectCodexAppServerCommandWarnings(cfg: OpenClawConfig): string[] {
   ];
 }
 
-/** Reused helper for collect Codex Route Warnings behavior in src/commands/doctor. */
 export function collectCodexRouteWarnings(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -2782,7 +2781,6 @@ export function collectCodexRouteWarnings(params: {
   return warnings;
 }
 
-/** Reused helper for maybe Repair Codex Routes behavior in src/commands/doctor. */
 export function maybeRepairCodexRoutes(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -2900,7 +2898,6 @@ function clearStaleSessionRuntimePins(entry: SessionEntry): boolean {
   return changed;
 }
 
-/** Reused helper for repair Codex Session Store Routes behavior in src/commands/doctor. */
 export function repairCodexSessionStoreRoutes(params: {
   store: Record<string, SessionEntry>;
   now?: number;
@@ -2953,7 +2950,6 @@ function scanCodexSessionStoreRoutes(store: Record<string, SessionEntry>): strin
   });
 }
 
-/** Reused helper for maybe Repair Codex Session Routes behavior in src/commands/doctor. */
 export async function maybeRepairCodexSessionRoutes(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;

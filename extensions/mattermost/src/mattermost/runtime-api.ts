@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost runtime api helpers and runtime behavior.
 /** Re-exported mattermost plugin public API. */
 export type {
   BaseProbeResult,

@@ -19,7 +19,6 @@ import {
 } from "../../utils/message-channel.js";
 import type { MsgContext } from "../templating.js";
 
-/** Shared type for Legacy Main Delivery Retirement in src/auto-reply/reply. */
 export type LegacyMainDeliveryRetirement = {
   key: string;
   entry: SessionEntry;
@@ -95,7 +94,6 @@ function isExternalRoutingChannel(channel?: string): channel is string {
   );
 }
 
-/** Reused helper for resolve Last Channel Raw behavior in src/auto-reply/reply. */
 export function resolveLastChannelRaw(params: {
   originatingChannelRaw?: string;
   persistedLastChannel?: string;
@@ -141,7 +139,6 @@ export function resolveLastChannelRaw(params: {
   return resolved;
 }
 
-/** Reused helper for resolve Last To Raw behavior in src/auto-reply/reply. */
 export function resolveLastToRaw(params: {
   originatingChannelRaw?: string;
   originatingToRaw?: string;
@@ -184,7 +181,6 @@ export function resolveLastToRaw(params: {
   return params.originatingToRaw || params.toRaw || params.persistedLastTo;
 }
 
-/** Reused helper for maybe Retire Legacy Main Delivery Route behavior in src/auto-reply/reply. */
 export function maybeRetireLegacyMainDeliveryRoute(params: {
   sessionCfg: { dmScope?: string } | undefined;
   sessionKey: string;

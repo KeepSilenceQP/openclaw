@@ -1,4 +1,3 @@
-// extensions/signal/src normalize helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeStringEntries,

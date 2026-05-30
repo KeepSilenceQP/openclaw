@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src test helpers helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { createTestPluginApi } from "openclaw/plugin-sdk/plugin-test-api";

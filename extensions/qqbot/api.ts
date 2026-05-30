@@ -1,4 +1,3 @@
-// extensions/qqbot api helpers and runtime behavior.
 /** Re-exported qqbot plugin public API, starting with qqbot Plugin. */
 export { qqbotPlugin } from "./src/channel.js";
 /** Re-exported qqbot plugin public API, starting with qqbot Setup Plugin. */

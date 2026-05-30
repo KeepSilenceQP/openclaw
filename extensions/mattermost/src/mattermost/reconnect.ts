@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost reconnect helpers and runtime behavior.
 type ReconnectOutcome = "resolved" | "rejected";
 
 type ShouldReconnectParams = {

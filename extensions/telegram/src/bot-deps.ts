@@ -1,4 +1,3 @@
-// extensions/telegram/src bot deps helpers and runtime behavior.
 import { recordChannelActivity } from "openclaw/plugin-sdk/channel-activity-runtime";
 import { buildChannelInboundEventContext } from "openclaw/plugin-sdk/channel-inbound";
 import {

@@ -1,7 +1,5 @@
-// config schema labels helpers and runtime behavior.
 import { MEDIA_AUDIO_FIELD_LABELS } from "./media-audio-field-metadata.js";
 
-/** Reused constant for FIELD LABELS behavior in src/config. */
 export const FIELD_LABELS: Record<string, string> = {
   meta: "Metadata",
   "meta.lastTouchedVersion": "Config Last Touched Version",

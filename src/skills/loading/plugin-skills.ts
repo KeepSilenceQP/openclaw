@@ -287,11 +287,9 @@ function isNotFoundError(err: unknown): boolean {
   return code === "ENOENT" || code === "ENOTDIR";
 }
 
-/** Reused constant for testing behavior in src/agents/skills. */
 export const testing = {
   isGeneratedPluginSkillEntry,
   publishPluginSkills,
   resolvePluginSkillLinkType,
 };
-/** Re-exported API for src/agents/skills, starting with testing. */
 export { testing as __testing };

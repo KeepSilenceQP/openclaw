@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes agent snapshot helpers and runtime behavior.
 import path from "node:path";
 import { ensureMediaDir, saveMediaBuffer } from "../../media/store.js";
 import { captureScreenshot, snapshotAria, snapshotRoleViaCdp } from "../cdp.js";

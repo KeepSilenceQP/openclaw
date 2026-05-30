@@ -46,7 +46,6 @@ function loadMessageActionRuntime() {
   return messageActionRuntimeLoader.load();
 }
 
-/** Shared type for Acp Dispatch Delivery Meta in src/auto-reply/reply. */
 export type AcpDispatchDeliveryMeta = {
   toolCallId?: string;
   allowEdit?: boolean;
@@ -160,7 +159,6 @@ type AcpDispatchDeliveryState = {
   toolMessageByCallId: Map<string, ToolMessageHandle>;
 };
 
-/** Shared type for Acp Dispatch Delivery Coordinator in src/auto-reply/reply. */
 export type AcpDispatchDeliveryCoordinator = {
   startReplyLifecycle: () => Promise<void>;
   deliver: (
@@ -181,7 +179,6 @@ export type AcpDispatchDeliveryCoordinator = {
   applyRoutedCounts: (counts: Record<ReplyDispatchKind, number>) => void;
 };
 
-/** Reused helper for create Acp Dispatch Delivery Coordinator behavior in src/auto-reply/reply. */
 export function createAcpDispatchDeliveryCoordinator(params: {
   cfg: OpenClawConfig;
   agentId?: string;

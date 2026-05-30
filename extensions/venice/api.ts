@@ -1,4 +1,3 @@
-// extensions/venice api helpers and runtime behavior.
 /** Re-exported venice plugin public API. */
 export {
   buildVeniceModelDefinition,

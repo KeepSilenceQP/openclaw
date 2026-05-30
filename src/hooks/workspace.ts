@@ -1,4 +1,3 @@
-// hooks workspace helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { MANIFEST_KEY } from "../compat/legacy-names.js";
@@ -196,7 +195,6 @@ function loadHooksFromDir(params: {
   return hooks;
 }
 
-/** Reused helper for load Hook Entries From Dir behavior in src/hooks. */
 export function loadHookEntriesFromDir(params: {
   dir: string;
   source: HookSource;
@@ -272,7 +270,6 @@ function discoverWorkspaceHookEntries(
   return [...extraHooks, ...bundledHooks, ...pluginHooks, ...managedHooks, ...workspaceHooks];
 }
 
-/** Reused helper for load Workspace Hook Entries behavior in src/hooks. */
 export function loadWorkspaceHookEntries(
   workspaceDir: string,
   opts?: {

@@ -1,4 +1,3 @@
-// extensions/slack/src blocks render helpers and runtime behavior.
 import type { Block, KnownBlock } from "@slack/web-api";
 import { reduceInteractiveReply } from "openclaw/plugin-sdk/interactive-runtime";
 import type {

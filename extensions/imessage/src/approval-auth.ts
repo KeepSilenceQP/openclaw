@@ -1,4 +1,3 @@
-// extensions/imessage/src approval auth helpers and runtime behavior.
 import {
   createResolvedApproverActionAuthAdapter,
   resolveApprovalApprovers,

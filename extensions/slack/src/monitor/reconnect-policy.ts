@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor reconnect policy helpers and runtime behavior.
 import { formatSlackError } from "../errors.js";
 
 const SLACK_AUTH_ERROR_RE =

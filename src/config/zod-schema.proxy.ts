@@ -1,4 +1,3 @@
-// config zod schema proxy helpers and runtime behavior.
 import { z } from "zod";
 import { sensitive } from "./zod-schema.sensitive.js";
 
@@ -11,7 +10,6 @@ function isHttpOrHttpsProxyUrl(value: string): boolean {
   }
 }
 
-/** Reused constant for Proxy Loopback Mode Schema behavior in src/config. */
 export const ProxyLoopbackModeSchema = z.enum(["gateway-only", "proxy", "block"]);
 
 const ProxyTlsConfigSchema = z
@@ -21,7 +19,6 @@ const ProxyTlsConfigSchema = z
   .strict()
   .optional();
 
-/** Reused constant for Proxy Config Schema behavior in src/config. */
 export const ProxyConfigSchema = z
   .object({
     enabled: z.boolean().optional(),
@@ -38,5 +35,4 @@ export const ProxyConfigSchema = z
   .strict()
   .optional();
 
-/** Shared type for Proxy Config in src/config. */
 export type ProxyConfig = z.infer<typeof ProxyConfigSchema>;

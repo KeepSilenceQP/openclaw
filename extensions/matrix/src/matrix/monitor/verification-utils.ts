@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor verification utils helpers and runtime behavior.
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 const VERIFICATION_EVENT_PREFIX = "m.key.verification.";

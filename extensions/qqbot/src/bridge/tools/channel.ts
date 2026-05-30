@@ -1,4 +1,3 @@
-// extensions/qqbot/src/bridge/tools channel helpers and runtime behavior.
 import type { OpenClawPluginApi } from "openclaw/plugin-sdk/core";
 import { getAccessToken } from "../../engine/messaging/sender.js";
 import { ChannelApiSchema, executeChannelApi } from "../../engine/tools/channel-api.js";

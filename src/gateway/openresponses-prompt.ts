@@ -1,4 +1,3 @@
-// gateway openresponses prompt helpers and runtime behavior.
 import {
   buildAgentMessageFromConversationEntries,
   type ConversationEntry,
@@ -23,7 +22,6 @@ function extractTextContent(content: string | ContentPart[]): string {
     .join("\n");
 }
 
-/** Reused helper for build Agent Prompt behavior in src/gateway. */
 export function buildAgentPrompt(input: string | ItemParam[]): {
   message: string;
   extraSystemPrompt?: string;

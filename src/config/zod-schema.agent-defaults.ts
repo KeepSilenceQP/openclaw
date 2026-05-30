@@ -1,4 +1,3 @@
-// config zod schema agent defaults helpers and runtime behavior.
 import { z } from "zod";
 import { isValidNonNegativeByteSizeString } from "./byte-size.js";
 import {
@@ -42,7 +41,6 @@ const EmbeddedAgentConfigSchema = z
   })
   .strict();
 
-/** Reused constant for Silent Reply Policy Config Schema behavior in src/config. */
 export const SilentReplyPolicyConfigSchema = z
   .object({
     group: SilentReplyPolicySchema.optional(),
@@ -50,7 +48,6 @@ export const SilentReplyPolicyConfigSchema = z
   })
   .strict();
 
-/** Reused constant for Agent Defaults Schema behavior in src/config. */
 export const AgentDefaultsSchema = z
   .object({
     /** Global default provider params applied to all models before per-model and per-agent overrides. */

@@ -1,4 +1,3 @@
-// extensions/telegram/src inbound event delivery helpers and runtime behavior.
 import { stripTelegramInternalPrefixes } from "./targets.js";
 
 export type TelegramInboundEventDeliveryEnd = () => void;

@@ -1,4 +1,3 @@
-// extensions/matrix/src setup contract helpers and runtime behavior.
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "openclaw/plugin-sdk/routing";
 
 export const matrixSingleAccountKeysToMove = [

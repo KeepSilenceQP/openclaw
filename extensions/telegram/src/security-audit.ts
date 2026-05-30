@@ -1,4 +1,3 @@
-// extensions/telegram/src security audit helpers and runtime behavior.
 import { readChannelAllowFromStore } from "openclaw/plugin-sdk/conversation-runtime";
 import { resolveNativeSkillsEnabled } from "openclaw/plugin-sdk/native-command-config-runtime";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";

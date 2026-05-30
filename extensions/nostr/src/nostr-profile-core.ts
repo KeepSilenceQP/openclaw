@@ -1,4 +1,3 @@
-// extensions/nostr/src nostr profile core helpers and runtime behavior.
 import { type NostrProfile, NostrProfileSchema } from "./config-schema.js";
 
 /** NIP-01 profile content (JSON inside kind:0 event). */

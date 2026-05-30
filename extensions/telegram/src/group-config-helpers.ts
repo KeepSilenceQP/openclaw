@@ -1,4 +1,3 @@
-// extensions/telegram/src group config helpers helpers and runtime behavior.
 import type {
   TelegramDirectConfig,
   TelegramGroupConfig,

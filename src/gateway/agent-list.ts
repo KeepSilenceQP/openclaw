@@ -1,4 +1,3 @@
-// gateway agent list helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { resolveDefaultAgentId } from "../agents/agent-scope.js";
@@ -49,7 +48,6 @@ function listConfiguredAgentIds(cfg: OpenClawConfig): string[] {
     : sorted;
 }
 
-/** Reused helper for list Gateway Agents Basic behavior in src/gateway. */
 export function listGatewayAgentsBasic(cfg: OpenClawConfig): {
   defaultId: string;
   mainKey: string;

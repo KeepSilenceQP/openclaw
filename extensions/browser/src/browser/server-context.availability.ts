@@ -1,4 +1,3 @@
-// extensions/browser/src/browser server context availability helpers and runtime behavior.
 import fs from "node:fs";
 import { resolveCdpReachabilityPolicy } from "./cdp-reachability-policy.js";
 import {

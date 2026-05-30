@@ -1,4 +1,3 @@
-// extensions/whatsapp/src directory config helpers and runtime behavior.
 import {
   listResolvedDirectoryGroupEntriesFromMapKeys,
   listResolvedDirectoryUserEntriesFromAllowFrom,

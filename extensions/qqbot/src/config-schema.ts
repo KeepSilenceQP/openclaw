@@ -1,4 +1,3 @@
-// extensions/qqbot/src config schema helpers and runtime behavior.
 import {
   AllowFromListSchema,
   buildChannelConfigSchema,

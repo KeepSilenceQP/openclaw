@@ -1,4 +1,3 @@
-// extensions/signal/src sse reconnect helpers and runtime behavior.
 import {
   computeBackoff,
   logVerbose,

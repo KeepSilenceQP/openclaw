@@ -1,4 +1,3 @@
-// extensions/slack/src send helpers and runtime behavior.
 import type { MessageMetadata } from "@slack/types";
 import { type Block, type KnownBlock, type WebClient } from "@slack/web-api";
 import {

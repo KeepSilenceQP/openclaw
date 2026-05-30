@@ -1,4 +1,3 @@
-// config zod schema providers googlechat helpers and runtime behavior.
 import { z } from "zod";
 import { ChannelBotLoopProtectionSchema } from "./zod-schema.channels-config.js";
 import { ChannelHealthMonitorSchema } from "./zod-schema.channels.js";
@@ -14,7 +13,6 @@ import {
 } from "./zod-schema.core.js";
 import { sensitive } from "./zod-schema.sensitive.js";
 
-/** Reused constant for Google Chat Dm Schema behavior in src/config. */
 export const GoogleChatDmSchema = z
   .object({
     enabled: z.boolean().optional(),
@@ -41,7 +39,6 @@ export const GoogleChatDmSchema = z
     });
   });
 
-/** Reused constant for Google Chat Group Schema behavior in src/config. */
 export const GoogleChatGroupSchema = z
   .object({
     enabled: z.boolean().optional(),
@@ -52,7 +49,6 @@ export const GoogleChatGroupSchema = z
   })
   .strict();
 
-/** Reused constant for Google Chat Account Schema behavior in src/config. */
 export const GoogleChatAccountSchema = z
   .object({
     name: z.string().optional(),
@@ -101,7 +97,6 @@ export const GoogleChatAccountSchema = z
   })
   .strict();
 
-/** Reused constant for Google Chat Config Schema behavior in src/config. */
 export const GoogleChatConfigSchema = GoogleChatAccountSchema.extend({
   accounts: z.record(z.string(), GoogleChatAccountSchema.optional()).optional(),
   defaultAccount: z.string().optional(),

@@ -1,4 +1,3 @@
-// extensions/telegram/src bot message context audio transcript test support helpers and runtime behavior.
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const transcribeFirstAudioMock = vi.fn();

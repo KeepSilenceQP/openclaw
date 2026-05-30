@@ -126,7 +126,6 @@ function parseQueueDirectiveArgs(raw: string): {
   };
 }
 
-/** Reused helper for extract Queue Directive behavior in src/auto-reply/reply. */
 export function extractQueueDirective(body?: string): {
   cleaned: string;
   queueMode?: QueueMode;

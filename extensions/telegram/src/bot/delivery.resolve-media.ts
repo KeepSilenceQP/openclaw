@@ -1,4 +1,3 @@
-// extensions/telegram/src/bot delivery resolve media helpers and runtime behavior.
 import path from "node:path";
 import { GrammyError } from "grammy";
 import { root as fsRoot } from "openclaw/plugin-sdk/file-access-runtime";

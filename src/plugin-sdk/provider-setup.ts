@@ -1,5 +1,4 @@
 // Curated setup helpers for provider plugins that integrate local/self-hosted models.
-/** Re-exported API for src/plugin-sdk. */
 export type {
   OpenClawPluginApi,
   ProviderAuthContext,
@@ -11,7 +10,6 @@ export type {
   ProviderRuntimeModel,
 } from "../plugins/types.js";
 
-/** Re-exported API for src/plugin-sdk. */
 export {
   applyProviderDefaultModel,
   configureOpenAICompatibleSelfHostedProviderNonInteractive,

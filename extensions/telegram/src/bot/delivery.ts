@@ -1,4 +1,3 @@
-// extensions/telegram/src/bot delivery helpers and runtime behavior.
 export {
   deliverReplies,
   emitInternalMessageSentHook,

@@ -1,4 +1,3 @@
-// gateway/server-methods talk session helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -128,7 +127,6 @@ function managedRoomOwnershipError(action: string) {
   );
 }
 
-/** Reused constant for talk Session Handlers behavior in src/gateway/server-methods. */
 export const talkSessionHandlers: GatewayRequestHandlers = {
   "talk.session.create": async ({ params, respond, context, client }) => {
     if (!validateTalkSessionCreateParams(params)) {

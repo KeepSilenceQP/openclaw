@@ -7,12 +7,10 @@ import {
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { setPluginEnabledInConfig } from "../../plugins/toggle-config.js";
 
-/** Reused class for Auto Reply Config Mutation Error behavior in src/auto-reply/reply. */
 export class AutoReplyConfigMutationError extends Error {}
 
 class AutoReplyConfigNoopMutation extends Error {}
 
-/** Reused helper for format Auto Reply Config Mutation Error behavior in src/auto-reply/reply. */
 export function formatAutoReplyConfigMutationError(error: unknown): string | null {
   return error instanceof AutoReplyConfigMutationError ? error.message : null;
 }
@@ -31,7 +29,6 @@ function assertValidConfig(
   return { config: validated.config };
 }
 
-/** Reused helper for unset Config Path behavior in src/auto-reply/reply. */
 export async function unsetConfigPath(path: string[]): Promise<boolean> {
   try {
     await transformConfigFileWithRetry({
@@ -57,7 +54,6 @@ export async function unsetConfigPath(path: string[]): Promise<boolean> {
   }
 }
 
-/** Reused helper for set Config Path behavior in src/auto-reply/reply. */
 export async function setConfigPath(path: string[], value: unknown): Promise<void> {
   await transformConfigFileWithRetry({
     base: "source",
@@ -70,7 +66,6 @@ export async function setConfigPath(path: string[], value: unknown): Promise<voi
   });
 }
 
-/** Reused helper for set Plugin Enabled From Command behavior in src/auto-reply/reply. */
 export async function setPluginEnabledFromCommand(params: {
   pluginId: string;
   enabled: boolean;
@@ -109,7 +104,6 @@ type ApplyAllowlistConfigEdit = (params: {
   entry: string;
 }) => MaybePromise<AllowlistConfigEditResult>;
 
-/** Reused helper for apply Allowlist Config Mutation behavior in src/auto-reply/reply. */
 export async function applyAllowlistConfigMutation(params: {
   cfg: OpenClawConfig;
   accountId?: string | null;

@@ -230,7 +230,6 @@ async function forwardFollowupProgressEvent(params: {
   }
 }
 
-/** Reused helper for create Followup Runner behavior in src/auto-reply/reply. */
 export function createFollowupRunner(params: {
   opts?: GetReplyOptions;
   typing: TypingController;

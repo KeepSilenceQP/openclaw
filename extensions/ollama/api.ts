@@ -1,4 +1,3 @@
-// extensions/ollama api helpers and runtime behavior.
 /** Re-exported ollama plugin public API. */
 export {
   OLLAMA_DEFAULT_BASE_URL,

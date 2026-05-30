@@ -3,7 +3,6 @@ import { normalizeOptionalLowercaseString } from "../../shared/string-coerce.js"
 import { AcpRuntimeError } from "./errors.js";
 import type { AcpRuntime } from "./types.js";
 
-/** Shared type for Acp Runtime Backend in src/acp/runtime. */
 export type AcpRuntimeBackend = {
   id: string;
   runtime: AcpRuntime;
@@ -114,7 +113,6 @@ export function requireAcpRuntimeBackend(id?: string): AcpRuntimeBackend {
   return backend;
 }
 
-/** Reused constant for testing behavior in src/acp/runtime. */
 export const testing = {
   resetAcpRuntimeBackendsForTests() {
     ACP_BACKENDS_BY_ID.clear();
@@ -123,5 +121,4 @@ export const testing = {
     return resolveAcpRuntimeRegistryGlobalState();
   },
 };
-/** Re-exported API for src/acp/runtime, starting with testing. */
 export { testing as __testing };

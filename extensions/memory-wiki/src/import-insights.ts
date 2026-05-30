@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src import insights helpers and runtime behavior.
 import type { ResolvedMemoryWikiConfig } from "./config.js";
 import { parseWikiMarkdown } from "./markdown.js";
 import { readQueryableWikiPages } from "./query.js";

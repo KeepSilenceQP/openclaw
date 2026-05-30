@@ -26,14 +26,12 @@ interface StatsLike {
   isSymbolicLink(): boolean;
 }
 
-/** Shared type for Stale Plugin Runtime Symlink in src/commands/doctor. */
 export interface StalePluginRuntimeSymlink {
   readonly name: string;
   readonly path: string;
   readonly target: string;
 }
 
-/** Shared type for Plugin Runtime Symlink Options in src/commands/doctor. */
 export interface PluginRuntimeSymlinkOptions {
   readonly fs?: FsLike;
   readonly staleRoots?: readonly string[];
@@ -48,7 +46,6 @@ const DEFAULT_FS: FsLike = {
   unlink: (file) => fs.unlink(file),
 };
 
-/** Reused helper for collect Stale Plugin Runtime Symlinks behavior in src/commands/doctor. */
 export async function collectStalePluginRuntimeSymlinks(
   packageRoot: string | null | undefined,
   options: PluginRuntimeSymlinkOptions = {},
@@ -95,7 +92,6 @@ export async function collectStalePluginRuntimeSymlinks(
   return stale.toSorted((left, right) => left.name.localeCompare(right.name));
 }
 
-/** Reused helper for note Stale Plugin Runtime Symlinks behavior in src/commands/doctor. */
 export async function noteStalePluginRuntimeSymlinks(
   packageRoot: string | null | undefined,
   options: PluginRuntimeSymlinkOptions & {
@@ -124,7 +120,6 @@ export async function noteStalePluginRuntimeSymlinks(
   (options.noteFn ?? note)(lines.join("\n"), "Plugin-runtime symlinks");
 }
 
-/** Reused helper for remove Stale Plugin Runtime Symlinks behavior in src/commands/doctor. */
 export async function removeStalePluginRuntimeSymlinks(
   packageRoot: string | null | undefined,
   options: PluginRuntimeSymlinkOptions = {},

@@ -1,4 +1,3 @@
-// hooks/bundled/boot-md handler helpers and runtime behavior.
 import { listAgentIds, resolveAgentWorkspaceDir } from "../../../agents/agent-scope.js";
 import { createDefaultDeps } from "../../../cli/deps.js";
 import { runBootOnce } from "../../../gateway/boot.js";

@@ -1,4 +1,3 @@
-// extensions/slack/src setup surface helpers and runtime behavior.
 import { adaptScopedAccountAccessor } from "openclaw/plugin-sdk/channel-config-helpers";
 import {
   noteChannelLookupFailure,

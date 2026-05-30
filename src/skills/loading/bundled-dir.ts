@@ -26,7 +26,6 @@ function looksLikeSkillsDir(dir: string): boolean {
   return false;
 }
 
-/** Shared type for Bundled Skills Resolve Options in src/agents/skills. */
 export type BundledSkillsResolveOptions = {
   argv1?: string;
   moduleUrl?: string;

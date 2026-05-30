@@ -1,5 +1,3 @@
-// gateway test helpers helpers and runtime behavior.
-/** Re-exported API for src/gateway. */
 export {
   agentCommand,
   cronIsolatedRun,
@@ -12,9 +10,7 @@ export {
   testTailnetIPv4,
   testTailscaleWhois,
 } from "./test-helpers.runtime-state.js";
-/** Re-exported API for src/gateway, starting with reset Test Plugin Registry. */
 export { resetTestPluginRegistry, setTestPluginRegistry } from "./test-helpers.plugin-registry.js";
-/** Re-exported API for src/gateway. */
 export {
   connectOk,
   connectReq,

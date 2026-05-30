@@ -1,4 +1,3 @@
-// extensions/slack/src security doctor helpers and runtime behavior.
 export function isSlackMutableAllowEntry(raw: string): boolean {
   const text = raw.trim();
   if (!text || text === "*") {

@@ -9,7 +9,6 @@ import {
   type MemoryStatusSnapshot,
 } from "./status.scan.shared.js";
 
-/** Reused helper for execute Status Scan From Overview behavior in src/commands. */
 export async function executeStatusScanFromOverview(params: {
   overview: StatusScanOverviewResult;
   runtime?: RuntimeEnv;

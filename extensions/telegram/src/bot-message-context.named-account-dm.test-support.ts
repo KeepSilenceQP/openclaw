@@ -1,4 +1,3 @@
-// extensions/telegram/src bot message context named account dm test support helpers and runtime behavior.
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import {
   getRecordedUpdateLastRoute,

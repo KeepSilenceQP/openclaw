@@ -85,7 +85,6 @@ function loadAvailableModels(
   }
 }
 
-/** Reused helper for load Model Registry behavior in src/commands/models. */
 export async function loadModelRegistry(
   cfg: OpenClawConfig,
   opts?: {
@@ -139,7 +138,6 @@ export async function loadModelRegistry(
   return { registry, models, availableKeys, availabilityErrorMessage };
 }
 
-/** Reused helper for to Model Row behavior in src/commands/models. */
 export function toModelRow(params: Parameters<typeof toModelRowBase>[0]): ModelRow {
   return toModelRowBase(params);
 }

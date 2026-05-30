@@ -18,7 +18,6 @@ function setDoctorConfigInputForTest(input: DoctorConfigTestInput | null): void 
   delete globalState[DOCTOR_CONFIG_TEST_INPUT];
 }
 
-/** Reused helper for get Doctor Config Input For Test behavior in src/commands. */
 export function getDoctorConfigInputForTest(): DoctorConfigTestInput | null {
   const globalState = globalThis as typeof globalThis & {
     [DOCTOR_CONFIG_TEST_INPUT]?: DoctorConfigTestInput;
@@ -126,7 +125,6 @@ function hasCompatPreflightSignals(config: Record<string, unknown>): boolean {
   return false;
 }
 
-/** Reused helper for run Doctor Config With Input behavior in src/commands. */
 export async function runDoctorConfigWithInput<T>(params: {
   config: Record<string, unknown>;
   repair?: boolean;

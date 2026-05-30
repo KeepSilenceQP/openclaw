@@ -75,7 +75,6 @@ function migratePluginWebFetchConfig(params: {
   );
 }
 
-/** Reused helper for list Legacy Web Fetch Config Paths behavior in src/commands/doctor. */
 export function listLegacyWebFetchConfigPaths(raw: unknown): string[] {
   const fetch = resolveLegacyFetchConfig(raw);
   const firecrawl = fetch ? copyLegacyFirecrawlFetchConfig(fetch) : undefined;
@@ -85,7 +84,6 @@ export function listLegacyWebFetchConfigPaths(raw: unknown): string[] {
   return Object.keys(firecrawl).map((key) => `tools.web.fetch.firecrawl.${key}`);
 }
 
-/** Reused helper for migrate Legacy Web Fetch Config behavior in src/commands/doctor. */
 export function migrateLegacyWebFetchConfig<T>(raw: T): { config: T; changes: string[] } {
   if (!isRecord(raw) || !hasMappedLegacyWebFetchConfig(raw)) {
     return { config: raw, changes: [] };

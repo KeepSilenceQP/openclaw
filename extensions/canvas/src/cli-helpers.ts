@@ -1,4 +1,3 @@
-// extensions/canvas/src cli helpers helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import fs from "node:fs";
 import * as path from "node:path";

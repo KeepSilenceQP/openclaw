@@ -387,7 +387,6 @@ async function loadPluginCommandConfig(): Promise<
   };
 }
 
-/** Reused constant for handle Plugins Command behavior in src/auto-reply/reply. */
 export const handlePluginsCommand: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;

@@ -1,4 +1,3 @@
-// extensions/slack/src account surface fields helpers and runtime behavior.
 import type { SlackAccountConfig } from "openclaw/plugin-sdk/config-contracts";
 
 export type SlackAccountSurfaceFields = {

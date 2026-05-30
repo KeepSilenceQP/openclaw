@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/gateway/stages access stage helpers and runtime behavior.
 import type { QQBotInboundAccess } from "../../adapter/index.js";
 import type { InboundContext, InboundPipelineDeps } from "../inbound-context.js";
 import type { QueuedMessage } from "../message-queue.js";

@@ -1,4 +1,3 @@
-// extensions/qqbot/src/bridge config shared helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   applyAccountNameToChannelSection,

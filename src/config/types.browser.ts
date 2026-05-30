@@ -1,5 +1,3 @@
-// config types browser helpers and runtime behavior.
-/** Shared type for Browser Profile Config in src/config. */
 export type BrowserProfileConfig = {
   /** CDP port for this profile. Allocated once at creation, persisted permanently. */
   cdpPort?: number;
@@ -22,12 +20,10 @@ export type BrowserProfileConfig = {
   /** Profile color (hex). Auto-assigned at creation. */
   color: string;
 };
-/** Shared type for Browser Snapshot Defaults in src/config. */
 export type BrowserSnapshotDefaults = {
   /** Default snapshot mode (applies when mode is not provided). */
   mode?: "efficient";
 };
-/** Shared type for Browser Tab Cleanup Config in src/config. */
 export type BrowserTabCleanupConfig = {
   /** Enable best-effort cleanup for tracked primary-agent browser tabs. Default: true */
   enabled?: boolean;
@@ -38,7 +34,6 @@ export type BrowserTabCleanupConfig = {
   /** Cleanup sweep interval in minutes. Default: 5 */
   sweepMinutes?: number;
 };
-/** Shared type for Browser Ssr FPolicy Config in src/config. */
 export type BrowserSsrFPolicyConfig = {
   /** If true, permit browser navigation to private/internal networks. Default: true */
   dangerouslyAllowPrivateNetwork?: boolean;
@@ -53,7 +48,6 @@ export type BrowserSsrFPolicyConfig = {
    */
   hostnameAllowlist?: string[];
 };
-/** Shared type for Browser Config in src/config. */
 export type BrowserConfig = {
   enabled?: boolean;
   /** If false, disable browser act:evaluate (arbitrary JS). Default: true */

@@ -1,4 +1,3 @@
-// extensions/elevenlabs contract api helpers and runtime behavior.
 export {
   ELEVENLABS_TALK_PROVIDER_ID,
   ELEVENLABS_TALK_LEGACY_CONFIG_RULES,

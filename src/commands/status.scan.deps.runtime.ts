@@ -3,7 +3,6 @@ import { getTailnetHostname } from "../infra/tailscale.js";
 import type { MemoryProviderStatus } from "../memory-host-sdk/engine-storage.js";
 import { getActiveMemorySearchManager } from "../plugins/memory-runtime.js";
 
-/** Re-exported API for src/commands, starting with get Tailnet Hostname. */
 export { getTailnetHostname };
 
 type StatusMemoryManager = {
@@ -13,7 +12,6 @@ type StatusMemoryManager = {
   close?(): Promise<void>;
 };
 
-/** Reused helper for get Memory Search Manager behavior in src/commands. */
 export async function getMemorySearchManager(params: {
   cfg: OpenClawConfig;
   agentId: string;

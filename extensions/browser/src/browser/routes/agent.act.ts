@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes agent act helpers and runtime behavior.
 import { formatErrorMessage } from "../../infra/errors.js";
 import {
   clickChromeMcpElement,

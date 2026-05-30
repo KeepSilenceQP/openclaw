@@ -1,4 +1,3 @@
-// extensions/telegram/src topic name cache helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import { readJsonFileWithFallback } from "openclaw/plugin-sdk/json-store";
 import { getTelegramRuntime } from "./runtime.js";

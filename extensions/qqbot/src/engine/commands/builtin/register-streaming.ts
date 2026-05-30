@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/commands/builtin register streaming helpers and runtime behavior.
 import type { ApproveRuntimeGetter } from "../../adapter/commands.port.js";
 import type { SlashCommandRegistry } from "../slash-commands.js";
 import {

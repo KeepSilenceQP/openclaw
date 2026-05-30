@@ -11,7 +11,6 @@ import type { MsgContext } from "../templating.js";
 import type { CommandContext } from "./commands-types.js";
 import { stripMentions } from "./mentions.js";
 
-/** Reused helper for build Command Context behavior in src/auto-reply/reply. */
 export function buildCommandContext(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;

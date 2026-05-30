@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix sync state helpers and runtime behavior.
 export type MatrixSyncState =
   | "PREPARED"
   | "SYNCING"

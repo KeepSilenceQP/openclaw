@@ -1,4 +1,3 @@
-// extensions/telegram/src sticker cache store helpers and runtime behavior.
 import path from "node:path";
 import { loadJsonFile, saveJsonFile } from "openclaw/plugin-sdk/json-store";
 import { resolveStateDir } from "openclaw/plugin-sdk/state-paths";

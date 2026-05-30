@@ -5,7 +5,6 @@ import {
   normalizeOptionalString,
 } from "../shared/string-coerce.js";
 
-/** Reused helper for format Provider Model Ref behavior in src/auto-reply. */
 export function formatProviderModelRef(providerRaw: string, modelRaw: string): string {
   const provider = normalizeOptionalString(providerRaw) ?? "";
   const model = normalizeOptionalString(modelRaw) ?? "";
@@ -73,7 +72,6 @@ function normalizeModelRef(
   };
 }
 
-/** Reused helper for resolve Selected And Active Model behavior in src/auto-reply. */
 export function resolveSelectedAndActiveModel(params: {
   selectedProvider: string;
   selectedModel: string;

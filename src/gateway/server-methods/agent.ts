@@ -1,4 +1,3 @@
-// gateway/server-methods agent helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import { existsSync } from "node:fs";
 import {
@@ -824,7 +823,6 @@ function yieldAfterAgentAcceptedAck(): Promise<void> {
   });
 }
 
-/** Reused constant for agent Handlers behavior in src/gateway/server-methods. */
 export const agentHandlers: GatewayRequestHandlers = {
   agent: async ({ params, respond, context, client, isWebchatConnect }) => {
     const p = params;

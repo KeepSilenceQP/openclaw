@@ -1,4 +1,3 @@
-// extensions/codex/src commands helpers and runtime behavior.
 import type {
   OpenClawPluginCommandDefinition,
   PluginCommandContext,

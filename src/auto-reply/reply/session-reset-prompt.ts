@@ -36,7 +36,6 @@ const BARE_SESSION_RESET_PROMPT_BOOTSTRAP_LIMITED = [
   "Do not mention internal steps, files, tools, or reasoning.",
 ].join(" ");
 
-/** Reused helper for resolve Bare Reset Bootstrap File Access behavior in src/auto-reply/reply. */
 export function resolveBareResetBootstrapFileAccess(params: {
   cfg?: OpenClawConfig;
   agentId?: string;
@@ -59,7 +58,6 @@ export function resolveBareResetBootstrapFileAccess(params: {
   return inventory.groups.some((group) => group.tools.some((tool) => tool.id === "read"));
 }
 
-/** Reused helper for resolve Bare Session Reset Prompt State behavior in src/auto-reply/reply. */
 export async function resolveBareSessionResetPromptState(params: {
   cfg?: OpenClawConfig;
   workspaceDir?: string;

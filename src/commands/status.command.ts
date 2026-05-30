@@ -53,7 +53,6 @@ function loadStatusNodeModeModule() {
   return statusNodeModeModuleLoader.load();
 }
 
-/** Reused helper for resolve Pairing Recovery Context behavior in src/commands. */
 export function resolvePairingRecoveryContext(params: {
   error?: string | null;
   closeReason?: string | null;
@@ -87,7 +86,6 @@ export function resolvePairingRecoveryContext(params: {
   };
 }
 
-/** Reused helper for status Command behavior in src/commands. */
 export async function statusCommand(
   opts: {
     json?: boolean;

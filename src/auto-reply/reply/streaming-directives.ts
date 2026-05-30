@@ -129,7 +129,6 @@ const parseChunk = (raw: string, options?: { silentToken?: string }): ParsedChun
 const hasRenderableContent = (parsed: ReplyDirectiveParseResult): boolean =>
   hasOutboundReplyContent(parsed) || Boolean(parsed.audioAsVoice);
 
-/** Reused helper for create Streaming Directive Accumulator behavior in src/auto-reply/reply. */
 export function createStreamingDirectiveAccumulator() {
   let pendingTail = "";
   let pendingReply: PendingReplyState = { sawCurrent: false, hasTag: false };

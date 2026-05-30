@@ -1,4 +1,3 @@
-// extensions/line/src/flex-templates common helpers and runtime behavior.
 import type { FlexBox, FlexBubble, FlexText } from "./types.js";
 
 export function attachFooterText(bubble: FlexBubble, footer: string) {

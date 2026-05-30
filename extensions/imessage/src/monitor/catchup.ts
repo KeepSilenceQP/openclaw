@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor catchup helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import path from "node:path";
 import type { FileLockOptions } from "openclaw/plugin-sdk/file-lock";

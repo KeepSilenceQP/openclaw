@@ -1,4 +1,3 @@
-// extensions/slack/src blocks fallback helpers and runtime behavior.
 import type { Block, KnownBlock } from "@slack/web-api";
 
 type PlainTextObject = { text?: string };

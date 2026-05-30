@@ -1,4 +1,3 @@
-// realtime-transcription websocket session helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import WebSocket, { type RawData } from "ws";
 import { createDebugProxyWebSocketAgent, resolveDebugProxySettings } from "../proxy-capture/env.js";
@@ -8,7 +7,6 @@ import type {
   RealtimeTranscriptionSessionCallbacks,
 } from "./provider-types.js";
 
-/** Shared type for Realtime Transcription Web Socket Transport in src/realtime-transcription. */
 export type RealtimeTranscriptionWebSocketTransport = {
   readonly callbacks: RealtimeTranscriptionSessionCallbacks;
   closeNow(): void;
@@ -20,7 +18,6 @@ export type RealtimeTranscriptionWebSocketTransport = {
   sendJson(payload: unknown): boolean;
 };
 
-/** Shared type for Realtime Transcription Web Socket Session Options in src/realtime-transcription. */
 export type RealtimeTranscriptionWebSocketSessionOptions<Event = unknown> = {
   callbacks: RealtimeTranscriptionSessionCallbacks;
   connectClosedBeforeReadyMessage?: string;
@@ -469,7 +466,6 @@ class WebSocketRealtimeTranscriptionSession<Event> implements RealtimeTranscript
   }
 }
 
-/** Reused helper for create Realtime Transcription Web Socket Session behavior in src/realtime-transcription. */
 export function createRealtimeTranscriptionWebSocketSession<Event = unknown>(
   options: RealtimeTranscriptionWebSocketSessionOptions<Event>,
 ): RealtimeTranscriptionSession {

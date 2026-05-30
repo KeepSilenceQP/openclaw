@@ -1,4 +1,3 @@
-// src/gateway/server-methods skills upload helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -34,7 +33,6 @@ function mapUploadError(err: unknown): ErrorShape {
   return errorShape(ErrorCodes.UNAVAILABLE, formatErrorMessage(err));
 }
 
-/** Reused constant for skills Upload Handlers behavior in src/gateway/server-methods. */
 export const skillsUploadHandlers: GatewayRequestHandlers = {
   "skills.upload.begin": makeUploadHandler(
     "skills.upload.begin",

@@ -1,4 +1,3 @@
-// gateway server http helpers and runtime behavior.
 import {
   createServer as createHttpServer,
   type Server as HttpServer,
@@ -374,7 +373,6 @@ type GatewayHttpRequestStage = {
   continueOnError?: boolean;
 };
 
-/** Reused helper for run Gateway Http Request Stages behavior in src/gateway. */
 export async function runGatewayHttpRequestStages(
   stages: readonly GatewayHttpRequestStage[],
 ): Promise<boolean> {
@@ -472,7 +470,6 @@ function buildPluginRequestStages(params: {
   ];
 }
 
-/** Reused helper for create Gateway Http Server behavior in src/gateway. */
 export function createGatewayHttpServer(opts: {
   clients: Set<GatewayWsClient>;
   controlUiEnabled: boolean;
@@ -815,7 +812,6 @@ export function createGatewayHttpServer(opts: {
   return httpServer;
 }
 
-/** Reused helper for attach Gateway Upgrade Handler behavior in src/gateway. */
 export function attachGatewayUpgradeHandler(opts: {
   httpServer: HttpServer;
   wss: WebSocketServer;

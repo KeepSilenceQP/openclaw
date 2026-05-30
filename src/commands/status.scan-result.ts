@@ -13,7 +13,6 @@ import type {
 } from "./status.scan.shared.js";
 import type { getStatusSummary as getStatusSummaryFn } from "./status.summary.js";
 
-/** Shared type for Status Scan Result in src/commands. */
 export type StatusScanResult = {
   cfg: OpenClawConfig;
   sourceConfig: OpenClawConfig;
@@ -43,7 +42,6 @@ export type StatusScanResult = {
   pluginCompatibility: PluginCompatibilityNotice[];
 };
 
-/** Reused helper for build Status Scan Result behavior in src/commands. */
 export function buildStatusScanResult(params: {
   cfg: OpenClawConfig;
   sourceConfig: OpenClawConfig;

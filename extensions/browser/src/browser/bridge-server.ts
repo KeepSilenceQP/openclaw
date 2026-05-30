@@ -1,4 +1,3 @@
-// extensions/browser/src/browser bridge server helpers and runtime behavior.
 import type { Server } from "node:http";
 import type { AddressInfo } from "node:net";
 import express from "express";

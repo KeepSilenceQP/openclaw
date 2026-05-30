@@ -15,7 +15,6 @@ async function loadMemoryHostSearchRuntime(): Promise<MemoryHostSearchRuntimeMod
   return await import("./memory-host-search.runtime.js");
 }
 
-/** Reused helper for get Active Memory Search Manager behavior in src/plugin-sdk. */
 export async function getActiveMemorySearchManager(params: {
   cfg: OpenClawConfig;
   agentId: string;
@@ -25,13 +24,11 @@ export async function getActiveMemorySearchManager(params: {
   return await runtime.getActiveMemorySearchManager(params);
 }
 
-/** Reused helper for close Active Memory Search Managers behavior in src/plugin-sdk. */
 export async function closeActiveMemorySearchManagers(cfg?: OpenClawConfig): Promise<void> {
   const runtime = await loadMemoryHostSearchRuntime();
   await runtime.closeActiveMemorySearchManagers(cfg);
 }
 
-/** Reused helper for close Active Memory Search Manager behavior in src/plugin-sdk. */
 export async function closeActiveMemorySearchManager(params: {
   cfg: OpenClawConfig;
   agentId: string;

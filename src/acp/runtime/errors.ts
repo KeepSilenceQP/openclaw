@@ -1,7 +1,6 @@
 import { stringifyNonErrorCause } from "../../infra/errors.js";
 import { redactSensitiveText } from "../../logging/redact.js";
 
-/** Reused constant for ACP ERROR CODES behavior in src/acp/runtime. */
 export const ACP_ERROR_CODES = [
   "ACP_BACKEND_MISSING",
   "ACP_BACKEND_UNAVAILABLE",
@@ -12,7 +11,6 @@ export const ACP_ERROR_CODES = [
   "ACP_TURN_FAILED",
 ] as const;
 
-/** Shared type for Acp Runtime Error Code in src/acp/runtime. */
 export type AcpRuntimeErrorCode = (typeof ACP_ERROR_CODES)[number];
 const ACP_ERROR_CODE_SET = new Set<AcpRuntimeErrorCode>(ACP_ERROR_CODES);
 

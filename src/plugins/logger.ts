@@ -1,4 +1,3 @@
-// plugins logger helpers and runtime behavior.
 import type { PluginLogger } from "./types.js";
 
 type LoggerLike = {
@@ -8,7 +7,6 @@ type LoggerLike = {
   debug?: (message: string) => void;
 };
 
-/** Reused helper for create Plugin Loader Logger behavior in src/plugins. */
 export function createPluginLoaderLogger(logger: LoggerLike): PluginLogger {
   return {
     info: (msg) => logger.info(msg),

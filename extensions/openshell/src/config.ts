@@ -1,4 +1,3 @@
-// extensions/openshell/src config helpers and runtime behavior.
 import path from "node:path";
 import { buildPluginConfigSchema, type OpenClawPluginConfigSchema } from "openclaw/plugin-sdk/core";
 import {

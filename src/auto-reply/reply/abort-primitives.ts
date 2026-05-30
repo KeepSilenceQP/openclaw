@@ -61,7 +61,6 @@ function normalizeAbortTriggerText(text: string): string {
     .trim();
 }
 
-/** Reused helper for is Abort Trigger behavior in src/auto-reply/reply. */
 export function isAbortTrigger(text?: string): boolean {
   if (!text) {
     return false;
@@ -70,7 +69,6 @@ export function isAbortTrigger(text?: string): boolean {
   return ABORT_TRIGGERS.has(normalized);
 }
 
-/** Reused helper for is Abort Request Text behavior in src/auto-reply/reply. */
 export function isAbortRequestText(text?: string, options?: CommandNormalizeOptions): boolean {
   if (!text) {
     return false;
@@ -87,7 +85,6 @@ export function isAbortRequestText(text?: string, options?: CommandNormalizeOpti
   );
 }
 
-/** Reused helper for get Abort Memory behavior in src/auto-reply/reply. */
 export function getAbortMemory(key: string): boolean | undefined {
   const normalized = key.trim();
   if (!normalized) {
@@ -111,7 +108,6 @@ function pruneAbortMemory(): void {
   }
 }
 
-/** Reused helper for set Abort Memory behavior in src/auto-reply/reply. */
 export function setAbortMemory(key: string, value: boolean): void {
   const normalized = key.trim();
   if (!normalized) {
@@ -128,12 +124,10 @@ export function setAbortMemory(key: string, value: boolean): void {
   pruneAbortMemory();
 }
 
-/** Reused helper for get Abort Memory Size For Test behavior in src/auto-reply/reply. */
 export function getAbortMemorySizeForTest(): number {
   return ABORT_MEMORY.size;
 }
 
-/** Reused helper for reset Abort Memory For Test behavior in src/auto-reply/reply. */
 export function resetAbortMemoryForTest(): void {
   ABORT_MEMORY.clear();
 }

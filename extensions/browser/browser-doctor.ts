@@ -1,4 +1,3 @@
-// extensions/browser browser doctor helpers and runtime behavior.
 export {
   detectLegacyClawdBrowserProfileResidue,
   maybeArchiveLegacyClawdBrowserProfileResidue,

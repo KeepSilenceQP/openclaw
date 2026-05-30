@@ -1,4 +1,3 @@
-// extensions/slack test api helpers and runtime behavior.
 export type { ResolvedSlackAccount } from "./src/accounts.js";
 export type { SlackMessageEvent } from "./src/types.js";
 export { slackPlugin } from "./src/channel.js";

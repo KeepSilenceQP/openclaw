@@ -1,7 +1,6 @@
 // Test helpers for subagent command suites.
 import type { InlineDirectives } from "./directive-handling.js";
 
-/** Reused helper for create Empty Inline Directives behavior in src/auto-reply/reply. */
 export function createEmptyInlineDirectives(): InlineDirectives {
   return {
     cleaned: "",

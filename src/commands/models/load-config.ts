@@ -9,14 +9,12 @@ import {
   getModelsCommandSecretTargetIds,
 } from "./load-config.runtime.js";
 
-/** Shared type for Loaded Models Config in src/commands/models. */
 export type LoadedModelsConfig = {
   sourceConfig: OpenClawConfig;
   resolvedConfig: OpenClawConfig;
   diagnostics: string[];
 };
 
-/** Reused helper for load Models Config With Source behavior in src/commands/models. */
 export async function loadModelsConfigWithSource(params: {
   commandName: string;
   runtime?: RuntimeEnv;
@@ -38,7 +36,6 @@ export async function loadModelsConfigWithSource(params: {
   };
 }
 
-/** Reused helper for load Models Config behavior in src/commands/models. */
 export async function loadModelsConfig(params: {
   commandName: string;
   runtime?: RuntimeEnv;

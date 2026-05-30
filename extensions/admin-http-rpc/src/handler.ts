@@ -1,4 +1,3 @@
-// extensions/admin-http-rpc/src handler helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { dispatchGatewayMethod } from "openclaw/plugin-sdk/gateway-method-runtime";

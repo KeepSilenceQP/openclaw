@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/client url validation helpers and runtime behavior.
 import {
   assertHttpUrlTargetsPrivateNetwork,
   type LookupFn,

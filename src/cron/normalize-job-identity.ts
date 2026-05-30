@@ -1,7 +1,5 @@
-// cron normalize job identity helpers and runtime behavior.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
-/** Reused helper for normalize Cron Job Identity Fields behavior in src/cron. */
 export function normalizeCronJobIdentityFields(raw: Record<string, unknown>): {
   mutated: boolean;
   legacyJobIdIssue: boolean;

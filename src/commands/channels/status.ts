@@ -25,7 +25,6 @@ import {
 } from "./shared.js";
 import { formatConfigChannelsStatusLines } from "./status-config-format.js";
 
-/** Shared type for Channels Status Options in src/commands/channels. */
 export type ChannelsStatusOptions = {
   channel?: string;
   json?: boolean;
@@ -76,7 +75,6 @@ function formatEventLoopBits(value: unknown): string | null {
     .join(" ");
 }
 
-/** Reused helper for format Gateway Channels Status Lines behavior in src/commands/channels. */
 export function formatGatewayChannelsStatusLines(payload: Record<string, unknown>): string[] {
   const lines: string[] = [];
   lines.push(theme.success("Gateway reachable."));
@@ -213,7 +211,6 @@ export function formatGatewayChannelsStatusLines(payload: Record<string, unknown
   return lines;
 }
 
-/** Reused helper for channels Status Command behavior in src/commands/channels. */
 export async function channelsStatusCommand(
   opts: ChannelsStatusOptions,
   runtime: RuntimeEnv = defaultRuntime,

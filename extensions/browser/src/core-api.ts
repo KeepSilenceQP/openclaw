@@ -1,4 +1,3 @@
-// extensions/browser/src core api helpers and runtime behavior.
 export {
   DEFAULT_AI_SNAPSHOT_MAX_CHARS,
   DEFAULT_UPLOAD_DIR,

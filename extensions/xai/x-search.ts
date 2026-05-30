@@ -1,4 +1,3 @@
-// extensions/xai x search helpers and runtime behavior.
 import {
   jsonResult,
   readCache,

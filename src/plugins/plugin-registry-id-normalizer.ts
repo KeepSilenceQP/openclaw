@@ -1,9 +1,7 @@
-// plugins plugin registry id normalizer helpers and runtime behavior.
 import type { InstalledPluginIndex } from "./installed-plugin-index.js";
 import { loadPluginManifestRegistryForInstalledIndex } from "./manifest-registry-installed.js";
 import type { PluginManifestRecord, PluginManifestRegistry } from "./manifest-registry.js";
 
-/** Shared type for Plugin Registry Id Normalizer Options in src/plugins. */
 export type PluginRegistryIdNormalizerOptions = {
   manifestRegistry?: PluginManifestRegistry;
   lookUpTable?: Pick<{ manifestRegistry: PluginManifestRegistry }, "manifestRegistry">;
@@ -36,7 +34,6 @@ function listPluginRegistryNormalizerAliases(plugin: PluginManifestRecord): read
   ];
 }
 
-/** Reused helper for create Plugin Registry Id Normalizer behavior in src/plugins. */
 export function createPluginRegistryIdNormalizer(
   index: InstalledPluginIndex,
   options: PluginRegistryIdNormalizerOptions = {},

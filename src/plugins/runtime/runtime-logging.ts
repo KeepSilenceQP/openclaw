@@ -1,4 +1,3 @@
-// plugins/runtime runtime logging helpers and runtime behavior.
 import { shouldLogVerbose } from "../../globals.js";
 import { getChildLogger } from "../../logging.js";
 import { normalizeLogLevel } from "../../logging/levels.js";
@@ -16,7 +15,6 @@ function writeRuntimeLog(
   log(message);
 }
 
-/** Reused helper for create Runtime Logging behavior in src/plugins/runtime. */
 export function createRuntimeLogging(): PluginRuntime["logging"] {
   return {
     shouldLogVerbose,

@@ -1,4 +1,3 @@
-// extensions/matrix thread bindings runtime helpers and runtime behavior.
 export {
   setMatrixThreadBindingIdleTimeoutBySessionKey,
   setMatrixThreadBindingMaxAgeBySessionKey,

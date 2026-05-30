@@ -1,4 +1,3 @@
-// extensions/diffs/src config helpers and runtime behavior.
 import { mapPluginConfigIssues } from "openclaw/plugin-sdk/extension-shared";
 import { buildPluginConfigSchema } from "openclaw/plugin-sdk/plugin-entry";
 import { z } from "zod";

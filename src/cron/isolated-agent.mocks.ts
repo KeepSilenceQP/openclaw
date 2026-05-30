@@ -1,4 +1,3 @@
-// cron isolated agent mocks helpers and runtime behavior.
 import { vi } from "vitest";
 import {
   makeIsolatedAgentJobFixture,
@@ -37,7 +36,5 @@ vi.mock("../gateway/call.js", () => ({
   callGateway: vi.fn(),
 }));
 
-/** Reused constant for make Isolated Agent Job behavior in src/cron. */
 export const makeIsolatedAgentJob = makeIsolatedAgentJobFixture;
-/** Reused constant for make Isolated Agent Params behavior in src/cron. */
 export const makeIsolatedAgentParams = makeIsolatedAgentParamsFixture;

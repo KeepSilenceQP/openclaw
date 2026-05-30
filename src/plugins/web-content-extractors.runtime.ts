@@ -16,7 +16,6 @@ function compareExtractors(
   return left.id.localeCompare(right.id) || left.pluginId.localeCompare(right.pluginId);
 }
 
-/** Reused helper for resolve Plugin Web Content Extractors behavior in src/plugins. */
 export function resolvePluginWebContentExtractors(params?: {
   config?: OpenClawConfig;
   workspaceDir?: string;

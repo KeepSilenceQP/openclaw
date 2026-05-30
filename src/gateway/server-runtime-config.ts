@@ -1,4 +1,3 @@
-// gateway server runtime config helpers and runtime behavior.
 import type {
   GatewayAuthConfig,
   GatewayBindMode,
@@ -42,7 +41,6 @@ type GatewayRuntimeConfig = {
   hooksConfig: ReturnType<typeof resolveHooksConfig>;
 };
 
-/** Reused helper for resolve Gateway Runtime Config behavior in src/gateway. */
 export async function resolveGatewayRuntimeConfig(params: {
   cfg: OpenClawConfig;
   port: number;

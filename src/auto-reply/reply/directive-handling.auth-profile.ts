@@ -6,7 +6,6 @@ import {
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 
-/** Reused helper for resolve Profile Override behavior in src/auto-reply/reply. */
 export function resolveProfileOverride(params: {
   rawProfile?: string;
   provider: string;

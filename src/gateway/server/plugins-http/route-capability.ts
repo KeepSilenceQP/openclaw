@@ -1,4 +1,3 @@
-// gateway/server/plugins-http route capability helpers and runtime behavior.
 import type { PluginRegistry } from "../../../plugins/registry.js";
 import {
   resolvePluginNodeCapabilityTtlMs,
@@ -9,7 +8,6 @@ import { findMatchingPluginHttpRoutes } from "./route-match.js";
 
 type PluginHttpRouteEntry = NonNullable<PluginRegistry["httpRoutes"]>[number];
 
-/** Shared type for Plugin Node Capability Route in src/gateway/server. */
 export type PluginNodeCapabilityRoute = PluginHttpRouteEntry & {
   nodeCapability: PluginNodeCapabilitySurface;
 };
@@ -30,7 +28,6 @@ function resolvePluginNodeCapabilityRouteSurface(
   };
 }
 
-/** Reused helper for find Matching Plugin Node Capability Routes behavior in src/gateway/server. */
 export function findMatchingPluginNodeCapabilityRoutes(
   registry: PluginRegistry,
   context: PluginRoutePathContext,
@@ -44,7 +41,6 @@ export function findMatchingPluginNodeCapabilityRoutes(
     );
 }
 
-/** Reused helper for find Matching Plugin Node Capability Route behavior in src/gateway/server. */
 export function findMatchingPluginNodeCapabilityRoute(
   registry: PluginRegistry,
   context: PluginRoutePathContext,
@@ -52,12 +48,10 @@ export function findMatchingPluginNodeCapabilityRoute(
   return findMatchingPluginNodeCapabilityRoutes(registry, context)[0];
 }
 
-/** Reused helper for list Plugin Node Capability Surfaces behavior in src/gateway/server. */
 export function listPluginNodeCapabilitySurfaces(registry: PluginRegistry): string[] {
   return listPluginNodeCapabilities(registry).map((entry) => entry.surface);
 }
 
-/** Reused helper for list Plugin Node Capabilities behavior in src/gateway/server. */
 export function listPluginNodeCapabilities(
   registry: PluginRegistry,
 ): PluginNodeCapabilitySurface[] {

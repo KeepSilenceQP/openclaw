@@ -1,4 +1,3 @@
-// test-helpers network interfaces helpers and runtime behavior.
 import os from "node:os";
 import type { NetworkInterfacesSnapshot } from "../infra/network-interfaces.js";
 

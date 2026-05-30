@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes output paths helpers and runtime behavior.
 import { ensureOutputDirectory } from "../output-directories.js";
 import { pathScope } from "./path-output.js";
 import type { BrowserResponse } from "./types.js";

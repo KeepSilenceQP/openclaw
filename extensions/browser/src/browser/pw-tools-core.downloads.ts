@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw tools core downloads helpers and runtime behavior.
 import crypto from "node:crypto";
 import path from "node:path";
 import type { Page } from "playwright-core";

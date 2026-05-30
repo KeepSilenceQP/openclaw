@@ -1,4 +1,3 @@
-// gateway tools invoke shared helpers and runtime behavior.
 import { runBeforeToolCallHook } from "../agents/agent-tools.before-tool-call.js";
 import { resolveToolLoopDetectionConfig } from "../agents/agent-tools.js";
 import { getChannelAgentToolMeta } from "../agents/channel-tools.js";
@@ -19,7 +18,6 @@ import { resolveGatewayScopedTools } from "./tool-resolution.js";
 
 const MEMORY_TOOL_NAMES = new Set(["memory_search", "memory_get"]);
 
-/** Shared type for Tools Invoke Input in src/gateway. */
 export type ToolsInvokeInput = {
   tool?: unknown;
   name?: unknown;
@@ -145,7 +143,6 @@ function resolveToolSource(tool: AnyAgentTool): "core" | "plugin" | "channel" {
   return "core";
 }
 
-/** Reused helper for invoke Gateway Tool behavior in src/gateway. */
 export async function invokeGatewayTool(params: {
   cfg: OpenClawConfig;
   input: ToolsInvokeInput;

@@ -1,4 +1,3 @@
-// extensions/signal config api helpers and runtime behavior.
 export {
   buildChannelConfigSchema,
   SignalConfigSchema,

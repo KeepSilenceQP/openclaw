@@ -1,4 +1,3 @@
-// extensions/imessage/src probe helpers and runtime behavior.
 import path from "node:path";
 import type { BaseProbeResult } from "openclaw/plugin-sdk/channel-contract";
 import {

@@ -45,7 +45,6 @@ import type {
 // Maximum allowed length for command arguments (defense in depth)
 const MAX_ARGS_LENGTH = 4096;
 
-/** Re-exported API for src/plugins. */
 export {
   clearPluginCommands,
   clearPluginCommandsForPlugin,
@@ -453,9 +452,7 @@ function listPluginInvocationNames(command: OpenClawPluginCommandDefinition): st
   return listPluginInvocationKeys(command);
 }
 
-/** Reused constant for testing behavior in src/plugins. */
 export const testing = {
   resolveBindingConversationFromCommand,
 };
-/** Re-exported API for src/plugins, starting with testing. */
 export { testing as __testing };

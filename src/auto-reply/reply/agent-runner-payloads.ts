@@ -156,7 +156,6 @@ function copyPayloadWithSanitizedText(
   return next;
 }
 
-/** Reused helper for build Reply Payloads behavior in src/auto-reply/reply. */
 export async function buildReplyPayloads(params: {
   payloads: ReplyPayload[];
   isHeartbeat: boolean;

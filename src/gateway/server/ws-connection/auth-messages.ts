@@ -1,4 +1,3 @@
-// gateway/server/ws-connection auth messages helpers and runtime behavior.
 import {
   isGatewayCliClient,
   isOperatorUiClient,
@@ -6,10 +5,8 @@ import {
 } from "../../../utils/message-channel.js";
 import type { ResolvedGatewayAuth } from "../../auth.js";
 
-/** Shared type for Auth Provided Kind in src/gateway/server. */
 export type AuthProvidedKind = "token" | "bootstrap-token" | "device-token" | "password" | "none";
 
-/** Reused helper for format Gateway Auth Failure Message behavior in src/gateway/server. */
 export function formatGatewayAuthFailureMessage(params: {
   authMode: ResolvedGatewayAuth["mode"];
   authProvided: AuthProvidedKind;

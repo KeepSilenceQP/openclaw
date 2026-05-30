@@ -1,4 +1,3 @@
-// extensions/telegram/src account selection helpers and runtime behavior.
 import {
   listCombinedAccountIds,
   resolveListedDefaultAccountId,

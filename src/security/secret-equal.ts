@@ -1,4 +1,3 @@
-// security secret equal helpers and runtime behavior.
 import { timingSafeEqual } from "node:crypto";
 
 function padSecretBytes(bytes: Buffer, length: number): Buffer {
@@ -10,7 +9,6 @@ function padSecretBytes(bytes: Buffer, length: number): Buffer {
   return padded;
 }
 
-/** Reused helper for safe Equal Secret behavior in src/security. */
 export function safeEqualSecret(
   provided: string | undefined | null,
   expected: string | undefined | null,

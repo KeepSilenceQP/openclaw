@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix sdk helpers and runtime behavior.
 import { EventEmitter } from "node:events";
 import {
   ClientEvent,

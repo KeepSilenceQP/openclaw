@@ -1,4 +1,3 @@
-// extensions/admin-http-rpc/src methods helpers and runtime behavior.
 const ADMIN_HTTP_RPC_ALLOWED_METHOD_GROUPS = {
   gateway: [
     "health",

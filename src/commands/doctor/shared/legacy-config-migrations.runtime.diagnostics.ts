@@ -17,7 +17,6 @@ const MEMORY_PRESSURE_BUNDLE_RULE: LegacyConfigRule = {
   requireSourceLiteral: true,
 };
 
-/** Reused constant for LEGACY CONFIG MIGRATIONS RUNTIME DIAGNOSTICS behavior in src/commands/doctor. */
 export const LEGACY_CONFIG_MIGRATIONS_RUNTIME_DIAGNOSTICS: LegacyConfigMigrationSpec[] = [
   defineLegacyConfigMigration({
     id: "diagnostics.memoryPressureBundle->memoryPressureSnapshot",

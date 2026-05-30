@@ -286,7 +286,6 @@ async function pathCommand(selector: string, options: TranscriptsPathOptions): P
   writeLine(selectedPath);
 }
 
-/** Reused helper for register Transcripts Cli behavior in src/cli/program. */
 export function registerTranscriptsCli(program: Command): void {
   const transcripts = program.command("transcripts").description("Inspect stored transcripts");
 

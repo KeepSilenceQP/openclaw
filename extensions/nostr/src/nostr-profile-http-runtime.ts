@@ -1,4 +1,3 @@
-// extensions/nostr/src nostr profile http runtime helpers and runtime behavior.
 export {
   readJsonBodyWithLimit,
   requestBodyErrorToText,

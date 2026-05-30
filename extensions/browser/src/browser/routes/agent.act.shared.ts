@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes agent act shared helpers and runtime behavior.
 const ACT_KINDS = [
   "batch",
   "click",

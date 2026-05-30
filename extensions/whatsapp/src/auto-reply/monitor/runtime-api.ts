@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply/monitor runtime api helpers and runtime behavior.
 /** Re-exported whatsapp plugin public API, starting with resolve Identity Name Prefix. */
 export { resolveIdentityNamePrefix } from "openclaw/plugin-sdk/agent-runtime";
 /** Re-exported whatsapp plugin public API, starting with format Inbound Envelope. */

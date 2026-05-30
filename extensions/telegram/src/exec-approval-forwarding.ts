@@ -1,4 +1,3 @@
-// extensions/telegram/src exec approval forwarding helpers and runtime behavior.
 import {
   buildExecApprovalPendingReplyPayload,
   resolveExecApprovalRequestAllowedDecisions,

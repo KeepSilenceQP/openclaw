@@ -1,4 +1,3 @@
-// extensions/slack/src channel helpers and runtime behavior.
 import {
   buildLegacyDmAccountAllowlistAdapter,
   createAccountScopedAllowlistNameResolver,

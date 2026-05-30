@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/send client helpers and runtime behavior.
 import { requireRuntimeConfig } from "openclaw/plugin-sdk/plugin-config-runtime";
 import type { CoreConfig } from "../../types.js";
 import { resolveMatrixAccountConfig } from "../account-config.js";

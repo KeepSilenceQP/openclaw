@@ -1,4 +1,3 @@
-// gateway tool resolution helpers and runtime behavior.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import {
   resolveEffectiveToolPolicy,
@@ -33,7 +32,6 @@ import { DEFAULT_GATEWAY_HTTP_TOOL_DENY } from "../security/dangerous-tools.js";
 
 type GatewayScopedToolSurface = "http" | "loopback";
 
-/** Reused helper for resolve Gateway Scoped Tools behavior in src/gateway. */
 export function resolveGatewayScopedTools(params: {
   cfg: OpenClawConfig;
   sessionKey: string;

@@ -1,4 +1,3 @@
-// extensions/slack setup entry helpers and runtime behavior.
 import { defineBundledChannelSetupEntry } from "openclaw/plugin-sdk/channel-entry-contract";
 import { registerSlackPluginHttpRoutes } from "./http-routes-api.js";
 

@@ -1,5 +1,3 @@
-// shared/text final tags helpers and runtime behavior.
-/** Shared type for Final Tag Match in src/shared/text. */
 export type FinalTagMatch = {
   index: number;
   text: string;
@@ -78,7 +76,6 @@ function parseAttributeList(text: string): boolean {
   return true;
 }
 
-/** Reused helper for parse Final Tag behavior in src/shared/text. */
 export function parseFinalTag(text: string): Omit<FinalTagMatch, "index" | "text"> | null {
   if (!text.startsWith("<") || !text.endsWith(">")) {
     return null;
@@ -113,7 +110,6 @@ export function parseFinalTag(text: string): Omit<FinalTagMatch, "index" | "text
   return { isClose: false, isSelfClosing };
 }
 
-/** Reused helper for find Final Tag Matches behavior in src/shared/text. */
 export function findFinalTagMatches(text: string): FinalTagMatch[] {
   const matches: FinalTagMatch[] = [];
   for (const match of text.matchAll(FINAL_TAG_CANDIDATE_RE)) {
@@ -131,12 +127,10 @@ export function findFinalTagMatches(text: string): FinalTagMatch[] {
   return matches;
 }
 
-/** Reused helper for contains Final Tag behavior in src/shared/text. */
 export function containsFinalTag(text: string): boolean {
   return findFinalTagMatches(text).length > 0;
 }
 
-/** Reused helper for strip Final Tags behavior in src/shared/text. */
 export function stripFinalTags(text: string): string {
   let output = "";
   let lastIndex = 0;

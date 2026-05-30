@@ -12,7 +12,6 @@ import {
 import type { DoctorOptions } from "./doctor.types.js";
 import { guardCancel } from "./onboard-helpers.js";
 
-/** Re-exported API for src/commands, starting with Doctor Options. */
 export type { DoctorOptions } from "./doctor.types.js";
 
 type DoctorConfirmParams = Parameters<typeof confirm>[0];
@@ -20,7 +19,6 @@ type DoctorRuntimeRepairConfirmParams = DoctorConfirmParams & {
   requiresInteractiveConfirmation?: boolean;
 };
 
-/** Shared type for Doctor Prompter in src/commands. */
 export type DoctorPrompter = {
   confirm: (params: Parameters<typeof confirm>[0]) => Promise<boolean>;
   confirmAutoFix: (params: Parameters<typeof confirm>[0]) => Promise<boolean>;
@@ -32,7 +30,6 @@ export type DoctorPrompter = {
   repairMode: DoctorRepairMode;
 };
 
-/** Reused helper for create Doctor Prompter behavior in src/commands. */
 export function createDoctorPrompter(params: {
   runtime: RuntimeEnv;
   options: DoctorOptions;

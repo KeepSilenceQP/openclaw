@@ -57,7 +57,6 @@ async function resolveDashboardTarget() {
   };
 }
 
-/** Reused helper for dashboard Command behavior in src/commands. */
 export async function dashboardCommand(
   runtime: RuntimeEnv = defaultRuntime,
   options: DashboardOptions = {},

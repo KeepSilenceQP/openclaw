@@ -1,6 +1,5 @@
 import type { AgentRouteBinding } from "../config/types.js";
 
-/** Reused helper for describe Binding behavior in src/commands. */
 export function describeBinding(binding: AgentRouteBinding): string {
   const match = binding.match;
   const parts = [match.channel];

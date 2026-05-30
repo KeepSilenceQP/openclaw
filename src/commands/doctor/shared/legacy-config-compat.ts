@@ -1,7 +1,6 @@
 import { applyChannelDoctorCompatibilityMigrations } from "./channel-legacy-config-migrate.js";
 import { LEGACY_CONFIG_MIGRATIONS } from "./legacy-config-migrations.js";
 
-/** Reused helper for apply Legacy Doctor Migrations behavior in src/commands/doctor. */
 export function applyLegacyDoctorMigrations(raw: unknown): {
   next: Record<string, unknown> | null;
   changes: string[];

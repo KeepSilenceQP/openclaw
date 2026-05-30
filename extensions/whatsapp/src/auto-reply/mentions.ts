@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply mentions helpers and runtime behavior.
 import {
   buildMentionRegexes,
   normalizeMentionText,

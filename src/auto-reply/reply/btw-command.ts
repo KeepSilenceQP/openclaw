@@ -4,7 +4,6 @@ import { normalizeCommandBody, type CommandNormalizeOptions } from "../commands-
 
 const BTW_COMMAND_RE = /^\/btw(?::|\s|$)/i;
 
-/** Reused helper for is Btw Request Text behavior in src/auto-reply/reply. */
 export function isBtwRequestText(text?: string, options?: CommandNormalizeOptions): boolean {
   if (!text) {
     return false;
@@ -13,7 +12,6 @@ export function isBtwRequestText(text?: string, options?: CommandNormalizeOption
   return BTW_COMMAND_RE.test(normalized);
 }
 
-/** Reused helper for extract Btw Question behavior in src/auto-reply/reply. */
 export function extractBtwQuestion(
   text?: string,
   options?: CommandNormalizeOptions,

@@ -30,7 +30,6 @@ import {
   type ModelPickerCatalogEntry,
   resolveProviderEndpointLabel,
 } from "./directive-handling.model-picker.js";
-/** Re-exported API for src/auto-reply/reply, starting with resolve Model Selection From Directive. */
 export { resolveModelSelectionFromDirective } from "./directive-handling.model-selection.js";
 import type { InlineDirectives } from "./directive-handling.parse.js";
 
@@ -306,7 +305,6 @@ function filterMissingAuthNestedProviderDuplicates(params: {
   });
 }
 
-/** Reused helper for maybe Handle Model Directive Info behavior in src/auto-reply/reply. */
 export async function maybeHandleModelDirectiveInfo(params: {
   directives: InlineDirectives;
   cfg: OpenClawConfig;

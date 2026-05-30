@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor abort handler helpers and runtime behavior.
 type IMessageMonitorClient = {
   request: (method: string, params?: Record<string, unknown>) => Promise<unknown>;
   stop: () => Promise<void>;

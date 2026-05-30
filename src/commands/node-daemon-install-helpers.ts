@@ -27,7 +27,6 @@ function buildNodeInstallEnvironmentValueSources(): Record<
   };
 }
 
-/** Reused helper for build Node Install Plan behavior in src/commands. */
 export async function buildNodeInstallPlan(params: {
   env: Record<string, string | undefined>;
   host: string;

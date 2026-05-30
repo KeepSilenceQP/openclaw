@@ -1,4 +1,3 @@
-// extensions/whatsapp/src shared helpers and runtime behavior.
 import { describeAccountSnapshot } from "openclaw/plugin-sdk/account-helpers";
 import { normalizeE164 } from "openclaw/plugin-sdk/account-resolution";
 import {

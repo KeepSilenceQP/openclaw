@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers image fixtures helpers and runtime behavior.
 import { deflateSync } from "node:zlib";
 import { encodePngRgb, encodePngRgba } from "../../media/png-encode.js";
 

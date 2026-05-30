@@ -1,4 +1,3 @@
-// gateway server startup log helpers and runtime behavior.
 import chalk from "chalk";
 import { resolveDefaultAgentId, resolveAgentConfig } from "../agents/agent-scope.js";
 import { DEFAULT_MODEL, DEFAULT_PROVIDER } from "../agents/defaults.js";
@@ -25,7 +24,6 @@ type StartupThinkLevel =
   | "adaptive"
   | "max";
 
-/** Reused helper for log Gateway Startup behavior in src/gateway. */
 export async function logGatewayStartup(params: {
   cfg: OpenClawConfig;
   bindHost: string;
@@ -117,7 +115,6 @@ function isConfiguredReasoningDisabled(params: {
   );
 }
 
-/** Reused helper for format Agent Model Startup Details behavior in src/gateway. */
 export function formatAgentModelStartupDetails(params: {
   cfg: OpenClawConfig;
   provider: string;

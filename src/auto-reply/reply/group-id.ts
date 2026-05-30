@@ -67,7 +67,6 @@ function extractLegacyParsedGroupTargetId(params: {
   return target || undefined;
 }
 
-/** Reused helper for extract Explicit Group Id behavior in src/auto-reply/reply. */
 export function extractExplicitGroupId(raw: string | undefined | null): string | undefined {
   const trimmed = normalizeOptionalString(raw) ?? "";
   if (!trimmed) {

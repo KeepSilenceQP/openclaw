@@ -40,7 +40,6 @@ import type { HealthFinding } from "./health-checks.js";
 
 type BundleMcpToolRuntime = Awaited<ReturnType<typeof createBundleMcpToolRuntime>>;
 
-/** Reused helper for detect Unavailable Skills behavior in src/flows. */
 export function detectUnavailableSkills(cfg: OpenClawConfig): SkillStatusEntry[] {
   const agentId = resolveDefaultAgentId(cfg);
   const workspaceDir = resolveAgentWorkspaceDir(cfg, agentId);
@@ -296,7 +295,6 @@ function isAcpRuntimeAgent(cfg: OpenClawConfig, agentId: string): boolean {
   return entry?.runtime?.type === "acp";
 }
 
-/** Reused helper for collect Runtime Tool Schema Findings behavior in src/flows. */
 export async function collectRuntimeToolSchemaFindings(
   cfg: OpenClawConfig,
 ): Promise<readonly HealthFinding[]> {

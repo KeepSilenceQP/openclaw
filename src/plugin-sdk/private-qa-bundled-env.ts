@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 import { resolveOpenClawPackageRootSync } from "../infra/openclaw-root.js";
 
-/** Reused helper for resolve Private Qa Bundled Plugins Env behavior in src/plugin-sdk. */
 export function resolvePrivateQaBundledPluginsEnv(
   env: NodeJS.ProcessEnv = process.env,
 ): NodeJS.ProcessEnv | undefined {

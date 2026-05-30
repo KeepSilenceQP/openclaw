@@ -1,4 +1,3 @@
-// gateway startup auth helpers and runtime behavior.
 import crypto from "node:crypto";
 import type { GatewayAuthConfig, GatewayTailscaleConfig } from "../config/types.gateway.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -17,10 +16,8 @@ import {
 } from "./credentials.js";
 import { assertGatewayAuthNotKnownWeak } from "./known-weak-gateway-secrets.js";
 
-/** Re-exported API for src/gateway, starting with assert Gateway Auth Not Known Weak. */
 export { assertGatewayAuthNotKnownWeak } from "./known-weak-gateway-secrets.js";
 
-/** Reused helper for merge Gateway Auth Config behavior in src/gateway. */
 export function mergeGatewayAuthConfig(
   base?: GatewayAuthConfig,
   override?: GatewayAuthConfig,
@@ -50,7 +47,6 @@ export function mergeGatewayAuthConfig(
   return merged;
 }
 
-/** Reused helper for merge Gateway Tailscale Config behavior in src/gateway. */
 export function mergeGatewayTailscaleConfig(
   base?: GatewayTailscaleConfig,
   override?: GatewayTailscaleConfig,
@@ -126,7 +122,6 @@ function hasGatewayPasswordOverrideCandidate(params: {
   );
 }
 
-/** Reused helper for ensure Gateway Startup Auth behavior in src/gateway. */
 export async function ensureGatewayStartupAuth(params: {
   cfg: OpenClawConfig;
   env?: NodeJS.ProcessEnv;
@@ -226,7 +221,6 @@ export async function ensureGatewayStartupAuth(params: {
   };
 }
 
-/** Reused helper for assert Hooks Token Separate From Gateway Auth behavior in src/gateway. */
 export function assertHooksTokenSeparateFromGatewayAuth(params: {
   cfg: OpenClawConfig;
   auth: ResolvedGatewayAuth;

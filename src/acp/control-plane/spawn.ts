@@ -15,7 +15,6 @@ export type AcpSpawnRuntimeCloseHandle = {
   handle: { sessionKey: string; backend: string; runtimeSessionName: string };
 };
 
-/** Reused helper for cleanup Failed Acp Spawn behavior in src/acp/control-plane. */
 export async function cleanupFailedAcpSpawn(params: {
   cfg: OpenClawConfig;
   sessionKey: string;

@@ -6,7 +6,6 @@ import type { CommandHandler } from "./commands-types.js";
 
 type CommandParams = Parameters<CommandHandler>[0];
 
-/** Reused helper for persist Session Entry behavior in src/auto-reply/reply. */
 export async function persistSessionEntry(params: CommandParams): Promise<boolean> {
   if (!params.sessionEntry || !params.sessionStore || !params.sessionKey) {
     return false;
@@ -33,7 +32,6 @@ export async function persistSessionEntry(params: CommandParams): Promise<boolea
   return true;
 }
 
-/** Reused helper for persist Abort Target Entry behavior in src/auto-reply/reply. */
 export async function persistAbortTargetEntry(params: {
   entry?: SessionEntry;
   key?: string;

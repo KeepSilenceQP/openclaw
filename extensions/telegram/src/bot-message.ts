@@ -1,4 +1,3 @@
-// extensions/telegram/src bot message helpers and runtime behavior.
 import type { ReplyToMode } from "openclaw/plugin-sdk/config-contracts";
 import type { TelegramAccountConfig } from "openclaw/plugin-sdk/config-contracts";
 import {

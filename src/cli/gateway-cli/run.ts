@@ -305,7 +305,6 @@ async function readGatewayStartupConfig(params: {
   };
 }
 
-/** Reused helper for resolve Gateway Run Options behavior in src/cli/gateway-cli. */
 export function resolveGatewayRunOptions(opts: GatewayRunOpts, command?: Command): GatewayRunOpts {
   const resolved: GatewayRunOpts = { ...opts };
 
@@ -470,7 +469,6 @@ async function maybeWriteGatewayStartupFailureBundle(err: unknown): Promise<void
   }
 }
 
-/** Reused helper for run Gateway Command behavior in src/cli/gateway-cli. */
 export async function runGatewayCommand(opts: GatewayRunOpts) {
   normalizeStateDirEnv(process.env);
   installQaParentWatchdog();
@@ -873,11 +871,9 @@ export async function runGatewayCommand(opts: GatewayRunOpts) {
   }
 }
 
-/** Reused constant for testing behavior in src/cli/gateway-cli. */
 export const testing = {
   normalizeGatewayHealthProbeHost,
   resolveGatewayLockErrorExitCode,
   runGatewayLoopWithSupervisedLockRecovery,
 };
-/** Re-exported API for src/cli/gateway-cli, starting with testing. */
 export { testing as __testing };

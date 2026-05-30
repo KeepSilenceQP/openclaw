@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw session helpers and runtime behavior.
 import crypto from "node:crypto";
 import path from "node:path";
 import {

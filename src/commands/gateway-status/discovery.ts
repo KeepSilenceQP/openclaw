@@ -5,7 +5,6 @@ import {
 } from "../../infra/gateway-discovery-targets.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 
-/** Reused helper for infer Ssh Target From Remote Url behavior in src/commands/gateway-status. */
 export function inferSshTargetFromRemoteUrl(rawUrl?: string | null): string | null {
   if (typeof rawUrl !== "string") {
     return null;
@@ -41,7 +40,6 @@ function buildSshTarget(input: { user?: string; host?: string; port?: number }):
   return base;
 }
 
-/** Reused helper for resolve Ssh Target behavior in src/commands/gateway-status. */
 export async function resolveSshTarget(params: {
   rawTarget: string;
   identity: string | null;
@@ -79,7 +77,6 @@ export async function resolveSshTarget(params: {
   return { target, identity: identityFile };
 }
 
-/** Reused helper for pick Auto Ssh Target From Discovery behavior in src/commands/gateway-status. */
 export function pickAutoSshTargetFromDiscovery(params: {
   discovery: GatewayBonjourBeacon[];
   parseSshTarget: (target: string) => unknown;
@@ -99,5 +96,4 @@ export function pickAutoSshTargetFromDiscovery(params: {
   return null;
 }
 
-/** Re-exported API for src/commands/gateway-status, starting with serialize Gateway Discovery Beacon. */
 export { serializeGatewayDiscoveryBeacon };

@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server attempt notifications helpers and runtime behavior.
 import { asBoolean } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {
   describeCodexNotificationCorrelation,

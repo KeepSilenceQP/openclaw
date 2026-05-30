@@ -1,4 +1,3 @@
-// extensions/line/src status helpers and runtime behavior.
 import { createLazyRuntimeModule } from "openclaw/plugin-sdk/lazy-runtime";
 import {
   buildTokenChannelStatusSummary,

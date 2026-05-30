@@ -1,4 +1,3 @@
-// extensions/imessage/src doctor helpers and runtime behavior.
 import type { ChannelDoctorAdapter } from "openclaw/plugin-sdk/channel-contract";
 import { collectIMessageDuplicateAccountSourceWarnings } from "./accounts.js";
 

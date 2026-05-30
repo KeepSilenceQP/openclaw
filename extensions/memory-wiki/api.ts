@@ -1,4 +1,3 @@
-// extensions/memory-wiki api helpers and runtime behavior.
 /** Re-exported memory-wiki plugin public API. */
 export {
   buildPluginConfigSchema,

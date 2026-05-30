@@ -1,4 +1,3 @@
-// extensions/lobster/src lobster tool helpers and runtime behavior.
 import {
   optionalNonNegativeIntegerSchema,
   optionalPositiveIntegerSchema,

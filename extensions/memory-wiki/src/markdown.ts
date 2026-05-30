@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src markdown helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import path from "node:path";
 import {

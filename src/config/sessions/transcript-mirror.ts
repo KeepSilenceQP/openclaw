@@ -1,4 +1,3 @@
-// config/sessions transcript mirror helpers and runtime behavior.
 import path from "node:path";
 
 function stripQuery(value: string): string {
@@ -32,7 +31,6 @@ function extractFileNameFromMediaUrl(value: string): string | null {
   }
 }
 
-/** Reused helper for resolve Mirrored Transcript Text behavior in src/config/sessions. */
 export function resolveMirroredTranscriptText(params: {
   text?: string;
   mediaUrls?: string[];

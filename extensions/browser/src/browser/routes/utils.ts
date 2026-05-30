@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes utils helpers and runtime behavior.
 import type { BrowserRouteContext, ProfileContext } from "../server-context.js";
 import type { BrowserRequest, BrowserResponse, BrowserRouteHandler } from "./types.js";
 

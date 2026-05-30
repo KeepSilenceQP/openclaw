@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply/monitor inbound dispatch helpers and runtime behavior.
 import {
   DEFAULT_TIMING,
   type StatusReactionController,

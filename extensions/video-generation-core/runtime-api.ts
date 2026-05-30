@@ -1,4 +1,3 @@
-// extensions/video-generation-core runtime api helpers and runtime behavior.
 /** Re-exported video-generation-core plugin public API. */
 export {
   generateVideo,

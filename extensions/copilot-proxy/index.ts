@@ -1,4 +1,3 @@
-// extensions/copilot-proxy index helpers and runtime behavior.
 import { normalizeStringEntries, uniqueStrings } from "openclaw/plugin-sdk/string-coerce-runtime";
 import {
   definePluginEntry,

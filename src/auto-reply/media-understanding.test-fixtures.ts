@@ -29,12 +29,10 @@ function createSuccessfulMediaDecision(
   };
 }
 
-/** Reused helper for create Successful Audio Media Decision behavior in src/auto-reply. */
 export function createSuccessfulAudioMediaDecision() {
   return createSuccessfulMediaDecision("audio");
 }
 
-/** Reused helper for create Successful Image Media Decision behavior in src/auto-reply. */
 export function createSuccessfulImageMediaDecision() {
   return createSuccessfulMediaDecision("image");
 }

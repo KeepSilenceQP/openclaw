@@ -1,4 +1,3 @@
-// extensions/litellm provider catalog helpers and runtime behavior.
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 import { buildLitellmModelDefinition, LITELLM_BASE_URL } from "./onboard.js";
 

@@ -1,4 +1,3 @@
-// gateway auth config utils helpers and runtime behavior.
 import type { GatewayAuthConfig } from "../config/types.gateway.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { hasConfiguredSecretInput } from "../config/types.secrets.js";
@@ -22,7 +21,6 @@ type GatewayAuthSecretRefResolutionParams = {
   hasTokenCandidate: boolean;
 };
 
-/** Reused helper for has Configured Gateway Auth Secret Input behavior in src/gateway. */
 export function hasConfiguredGatewayAuthSecretInput(
   cfg: OpenClawConfig,
   path: GatewayAuthSecretInputPath,
@@ -96,7 +94,6 @@ async function resolveGatewayAuthSecretRefValue(params: {
   return value;
 }
 
-/** Reused helper for resolve Gateway Token Secret Ref Value behavior in src/gateway. */
 export async function resolveGatewayTokenSecretRefValue(
   params: GatewayAuthSecretRefResolutionParams,
 ): Promise<string | undefined> {
@@ -108,7 +105,6 @@ export async function resolveGatewayTokenSecretRefValue(
   });
 }
 
-/** Reused helper for resolve Gateway Password Secret Ref Value behavior in src/gateway. */
 export async function resolveGatewayPasswordSecretRefValue(
   params: GatewayAuthSecretRefResolutionParams,
 ): Promise<string | undefined> {
@@ -156,7 +152,6 @@ async function resolveGatewayPasswordSecretRef(params: {
   });
 }
 
-/** Reused helper for materialize Gateway Auth Secret Refs behavior in src/gateway. */
 export async function materializeGatewayAuthSecretRefs(
   params: GatewayAuthSecretRefResolutionParams,
 ): Promise<OpenClawConfig> {

@@ -1,4 +1,3 @@
-// extensions/browser/src/gateway browser request helpers and runtime behavior.
 import crypto from "node:crypto";
 import { clampTimerTimeoutMs } from "openclaw/plugin-sdk/number-runtime";
 import {

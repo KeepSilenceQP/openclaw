@@ -1,4 +1,3 @@
-// extensions/telegram/src lane delivery state helpers and runtime behavior.
 type LaneDeliverySnapshot = {
   delivered: boolean;
   skippedNonSilent: number;

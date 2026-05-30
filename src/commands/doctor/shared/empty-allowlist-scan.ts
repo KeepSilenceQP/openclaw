@@ -19,7 +19,6 @@ function isDisabledRecord(value: unknown): boolean {
   );
 }
 
-/** Reused helper for scan Empty Allowlist Policy Warnings behavior in src/commands/doctor. */
 export function scanEmptyAllowlistPolicyWarnings(
   cfg: OpenClawConfig,
   params: ScanEmptyAllowlistPolicyWarningsParams,

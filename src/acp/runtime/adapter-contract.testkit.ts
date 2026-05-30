@@ -4,7 +4,6 @@ import { normalizeOptionalString } from "../../shared/string-coerce.js";
 import { toAcpRuntimeError } from "./errors.js";
 import type { AcpRuntime, AcpRuntimeEvent } from "./types.js";
 
-/** Shared type for Acp Runtime Adapter Contract Params in src/acp/runtime. */
 export type AcpRuntimeAdapterContractParams = {
   createRuntime: () => Promise<AcpRuntime> | AcpRuntime;
   agentId?: string;

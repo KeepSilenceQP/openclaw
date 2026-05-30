@@ -288,7 +288,6 @@ function resolveRuntimeProviderPluginLoadState(
   return { loadOptions };
 }
 
-/** Reused helper for is Plugin Providers Load In Flight behavior in src/plugins. */
 export function isPluginProvidersLoadInFlight(
   params: Parameters<typeof resolvePluginProviders>[0],
 ): boolean {
@@ -312,7 +311,6 @@ export function isPluginProvidersLoadInFlight(
   return isPluginRegistryLoadInFlight(loadState.loadOptions);
 }
 
-/** Reused helper for resolve Plugin Providers behavior in src/plugins. */
 export function resolvePluginProviders(params: {
   config?: PluginLoadOptions["config"];
   workspaceDir?: string;

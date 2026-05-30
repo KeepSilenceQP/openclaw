@@ -88,7 +88,6 @@ function pickOnboardProviderAuthOptionValues(
   );
 }
 
-/** Reused helper for register Onboard Command behavior in src/cli/program. */
 export function registerOnboardCommand(program: Command): void {
   const command = program
     .command("onboard")

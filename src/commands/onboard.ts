@@ -17,7 +17,6 @@ import type { OnboardOptions, ResetScope } from "./onboard-types.js";
 
 const VALID_RESET_SCOPES = new Set<ResetScope>(["config", "config+creds+sessions", "full"]);
 
-/** Reused helper for setup Wizard Command behavior in src/commands. */
 export async function setupWizardCommand(
   opts: OnboardOptions,
   runtime: RuntimeEnv = defaultRuntime,
@@ -106,8 +105,6 @@ export async function setupWizardCommand(
   await runInteractiveSetup(normalizedOpts, runtime);
 }
 
-/** Reused constant for onboard Command behavior in src/commands. */
 export const onboardCommand = setupWizardCommand;
 
-/** Re-exported API for src/commands, starting with Onboard Options. */
 export type { OnboardOptions } from "./onboard-types.js";

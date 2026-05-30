@@ -1,4 +1,3 @@
-// extensions/stepfun index helpers and runtime behavior.
 import {
   definePluginEntry,
   type OpenClawConfig,

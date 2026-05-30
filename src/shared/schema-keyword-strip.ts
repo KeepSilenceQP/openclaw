@@ -1,5 +1,3 @@
-// shared schema keyword strip helpers and runtime behavior.
-/** Reused helper for strip Unsupported Schema Keywords behavior in src/shared. */
 export function stripUnsupportedSchemaKeywords(
   schema: unknown,
   unsupportedKeywords: ReadonlySet<string>,

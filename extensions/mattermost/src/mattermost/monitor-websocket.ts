@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost monitor websocket helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import { safeParseJsonWithSchema, safeParseWithSchema } from "openclaw/plugin-sdk/extension-shared";
 import {

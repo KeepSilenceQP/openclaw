@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor room info helpers and runtime behavior.
 import { isMatrixNotFoundError } from "../errors.js";
 import type { MatrixClient } from "../sdk.js";
 

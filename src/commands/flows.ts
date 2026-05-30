@@ -146,7 +146,6 @@ function summarizeFlowState(flow: TaskFlowRecord): string | null {
   return null;
 }
 
-/** Reused helper for flows List Command behavior in src/commands. */
 export async function flowsListCommand(
   opts: { json?: boolean; status?: string },
   runtime: RuntimeEnv,
@@ -195,7 +194,6 @@ export async function flowsListCommand(
   }
 }
 
-/** Reused helper for flows Show Command behavior in src/commands. */
 export async function flowsShowCommand(
   opts: { json?: boolean; lookup: string },
   runtime: RuntimeEnv,
@@ -256,7 +254,6 @@ export async function flowsShowCommand(
   }
 }
 
-/** Reused helper for flows Cancel Command behavior in src/commands. */
 export async function flowsCancelCommand(opts: { lookup: string }, runtime: RuntimeEnv) {
   const flow = resolveTaskFlowForLookupToken(opts.lookup);
   if (!flow) {

@@ -1,4 +1,3 @@
-// extensions/elevenlabs realtime transcription provider helpers and runtime behavior.
 import {
   createRealtimeTranscriptionWebSocketSession,
   type RealtimeTranscriptionProviderConfig,

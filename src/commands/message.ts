@@ -51,7 +51,6 @@ function buildMessageCliJson(result: Awaited<ReturnType<typeof runMessageAction>
   };
 }
 
-/** Reused helper for message Command behavior in src/commands. */
 export async function messageCommand(
   opts: Record<string, unknown>,
   deps: CliDeps,

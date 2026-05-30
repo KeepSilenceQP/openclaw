@@ -1,4 +1,3 @@
-// hooks hooks status helpers and runtime behavior.
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { evaluateEntryRequirementsForCurrentPlatform } from "../shared/entry-status.js";
@@ -14,10 +13,8 @@ import {
 import type { HookEligibilityContext, HookEntry, HookInstallSpec } from "./types.js";
 import { loadWorkspaceHookEntries } from "./workspace.js";
 
-/** Shared type for Hook Status Config Check in src/hooks. */
 export type HookStatusConfigCheck = RequirementConfigCheck;
 
-/** Shared type for Hook Install Option in src/hooks. */
 export type HookInstallOption = {
   id: string;
   kind: HookInstallSpec["kind"];
@@ -25,7 +22,6 @@ export type HookInstallOption = {
   bins: string[];
 };
 
-/** Shared type for Hook Status Entry in src/hooks. */
 export type HookStatusEntry = {
   name: string;
   description: string;
@@ -50,7 +46,6 @@ export type HookStatusEntry = {
   install: HookInstallOption[];
 };
 
-/** Shared type for Hook Status Report in src/hooks. */
 export type HookStatusReport = {
   workspaceDir: string;
   managedHooksDir: string;
@@ -144,7 +139,6 @@ function buildHookStatus(
   };
 }
 
-/** Reused helper for build Workspace Hook Status behavior in src/hooks. */
 export function buildWorkspaceHookStatus(
   workspaceDir: string,
   opts?: {

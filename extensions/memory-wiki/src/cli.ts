@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src cli helpers and runtime behavior.
 import fs from "node:fs/promises";
 import type { Command } from "commander";
 import { callGatewayFromCli } from "openclaw/plugin-sdk/gateway-runtime";

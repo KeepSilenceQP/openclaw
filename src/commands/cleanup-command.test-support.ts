@@ -23,12 +23,10 @@ vi.mock("./cleanup-utils.js", () => ({
   removeWorkspaceDirs,
 }));
 
-/** Reused helper for create Cleanup Command Runtime behavior in src/commands. */
 export function createCleanupCommandRuntime() {
   return createNonExitingRuntime();
 }
 
-/** Reused helper for reset Cleanup Command Mocks behavior in src/commands. */
 export function resetCleanupCommandMocks() {
   vi.clearAllMocks();
   resolveCleanupPlanFromDisk.mockReturnValue({
@@ -45,13 +43,11 @@ export function resetCleanupCommandMocks() {
   removeWorkspaceDirs.mockResolvedValue(undefined);
 }
 
-/** Reused helper for silence Cleanup Command Runtime behavior in src/commands. */
 export function silenceCleanupCommandRuntime(runtime: RuntimeEnv) {
   vi.spyOn(runtime, "log").mockImplementation(() => {});
   vi.spyOn(runtime, "error").mockImplementation(() => {});
 }
 
-/** Reused helper for cleanup Command Log Messages behavior in src/commands. */
 export function cleanupCommandLogMessages(runtime: RuntimeEnv): string[] {
   const calls = (runtime.log as MockFn<(...args: unknown[]) => void>).mock.calls;
   return calls.map((call) => String(call[0]));

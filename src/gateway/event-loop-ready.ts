@@ -1,5 +1,3 @@
-// gateway event loop ready helpers and runtime behavior.
-/** Re-exported API for src/gateway. */
 export {
   waitForEventLoopReady,
   type EventLoopReadyOptions,

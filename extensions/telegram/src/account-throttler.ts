@@ -1,4 +1,3 @@
-// extensions/telegram/src account throttler helpers and runtime behavior.
 import { parseStrictInteger } from "openclaw/plugin-sdk/number-runtime";
 import { apiThrottler } from "./bot.runtime.js";
 

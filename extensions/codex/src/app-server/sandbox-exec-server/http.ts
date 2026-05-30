@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server/sandbox-exec-server http helpers and runtime behavior.
 import { spawn, type ChildProcessWithoutNullStreams } from "node:child_process";
 import { embeddedAgentLog } from "openclaw/plugin-sdk/agent-harness-runtime";
 import type { SandboxContext } from "openclaw/plugin-sdk/sandbox";

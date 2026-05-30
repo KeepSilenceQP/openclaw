@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes agent debug helpers and runtime behavior.
 import crypto from "node:crypto";
 import path from "node:path";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";

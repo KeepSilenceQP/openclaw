@@ -1,4 +1,3 @@
-// plugins official external plugin repair hints helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveConfiguredChannelPresencePolicy } from "./channel-plugin-ids.js";
 import {
@@ -9,7 +8,6 @@ import {
   resolveOfficialExternalPluginLabel,
 } from "./official-external-plugin-catalog.js";
 
-/** Shared type for Official External Plugin Repair Hint in src/plugins. */
 export type OfficialExternalPluginRepairHint = {
   pluginId: string;
   channelId?: string;
@@ -20,7 +18,6 @@ export type OfficialExternalPluginRepairHint = {
   repairHint: string;
 };
 
-/** Reused helper for resolve Official External Plugin Repair Hint behavior in src/plugins. */
 export function resolveOfficialExternalPluginRepairHint(
   pluginIdOrChannelId: string,
 ): OfficialExternalPluginRepairHint | null {
@@ -53,7 +50,6 @@ export function resolveOfficialExternalPluginRepairHint(
   };
 }
 
-/** Reused helper for resolve Missing Official External Channel Plugin Repair Hint behavior in src/plugins. */
 export function resolveMissingOfficialExternalChannelPluginRepairHint(params: {
   config: OpenClawConfig;
   activationSourceConfig?: OpenClawConfig;

@@ -542,7 +542,6 @@ async function loadConfigFromSnapshotForInstall(
   };
 }
 
-/** Reused helper for load Config For Install behavior in src/cli. */
 export async function loadConfigForInstall(
   request: PluginInstallRequestContext,
 ): Promise<ConfigSnapshotForInstallPersist> {
@@ -560,7 +559,6 @@ export async function loadConfigForInstall(
   return loadConfigFromSnapshotForInstall(request, snapshot);
 }
 
-/** Reused helper for run Plugin Install Command behavior in src/cli. */
 export async function runPluginInstallCommand(params: {
   raw: string;
   opts: InstallSafetyOverrides & {

@@ -12,12 +12,10 @@ const LEGACY_CONFIG_MIGRATION_SPECS = [
   ...LEGACY_CONFIG_MIGRATIONS_WEB_SEARCH,
 ];
 
-/** Reused constant for LEGACY CONFIG MIGRATIONS behavior in src/commands/doctor. */
 export const LEGACY_CONFIG_MIGRATIONS = LEGACY_CONFIG_MIGRATION_SPECS.map(
   ({ legacyRules: _legacyRules, ...migration }) => migration,
 );
 
-/** Reused constant for LEGACY CONFIG MIGRATION RULES behavior in src/commands/doctor. */
 export const LEGACY_CONFIG_MIGRATION_RULES = LEGACY_CONFIG_MIGRATION_SPECS.flatMap(
   (migration) => migration.legacyRules ?? [],
 );

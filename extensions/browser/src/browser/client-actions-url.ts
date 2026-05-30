@@ -1,4 +1,3 @@
-// extensions/browser/src/browser client actions url helpers and runtime behavior.
 export function buildProfileQuery(profile?: string): string {
   return profile ? `?profile=${encodeURIComponent(profile)}` : "";
 }

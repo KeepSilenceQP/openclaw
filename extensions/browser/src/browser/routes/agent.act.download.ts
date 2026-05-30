@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes agent act download helpers and runtime behavior.
 import { formatErrorMessage } from "../../infra/errors.js";
 import { getBrowserProfileCapabilities } from "../profile-capabilities.js";
 import type { BrowserRouteContext } from "../server-context.js";

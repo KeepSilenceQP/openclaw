@@ -19,7 +19,6 @@ function normalizeSendPolicyOverride(raw?: string | null): SendPolicyOverride | 
   return undefined;
 }
 
-/** Reused helper for parse Send Policy Command behavior in src/auto-reply. */
 export function parseSendPolicyCommand(raw?: string): {
   hasCommand: boolean;
   mode?: SendPolicyOverride | "inherit";

@@ -4,7 +4,6 @@ import { resolveAgentModelPrimaryValue } from "../../config/model-input.js";
 import type { RuntimeEnv } from "../../runtime.js";
 import { applyDefaultModelPrimaryUpdate, updateConfig } from "./shared.js";
 
-/** Reused helper for models Set Image Command behavior in src/commands/models. */
 export async function modelsSetImageCommand(modelRaw: string, runtime: RuntimeEnv) {
   const updated = await updateConfig((cfg) => {
     return applyDefaultModelPrimaryUpdate({ cfg, modelRaw, field: "imageModel" });

@@ -1,4 +1,3 @@
-// extensions/line/src bot access helpers and runtime behavior.
 import { firstDefined } from "openclaw/plugin-sdk/allow-from";
 
 export type NormalizedAllowFrom = {

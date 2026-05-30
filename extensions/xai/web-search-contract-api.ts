@@ -1,4 +1,3 @@
-// extensions/xai web search contract api helpers and runtime behavior.
 import { type WebSearchProviderPlugin } from "openclaw/plugin-sdk/provider-web-search-config-contract";
 import { buildXaiWebSearchProviderBase } from "./web-search-provider-shared.js";
 

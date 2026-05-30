@@ -1,4 +1,3 @@
-// extensions/video-generation-core api helpers and runtime behavior.
 /** Re-exported video-generation-core plugin public API, starting with Auth Profile Store. */
 export type { AuthProfileStore } from "openclaw/plugin-sdk/video-generation-core";
 /** Re-exported video-generation-core plugin public API. */

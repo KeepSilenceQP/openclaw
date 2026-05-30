@@ -1,4 +1,3 @@
-// extensions/telegram/src bot message context silent ingest test support helpers and runtime behavior.
 import { describe, expect, it, vi } from "vitest";
 import { buildTelegramMessageContextForTest } from "./bot-message-context.test-harness.js";
 

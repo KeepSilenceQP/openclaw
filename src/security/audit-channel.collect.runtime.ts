@@ -4,7 +4,6 @@ import { collectChannelSecurityFindings as collectChannelSecurityFindingsImpl } 
 type CollectChannelSecurityFindings =
   typeof import("./audit-channel.js").collectChannelSecurityFindings;
 
-/** Reused helper for collect Channel Security Findings behavior in src/security. */
 export function collectChannelSecurityFindings(
   ...args: Parameters<CollectChannelSecurityFindings>
 ): ReturnType<CollectChannelSecurityFindings> {

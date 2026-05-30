@@ -472,7 +472,6 @@ function registerAllowlistMutationCommand(params: {
   return command;
 }
 
-/** Reused helper for register Exec Approvals Cli behavior in src/cli. */
 export function registerExecApprovalsCli(program: Command) {
   const formatExample = (cmd: string, desc: string) =>
     `  ${theme.command(cmd)}\n    ${theme.muted(desc)}`;

@@ -154,7 +154,6 @@ async function waitForLocalCallback(params: {
   });
 }
 
-/** Reused helper for login Chutes behavior in src/commands. */
 export async function loginChutes(params: {
   app: ChutesOAuthAppConfig;
   manual?: boolean;

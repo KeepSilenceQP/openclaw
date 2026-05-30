@@ -1,4 +1,3 @@
-// extensions/browser/src/browser client actions types helpers and runtime behavior.
 export type BrowserActionOk = { ok: true };
 
 export type BrowserActionTabResult = {

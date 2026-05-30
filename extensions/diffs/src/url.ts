@@ -1,4 +1,3 @@
-// extensions/diffs/src url helpers and runtime behavior.
 import type { OpenClawConfig } from "../api.js";
 
 const DEFAULT_GATEWAY_PORT = 18789;

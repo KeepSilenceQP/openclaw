@@ -1,4 +1,3 @@
-// extensions/whatsapp/src account ids helpers and runtime behavior.
 import { createAccountListHelpers } from "openclaw/plugin-sdk/account-core";
 
 const {

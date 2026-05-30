@@ -144,7 +144,6 @@ function resolveDiscordRequireMentionFallback(params: {
   return undefined;
 }
 
-/** Reused helper for resolve Group Require Mention behavior in src/auto-reply/reply. */
 export async function resolveGroupRequireMention(params: {
   cfg: OpenClawConfig;
   ctx: TemplateContext;
@@ -197,7 +196,6 @@ export async function resolveGroupRequireMention(params: {
   });
 }
 
-/** Reused helper for default Group Activation behavior in src/auto-reply/reply. */
 export function defaultGroupActivation(requireMention: boolean): "always" | "mention" {
   return !requireMention ? "always" : "mention";
 }
@@ -221,7 +219,6 @@ function resolveProviderLabel(rawProvider: string | undefined): string {
   return `${providerKey.at(0)?.toUpperCase() ?? ""}${providerKey.slice(1)}`;
 }
 
-/** Reused helper for build Group Chat Context behavior in src/auto-reply/reply. */
 export function buildGroupChatContext(params: {
   sessionCtx: TemplateContext;
   sourceReplyDeliveryMode?: SourceReplyDeliveryMode;
@@ -280,7 +277,6 @@ export function buildGroupChatContext(params: {
   return lines.join(" ");
 }
 
-/** Reused helper for build Direct Chat Context behavior in src/auto-reply/reply. */
 export function buildDirectChatContext(params: {
   sessionCtx: TemplateContext;
   sourceReplyDeliveryMode?: SourceReplyDeliveryMode;
@@ -302,7 +298,6 @@ export function buildDirectChatContext(params: {
   return lines.join(" ");
 }
 
-/** Reused helper for resolve Group Silent Reply Behavior behavior in src/auto-reply/reply. */
 export function resolveGroupSilentReplyBehavior(params: {
   sessionEntry?: SessionEntry;
   defaultActivation: "always" | "mention";
@@ -322,7 +317,6 @@ export function resolveGroupSilentReplyBehavior(params: {
   };
 }
 
-/** Reused helper for build Group Intro behavior in src/auto-reply/reply. */
 export function buildGroupIntro(params: {
   cfg: OpenClawConfig;
   sessionCtx: TemplateContext;

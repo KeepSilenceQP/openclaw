@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/sdk logger helpers and runtime behavior.
 import { format } from "node:util";
 import { redactSensitiveText } from "openclaw/plugin-sdk/logging-core";
 import type { RuntimeLogger } from "openclaw/plugin-sdk/plugin-runtime";

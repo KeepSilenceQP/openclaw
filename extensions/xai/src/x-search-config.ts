@@ -1,4 +1,3 @@
-// extensions/xai/src x search config helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { isRecord } from "./tool-config-shared.js";
 

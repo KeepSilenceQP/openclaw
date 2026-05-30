@@ -1,4 +1,3 @@
-// extensions/telegram/src agent config helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 
 type ReasoningDefault = "on" | "stream" | "off";

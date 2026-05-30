@@ -1,4 +1,3 @@
-// media-understanding echo transcript helpers and runtime behavior.
 import type { MsgContext } from "../auto-reply/templating.js";
 import type { OpenClawConfig } from "../config/types.js";
 import { logVerbose, shouldLogVerbose } from "../globals.js";
@@ -12,7 +11,6 @@ function loadMessageRuntime() {
   return messageRuntimePromise;
 }
 
-/** Reused constant for DEFAULT ECHO TRANSCRIPT FORMAT behavior in src/media-understanding. */
 export const DEFAULT_ECHO_TRANSCRIPT_FORMAT = '📝 "{transcript}"';
 
 function formatEchoTranscript(transcript: string, format: string): string {

@@ -1,4 +1,3 @@
-// extensions/line/src bot message context helpers and runtime behavior.
 import type { webhook } from "@line/bot-sdk";
 import { recordChannelActivity } from "openclaw/plugin-sdk/channel-activity-runtime";
 import {

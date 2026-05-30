@@ -1,4 +1,3 @@
-// extensions/telegram/src bot native commands menu test support helpers and runtime behavior.
 import type { RuntimeEnv } from "openclaw/plugin-sdk/runtime-env";
 import { expect, vi, type Mock } from "vitest";
 import type { OpenClawConfig } from "../runtime-api.js";

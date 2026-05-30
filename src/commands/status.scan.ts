@@ -8,7 +8,6 @@ import { collectStatusScanOverview } from "./status.scan-overview.ts";
 import type { StatusScanResult } from "./status.scan-result.ts";
 import { scanStatusJsonWithPolicy } from "./status.scan.fast-json.js";
 
-/** Reused helper for scan Status behavior in src/commands. */
 export async function scanStatus(
   opts: {
     json?: boolean;

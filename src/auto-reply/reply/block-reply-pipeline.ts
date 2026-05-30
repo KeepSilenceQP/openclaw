@@ -9,7 +9,6 @@ import type { ReplyPayload } from "../types.js";
 import { createBlockReplyCoalescer } from "./block-reply-coalescer.js";
 import type { BlockStreamingCoalescing } from "./block-streaming.js";
 
-/** Shared type for Block Reply Pipeline in src/auto-reply/reply. */
 export type BlockReplyPipeline = {
   enqueue: (payload: ReplyPayload) => void;
   flush: (options?: { force?: boolean }) => Promise<void>;
@@ -21,14 +20,12 @@ export type BlockReplyPipeline = {
   getSentMediaUrls: () => readonly string[];
 };
 
-/** Shared type for Block Reply Buffer in src/auto-reply/reply. */
 export type BlockReplyBuffer = {
   shouldBuffer: (payload: ReplyPayload) => boolean;
   onEnqueue?: (payload: ReplyPayload) => void;
   finalize?: (payload: ReplyPayload) => ReplyPayload;
 };
 
-/** Reused helper for create Audio As Voice Buffer behavior in src/auto-reply/reply. */
 export function createAudioAsVoiceBuffer(params: {
   isAudioPayload: (payload: ReplyPayload) => boolean;
 }): BlockReplyBuffer {
@@ -44,7 +41,6 @@ export function createAudioAsVoiceBuffer(params: {
   };
 }
 
-/** Reused helper for create Block Reply Payload Key behavior in src/auto-reply/reply. */
 export function createBlockReplyPayloadKey(payload: ReplyPayload): string {
   const reply = resolveSendableOutboundReplyParts(payload);
   return JSON.stringify({
@@ -58,7 +54,6 @@ export function createBlockReplyPayloadKey(payload: ReplyPayload): string {
   });
 }
 
-/** Reused helper for create Block Reply Content Key behavior in src/auto-reply/reply. */
 export function createBlockReplyContentKey(payload: ReplyPayload): string {
   const reply = resolveSendableOutboundReplyParts(payload);
   // Content-only key used for final-payload suppression after block streaming.
@@ -94,7 +89,6 @@ const withTimeout = async <T>(
   }
 };
 
-/** Reused helper for create Block Reply Pipeline behavior in src/auto-reply/reply. */
 export function createBlockReplyPipeline(params: {
   onBlockReply: (
     payload: ReplyPayload,

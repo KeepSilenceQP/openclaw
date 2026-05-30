@@ -80,7 +80,6 @@ function emitDoctorChangesPanel(
   note(message, title);
 }
 
-/** Reused helper for load And Maybe Migrate Doctor Config behavior in src/commands. */
 export async function loadAndMaybeMigrateDoctorConfig(params: {
   options: DoctorOptions;
   confirm: (p: { message: string; initialValue: boolean }) => Promise<boolean>;

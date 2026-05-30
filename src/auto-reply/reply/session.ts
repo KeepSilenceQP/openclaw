@@ -154,7 +154,6 @@ function hasProviderOwnedSession(entry: SessionEntry | undefined): boolean {
   return Boolean(provider && getCliSessionBinding(entry, provider));
 }
 
-/** Shared type for Session Init Result in src/auto-reply/reply. */
 export type SessionInitResult = {
   sessionCtx: TemplateContext;
   sessionEntry: SessionEntry;
@@ -232,7 +231,6 @@ function resolveBoundConversationSessionKey(params: {
   return binding.targetSessionKey;
 }
 
-/** Reused helper for init Session State behavior in src/auto-reply/reply. */
 export async function initSessionState(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;

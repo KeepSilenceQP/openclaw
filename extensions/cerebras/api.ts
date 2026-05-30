@@ -1,4 +1,3 @@
-// extensions/cerebras api helpers and runtime behavior.
 /** Re-exported cerebras plugin public API. */
 export {
   buildCerebrasModelDefinition,

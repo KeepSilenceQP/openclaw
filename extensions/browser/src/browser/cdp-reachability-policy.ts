@@ -1,4 +1,3 @@
-// extensions/browser/src/browser cdp reachability policy helpers and runtime behavior.
 import { isPrivateNetworkAllowedByPolicy, type SsrFPolicy } from "../infra/net/ssrf.js";
 import type { ResolvedBrowserProfile } from "./config.js";
 import { getBrowserProfileCapabilities } from "./profile-capabilities.js";

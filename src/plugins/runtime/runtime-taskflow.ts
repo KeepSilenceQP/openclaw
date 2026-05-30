@@ -1,4 +1,3 @@
-// plugins/runtime runtime taskflow helpers and runtime behavior.
 import {
   cancelFlowByIdForOwner,
   getFlowTaskSummary,
@@ -318,7 +317,6 @@ function createBoundTaskFlowRuntime(params: {
   };
 }
 
-/** Reused helper for create Runtime Task Flow behavior in src/plugins/runtime. */
 export function createRuntimeTaskFlow(): PluginRuntimeTaskFlow {
   return {
     bindSession: (params) =>

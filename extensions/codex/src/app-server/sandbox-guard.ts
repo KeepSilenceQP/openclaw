@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server sandbox guard helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { resolveSandboxRuntimeStatus } from "openclaw/plugin-sdk/sandbox";
 import {

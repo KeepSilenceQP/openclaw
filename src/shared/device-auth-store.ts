@@ -1,4 +1,3 @@
-// shared device auth store helpers and runtime behavior.
 import {
   type DeviceAuthEntry,
   type DeviceAuthStore,
@@ -6,10 +5,8 @@ import {
   normalizeDeviceAuthScopes,
 } from "./device-auth.js";
 import { isRecord } from "./record-coerce.js";
-/** Re-exported API for src/shared, starting with Device Auth Entry. */
 export type { DeviceAuthEntry, DeviceAuthStore } from "./device-auth.js";
 
-/** Shared type for Device Auth Store Adapter in src/shared. */
 export type DeviceAuthStoreAdapter = {
   readStore: () => DeviceAuthStore | null;
   writeStore: (store: DeviceAuthStore) => void;
@@ -48,7 +45,6 @@ function copyCanonicalDeviceAuthTokens(
   return out;
 }
 
-/** Reused helper for load Device Auth Token From Store behavior in src/shared. */
 export function loadDeviceAuthTokenFromStore(params: {
   adapter: DeviceAuthStoreAdapter;
   deviceId: string;
@@ -62,7 +58,6 @@ export function loadDeviceAuthTokenFromStore(params: {
   return coerceDeviceAuthEntry(role, store.tokens[role]);
 }
 
-/** Reused helper for store Device Auth Token In Store behavior in src/shared. */
 export function storeDeviceAuthTokenInStore(params: {
   adapter: DeviceAuthStoreAdapter;
   deviceId: string;
@@ -91,7 +86,6 @@ export function storeDeviceAuthTokenInStore(params: {
   return entry;
 }
 
-/** Reused helper for clear Device Auth Token From Store behavior in src/shared. */
 export function clearDeviceAuthTokenFromStore(params: {
   adapter: DeviceAuthStoreAdapter;
   deviceId: string;

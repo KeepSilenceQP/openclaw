@@ -19,7 +19,6 @@ import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import { shortenHomePath } from "../../utils.js";
 import { maskApiKey } from "../../utils/mask-api-key.js";
 
-/** Shared type for Model Auth Detail Mode in src/auto-reply/reply. */
 export type ModelAuthDetailMode = "compact" | "verbose";
 
 function resolveStoredCredentialLabel(params: {
@@ -53,7 +52,6 @@ function formatFlagsSuffix(flags: string[]) {
   return flags.length > 0 ? ` (${flags.join(", ")})` : "";
 }
 
-/** Reused constant for resolve Auth Label behavior in src/auto-reply/reply. */
 export const resolveAuthLabel = async (
   provider: string,
   cfg: OpenClawConfig,
@@ -226,7 +224,6 @@ export const resolveAuthLabel = async (
   return { label: "missing", source: "missing" };
 };
 
-/** Reused constant for format Auth Label behavior in src/auto-reply/reply. */
 export const formatAuthLabel = (auth: { label: string; source: string }) => {
   if (!auth.source || auth.source === auth.label || auth.source === "missing") {
     return auth.label;

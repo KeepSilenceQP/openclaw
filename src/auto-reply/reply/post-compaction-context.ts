@@ -53,7 +53,6 @@ export type PostCompactionContextOptions = {
   nowMs?: number;
 };
 
-/** Reused helper for read Post Compaction Context behavior in src/auto-reply/reply. */
 export async function readPostCompactionContext(
   workspaceDir: string,
   options?: PostCompactionContextOptions,

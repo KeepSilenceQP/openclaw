@@ -20,7 +20,6 @@ function loadSessionStoreRuntime() {
   return sessionStoreRuntimePromise;
 }
 
-/** Shared type for Acp Session Store Entry in src/acp/runtime. */
 export type AcpSessionStoreEntry = {
   cfg: OpenClawConfig;
   storePath: string;

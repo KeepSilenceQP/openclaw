@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server plugin app cache key helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import {
   buildCodexAppInventoryCacheKey,

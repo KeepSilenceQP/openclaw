@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/actions room helpers and runtime behavior.
 import { resolveMatrixRoomId } from "../send.js";
 import { withResolvedActionClient, withResolvedRoomAction } from "./client.js";
 import { EventType, type MatrixActionClientOpts } from "./types.js";

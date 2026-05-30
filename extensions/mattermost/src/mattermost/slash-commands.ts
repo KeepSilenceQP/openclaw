@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost slash commands helpers and runtime behavior.
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type { MattermostClient } from "./client.js";
 

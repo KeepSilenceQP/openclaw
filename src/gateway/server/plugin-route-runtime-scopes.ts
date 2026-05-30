@@ -1,4 +1,3 @@
-// gateway/server plugin route runtime scopes helpers and runtime behavior.
 import type { IncomingMessage } from "node:http";
 import {
   getHeader,
@@ -7,10 +6,8 @@ import {
 } from "../http-auth-utils.js";
 import { CLI_DEFAULT_OPERATOR_SCOPES, WRITE_SCOPE } from "../method-scopes.js";
 
-/** Shared type for Plugin Route Runtime Scope Surface in src/gateway/server. */
 export type PluginRouteRuntimeScopeSurface = "write-default" | "trusted-operator";
 
-/** Reused helper for resolve Plugin Route Runtime Operator Scopes behavior in src/gateway/server. */
 export function resolvePluginRouteRuntimeOperatorScopes(
   req: IncomingMessage,
   requestAuth: AuthorizedGatewayHttpRequest,

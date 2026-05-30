@@ -1,4 +1,3 @@
-// extensions/skill-workshop/src text helpers and runtime behavior.
 const TEXT_BLOCK_TYPES = new Set(["text", "input_text", "output_text"]);
 
 function readTextValue(value: unknown): string {

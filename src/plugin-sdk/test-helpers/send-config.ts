@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers send config helpers and runtime behavior.
 import { expect } from "vitest";
 
 type MockFn = (...args: never[]) => unknown;

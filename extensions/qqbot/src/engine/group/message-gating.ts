@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/group message gating helpers and runtime behavior.
 type GroupMessageGateAction =
   | "drop_other_mention"
   | "block_unauthorized_command"

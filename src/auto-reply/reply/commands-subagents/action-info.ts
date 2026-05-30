@@ -51,7 +51,6 @@ function loadSubagentSessionEntry(params: SubagentsCommandContext["params"], chi
   return { entry: store[childKey] };
 }
 
-/** Reused helper for handle Subagents Info Action behavior in src/auto-reply/reply. */
 export function handleSubagentsInfoAction(ctx: SubagentsCommandContext): CommandHandlerResult {
   const { params, requesterKey, runs, restTokens } = ctx;
   const target = restTokens[0];

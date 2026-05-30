@@ -1,4 +1,3 @@
-// extensions/nostr api helpers and runtime behavior.
 /** Re-exported nostr plugin public API. */
 export {
   getPluginRuntimeGatewayRequestScope,

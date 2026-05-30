@@ -28,7 +28,6 @@ function ensureNonEmptyContent<T>(content: T[]): T[] {
   return [{ type: "text", text: EMPTY_CONTENT_PLACEHOLDER }] as T[];
 }
 
-/** Reused helper for is Empty Assistant Message Content behavior in src/agents/embedded-agent-helpers. */
 export function isEmptyAssistantMessageContent(
   message: Extract<AgentMessage, { role: "assistant" }>,
 ): boolean {
@@ -51,7 +50,6 @@ export function isEmptyAssistantMessageContent(
   });
 }
 
-/** Reused helper for sanitize Session Messages Images behavior in src/agents/embedded-agent-helpers. */
 export async function sanitizeSessionMessagesImages(
   messages: AgentMessage[],
   label: string,

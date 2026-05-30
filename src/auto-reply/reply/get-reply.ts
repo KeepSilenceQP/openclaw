@@ -238,7 +238,6 @@ async function applyLinkUnderstandingIfNeeded(params: {
   }
 }
 
-/** Reused helper for get Reply From Config behavior in src/auto-reply/reply. */
 export async function getReplyFromConfig(
   ctx: MsgContext,
   opts?: GetReplyOptions,

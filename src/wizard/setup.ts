@@ -219,7 +219,6 @@ async function requireRiskAcknowledgement(params: {
   }
 }
 
-/** Reused helper for run Setup Wizard behavior in src/wizard. */
 export async function runSetupWizard(
   opts: OnboardOptions,
   runtime: RuntimeEnv | undefined,

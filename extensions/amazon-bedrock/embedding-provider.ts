@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock embedding provider helpers and runtime behavior.
 import {
   debugEmbeddingsLog,
   sanitizeAndNormalizeEmbedding,

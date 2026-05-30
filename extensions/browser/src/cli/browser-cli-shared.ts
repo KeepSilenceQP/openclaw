@@ -1,4 +1,3 @@
-// extensions/browser/src/cli browser cli shared helpers and runtime behavior.
 import {
   parseStrictNonNegativeInteger,
   parseStrictPositiveInteger,

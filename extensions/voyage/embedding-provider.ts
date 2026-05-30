@@ -1,4 +1,3 @@
-// extensions/voyage embedding provider helpers and runtime behavior.
 import {
   fetchRemoteEmbeddingVectors,
   normalizeEmbeddingModelWithPrefixes,

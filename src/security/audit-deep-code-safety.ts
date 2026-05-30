@@ -1,4 +1,3 @@
-// security audit deep code safety helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { SecurityAuditFinding } from "./audit.types.js";
 
@@ -9,7 +8,6 @@ async function loadAuditDeepModule() {
   return await auditDeepModulePromise;
 }
 
-/** Reused helper for collect Deep Code Safety Findings behavior in src/security. */
 export async function collectDeepCodeSafetyFindings(params: {
   cfg: OpenClawConfig;
   stateDir: string;

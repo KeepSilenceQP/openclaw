@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/sdk idb persistence helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import { indexedDB as fakeIndexedDB } from "fake-indexeddb";

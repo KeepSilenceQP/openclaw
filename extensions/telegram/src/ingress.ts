@@ -1,4 +1,3 @@
-// extensions/telegram/src ingress helpers and runtime behavior.
 import {
   createChannelIngressResolver,
   defineStableChannelIngressIdentity,

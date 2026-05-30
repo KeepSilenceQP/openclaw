@@ -1,4 +1,3 @@
-// extensions/openshell/src cli helpers and runtime behavior.
 import {
   createSshSandboxSessionFromConfigText,
   runPluginCommandWithTimeout,

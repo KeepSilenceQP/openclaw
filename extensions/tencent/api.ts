@@ -1,4 +1,3 @@
-// extensions/tencent api helpers and runtime behavior.
 /** Re-exported tencent plugin public API. */
 export {
   buildTokenHubModelDefinition,

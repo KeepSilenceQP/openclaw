@@ -58,7 +58,6 @@ async function generateCompletionCache(): Promise<boolean> {
   return result.status === 0;
 }
 
-/** Shared type for Shell Completion Status in src/commands. */
 export type ShellCompletionStatus = {
   shell: CompletionShell;
   profileInstalled: boolean;
@@ -87,7 +86,6 @@ export async function checkShellCompletionStatus(
   };
 }
 
-/** Reused helper for shell Completion Status To Health Findings behavior in src/commands. */
 export function shellCompletionStatusToHealthFindings(
   status: ShellCompletionStatus,
 ): readonly HealthFinding[] {
@@ -118,7 +116,6 @@ export function shellCompletionStatusToHealthFindings(
   return [];
 }
 
-/** Reused helper for shell Completion Status To Repair Effects behavior in src/commands. */
 export function shellCompletionStatusToRepairEffects(
   status: ShellCompletionStatus,
 ): readonly HealthRepairEffect[] {
@@ -149,7 +146,6 @@ export function shellCompletionStatusToRepairEffects(
   return effects;
 }
 
-/** Shared type for Doctor Completion Options in src/commands. */
 export type DoctorCompletionOptions = {
   nonInteractive?: boolean;
 };

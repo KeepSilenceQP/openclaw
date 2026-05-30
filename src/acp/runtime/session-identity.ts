@@ -184,7 +184,6 @@ export function mergeSessionIdentity(params: {
   return next;
 }
 
-/** Reused helper for create Identity From Ensure behavior in src/acp/runtime. */
 export function createIdentityFromEnsure(params: {
   handle: AcpRuntimeHandle;
   now: number;
@@ -197,7 +196,6 @@ export function createIdentityFromEnsure(params: {
   });
 }
 
-/** Reused helper for create Identity From Handle Event behavior in src/acp/runtime. */
 export function createIdentityFromHandleEvent(params: {
   handle: AcpRuntimeHandle;
   now: number;
@@ -211,7 +209,6 @@ export function createIdentityFromHandleEvent(params: {
   });
 }
 
-/** Reused helper for create Identity From Status behavior in src/acp/runtime. */
 export function createIdentityFromStatus(params: {
   status: AcpRuntimeStatus | undefined;
   now: number;
@@ -243,7 +240,6 @@ export function createIdentityFromStatus(params: {
   };
 }
 
-/** Reused helper for resolve Runtime Handle Identifiers From Identity behavior in src/acp/runtime. */
 export function resolveRuntimeHandleIdentifiersFromIdentity(
   identity: SessionAcpIdentity | undefined,
 ): { backendSessionId?: string; agentSessionId?: string } {

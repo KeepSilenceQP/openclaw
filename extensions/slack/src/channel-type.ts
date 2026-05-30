@@ -1,4 +1,3 @@
-// extensions/slack/src channel type helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalString,

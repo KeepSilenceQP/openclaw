@@ -6,7 +6,6 @@ import type {
 } from "../tasks/task-registry.audit.js";
 import type { TaskRegistrySummary } from "../tasks/task-registry.types.js";
 
-/** Shared type for Session Status in src/commands. */
 export type SessionStatus = {
   agentId?: string;
   key: string;
@@ -39,7 +38,6 @@ export type SessionStatus = {
   flags: string[];
 };
 
-/** Shared type for Heartbeat Status in src/commands. */
 export type HeartbeatStatus = {
   agentId: string;
   enabled: boolean;
@@ -47,7 +45,6 @@ export type HeartbeatStatus = {
   everyMs: number | null;
 };
 
-/** Shared type for Status Summary in src/commands. */
 export type StatusSummary = {
   runtimeVersion?: string | null;
   eventLoop?: import("../gateway/server/event-loop-health.js").GatewayEventLoopHealth;

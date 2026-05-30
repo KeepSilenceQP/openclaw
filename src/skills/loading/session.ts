@@ -72,7 +72,6 @@ function addIgnoreRules(ig: IgnoreMatcher, dir: string, rootDir: string): void {
   }
 }
 
-/** Shared type for Skill Frontmatter in src/agents/sessions. */
 export interface SkillFrontmatter {
   name?: string;
   description?: string;
@@ -80,7 +79,6 @@ export interface SkillFrontmatter {
   [key: string]: unknown;
 }
 
-/** Shared type for Skill in src/agents/sessions. */
 export interface Skill {
   name: string;
   description: string;
@@ -91,7 +89,6 @@ export interface Skill {
   disableModelInvocation: boolean;
 }
 
-/** Shared type for Load Skills Result in src/agents/sessions. */
 export interface LoadSkillsResult {
   skills: Skill[];
   diagnostics: ResourceDiagnostic[];
@@ -138,7 +135,6 @@ function validateDescription(description: string | undefined): string[] {
   return errors;
 }
 
-/** Shared type for Load Skills From Dir Options in src/agents/sessions. */
 export interface LoadSkillsFromDirOptions {
   /** Directory to scan for skills */
   dir: string;
@@ -353,7 +349,6 @@ export function formatSkillsForPrompt(skills: Skill[]): string {
   return formatSkillContractForPrompt(visibleSkills);
 }
 
-/** Shared type for Load Skills Options in src/agents/sessions. */
 export interface LoadSkillsOptions {
   /** Working directory for project-local skills. */
   cwd: string;

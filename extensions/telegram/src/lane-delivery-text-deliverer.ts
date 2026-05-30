@@ -1,4 +1,3 @@
-// extensions/telegram/src lane delivery text deliverer helpers and runtime behavior.
 import {
   createPreviewMessageReceipt,
   type MessageReceipt,

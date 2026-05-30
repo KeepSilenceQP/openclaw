@@ -16,7 +16,6 @@ import {
 } from "../../shared/string-coerce.js";
 import type { ReplyPayload } from "../types.js";
 
-/** Reused helper for filter Messaging Tool Duplicates behavior in src/auto-reply/reply. */
 export function filterMessagingToolDuplicates(params: {
   payloads: ReplyPayload[];
   sentTexts: string[];
@@ -33,7 +32,6 @@ export function filterMessagingToolDuplicates(params: {
   });
 }
 
-/** Reused helper for filter Messaging Tool Media Duplicates behavior in src/auto-reply/reply. */
 export function filterMessagingToolMediaDuplicates(params: {
   payloads: ReplyPayload[];
   sentMediaUrls: string[];
@@ -197,7 +195,6 @@ function targetsMatchForDedupe(params: {
   return params.targetKey === params.originTarget;
 }
 
-/** Reused helper for should Dedupe Messaging Tool Replies For Route behavior in src/auto-reply/reply. */
 export function shouldDedupeMessagingToolRepliesForRoute(params: {
   messageProvider?: string;
   messagingToolSentTargets?: MessagingToolSend[];
@@ -207,7 +204,6 @@ export function shouldDedupeMessagingToolRepliesForRoute(params: {
   return getMatchingMessagingToolReplyTargets(params).length > 0;
 }
 
-/** Reused helper for get Matching Messaging Tool Reply Targets behavior in src/auto-reply/reply. */
 export function getMatchingMessagingToolReplyTargets(params: {
   messageProvider?: string;
   messagingToolSentTargets?: MessagingToolSend[];
@@ -267,7 +263,6 @@ export function getMatchingMessagingToolReplyTargets(params: {
   });
 }
 
-/** Shared type for Messaging Tool Payload Dedupe Decision in src/auto-reply/reply. */
 export type MessagingToolPayloadDedupeDecision = {
   shouldDedupePayloads: boolean;
   matchingRoute: boolean;
@@ -277,7 +272,6 @@ export type MessagingToolPayloadDedupeDecision = {
   useGlobalSentMediaUrlEvidenceFallback: boolean;
 };
 
-/** Reused helper for resolve Messaging Tool Payload Dedupe behavior in src/auto-reply/reply. */
 export function resolveMessagingToolPayloadDedupe(params: {
   messageProvider?: string;
   messagingToolSentTargets?: MessagingToolSend[];

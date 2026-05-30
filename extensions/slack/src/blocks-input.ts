@@ -1,4 +1,3 @@
-// extensions/slack/src blocks input helpers and runtime behavior.
 import type { Block, KnownBlock } from "@slack/web-api";
 
 export const SLACK_MAX_BLOCKS = 50;

@@ -25,7 +25,6 @@ function resolveProviderAuthChoiceByKind(params: {
   return choiceId as AuthChoice | undefined;
 }
 
-/** Reused helper for normalize Api Key Token Provider Auth Choice behavior in src/commands. */
 export function normalizeApiKeyTokenProviderAuthChoice(params: {
   authChoice: AuthChoice;
   tokenProvider?: string;
@@ -65,7 +64,6 @@ export function normalizeApiKeyTokenProviderAuthChoice(params: {
   );
 }
 
-/** Reused helper for apply Auth Choice Api Providers behavior in src/commands. */
 export async function applyAuthChoiceApiProviders(
   _params: ApplyAuthChoiceParams,
 ): Promise<ApplyAuthChoiceResult | null> {

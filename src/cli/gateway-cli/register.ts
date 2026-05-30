@@ -451,7 +451,6 @@ async function writeSupportExportFromCli(opts: {
   }
 }
 
-/** Reused helper for register Gateway Cli behavior in src/cli/gateway-cli. */
 export function registerGatewayCli(program: Command) {
   const gateway = addGatewayRunCommand(
     program

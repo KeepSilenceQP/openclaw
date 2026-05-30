@@ -1,4 +1,3 @@
-// extensions/line/src reply chunks helpers and runtime behavior.
 import type { messagingApi } from "@line/bot-sdk";
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 

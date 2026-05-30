@@ -1,4 +1,3 @@
-// cron/isolated-agent run fallback policy helpers and runtime behavior.
 import { resolveModelCandidateChain } from "../../agents/model-fallback.js";
 import type { ModelCandidate } from "../../agents/model-fallback.types.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
@@ -8,7 +7,6 @@ import {
   resolveSubagentModelFallbacksOverride,
 } from "./run-execution.runtime.js";
 
-/** Reused helper for resolve Cron Fallbacks Override behavior in src/cron/isolated-agent. */
 export function resolveCronFallbacksOverride(params: {
   cfg: OpenClawConfig;
   job: CronJob;
@@ -39,7 +37,6 @@ export function resolveCronFallbacksOverride(params: {
   });
 }
 
-/** Reused helper for resolve Cron Preflight Candidates behavior in src/cron/isolated-agent. */
 export function resolveCronPreflightCandidates(params: {
   cfg: OpenClawConfig;
   job: CronJob;

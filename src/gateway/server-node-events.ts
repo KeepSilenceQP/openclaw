@@ -1,4 +1,3 @@
-// gateway server node events helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { updatePairedDeviceMetadata } from "../infra/device-pairing.js";
@@ -60,7 +59,6 @@ const recentVoiceTranscripts = new Map<string, { fingerprint: string; ts: number
 const recentExecFinishedRuns = new Map<string, number>();
 const recentNodePresencePersistAt = new Map<string, number>();
 
-/** Shared type for Node Event Handle Result in src/gateway. */
 export type NodeEventHandleResult = {
   ok: true;
   event: string;
@@ -204,14 +202,12 @@ function pruneBoundedTimestampMap(
   }
 }
 
-/** Reused helper for reset Node Event Deduplication For Tests behavior in src/gateway. */
 export function resetNodeEventDeduplicationForTests() {
   recentVoiceTranscripts.clear();
   recentExecFinishedRuns.clear();
   recentNodePresencePersistAt.clear();
 }
 
-/** Reused helper for get Recent Node Presence Persist Count For Tests behavior in src/gateway. */
 export function getRecentNodePresencePersistCountForTests() {
   return recentNodePresencePersistAt.size;
 }
@@ -368,7 +364,6 @@ async function sendReceiptAck(params: {
   }
 }
 
-/** Reused constant for handle Node Event behavior in src/gateway. */
 export const handleNodeEvent = async (
   ctx: NodeEventContext,
   nodeId: string,

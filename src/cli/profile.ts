@@ -20,7 +20,6 @@ function isCommandLocalProfileOption(out: string[]): boolean {
   return primary === "qa" && secondary === "matrix";
 }
 
-/** Reused helper for parse Cli Profile Args behavior in src/cli. */
 export function parseCliProfileArgs(argv: string[]): CliProfileParseResult {
   let profile: string | null = null;
   let sawDev = false;
@@ -84,7 +83,6 @@ function resolveProfileStateDir(
   return path.join(resolveRequiredHomeDir(env as NodeJS.ProcessEnv, homedir), `.openclaw${suffix}`);
 }
 
-/** Reused helper for apply Cli Profile Env behavior in src/cli. */
 export function applyCliProfileEnv(params: {
   profile: string;
   env?: Record<string, string | undefined>;

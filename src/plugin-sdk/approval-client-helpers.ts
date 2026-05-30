@@ -35,7 +35,6 @@ function isApprovalTargetsMode(cfg: OpenClawConfig): boolean {
   return execApprovals.mode === "targets" || execApprovals.mode === "both";
 }
 
-/** Re-exported API for src/plugin-sdk, starting with get Exec Approval Reply Metadata. */
 export { getExecApprovalReplyMetadata, matchesApprovalRequestFilters };
 
 /** Return whether a channel approval client should activate for its config and approver count. */

@@ -1,4 +1,3 @@
-// extensions/slack/src approval native gates helpers and runtime behavior.
 import {
   isChannelExecApprovalClientEnabledFromConfig,
   matchesApprovalRequestFilters,

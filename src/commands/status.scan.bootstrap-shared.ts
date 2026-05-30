@@ -22,7 +22,6 @@ function buildColdStartAgentLocalStatuses() {
   };
 }
 
-/** Reused helper for build Cold Start Status Summary behavior in src/commands. */
 export function buildColdStartStatusSummary() {
   return {
     runtimeVersion: null,
@@ -78,7 +77,6 @@ type StatusScanCoreBootstrapParams<TAgentStatus> = {
   getAgentLocalStatuses: (cfg: OpenClawConfig) => Promise<TAgentStatus>;
 };
 
-/** Reused helper for create Status Scan Core Bootstrap behavior in src/commands. */
 export async function createStatusScanCoreBootstrap<TAgentStatus>(
   params: StatusScanCoreBootstrapParams<TAgentStatus>,
 ) {

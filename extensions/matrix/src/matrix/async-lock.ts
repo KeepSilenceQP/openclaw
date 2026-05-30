@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix async lock helpers and runtime behavior.
 export type AsyncLock = <T>(fn: () => Promise<T>) => Promise<T>;
 
 export function createAsyncLock(): AsyncLock {

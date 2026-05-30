@@ -37,7 +37,6 @@ function loadDeliverRuntime() {
   return messageRuntimeLoader.load();
 }
 
-/** Shared type for Route Reply Params in src/auto-reply/reply. */
 export type RouteReplyParams = {
   /** The reply payload to send. */
   payload: ReplyPayload;
@@ -79,7 +78,6 @@ export type RouteReplyParams = {
   runId?: string;
 };
 
-/** Shared type for Route Reply Result in src/auto-reply/reply. */
 export type RouteReplyResult = {
   /** Whether the reply was sent successfully. */
   ok: boolean;

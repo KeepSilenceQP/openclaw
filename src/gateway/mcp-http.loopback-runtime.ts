@@ -1,4 +1,3 @@
-// gateway mcp http loopback runtime helpers and runtime behavior.
 type McpLoopbackRuntime = {
   port: number;
   ownerToken: string;
@@ -7,17 +6,14 @@ type McpLoopbackRuntime = {
 
 let activeRuntime: McpLoopbackRuntime | undefined;
 
-/** Reused helper for get Active Mcp Loopback Runtime behavior in src/gateway. */
 export function getActiveMcpLoopbackRuntime(): McpLoopbackRuntime | undefined {
   return activeRuntime ? { ...activeRuntime } : undefined;
 }
 
-/** Reused helper for set Active Mcp Loopback Runtime behavior in src/gateway. */
 export function setActiveMcpLoopbackRuntime(runtime: McpLoopbackRuntime): void {
   activeRuntime = { ...runtime };
 }
 
-/** Reused helper for resolve Mcp Loopback Bearer Token behavior in src/gateway. */
 export function resolveMcpLoopbackBearerToken(
   runtime: McpLoopbackRuntime,
   senderIsOwner: boolean,
@@ -25,14 +21,12 @@ export function resolveMcpLoopbackBearerToken(
   return senderIsOwner ? runtime.ownerToken : runtime.nonOwnerToken;
 }
 
-/** Reused helper for clear Active Mcp Loopback Runtime By Owner Token behavior in src/gateway. */
 export function clearActiveMcpLoopbackRuntimeByOwnerToken(ownerToken: string): void {
   if (activeRuntime?.ownerToken === ownerToken) {
     activeRuntime = undefined;
   }
 }
 
-/** Reused helper for create Mcp Loopback Server Config behavior in src/gateway. */
 export function createMcpLoopbackServerConfig(port: number) {
   return {
     mcpServers: {

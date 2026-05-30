@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes test helpers helpers and runtime behavior.
 import type { BrowserResponse, BrowserRouteHandler, BrowserRouteRegistrar } from "./types.js";
 
 export function createBrowserRouteApp() {

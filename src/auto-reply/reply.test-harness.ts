@@ -130,7 +130,6 @@ const HOME_ENV_KEYS = [
   "OPENCLAW_AGENT_DIR",
 ] as const;
 
-/** Reused helper for create Temp Home Harness behavior in src/auto-reply. */
 export function createTempHomeHarness(options: { prefix: string; beforeEachCase?: () => void }) {
   let fixtureRoot = "";
   let caseId = 0;
@@ -174,7 +173,6 @@ export function createTempHomeHarness(options: { prefix: string; beforeEachCase?
   return { withTempHome };
 }
 
-/** Reused helper for make Reply Config behavior in src/auto-reply. */
 export function makeReplyConfig(home: string) {
   return withFastReplyConfig({
     agents: {
@@ -192,7 +190,6 @@ export function makeReplyConfig(home: string) {
   });
 }
 
-/** Reused helper for create Reply Runtime Mocks behavior in src/auto-reply. */
 export function createReplyRuntimeMocks(): ReplyRuntimeMocks {
   return {
     runEmbeddedAgent: vi.fn(),
@@ -203,12 +200,10 @@ export function createReplyRuntimeMocks(): ReplyRuntimeMocks {
   };
 }
 
-/** Reused helper for install Reply Runtime Mocks behavior in src/auto-reply. */
 export function installReplyRuntimeMocks(mocks: ReplyRuntimeMocks) {
   replyRuntimeMockState.mocks = mocks;
 }
 
-/** Reused helper for reset Reply Runtime Mocks behavior in src/auto-reply. */
 export function resetReplyRuntimeMocks(mocks: ReplyRuntimeMocks) {
   mocks.runEmbeddedAgent.mockClear();
   mocks.loadModelCatalog.mockClear();
@@ -217,7 +212,6 @@ export function resetReplyRuntimeMocks(mocks: ReplyRuntimeMocks) {
   ]);
 }
 
-/** Reused helper for make Embedded Text Result behavior in src/auto-reply. */
 export function makeEmbeddedTextResult(text: string) {
   return {
     payloads: [{ text }],

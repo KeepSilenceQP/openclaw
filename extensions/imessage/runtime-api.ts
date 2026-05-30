@@ -1,4 +1,3 @@
-// extensions/imessage runtime api helpers and runtime behavior.
 import type { OpenClawConfig as RuntimeApiOpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 
 /** Re-exported imessage plugin public API. */

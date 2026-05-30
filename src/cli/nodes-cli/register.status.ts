@@ -180,7 +180,6 @@ function sanitizePairedNodeForListJson(node: PairedNodeListRow): Omit<PairedNode
   return copy as Omit<PairedNodeListRow, "token">;
 }
 
-/** Reused helper for register Nodes Status Commands behavior in src/cli/nodes-cli. */
 export function registerNodesStatusCommands(nodes: Command) {
   nodesCallOpts(
     nodes

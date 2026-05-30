@@ -31,7 +31,6 @@ import {
 } from "./channels-token-summary.js";
 import { formatTimeAgo } from "./format.js";
 
-/** Shared type for Channel Row in src/commands/status-all. */
 export type ChannelRow = {
   id: ChannelId;
   label: string;
@@ -218,7 +217,6 @@ function formatLoadFailureDetail(message: string): string {
 
 // `status --all` channels table.
 // Keep this generic: channel-specific rules belong in the channel plugin.
-/** Reused helper for build Channels Table behavior in src/commands/status-all. */
 export async function buildChannelsTable(
   cfg: OpenClawConfig,
   opts?: {

@@ -1,4 +1,3 @@
-// extensions/diffs/src shiki curated languages helpers and runtime behavior.
 const javascript = () => import("@shikijs/langs/javascript");
 const typescript = () => import("@shikijs/langs/typescript");
 const tsx = () => import("@shikijs/langs/tsx");

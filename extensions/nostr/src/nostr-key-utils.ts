@@ -1,4 +1,3 @@
-// extensions/nostr/src nostr key utils helpers and runtime behavior.
 import { getPublicKey, nip19 } from "nostr-tools";
 
 /**

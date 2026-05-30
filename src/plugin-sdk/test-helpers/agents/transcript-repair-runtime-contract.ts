@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers/agents transcript repair runtime contract helpers and runtime behavior.
 import type { AgentMessage } from "../../../agents/runtime/index.js";
 
 export const QUEUED_USER_MESSAGE_MARKER =

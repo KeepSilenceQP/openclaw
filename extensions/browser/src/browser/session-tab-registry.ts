@@ -1,4 +1,3 @@
-// extensions/browser/src/browser session tab registry helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,

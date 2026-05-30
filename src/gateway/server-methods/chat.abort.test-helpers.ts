@@ -1,9 +1,7 @@
-// gateway/server-methods chat abort test helpers helpers and runtime behavior.
 import { vi } from "vitest";
 import type { Mock } from "vitest";
 import type { GatewayRequestHandler, RespondFn } from "./types.js";
 
-/** Reused helper for create Active Run behavior in src/gateway/server-methods. */
 export function createActiveRun(
   sessionKey: string,
   params: {
@@ -47,7 +45,6 @@ type ChatAbortTestContext = Record<string, unknown> & {
 
 type ChatAbortRespondMock = Mock<RespondFn>;
 
-/** Reused helper for create Chat Abort Context behavior in src/gateway/server-methods. */
 export function createChatAbortContext(
   overrides: Record<string, unknown> = {},
 ): ChatAbortTestContext {
@@ -87,7 +84,6 @@ export function createChatAbortContext(
   return context;
 }
 
-/** Reused helper for invoke Chat Abort Handler behavior in src/gateway/server-methods. */
 export async function invokeChatAbortHandler(params: {
   handler: GatewayRequestHandler;
   context: ChatAbortTestContext;

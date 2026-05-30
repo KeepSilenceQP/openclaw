@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor/message-handler dispatch helpers and runtime behavior.
 import { resolveHumanDelayConfig } from "openclaw/plugin-sdk/agent-runtime";
 import {
   createStatusReactionController,

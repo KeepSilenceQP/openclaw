@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor inbound processing helpers and runtime behavior.
 import {
   buildMentionRegexes,
   buildChannelInboundEventContext,

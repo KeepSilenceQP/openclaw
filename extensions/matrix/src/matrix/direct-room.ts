@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix direct room helpers and runtime behavior.
 import type { MatrixClient } from "./sdk.js";
 
 function trimMaybeString(value: unknown): string | null {

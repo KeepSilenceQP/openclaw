@@ -42,7 +42,6 @@ function setChannelPluginRegistryForTests(onlyPluginIds?: readonly string[]): vo
   setActivePluginRegistry(createTestRegistry(channels));
 }
 
-/** Reused helper for set Default Channel Plugin Registry For Tests behavior in src/commands. */
 export function setDefaultChannelPluginRegistryForTests(): void {
   setChannelPluginRegistryForTests();
 }

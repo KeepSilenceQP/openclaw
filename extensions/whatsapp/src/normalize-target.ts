@@ -1,4 +1,3 @@
-// extensions/whatsapp/src normalize target helpers and runtime behavior.
 import { normalizeE164 } from "openclaw/plugin-sdk/account-resolution";
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 

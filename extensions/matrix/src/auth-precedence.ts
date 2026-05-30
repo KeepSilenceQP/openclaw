@@ -1,4 +1,3 @@
-// extensions/matrix/src auth precedence helpers and runtime behavior.
 import { DEFAULT_ACCOUNT_ID, normalizeAccountId } from "openclaw/plugin-sdk/account-id";
 
 export type MatrixResolvedStringField =

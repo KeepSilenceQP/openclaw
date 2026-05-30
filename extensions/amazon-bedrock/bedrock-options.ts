@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock bedrock options helpers and runtime behavior.
 import type { StreamOptions, ThinkingBudgets, ThinkingLevel } from "openclaw/plugin-sdk/llm";
 
 export type BedrockThinkingDisplay = "summarized" | "omitted";

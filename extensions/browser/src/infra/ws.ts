@@ -1,4 +1,3 @@
-// extensions/browser/src/infra ws helpers and runtime behavior.
 export function rawDataToString(data: unknown): string {
   if (typeof data === "string") {
     return data;

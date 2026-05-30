@@ -1,7 +1,6 @@
 // Context text formatting for model-visible reply prompts.
 import type { FinalizedMsgContext } from "../templating.js";
 
-/** Shared type for Context Text Key in src/auto-reply/reply. */
 export type ContextTextKey =
   | "BodyForAgent"
   | "BodyForCommands"
@@ -9,7 +8,6 @@ export type ContextTextKey =
   | "RawBody"
   | "Body";
 
-/** Reused helper for resolve First Context Text behavior in src/auto-reply/reply. */
 export function resolveFirstContextText(
   ctx: FinalizedMsgContext,
   keys: readonly ContextTextKey[],

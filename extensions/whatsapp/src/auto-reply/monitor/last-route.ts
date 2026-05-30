@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply/monitor last route helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type { MsgContext } from "openclaw/plugin-sdk/reply-runtime";
 import { formatError } from "../../session.js";

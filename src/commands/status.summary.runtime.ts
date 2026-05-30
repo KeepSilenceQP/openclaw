@@ -202,7 +202,6 @@ function resolveContextTokensForModel(params: {
   return params.fallbackContextTokens ?? DEFAULT_CONTEXT_TOKENS;
 }
 
-/** Reused constant for status Summary Runtime behavior in src/commands. */
 export const statusSummaryRuntime = {
   resolveContextTokensForModel,
   classifySessionKey: classifySessionKind,

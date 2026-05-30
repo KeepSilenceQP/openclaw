@@ -10,7 +10,6 @@ import {
 import type { SessionAcpMeta } from "../../config/sessions/types.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 
-/** Reused helper for persist Acp Dispatch Transcript behavior in src/auto-reply/reply. */
 export async function persistAcpDispatchTranscript(params: {
   cfg: OpenClawConfig;
   sessionKey: string;

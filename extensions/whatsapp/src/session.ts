@@ -1,4 +1,3 @@
-// extensions/whatsapp/src session helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import type { Agent } from "node:https";
 import { formatCliCommand } from "openclaw/plugin-sdk/cli-runtime";

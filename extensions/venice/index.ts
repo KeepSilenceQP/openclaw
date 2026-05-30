@@ -1,4 +1,3 @@
-// extensions/venice index helpers and runtime behavior.
 import { defineSingleProviderPluginEntry } from "openclaw/plugin-sdk/provider-entry";
 import {
   applyModelCompatPatch,

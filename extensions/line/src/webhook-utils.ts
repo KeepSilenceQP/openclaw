@@ -1,4 +1,3 @@
-// extensions/line/src webhook utils helpers and runtime behavior.
 import type { webhook } from "@line/bot-sdk";
 export { validateLineSignature } from "./signature.js";
 

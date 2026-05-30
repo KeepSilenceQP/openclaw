@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix profile helpers and runtime behavior.
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalString,

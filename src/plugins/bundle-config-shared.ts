@@ -1,4 +1,3 @@
-// plugins bundle config shared helpers and runtime behavior.
 import { applyMergePatch } from "../config/merge-patch.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { matchRootFileOpenFailure, type RootFileOpenFailure } from "../infra/boundary-file-read.js";
@@ -12,7 +11,6 @@ type ReadBundleJsonResult =
   | { ok: true; raw: Record<string, unknown> }
   | { ok: false; error: string };
 
-/** Shared type for Bundle Server Runtime Support in src/plugins. */
 export type BundleServerRuntimeSupport = {
   hasSupportedServer: boolean;
   supportedServerNames: string[];
@@ -20,7 +18,6 @@ export type BundleServerRuntimeSupport = {
   diagnostics: string[];
 };
 
-/** Reused helper for read Bundle Json Object behavior in src/plugins. */
 export function readBundleJsonObject(params: {
   rootDir: string;
   relativePath: string;
@@ -41,7 +38,6 @@ export function readBundleJsonObject(params: {
   return { ok: false, error: result.error };
 }
 
-/** Reused helper for resolve Bundle Json Open Failure behavior in src/plugins. */
 export function resolveBundleJsonOpenFailure(params: {
   failure: RootFileOpenFailure;
   relativePath: string;
@@ -61,7 +57,6 @@ export function resolveBundleJsonOpenFailure(params: {
   });
 }
 
-/** Reused helper for inspect Bundle Server Runtime Support behavior in src/plugins. */
 export function inspectBundleServerRuntimeSupport<TConfig>(params: {
   loaded: { config: TConfig; diagnostics: string[] };
   resolveServers: (config: TConfig) => Record<string, Record<string, unknown>>;
@@ -85,7 +80,6 @@ export function inspectBundleServerRuntimeSupport<TConfig>(params: {
   };
 }
 
-/** Reused helper for load Enabled Bundle Config behavior in src/plugins. */
 export function loadEnabledBundleConfig<TConfig, TDiagnostic>(params: {
   workspaceDir: string;
   cfg?: OpenClawConfig;

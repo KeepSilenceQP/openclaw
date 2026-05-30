@@ -5,7 +5,6 @@ import { formatCliCommand } from "../cli/command-format.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { StatusSummary } from "./status.types.js";
 
-/** Shared type for Local Tui Process in src/commands. */
 export type LocalTuiProcess = {
   pid: number;
   command: string;
@@ -52,7 +51,6 @@ function parsePsPidLine(line: string): LocalTuiProcess | null {
   return { pid, command };
 }
 
-/** Reused helper for list Local Tui Processes behavior in src/commands. */
 export function listLocalTuiProcesses(): LocalTuiProcess[] {
   if (process.platform === "win32") {
     return [];
@@ -106,7 +104,6 @@ async function sleep(ms: number): Promise<void> {
   await new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Reused helper for terminate Local Tui Processes behavior in src/commands. */
 export async function terminateLocalTuiProcesses(params: {
   processes: LocalTuiProcess[];
   controller?: ProcessController;
@@ -146,7 +143,6 @@ export async function terminateLocalTuiProcesses(params: {
   return { stopped, failed };
 }
 
-/** Reused helper for note Whatsapp Responsiveness Health behavior in src/commands. */
 export async function noteWhatsappResponsivenessHealth(params: {
   cfg: OpenClawConfig;
   status?: Pick<StatusSummary, "eventLoop"> | null;

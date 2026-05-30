@@ -1,4 +1,3 @@
-// gateway cli session history merge helpers and runtime behavior.
 import { stripInboundMetadata } from "../auto-reply/reply/strip-inbound-meta.js";
 import { asFiniteNumber } from "../shared/number-coercion.js";
 import { normalizeOptionalString, readStringValue } from "../shared/string-coerce.js";
@@ -132,7 +131,6 @@ function compareHistoryMessages(
   return a.order - b.order;
 }
 
-/** Reused helper for merge Imported Chat History Messages behavior in src/gateway. */
 export function mergeImportedChatHistoryMessages(params: {
   localMessages: unknown[];
   importedMessages: unknown[];

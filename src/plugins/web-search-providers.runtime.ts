@@ -46,7 +46,6 @@ function mapRegistryWebSearchProviders(params: {
   });
 }
 
-/** Reused helper for resolve Plugin Web Search Providers behavior in src/plugins. */
 export function resolvePluginWebSearchProviders(params: {
   config?: PluginLoadOptions["config"];
   workspaceDir?: string;
@@ -65,7 +64,6 @@ export function resolvePluginWebSearchProviders(params: {
   });
 }
 
-/** Reused helper for resolve Runtime Web Search Providers behavior in src/plugins. */
 export function resolveRuntimeWebSearchProviders(params: {
   config?: PluginLoadOptions["config"];
   workspaceDir?: string;

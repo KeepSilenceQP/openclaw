@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/actions reactions helpers and runtime behavior.
 import {
   buildMatrixReactionRelationsPath,
   selectOwnMatrixReactionEventIds,

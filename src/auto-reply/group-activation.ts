@@ -1,10 +1,8 @@
 // Group chat activation mode parsing and command handling.
 import { normalizeOptionalLowercaseString } from "../shared/string-coerce.js";
 
-/** Shared type for Group Activation Mode in src/auto-reply. */
 export type GroupActivationMode = "mention" | "always";
 
-/** Reused helper for normalize Group Activation behavior in src/auto-reply. */
 export function normalizeGroupActivation(raw?: string | null): GroupActivationMode | undefined {
   const value = normalizeOptionalLowercaseString(raw);
   if (value === "mention") {
@@ -16,7 +14,6 @@ export function normalizeGroupActivation(raw?: string | null): GroupActivationMo
   return undefined;
 }
 
-/** Reused helper for parse Activation Command behavior in src/auto-reply. */
 export function parseActivationCommand(raw?: string): {
   hasCommand: boolean;
   mode?: GroupActivationMode;

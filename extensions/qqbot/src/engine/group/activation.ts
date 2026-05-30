@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/group activation helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 

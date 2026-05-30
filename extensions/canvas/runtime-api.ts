@@ -1,4 +1,3 @@
-// extensions/canvas runtime api helpers and runtime behavior.
 /** Re-exported canvas plugin public API. */
 export {
   canvasConfigSchema,

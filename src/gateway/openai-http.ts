@@ -1,4 +1,3 @@
-// gateway openai http helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { isClientToolNameConflictError } from "../agents/agent-tool-definition-adapter.js";
@@ -584,13 +583,11 @@ async function resolveImagesForRequest(
   return images;
 }
 
-/** Reused constant for test Only Open Ai Http behavior in src/gateway. */
 export const testOnlyOpenAiHttp = {
   resolveImagesForRequest,
   resolveOpenAiChatCompletionsLimits,
   resolveChatCompletionUsage,
 };
-/** Re-exported API for src/gateway, starting with test Only Open Ai Http. */
 export { testOnlyOpenAiHttp as __testOnlyOpenAiHttp };
 
 function buildAgentPrompt(
@@ -834,7 +831,6 @@ function resolveErrorMessage(err: unknown): string {
   return String(err);
 }
 
-/** Reused helper for handle Open Ai Http Request behavior in src/gateway. */
 export async function handleOpenAiHttpRequest(
   req: IncomingMessage,
   res: ServerResponse,

@@ -1,4 +1,3 @@
-// tui/components custom editor helpers and runtime behavior.
 import { Editor, isKeyRelease, Key, matchesKey } from "@earendil-works/pi-tui";
 
 const KITTY_CSI_U_SUFFIX_REGEX = /^(\d+)(?::(\d*))?(?::(\d+))?(?:;(\d+))?(?::(\d+))?u$/u;
@@ -40,7 +39,6 @@ function decodeAltGrPrintable(data: string): string | undefined {
   }
 }
 
-/** Reused class for Custom Editor behavior in src/tui/components. */
 export class CustomEditor extends Editor {
   onEscape?: () => void;
   onCtrlC?: () => void;

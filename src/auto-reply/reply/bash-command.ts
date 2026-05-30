@@ -182,7 +182,6 @@ function buildUsageReply(): ReplyPayload {
   };
 }
 
-/** Reused helper for handle Bash Chat Command behavior in src/auto-reply/reply. */
 export async function handleBashChatCommand(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;

@@ -1,4 +1,3 @@
-// gateway/server preauth connection budget helpers and runtime behavior.
 import { parseStrictPositiveInteger, resolveIntegerOption } from "../../shared/number-coercion.js";
 
 const DEFAULT_MAX_PREAUTH_CONNECTIONS_PER_IP = 32;
@@ -18,13 +17,11 @@ function getMaxPreauthConnectionsPerIpFromEnv(env: NodeJS.ProcessEnv = process.e
   return parsed;
 }
 
-/** Shared type for Preauth Connection Budget in src/gateway/server. */
 export type PreauthConnectionBudget = {
   acquire(clientIp: string | undefined): boolean;
   release(clientIp: string | undefined): void;
 };
 
-/** Reused helper for create Preauth Connection Budget behavior in src/gateway/server. */
 export function createPreauthConnectionBudget(
   limit = getMaxPreauthConnectionsPerIpFromEnv(),
 ): PreauthConnectionBudget {

@@ -1,4 +1,3 @@
-// gateway test helpers config snapshots helpers and runtime behavior.
 import crypto from "node:crypto";
 import type { ConfigFileSnapshot, OpenClawConfig } from "../config/types.js";
 
@@ -9,7 +8,6 @@ function hashConfigRaw(raw: string | null): string {
     .digest("hex");
 }
 
-/** Reused helper for build Test Config Snapshot behavior in src/gateway. */
 export function buildTestConfigSnapshot(params: {
   path: string;
   exists: boolean;

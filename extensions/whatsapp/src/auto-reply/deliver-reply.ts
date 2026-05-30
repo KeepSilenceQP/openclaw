@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply deliver reply helpers and runtime behavior.
 import {
   createMessageReceiptFromOutboundResults,
   type MessageReceipt,

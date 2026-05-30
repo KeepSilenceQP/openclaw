@@ -1,4 +1,3 @@
-// src/skills/runtime env overrides helpers and runtime behavior.
 import { sanitizeEnvVars, validateEnvVarValue } from "../../agents/sandbox/sanitize-env-vars.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { normalizeResolvedSecretInputString } from "../../config/types.secrets.js";
@@ -217,7 +216,6 @@ function createEnvReverter(updates: EnvUpdate[]) {
   };
 }
 
-/** Reused helper for apply Skill Env Overrides behavior in src/skills/runtime. */
 export function applySkillEnvOverrides(params: { skills: SkillEntry[]; config?: OpenClawConfig }) {
   const { skills } = params;
   const config = resolveSkillRuntimeConfig(params.config);
@@ -242,7 +240,6 @@ export function applySkillEnvOverrides(params: { skills: SkillEntry[]; config?: 
   return createEnvReverter(updates);
 }
 
-/** Reused helper for apply Skill Env Overrides From Snapshot behavior in src/skills/runtime. */
 export function applySkillEnvOverridesFromSnapshot(params: {
   snapshot?: SkillSnapshot;
   config?: OpenClawConfig;

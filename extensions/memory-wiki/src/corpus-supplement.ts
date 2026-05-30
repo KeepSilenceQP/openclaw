@@ -1,4 +1,3 @@
-// extensions/memory-wiki/src corpus supplement helpers and runtime behavior.
 import type { OpenClawConfig } from "../api.js";
 import type { ResolvedMemoryWikiConfig } from "./config.js";
 import { getMemoryWikiPage, searchMemoryWiki } from "./query.js";

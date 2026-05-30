@@ -1,4 +1,3 @@
-// extensions/qianfan api helpers and runtime behavior.
 /** Re-exported qianfan plugin public API. */
 export {
   QIANFAN_BASE_URL,

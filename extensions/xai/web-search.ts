@@ -1,4 +1,3 @@
-// extensions/xai web search helpers and runtime behavior.
 import {
   type WebSearchProviderPlugin,
   type WebSearchProviderSetupContext,

@@ -1,9 +1,7 @@
-// plugins config contract matches helpers and runtime behavior.
 import { parseConfigPathArrayIndex } from "../shared/path-array-index.js";
 import { normalizeStringEntries } from "../shared/string-normalization.js";
 import { isRecord } from "../utils.js";
 
-/** Shared type for Plugin Config Contract Match in src/plugins. */
 export type PluginConfigContractMatch = {
   path: string;
   value: unknown;
@@ -30,7 +28,6 @@ function parseCanonicalArrayIndex(segment: string, length: number): number | nul
   return index !== undefined && index < length ? index : null;
 }
 
-/** Reused helper for collect Plugin Config Contract Matches behavior in src/plugins. */
 export function collectPluginConfigContractMatches(params: {
   root: unknown;
   pathPattern: string;

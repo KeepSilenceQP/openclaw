@@ -1,4 +1,3 @@
-// extensions/whatsapp targets helpers and runtime behavior.
 export {
   isWhatsAppGroupJid,
   isWhatsAppUserTarget,

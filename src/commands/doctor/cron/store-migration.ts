@@ -231,7 +231,6 @@ function stripLegacyTopLevelFields(raw: Record<string, unknown>) {
   }
 }
 
-/** Reused helper for normalize Stored Cron Jobs behavior in src/commands. */
 export function normalizeStoredCronJobs(
   jobs: Array<Record<string, unknown>>,
 ): NormalizeCronStoreJobsResult {

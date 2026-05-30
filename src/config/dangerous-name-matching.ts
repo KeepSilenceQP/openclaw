@@ -1,4 +1,3 @@
-// config dangerous name matching helpers and runtime behavior.
 import { asBoolean } from "../utils/boolean.js";
 import type { OpenClawConfig } from "./config.js";
 
@@ -25,14 +24,12 @@ function asObjectRecord(value: unknown): Record<string, unknown> | null {
   return value as Record<string, unknown>;
 }
 
-/** Reused helper for is Dangerous Name Matching Enabled behavior in src/config. */
 export function isDangerousNameMatchingEnabled(
   config: DangerousNameMatchingConfig | null | undefined,
 ): boolean {
   return config?.dangerouslyAllowNameMatching === true;
 }
 
-/** Reused helper for resolve Dangerous Name Matching Enabled behavior in src/config. */
 export function resolveDangerousNameMatchingEnabled(
   input: DangerousNameMatchingResolverInput,
 ): boolean {
@@ -42,7 +39,6 @@ export function resolveDangerousNameMatchingEnabled(
   return isDangerousNameMatchingEnabled(input.providerConfig);
 }
 
-/** Reused helper for collect Provider Dangerous Name Matching Scopes behavior in src/config. */
 export function collectProviderDangerousNameMatchingScopes(
   cfg: OpenClawConfig,
   provider: string,

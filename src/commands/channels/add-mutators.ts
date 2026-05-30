@@ -6,7 +6,6 @@ import { normalizeAccountId } from "../../routing/session-key.js";
 
 type ChatChannel = ChannelId;
 
-/** Reused helper for apply Account Name behavior in src/commands/channels. */
 export function applyAccountName(params: {
   cfg: OpenClawConfig;
   channel: ChatChannel;
@@ -20,7 +19,6 @@ export function applyAccountName(params: {
   return apply ? apply({ cfg: params.cfg, accountId, name: params.name }) : params.cfg;
 }
 
-/** Reused helper for apply Channel Account Config behavior in src/commands/channels. */
 export function applyChannelAccountConfig(params: {
   cfg: OpenClawConfig;
   channel: ChatChannel;

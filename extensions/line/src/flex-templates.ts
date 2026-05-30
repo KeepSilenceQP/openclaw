@@ -1,4 +1,3 @@
-// extensions/line/src flex templates helpers and runtime behavior.
 export {
   createActionCard,
   createCarousel,

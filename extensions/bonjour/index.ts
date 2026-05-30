@@ -1,4 +1,3 @@
-// extensions/bonjour index helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 
 function formatBonjourInstanceName(displayName: string) {

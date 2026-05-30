@@ -1,4 +1,3 @@
-// extensions/mattermost/src channel setup helpers and runtime behavior.
 import type { ChannelPlugin } from "./channel-api.js";
 import {
   describeMattermostAccount,

@@ -1,4 +1,3 @@
-// extensions/fal http config helpers and runtime behavior.
 import { type AuthProfileStore, type OpenClawConfig } from "openclaw/plugin-sdk/provider-auth";
 import { resolveApiKeyForProvider } from "openclaw/plugin-sdk/provider-auth-runtime";
 import {

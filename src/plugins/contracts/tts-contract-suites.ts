@@ -1,4 +1,3 @@
-// plugins/contracts tts contract suites helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   createEmptyPluginRegistry,
@@ -531,7 +530,6 @@ async function setupTtsSummarizationTest() {
   await setupSummarizationMocks();
 }
 
-/** Reused helper for describe Tts Config Contract behavior in src/plugins/contracts. */
 export function describeTtsConfigContract() {
   describe("tts config contract", () => {
     beforeEach(setupTtsContractTest);
@@ -850,7 +848,6 @@ export function describeTtsConfigContract() {
   });
 }
 
-/** Reused helper for describe Tts Summarization Contract behavior in src/plugins/contracts. */
 export function describeTtsSummarizationContract() {
   describe("tts summarization contract", () => {
     beforeEach(setupTtsSummarizationTest);
@@ -970,7 +967,6 @@ export function describeTtsSummarizationContract() {
   });
 }
 
-/** Reused helper for describe Tts Provider Runtime Contract behavior in src/plugins/contracts. */
 export function describeTtsProviderRuntimeContract() {
   describe("tts provider runtime contract", () => {
     beforeEach(setupTtsContractTest);
@@ -1226,7 +1222,6 @@ export function describeTtsProviderRuntimeContract() {
   });
 }
 
-/** Reused helper for describe Tts Auto Apply Contract behavior in src/plugins/contracts. */
 export function describeTtsAutoApplyContract() {
   describe("tts auto-apply contract", () => {
     beforeEach(setupTtsContractTest);

@@ -1,4 +1,3 @@
-// extensions/mistral onboard helpers and runtime behavior.
 import {
   createDefaultModelPresetAppliers,
   type OpenClawConfig,

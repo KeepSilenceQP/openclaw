@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/actions profile helpers and runtime behavior.
 import { getMatrixRuntime } from "../../runtime.js";
 import { syncMatrixOwnProfile, type MatrixProfileSyncResult } from "../profile.js";
 import { withResolvedActionClient } from "./client.js";

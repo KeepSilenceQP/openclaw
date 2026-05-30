@@ -1,4 +1,3 @@
-// src/auto-reply commands registry list helpers and runtime behavior.
 import { isCommandFlagEnabled } from "../config/commands.flags.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { SkillCommandSpec } from "../skills/types.js";
@@ -27,7 +26,6 @@ function buildSkillCommandDefinitions(skillCommands?: SkillCommandSpec[]): ChatC
   });
 }
 
-/** Reused helper for list Chat Commands behavior in src/auto-reply. */
 export function listChatCommands(params?: {
   skillCommands?: SkillCommandSpec[];
 }): ChatCommandDefinition[] {
@@ -38,7 +36,6 @@ export function listChatCommands(params?: {
   return [...commands, ...buildSkillCommandDefinitions(params.skillCommands)];
 }
 
-/** Reused helper for is Command Enabled behavior in src/auto-reply. */
 export function isCommandEnabled(cfg: OpenClawConfig, commandKey: string): boolean {
   if (commandKey === "config") {
     return isCommandFlagEnabled(cfg, "config");
@@ -58,7 +55,6 @@ export function isCommandEnabled(cfg: OpenClawConfig, commandKey: string): boole
   return true;
 }
 
-/** Reused helper for list Chat Commands For Config behavior in src/auto-reply. */
 export function listChatCommandsForConfig(
   cfg: OpenClawConfig,
   params?: { skillCommands?: SkillCommandSpec[] },

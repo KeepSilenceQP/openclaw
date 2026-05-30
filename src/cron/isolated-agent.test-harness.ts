@@ -1,16 +1,13 @@
-// cron isolated agent test harness helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { withTempHome as withTempHomeBase } from "openclaw/plugin-sdk/test-env";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import type { CronJob } from "./types.js";
 
-/** Reused helper for with Temp Cron Home behavior in src/cron. */
 export async function withTempCronHome<T>(fn: (home: string) => Promise<T>): Promise<T> {
   return withTempHomeBase(fn, { prefix: "openclaw-cron-" });
 }
 
-/** Reused helper for write Session Store behavior in src/cron. */
 export async function writeSessionStore(
   home: string,
   session: { lastProvider: string; lastTo: string; lastChannel?: string },
@@ -24,7 +21,6 @@ export async function writeSessionStore(
   });
 }
 
-/** Reused helper for write Session Store Entries behavior in src/cron. */
 export async function writeSessionStoreEntries(
   home: string,
   entries: Record<string, Record<string, unknown>>,
@@ -36,7 +32,6 @@ export async function writeSessionStoreEntries(
   return storePath;
 }
 
-/** Reused helper for make Cfg behavior in src/cron. */
 export function makeCfg(
   home: string,
   storePath: string,
@@ -54,7 +49,6 @@ export function makeCfg(
   return { ...base, ...overrides };
 }
 
-/** Reused helper for make Job behavior in src/cron. */
 export function makeJob(payload: CronJob["payload"]): CronJob {
   const now = Date.now();
   return {

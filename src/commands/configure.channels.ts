@@ -66,7 +66,6 @@ function compareChannelRemovalChoices(
   );
 }
 
-/** Reused helper for remove Channel Config Wizard behavior in src/commands. */
 export async function removeChannelConfigWizard(
   cfg: OpenClawConfig,
   runtime: RuntimeEnv,

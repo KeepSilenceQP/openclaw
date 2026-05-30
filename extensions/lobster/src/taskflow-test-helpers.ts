@@ -1,4 +1,3 @@
-// extensions/lobster/src taskflow test helpers helpers and runtime behavior.
 import { vi } from "vitest";
 import type { OpenClawPluginApi } from "../runtime-api.js";
 

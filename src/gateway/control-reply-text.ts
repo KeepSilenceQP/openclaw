@@ -1,4 +1,3 @@
-// gateway control reply text helpers and runtime behavior.
 import { isSilentReplyText, SILENT_REPLY_TOKEN } from "../auto-reply/tokens.js";
 
 const SUPPRESSED_CONTROL_REPLY_TOKENS = [

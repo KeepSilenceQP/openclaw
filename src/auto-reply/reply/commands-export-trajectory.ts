@@ -58,7 +58,6 @@ const defaultExportTrajectoryCommandDeps: ExportTrajectoryCommandDeps = {
   deliverPrivateTrajectoryReply: deliverPrivateTrajectoryReply,
 };
 
-/** Reused helper for build Export Trajectory Command Reply behavior in src/auto-reply/reply. */
 export async function buildExportTrajectoryCommandReply(
   params: HandleCommandsParams,
   deps: Partial<ExportTrajectoryCommandDeps> = {},
@@ -124,7 +123,6 @@ async function buildExportTrajectoryApprovalReply(
   };
 }
 
-/** Reused helper for build Export Trajectory Reply behavior in src/auto-reply/reply. */
 export async function buildExportTrajectoryReply(
   params: HandleCommandsParams,
 ): Promise<ReplyPayload> {

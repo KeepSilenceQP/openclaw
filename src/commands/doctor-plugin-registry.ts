@@ -246,7 +246,6 @@ function removeManagedNpmPackageLockDependency(params: {
   }
 }
 
-/** Reused helper for maybe Repair Stale Managed Npm Bundled Plugins behavior in src/commands. */
 export function maybeRepairStaleManagedNpmBundledPlugins(
   params: PluginRegistryDoctorRepairParams,
 ): boolean {
@@ -286,7 +285,6 @@ export function maybeRepairStaleManagedNpmBundledPlugins(
   return true;
 }
 
-/** Reused helper for maybe Repair Stale Local Bundled Plugin Install Records behavior in src/commands. */
 export async function maybeRepairStaleLocalBundledPluginInstallRecords(
   params: PluginRegistryDoctorRepairParams,
 ): Promise<string[]> {
@@ -317,7 +315,6 @@ export async function maybeRepairStaleLocalBundledPluginInstallRecords(
   return stale.map((record) => record.pluginId);
 }
 
-/** Reused helper for maybe Repair Managed Npm Open Claw Peer Links behavior in src/commands. */
 export async function maybeRepairManagedNpmOpenClawPeerLinks(
   params: PluginRegistryDoctorRepairParams,
 ): Promise<boolean> {
@@ -385,7 +382,6 @@ async function loadInstallRecordsWithoutPluginIds(
   return records;
 }
 
-/** Reused helper for maybe Repair Plugin Registry State behavior in src/commands. */
 export async function maybeRepairPluginRegistryState(
   params: PluginRegistryDoctorRepairParams,
 ): Promise<OpenClawConfig> {

@@ -54,7 +54,6 @@ function resolveReplyMediaMaxBytes(params: {
     : MEDIA_MAX_BYTES;
 }
 
-/** Reused helper for create Reply Media Path Normalizer behavior in src/auto-reply/reply. */
 export function createReplyMediaPathNormalizer(params: {
   cfg: OpenClawConfig;
   sessionKey?: string;
@@ -257,12 +256,10 @@ export function createReplyMediaPathNormalizer(params: {
   };
 }
 
-/** Shared type for Reply Media Context in src/auto-reply/reply. */
 export type ReplyMediaContext = {
   normalizePayload: (payload: ReplyPayload) => Promise<ReplyPayload>;
 };
 
-/** Reused helper for create Reply Media Context behavior in src/auto-reply/reply. */
 export function createReplyMediaContext(
   params: Parameters<typeof createReplyMediaPathNormalizer>[0],
 ): ReplyMediaContext {

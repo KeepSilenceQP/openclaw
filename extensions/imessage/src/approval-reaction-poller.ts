@@ -1,4 +1,3 @@
-// extensions/imessage/src approval reaction poller helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   asDateTimestampMs,

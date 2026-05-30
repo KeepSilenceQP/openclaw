@@ -32,7 +32,6 @@ function resolveAuthProviderCandidates(params: {
   ];
 }
 
-/** Reused helper for warn If Model Config Looks Off behavior in src/commands. */
 export async function warnIfModelConfigLooksOff(
   config: OpenClawConfig,
   prompter: WizardPrompter,

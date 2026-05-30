@@ -1,4 +1,3 @@
-// extensions/telegram/src webhook helpers and runtime behavior.
 import { createServer } from "node:http";
 import type { IncomingMessage } from "node:http";
 import net from "node:net";

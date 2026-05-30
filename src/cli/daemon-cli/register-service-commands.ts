@@ -53,7 +53,6 @@ function resolveRestartOptions(cmdOpts: DaemonLifecycleOptions, command?: Comman
   };
 }
 
-/** Reused helper for add Gateway Service Commands behavior in src/cli/daemon-cli. */
 export function addGatewayServiceCommands(parent: Command, opts?: { statusDescription?: string }) {
   parent
     .command("status")

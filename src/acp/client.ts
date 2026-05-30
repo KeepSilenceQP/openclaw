@@ -191,7 +191,6 @@ async function createAcpClient(opts: AcpClientOptions = {}): Promise<AcpClientHa
   };
 }
 
-/** Reused helper for run Acp Client Interactive behavior in src/acp. */
 export async function runAcpClientInteractive(opts: AcpClientOptions = {}): Promise<void> {
   const { client, agent, sessionId } = await createAcpClient(opts);
 

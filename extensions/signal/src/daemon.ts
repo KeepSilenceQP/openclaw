@@ -1,4 +1,3 @@
-// extensions/signal/src daemon helpers and runtime behavior.
 import { spawn } from "node:child_process";
 import os from "node:os";
 import path from "node:path";

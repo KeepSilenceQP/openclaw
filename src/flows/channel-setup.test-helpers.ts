@@ -1,4 +1,3 @@
-// flows channel setup test helpers helpers and runtime behavior.
 type ChannelMeta = import("../channels/plugins/types.core.js").ChannelMeta;
 type ChannelPluginCatalogEntry = import("../channels/plugins/catalog.js").ChannelPluginCatalogEntry;
 type ResolveChannelSetupEntries =
@@ -6,7 +5,6 @@ type ResolveChannelSetupEntries =
 
 type ChannelSetupEntries = ReturnType<ResolveChannelSetupEntries>;
 
-/** Reused helper for make Meta behavior in src/flows. */
 export function makeMeta(
   id: string,
   label: string,
@@ -22,7 +20,6 @@ export function makeMeta(
   };
 }
 
-/** Reused helper for make Catalog Entry behavior in src/flows. */
 export function makeCatalogEntry(
   id: string,
   label: string,
@@ -37,7 +34,6 @@ export function makeCatalogEntry(
   };
 }
 
-/** Reused helper for make Channel Setup Entries behavior in src/flows. */
 export function makeChannelSetupEntries(
   overrides: Partial<ChannelSetupEntries> = {},
 ): ChannelSetupEntries {

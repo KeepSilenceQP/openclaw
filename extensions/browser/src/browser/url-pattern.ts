@@ -1,4 +1,3 @@
-// extensions/browser/src/browser url pattern helpers and runtime behavior.
 function wildcardPatternToRegExp(pattern: string): RegExp {
   let source = "^";
   for (let index = 0; index < pattern.length; index += 1) {

@@ -39,7 +39,6 @@ function formatLockLine(lock: SessionLockInspection): string {
   return `- ${shortenHomePath(lock.lockPath)} ${pidStatus} ${ageStatus} ${staleStatus}${removedStatus}`;
 }
 
-/** Reused helper for note Session Lock Health behavior in src/commands. */
 export async function noteSessionLockHealth(params?: {
   shouldRepair?: boolean;
   config?: SessionWriteLockAcquireTimeoutConfig;

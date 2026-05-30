@@ -1,4 +1,3 @@
-// gateway cli session history helpers and runtime behavior.
 import { normalizeProviderId } from "../agents/model-selection.js";
 import type { SessionEntry } from "../config/sessions.js";
 import {
@@ -13,7 +12,6 @@ import { mergeImportedChatHistoryMessages } from "./cli-session-history.merge.js
 
 const ANTHROPIC_PROVIDER = "anthropic";
 
-/** Re-exported API for src/gateway. */
 export {
   mergeImportedChatHistoryMessages,
   readClaudeCliFallbackSeed,
@@ -21,10 +19,8 @@ export {
   resolveClaudeCliBindingSessionId,
   resolveClaudeCliSessionFilePath,
 };
-/** Re-exported API for src/gateway, starting with Claude Cli Fallback Seed. */
 export type { ClaudeCliFallbackSeed };
 
-/** Reused helper for augment Chat History With Cli Session Imports behavior in src/gateway. */
 export function augmentChatHistoryWithCliSessionImports(params: {
   entry: SessionEntry | undefined;
   provider?: string;

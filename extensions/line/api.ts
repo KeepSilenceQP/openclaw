@@ -1,4 +1,3 @@
-// extensions/line api helpers and runtime behavior.
 /** Re-exported line plugin public API. */
 export type {
   ChannelAccountSnapshot,

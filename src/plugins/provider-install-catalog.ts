@@ -1,4 +1,3 @@
-// plugins provider install catalog helpers and runtime behavior.
 import {
   loadOpenClawProviderIndex,
   type OpenClawProviderIndexProvider,
@@ -25,7 +24,6 @@ import {
   type ProviderAuthChoiceMetadata,
 } from "./provider-auth-choices.js";
 
-/** Shared type for Provider Install Catalog Entry in src/plugins. */
 export type ProviderInstallCatalogEntry = ProviderAuthChoiceMetadata & {
   label: string;
   origin: PluginOrigin;
@@ -371,7 +369,6 @@ function resolveOfficialExternalProviderInstallCatalogEntries(params: {
   return entries;
 }
 
-/** Reused helper for resolve Provider Install Catalog Entries behavior in src/plugins. */
 export function resolveProviderInstallCatalogEntries(
   params?: ProviderInstallCatalogParams,
 ): ProviderInstallCatalogEntry[] {
@@ -414,7 +411,6 @@ export function resolveProviderInstallCatalogEntries(
   );
 }
 
-/** Reused helper for resolve Provider Install Catalog Entry behavior in src/plugins. */
 export function resolveProviderInstallCatalogEntry(
   choiceId: string,
   params?: ProviderInstallCatalogParams,

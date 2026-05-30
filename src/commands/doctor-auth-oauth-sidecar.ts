@@ -44,7 +44,6 @@ type LegacyOAuthUnreferencedSidecar = {
   sidecarPath: string;
 };
 
-/** Shared type for Legacy OAuth Sidecar Repair Result in src/commands. */
 export type LegacyOAuthSidecarRepairResult = {
   detected: string[];
   changes: string[];
@@ -187,7 +186,6 @@ function backupLegacyOAuthSidecarStore(authPath: string, now: () => number): str
   return backupPath;
 }
 
-/** Reused helper for maybe Repair Legacy OAuth Sidecar Profiles behavior in src/commands. */
 export async function maybeRepairLegacyOAuthSidecarProfiles(params: {
   cfg: OpenClawConfig;
   prompter: Pick<DoctorPrompter, "confirmAutoFix">;
@@ -325,10 +323,8 @@ export async function maybeRepairLegacyOAuthSidecarProfiles(params: {
   return result;
 }
 
-/** Reused constant for testing behavior in src/commands. */
 export const testing = {
   buildLegacyOAuthSecretAad: legacyOAuthSidecarTestUtils.buildLegacyOAuthSecretAad,
   buildLegacyOAuthSecretKey: legacyOAuthSidecarTestUtils.buildLegacyOAuthSecretKey,
 };
-/** Re-exported API for src/commands, starting with testing. */
 export { testing as __testing };

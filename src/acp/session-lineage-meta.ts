@@ -7,7 +7,6 @@ const SUBAGENT_CONTROL_SCOPES = ["children", "none"] as const;
 type SubagentRole = (typeof SUBAGENT_ROLES)[number];
 type SubagentControlScope = (typeof SUBAGENT_CONTROL_SCOPES)[number];
 
-/** Shared type for Acp Session Lineage Meta in src/acp. */
 export type AcpSessionLineageMeta = {
   sessionKey: string;
   kind?: string;

@@ -30,7 +30,6 @@ function isResetAuthorized(params: HandleCommandsParams): boolean {
   });
 }
 
-/** Reused helper for maybe Handle Reset Command behavior in src/auto-reply/reply. */
 export async function maybeHandleResetCommand(
   params: HandleCommandsParams,
 ): Promise<CommandHandlerResult | null> {

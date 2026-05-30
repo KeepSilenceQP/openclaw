@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers import fresh helpers and runtime behavior.
 export async function importFreshModule<TModule>(
   from: string,
   specifier: string,

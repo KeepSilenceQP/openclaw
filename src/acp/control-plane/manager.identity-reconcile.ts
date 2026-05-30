@@ -13,7 +13,6 @@ import type { AcpRuntime, AcpRuntimeHandle, AcpRuntimeStatus } from "../runtime/
 import type { SessionAcpMeta, SessionEntry } from "./manager.types.js";
 import { hasLegacyAcpIdentityProjection } from "./manager.utils.js";
 
-/** Reused helper for reconcile Manager Runtime Session Identifiers behavior in src/acp/control-plane. */
 export async function reconcileManagerRuntimeSessionIdentifiers(params: {
   cfg: OpenClawConfig;
   sessionKey: string;

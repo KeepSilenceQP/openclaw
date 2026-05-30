@@ -1,4 +1,3 @@
-// gateway/server event loop health helpers and runtime behavior.
 import { monitorEventLoopDelay, performance } from "node:perf_hooks";
 
 const EVENT_LOOP_MONITOR_RESOLUTION_MS = 20;
@@ -13,10 +12,8 @@ type EventLoopDelayMonitor = ReturnType<typeof monitorEventLoopDelay>;
 type EventLoopUtilization = ReturnType<typeof performance.eventLoopUtilization>;
 type CpuUsage = ReturnType<typeof process.cpuUsage>;
 
-/** Shared type for Gateway Event Loop Health Reason in src/gateway/server. */
 export type GatewayEventLoopHealthReason = "event_loop_delay" | "event_loop_utilization" | "cpu";
 
-/** Shared type for Gateway Event Loop Health in src/gateway/server. */
 export type GatewayEventLoopHealth = {
   degraded: boolean;
   reasons: GatewayEventLoopHealthReason[];
@@ -27,7 +24,6 @@ export type GatewayEventLoopHealth = {
   cpuCoreRatio: number;
 };
 
-/** Shared type for Gateway Event Loop Health Monitor in src/gateway/server. */
 export type GatewayEventLoopHealthMonitor = {
   snapshot: () => GatewayEventLoopHealth | undefined;
   stop: () => void;
@@ -61,7 +57,6 @@ function nanosecondsToMilliseconds(value: number): number {
   return roundMetric(value / 1_000_000, 1);
 }
 
-/** Reused helper for classify Gateway Event Loop Health Reasons behavior in src/gateway/server. */
 export function classifyGatewayEventLoopHealthReasons(
   metrics: GatewayEventLoopHealthMetrics,
 ): GatewayEventLoopHealthReason[] {
@@ -95,7 +90,6 @@ export function classifyGatewayEventLoopHealthReasons(
   return reasons;
 }
 
-/** Reused helper for create Gateway Event Loop Health Monitor behavior in src/gateway/server. */
 export function createGatewayEventLoopHealthMonitor(
   deps: GatewayEventLoopHealthMonitorDeps = {},
 ): GatewayEventLoopHealthMonitor {

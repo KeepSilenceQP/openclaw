@@ -1,4 +1,3 @@
-// gateway node catalog helpers and runtime behavior.
 import { hasEffectivePairedDeviceRole, type PairedDevice } from "../infra/device-pairing.js";
 import type { NodePairingPairedNode } from "../infra/node-pairing.js";
 import type { NodeListNode } from "../shared/node-list-types.js";
@@ -170,7 +169,6 @@ function compareKnownNodes(left: NodeListNode, right: NodeListNode): number {
   return left.nodeId.localeCompare(right.nodeId);
 }
 
-/** Reused helper for create Known Node Catalog behavior in src/gateway. */
 export function createKnownNodeCatalog(params: {
   pairedDevices: readonly PairedDevice[];
   pairedNodes?: readonly NodePairingPairedNode[];
@@ -211,14 +209,12 @@ export function createKnownNodeCatalog(params: {
   return { entriesById };
 }
 
-/** Reused helper for list Known Nodes behavior in src/gateway. */
 export function listKnownNodes(catalog: KnownNodeCatalog): NodeListNode[] {
   return [...catalog.entriesById.values()]
     .map((entry) => entry.effective)
     .toSorted(compareKnownNodes);
 }
 
-/** Reused helper for get Known Node Entry behavior in src/gateway. */
 export function getKnownNodeEntry(
   catalog: KnownNodeCatalog,
   nodeId: string,
@@ -226,7 +222,6 @@ export function getKnownNodeEntry(
   return catalog.entriesById.get(nodeId) ?? null;
 }
 
-/** Reused helper for get Known Node behavior in src/gateway. */
 export function getKnownNode(catalog: KnownNodeCatalog, nodeId: string): NodeListNode | null {
   return getKnownNodeEntry(catalog, nodeId)?.effective ?? null;
 }

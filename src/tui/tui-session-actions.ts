@@ -1,4 +1,3 @@
-// tui tui session actions helpers and runtime behavior.
 import type { TUI } from "@earendil-works/pi-tui";
 import type { SessionsPatchResult } from "../../packages/gateway-protocol/src/index.js";
 import { resolveSessionInfoModelSelection } from "../agents/model-selection-display.js";
@@ -49,7 +48,6 @@ type SessionInfoEntry = SessionInfo & {
   providerOverride?: string;
 };
 
-/** Reused helper for create Session Actions behavior in src/tui. */
 export function createSessionActions(context: SessionActionContext) {
   const {
     client,

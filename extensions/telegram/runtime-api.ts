@@ -1,4 +1,3 @@
-// extensions/telegram runtime api helpers and runtime behavior.
 /** Re-exported telegram plugin public API, starting with Open Claw Plugin Api. */
 export type { OpenClawPluginApi } from "openclaw/plugin-sdk/plugin-entry";
 /** Re-exported telegram plugin public API, starting with Channel Message Action Adapter. */

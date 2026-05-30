@@ -1,4 +1,3 @@
-// plugins hardlink policy helpers and runtime behavior.
 import path from "node:path";
 import { resolveIsNixMode } from "../config/paths.js";
 import { safeRealpathSync } from "./path-safety.js";
@@ -15,7 +14,6 @@ const NIX_STORE_ROOT = "/nix/store";
 // - bundled: plugins shipped with OpenClaw itself, not user-installed code.
 // - /nix/store in OPENCLAW_NIX_MODE: immutable Nix package outputs, where
 //   hardlinked files are normal package-store layout rather than user mutation.
-/** Reused helper for is Nix Store Plugin Root behavior in src/plugins. */
 export function isNixStorePluginRoot(
   rootDir: string,
   realpathCache?: Map<string, string>,
@@ -24,7 +22,6 @@ export function isNixStorePluginRoot(
   return rootRealPath === NIX_STORE_ROOT || rootRealPath.startsWith(`${NIX_STORE_ROOT}/`);
 }
 
-/** Reused helper for should Reject Hardlinked Plugin Files behavior in src/plugins. */
 export function shouldRejectHardlinkedPluginFiles(params: {
   origin: PluginOrigin;
   rootDir: string;

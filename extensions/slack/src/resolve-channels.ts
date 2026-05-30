@@ -1,4 +1,3 @@
-// extensions/slack/src resolve channels helpers and runtime behavior.
 import type { WebClient } from "@slack/web-api";
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { createSlackWebClient } from "./client.js";

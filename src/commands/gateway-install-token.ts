@@ -111,7 +111,6 @@ function formatAmbiguousGatewayAuthModeReason(): string {
   ].join(" ");
 }
 
-/** Reused helper for resolve Gateway Install Token behavior in src/commands. */
 export async function resolveGatewayInstallToken(
   options: GatewayInstallTokenOptions,
 ): Promise<GatewayInstallTokenResolution> {

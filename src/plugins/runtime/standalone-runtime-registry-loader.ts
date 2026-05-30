@@ -1,4 +1,3 @@
-// plugins/runtime standalone runtime registry loader helpers and runtime behavior.
 import {
   type ActiveRuntimePluginRegistrySurface,
   getLoadedRuntimePluginRegistry,
@@ -49,7 +48,6 @@ function installStandaloneRegistry(
   }
 }
 
-/** Reused helper for ensure Standalone Runtime Plugin Registry Loaded behavior in src/plugins/runtime. */
 export function ensureStandaloneRuntimePluginRegistryLoaded(params: {
   loadOptions: PluginLoadOptions;
   forceLoad?: boolean;

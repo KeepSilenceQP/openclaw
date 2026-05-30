@@ -8,7 +8,6 @@ export {
   resolveOutboundSendDep,
   sanitizeForPlainText,
 } from "./channel-outbound.js";
-/** Re-exported API for src/plugin-sdk. */
 export type {
   OutboundDeliveryFormattingOptions,
   OutboundIdentity,
@@ -21,5 +20,4 @@ export type {
 export { deliverOutboundPayloads } from "../infra/outbound/deliver.js";
 /** @deprecated Direct outbound delivery params are compatibility/runtime substrate. */
 export type { DeliverOutboundPayloadsParams } from "../infra/outbound/deliver.js";
-/** Re-exported API for src/plugin-sdk, starting with type. */
 export { type OutboundDeliveryResult } from "../infra/outbound/deliver.js";

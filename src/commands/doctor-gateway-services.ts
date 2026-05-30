@@ -349,7 +349,6 @@ async function cleanupLegacyLinuxUserServices(
   return { removed, failed };
 }
 
-/** Reused helper for maybe Repair Gateway Service Config behavior in src/commands. */
 export async function maybeRepairGatewayServiceConfig(
   cfg: OpenClawConfig,
   mode: "local" | "remote",
@@ -643,7 +642,6 @@ export async function maybeRepairGatewayServiceConfig(
   }
 }
 
-/** Reused helper for maybe Scan Extra Gateway Services behavior in src/commands. */
 export async function maybeScanExtraGatewayServices(
   options: DoctorOptions,
   runtime: RuntimeEnv,

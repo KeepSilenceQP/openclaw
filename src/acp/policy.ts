@@ -6,7 +6,6 @@ const ACP_DISABLED_MESSAGE = "ACP is disabled by policy (`acp.enabled=false`).";
 const ACP_DISPATCH_DISABLED_MESSAGE =
   "ACP dispatch is disabled by policy (`acp.dispatch.enabled=false`).";
 
-/** Shared type for Acp Dispatch Policy State in src/acp. */
 export type AcpDispatchPolicyState = "enabled" | "acp_disabled" | "dispatch_disabled";
 
 /** Return whether ACP is globally enabled by config policy. */

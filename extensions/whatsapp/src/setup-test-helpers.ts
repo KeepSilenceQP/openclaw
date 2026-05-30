@@ -1,4 +1,3 @@
-// extensions/whatsapp/src setup test helpers helpers and runtime behavior.
 import { expect } from "vitest";
 
 type WhatsAppSetupConfig = {

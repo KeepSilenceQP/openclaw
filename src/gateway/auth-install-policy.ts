@@ -1,4 +1,3 @@
-// gateway auth install policy helpers and runtime behavior.
 import { collectDurableServiceEnvVars } from "../config/state-dir-dotenv.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { hasConfiguredSecretInput } from "../config/types.secrets.js";
@@ -33,7 +32,6 @@ function hasDurableGatewayPasswordEnvForInstall(
   );
 }
 
-/** Reused helper for should Require Gateway Token For Install behavior in src/gateway. */
 export function shouldRequireGatewayTokenForInstall(
   cfg: OpenClawConfig,
   env: NodeJS.ProcessEnv,

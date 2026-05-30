@@ -1,4 +1,3 @@
-// extensions/nostr index helpers and runtime behavior.
 import {
   defineBundledChannelEntry,
   loadBundledEntryExportSync,

@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers stt live audio helpers and runtime behavior.
 import { expect } from "vitest";
 import type {
   RealtimeTranscriptionProviderConfig,

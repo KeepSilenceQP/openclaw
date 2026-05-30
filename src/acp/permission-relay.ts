@@ -5,10 +5,8 @@ import type {
 } from "@agentclientprotocol/sdk";
 import { normalizeOptionalString as readNonEmptyString } from "../shared/string-coerce.js";
 
-/** Shared type for Gateway Exec Approval Decision in src/acp. */
 export type GatewayExecApprovalDecision = "allow-once" | "allow-always" | "deny";
 
-/** Shared type for Gateway Exec Approval Event in src/acp. */
 export type GatewayExecApprovalEvent = {
   approvalId: string;
   command?: string;
@@ -17,7 +15,6 @@ export type GatewayExecApprovalEvent = {
   toolCallId?: string;
 };
 
-/** Shared type for Gateway Exec Approval Details in src/acp. */
 export type GatewayExecApprovalDetails = {
   allowedDecisions?: unknown;
   commandPreview?: unknown;

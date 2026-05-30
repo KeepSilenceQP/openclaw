@@ -1,4 +1,3 @@
-// shared import specifier helpers and runtime behavior.
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 

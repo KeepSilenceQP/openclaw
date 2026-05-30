@@ -1,5 +1,3 @@
-// shared lazy runtime helpers and runtime behavior.
-/** Reused helper for create Lazy Runtime Surface behavior in src/shared. */
 export function createLazyRuntimeSurface<TModule, TSurface>(
   importer: () => Promise<TModule>,
   select: (module: TModule) => TSurface,
@@ -26,7 +24,6 @@ export function createLazyRuntimeNamedExport<TModule, const TKey extends keyof T
   return createLazyRuntimeSurface(importer, (module) => module[key]);
 }
 
-/** Reused helper for create Lazy Runtime Method behavior in src/shared. */
 export function createLazyRuntimeMethod<TSurface, TArgs extends unknown[], TResult>(
   load: () => Promise<TSurface>,
   select: (surface: TSurface) => (...args: TArgs) => TResult,
@@ -38,7 +35,6 @@ export function createLazyRuntimeMethod<TSurface, TArgs extends unknown[], TResu
   return invoke;
 }
 
-/** Reused helper for create Lazy Runtime Method Binder behavior in src/shared. */
 export function createLazyRuntimeMethodBinder<TSurface>(load: () => Promise<TSurface>) {
   return function <TArgs extends unknown[], TResult>(
     select: (surface: TSurface) => (...args: TArgs) => TResult,

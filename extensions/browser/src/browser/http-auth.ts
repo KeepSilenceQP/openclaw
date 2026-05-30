@@ -1,4 +1,3 @@
-// extensions/browser/src/browser http auth helpers and runtime behavior.
 import type { IncomingMessage } from "node:http";
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { safeEqualSecret } from "../security/secret-equal.js";

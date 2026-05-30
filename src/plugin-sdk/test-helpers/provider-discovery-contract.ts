@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers provider discovery contract helpers and runtime behavior.
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 import type { AuthProfileStore, OpenClawConfig } from "../provider-auth.js";
 import {

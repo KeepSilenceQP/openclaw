@@ -1,4 +1,3 @@
-// extensions/diffs api helpers and runtime behavior.
 /** Re-exported diffs plugin public API, starting with Open Claw Config. */
 export type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 /** Re-exported diffs plugin public API. */

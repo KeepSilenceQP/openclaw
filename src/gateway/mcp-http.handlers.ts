@@ -1,4 +1,3 @@
-// gateway mcp http handlers helpers and runtime behavior.
 import crypto from "node:crypto";
 import { runBeforeToolCallHook, type HookContext } from "../agents/agent-tools.before-tool-call.js";
 import { formatErrorMessage } from "../infra/errors.js";
@@ -33,7 +32,6 @@ function normalizeToolCallContent(result: unknown): McpTextContent[] {
   ];
 }
 
-/** Reused helper for handle Mcp Json Rpc behavior in src/gateway. */
 export async function handleMcpJsonRpc(params: {
   message: JsonRpcRequest;
   tools: McpLoopbackTool[];

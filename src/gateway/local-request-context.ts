@@ -1,4 +1,3 @@
-// gateway local request context helpers and runtime behavior.
 import { loadManifestModelCatalog } from "../agents/model-catalog.js";
 import type { CliDeps } from "../cli/deps.types.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -42,7 +41,6 @@ const unavailableCron: CronServiceContract = {
   wake: () => ({ ok: false, reason: "unwakeable-session-key" }),
 };
 
-/** Reused helper for create Local Gateway Request Context behavior in src/gateway. */
 export function createLocalGatewayRequestContext(
   params: LocalGatewayRequestContextParams,
 ): GatewayRequestContext {
@@ -146,7 +144,6 @@ export function createLocalGatewayRequestContext(
   };
 }
 
-/** Reused helper for with Local Gateway Request Scope behavior in src/gateway. */
 export function withLocalGatewayRequestScope<T>(params: LocalGatewayScopeParams, run: () => T): T {
   const existing = getPluginRuntimeGatewayRequestScope();
   if (existing?.context) {

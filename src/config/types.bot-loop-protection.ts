@@ -1,5 +1,3 @@
-// config types bot loop protection helpers and runtime behavior.
-/** Shared type for Channel Bot Loop Protection Config in src/config. */
 export type ChannelBotLoopProtectionConfig = {
   /** Enable pair loop protection for channels that support it. */
   enabled?: boolean;

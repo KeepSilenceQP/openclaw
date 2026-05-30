@@ -1,4 +1,3 @@
-// gateway/server/ws-connection message handler helpers and runtime behavior.
 import fs from "node:fs";
 import type { IncomingMessage } from "node:http";
 import os from "node:os";
@@ -199,7 +198,6 @@ function resolveLocalNodeId(): string | null {
   return cachedLocalNodeId;
 }
 
-/** Shared type for Ws Origin Check Metrics in src/gateway/server. */
 export type WsOriginCheckMetrics = {
   hostHeaderFallbackAccepted: number;
 };
@@ -307,7 +305,6 @@ function resolvePinnedClientMetadata(params: {
   };
 }
 
-/** Shared type for Gateway Ws Message Handler Params in src/gateway/server. */
 export type GatewayWsMessageHandlerParams = {
   socket: WebSocket;
   upgradeReq: IncomingMessage;
@@ -353,7 +350,6 @@ export type GatewayWsMessageHandlerParams = {
   logWsControl: SubsystemLogger;
 };
 
-/** Reused helper for attach Gateway Ws Message Handler behavior in src/gateway/server. */
 export function attachGatewayWsMessageHandler(params: GatewayWsMessageHandlerParams) {
   const {
     socket,
@@ -2069,9 +2065,7 @@ function setSocketMaxPayload(socket: WebSocket, maxPayload: number): void {
   }
 }
 
-/** Reused constant for testing behavior in src/gateway/server. */
 export const testing = {
   resolvePinnedClientMetadata,
 };
-/** Re-exported API for src/gateway/server, starting with testing. */
 export { testing as __testing };

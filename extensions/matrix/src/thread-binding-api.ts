@@ -1,4 +1,3 @@
-// extensions/matrix/src thread binding api helpers and runtime behavior.
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { resolveMatrixTargetIdentity } from "./matrix/target-ids.js";
 

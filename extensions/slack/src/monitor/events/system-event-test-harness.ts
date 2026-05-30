@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor/events system event test harness helpers and runtime behavior.
 import type { SlackMonitorContext } from "../context.js";
 
 export type SlackSystemEventHandler = (args: {

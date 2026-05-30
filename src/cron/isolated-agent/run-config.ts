@@ -1,4 +1,3 @@
-// cron/isolated-agent run config helpers and runtime behavior.
 import type { resolveAgentConfig } from "../../agents/agent-scope.js";
 import type { AgentDefaultsConfig } from "../../config/types.js";
 
@@ -33,7 +32,6 @@ function mergeCronAgentModelOverride(params: {
   return nextDefaults;
 }
 
-/** Reused helper for build Cron Agent Defaults Config behavior in src/cron/isolated-agent. */
 export function buildCronAgentDefaultsConfig(params: {
   defaults?: AgentDefaultsConfig;
   agentConfigOverride?: ResolvedAgentConfig;

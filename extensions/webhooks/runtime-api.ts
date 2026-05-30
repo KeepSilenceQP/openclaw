@@ -1,4 +1,3 @@
-// extensions/webhooks runtime api helpers and runtime behavior.
 /** Re-exported webhooks plugin public API. */
 export {
   createFixedWindowRateLimiter,

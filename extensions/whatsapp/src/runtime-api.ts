@@ -1,4 +1,3 @@
-// extensions/whatsapp/src runtime api helpers and runtime behavior.
 /** Re-exported whatsapp plugin public API, starting with get Chat Channel Meta. */
 export { getChatChannelMeta, type ChannelPlugin } from "openclaw/plugin-sdk/core";
 /** Re-exported whatsapp plugin public API, starting with build Channel Config Schema. */

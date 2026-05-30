@@ -1,4 +1,3 @@
-// config zod schema channels config helpers and runtime behavior.
 import { z } from "zod";
 import type { ChannelsConfig } from "./types.channels.js";
 import { ChannelHeartbeatVisibilitySchema } from "./zod-schema.channels.js";
@@ -8,7 +7,6 @@ const ChannelModelByChannelSchema = z
   .record(z.string(), z.record(z.string(), z.string()))
   .optional();
 
-/** Reused constant for Channel Bot Loop Protection Schema behavior in src/config. */
 export const ChannelBotLoopProtectionSchema = z
   .object({
     enabled: z.boolean().optional(),
@@ -50,7 +48,6 @@ function addLegacyChannelAcpBindingIssues(
   }
 }
 
-/** Reused constant for Channels Schema behavior in src/config. */
 export const ChannelsSchema: z.ZodType<ChannelsConfig | undefined> = z
   .object({
     defaults: z

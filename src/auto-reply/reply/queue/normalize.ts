@@ -2,7 +2,6 @@
 import { normalizeOptionalLowercaseString } from "../../../shared/string-coerce.js";
 import type { QueueDropPolicy, QueueMode } from "./types.js";
 
-/** Reused helper for normalize Queue Mode behavior in src/auto-reply/reply. */
 export function normalizeQueueMode(raw?: string): QueueMode | undefined {
   const cleaned = normalizeOptionalLowercaseString(raw);
   if (!cleaned) {
@@ -23,7 +22,6 @@ export function normalizeQueueMode(raw?: string): QueueMode | undefined {
   return undefined;
 }
 
-/** Reused helper for normalize Persisted Queue Mode behavior in src/auto-reply/reply. */
 export function normalizePersistedQueueMode(raw?: string): QueueMode | undefined {
   const normalized = normalizeQueueMode(raw);
   if (normalized) {
@@ -39,7 +37,6 @@ export function normalizePersistedQueueMode(raw?: string): QueueMode | undefined
   return undefined;
 }
 
-/** Reused helper for normalize Queue Drop Policy behavior in src/auto-reply/reply. */
 export function normalizeQueueDropPolicy(raw?: string): QueueDropPolicy | undefined {
   const cleaned = normalizeOptionalLowercaseString(raw);
   if (!cleaned) {

@@ -13,7 +13,6 @@ import {
 } from "../plugins/status.js";
 import type { RuntimeEnv } from "../runtime.js";
 
-/** Reused helper for require Valid Config File Snapshot behavior in src/commands. */
 export async function requireValidConfigFileSnapshot(
   runtime: RuntimeEnv,
   opts?: { includeCompatibilityAdvisory?: boolean },
@@ -53,7 +52,6 @@ export async function requireValidConfigFileSnapshot(
   return snapshot;
 }
 
-/** Reused helper for require Valid Config Snapshot behavior in src/commands. */
 export async function requireValidConfigSnapshot(
   runtime: RuntimeEnv,
   opts?: { includeCompatibilityAdvisory?: boolean },

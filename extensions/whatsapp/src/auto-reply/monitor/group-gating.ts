@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply/monitor group gating helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { resolveWhatsAppGroupsConfigPath } from "../../group-config-path.js";
 import {

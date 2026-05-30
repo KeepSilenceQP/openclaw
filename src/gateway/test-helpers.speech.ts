@@ -1,4 +1,3 @@
-// gateway test helpers speech helpers and runtime behavior.
 import type { SpeechProviderPlugin } from "../plugins/types.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import {
@@ -58,7 +57,6 @@ const createStubSpeechProvider = (params: StubSpeechProviderOptions): SpeechProv
     })),
 });
 
-/** Reused helper for create Default Gateway Test Speech Providers behavior in src/gateway. */
 export function createDefaultGatewayTestSpeechProviders() {
   return [
     {

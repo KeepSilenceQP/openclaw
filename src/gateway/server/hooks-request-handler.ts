@@ -1,4 +1,3 @@
-// gateway/server hooks request handler helpers and runtime behavior.
 import { createHash } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { createSubsystemLogger } from "../../logging/subsystem.js";
@@ -39,13 +38,11 @@ type SubsystemLogger = ReturnType<typeof createSubsystemLogger>;
 const HOOK_AUTH_FAILURE_LIMIT = 20;
 const HOOK_AUTH_FAILURE_WINDOW_MS = 60_000;
 
-/** Shared type for Hook Client Ip Config in src/gateway/server. */
 export type HookClientIpConfig = Readonly<{
   trustedProxies?: string[];
   allowRealIpFallback?: boolean;
 }>;
 
-/** Shared type for Hooks Request Handler in src/gateway/server. */
 export type HooksRequestHandler = (req: IncomingMessage, res: ServerResponse) => Promise<boolean>;
 
 type HookDispatchers = {
@@ -84,7 +81,6 @@ function resolveMappedHookExternalContentSource(params: {
   return resolveHookExternalContentSourceFromSession(params.sessionKey) ?? "webhook";
 }
 
-/** Reused helper for create Hooks Request Handler behavior in src/gateway/server. */
 export function createHooksRequestHandler(
   opts: {
     getHooksConfig: () => HooksConfigResolved | null;

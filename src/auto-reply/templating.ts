@@ -13,7 +13,6 @@ import type { ReplyThreadingPolicy } from "./types.js";
 /** Valid message channels for routing. */
 export type OriginatingChannelType = string & { readonly __originatingChannelBrand?: never };
 
-/** Shared type for Mention Source in src/auto-reply. */
 export type MentionSource =
   | "explicit_bot"
   | "subteam"
@@ -41,7 +40,6 @@ type UntrustedStructuredContextEntry = {
   payload: unknown;
 };
 
-/** Shared type for Supplemental Context Facts in src/auto-reply. */
 export type SupplementalContextFacts = {
   quote?: {
     id?: string;
@@ -72,7 +70,6 @@ export type SupplementalContextFacts = {
   groupSystemPrompt?: string;
 };
 
-/** Shared type for Msg Context in src/auto-reply. */
 export type MsgContext = {
   Body?: string;
   InboundEventKind?: InboundEventKind;
@@ -322,7 +319,6 @@ export type MsgContext = {
   HookMessages?: string[];
 };
 
-/** Shared type for Finalized Msg Context in src/auto-reply. */
 export type FinalizedMsgContext = Omit<MsgContext, "CommandAuthorized"> & {
   /**
    * Always set by finalizeInboundContext().
@@ -336,7 +332,6 @@ export type FinalizedMsgContext = Omit<MsgContext, "CommandAuthorized"> & {
   CommandTurn?: CommandTurnContext;
 };
 
-/** Shared type for Template Context in src/auto-reply. */
 export type TemplateContext = MsgContext & {
   BodyStripped?: string;
   SessionId?: string;
@@ -379,7 +374,6 @@ function formatTemplateValue(value: unknown): string {
 }
 
 // Simple {{Placeholder}} interpolation using inbound message context.
-/** Reused helper for apply Template behavior in src/auto-reply. */
 export function applyTemplate(str: string | undefined, ctx: TemplateContext) {
   if (!str) {
     return "";

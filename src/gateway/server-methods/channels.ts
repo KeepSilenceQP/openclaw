@@ -1,4 +1,3 @@
-// gateway/server-methods channels helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -202,7 +201,6 @@ function resolveChannelGatewayAccountId(params: {
   );
 }
 
-/** Reused helper for logout Channel Account behavior in src/gateway/server-methods. */
 export async function logoutChannelAccount(params: {
   channelId: ChannelId;
   accountId?: string | null;
@@ -235,7 +233,6 @@ export async function logoutChannelAccount(params: {
   };
 }
 
-/** Reused helper for start Channel Account behavior in src/gateway/server-methods. */
 export async function startChannelAccount(params: {
   channelId: ChannelId;
   accountId?: string | null;
@@ -262,7 +259,6 @@ export async function startChannelAccount(params: {
   };
 }
 
-/** Reused helper for stop Channel Account behavior in src/gateway/server-methods. */
 export async function stopChannelAccount(params: {
   channelId: ChannelId;
   accountId?: string | null;
@@ -286,7 +282,6 @@ export async function stopChannelAccount(params: {
   };
 }
 
-/** Reused constant for channels Handlers behavior in src/gateway/server-methods. */
 export const channelsHandlers: GatewayRequestHandlers = {
   "channels.status": async ({ params, respond, context }) => {
     if (!validateChannelsStatusParams(params)) {

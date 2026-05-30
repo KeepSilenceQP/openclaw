@@ -409,9 +409,7 @@ function buildDispatchTimelineAttributes(ctx: MsgContext | FinalizedMsgContext) 
   };
 }
 
-/** Shared type for Dispatch Inbound Result in src/auto-reply. */
 export type DispatchInboundResult = DispatchFromConfigResult;
-/** Re-exported API for src/auto-reply, starting with settle Reply Dispatcher. */
 export { settleReplyDispatcher, withReplyDispatcher } from "./dispatch-dispatcher.js";
 
 function finalizeDispatchResult(
@@ -452,7 +450,6 @@ function finalizeDispatchResult(
   };
 }
 
-/** Reused helper for dispatch Inbound Message behavior in src/auto-reply. */
 export async function dispatchInboundMessage(params: {
   ctx: MsgContext | FinalizedMsgContext;
   cfg: OpenClawConfig;
@@ -504,7 +501,6 @@ export async function dispatchInboundMessage(params: {
   return finalizeDispatchResult(result, params.dispatcher);
 }
 
-/** Reused helper for dispatch Inbound Message With Buffered Dispatcher behavior in src/auto-reply. */
 export async function dispatchInboundMessageWithBufferedDispatcher(params: {
   ctx: MsgContext | FinalizedMsgContext;
   cfg: OpenClawConfig;
@@ -596,7 +592,6 @@ export async function dispatchInboundMessageWithBufferedDispatcher(params: {
   }
 }
 
-/** Reused helper for dispatch Inbound Message With Dispatcher behavior in src/auto-reply. */
 export async function dispatchInboundMessageWithDispatcher(params: {
   ctx: MsgContext | FinalizedMsgContext;
   cfg: OpenClawConfig;

@@ -1,4 +1,3 @@
-// extensions/whatsapp/src config accessors helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { resolveWhatsAppAccount } from "./accounts.js";
 import { normalizeWhatsAppAllowFromEntries } from "./normalize-target.js";

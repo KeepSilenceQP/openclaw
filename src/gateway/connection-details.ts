@@ -1,11 +1,9 @@
-// gateway connection details helpers and runtime behavior.
 import { redactSensitiveUrlLikeString } from "@openclaw/net-policy/redact-sensitive-url";
 import { resolveConfigPath, resolveGatewayPort } from "../config/paths.js";
 import type { OpenClawConfig } from "../config/types.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import { isSecureWebSocketUrl } from "./net.js";
 
-/** Shared type for Gateway Connection Details in src/gateway. */
 export type GatewayConnectionDetails = {
   url: string;
   urlSource: string;
@@ -20,7 +18,6 @@ type GatewayConnectionDetailResolvers = {
   resolveGatewayPort?: (cfg?: OpenClawConfig, env?: NodeJS.ProcessEnv) => number;
 };
 
-/** Reused helper for build Gateway Connection Details With Resolvers behavior in src/gateway. */
 export function buildGatewayConnectionDetailsWithResolvers(
   options: {
     config?: OpenClawConfig;

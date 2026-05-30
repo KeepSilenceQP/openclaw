@@ -1,4 +1,3 @@
-// gateway test openai responses model helpers and runtime behavior.
 const MOCK_OPENAI_RESPONSES_PROVIDER_ID = "mock-openai";
 
 function buildOpenAiResponsesTestModel(id = "gpt-5.4") {
@@ -23,7 +22,6 @@ function buildOpenAiResponsesProviderConfig(baseUrl: string, modelId = "gpt-5.4"
   } as const;
 }
 
-/** Reused helper for build Mock Open Ai Responses Provider behavior in src/gateway. */
 export function buildMockOpenAiResponsesProvider(baseUrl: string, modelId = "gpt-5.4") {
   return {
     providerId: MOCK_OPENAI_RESPONSES_PROVIDER_ID,

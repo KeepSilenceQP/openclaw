@@ -1,4 +1,3 @@
-// extensions/slack api helpers and runtime behavior.
 /** Re-exported slack plugin public API, starting with slack Plugin. */
 export { slackPlugin } from "./src/channel.js";
 /** Re-exported slack plugin public API, starting with slack Setup Plugin. */

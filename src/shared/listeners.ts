@@ -1,5 +1,3 @@
-// shared listeners helpers and runtime behavior.
-/** Reused helper for notify Listeners behavior in src/shared. */
 export function notifyListeners<T>(
   listeners: Iterable<(event: T) => void>,
   event: T,
@@ -14,7 +12,6 @@ export function notifyListeners<T>(
   }
 }
 
-/** Reused helper for register Listener behavior in src/shared. */
 export function registerListener<T>(
   listeners: Set<(event: T) => void>,
   listener: (event: T) => void,

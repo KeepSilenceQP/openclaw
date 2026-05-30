@@ -1,4 +1,3 @@
-// extensions/slack/src streaming compat helpers and runtime behavior.
 import {
   getChannelStreamingConfigObject,
   resolveChannelStreamingNativeTransport,

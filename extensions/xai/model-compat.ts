@@ -1,4 +1,3 @@
-// extensions/xai model compat helpers and runtime behavior.
 import {
   applyModelCompatPatch,
   type ModelCompatConfig,

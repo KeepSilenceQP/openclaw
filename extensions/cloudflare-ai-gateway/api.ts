@@ -1,4 +1,3 @@
-// extensions/cloudflare-ai-gateway api helpers and runtime behavior.
 /** Re-exported cloudflare-ai-gateway plugin public API. */
 export {
   buildCloudflareAiGatewayModelDefinition,

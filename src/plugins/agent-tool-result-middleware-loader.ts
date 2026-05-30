@@ -1,4 +1,3 @@
-// plugins agent tool result middleware loader helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { createSubsystemLogger } from "../logging/subsystem.js";
 import { getLoadedRuntimePluginRegistry } from "./active-runtime-registry.js";
@@ -39,7 +38,6 @@ function listMiddlewareOwnerPluginIds(params: {
   return pluginIds;
 }
 
-/** Reused helper for load Agent Tool Result Middlewares For Runtime behavior in src/plugins. */
 export async function loadAgentToolResultMiddlewaresForRuntime(params: {
   runtime: AgentToolResultMiddlewareRuntime;
   config?: OpenClawConfig;
@@ -95,9 +93,7 @@ export async function loadAgentToolResultMiddlewaresForRuntime(params: {
   }
 }
 
-/** Reused constant for testing behavior in src/plugins. */
 export const testing = {
   listMiddlewareOwnerPluginIds,
 };
-/** Re-exported API for src/plugins, starting with testing. */
 export { testing as __testing };

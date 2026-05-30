@@ -1,4 +1,3 @@
-// extensions/mattermost/src gateway auth bypass helpers and runtime behavior.
 const DEFAULT_SLASH_CALLBACK_PATH = "/api/channels/mattermost/command";
 
 type MattermostSlashCommandConfigInput = {

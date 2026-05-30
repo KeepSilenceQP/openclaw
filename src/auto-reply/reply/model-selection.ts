@@ -30,7 +30,6 @@ import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { applyModelOverrideToSessionEntry } from "../../sessions/model-overrides.js";
 import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 import type { ThinkLevel } from "./directives.js";
-/** Re-exported API for src/auto-reply/reply. */
 export {
   resolveModelDirectiveSelection,
   type ModelDirectiveSelection,
@@ -56,7 +55,6 @@ type ModelSelectionState = {
   needsModelCatalog: boolean;
 };
 
-/** Reused helper for create Fast Test Model Selection State behavior in src/auto-reply/reply. */
 export function createFastTestModelSelectionState(params: {
   agentCfg: NonNullable<NonNullable<OpenClawConfig["agents"]>["defaults"]> | undefined;
   provider: string;
@@ -108,7 +106,6 @@ function findSelectedCatalogEntry(params: {
   return params.catalog?.find((entry) => modelKey(entry.provider, entry.id) === selectedKey);
 }
 
-/** Reused helper for create Model Selection State behavior in src/auto-reply/reply. */
 export async function createModelSelectionState(params: {
   cfg: OpenClawConfig;
   agentId?: string;
@@ -535,7 +532,6 @@ export async function createModelSelectionState(params: {
   };
 }
 
-/** Reused helper for resolve Context Tokens behavior in src/auto-reply/reply. */
 export function resolveContextTokens(params: {
   cfg: OpenClawConfig;
   agentCfg: NonNullable<NonNullable<OpenClawConfig["agents"]>["defaults"]> | undefined;

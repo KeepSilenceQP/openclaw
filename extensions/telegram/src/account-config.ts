@@ -1,4 +1,3 @@
-// extensions/telegram/src account config helpers and runtime behavior.
 import {
   normalizeAccountId,
   resolveNormalizedAccountEntry,

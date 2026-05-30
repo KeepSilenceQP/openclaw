@@ -1,7 +1,6 @@
 import { isTruthyEnvValue } from "../infra/env.js";
 import type { DoctorOptions } from "./doctor.types.js";
 
-/** Shared type for Doctor Repair Mode in src/commands. */
 export type DoctorRepairMode = {
   shouldRepair: boolean;
   shouldForce: boolean;
@@ -10,7 +9,6 @@ export type DoctorRepairMode = {
   updateInProgress: boolean;
 };
 
-/** Reused helper for resolve Doctor Repair Mode behavior in src/commands. */
 export function resolveDoctorRepairMode(options: DoctorOptions): DoctorRepairMode {
   const yes = options.yes === true;
   const requestedNonInteractive = options.nonInteractive === true;
@@ -30,12 +28,10 @@ export function resolveDoctorRepairMode(options: DoctorOptions): DoctorRepairMod
   };
 }
 
-/** Reused helper for is Doctor Update Repair Mode behavior in src/commands. */
 export function isDoctorUpdateRepairMode(mode: DoctorRepairMode): boolean {
   return mode.updateInProgress && mode.nonInteractive;
 }
 
-/** Reused helper for should Auto Approve Doctor Fix behavior in src/commands. */
 export function shouldAutoApproveDoctorFix(
   mode: DoctorRepairMode,
   params: {

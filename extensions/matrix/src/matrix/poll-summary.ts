@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix poll summary helpers and runtime behavior.
 import type { MatrixMessageSummary } from "./actions/types.js";
 import {
   buildPollResultsSummary,

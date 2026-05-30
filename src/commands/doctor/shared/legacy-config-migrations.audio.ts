@@ -32,7 +32,6 @@ function applyLegacyAudioTranscriptionModel(params: {
   params.changes.push(params.alreadySetMessage);
 }
 
-/** Reused constant for LEGACY CONFIG MIGRATIONS AUDIO behavior in src/commands/doctor. */
 export const LEGACY_CONFIG_MIGRATIONS_AUDIO: LegacyConfigMigrationSpec[] = [
   defineLegacyConfigMigration({
     id: "audio.transcription-v2",

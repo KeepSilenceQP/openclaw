@@ -10,7 +10,6 @@ import { resolveGatewayInstallToken } from "../../gateway-install-token.js";
 import type { OnboardOptions } from "../../onboard-types.js";
 import { ensureSystemdUserLingerNonInteractive } from "../../systemd-linger.js";
 
-/** Reused helper for install Gateway Daemon Non Interactive behavior in src/commands/onboard-non-interactive. */
 export async function installGatewayDaemonNonInteractive(params: {
   nextConfig: OpenClawConfig;
   opts: OnboardOptions;

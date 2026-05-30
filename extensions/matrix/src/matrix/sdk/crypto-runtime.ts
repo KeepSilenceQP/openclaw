@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/sdk crypto runtime helpers and runtime behavior.
 import "fake-indexeddb/auto";
 
 export { MatrixCryptoBootstrapper } from "./crypto-bootstrap.js";

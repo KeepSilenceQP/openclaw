@@ -1,4 +1,3 @@
-// extensions/qa-channel/src runtime api helpers and runtime behavior.
 /** Re-exported qa-channel plugin public API. */
 export type {
   ChannelMessageActionAdapter,

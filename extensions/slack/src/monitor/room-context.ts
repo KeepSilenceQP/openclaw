@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor room context helpers and runtime behavior.
 import { buildUntrustedChannelMetadata } from "openclaw/plugin-sdk/security-runtime";
 import { normalizeOptionalString } from "openclaw/plugin-sdk/string-coerce-runtime";
 

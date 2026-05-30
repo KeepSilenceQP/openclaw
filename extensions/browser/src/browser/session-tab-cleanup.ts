@@ -1,4 +1,3 @@
-// extensions/browser/src/browser session tab cleanup helpers and runtime behavior.
 import {
   isAcpSessionKey,
   isCronSessionKey,

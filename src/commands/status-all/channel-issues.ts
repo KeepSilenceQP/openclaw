@@ -1,5 +1,4 @@
 // Groups channel diagnostics so status-all can overlay them onto table rows.
-/** Reused helper for group Channel Issues By Channel behavior in src/commands/status-all. */
 export function groupChannelIssuesByChannel<T extends { channel: string }>(
   issues: readonly T[],
 ): Map<string, T[]> {

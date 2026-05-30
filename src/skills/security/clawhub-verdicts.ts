@@ -1,4 +1,3 @@
-// src/skills/security clawhub verdicts helpers and runtime behavior.
 import {
   fetchClawHubSkillSecurityVerdicts,
   resolveClawHubBaseUrl,
@@ -6,7 +5,6 @@ import {
 } from "../../infra/clawhub.js";
 import type { buildWorkspaceSkillStatus } from "../discovery/status.js";
 
-/** Shared type for Open Claw Skill Security Verdict Item in src/skills/security. */
 export type OpenClawSkillSecurityVerdictItem = Omit<
   ClawHubSkillSecurityVerdictItem,
   "decision" | "error" | "security"
@@ -37,7 +35,6 @@ function readSecurityPassed(security: unknown): boolean | null | undefined {
   return typeof passed === "boolean" ? passed : undefined;
 }
 
-/** Reused helper for project Claw Hub Verdict Item behavior in src/skills/security. */
 export function projectClawHubVerdictItem(
   item: ClawHubSkillSecurityVerdictItem,
   registry: string,
@@ -116,7 +113,6 @@ function canAutoFetchVerdictRegistry(registry: string): boolean {
   return configured !== null && target === configured;
 }
 
-/** Reused helper for collect Claw Hub Verdict Targets behavior in src/skills/security. */
 export function collectClawHubVerdictTargets(
   report: ReturnType<typeof buildWorkspaceSkillStatus>,
 ): Array<{ registry: string; slug: string; version: string }> {
@@ -139,7 +135,6 @@ export function collectClawHubVerdictTargets(
   return [...targets.values()];
 }
 
-/** Reused helper for fetch Open Claw Skill Security Verdicts behavior in src/skills/security. */
 export async function fetchOpenClawSkillSecurityVerdicts(
   targets: Array<{ registry: string; slug: string; version: string }>,
 ): Promise<OpenClawSkillSecurityVerdictItem[]> {

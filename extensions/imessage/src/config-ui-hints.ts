@@ -1,4 +1,3 @@
-// extensions/imessage/src config ui hints helpers and runtime behavior.
 import type { ChannelConfigUiHint } from "openclaw/plugin-sdk/core";
 
 export const iMessageChannelConfigUiHints = {

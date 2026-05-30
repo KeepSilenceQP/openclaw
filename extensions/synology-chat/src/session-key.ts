@@ -1,4 +1,3 @@
-// extensions/synology-chat/src session key helpers and runtime behavior.
 import { buildAgentSessionKey } from "openclaw/plugin-sdk/routing";
 
 const CHANNEL_ID = "synology-chat";

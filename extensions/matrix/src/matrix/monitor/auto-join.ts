@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor auto join helpers and runtime behavior.
 import { normalizeStringifiedEntries } from "openclaw/plugin-sdk/string-coerce-runtime";
 import { getMatrixRuntime } from "../../runtime.js";
 import type { MatrixConfig } from "../../types.js";

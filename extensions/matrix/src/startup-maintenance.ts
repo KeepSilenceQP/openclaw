@@ -1,4 +1,3 @@
-// extensions/matrix/src startup maintenance helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   autoMigrateLegacyMatrixState,

@@ -1,4 +1,3 @@
-// gateway/server-methods environments helpers and runtime behavior.
 import {
   type EnvironmentSummary,
   ErrorCodes,
@@ -51,7 +50,6 @@ async function listEnvironments(context: GatewayRequestContext) {
   return listEnvironmentSummaries(listKnownNodes(catalog));
 }
 
-/** Reused constant for environments Handlers behavior in src/gateway/server-methods. */
 export const environmentsHandlers: GatewayRequestHandlers = {
   "environments.list": async ({ params, respond, context }) => {
     if (!validateEnvironmentsListParams(params)) {

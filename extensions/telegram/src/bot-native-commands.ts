@@ -1,4 +1,3 @@
-// extensions/telegram/src bot native commands helpers and runtime behavior.
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import type { Bot, Context } from "grammy";

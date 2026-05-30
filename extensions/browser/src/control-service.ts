@@ -1,4 +1,3 @@
-// extensions/browser/src control service helpers and runtime behavior.
 import {
   createBrowserControlContext,
   ensureBrowserControlRuntime,

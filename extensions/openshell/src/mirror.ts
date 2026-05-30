@@ -1,4 +1,3 @@
-// extensions/openshell/src mirror helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { movePathWithCopyFallback } from "openclaw/plugin-sdk/security-runtime";

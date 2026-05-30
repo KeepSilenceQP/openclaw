@@ -3,9 +3,7 @@ import { normalizeLowercaseStringOrEmpty } from "../../shared/string-coerce.js";
 import { normalizeText } from "../normalize-text.js";
 import { isSessionIdentityPending, resolveSessionIdentityFromMeta } from "./session-identity.js";
 
-/** Reused constant for ACP SESSION IDENTITY RENDERER VERSION behavior in src/acp/runtime. */
 export const ACP_SESSION_IDENTITY_RENDERER_VERSION = "v1";
-/** Shared type for Acp Session Identifier Render Mode in src/acp/runtime. */
 export type AcpSessionIdentifierRenderMode = "status" | "thread";
 
 type SessionResumeHintResolver = (params: { agentSessionId: string }) => string;

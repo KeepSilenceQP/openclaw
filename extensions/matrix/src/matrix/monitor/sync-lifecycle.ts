@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor sync lifecycle helpers and runtime behavior.
 import type { MatrixClient } from "../sdk.js";
 import { isMatrixTerminalSyncState, type MatrixSyncState } from "../sync-state.js";
 import type { MatrixMonitorStatusController } from "./status.js";

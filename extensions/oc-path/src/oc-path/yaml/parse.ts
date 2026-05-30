@@ -1,4 +1,3 @@
-// extensions/oc-path/src/oc-path/yaml parse helpers and runtime behavior.
 import { LineCounter, parseDocument } from "yaml";
 import type { Diagnostic } from "../ast.js";
 import type { YamlAst } from "./ast.js";

@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost monitor onchar helpers and runtime behavior.
 import { normalizeStringEntries } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 const DEFAULT_ONCHAR_PREFIXES = [">", "!"];

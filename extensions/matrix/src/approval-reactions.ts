@@ -1,4 +1,3 @@
-// extensions/matrix/src approval reactions helpers and runtime behavior.
 import type { ExecApprovalReplyDecision } from "openclaw/plugin-sdk/approval-runtime";
 import { getOptionalMatrixRuntime } from "./runtime.js";
 

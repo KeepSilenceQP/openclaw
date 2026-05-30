@@ -1,4 +1,3 @@
-// extensions/lobster/src lobster taskflow helpers and runtime behavior.
 import type { OpenClawPluginApi } from "../runtime-api.js";
 import type { LobsterEnvelope, LobsterRunner, LobsterRunnerParams } from "./lobster-runner.js";
 

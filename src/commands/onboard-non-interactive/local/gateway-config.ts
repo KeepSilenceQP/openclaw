@@ -9,7 +9,6 @@ import { normalizeOptionalString } from "../../../shared/string-coerce.js";
 import { normalizeGatewayTokenInput, randomToken } from "../../onboard-helpers.js";
 import type { OnboardOptions } from "../../onboard-types.js";
 
-/** Reused helper for apply Non Interactive Gateway Config behavior in src/commands/onboard-non-interactive. */
 export function applyNonInteractiveGatewayConfig(params: {
   nextConfig: OpenClawConfig;
   opts: OnboardOptions;

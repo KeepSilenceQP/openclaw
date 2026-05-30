@@ -1,4 +1,3 @@
-// extensions/ollama/src provider base url helpers and runtime behavior.
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 
 export function readProviderBaseUrl(provider: ModelProviderConfig | undefined): string | undefined {

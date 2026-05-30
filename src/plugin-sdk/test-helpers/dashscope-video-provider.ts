@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers dashscope video provider helpers and runtime behavior.
 import { expect, vi } from "vitest";
 import type { VideoGenerationResult } from "../video-generation.js";
 

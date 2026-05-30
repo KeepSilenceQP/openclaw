@@ -1,4 +1,3 @@
-// extensions/imessage/src normalize helpers and runtime behavior.
 import { normalizeE164 } from "openclaw/plugin-sdk/account-resolution";
 import {
   normalizeLowercaseStringOrEmpty,

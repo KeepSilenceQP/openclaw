@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock provider policy api helpers and runtime behavior.
 import { normalizeProviderId } from "openclaw/plugin-sdk/provider-model-shared";
 import { resolveBedrockClaudeThinkingProfile } from "./thinking-policy.js";
 

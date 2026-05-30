@@ -1,7 +1,5 @@
-// shared assistant identity values helpers and runtime behavior.
 import { normalizeOptionalString } from "./string-coerce.js";
 
-/** Reused helper for coerce Identity Value behavior in src/shared. */
 export function coerceIdentityValue(
   value: string | undefined,
   maxLength: number,

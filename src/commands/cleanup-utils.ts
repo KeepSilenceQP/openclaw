@@ -38,7 +38,6 @@ function collectWorkspaceDirs(cfg: OpenClawConfig | undefined): string[] {
   return [...dirs];
 }
 
-/** Reused helper for build Cleanup Plan behavior in src/commands. */
 export function buildCleanupPlan(params: {
   cfg: OpenClawConfig | undefined;
   stateDir: string;
@@ -56,7 +55,6 @@ export function buildCleanupPlan(params: {
   };
 }
 
-/** Reused helper for is Path Within behavior in src/commands. */
 export function isPathWithin(child: string, parent: string): boolean {
   return isPathInside(parent, child);
 }
@@ -77,7 +75,6 @@ function isUnsafeRemovalTarget(target: string): boolean {
   return false;
 }
 
-/** Reused helper for remove Path behavior in src/commands. */
 export async function removePath(
   target: string,
   runtime: RuntimeEnv,
@@ -107,7 +104,6 @@ export async function removePath(
   }
 }
 
-/** Reused helper for remove State And Linked Paths behavior in src/commands. */
 export async function removeStateAndLinkedPaths(
   cleanup: CleanupResolvedPaths,
   runtime: RuntimeEnv,
@@ -131,7 +127,6 @@ export async function removeStateAndLinkedPaths(
   }
 }
 
-/** Reused helper for remove Workspace Dirs behavior in src/commands. */
 export async function removeWorkspaceDirs(
   workspaceDirs: readonly string[],
   runtime: RuntimeEnv,
@@ -145,7 +140,6 @@ export async function removeWorkspaceDirs(
   }
 }
 
-/** Reused helper for list Agent Session Dirs behavior in src/commands. */
 export async function listAgentSessionDirs(stateDir: string): Promise<string[]> {
   const root = path.join(stateDir, "agents");
   try {

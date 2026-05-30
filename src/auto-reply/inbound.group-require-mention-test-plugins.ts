@@ -85,7 +85,6 @@ function resolveSlackRequireMentionForTest(params: TestChannelGroupContext): boo
   return true;
 }
 
-/** Reused helper for install Group Require Mention Test Plugins behavior in src/auto-reply. */
 export function installGroupRequireMentionTestPlugins() {
   setActivePluginRegistry(
     createTestRegistry([

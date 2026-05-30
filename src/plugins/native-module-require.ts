@@ -1,4 +1,3 @@
-// plugins native module require helpers and runtime behavior.
 import fs from "node:fs";
 import { createRequire } from "node:module";
 import Module from "node:module";
@@ -28,7 +27,6 @@ const moduleWithResolver = Module as typeof Module & {
   }) => { deregister: () => void };
 };
 
-/** Reused helper for is Java Script Module Path behavior in src/plugins. */
 export function isJavaScriptModulePath(modulePath: string): boolean {
   return [".js", ".mjs", ".cjs"].includes(path.extname(modulePath).toLowerCase());
 }
@@ -57,7 +55,6 @@ function isSourceTransformFallbackError(error: unknown, modulePath: string): boo
   );
 }
 
-/** Reused helper for try Native Require Java Script Module behavior in src/plugins. */
 export function tryNativeRequireJavaScriptModule(
   modulePath: string,
   options: {
@@ -90,7 +87,6 @@ export function tryNativeRequireJavaScriptModule(
   }
 }
 
-/** Reused helper for clear Native Require Java Script Module Cache behavior in src/plugins. */
 export function clearNativeRequireJavaScriptModuleCache(
   modulePath: string,
   options: { dependencyRoot?: string } = {},
@@ -150,7 +146,6 @@ function requireWithOptionalAliases(
   return withNativeRequireAliases(aliasMap, () => nodeRequire(modulePath));
 }
 
-/** Reused helper for with Native Require Aliases behavior in src/plugins. */
 export function withNativeRequireAliases<T>(
   aliasMap: Record<string, string> | undefined,
   run: () => T,

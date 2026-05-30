@@ -1,10 +1,8 @@
-// config redact snapshot test helpers helpers and runtime behavior.
 import { expect } from "vitest";
 import { restoreRedactedValues as restoreRedactedValues_orig } from "./redact-snapshot.js";
 import type { ConfigUiHints } from "./schema.js";
 import type { ConfigFileSnapshot } from "./types.openclaw.js";
 
-/** Shared type for Test Snapshot in src/config. */
 export type TestSnapshot<TConfig extends Record<string, unknown>> = ConfigFileSnapshot & {
   parsed: TConfig;
   sourceConfig: TConfig;
@@ -13,7 +11,6 @@ export type TestSnapshot<TConfig extends Record<string, unknown>> = ConfigFileSn
   config: TConfig;
 };
 
-/** Reused helper for make Snapshot behavior in src/config. */
 export function makeSnapshot<TConfig extends Record<string, unknown>>(
   config: TConfig,
   raw?: string,
@@ -35,7 +32,6 @@ export function makeSnapshot<TConfig extends Record<string, unknown>>(
   } as unknown as TestSnapshot<TConfig>;
 }
 
-/** Reused helper for restore Redacted Values behavior in src/config. */
 export function restoreRedactedValues<TOriginal>(
   incoming: unknown,
   original: TOriginal,

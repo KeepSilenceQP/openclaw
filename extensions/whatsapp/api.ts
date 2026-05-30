@@ -1,4 +1,3 @@
-// extensions/whatsapp api helpers and runtime behavior.
 /** Re-exported whatsapp plugin public API, starting with whatsapp Plugin. */
 export { whatsappPlugin } from "./src/channel.js";
 /** Re-exported whatsapp plugin public API, starting with whatsapp Setup Plugin. */

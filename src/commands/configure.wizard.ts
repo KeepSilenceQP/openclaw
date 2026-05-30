@@ -371,7 +371,6 @@ async function promptWebToolsConfig(
   };
 }
 
-/** Reused helper for run Configure Wizard behavior in src/commands. */
 export async function runConfigureWizard(
   opts: ConfigureWizardParams,
   runtime: RuntimeEnv = defaultRuntime,

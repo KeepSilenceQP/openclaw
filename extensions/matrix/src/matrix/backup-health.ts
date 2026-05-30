@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix backup health helpers and runtime behavior.
 type MatrixRoomKeyBackupStatusLike = {
   serverVersion: string | null;
   activeVersion: string | null;

@@ -1,7 +1,6 @@
 import type { RuntimeEnv } from "../runtime.js";
 import type { WizardPrompter } from "../wizard/prompts.js";
 
-/** Reused helper for create Non Interactive Logging Prompter behavior in src/commands. */
 export function createNonInteractiveLoggingPrompter(
   runtime: RuntimeEnv,
   formatPromptError: (message: string) => string,

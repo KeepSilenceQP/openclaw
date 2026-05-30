@@ -7,7 +7,6 @@ import {
   removeFallbackCommand,
 } from "./fallbacks-shared.js";
 
-/** Reused helper for models Image Fallbacks List Command behavior in src/commands/models. */
 export async function modelsImageFallbacksListCommand(
   opts: { json?: boolean; plain?: boolean },
   runtime: RuntimeEnv,
@@ -15,7 +14,6 @@ export async function modelsImageFallbacksListCommand(
   return await listFallbacksCommand({ label: "Image fallbacks", key: "imageModel" }, opts, runtime);
 }
 
-/** Reused helper for models Image Fallbacks Add Command behavior in src/commands/models. */
 export async function modelsImageFallbacksAddCommand(modelRaw: string, runtime: RuntimeEnv) {
   return await addFallbackCommand(
     { label: "Image fallbacks", key: "imageModel", logPrefix: "Image fallbacks" },
@@ -24,7 +22,6 @@ export async function modelsImageFallbacksAddCommand(modelRaw: string, runtime: 
   );
 }
 
-/** Reused helper for models Image Fallbacks Remove Command behavior in src/commands/models. */
 export async function modelsImageFallbacksRemoveCommand(modelRaw: string, runtime: RuntimeEnv) {
   return await removeFallbackCommand(
     {
@@ -38,7 +35,6 @@ export async function modelsImageFallbacksRemoveCommand(modelRaw: string, runtim
   );
 }
 
-/** Reused helper for models Image Fallbacks Clear Command behavior in src/commands/models. */
 export async function modelsImageFallbacksClearCommand(runtime: RuntimeEnv) {
   return await clearFallbacksCommand(
     { key: "imageModel", clearedMessage: "Image fallback list cleared." },

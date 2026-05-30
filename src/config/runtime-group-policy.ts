@@ -1,4 +1,3 @@
-// config runtime group policy helpers and runtime behavior.
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 import type { GroupPolicy } from "./types.base.js";
 
@@ -15,7 +14,6 @@ type RuntimeGroupPolicyParams = {
   missingProviderFallbackPolicy?: GroupPolicy;
 };
 
-/** Reused helper for resolve Runtime Group Policy behavior in src/config. */
 export function resolveRuntimeGroupPolicy(
   params: RuntimeGroupPolicyParams,
 ): RuntimeGroupPolicyResolution {
@@ -43,12 +41,10 @@ type GroupPolicyDefaultsConfig = {
   };
 };
 
-/** Reused helper for resolve Default Group Policy behavior in src/config. */
 export function resolveDefaultGroupPolicy(cfg: GroupPolicyDefaultsConfig): GroupPolicy | undefined {
   return cfg.channels?.defaults?.groupPolicy;
 }
 
-/** Reused constant for GROUP POLICY BLOCKED LABEL behavior in src/config. */
 export const GROUP_POLICY_BLOCKED_LABEL = {
   group: "group messages",
   guild: "guild messages",
@@ -93,7 +89,6 @@ export function resolveAllowlistProviderRuntimeGroupPolicy(
 
 const warnedMissingProviderGroupPolicy = new Set<string>();
 
-/** Reused helper for warn Missing Provider Group Policy Fallback Once behavior in src/config. */
 export function warnMissingProviderGroupPolicyFallbackOnce(params: {
   providerMissingFallbackApplied: boolean;
   providerKey: string;

@@ -1,4 +1,3 @@
-// extensions/slack/src channel api helpers and runtime behavior.
 export { DEFAULT_ACCOUNT_ID } from "openclaw/plugin-sdk/account-id";
 export {
   PAIRING_APPROVED_MESSAGE,

@@ -1,4 +1,3 @@
-// extensions/browser/src browser tool helpers and runtime behavior.
 import crypto from "node:crypto";
 import {
   executeActAction,

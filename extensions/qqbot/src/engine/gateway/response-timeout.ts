@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/gateway response timeout helpers and runtime behavior.
 import {
   finiteSecondsToTimerSafeMilliseconds,
   MAX_TIMER_TIMEOUT_MS,

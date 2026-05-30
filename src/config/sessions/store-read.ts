@@ -1,4 +1,3 @@
-// config/sessions store read helpers and runtime behavior.
 import fs from "node:fs";
 import { z } from "zod";
 import { safeParseJsonWithSchema } from "../../utils/zod-parse.js";
@@ -9,7 +8,6 @@ const SessionStoreSchema = z.record(z.string(), z.unknown()) as z.ZodType<
   Record<string, SessionEntry | undefined>
 >;
 
-/** Reused helper for read Session Store Read Only behavior in src/config/sessions. */
 export function readSessionStoreReadOnly(
   storePath: string,
 ): Record<string, SessionEntry | undefined> {

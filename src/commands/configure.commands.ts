@@ -16,7 +16,6 @@ async function configureCommandWithSections(
   await runConfigureWizard({ command: "configure", sections }, runtime);
 }
 
-/** Reused helper for configure Command From Sections Arg behavior in src/commands. */
 export async function configureCommandFromSectionsArg(
   rawSections: unknown,
   runtime: RuntimeEnv = defaultRuntime,

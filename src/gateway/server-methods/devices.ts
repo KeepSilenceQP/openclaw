@@ -1,4 +1,3 @@
-// gateway/server-methods devices helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -172,7 +171,6 @@ function pairedDeviceHasNonOperatorRole(device: {
   return hasNonOperatorDeviceRole(device) || hasNonOperatorDeviceTokenRole(device.tokens);
 }
 
-/** Reused constant for device Handlers behavior in src/gateway/server-methods. */
 export const deviceHandlers: GatewayRequestHandlers = {
   "device.pair.list": async ({ params, respond, client }) => {
     if (!validateDevicePairListParams(params)) {

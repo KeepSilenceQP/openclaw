@@ -1,4 +1,3 @@
-// extensions/telegram/src/test-support plugin command helpers and runtime behavior.
 import { vi } from "vitest";
 
 export const pluginCommandMocks = {

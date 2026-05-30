@@ -1,4 +1,3 @@
-// extensions/test-support debug proxy env test helpers helpers and runtime behavior.
 import { afterEach, vi } from "vitest";
 
 const DEBUG_PROXY_ENV_KEYS = [

@@ -1,4 +1,3 @@
-// extensions/bonjour/src errors helpers and runtime behavior.
 export function formatBonjourError(err: unknown): string {
   if (err instanceof Error) {
     const trimmedMessage = err.message.trim();

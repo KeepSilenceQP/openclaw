@@ -1,4 +1,3 @@
-// extensions/telegram/src outbound params helpers and runtime behavior.
 import {
   parseStrictInteger,
   parseStrictNonNegativeInteger,

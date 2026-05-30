@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes basic helpers and runtime behavior.
 import { redactCdpUrl } from "../cdp.helpers.js";
 import { snapshotAria } from "../cdp.js";
 import { getChromeMcpPid, takeChromeMcpSnapshot } from "../chrome-mcp.js";

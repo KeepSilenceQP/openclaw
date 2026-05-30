@@ -139,7 +139,6 @@ function listSessionCandidates(store: Record<string, SessionEntry | undefined>) 
     .toSorted(compareSessionCandidatesByUpdatedAt);
 }
 
-/** Reused helper for redact Sensitive Status Summary behavior in src/commands. */
 export function redactSensitiveStatusSummary(summary: StatusSummary): StatusSummary {
   return {
     ...summary,
@@ -160,7 +159,6 @@ export function redactSensitiveStatusSummary(summary: StatusSummary): StatusSumm
   };
 }
 
-/** Reused helper for get Status Summary behavior in src/commands. */
 export async function getStatusSummary(
   options: {
     includeSensitive?: boolean;

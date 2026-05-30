@@ -1,4 +1,3 @@
-// gateway server tailscale helpers and runtime behavior.
 import { formatErrorMessage } from "../infra/errors.js";
 import {
   disableTailscaleFunnel,
@@ -9,7 +8,6 @@ import {
   hasTailscaleFunnelRouteForPort,
 } from "../infra/tailscale.js";
 
-/** Reused helper for start Gateway Tailscale Exposure behavior in src/gateway. */
 export async function startGatewayTailscaleExposure(params: {
   tailscaleMode: "off" | "serve" | "funnel";
   resetOnExit?: boolean;

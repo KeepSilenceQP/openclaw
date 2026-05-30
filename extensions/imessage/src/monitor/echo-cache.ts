@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor echo cache helpers and runtime behavior.
 import { hasPersistedIMessageEcho } from "./persisted-echo-cache.js";
 
 type SentMessageLookup = {

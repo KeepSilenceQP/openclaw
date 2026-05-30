@@ -10,7 +10,6 @@ import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 const DEFAULT_PARENT_FORK_MAX_TOKENS = 100_000;
 const sessionForkRuntimeLoader = createLazyImportLoader(() => import("./session-fork.runtime.js"));
 
-/** Shared type for Parent Fork Decision in src/auto-reply/reply. */
 export type ParentForkDecision =
   | {
       status: "fork";
@@ -39,7 +38,6 @@ function formatParentForkTooLargeMessage(params: {
   );
 }
 
-/** Reused helper for resolve Parent Fork Decision behavior in src/auto-reply/reply. */
 export async function resolveParentForkDecision(params: {
   parentEntry: SessionEntry;
   storePath: string;
@@ -65,7 +63,6 @@ export async function resolveParentForkDecision(params: {
   };
 }
 
-/** Reused helper for fork Session From Parent behavior in src/auto-reply/reply. */
 export async function forkSessionFromParent(params: {
   parentEntry: SessionEntry;
   agentId: string;

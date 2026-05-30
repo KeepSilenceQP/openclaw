@@ -3,7 +3,6 @@ import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import { normalizeAgentId } from "../../../routing/session-key.js";
 import { normalizeOptionalString } from "../../../shared/string-coerce.js";
 
-/** Shared type for Stale Subagent Allowlist Hit in src/commands/doctor. */
 export type StaleSubagentAllowlistHit = {
   pathLabel: string;
   agentId: string;
@@ -81,7 +80,6 @@ function collectStaleAllowlistEntries(params: {
   return hits;
 }
 
-/** Reused helper for scan Stale Subagent Allowlist References behavior in src/commands/doctor. */
 export function scanStaleSubagentAllowlistReferences(
   cfg: OpenClawConfig,
 ): StaleSubagentAllowlistHit[] {
@@ -107,7 +105,6 @@ export function scanStaleSubagentAllowlistReferences(
   return hits;
 }
 
-/** Reused helper for collect Stale Subagent Allowlist Warnings behavior in src/commands/doctor. */
 export function collectStaleSubagentAllowlistWarnings(params: {
   hits: readonly StaleSubagentAllowlistHit[];
   doctorFixCommand: string;
@@ -134,7 +131,6 @@ function filterAllowAgents(params: {
   });
 }
 
-/** Reused helper for maybe Repair Stale Subagent Allowlists behavior in src/commands/doctor. */
 export function maybeRepairStaleSubagentAllowlists(cfg: OpenClawConfig): {
   config: OpenClawConfig;
   changes: string[];

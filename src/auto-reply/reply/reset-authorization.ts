@@ -4,7 +4,6 @@ import { isInternalMessageChannel } from "../../utils/message-channel.js";
 import { resolveCommandAuthorization } from "../command-auth.js";
 import type { MsgContext } from "../templating.js";
 
-/** Reused helper for is Reset Authorized For Context behavior in src/auto-reply/reply. */
 export function isResetAuthorizedForContext(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;

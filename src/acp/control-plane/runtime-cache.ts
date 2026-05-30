@@ -17,7 +17,6 @@ type RuntimeCacheEntry = {
   lastTouchedAt: number;
 };
 
-/** Shared type for Cached Runtime Snapshot in src/acp/control-plane. */
 export type CachedRuntimeSnapshot = {
   actorKey: string;
   state: CachedRuntimeState;

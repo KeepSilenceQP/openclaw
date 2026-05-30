@@ -1,4 +1,3 @@
-// gateway server plugin bootstrap helpers and runtime behavior.
 import { primeConfiguredBindingRegistry } from "../channels/plugins/binding-registry.js";
 import { applyPluginAutoEnable } from "../config/plugin-auto-enable.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
@@ -76,7 +75,6 @@ function logGatewayPluginDiagnostics(params: {
   }
 }
 
-/** Reused helper for prepare Gateway Plugin Load behavior in src/gateway. */
 export function prepareGatewayPluginLoad(params: GatewayPluginBootstrapParams) {
   const activationSourceConfig = params.activationSourceConfig ?? params.cfg;
   const autoEnabled = applyPluginAutoEnable({
@@ -128,7 +126,6 @@ export function prepareGatewayPluginLoad(params: GatewayPluginBootstrapParams) {
   return loaded;
 }
 
-/** Reused helper for load Gateway Startup Plugins behavior in src/gateway. */
 export function loadGatewayStartupPlugins(
   params: Omit<GatewayPluginBootstrapParams, "beforePrimeRegistry">,
 ) {
@@ -138,7 +135,6 @@ export function loadGatewayStartupPlugins(
   });
 }
 
-/** Reused helper for reload Deferred Gateway Plugins behavior in src/gateway. */
 export function reloadDeferredGatewayPlugins(
   params: Omit<
     GatewayPluginBootstrapParams,

@@ -49,7 +49,6 @@ const QUEUE_MODE_RULES: LegacyConfigRule[] = [
   },
 ];
 
-/** Reused constant for LEGACY CONFIG MIGRATIONS QUEUE behavior in src/commands/doctor. */
 export const LEGACY_CONFIG_MIGRATIONS_QUEUE: LegacyConfigMigrationSpec[] = [
   defineLegacyConfigMigration({
     id: "messages.queue.retired-steering-modes",

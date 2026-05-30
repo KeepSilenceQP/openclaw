@@ -26,7 +26,6 @@ import {
 import type { ElevatedLevel, ReasoningLevel, ThinkLevel } from "./directives.js";
 import { resolveContextTokens } from "./model-selection.js";
 
-/** Shared type for Persisted Thinking Level Remap in src/auto-reply/reply. */
 export type PersistedThinkingLevelRemap = {
   from: ThinkLevel;
   to: ThinkLevel;
@@ -74,7 +73,6 @@ function resolveModelRuntimeOverride(params: {
   return { kind: "invalid", runtime: rawRuntime };
 }
 
-/** Reused helper for persist Inline Directives behavior in src/auto-reply/reply. */
 export async function persistInlineDirectives(params: {
   directives: InlineDirectives;
   effectiveModelDirective?: string;

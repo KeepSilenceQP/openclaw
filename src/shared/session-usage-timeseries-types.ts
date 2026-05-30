@@ -1,5 +1,3 @@
-// shared session usage timeseries types helpers and runtime behavior.
-/** Shared type for Session Usage Time Point in src/shared. */
 export type SessionUsageTimePoint = {
   timestamp: number;
   input: number;
@@ -12,7 +10,6 @@ export type SessionUsageTimePoint = {
   cumulativeCost: number;
 };
 
-/** Shared type for Session Usage Time Series in src/shared. */
 export type SessionUsageTimeSeries = {
   sessionId?: string;
   points: SessionUsageTimePoint[];

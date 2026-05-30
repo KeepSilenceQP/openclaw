@@ -1,4 +1,3 @@
-// gateway/server-methods voicewake routing helpers and runtime behavior.
 import { ErrorCodes, errorShape } from "../../../packages/gateway-protocol/src/index.js";
 import {
   loadVoiceWakeRoutingConfig,
@@ -8,7 +7,6 @@ import {
 } from "../../infra/voicewake-routing.js";
 import type { GatewayRequestHandlers } from "./types.js";
 
-/** Reused constant for voicewake Routing Handlers behavior in src/gateway/server-methods. */
 export const voicewakeRoutingHandlers: GatewayRequestHandlers = {
   "voicewake.routing.get": async ({ respond }) => {
     try {

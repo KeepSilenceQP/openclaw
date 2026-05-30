@@ -1,4 +1,3 @@
-// flows bundled health checks helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizePluginsConfig } from "../plugins/config-state.js";
 import { passesManifestOwnerBasePolicy } from "../plugins/manifest-owner-policy.js";
@@ -10,7 +9,6 @@ type BundledHealthApi = {
   registerPolicyDoctorChecks?: (host: { registerHealthCheck: typeof registerHealthCheck }) => void;
 };
 
-/** Reused helper for register Bundled Health Checks behavior in src/flows. */
 export function registerBundledHealthChecks(params: { cfg: OpenClawConfig; cwd?: string }): void {
   if (!shouldRegisterPolicyHealth(params)) {
     return;

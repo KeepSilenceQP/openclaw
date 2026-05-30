@@ -1,4 +1,3 @@
-// config/sessions thread info helpers and runtime behavior.
 import { resolveSessionThreadInfo } from "../../channels/plugins/session-conversation.js";
 import { resolveLoadedSessionThreadInfo } from "../../channels/plugins/session-thread-info-loaded.js";
 
@@ -13,7 +12,6 @@ export function parseSessionThreadInfo(sessionKey: string | undefined): {
   return resolveSessionThreadInfo(sessionKey);
 }
 
-/** Reused helper for parse Session Thread Info Fast behavior in src/config/sessions. */
 export function parseSessionThreadInfoFast(sessionKey: string | undefined): {
   baseSessionKey: string | undefined;
   threadId: string | undefined;

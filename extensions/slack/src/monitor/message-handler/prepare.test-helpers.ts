@@ -1,4 +1,3 @@
-// extensions/slack/src/monitor/message-handler prepare test helpers helpers and runtime behavior.
 import fs from "node:fs";
 import path from "node:path";
 import type { App } from "@slack/bolt";

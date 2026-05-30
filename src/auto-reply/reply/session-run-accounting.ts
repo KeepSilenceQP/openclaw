@@ -25,12 +25,10 @@ function resolveNonNegativeTokenCount(value: number | undefined): number | undef
     : undefined;
 }
 
-/** Reused helper for persist Run Session Usage behavior in src/auto-reply/reply. */
 export async function persistRunSessionUsage(params: PersistRunSessionUsageParams): Promise<void> {
   await persistSessionUsageUpdate(params);
 }
 
-/** Reused helper for increment Run Compaction Count behavior in src/auto-reply/reply. */
 export async function incrementRunCompactionCount(
   params: IncrementRunCompactionCountParams,
 ): Promise<number | undefined> {

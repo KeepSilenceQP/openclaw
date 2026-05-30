@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix client resolver test helpers helpers and runtime behavior.
 import { expect, vi, type Mock } from "vitest";
 import type { MatrixClient } from "./sdk.js";
 

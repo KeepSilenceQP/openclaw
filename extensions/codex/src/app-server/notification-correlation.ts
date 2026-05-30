@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server notification correlation helpers and runtime behavior.
 import {
   isJsonObject,
   type CodexServerNotification,

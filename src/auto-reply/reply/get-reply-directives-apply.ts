@@ -65,7 +65,6 @@ function hasOnlyModelDirective(directives: InlineDirectives): boolean {
   );
 }
 
-/** Reused helper for format Model Override Reset Event behavior in src/auto-reply/reply. */
 export function formatModelOverrideResetEvent(params: {
   rejectedRef?: string;
   initialModelLabel: string;
@@ -76,7 +75,6 @@ export function formatModelOverrideResetEvent(params: {
   return `Model override not allowed for this agent; reverted to ${params.initialModelLabel}.`;
 }
 
-/** Shared type for Apply Directive Result in src/auto-reply/reply. */
 export type ApplyDirectiveResult =
   | { kind: "reply"; reply: ReplyPayload | ReplyPayload[] | undefined }
   | {
@@ -94,7 +92,6 @@ export type ApplyDirectiveResult =
       };
     };
 
-/** Reused helper for apply Inline Directive Overrides behavior in src/auto-reply/reply. */
 export async function applyInlineDirectiveOverrides(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;

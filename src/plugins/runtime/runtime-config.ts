@@ -1,4 +1,3 @@
-// plugins/runtime runtime config helpers and runtime behavior.
 import { getRuntimeConfig } from "../../config/config.js";
 import {
   mutateConfigFile as mutateConfigFileInternal,
@@ -49,7 +48,6 @@ export function resetRuntimeConfigDeprecationWarningStateForTest(): void {
   warnedDeprecatedConfigApis.clear();
 }
 
-/** Reused helper for create Runtime Config behavior in src/plugins/runtime. */
 export function createRuntimeConfig(): PluginRuntime["config"] {
   return {
     current: getRuntimeConfig,

@@ -1,4 +1,3 @@
-// extensions/lobster runtime api helpers and runtime behavior.
 /** Re-exported lobster plugin public API, starting with define Plugin Entry. */
 export { definePluginEntry } from "openclaw/plugin-sdk/core";
 /** Re-exported lobster plugin public API. */

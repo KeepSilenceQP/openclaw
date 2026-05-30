@@ -16,7 +16,6 @@ function containsAuthoredInclude(value: unknown): boolean {
   return Object.values(value).some((entry) => containsAuthoredInclude(entry));
 }
 
-/** Reused helper for repair Legacy Config For Update Channel behavior in src/commands/doctor. */
 export async function repairLegacyConfigForUpdateChannel(params: {
   configSnapshot: ConfigSnapshot;
   jsonMode: boolean;

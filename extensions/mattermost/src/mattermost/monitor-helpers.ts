@@ -1,4 +1,3 @@
-// extensions/mattermost/src/mattermost monitor helpers helpers and runtime behavior.
 import { formatInboundFromLabel as formatInboundFromLabelShared } from "openclaw/plugin-sdk/channel-inbound";
 import { resolveThreadSessionKeys as resolveThreadSessionKeysShared } from "openclaw/plugin-sdk/routing";
 import { rawDataToString } from "openclaw/plugin-sdk/webhook-ingress";

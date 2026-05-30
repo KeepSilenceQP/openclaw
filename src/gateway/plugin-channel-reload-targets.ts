@@ -1,8 +1,6 @@
-// gateway plugin channel reload targets helpers and runtime behavior.
 import type { ChannelId } from "../channels/plugins/index.js";
 import { normalizeOptionalString } from "../shared/string-coerce.js";
 
-/** Shared type for Channel Plugin Reload Target in src/gateway. */
 export type ChannelPluginReloadTarget = {
   channelId: ChannelId;
   pluginId?: string | null;
@@ -16,7 +14,6 @@ function addNormalizedTarget(targets: Set<string>, value: string | null | undefi
   }
 }
 
-/** Reused helper for list Channel Plugin Config Target Ids behavior in src/gateway. */
 export function listChannelPluginConfigTargetIds(
   target: ChannelPluginReloadTarget,
 ): ReadonlySet<string> {
@@ -29,7 +26,6 @@ export function listChannelPluginConfigTargetIds(
   return targets;
 }
 
-/** Reused helper for plugin Config Targets Changed behavior in src/gateway. */
 export function pluginConfigTargetsChanged(
   targetIds: Iterable<string>,
   changedPaths: readonly string[],

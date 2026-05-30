@@ -41,7 +41,6 @@ function resolveProviderAuthLoginCommand(params: {
   return formatCliCommand(`openclaw models auth login --provider ${providerId}`);
 }
 
-/** Reused helper for build Provider Auth Recovery Hint behavior in src/commands. */
 export function buildProviderAuthRecoveryHint(params: {
   provider: string;
   config?: OpenClawConfig;

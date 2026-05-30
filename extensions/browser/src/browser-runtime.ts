@@ -1,4 +1,3 @@
-// extensions/browser/src browser runtime helpers and runtime behavior.
 export { startBrowserBridgeServer, stopBrowserBridgeServer } from "./browser/bridge-server.js";
 export type { BrowserBridge } from "./browser/bridge-server.js";
 export {

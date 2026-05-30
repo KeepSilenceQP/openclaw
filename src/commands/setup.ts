@@ -128,7 +128,6 @@ async function readConfigFileRaw(configPath: string): Promise<{
   }
 }
 
-/** Reused helper for setup Command behavior in src/commands. */
 export async function setupCommand(
   opts?: { workspace?: string },
   runtime: RuntimeEnv = defaultRuntime,

@@ -1,4 +1,3 @@
-// extensions/browser/src/browser browser proxy mode helpers and runtime behavior.
 import type { ResolvedBrowserConfig, ResolvedBrowserProfile } from "./config.js";
 import type { BrowserNavigationProxyMode } from "./navigation-guard.js";
 

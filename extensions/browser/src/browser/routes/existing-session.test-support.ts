@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes existing session test support helpers and runtime behavior.
 import { vi } from "vitest";
 import {
   assertBrowserNavigationResultAllowed,

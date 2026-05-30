@@ -43,7 +43,6 @@ type AgentStatusLike = {
   }>;
 };
 
-/** Reused helper for build Status All Report Lines behavior in src/commands/status-all. */
 export async function buildStatusAllReportLines(params: {
   progress: ProgressReporter;
   overviewRows: OverviewRow[];

@@ -1,4 +1,3 @@
-// extensions/whatsapp/src media helpers and runtime behavior.
 export {
   getDefaultLocalRoots,
   LocalMediaAccessError,

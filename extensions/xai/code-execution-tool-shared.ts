@@ -1,4 +1,3 @@
-// extensions/xai code execution tool shared helpers and runtime behavior.
 import type { AgentToolResult } from "openclaw/plugin-sdk/agent-core";
 import { Type } from "typebox";
 

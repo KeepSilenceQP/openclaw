@@ -28,7 +28,6 @@ function replaceRootRecord(
   Object.assign(target, replacement);
 }
 
-/** Reused constant for LEGACY CONFIG MIGRATIONS WEB SEARCH behavior in src/commands/doctor. */
 export const LEGACY_CONFIG_MIGRATIONS_WEB_SEARCH: LegacyConfigMigrationSpec[] = [
   defineLegacyConfigMigration({
     id: "tools.web.search-provider-config->plugins.entries",

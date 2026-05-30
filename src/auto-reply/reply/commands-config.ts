@@ -28,7 +28,6 @@ import {
 import { resolveConfigWriteDeniedText } from "./config-write-authorization.js";
 import { parseDebugCommand } from "./debug-commands.js";
 
-/** Reused constant for handle Config Command behavior in src/auto-reply/reply. */
 export const handleConfigCommand: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;
@@ -188,7 +187,6 @@ export const handleConfigCommand: CommandHandler = async (params, allowTextComma
   return null;
 };
 
-/** Reused constant for handle Debug Command behavior in src/auto-reply/reply. */
 export const handleDebugCommand: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;

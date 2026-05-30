@@ -1,4 +1,3 @@
-// extensions/signal api helpers and runtime behavior.
 /** Re-exported signal plugin public API, starting with signal Plugin. */
 export { signalPlugin } from "./src/channel.js";
 /** Re-exported signal plugin public API, starting with signal Setup Plugin. */

@@ -1,5 +1,3 @@
-// config types channel health helpers and runtime behavior.
-/** Shared type for Channel Heartbeat Visibility Config in src/config. */
 export type ChannelHeartbeatVisibilityConfig = {
   /** Show HEARTBEAT_OK acknowledgments in chat (default: false). */
   showOk?: boolean;
@@ -9,7 +7,6 @@ export type ChannelHeartbeatVisibilityConfig = {
   useIndicator?: boolean;
 };
 
-/** Shared type for Channel Health Monitor Config in src/config. */
 export type ChannelHealthMonitorConfig = {
   /**
    * Enable channel-health-monitor restarts for this channel or account.

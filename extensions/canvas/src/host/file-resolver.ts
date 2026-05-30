@@ -1,4 +1,3 @@
-// extensions/canvas/src/host file resolver helpers and runtime behavior.
 import path from "node:path";
 import { root as fsRoot, FsSafeError } from "openclaw/plugin-sdk/security-runtime";
 

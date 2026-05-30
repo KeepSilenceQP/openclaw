@@ -1,4 +1,3 @@
-// extensions/browser/src/browser snapshot urls helpers and runtime behavior.
 export type SnapshotUrlEntry = {
   text: string;
   url: string;

@@ -6,7 +6,6 @@ import type { InlineDirectives } from "./directive-handling.parse.js";
 import { withOptions } from "./directive-handling.shared.js";
 import { resolveQueueSettings } from "./queue/settings.js";
 
-/** Reused helper for maybe Handle Queue Directive behavior in src/auto-reply/reply. */
 export function maybeHandleQueueDirective(params: {
   directives: InlineDirectives;
   cfg: OpenClawConfig;

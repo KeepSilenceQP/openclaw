@@ -4,7 +4,6 @@ import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { defaultRuntime } from "../../runtime.js";
 import type { FollowupRun } from "./queue.js";
 
-/** Reused helper for create Deferred behavior in src/auto-reply/reply. */
 export function createDeferred<T>() {
   let resolve!: (value: T) => void;
   let reject!: (reason?: unknown) => void;
@@ -15,7 +14,6 @@ export function createDeferred<T>() {
   return { promise, resolve, reject };
 }
 
-/** Reused helper for create Queue Test Run behavior in src/auto-reply/reply. */
 export function createQueueTestRun(params: {
   prompt: string;
   messageId?: string;
@@ -49,7 +47,6 @@ export function createQueueTestRun(params: {
   };
 }
 
-/** Reused helper for install Queue Runtime Error Silencer behavior in src/auto-reply/reply. */
 export function installQueueRuntimeErrorSilencer(): void {
   let previousRuntimeError: typeof defaultRuntime.error;
 

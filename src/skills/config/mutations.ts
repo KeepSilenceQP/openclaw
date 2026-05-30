@@ -1,10 +1,8 @@
-// src/skills/config mutations helpers and runtime behavior.
 import { mutateConfigFileWithRetry } from "../../config/config.js";
 import { REDACTED_SENTINEL } from "../../config/redact-snapshot.js";
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { normalizeSecretInput } from "../../utils/normalize-secret-input.js";
 
-/** Reused helper for patch Skill Config Entry behavior in src/skills/config. */
 export function patchSkillConfigEntry(
   cfg: OpenClawConfig,
   skillKey: string,
@@ -54,7 +52,6 @@ export function patchSkillConfigEntry(
   };
 }
 
-/** Reused helper for update Skill Config Entry behavior in src/skills/config. */
 export async function updateSkillConfigEntry(params: {
   skillKey: string;
   enabled?: boolean;

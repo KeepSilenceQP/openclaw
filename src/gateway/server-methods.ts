@@ -1,4 +1,3 @@
-// gateway server methods helpers and runtime behavior.
 import { ErrorCodes, errorShape } from "../../packages/gateway-protocol/src/index.js";
 import {
   gatewayStartupUnavailableDetails,
@@ -246,7 +245,6 @@ function authorizeGatewayMethod(
   return null;
 }
 
-/** Reused constant for core Gateway Handlers behavior in src/gateway. */
 export const coreGatewayHandlers: GatewayRequestHandlers = {
   ...createLazyCoreHandlers({
     methods: ["connect"],
@@ -599,7 +597,6 @@ function createRequestGatewayMethodRegistry(
   ]);
 }
 
-/** Reused helper for handle Gateway Request behavior in src/gateway. */
 export async function handleGatewayRequest(
   opts: GatewayRequestOptions & { extraHandlers?: GatewayRequestHandlers },
 ): Promise<void> {

@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw ai module helpers and runtime behavior.
 import { extractErrorCode, formatErrorMessage } from "../infra/errors.js";
 
 export type PwAiModule = typeof import("./pw-ai.js");

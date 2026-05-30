@@ -105,7 +105,6 @@ function loadScopedChannelPlugin(params: {
   return findScopedChannelPlugin(snapshot, params.channelId, params.supports);
 }
 
-/** Reused helper for resolve Installable Channel Plugin behavior in src/commands/channel-setup. */
 export async function resolveInstallableChannelPlugin(params: {
   cfg: OpenClawConfig;
   runtime: RuntimeEnv;

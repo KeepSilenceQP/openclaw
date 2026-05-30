@@ -1,4 +1,3 @@
-// extensions/browser/src/cli browser cli helpers and runtime behavior.
 import type { Command } from "commander";
 import {
   registerCommandGroups,

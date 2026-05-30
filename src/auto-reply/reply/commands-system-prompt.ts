@@ -19,7 +19,6 @@ import { resolveReusableWorkspaceSkillSnapshot } from "../../skills/runtime/sess
 import type { HandleCommandsParams } from "./commands-types.js";
 import { resolveRuntimePolicySessionKey } from "./runtime-policy-session-key.js";
 
-/** Shared type for Commands System Prompt Bundle in src/auto-reply/reply. */
 export type CommandsSystemPromptBundle = {
   systemPrompt: string;
   tools: AgentTool[];
@@ -29,7 +28,6 @@ export type CommandsSystemPromptBundle = {
   sandboxRuntime: ReturnType<typeof resolveSandboxRuntimeStatus>;
 };
 
-/** Reused helper for resolve Commands System Prompt Bundle behavior in src/auto-reply/reply. */
 export async function resolveCommandsSystemPromptBundle(
   params: HandleCommandsParams,
 ): Promise<CommandsSystemPromptBundle> {

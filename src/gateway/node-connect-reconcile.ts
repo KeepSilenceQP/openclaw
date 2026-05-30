@@ -1,4 +1,3 @@
-// gateway node connect reconcile helpers and runtime behavior.
 import type { ConnectParams } from "../../packages/gateway-protocol/src/index.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import {
@@ -17,7 +16,6 @@ import {
   resolveNodePairingCommandAllowlist,
 } from "./node-command-policy.js";
 
-/** Shared type for Node Connect Pairing Reconcile Result in src/gateway. */
 export type NodeConnectPairingReconcileResult = {
   nodeId: string;
   declaredCaps: string[];
@@ -103,7 +101,6 @@ function buildNodePairingRequestInput(params: {
   };
 }
 
-/** Reused helper for reconcile Node Pairing On Connect behavior in src/gateway. */
 export async function reconcileNodePairingOnConnect(params: {
   cfg: OpenClawConfig;
   connectParams: ConnectParams;

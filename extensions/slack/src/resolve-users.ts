@@ -1,4 +1,3 @@
-// extensions/slack/src resolve users helpers and runtime behavior.
 import type { WebClient } from "@slack/web-api";
 import {
   normalizeLowercaseStringOrEmpty,

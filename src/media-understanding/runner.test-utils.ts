@@ -1,4 +1,3 @@
-// media-understanding runner test utils helpers and runtime behavior.
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -12,7 +11,6 @@ type MediaFixtureParams = {
   cache: ReturnType<typeof createMediaAttachmentCache>;
 };
 
-/** Reused helper for with Media Fixture behavior in src/media-understanding. */
 export async function withMediaFixture(
   params: {
     filePrefix: string;
@@ -44,7 +42,6 @@ export async function withMediaFixture(
   }
 }
 
-/** Reused helper for with Audio Fixture behavior in src/media-understanding. */
 export async function withAudioFixture(
   filePrefix: string,
   run: (params: MediaFixtureParams) => Promise<void>,
@@ -60,14 +57,12 @@ export async function withAudioFixture(
   );
 }
 
-/** Reused helper for create Safe Audio Fixture Buffer behavior in src/media-understanding. */
 export function createSafeAudioFixtureBuffer(size?: number, fill = 0xab): Buffer {
   const minSafeSize = MIN_AUDIO_FILE_BYTES + 1;
   const finalSize = Math.max(size ?? minSafeSize, minSafeSize);
   return Buffer.alloc(finalSize, fill);
 }
 
-/** Reused helper for with Video Fixture behavior in src/media-understanding. */
 export async function withVideoFixture(
   filePrefix: string,
   run: (params: MediaFixtureParams) => Promise<void>,

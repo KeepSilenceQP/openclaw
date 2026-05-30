@@ -4,7 +4,6 @@ import type { ChannelAccountSnapshot } from "../channels/plugins/types.public.js
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveDefaultChannelAccountContext } from "./channel-account-context.js";
 
-/** Shared type for Link Channel Context in src/commands. */
 export type LinkChannelContext = {
   linked: boolean;
   authAgeMs: number | null;
@@ -13,7 +12,6 @@ export type LinkChannelContext = {
   plugin: ChannelPlugin;
 };
 
-/** Reused helper for resolve Link Channel Context behavior in src/commands. */
 export async function resolveLinkChannelContext(
   cfg: OpenClawConfig,
   options: { sourceConfig?: OpenClawConfig } = {},

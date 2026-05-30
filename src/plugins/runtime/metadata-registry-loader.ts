@@ -1,4 +1,3 @@
-// plugins/runtime metadata registry loader helpers and runtime behavior.
 import type { OpenClawConfig } from "../../config/types.openclaw.js";
 import { loadOpenClawPlugins } from "../loader.js";
 import type { PluginManifestRegistry } from "../manifest-registry.js";
@@ -11,7 +10,6 @@ import {
   type PluginRuntimeLoadContext,
 } from "./load-context.js";
 
-/** Reused helper for load Plugin Metadata Registry Snapshot behavior in src/plugins/runtime. */
 export function loadPluginMetadataRegistrySnapshot(options?: {
   config?: OpenClawConfig;
   activationSourceConfig?: OpenClawConfig;

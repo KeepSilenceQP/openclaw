@@ -1794,7 +1794,6 @@ function registerCapabilityListAndInspect(capability: Command) {
     });
 }
 
-/** Reused helper for register Capability Cli behavior in src/cli. */
 export function registerCapabilityCli(program: Command) {
   removeCommandByName(program, "infer");
   removeCommandByName(program, "capability");

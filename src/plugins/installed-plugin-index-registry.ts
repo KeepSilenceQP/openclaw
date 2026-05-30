@@ -1,4 +1,3 @@
-// plugins installed plugin index registry helpers and runtime behavior.
 import { normalizePluginsConfig } from "./config-state.js";
 import {
   discoverOpenClawPlugins,
@@ -9,7 +8,6 @@ import { loadInstalledPluginIndexInstallRecordsSync } from "./installed-plugin-i
 import type { LoadInstalledPluginIndexParams } from "./installed-plugin-index-types.js";
 import { loadPluginManifestRegistry, type PluginManifestRegistry } from "./manifest-registry.js";
 
-/** Reused helper for resolve Installed Plugin Index Registry behavior in src/plugins. */
 export function resolveInstalledPluginIndexRegistry(params: LoadInstalledPluginIndexParams): {
   registry: PluginManifestRegistry;
   candidates: readonly PluginCandidate[];

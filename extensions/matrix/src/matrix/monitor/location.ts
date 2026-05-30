@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor location helpers and runtime behavior.
 import { parseStrictFiniteNumber } from "openclaw/plugin-sdk/number-runtime";
 import {
   normalizeLowercaseStringOrEmpty,

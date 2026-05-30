@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/routes agent storage helpers and runtime behavior.
 import {
   normalizeOptionalString,
   readStringValue,

@@ -1,5 +1,3 @@
-// shared message content blocks helpers and runtime behavior.
-/** Reused helper for visit Object Content Blocks behavior in src/shared. */
 export function visitObjectContentBlocks(
   message: unknown,
   visitor: (block: Record<string, unknown>) => void,

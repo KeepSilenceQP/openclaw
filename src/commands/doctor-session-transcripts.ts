@@ -166,7 +166,6 @@ async function writeActiveTranscript(params: {
   return backupPath;
 }
 
-/** Reused helper for repair Broken Session Transcript File behavior in src/commands. */
 export async function repairBrokenSessionTranscriptFile(params: {
   filePath: string;
   shouldRepair: boolean;
@@ -247,7 +246,6 @@ async function listSessionTranscriptFiles(sessionDirs: string[]): Promise<string
   return files.toSorted((a, b) => a.localeCompare(b));
 }
 
-/** Reused helper for note Session Transcript Health behavior in src/commands. */
 export async function noteSessionTranscriptHealth(params?: {
   shouldRepair?: boolean;
   sessionDirs?: string[];

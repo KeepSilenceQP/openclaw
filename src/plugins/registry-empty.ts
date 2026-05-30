@@ -1,7 +1,5 @@
-// plugins registry empty helpers and runtime behavior.
 import type { PluginRegistry } from "./registry-types.js";
 
-/** Reused helper for create Empty Plugin Registry behavior in src/plugins. */
 export function createEmptyPluginRegistry(): PluginRegistry {
   return {
     plugins: [],

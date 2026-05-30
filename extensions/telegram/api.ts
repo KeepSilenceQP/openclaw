@@ -1,4 +1,3 @@
-// extensions/telegram api helpers and runtime behavior.
 /** Re-exported telegram plugin public API, starting with telegram Plugin. */
 export { telegramPlugin } from "./src/channel.js";
 /** Re-exported telegram plugin public API, starting with telegram Setup Plugin. */

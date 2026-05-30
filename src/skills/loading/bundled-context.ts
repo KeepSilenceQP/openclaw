@@ -6,7 +6,6 @@ const skillsLogger = createSubsystemLogger("skills");
 let hasWarnedMissingBundledDir = false;
 let cachedBundledContext: { dir: string; names: Set<string> } | null = null;
 
-/** Shared type for Bundled Skills Context in src/agents/skills. */
 export type BundledSkillsContext = {
   dir?: string;
   names: Set<string>;

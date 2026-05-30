@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock discovery shared helpers and runtime behavior.
 import { resolveAwsSdkEnvVarName } from "openclaw/plugin-sdk/provider-auth-runtime";
 import type { ModelProviderConfig } from "openclaw/plugin-sdk/provider-model-shared";
 

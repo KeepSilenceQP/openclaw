@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers/agents prompt overlay runtime contract helpers and runtime behavior.
 import type { OpenClawConfig } from "../../../config/types.openclaw.js";
 import type { ProviderSystemPromptContributionContext } from "../../../plugins/types.js";
 

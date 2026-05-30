@@ -1,4 +1,3 @@
-// extensions/whatsapp/src outbound adapter helpers and runtime behavior.
 import { type ChannelOutboundAdapter } from "openclaw/plugin-sdk/channel-send-result";
 import { chunkText } from "openclaw/plugin-sdk/reply-chunking";
 import { shouldLogVerbose } from "openclaw/plugin-sdk/runtime-env";

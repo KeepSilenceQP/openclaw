@@ -1,4 +1,3 @@
-// extensions/matrix/src test runtime helpers and runtime behavior.
 import {
   implicitMentionKindWhen,
   resolveInboundMentionDecision,

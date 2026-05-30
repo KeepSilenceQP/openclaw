@@ -1,4 +1,3 @@
-// tui tui submit test helpers helpers and runtime behavior.
 import { vi } from "vitest";
 import { createEditorSubmitHandler } from "./tui-submit.js";
 
@@ -17,7 +16,6 @@ type SubmitHarness = {
   onSubmit: (text: string) => void;
 };
 
-/** Reused helper for create Submit Harness behavior in src/tui. */
 export function createSubmitHarness(params?: {
   canSubmitMessage?: (value: string) => boolean;
 }): SubmitHarness {

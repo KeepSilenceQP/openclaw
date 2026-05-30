@@ -1,5 +1,3 @@
-// gateway device auth helpers and runtime behavior.
-/** Re-exported API for src/gateway. */
 export {
   buildDeviceAuthPayload,
   buildDeviceAuthPayloadV3,

@@ -1,4 +1,3 @@
-// config agent dirs helpers and runtime behavior.
 import os from "node:os";
 import path from "node:path";
 import { resolveRequiredHomeDir } from "../infra/home-dir.js";
@@ -13,7 +12,6 @@ type DuplicateAgentDir = {
   agentIds: string[];
 };
 
-/** Reused class for Duplicate Agent Dir Error behavior in src/config. */
 export class DuplicateAgentDirError extends Error {
   readonly duplicates: DuplicateAgentDir[];
 
@@ -80,7 +78,6 @@ function resolveEffectiveAgentDir(
   return path.join(root, "agents", id, "agent");
 }
 
-/** Reused helper for find Duplicate Agent Dirs behavior in src/config. */
 export function findDuplicateAgentDirs(
   cfg: OpenClawConfig,
   deps?: { env?: NodeJS.ProcessEnv; homedir?: () => string },
@@ -101,7 +98,6 @@ export function findDuplicateAgentDirs(
   return [...byDir.values()].filter((v) => v.agentIds.length > 1);
 }
 
-/** Reused helper for format Duplicate Agent Dir Error behavior in src/config. */
 export function formatDuplicateAgentDirError(dups: DuplicateAgentDir[]): string {
   const lines: string[] = [
     "Duplicate agentDir detected (multi-agent config).",

@@ -1,4 +1,3 @@
-// extensions/slack/src setup core helpers and runtime behavior.
 import { hasConfiguredSecretInput } from "openclaw/plugin-sdk/secret-input";
 import {
   createAccountScopedAllowFromSection,

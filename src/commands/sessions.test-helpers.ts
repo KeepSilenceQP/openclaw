@@ -24,24 +24,20 @@ vi.mock("../config/config.js", () => ({
   loadConfig: () => sessionsConfigState.loadConfig(),
 }));
 
-/** Reused helper for mock Sessions Config behavior in src/commands. */
 export function mockSessionsConfig() {
   // The shared config mock is hoisted above so tests can keep their
   // existing setup call without paying `importActual` cost or nested-mock
   // warnings before importing `sessions.ts`.
 }
 
-/** Reused helper for set Mock Sessions Config behavior in src/commands. */
 export function setMockSessionsConfig(loader: () => Record<string, unknown>) {
   sessionsConfigState.loadConfig = loader;
 }
 
-/** Reused helper for reset Mock Sessions Config behavior in src/commands. */
 export function resetMockSessionsConfig() {
   sessionsConfigState.loadConfig = defaultSessionsConfigLoader;
 }
 
-/** Reused helper for make Runtime behavior in src/commands. */
 export function makeRuntime(params?: { throwOnError?: boolean }): {
   runtime: RuntimeEnv;
   logs: string[];
@@ -68,7 +64,6 @@ export function makeRuntime(params?: { throwOnError?: boolean }): {
   };
 }
 
-/** Reused helper for write Store behavior in src/commands. */
 export function writeStore(data: unknown, prefix = "sessions"): string {
   const fileName = `${[prefix, Date.now(), randomUUID()].join("-")}.json`;
   const file = path.join(os.tmpdir(), fileName);
@@ -76,7 +71,6 @@ export function writeStore(data: unknown, prefix = "sessions"): string {
   return file;
 }
 
-/** Reused helper for run Sessions Json behavior in src/commands. */
 export async function runSessionsJson<T>(
   run: (
     opts: { json?: boolean; store?: string; active?: string; limit?: string | number },

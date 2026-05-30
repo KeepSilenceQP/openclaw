@@ -1,4 +1,3 @@
-// extensions/diagnostics-otel/src service helpers and runtime behavior.
 import {
   context as otelContextApi,
   metrics,

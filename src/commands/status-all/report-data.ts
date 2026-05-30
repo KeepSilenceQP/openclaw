@@ -164,7 +164,6 @@ async function resolveStatusAllLocalDiagnosis(params: {
   };
 }
 
-/** Reused helper for build Status All Report Data behavior in src/commands/status-all. */
 export async function buildStatusAllReportData(params: {
   overview: StatusScanOverviewResult;
   daemon: StatusGatewayServiceSummary;

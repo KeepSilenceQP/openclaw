@@ -1,4 +1,3 @@
-// extensions/slack/src doctor contract helpers and runtime behavior.
 import type {
   ChannelDoctorConfigMutation,
   ChannelDoctorLegacyConfigRule,

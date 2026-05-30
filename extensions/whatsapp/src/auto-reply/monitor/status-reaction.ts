@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/auto-reply/monitor status reaction helpers and runtime behavior.
 import {
   createStatusReactionController,
   shouldAckReactionForWhatsApp,

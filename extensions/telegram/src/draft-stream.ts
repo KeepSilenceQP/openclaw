@@ -1,4 +1,3 @@
-// extensions/telegram/src draft stream helpers and runtime behavior.
 import type { Bot } from "grammy";
 import {
   createFinalizableDraftStreamControlsForState,

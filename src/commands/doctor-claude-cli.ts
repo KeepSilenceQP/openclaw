@@ -1,4 +1,3 @@
-// src/commands doctor claude cli helpers and runtime behavior.
 import fs from "node:fs";
 import { note } from "../../packages/terminal-core/src/note.js";
 import { resolveModelAgentRuntimeMetadata } from "../agents/agent-runtime-metadata.js";
@@ -192,7 +191,6 @@ function resolveClaudeCliWorkspaceTargets(params: {
     });
 }
 
-/** Reused helper for note Claude Cli Health behavior in src/commands. */
 export function noteClaudeCliHealth(
   cfg: OpenClawConfig,
   deps?: {

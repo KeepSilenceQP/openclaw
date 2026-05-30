@@ -1,4 +1,3 @@
-// extensions/browser/src/cli browser cli examples helpers and runtime behavior.
 export const browserCoreExamples = [
   "openclaw browser status",
   "openclaw browser start",

@@ -1,9 +1,6 @@
-// shared/text reasoning tags helpers and runtime behavior.
 import { findCodeRegions, isInsideCode } from "./code-regions.js";
 import { findFinalTagMatches } from "./final-tags.js";
-/** Shared type for Reasoning Tag Mode in src/shared/text. */
 export type ReasoningTagMode = "strict" | "preserve";
-/** Shared type for Reasoning Tag Trim in src/shared/text. */
 export type ReasoningTagTrim = "none" | "start" | "both";
 
 const QUICK_TAG_RE = /<\s*\/?\s*(?:(?:antml:)?(?:think(?:ing)?|thought)|antthinking|final)\b/i;
@@ -20,7 +17,6 @@ function applyTrim(value: string, mode: ReasoningTagTrim): string {
   return value.trim();
 }
 
-/** Reused helper for has Orphan Reasoning Close Boundary behavior in src/shared/text. */
 export function hasOrphanReasoningCloseBoundary(params: {
   before: string;
   after: string;
@@ -28,7 +24,6 @@ export function hasOrphanReasoningCloseBoundary(params: {
   return params.before.trim().length > 0 && params.after.trim().length > 0;
 }
 
-/** Reused helper for strip Reasoning Tags From Text behavior in src/shared/text. */
 export function stripReasoningTagsFromText(
   text: string,
   options?: {

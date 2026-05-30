@@ -93,7 +93,6 @@ function resolveExportTrajectoryOptions(
   };
 }
 
-/** Reused helper for export Trajectory Command behavior in src/commands. */
 export async function exportTrajectoryCommand(
   opts: ExportTrajectoryCommandOptions,
   runtime: RuntimeEnv,

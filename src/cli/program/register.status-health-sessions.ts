@@ -107,7 +107,6 @@ async function runWithVerboseAndTimeout(
   });
 }
 
-/** Reused helper for register Status Health Sessions Commands behavior in src/cli/program. */
 export function registerStatusHealthSessionsCommands(program: Command) {
   program
     .command("status")

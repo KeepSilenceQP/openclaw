@@ -1,4 +1,3 @@
-// extensions/diffs index helpers and runtime behavior.
 import { definePluginEntry } from "./api.js";
 import { diffsPluginConfigSchema } from "./src/config.js";
 import { registerDiffsPlugin } from "./src/plugin.js";

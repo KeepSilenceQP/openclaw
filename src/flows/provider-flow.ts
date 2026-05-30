@@ -1,4 +1,3 @@
-// flows provider flow helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizePluginsConfig, resolveEffectiveEnableState } from "../plugins/config-state.js";
 import * as providerAuthChoices from "../plugins/provider-auth-choices.js";
@@ -136,7 +135,6 @@ function resolveManifestProviderSetupFlowContributions(params?: {
     });
 }
 
-/** Reused helper for resolve Provider Setup Flow Contributions behavior in src/flows. */
 export function resolveProviderSetupFlowContributions(params?: {
   config?: OpenClawConfig;
   workspaceDir?: string;

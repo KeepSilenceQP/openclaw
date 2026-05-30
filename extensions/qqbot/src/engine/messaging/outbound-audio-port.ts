@@ -1,4 +1,3 @@
-// extensions/qqbot/src/engine/messaging outbound audio port helpers and runtime behavior.
 import type { OutboundAudioPort } from "../adapter/audio.port.js";
 
 let outboundAudioPort: OutboundAudioPort | null = null;

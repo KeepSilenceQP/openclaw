@@ -137,7 +137,6 @@ function resolveConfiguredProviderFromAuthChange(params: {
   );
 }
 
-/** Reused helper for build Gateway Auth Config behavior in src/commands. */
 export function buildGatewayAuthConfig(params: {
   existing?: GatewayAuthConfig;
   mode: GatewayAuthChoice;
@@ -178,7 +177,6 @@ export function buildGatewayAuthConfig(params: {
   return base;
 }
 
-/** Reused helper for prompt Auth Config behavior in src/commands. */
 export async function promptAuthConfig(
   cfg: OpenClawConfig,
   runtime: RuntimeEnv,

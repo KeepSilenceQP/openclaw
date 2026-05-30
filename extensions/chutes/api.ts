@@ -1,4 +1,3 @@
-// extensions/chutes api helpers and runtime behavior.
 /** Re-exported chutes plugin public API. */
 export {
   buildChutesModelDefinition,

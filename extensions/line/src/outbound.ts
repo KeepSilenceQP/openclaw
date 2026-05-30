@@ -1,4 +1,3 @@
-// extensions/line/src outbound helpers and runtime behavior.
 import {
   defineChannelMessageAdapter,
   type ChannelMessageSendResult,

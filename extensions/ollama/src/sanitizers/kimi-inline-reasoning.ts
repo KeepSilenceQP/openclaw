@@ -1,4 +1,3 @@
-// extensions/ollama/src/sanitizers kimi inline reasoning helpers and runtime behavior.
 import { normalizeLowercaseStringOrEmpty } from "openclaw/plugin-sdk/string-coerce-runtime";
 import type {
   OllamaVisibleContentSanitizer,

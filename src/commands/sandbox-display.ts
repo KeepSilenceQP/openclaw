@@ -26,7 +26,6 @@ function displayItems<T>(items: T[], config: DisplayConfig<T>, runtime: RuntimeE
   }
 }
 
-/** Reused helper for display Containers behavior in src/commands. */
 export function displayContainers(containers: SandboxContainerInfo[], runtime: RuntimeEnv): void {
   displayItems(
     containers,
@@ -54,7 +53,6 @@ export function displayContainers(containers: SandboxContainerInfo[], runtime: R
   );
 }
 
-/** Reused helper for display Browsers behavior in src/commands. */
 export function displayBrowsers(browsers: SandboxBrowserInfo[], runtime: RuntimeEnv): void {
   displayItems(
     browsers,
@@ -83,7 +81,6 @@ export function displayBrowsers(browsers: SandboxBrowserInfo[], runtime: Runtime
   );
 }
 
-/** Reused helper for display Summary behavior in src/commands. */
 export function displaySummary(
   containers: SandboxContainerInfo[],
   browsers: SandboxBrowserInfo[],
@@ -105,7 +102,6 @@ export function displaySummary(
   }
 }
 
-/** Reused helper for display Recreate Preview behavior in src/commands. */
 export function displayRecreatePreview(
   containers: SandboxContainerInfo[],
   browsers: SandboxBrowserInfo[],
@@ -133,7 +129,6 @@ export function displayRecreatePreview(
   runtime.log(`\nTotal: ${total} runtime(s)`);
 }
 
-/** Reused helper for display Recreate Result behavior in src/commands. */
 export function displayRecreateResult(
   result: { successCount: number; failCount: number },
   runtime: RuntimeEnv,

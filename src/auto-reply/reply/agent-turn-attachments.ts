@@ -16,12 +16,10 @@ const agentTurnMediaRuntimeLoader = createLazyImportLoader(
   () => import("./dispatch-acp-media.runtime.js"),
 );
 
-/** Reused helper for load Agent Turn Media Runtime behavior in src/auto-reply/reply. */
 export function loadAgentTurnMediaRuntime() {
   return agentTurnMediaRuntimeLoader.load();
 }
 
-/** Shared type for Agent Turn Attachment Runtime in src/auto-reply/reply. */
 export type AgentTurnAttachmentRuntime = Pick<
   Awaited<ReturnType<typeof loadAgentTurnMediaRuntime>>,
   | "MediaAttachmentCache"
@@ -44,12 +42,10 @@ function hasInboundHistoryMedia(ctx: MsgContext): boolean {
   );
 }
 
-/** Reused helper for has Potential Agent Turn Attachments behavior in src/auto-reply/reply. */
 export function hasPotentialAgentTurnAttachments(ctx: MsgContext): boolean {
   return hasInboundMedia(ctx) || hasInboundHistoryMedia(ctx);
 }
 
-/** Reused helper for resolve Agent Turn Attachments behavior in src/auto-reply/reply. */
 export async function resolveAgentTurnAttachments(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;
@@ -156,7 +152,6 @@ export async function resolveAgentTurnAttachments(params: {
   return { attachments: results, recentHistoryImages: resolvedHistoryImages };
 }
 
-/** Reused helper for resolve Agent Attachments behavior in src/auto-reply/reply. */
 export async function resolveAgentAttachments(params: {
   ctx: MsgContext;
   cfg: OpenClawConfig;
@@ -165,7 +160,6 @@ export async function resolveAgentAttachments(params: {
   return (await resolveAgentTurnAttachments(params)).attachments;
 }
 
-/** Reused helper for resolve Inline Agent Image Attachments behavior in src/auto-reply/reply. */
 export function resolveInlineAgentImageAttachments(
   images: Array<{ data: string; mimeType: string }> | undefined,
 ): AgentTurnAttachment[] {

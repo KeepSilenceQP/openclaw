@@ -1,4 +1,3 @@
-// config plugin auto enable test helpers helpers and runtime behavior.
 import path from "node:path";
 import { clearCurrentPluginMetadataSnapshot } from "../plugins/current-plugin-metadata-snapshot.js";
 import { type PluginManifestRegistry } from "../plugins/manifest-registry.js";
@@ -8,19 +7,16 @@ import { cleanupTrackedTempDirs, makeTrackedTempDir } from "../plugins/test-help
 
 const tempDirs: string[] = [];
 
-/** Reused helper for reset Plugin Auto Enable Test State behavior in src/config. */
 export function resetPluginAutoEnableTestState(): void {
   clearCurrentPluginMetadataSnapshot();
   clearPluginSetupRegistryCache();
   cleanupTrackedTempDirs(tempDirs);
 }
 
-/** Reused helper for make Temp Dir behavior in src/config. */
 export function makeTempDir(): string {
   return makeTrackedTempDir("openclaw-plugin-auto-enable", tempDirs);
 }
 
-/** Reused helper for make Isolated Env behavior in src/config. */
 export function makeIsolatedEnv(overrides: NodeJS.ProcessEnv = {}): NodeJS.ProcessEnv {
   const rootDir = makeTempDir();
   return {
@@ -32,7 +28,6 @@ export function makeIsolatedEnv(overrides: NodeJS.ProcessEnv = {}): NodeJS.Proce
   };
 }
 
-/** Reused helper for make Registry behavior in src/config. */
 export function makeRegistry(
   plugins: Array<{
     id: string;
@@ -74,7 +69,6 @@ export function makeRegistry(
   };
 }
 
-/** Reused helper for make Apn Channel Config behavior in src/config. */
 export function makeApnChannelConfig() {
   return { channels: { apn: { someKey: "value" } } };
 }

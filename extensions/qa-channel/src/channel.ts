@@ -1,4 +1,3 @@
-// extensions/qa-channel/src channel helpers and runtime behavior.
 import {
   buildChannelOutboundSessionRoute,
   buildThreadAwareOutboundSessionRoute,

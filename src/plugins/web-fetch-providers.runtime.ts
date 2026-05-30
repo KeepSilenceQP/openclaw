@@ -46,7 +46,6 @@ function mapRegistryWebFetchProviders(params: {
   });
 }
 
-/** Reused helper for resolve Plugin Web Fetch Providers behavior in src/plugins. */
 export function resolvePluginWebFetchProviders(params: {
   config?: PluginLoadOptions["config"];
   workspaceDir?: string;
@@ -65,7 +64,6 @@ export function resolvePluginWebFetchProviders(params: {
   });
 }
 
-/** Reused helper for resolve Runtime Web Fetch Providers behavior in src/plugins. */
 export function resolveRuntimeWebFetchProviders(params: {
   config?: PluginLoadOptions["config"];
   workspaceDir?: string;

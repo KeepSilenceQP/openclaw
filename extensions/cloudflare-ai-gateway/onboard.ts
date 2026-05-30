@@ -1,4 +1,3 @@
-// extensions/cloudflare-ai-gateway onboard helpers and runtime behavior.
 import {
   applyAgentDefaultModelPrimary,
   applyProviderConfigWithDefaultModel,

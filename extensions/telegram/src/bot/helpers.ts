@@ -1,4 +1,3 @@
-// extensions/telegram/src/bot helpers helpers and runtime behavior.
 import type { Chat, Message } from "grammy/types";
 import { formatLocationText } from "openclaw/plugin-sdk/channel-inbound";
 import {

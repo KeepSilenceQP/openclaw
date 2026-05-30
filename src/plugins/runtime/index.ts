@@ -1,4 +1,3 @@
-// plugins/runtime index helpers and runtime behavior.
 import { getRuntimeConfig } from "../../config/config.js";
 import { resolveStateDir } from "../../config/paths.js";
 import {
@@ -35,9 +34,7 @@ import { createRuntimeTaskFlow } from "./runtime-taskflow.js";
 import { createRuntimeTasks } from "./runtime-tasks.js";
 import type { CreatePluginRuntimeOptions, PluginRuntime } from "./types.js";
 
-/** Re-exported API for src/plugins/runtime, starting with Create Plugin Runtime Options. */
 export type { CreatePluginRuntimeOptions } from "./types.js";
-/** Re-exported API for src/plugins/runtime. */
 export {
   clearGatewaySubagentRuntime,
   setGatewayNodesRuntime,
@@ -225,7 +222,6 @@ function createLateBindingNodes(allowGatewayBinding = false): PluginRuntime["nod
   });
 }
 
-/** Reused helper for create Plugin Runtime behavior in src/plugins/runtime. */
 export function createPluginRuntime(_options: CreatePluginRuntimeOptions = {}): PluginRuntime {
   const mediaUnderstanding = createRuntimeMediaUnderstandingFacade();
   const taskFlow = createRuntimeTaskFlow();
@@ -302,5 +298,4 @@ export function createPluginRuntime(_options: CreatePluginRuntimeOptions = {}): 
   return runtime as unknown as PluginRuntime;
 }
 
-/** Re-exported API for src/plugins/runtime, starting with Plugin Runtime. */
 export type { PluginRuntime } from "./types.js";

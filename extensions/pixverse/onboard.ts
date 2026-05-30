@@ -1,4 +1,3 @@
-// extensions/pixverse onboard helpers and runtime behavior.
 import {
   type ProviderAuthContext,
   type ProviderAuthMethod,

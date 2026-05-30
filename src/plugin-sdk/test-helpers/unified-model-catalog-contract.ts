@@ -1,4 +1,3 @@
-// plugin-sdk/test-helpers unified model catalog contract helpers and runtime behavior.
 import { expect } from "vitest";
 import type {
   OpenClawPluginApi,

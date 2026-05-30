@@ -1,4 +1,3 @@
-// extensions/canvas/src host url helpers and runtime behavior.
 import {
   resolveHostedPluginSurfaceUrl,
   type HostedPluginSurfaceUrlParams,

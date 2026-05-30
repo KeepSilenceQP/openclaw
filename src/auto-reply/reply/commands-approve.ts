@@ -123,7 +123,6 @@ function resolveApprovalAuthorizationError(params: {
   );
 }
 
-/** Reused constant for handle Approve Command behavior in src/auto-reply/reply. */
 export const handleApproveCommand: CommandHandler = async (params, allowTextCommands) => {
   if (!allowTextCommands) {
     return null;

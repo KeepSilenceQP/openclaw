@@ -1,5 +1,4 @@
 // Public reply payload facade.
-/** Re-exported API for src/auto-reply/reply. */
 export {
   applyReplyTagsToPayload,
   applyReplyThreading,
@@ -7,7 +6,6 @@ export {
   isRenderablePayload,
   shouldSuppressReasoningPayload,
 } from "./reply-payloads-base.js";
-/** Re-exported API for src/auto-reply/reply. */
 export {
   filterMessagingToolDuplicates,
   filterMessagingToolMediaDuplicates,

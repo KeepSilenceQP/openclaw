@@ -1,4 +1,3 @@
-// extensions/telegram/src draft stream test helpers helpers and runtime behavior.
 import { vi } from "vitest";
 
 type TestDraftStream = {

@@ -1,4 +1,3 @@
-// extensions/huggingface api helpers and runtime behavior.
 /** Re-exported huggingface plugin public API. */
 export {
   buildHuggingfaceModelDefinition,

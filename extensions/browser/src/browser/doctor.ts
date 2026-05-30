@@ -1,4 +1,3 @@
-// extensions/browser/src/browser doctor helpers and runtime behavior.
 import type { BrowserStatus, BrowserTransport } from "./client.types.js";
 
 type BrowserDoctorCheckStatus = "pass" | "warn" | "fail" | "info";

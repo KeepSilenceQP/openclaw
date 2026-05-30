@@ -1,4 +1,3 @@
-// extensions/telegram/src interactive dispatch helpers and runtime behavior.
 import {
   createInteractiveConversationBindingHelpers,
   dispatchPluginInteractiveHandler,

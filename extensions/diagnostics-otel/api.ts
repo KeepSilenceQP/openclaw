@@ -1,4 +1,3 @@
-// extensions/diagnostics-otel api helpers and runtime behavior.
 /** Re-exported diagnostics-otel plugin public API. */
 export {
   createChildDiagnosticTraceContext,

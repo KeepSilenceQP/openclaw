@@ -180,7 +180,6 @@ async function getConfigActionPreflightFailure(
   return null;
 }
 
-/** Reused helper for run Service Uninstall behavior in src/cli/daemon-cli. */
 export async function runServiceUninstall(params: {
   serviceNoun: string;
   service: GatewayService;
@@ -241,7 +240,6 @@ export async function runServiceUninstall(params: {
   });
 }
 
-/** Reused helper for run Service Start behavior in src/cli/daemon-cli. */
 export async function runServiceStart(params: {
   serviceNoun: string;
   service: GatewayService;
@@ -373,7 +371,6 @@ export async function runServiceStart(params: {
   }
 }
 
-/** Reused helper for run Service Stop behavior in src/cli/daemon-cli. */
 export async function runServiceStop(params: {
   serviceNoun: string;
   service: GatewayService;
@@ -464,7 +461,6 @@ export async function runServiceStop(params: {
   });
 }
 
-/** Reused helper for run Service Restart behavior in src/cli/daemon-cli. */
 export async function runServiceRestart(params: {
   serviceNoun: string;
   service: GatewayService;

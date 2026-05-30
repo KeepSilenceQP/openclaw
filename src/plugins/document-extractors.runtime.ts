@@ -37,7 +37,6 @@ function resolveExplicitAllowedDocumentExtractorPluginIds(params: {
   );
 }
 
-/** Reused helper for resolve Plugin Document Extractors behavior in src/plugins. */
 export function resolvePluginDocumentExtractors(params?: {
   config?: OpenClawConfig;
   workspaceDir?: string;

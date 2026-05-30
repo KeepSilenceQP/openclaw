@@ -1,4 +1,3 @@
-// extensions/slack account inspect api helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import { inspectSlackAccount } from "./src/account-inspect.js";
 

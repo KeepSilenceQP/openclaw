@@ -1,4 +1,3 @@
-// extensions/telegram/src bot access helpers and runtime behavior.
 import {
   firstDefined,
   isSenderIdAllowed,

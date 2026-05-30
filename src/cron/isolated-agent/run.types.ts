@@ -1,7 +1,6 @@
 // Shared types for cron/isolated-agent run types behavior.
 import type { CronDeliveryTrace, CronRunOutcome, CronRunTelemetry } from "../types.js";
 
-/** Shared type for Run Cron Agent Turn Result in src/cron/isolated-agent. */
 export type RunCronAgentTurnResult = {
   /** Last non-empty agent text output (not truncated). */
   outputText?: string;

@@ -1,4 +1,3 @@
-// config env preserve helpers and runtime behavior.
 import { isPlainObject } from "../infra/plain-object.js";
 
 /**

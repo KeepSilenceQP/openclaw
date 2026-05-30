@@ -1,4 +1,3 @@
-// extensions/browser/src/browser pw tools core helpers and runtime behavior.
 export * from "./pw-tools-core.activity.js";
 export * from "./pw-tools-core.downloads.js";
 export * from "./pw-tools-core.interactions.js";

@@ -1,4 +1,3 @@
-// extensions/telegram/src bot handlers debounce key helpers and runtime behavior.
 export function buildTelegramInboundDebounceKey(params: {
   accountId?: string | null;
   conversationKey: string;

@@ -1,7 +1,6 @@
 // Debug command parsing and formatting helpers.
 import { parseStandardSetUnsetSlashCommand } from "./commands-setunset-standard.js";
 
-/** Shared type for Debug Command in src/auto-reply/reply. */
 export type DebugCommand =
   | { action: "show" }
   | { action: "reset" }
@@ -9,7 +8,6 @@ export type DebugCommand =
   | { action: "unset"; path: string }
   | { action: "error"; message: string };
 
-/** Reused helper for parse Debug Command behavior in src/auto-reply/reply. */
 export function parseDebugCommand(raw: string): DebugCommand | null {
   return parseStandardSetUnsetSlashCommand<DebugCommand>({
     raw,

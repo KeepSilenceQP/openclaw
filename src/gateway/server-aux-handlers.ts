@@ -1,4 +1,3 @@
-// gateway server aux handlers helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { isTruthyEnvValue } from "../infra/env.js";
 import { createExecApprovalForwarder } from "../infra/exec-approval-forwarder.js";
@@ -27,7 +26,6 @@ import {
   type SharedGatewaySessionGenerationState,
 } from "./server-shared-auth-generation.js";
 import type { ActivateRuntimeSecrets } from "./server-startup-config.js";
-/** Re-exported API for src/gateway, starting with GATEWAY AUX METHODS. */
 export { GATEWAY_AUX_METHODS } from "./server-aux-methods.js";
 
 type GatewayAuxHandlerLogger = {
@@ -61,7 +59,6 @@ function createLazyHandler(
   };
 }
 
-/** Reused helper for create Gateway Aux Handlers behavior in src/gateway. */
 export function createGatewayAuxHandlers(params: {
   log: GatewayAuxHandlerLogger;
   activateRuntimeSecrets: ActivateRuntimeSecrets;

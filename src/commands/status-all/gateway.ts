@@ -3,7 +3,6 @@ import fs from "node:fs/promises";
 import { classifyOAuthRefreshFailureReason } from "../../agents/auth-profiles/oauth-refresh-failure.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 
-/** Reused helper for read File Tail Lines behavior in src/commands/status-all. */
 export async function readFileTailLines(filePath: string, maxLines: number): Promise<string[]> {
   const raw = await fs.readFile(filePath, "utf8").catch(() => "");
   if (!raw.trim()) {
@@ -60,7 +59,6 @@ function consumeJsonBlock(
   return { json: parts.join("\n"), endIndex: i };
 }
 
-/** Reused helper for summarize Log Tail behavior in src/commands/status-all. */
 export function summarizeLogTail(rawLines: string[], opts?: { maxLines?: number }): string[] {
   const maxLines = Math.max(6, opts?.maxLines ?? 26);
 

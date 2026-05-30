@@ -1,4 +1,3 @@
-// extensions/migrate-claude memory helpers and runtime behavior.
 import path from "node:path";
 import { createMigrationItem, MIGRATION_REASON_TARGET_EXISTS } from "openclaw/plugin-sdk/migration";
 import type { MigrationItem } from "openclaw/plugin-sdk/plugin-entry";

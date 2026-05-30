@@ -1,4 +1,3 @@
-// extensions/file-transfer/src/tools file write tool helpers and runtime behavior.
 import crypto from "node:crypto";
 import { type AnyAgentTool } from "openclaw/plugin-sdk/agent-harness-runtime";
 import { readMediaBuffer } from "openclaw/plugin-sdk/media-store";

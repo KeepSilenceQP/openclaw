@@ -236,7 +236,6 @@ function syntheticAuthCredential(
   };
 }
 
-/** Reused helper for models Status Command behavior in src/commands/models. */
 export async function modelsStatusCommand(
   opts: {
     json?: boolean;

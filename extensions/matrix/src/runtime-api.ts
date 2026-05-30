@@ -1,4 +1,3 @@
-// extensions/matrix/src runtime api helpers and runtime behavior.
 /** Re-exported matrix plugin public API. */
 export {
   DEFAULT_ACCOUNT_ID,

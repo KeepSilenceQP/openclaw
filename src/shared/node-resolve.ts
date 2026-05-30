@@ -1,4 +1,3 @@
-// shared node resolve helpers and runtime behavior.
 import { type NodeMatchCandidate, resolveNodeIdFromCandidates } from "./node-match.js";
 import { normalizeOptionalString } from "./string-coerce.js";
 
@@ -7,7 +6,6 @@ type ResolveNodeFromListOptions<TNode extends NodeMatchCandidate> = {
   pickDefaultNode?: (nodes: TNode[]) => TNode | null;
 };
 
-/** Reused helper for resolve Node Id From Node List behavior in src/shared. */
 export function resolveNodeIdFromNodeList<TNode extends NodeMatchCandidate>(
   nodes: TNode[],
   query?: string,
@@ -26,7 +24,6 @@ export function resolveNodeIdFromNodeList<TNode extends NodeMatchCandidate>(
   return resolveNodeIdFromCandidates(nodes, q);
 }
 
-/** Reused helper for resolve Node From Node List behavior in src/shared. */
 export function resolveNodeFromNodeList<TNode extends NodeMatchCandidate>(
   nodes: TNode[],
   query?: string,

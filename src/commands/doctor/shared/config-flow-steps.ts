@@ -5,7 +5,6 @@ import type { DoctorConfigPreflightResult } from "../../doctor-config-preflight.
 import type { DoctorConfigMutationState } from "./config-mutation-state.js";
 import { migrateLegacyConfig } from "./legacy-config-migrate.js";
 
-/** Reused helper for apply Legacy Compatibility Step behavior in src/commands/doctor. */
 export function applyLegacyCompatibilityStep(params: {
   snapshot: DoctorConfigPreflightResult["snapshot"];
   state: DoctorConfigMutationState;
@@ -70,7 +69,6 @@ export function applyLegacyCompatibilityStep(params: {
   };
 }
 
-/** Reused helper for apply Unknown Config Key Step behavior in src/commands/doctor. */
 export function applyUnknownConfigKeyStep(params: {
   state: DoctorConfigMutationState;
   shouldRepair: boolean;

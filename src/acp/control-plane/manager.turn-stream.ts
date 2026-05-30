@@ -8,12 +8,10 @@ import type {
 import { normalizeAcpErrorCode } from "./manager.utils.js";
 import { normalizeText } from "./runtime-options.js";
 
-/** Shared type for Acp Turn Event Gate in src/acp/control-plane. */
 export type AcpTurnEventGate = {
   open: boolean;
 };
 
-/** Shared type for Acp Turn Stream Outcome in src/acp/control-plane. */
 export type AcpTurnStreamOutcome = {
   sawOutput: boolean;
   sawTerminalEvent: boolean;
@@ -105,7 +103,6 @@ async function notifyTerminalResult(params: {
   });
 }
 
-/** Reused helper for consume Acp Turn Stream behavior in src/acp/control-plane. */
 export async function consumeAcpTurnStream(params: {
   runtime: AcpRuntime;
   turn: AcpRuntimeTurnInput;

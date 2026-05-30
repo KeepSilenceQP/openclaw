@@ -5,7 +5,6 @@ import {
 } from "../../agents/provider-auth-aliases.js";
 import type { FollowupRun } from "./queue.js";
 
-/** Reused helper for resolve Provider Scoped Auth Profile behavior in src/auto-reply/reply. */
 export function resolveProviderScopedAuthProfile(params: {
   provider: string;
   primaryProvider: string;
@@ -26,7 +25,6 @@ export function resolveProviderScopedAuthProfile(params: {
   };
 }
 
-/** Reused helper for resolve Run Auth Profile behavior in src/auto-reply/reply. */
 export function resolveRunAuthProfile(
   run: FollowupRun["run"],
   provider: string,

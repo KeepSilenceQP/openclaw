@@ -23,7 +23,6 @@ function formatActiveSubagentDetail(params: {
   return `  • ${label} · ${duration}${descendantText}`;
 }
 
-/** Reused helper for build Subagents Status Line behavior in src/auto-reply/reply. */
 export function buildSubagentsStatusLine(params: {
   runs: SubagentRunRecord[];
   verboseEnabled: boolean;

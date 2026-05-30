@@ -1,4 +1,3 @@
-// extensions/codex/src/app-server/sandbox-exec-server processes helpers and runtime behavior.
 import { spawn } from "node:child_process";
 import { embeddedAgentLog } from "openclaw/plugin-sdk/agent-harness-runtime";
 import type { WebSocket } from "ws";

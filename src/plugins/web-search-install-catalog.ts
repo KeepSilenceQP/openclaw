@@ -1,4 +1,3 @@
-// plugins web search install catalog helpers and runtime behavior.
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { normalizeOptionalString as normalizeString } from "../shared/string-coerce.js";
 import { normalizeTrimmedStringList } from "../shared/string-normalization.js";
@@ -14,7 +13,6 @@ import {
 } from "./official-external-plugin-catalog.js";
 import type { PluginWebSearchProviderEntry } from "./web-provider-types.js";
 
-/** Shared type for Web Search Install Catalog Entry in src/plugins. */
 export type WebSearchInstallCatalogEntry = {
   pluginId: string;
   label: string;
@@ -120,7 +118,6 @@ function buildProviderEntry(params: {
   };
 }
 
-/** Reused helper for resolve Web Search Install Catalog Entries behavior in src/plugins. */
 export function resolveWebSearchInstallCatalogEntries(): WebSearchInstallCatalogEntry[] {
   const entries: WebSearchInstallCatalogEntry[] = [];
   for (const entry of listOfficialExternalPluginCatalogEntries()) {
@@ -151,7 +148,6 @@ export function resolveWebSearchInstallCatalogEntries(): WebSearchInstallCatalog
   );
 }
 
-/** Reused helper for resolve Web Search Install Catalog Entry behavior in src/plugins. */
 export function resolveWebSearchInstallCatalogEntry(params: {
   providerId?: string;
   pluginId?: string;

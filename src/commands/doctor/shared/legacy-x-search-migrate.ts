@@ -36,7 +36,6 @@ function resolveLegacyXSearchAuth(legacy: JsonRecord): unknown {
   return legacy.apiKey;
 }
 
-/** Reused helper for list Legacy XSearch Config Paths behavior in src/commands/doctor. */
 export function listLegacyXSearchConfigPaths(raw: unknown): string[] {
   const legacy = resolveLegacyXSearchConfig(raw);
   if (!legacy || !Object.prototype.hasOwnProperty.call(legacy, "apiKey")) {
@@ -45,7 +44,6 @@ export function listLegacyXSearchConfigPaths(raw: unknown): string[] {
   return [`${X_SEARCH_LEGACY_PATH}.apiKey`];
 }
 
-/** Reused helper for migrate Legacy XSearch Config behavior in src/commands/doctor. */
 export function migrateLegacyXSearchConfig<T>(raw: T): { config: T; changes: string[] } {
   if (!isRecord(raw)) {
     return { config: raw, changes: [] };

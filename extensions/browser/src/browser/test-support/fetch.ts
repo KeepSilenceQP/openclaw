@@ -1,4 +1,3 @@
-// extensions/browser/src/browser/test-support fetch helpers and runtime behavior.
 import { createRequire } from "node:module";
 
 type FetchLike = ((input: string | URL, init?: RequestInit) => Promise<Response>) & {

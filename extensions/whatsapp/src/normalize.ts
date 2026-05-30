@@ -1,4 +1,3 @@
-// extensions/whatsapp/src normalize helpers and runtime behavior.
 export {
   looksLikeWhatsAppTargetId,
   normalizeWhatsAppAllowFromEntry,

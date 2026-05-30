@@ -52,7 +52,6 @@ function collectPluginDoctorCompatibilityIds(params: {
   ].toSorted();
 }
 
-/** Reused helper for apply Channel Doctor Compatibility Migrations behavior in src/commands/doctor. */
 export function applyChannelDoctorCompatibilityMigrations(cfg: Record<string, unknown>): {
   next: Record<string, unknown>;
   changes: string[];

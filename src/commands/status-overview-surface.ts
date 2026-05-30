@@ -47,7 +47,6 @@ type StatusServiceSummary = {
   } | null;
 };
 
-/** Shared type for Status Overview Surface in src/commands. */
 export type StatusOverviewSurface = {
   cfg: Pick<OpenClawConfig, "update" | "gateway">;
   update: UpdateCheckResult;
@@ -67,7 +66,6 @@ export type StatusOverviewSurface = {
   nodeOnlyGateway?: NodeOnlyGatewayInfo | null;
 };
 
-/** Reused helper for build Status Overview Surface From Scan behavior in src/commands. */
 export function buildStatusOverviewSurfaceFromScan(params: {
   scan: Pick<
     StatusScanResult,
@@ -109,7 +107,6 @@ export function buildStatusOverviewSurfaceFromScan(params: {
   };
 }
 
-/** Reused helper for build Status Overview Surface From Overview behavior in src/commands. */
 export function buildStatusOverviewSurfaceFromOverview(params: {
   overview: Pick<
     StatusScanOverviewResult,
@@ -139,7 +136,6 @@ export function buildStatusOverviewSurfaceFromOverview(params: {
   };
 }
 
-/** Reused helper for build Status Overview Rows From Surface behavior in src/commands. */
 export function buildStatusOverviewRowsFromSurface(params: {
   surface: StatusOverviewSurface;
   prefixRows?: StatusOverviewRow[];
@@ -193,7 +189,6 @@ export function buildStatusOverviewRowsFromSurface(params: {
   });
 }
 
-/** Reused helper for build Status Gateway Json Payload From Surface behavior in src/commands. */
 export function buildStatusGatewayJsonPayloadFromSurface(params: {
   surface: Pick<
     StatusOverviewSurface,

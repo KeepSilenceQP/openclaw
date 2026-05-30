@@ -7,7 +7,6 @@ import { defaultRuntime } from "../../runtime.js";
 import { runCommandWithRuntime } from "../cli-utils.js";
 import { formatHelpExamples } from "../help-format.js";
 
-/** Reused helper for register Backup Command behavior in src/cli/program. */
 export function registerBackupCommand(program: Command) {
   const backup = program
     .command("backup")

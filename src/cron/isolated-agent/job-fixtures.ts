@@ -1,7 +1,5 @@
-// cron/isolated-agent job fixtures helpers and runtime behavior.
 type LooseRecord = Record<string, unknown>;
 
-/** Reused helper for make Isolated Agent Job Fixture behavior in src/cron/isolated-agent. */
 export function makeIsolatedAgentJobFixture(overrides?: LooseRecord) {
   return {
     id: "test-job",
@@ -13,7 +11,6 @@ export function makeIsolatedAgentJobFixture(overrides?: LooseRecord) {
   } as never;
 }
 
-/** Reused helper for make Isolated Agent Params Fixture behavior in src/cron/isolated-agent. */
 export function makeIsolatedAgentParamsFixture(overrides?: LooseRecord) {
   const jobOverrides =
     overrides && "job" in overrides ? (overrides.job as LooseRecord | undefined) : undefined;

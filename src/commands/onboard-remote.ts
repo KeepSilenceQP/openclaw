@@ -45,7 +45,6 @@ function validateGatewayWebSocketUrl(value: string): string | undefined {
   return undefined;
 }
 
-/** Reused helper for prompt Remote Gateway Config behavior in src/commands. */
 export async function promptRemoteGatewayConfig(
   cfg: OpenClawConfig,
   prompter: WizardPrompter,

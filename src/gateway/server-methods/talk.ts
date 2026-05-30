@@ -1,4 +1,3 @@
-// gateway/server-methods talk helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -513,7 +512,6 @@ function stripUnresolvedSecretApiKeyFromRecord(
   return rest;
 }
 
-/** Reused constant for talk Handlers behavior in src/gateway/server-methods. */
 export const talkHandlers: GatewayRequestHandlers = {
   ...talkSessionHandlers,
   ...talkClientHandlers,

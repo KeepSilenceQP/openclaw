@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/sdk http client helpers and runtime behavior.
 import type { PinnedDispatcherPolicy } from "openclaw/plugin-sdk/ssrf-dispatcher";
 import type { SsrFPolicy } from "../../runtime-api.js";
 import { buildHttpError } from "./event-helpers.js";

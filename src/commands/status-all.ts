@@ -6,7 +6,6 @@ import { resolveStatusServiceSummaries } from "./status-runtime-shared.ts";
 import { resolveNodeOnlyGatewayInfo } from "./status.node-mode.js";
 import { collectStatusScanOverview } from "./status.scan-overview.ts";
 
-/** Reused helper for status All Command behavior in src/commands. */
 export async function statusAllCommand(
   runtime: RuntimeEnv,
   opts?: { timeoutMs?: number },

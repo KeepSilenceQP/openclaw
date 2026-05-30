@@ -1,4 +1,3 @@
-// extensions/line/src account helpers helpers and runtime behavior.
 type LineCredentialAccount = {
   channelAccessToken?: string;
   channelSecret?: string;

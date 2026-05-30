@@ -15,7 +15,6 @@ import type { ReplyPayload } from "../types.js";
 import type { HandleCommandsParams } from "./commands-types.js";
 import { routeReply } from "./route-reply.js";
 
-/** Shared type for Private Command Route Target in src/auto-reply/reply. */
 export type PrivateCommandRouteTarget = {
   channel: string;
   to: string;
@@ -83,7 +82,6 @@ export async function resolvePrivateCommandRouteTargets(params: {
   });
 }
 
-/** Reused helper for deliver Private Command Reply behavior in src/auto-reply/reply. */
 export async function deliverPrivateCommandReply(params: {
   commandParams: HandleCommandsParams;
   targets: PrivateCommandRouteTarget[];
@@ -109,7 +107,6 @@ export async function deliverPrivateCommandReply(params: {
   return results.some((result) => result.status === "fulfilled" && result.value.ok);
 }
 
-/** Reused helper for read Command Message Thread Id behavior in src/auto-reply/reply. */
 export function readCommandMessageThreadId(params: HandleCommandsParams): string | undefined {
   return typeof params.ctx.MessageThreadId === "string" ||
     typeof params.ctx.MessageThreadId === "number"
@@ -117,7 +114,6 @@ export function readCommandMessageThreadId(params: HandleCommandsParams): string
     : undefined;
 }
 
-/** Reused helper for read Command Delivery Target behavior in src/auto-reply/reply. */
 export function readCommandDeliveryTarget(params: HandleCommandsParams): string | undefined {
   return (
     normalizeOptionalString(params.ctx.OriginatingTo) ??

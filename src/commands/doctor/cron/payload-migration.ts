@@ -27,7 +27,6 @@ function normalizeChannel(value: string): string {
   return normalizeOptionalLowercaseString(value) ?? "";
 }
 
-/** Reused helper for has Legacy Open AICodex Cron Model Ref behavior in src/commands. */
 export function hasLegacyOpenAICodexCronModelRef(payload: UnknownRecord): boolean {
   if (toCanonicalOpenAIModelRef(payload.model)) {
     return true;
@@ -59,7 +58,6 @@ function migrateLegacyOpenAICodexModelRefs(payload: UnknownRecord): boolean {
   return mutated;
 }
 
-/** Reused helper for migrate Legacy Cron Payload behavior in src/commands. */
 export function migrateLegacyCronPayload(payload: UnknownRecord): boolean {
   let mutated = false;
 

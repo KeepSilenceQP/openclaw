@@ -1,4 +1,3 @@
-// shared entry status helpers and runtime behavior.
 import { resolveEmojiAndHomepage } from "./entry-metadata.js";
 import {
   evaluateRequirementsFromMetadataWithRemote,
@@ -8,12 +7,10 @@ import {
   type RequirementsMetadata,
 } from "./requirements.js";
 
-/** Shared type for Entry Metadata Requirements Params in src/shared. */
 export type EntryMetadataRequirementsParams = Parameters<
   typeof evaluateEntryMetadataRequirements
 >[0];
 
-/** Reused helper for evaluate Entry Metadata Requirements behavior in src/shared. */
 export function evaluateEntryMetadataRequirements(params: {
   always: boolean;
   metadata?: (RequirementsMetadata & { emoji?: string; homepage?: string }) | null;
@@ -59,7 +56,6 @@ export function evaluateEntryMetadataRequirements(params: {
   };
 }
 
-/** Reused helper for evaluate Entry Metadata Requirements For Current Platform behavior in src/shared. */
 export function evaluateEntryMetadataRequirementsForCurrentPlatform(
   params: Omit<EntryMetadataRequirementsParams, "localPlatform">,
 ): ReturnType<typeof evaluateEntryMetadataRequirements> {
@@ -69,7 +65,6 @@ export function evaluateEntryMetadataRequirementsForCurrentPlatform(
   });
 }
 
-/** Reused helper for evaluate Entry Requirements For Current Platform behavior in src/shared. */
 export function evaluateEntryRequirementsForCurrentPlatform(params: {
   always: boolean;
   entry: {

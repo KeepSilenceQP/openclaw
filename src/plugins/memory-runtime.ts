@@ -1,4 +1,3 @@
-// plugins memory runtime helpers and runtime behavior.
 import { resolveAgentWorkspaceDir, resolveDefaultAgentId } from "../agents/agent-scope.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { resolveUserPath } from "../utils.js";
@@ -54,7 +53,6 @@ function ensureMemoryRuntime(cfg?: OpenClawConfig) {
   return getMemoryRuntime();
 }
 
-/** Reused helper for get Active Memory Search Manager behavior in src/plugins. */
 export async function getActiveMemorySearchManager(params: {
   cfg: OpenClawConfig;
   agentId: string;
@@ -67,19 +65,16 @@ export async function getActiveMemorySearchManager(params: {
   return await runtime.getMemorySearchManager(params);
 }
 
-/** Reused helper for resolve Active Memory Backend Config behavior in src/plugins. */
 export function resolveActiveMemoryBackendConfig(params: { cfg: OpenClawConfig; agentId: string }) {
   return ensureMemoryRuntime(params.cfg)?.resolveMemoryBackendConfig(params) ?? null;
 }
 
-/** Reused helper for close Active Memory Search Managers behavior in src/plugins. */
 export async function closeActiveMemorySearchManagers(cfg?: OpenClawConfig): Promise<void> {
   void cfg;
   const runtime = getMemoryRuntime();
   await runtime?.closeAllMemorySearchManagers?.();
 }
 
-/** Reused helper for close Active Memory Search Manager behavior in src/plugins. */
 export async function closeActiveMemorySearchManager(params: {
   cfg: OpenClawConfig;
   agentId: string;

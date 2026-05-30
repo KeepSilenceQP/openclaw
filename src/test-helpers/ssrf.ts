@@ -1,4 +1,3 @@
-// test-helpers ssrf helpers and runtime behavior.
 import { vi } from "vitest";
 import { normalizeHostname } from "../infra/net/hostname.js";
 import * as ssrf from "../infra/net/ssrf.js";

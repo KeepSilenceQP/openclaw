@@ -22,7 +22,6 @@ function allowsGroupAllowFromFallback(channelName?: string): boolean {
   return getDoctorChannelCapabilities(channelName).groupAllowFromFallbackToAllowFrom;
 }
 
-/** Reused helper for collect Empty Allowlist Policy Warnings For Account behavior in src/commands/doctor. */
 export function collectEmptyAllowlistPolicyWarningsForAccount(
   params: CollectEmptyAllowlistPolicyWarningsParams,
 ): string[] {

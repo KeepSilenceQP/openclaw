@@ -20,7 +20,6 @@ function shouldTreatMissingBackupAsEmptyState(error: unknown): boolean {
   );
 }
 
-/** Reused helper for create Pre Migration Backup behavior in src/commands/migrate. */
 export async function createPreMigrationBackup(opts: {
   output?: string;
 }): Promise<string | undefined> {
@@ -47,7 +46,6 @@ export async function createPreMigrationBackup(opts: {
   }
 }
 
-/** Reused helper for run Migration Apply behavior in src/commands/migrate. */
 export async function runMigrationApply(params: {
   runtime: RuntimeEnv;
   opts: MigrateApplyOptions;

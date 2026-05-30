@@ -105,7 +105,6 @@ function formatSkippedOAuthProfilesMessage(params: {
     : `OAuth profiles were not copied from "${params.sourceAgentId}"; sign in separately for this agent.`;
 }
 
-/** Reused helper for agents Add Command behavior in src/commands. */
 export async function agentsAddCommand(
   opts: AgentsAddOptions,
   runtime: RuntimeEnv = defaultRuntime,
@@ -503,10 +502,8 @@ export async function agentsAddCommand(
   }
 }
 
-/** Reused constant for testing behavior in src/commands. */
 export const testing = {
   copyPortableAuthProfiles,
   formatSkippedOAuthProfilesMessage,
 };
-/** Re-exported API for src/commands, starting with testing. */
 export { testing as __testing };

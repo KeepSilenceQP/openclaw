@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/client config runtime api helpers and runtime behavior.
 export {
   DEFAULT_ACCOUNT_ID,
   normalizeAccountId,

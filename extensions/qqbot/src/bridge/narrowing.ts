@@ -1,4 +1,3 @@
-// extensions/qqbot/src/bridge narrowing helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import type { PluginRuntime } from "openclaw/plugin-sdk/core";
 import type { GatewayAccount } from "../engine/types.js";

@@ -1,4 +1,3 @@
-// gateway test temp config helpers and runtime behavior.
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
@@ -31,7 +30,6 @@ function withStableOwnerDisplaySecretForTest(cfg: unknown): unknown {
   };
 }
 
-/** Reused helper for with Temp Config behavior in src/gateway. */
 export async function withTempConfig(params: {
   cfg: unknown;
   run: () => Promise<void>;

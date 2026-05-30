@@ -1,4 +1,3 @@
-// extensions/browser/src/browser profile capabilities helpers and runtime behavior.
 import type { ResolvedBrowserProfile } from "./config.js";
 
 type BrowserProfileMode = "local-managed" | "local-existing-session" | "remote-cdp";

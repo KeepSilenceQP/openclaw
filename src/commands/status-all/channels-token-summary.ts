@@ -5,7 +5,6 @@ import { sha256HexPrefix } from "../../logging/redact-identifier.js";
 import { asRecord } from "../../shared/record-coerce.js";
 import { normalizeOptionalString } from "../../shared/string-coerce.js";
 
-/** Shared type for Channel Account Token Summary Row in src/commands/status-all. */
 export type ChannelAccountTokenSummaryRow = {
   account: unknown;
   enabled: boolean;
@@ -44,7 +43,6 @@ function formatTokenHint(token: string, opts: { showSecrets: boolean }): string 
   return `${head}…${tail} · len ${t.length}`;
 }
 
-/** Reused helper for summarize Token Config behavior in src/commands/status-all. */
 export function summarizeTokenConfig(params: {
   accounts: ChannelAccountTokenSummaryRow[];
   showSecrets: boolean;

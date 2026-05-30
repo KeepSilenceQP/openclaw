@@ -1,4 +1,3 @@
-// extensions/whatsapp/src group policy helpers and runtime behavior.
 import {
   resolveChannelGroupRequireMention,
   resolveChannelGroupToolsPolicy,

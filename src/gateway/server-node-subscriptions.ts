@@ -1,4 +1,3 @@
-// gateway server node subscriptions helpers and runtime behavior.
 import { serializeEventPayload, type SerializedEventPayload } from "./node-registry.js";
 
 type NodeSendEventFn = (opts: {
@@ -33,7 +32,6 @@ type NodeSubscriptionManager = {
   clear: () => void;
 };
 
-/** Reused helper for create Node Subscription Manager behavior in src/gateway. */
 export function createNodeSubscriptionManager(): NodeSubscriptionManager {
   const nodeSubscriptions = new Map<string, Set<string>>();
   const sessionSubscribers = new Map<string, Set<string>>();

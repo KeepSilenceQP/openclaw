@@ -35,7 +35,6 @@ function buildProviderAliasMap(params: ProviderAliasSource): ReadonlyMap<string,
   return aliases;
 }
 
-/** Reused helper for create Model Catalog Provider Alias Canonicalizer behavior in src/commands/models. */
 export function createModelCatalogProviderAliasCanonicalizer(params: ProviderAliasSource): {
   provider: (provider: string) => string;
   ref: <TRef extends { provider: string }>(ref: TRef) => TRef;
@@ -54,7 +53,6 @@ export function createModelCatalogProviderAliasCanonicalizer(params: ProviderAli
   };
 }
 
-/** Reused helper for canonicalize Model Catalog Provider Alias behavior in src/commands/models. */
 export function canonicalizeModelCatalogProviderAlias(
   provider: string,
   params: ProviderAliasSource,
@@ -62,7 +60,6 @@ export function canonicalizeModelCatalogProviderAlias(
   return createModelCatalogProviderAliasCanonicalizer(params).provider(provider);
 }
 
-/** Reused helper for canonicalize Model Catalog Provider Ref behavior in src/commands/models. */
 export function canonicalizeModelCatalogProviderRef<TRef extends { provider: string }>(
   ref: TRef,
   params: ProviderAliasSource,

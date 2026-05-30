@@ -1,4 +1,3 @@
-// extensions/line/src webhook node helpers and runtime behavior.
 import type { IncomingMessage, ServerResponse } from "node:http";
 import type { webhook } from "@line/bot-sdk";
 import {

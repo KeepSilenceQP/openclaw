@@ -13,7 +13,6 @@ import {
   stripToolMessages,
 } from "./shared.js";
 
-/** Reused helper for handle Subagents Log Action behavior in src/auto-reply/reply. */
 export async function handleSubagentsLogAction(
   ctx: SubagentsCommandContext,
 ): Promise<CommandHandlerResult> {

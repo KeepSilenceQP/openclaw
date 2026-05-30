@@ -1,4 +1,3 @@
-// extensions/xai/src responses tool shared helpers and runtime behavior.
 import {
   normalizeOptionalString as trimString,
   uniqueStrings,

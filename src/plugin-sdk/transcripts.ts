@@ -12,7 +12,6 @@ export type {
   TranscriptsStopResult,
   TranscriptUtterance,
 } from "../transcripts/provider-types.js";
-/** Re-exported API for src/plugin-sdk. */
 export {
   getTranscriptSourceProvider,
   listTranscriptSourceProviders,

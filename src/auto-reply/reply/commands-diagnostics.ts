@@ -59,7 +59,6 @@ const defaultDiagnosticsCommandDeps: DiagnosticsCommandDeps = {
   deliverPrivateDiagnosticsReply: deliverPrivateDiagnosticsReply,
 };
 
-/** Reused helper for create Diagnostics Command Handler behavior in src/auto-reply/reply. */
 export function createDiagnosticsCommandHandler(
   deps: Partial<DiagnosticsCommandDeps> = {},
 ): CommandHandler {
@@ -71,7 +70,6 @@ export function createDiagnosticsCommandHandler(
     await handleDiagnosticsCommandWithDeps(resolvedDeps, params, allowTextCommands);
 }
 
-/** Reused constant for handle Diagnostics Command behavior in src/auto-reply/reply. */
 export const handleDiagnosticsCommand: CommandHandler = createDiagnosticsCommandHandler();
 
 async function handleDiagnosticsCommandWithDeps(

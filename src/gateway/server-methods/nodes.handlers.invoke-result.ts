@@ -1,4 +1,3 @@
-// gateway/server-methods nodes handlers invoke result helpers and runtime behavior.
 import {
   ErrorCodes,
   errorShape,
@@ -27,7 +26,6 @@ function normalizeNodeInvokeResultParams(params: unknown): unknown {
   return normalized;
 }
 
-/** Reused constant for handle Node Invoke Result behavior in src/gateway/server-methods. */
 export const handleNodeInvokeResult: GatewayRequestHandler = async ({
   params,
   respond,

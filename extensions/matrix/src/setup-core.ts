@@ -1,4 +1,3 @@
-// extensions/matrix/src setup core helpers and runtime behavior.
 import type { OpenClawConfig } from "openclaw/plugin-sdk/config-contracts";
 import {
   DEFAULT_ACCOUNT_ID,

@@ -1,4 +1,3 @@
-// extensions/tencent provider discovery helpers and runtime behavior.
 import type { ProviderPlugin } from "openclaw/plugin-sdk/provider-model-shared";
 import { buildTokenHubProvider } from "./provider-catalog.js";
 

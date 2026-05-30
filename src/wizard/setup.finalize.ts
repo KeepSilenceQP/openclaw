@@ -1,4 +1,3 @@
-// wizard setup finalize helpers and runtime behavior.
 import fs from "node:fs/promises";
 import path from "node:path";
 import { restoreTerminalState } from "../../packages/terminal-core/src/restore.js";
@@ -115,7 +114,6 @@ function loadOnboardSearchModule(): Promise<OnboardSearchModule> {
   return onboardSearchModulePromise;
 }
 
-/** Reused helper for finalize Setup Wizard behavior in src/wizard. */
 export async function finalizeSetupWizard(
   options: FinalizeOnboardingOptions,
 ): Promise<{ launchedTui: boolean }> {

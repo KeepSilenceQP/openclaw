@@ -1,4 +1,3 @@
-// cron delivery preview helpers and runtime behavior.
 import { resolveDefaultAgentId } from "../agents/agent-scope-config.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { hasExplicitCronDeliveryTarget, resolveCronDeliveryPlan } from "./delivery-plan.js";
@@ -35,7 +34,6 @@ function formatDeliveryDetail(params: {
   return params.resolved ? "explicit" : (params.error ?? "unresolved");
 }
 
-/** Reused helper for resolve Cron Delivery Preview behavior in src/cron. */
 export async function resolveCronDeliveryPreview(params: {
   cfg: OpenClawConfig;
   defaultAgentId?: string;
@@ -90,7 +88,6 @@ export async function resolveCronDeliveryPreview(params: {
   };
 }
 
-/** Reused helper for resolve Cron Delivery Previews behavior in src/cron. */
 export async function resolveCronDeliveryPreviews(params: {
   cfg: OpenClawConfig;
   defaultAgentId?: string;

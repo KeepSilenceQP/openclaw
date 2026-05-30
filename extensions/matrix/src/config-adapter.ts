@@ -1,4 +1,3 @@
-// extensions/matrix/src config adapter helpers and runtime behavior.
 import { DEFAULT_ACCOUNT_ID } from "openclaw/plugin-sdk/account-id";
 import {
   adaptScopedAccountAccessor,

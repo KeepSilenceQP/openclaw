@@ -1,4 +1,3 @@
-// extensions/slack/src probe helpers and runtime behavior.
 import type { BaseProbeResult } from "openclaw/plugin-sdk/channel-contract";
 import { withTimeout } from "openclaw/plugin-sdk/text-utility-runtime";
 import { createSlackWebClient } from "./client.js";

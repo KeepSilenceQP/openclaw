@@ -1,4 +1,3 @@
-// extensions/whatsapp/src session errors helpers and runtime behavior.
 function safeStringify(value: unknown, limit = 800): string {
   try {
     const seen = new WeakSet();

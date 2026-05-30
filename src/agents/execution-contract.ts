@@ -112,7 +112,6 @@ export function resolveEffectiveExecutionContract(params: {
   return "strict-agentic";
 }
 
-/** Reused helper for is Strict Agentic Execution Contract Active behavior in src/agents. */
 export function isStrictAgenticExecutionContractActive(params: {
   config?: OpenClawConfig;
   sessionKey?: string;

@@ -1,4 +1,3 @@
-// extensions/synology-chat api helpers and runtime behavior.
 /** Re-exported synology-chat plugin public API, starting with synology Chat Plugin. */
 export { synologyChatPlugin } from "./src/channel.js";
 /** Re-exported synology-chat plugin public API, starting with set Synology Runtime. */

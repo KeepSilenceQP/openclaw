@@ -1,4 +1,3 @@
-// extensions/browser/src/cli browser cli manage test helpers helpers and runtime behavior.
 import type { Command } from "commander";
 import { vi } from "vitest";
 import * as parentCoreApiModule from "../core-api.js";

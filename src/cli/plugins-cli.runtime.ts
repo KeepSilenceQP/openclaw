@@ -176,7 +176,6 @@ function collectConfiguredRuntimePluginWarnings(params: {
   });
 }
 
-/** Reused helper for run Plugins Enable Command behavior in src/cli. */
 export async function runPluginsEnableCommand(id: string): Promise<void> {
   assertConfigWriteAllowedInCurrentMode();
 
@@ -220,7 +219,6 @@ export async function runPluginsEnableCommand(id: string): Promise<void> {
   );
 }
 
-/** Reused helper for run Plugins Disable Command behavior in src/cli. */
 export async function runPluginsDisableCommand(id: string): Promise<void> {
   assertConfigWriteAllowedInCurrentMode();
 
@@ -253,7 +251,6 @@ export async function runPluginsDisableCommand(id: string): Promise<void> {
   defaultRuntime.log(`Disabled plugin "${id}". Restart the gateway to apply.`);
 }
 
-/** Reused helper for run Plugins Install Action behavior in src/cli. */
 export async function runPluginsInstallAction(
   raw: string,
   opts: PluginInstallActionOptions,
@@ -268,7 +265,6 @@ export async function runPluginsInstallAction(
   );
 }
 
-/** Reused helper for run Plugins Registry Command behavior in src/cli. */
 export async function runPluginsRegistryCommand(opts: PluginRegistryOptions): Promise<void> {
   const { inspectPluginRegistry, refreshPluginRegistry } =
     await import("../plugins/plugin-registry.js");
@@ -321,7 +317,6 @@ export async function runPluginsRegistryCommand(opts: PluginRegistryOptions): Pr
   defaultRuntime.log(lines.join("\n"));
 }
 
-/** Reused helper for run Plugins Doctor Command behavior in src/cli. */
 export async function runPluginsDoctorCommand(): Promise<void> {
   const {
     buildPluginCompatibilityNotices,
@@ -437,7 +432,6 @@ export async function runPluginsDoctorCommand(): Promise<void> {
   defaultRuntime.log(lines.join("\n"));
 }
 
-/** Reused helper for run Plugin Marketplace List Command behavior in src/cli. */
 export async function runPluginMarketplaceListCommand(
   source: string,
   opts: PluginMarketplaceListOptions,

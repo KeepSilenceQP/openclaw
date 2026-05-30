@@ -1,4 +1,3 @@
-// extensions/qqbot index helpers and runtime behavior.
 import {
   defineBundledChannelEntry,
   loadBundledEntryExportSync,

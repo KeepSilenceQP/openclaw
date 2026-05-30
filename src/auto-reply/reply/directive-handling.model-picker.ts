@@ -10,14 +10,12 @@ import {
   normalizeOptionalString,
 } from "../../shared/string-coerce.js";
 
-/** Shared type for Model Picker Catalog Entry in src/auto-reply/reply. */
 export type ModelPickerCatalogEntry = {
   provider: string;
   id: string;
   name?: string;
 };
 
-/** Shared type for Model Picker Item in src/auto-reply/reply. */
 export type ModelPickerItem = ModelRef;
 
 const MODEL_PICK_PROVIDER_PREFERENCE = [
@@ -58,7 +56,6 @@ function compareProvidersForPicker(a: string, b: string): number {
   return a.localeCompare(b);
 }
 
-/** Reused helper for build Model Picker Items behavior in src/auto-reply/reply. */
 export function buildModelPickerItems(catalog: ModelPickerCatalogEntry[]): ModelPickerItem[] {
   const seen = new Set<string>();
   const out: ModelPickerItem[] = [];
@@ -93,7 +90,6 @@ export function buildModelPickerItems(catalog: ModelPickerCatalogEntry[]): Model
   return out;
 }
 
-/** Reused helper for resolve Provider Endpoint Label behavior in src/auto-reply/reply. */
 export function resolveProviderEndpointLabel(
   provider: string,
   cfg: OpenClawConfig,

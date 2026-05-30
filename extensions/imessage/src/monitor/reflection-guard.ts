@@ -1,4 +1,3 @@
-// extensions/imessage/src/monitor reflection guard helpers and runtime behavior.
 import { findCodeRegions, isInsideCode } from "openclaw/plugin-sdk/text-chunking";
 
 const INTERNAL_SEPARATOR_RE = /(?:#\+){2,}#?/;

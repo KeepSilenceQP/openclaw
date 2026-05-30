@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix legacy crypto inspector helpers and runtime behavior.
 import crypto from "node:crypto";
 import fs from "node:fs";
 import { createRequire } from "node:module";

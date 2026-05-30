@@ -255,7 +255,6 @@ async function readSessionDataFromTranscript(sessionFile: string): Promise<{
   return { header, entries, leafId, warnings: summarizeSessionExportWarnings(warnings) };
 }
 
-/** Reused helper for build Export Session Reply behavior in src/auto-reply/reply. */
 export async function buildExportSessionReply(params: HandleCommandsParams): Promise<ReplyPayload> {
   const args = parseExportCommandOutputPath(params.command.commandBodyNormalized, [
     "export-session",

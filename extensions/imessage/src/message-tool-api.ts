@@ -1,4 +1,3 @@
-// extensions/imessage/src message tool api helpers and runtime behavior.
 import { createActionGate } from "openclaw/plugin-sdk/channel-actions";
 import type {
   ChannelMessageActionAdapter,

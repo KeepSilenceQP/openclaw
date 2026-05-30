@@ -28,7 +28,6 @@ type RecordSessionMetaFromInbound =
 type UpdateLastRoute = import("../../config/sessions/runtime-types.js").UpdateLastRoute;
 type RecordInboundSession = import("../../channels/session.types.js").RecordInboundSession;
 
-/** Shared type for Runtime Thread Binding Lifecycle Record in src/plugins/runtime. */
 export type RuntimeThreadBindingLifecycleRecord =
   | import("../../infra/outbound/session-binding.types.js").SessionBindingRecord
   | {
@@ -38,14 +37,12 @@ export type RuntimeThreadBindingLifecycleRecord =
       maxAgeMs?: number;
     };
 
-/** Shared type for Plugin Runtime Channel Context Key in src/plugins/runtime. */
 export type PluginRuntimeChannelContextKey = {
   channelId: string;
   accountId?: string | null;
   capability: string;
 };
 
-/** Shared type for Plugin Runtime Channel Context Event in src/plugins/runtime. */
 export type PluginRuntimeChannelContextEvent = {
   type: "registered" | "unregistered";
   key: {
@@ -56,7 +53,6 @@ export type PluginRuntimeChannelContextEvent = {
   context?: unknown;
 };
 
-/** Shared type for Plugin Runtime Channel Context Registry in src/plugins/runtime. */
 export type PluginRuntimeChannelContextRegistry = {
   register: (
     params: PluginRuntimeChannelContextKey & {
@@ -74,7 +70,6 @@ export type PluginRuntimeChannelContextRegistry = {
   }) => () => void;
 };
 
-/** Shared type for Plugin Runtime Channel in src/plugins/runtime. */
 export type PluginRuntimeChannel = {
   text: {
     chunkByNewline: typeof import("../../auto-reply/chunk.js").chunkByNewline;

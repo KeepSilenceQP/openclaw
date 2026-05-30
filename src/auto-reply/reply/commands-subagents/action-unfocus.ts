@@ -6,7 +6,6 @@ import type { CommandHandlerResult } from "../commands-types.js";
 import { resolveConversationBindingContextFromAcpCommand } from "../conversation-binding-input.js";
 import { type SubagentsCommandContext, stopWithText } from "./shared.js";
 
-/** Reused helper for handle Subagents Unfocus Action behavior in src/auto-reply/reply. */
 export async function handleSubagentsUnfocusAction(
   ctx: SubagentsCommandContext,
 ): Promise<CommandHandlerResult> {

@@ -1,7 +1,5 @@
-// shared entry metadata helpers and runtime behavior.
 import { normalizeOptionalString } from "./string-coerce.js";
 
-/** Reused helper for resolve Emoji And Homepage behavior in src/shared. */
 export function resolveEmojiAndHomepage(params: {
   metadata?: { emoji?: string; homepage?: string } | null;
   frontmatter?: {

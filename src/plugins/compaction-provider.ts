@@ -19,7 +19,6 @@ export type CompactionProviderSummarizationInstructions = {
   identifierInstructions?: string;
 };
 
-/** Shared type for Compaction Provider in src/plugins. */
 export interface CompactionProvider {
   id: string;
   label: string;

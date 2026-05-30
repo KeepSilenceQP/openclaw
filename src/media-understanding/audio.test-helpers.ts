@@ -1,4 +1,3 @@
-// media-understanding audio test helpers helpers and runtime behavior.
 import type { MockInstance } from "vitest";
 import { afterEach, beforeEach, vi } from "vitest";
 import * as ssrf from "../infra/net/ssrf.js";
@@ -14,7 +13,6 @@ function resolveRequestUrl(input: RequestInfo | URL): string {
   return input.url;
 }
 
-/** Reused helper for install Pinned Hostname Test Hooks behavior in src/media-understanding. */
 export function installPinnedHostnameTestHooks(): void {
   const resolvePinnedHostname = ssrf.resolvePinnedHostname;
   const resolvePinnedHostnameWithPolicy = ssrf.resolvePinnedHostnameWithPolicy;
@@ -44,7 +42,6 @@ export function installPinnedHostnameTestHooks(): void {
   });
 }
 
-/** Reused helper for create Auth Capture Json Fetch behavior in src/media-understanding. */
 export function createAuthCaptureJsonFetch(responseBody: unknown) {
   let seenAuth: string | null = null;
   const fetchFn = withFetchPreconnect(async (_input: RequestInfo | URL, init?: RequestInit) => {
@@ -61,7 +58,6 @@ export function createAuthCaptureJsonFetch(responseBody: unknown) {
   };
 }
 
-/** Reused helper for create Request Capture Json Fetch behavior in src/media-understanding. */
 export function createRequestCaptureJsonFetch(responseBody: unknown) {
   let seenUrl: string | null = null;
   let seenInit: RequestInit | undefined;

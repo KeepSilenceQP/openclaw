@@ -1,4 +1,3 @@
-// extensions/qqbot/src/bridge runtime helpers and runtime behavior.
 import type { PluginRuntime } from "openclaw/plugin-sdk/core";
 import { createPluginRuntimeStore } from "openclaw/plugin-sdk/runtime-store";
 import type { GatewayPluginRuntime } from "../engine/gateway/types.js";

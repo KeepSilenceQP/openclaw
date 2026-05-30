@@ -1,4 +1,3 @@
-// extensions/amazon-bedrock config compat helpers and runtime behavior.
 import { isRecord } from "openclaw/plugin-sdk/string-coerce-runtime";
 
 type JsonRecord = Record<string, unknown>;

@@ -15,7 +15,6 @@ const AUTH_PROFILE_MODES = new Set<AuthProfileConfig["mode"]>([
   "token",
 ]);
 
-/** Shared type for Auth Profile Config Protection Result in src/commands. */
 export type AuthProfileConfigProtectionResult = {
   config: OpenClawConfig;
   repairs: string[];
@@ -154,7 +153,6 @@ function ensureAuthProfiles(config: OpenClawConfig): Record<string, AuthProfileC
   return auth.profiles as Record<string, AuthProfileConfig>;
 }
 
-/** Reused helper for protect Active Auth Profile Config behavior in src/commands. */
 export function protectActiveAuthProfileConfig(params: {
   before: OpenClawConfig;
   after: OpenClawConfig;

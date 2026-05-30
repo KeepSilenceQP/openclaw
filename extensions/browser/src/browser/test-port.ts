@@ -1,4 +1,3 @@
-// extensions/browser/src/browser test port helpers and runtime behavior.
 import { createServer } from "node:http";
 import type { AddressInfo } from "node:net";
 

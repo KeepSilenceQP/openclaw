@@ -1,4 +1,3 @@
-// extensions/nostr/src config schema helpers and runtime behavior.
 import {
   AllowFromListSchema,
   DmPolicySchema,

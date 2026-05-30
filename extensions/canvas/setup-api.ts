@@ -1,4 +1,3 @@
-// extensions/canvas setup api helpers and runtime behavior.
 import { definePluginEntry } from "openclaw/plugin-sdk/plugin-entry";
 import { migrateLegacyCanvasHostConfig } from "./src/config-migration.js";
 

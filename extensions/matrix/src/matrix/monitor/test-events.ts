@@ -1,4 +1,3 @@
-// extensions/matrix/src/matrix/monitor test events helpers and runtime behavior.
 import type { MatrixRawEvent } from "./types.js";
 
 export function createPollStartEvent(eventId: string): MatrixRawEvent {

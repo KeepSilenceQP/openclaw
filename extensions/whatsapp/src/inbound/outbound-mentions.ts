@@ -1,4 +1,3 @@
-// extensions/whatsapp/src/inbound outbound mentions helpers and runtime behavior.
 import type { AnyMessageContent } from "baileys";
 
 export type WhatsAppOutboundMentionParticipant =

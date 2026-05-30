@@ -133,7 +133,6 @@ function resolveActiveChannel(params: {
   });
 }
 
-/** Reused helper for sandbox Explain Command behavior in src/commands. */
 export async function sandboxExplainCommand(
   opts: SandboxExplainOptions,
   runtime: RuntimeEnv,

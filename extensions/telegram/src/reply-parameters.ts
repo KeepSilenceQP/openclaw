@@ -1,4 +1,3 @@
-// extensions/telegram/src reply parameters helpers and runtime behavior.
 import type { MessageEntity } from "grammy/types";
 import { buildTelegramThreadParams, type TelegramThreadSpec } from "./bot/helpers.js";
 import { normalizeTelegramReplyToMessageId } from "./outbound-params.js";
