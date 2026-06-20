@@ -152,7 +152,7 @@ describe("FeishuStreamingSession", () => {
     return { authTokens, client };
   }
 
-  it("flushes throttled pending text after the throttle window", async () => {
+  it("flushes throttled pending full text after the throttle window", async () => {
     vi.useFakeTimers();
     vi.setSystemTime(1_000);
     const updateBodies: string[] = [];
@@ -187,7 +187,7 @@ describe("FeishuStreamingSession", () => {
     });
   });
 
-  it("pushes natural-boundary updates immediately inside the throttle window", async () => {
+  it("pushes natural-boundary full-text updates immediately inside the throttle window", async () => {
     vi.useFakeTimers();
     vi.setSystemTime(2_000);
     const updateBodies: string[] = [];

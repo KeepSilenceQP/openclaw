@@ -1629,7 +1629,7 @@ describe("createFeishuReplyDispatcher streaming behavior", () => {
     });
   });
 
-  it("shows shared transient tool status on streaming cards but omits it from the final close", async () => {
+  it("keeps tool call quote blocks in the streaming card final close", async () => {
     resolveFeishuAccountMock.mockReturnValue({
       accountId: "main",
       appId: "app_id",
@@ -1650,10 +1650,80 @@ describe("createFeishuReplyDispatcher streaming behavior", () => {
     await options.onIdle?.();
 
     const updateTexts = streamingUpdateTexts();
-    expect(updateTexts.join("\n")).toContain("🔎 Web Search");
-    expect(streamingInstances[0].close).toHaveBeenCalledWith("final answer", {
+    expect(updateTexts.join("\n")).toContain("> 🔎 Web Search");
+    expect(updateTexts.at(-1)).toContain("final answer");
+    expect(firstStreamingCloseText()).not.toContain("Thinking");
+    expect(streamingInstances[0].close).toHaveBeenCalledWith("> 🔎 Web Search\n\nfinal answer", {
       note: "Agent: agent",
     });
+  });
+
+  it("keeps streamed answer text when a late tool error final arrives", async () => {
+    resolveFeishuAccountMock.mockReturnValue({
+      accountId: "main",
+      appId: "app_id",
+      appSecret: "app_secret",
+      domain: "feishu",
+      config: {
+        renderMode: "card",
+        streaming: true,
+      },
+    });
+
+    const { result, options } = createDispatcherHarness({
+      runtime: createRuntimeLogger(),
+    });
+    await options.onReplyStart?.();
+    result.replyOptions.onToolStart?.({ name: "web_search" });
+    result.replyOptions.onPartialReply?.({ text: "final answer body" });
+    await options.deliver({ text: "⚠️ web_search failed", isError: true }, { kind: "final" });
+    await options.onIdle?.();
+
+    const closedText = firstStreamingCloseText();
+    expect(closedText).toContain("> 🔎 Web Search");
+    expect(closedText).toContain("final answer body");
+    expect(closedText).toContain("⚠️ web_search failed");
+    expect(closedText.indexOf("final answer body")).toBeLessThan(
+      closedText.indexOf("⚠️ web_search failed"),
+    );
+  });
+
+  it("suppresses default tool messages when streaming card owns tool progress", () => {
+    resolveFeishuAccountMock.mockReturnValue({
+      accountId: "main",
+      appId: "app_id",
+      appSecret: "app_secret",
+      domain: "feishu",
+      config: {
+        renderMode: "card",
+        streaming: true,
+      },
+    });
+
+    const { result } = createDispatcherHarness({
+      runtime: createRuntimeLogger(),
+    });
+
+    expect(result.replyOptions.suppressDefaultToolProgressMessages).toBe(true);
+  });
+
+  it("does not suppress default tool messages outside Feishu card streaming progress", () => {
+    resolveFeishuAccountMock.mockReturnValueOnce({
+      accountId: "main",
+      appId: "app_id",
+      appSecret: "app_secret",
+      domain: "feishu",
+      config: {
+        renderMode: "raw",
+        streaming: true,
+      },
+    });
+
+    const { result } = createDispatcherHarness({
+      runtime: createRuntimeLogger(),
+    });
+
+    expect(result.replyOptions.suppressDefaultToolProgressMessages).toBeUndefined();
   });
 
   it("shows raw command detail in streaming card tool status", async () => {
