@@ -219,7 +219,6 @@ dist/protocol.schema.json
 # Synthing
 **/.stfolder/
 .dev-state
-docs/superpowers
 .superpowers/
 .gitignore
 test/config-form.analyze.telegram.test.ts
