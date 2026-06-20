@@ -2182,7 +2182,18 @@ export async function dispatchReplyFromConfig(
       return finishReplyOperationBusyDispatch({ dedupeDisposition: "release" });
     }
 
-    const shouldSuppressDefaultToolProgressMessages = () => !shouldEmitVerboseProgress();
+    const channelOwnsDefaultToolProgressMessages =
+      params.replyOptions?.suppressDefaultToolProgressMessages === true &&
+      Boolean(
+        params.replyOptions.onToolStart ||
+        params.replyOptions.onItemEvent ||
+        params.replyOptions.onCommandOutput ||
+        params.replyOptions.onPlanUpdate ||
+        params.replyOptions.onApprovalEvent ||
+        params.replyOptions.onPatchSummary,
+      );
+    const shouldSuppressDefaultToolProgressMessages = () =>
+      channelOwnsDefaultToolProgressMessages || !shouldEmitVerboseProgress();
     const shouldSendVerboseProgressMessages = () => !shouldSuppressDefaultToolProgressMessages();
     const shouldSendToolSummaries = () => shouldSendVerboseProgressMessages();
     const shouldSendToolStartStatuses = false;
