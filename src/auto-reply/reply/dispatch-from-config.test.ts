@@ -2514,13 +2514,14 @@ describe("dispatchReplyFromConfig", () => {
     expect(dispatcher.sendFinalReply).toHaveBeenCalledTimes(1);
   });
 
-  it("allows group tool summaries when verbose is enabled during the run", async () => {
+  it("suppresses default group tool summaries when channel owns progress even if verbose is enabled during the run", async () => {
     setNoAbort();
     sessionStoreMocks.currentEntry = {
       verboseLevel: "off",
     };
     const cfg = automaticGroupReplyConfig;
     const dispatcher = createDispatcher();
+    const onToolStart = vi.fn();
     const ctx = buildTestCtx({
       Provider: "whatsapp",
       Surface: "whatsapp",
@@ -2538,6 +2539,7 @@ describe("dispatchReplyFromConfig", () => {
       sessionStoreMocks.currentEntry = {
         verboseLevel: "on",
       };
+      await opts?.onToolStart?.({ name: "exec", phase: "start" });
       await onToolResult({ text: "🔧 exec: whoami" });
       return { text: "hi" } satisfies ReplyPayload;
     };
@@ -2547,11 +2549,11 @@ describe("dispatchReplyFromConfig", () => {
       cfg,
       dispatcher,
       replyResolver,
-      replyOptions: { suppressDefaultToolProgressMessages: true },
+      replyOptions: { suppressDefaultToolProgressMessages: true, onToolStart },
     });
 
-    expect(dispatcher.sendToolResult).toHaveBeenCalledTimes(1);
-    expect(firstToolResultPayload(dispatcher)?.text).toBe("🔧 exec: whoami");
+    expect(onToolStart).toHaveBeenCalledWith({ name: "exec", phase: "start" });
+    expect(dispatcher.sendToolResult).not.toHaveBeenCalled();
     expect(dispatcher.sendFinalReply).toHaveBeenCalledTimes(1);
   });
 
