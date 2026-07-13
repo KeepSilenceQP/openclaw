@@ -6,6 +6,7 @@ import {
   executeSqliteQueryTakeFirstSync,
   getNodeSqliteKysely,
 } from "../../infra/kysely-sync.js";
+import { normalizeSqliteNumber } from "../../infra/sqlite-number.js";
 import type { DB as OpenClawStateKyselyDatabase } from "../../state/openclaw-state-db.generated.js";
 import type { CronRunLogEntry } from "../run-log-types.js";
 import type { CronDeliveryStatus, CronRunStatus } from "../types.js";
@@ -18,6 +19,7 @@ type CronRunLogInsert = Insertable<CronRunLogsTable>;
 type CronRunLogFilterParams = {
   storeKey: string;
   jobId?: string;
+  jobIds?: readonly string[];
   statuses: CronRunStatus[] | null;
   deliveryStatuses: CronDeliveryStatus[] | null;
   runId?: string;
@@ -27,19 +29,12 @@ function getCronRunLogKysely(db: DatabaseSync) {
   return getNodeSqliteKysely<CronRunLogDatabase>(db);
 }
 
-function normalizeNumber(value: number | bigint | null): number | undefined {
-  if (typeof value === "bigint") {
-    return Number(value);
-  }
-  return typeof value === "number" ? value : undefined;
-}
-
 function booleanToInteger(value: boolean | undefined): number | null {
   return typeof value === "boolean" ? (value ? 1 : 0) : null;
 }
 
 function integerToBoolean(value: number | bigint | null): boolean | undefined {
-  const normalized = normalizeNumber(value);
+  const normalized = normalizeSqliteNumber(value);
   return normalized == null ? undefined : normalized !== 0;
 }
 
@@ -91,7 +86,7 @@ export function parseStoredRunLogEntry(row: CronRunLogRow): CronRunLogEntry | nu
   }
   return {
     ...parsed,
-    ts: normalizeNumber(row.ts) ?? parsed.ts,
+    ts: normalizeSqliteNumber(row.ts) ?? parsed.ts,
     jobId: row.job_id,
     status: (row.status as CronRunStatus | null) ?? parsed.status,
     error: row.error ?? parsed.error,
@@ -102,9 +97,9 @@ export function parseStoredRunLogEntry(row: CronRunLogRow): CronRunLogEntry | nu
     sessionId: row.session_id ?? parsed.sessionId,
     sessionKey: row.session_key ?? parsed.sessionKey,
     runId: row.run_id ?? parsed.runId,
-    runAtMs: normalizeNumber(row.run_at_ms) ?? parsed.runAtMs,
-    durationMs: normalizeNumber(row.duration_ms) ?? parsed.durationMs,
-    nextRunAtMs: normalizeNumber(row.next_run_at_ms) ?? parsed.nextRunAtMs,
+    runAtMs: normalizeSqliteNumber(row.run_at_ms) ?? parsed.runAtMs,
+    durationMs: normalizeSqliteNumber(row.duration_ms) ?? parsed.durationMs,
+    nextRunAtMs: normalizeSqliteNumber(row.next_run_at_ms) ?? parsed.nextRunAtMs,
     model: row.model ?? parsed.model,
     provider: row.provider ?? parsed.provider,
   };
@@ -133,6 +128,8 @@ function applyRunLogFilters<Output>(
   let next = query.where("store_key", "=", params.storeKey);
   if (params.jobId) {
     next = next.where("job_id", "=", params.jobId);
+  } else if (params.jobIds?.length) {
+    next = next.where("job_id", "in", params.jobIds);
   }
   if (params.statuses?.length) {
     next = next.where("status", "in", params.statuses);
@@ -162,10 +159,14 @@ export function countCronRunLogRows(params: {
   db: DatabaseSync;
   storeKey: string;
   jobId?: string;
+  jobIds?: readonly string[];
   statuses: CronRunStatus[] | null;
   deliveryStatuses: CronDeliveryStatus[] | null;
   runId?: string;
 }): number {
+  if (params.jobIds?.length === 0) {
+    return 0;
+  }
   const row = executeSqliteQueryTakeFirstSync(
     params.db,
     applyRunLogFilters(
@@ -175,7 +176,7 @@ export function countCronRunLogRows(params: {
       params,
     ),
   );
-  return normalizeNumber(row?.count ?? null) ?? 0;
+  return normalizeSqliteNumber(row?.count ?? null) ?? 0;
 }
 
 /** Reads a sorted, filtered page of cron run-log rows. */
@@ -183,6 +184,7 @@ export function readCronRunLogRowsPage(params: {
   db: DatabaseSync;
   storeKey: string;
   jobId?: string;
+  jobIds?: readonly string[];
   statuses: CronRunStatus[] | null;
   deliveryStatuses: CronDeliveryStatus[] | null;
   runId?: string;
@@ -190,6 +192,9 @@ export function readCronRunLogRowsPage(params: {
   offset?: number;
   limit?: number;
 }): CronRunLogRow[] {
+  if (params.jobIds?.length === 0) {
+    return [];
+  }
   let query = applyRunLogFilters(
     getCronRunLogKysely(params.db).selectFrom("cron_run_logs").selectAll(),
     params,
@@ -211,7 +216,7 @@ function nextCronRunLogSeq(db: DatabaseSync, storeKey: string, jobId: string): n
       .where("store_key", "=", storeKey)
       .where("job_id", "=", jobId),
   );
-  return (normalizeNumber(row?.seq ?? null) ?? 0) + 1;
+  return (normalizeSqliteNumber(row?.seq ?? null) ?? 0) + 1;
 }
 
 /** Appends a cron run-log entry with a per-job monotonic sequence number. */

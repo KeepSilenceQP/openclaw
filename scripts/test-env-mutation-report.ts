@@ -10,7 +10,7 @@ import { collectFilesSync, isCodeFile, toPosixPath } from "./check-file-utils.js
 
 type EnvMutationOperation = "assign" | "delete" | "replace" | "stubEnv";
 
-export type TestEnvMutationFinding = {
+type TestEnvMutationFinding = {
   allowed: boolean;
   allowReason?: string;
   excerpt: string;
@@ -165,7 +165,7 @@ function envKeysFromObjectLiteral(node: ts.Expression): string[] {
   }
   return node.properties
     .map((property) => (ts.isPropertyAssignment(property) ? propertyNameText(property.name) : null))
-    .filter((key): key is string => Boolean(key) && TRACKED_ENV_KEYS.has(key));
+    .filter((key): key is string => key !== null && TRACKED_ENV_KEYS.has(key));
 }
 
 function isAssignmentOperator(kind: ts.SyntaxKind): boolean {
@@ -397,17 +397,13 @@ function parseArgs(argv: string[]): {
       continue;
     }
     if (arg === "--limit") {
-      const value = Number(argv[index + 1]);
-      if (!Number.isInteger(value) || value < 0) {
-        throw new Error("--limit expects a non-negative integer");
-      }
-      limit = value;
+      limit = readNonNegativeIntArg(argv[index + 1]);
       index += 1;
       continue;
     }
     if (arg === "--repo-root") {
       const value = argv[index + 1];
-      if (!value || value.startsWith("--")) {
+      if (!value || value.startsWith("-")) {
         throw new Error("--repo-root expects a path");
       }
       repoRoot = value;
@@ -418,6 +414,17 @@ function parseArgs(argv: string[]): {
   }
 
   return { help, includeAllowed, json, limit, repoRoot };
+}
+
+function readNonNegativeIntArg(raw: string | undefined): number {
+  if (!raw || raw.startsWith("--") || !/^\d+$/u.test(raw)) {
+    throw new Error("--limit expects a non-negative integer");
+  }
+  const value = Number(raw);
+  if (!Number.isSafeInteger(value)) {
+    throw new Error("--limit expects a non-negative integer");
+  }
+  return value;
 }
 
 function printHelp(): void {

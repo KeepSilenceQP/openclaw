@@ -68,6 +68,7 @@ describe("workboard gateway methods", () => {
       "workboard.cards.diagnostics",
       "workboard.cards.diagnostics.refresh",
       "workboard.cards.dispatch",
+      "workboard.cards.dispatchWithOptions",
       "workboard.boards.list",
       "workboard.boards.upsert",
       "workboard.boards.archive",
@@ -259,6 +260,153 @@ describe("workboard gateway methods", () => {
         sessionKey: `subagent:workboard-default-${card.id}`,
       }),
     );
+  });
+
+  it("threads maxStarts while the legacy method keeps its default cap", async () => {
+    type RegisteredMethod = {
+      handler: Parameters<OpenClawPluginApi["registerGatewayMethod"]>[1];
+      opts: Parameters<OpenClawPluginApi["registerGatewayMethod"]>[2];
+    };
+    const methods = new Map<string, RegisteredMethod>();
+    const run = vi.fn().mockResolvedValue({ runId: "run-card" });
+    const api = {
+      runtime: {
+        state: { openKeyedStore: vi.fn(() => createMemoryStore()) },
+        subagent: { run },
+      },
+      registerGatewayMethod: vi.fn(
+        (method: string, handler: RegisteredMethod["handler"], opts: RegisteredMethod["opts"]) => {
+          methods.set(method, { handler, opts });
+        },
+      ),
+    } as unknown as OpenClawPluginApi;
+    const store = new WorkboardStore(createMemoryStore());
+    await Promise.all(
+      Array.from({ length: 5 }, (_, index) =>
+        store.create({
+          title: `Capped ${index}`,
+          status: "ready",
+          priority: "urgent",
+          agentId: `capped-${index}`,
+          boardId: "capped",
+        }),
+      ),
+    );
+    registerWorkboardGatewayMethods({ api, store });
+    const handler = methods.get("workboard.cards.dispatchWithOptions")?.handler;
+
+    const respond = vi.fn();
+    await handler?.({ params: { boardId: "capped", maxStarts: 4 }, respond } as never);
+
+    expect(respond.mock.calls[0]?.[0]).toBe(true);
+    expect(respond.mock.calls[0]?.[1]?.started).toHaveLength(4);
+    expect(run).toHaveBeenCalledTimes(4);
+
+    await Promise.all(
+      Array.from({ length: 5 }, (_, index) =>
+        store.create({
+          title: `Legacy ${index}`,
+          status: "ready",
+          priority: "urgent",
+          agentId: `legacy-${index}`,
+          boardId: "legacy",
+        }),
+      ),
+    );
+    const defaultRespond = vi.fn();
+    await methods
+      .get("workboard.cards.dispatch")
+      ?.handler({ params: { boardId: "legacy" }, respond: defaultRespond } as never);
+    expect(defaultRespond.mock.calls[0]?.[1]?.started).toHaveLength(3);
+    expect(run).toHaveBeenCalledTimes(7);
+
+    const legacyRespond = vi.fn();
+    await methods
+      .get("workboard.cards.dispatch")
+      ?.handler({ params: { maxStarts: 1 }, respond: legacyRespond } as never);
+    expect(legacyRespond.mock.calls[0]?.[0]).toBe(false);
+    expect(legacyRespond.mock.calls[0]?.[2]?.message).toBe(
+      "maxStarts requires workboard.cards.dispatchWithOptions.",
+    );
+
+    for (const value of [0, -1, 1.5, "2"]) {
+      const invalidRespond = vi.fn();
+      await handler?.({ params: { maxStarts: value }, respond: invalidRespond } as never);
+      expect(invalidRespond.mock.calls[0]?.[0]).toBe(false);
+      expect(invalidRespond.mock.calls[0]?.[2]?.message).toBe(
+        "maxStarts must be a positive integer.",
+      );
+    }
+  });
+
+  it("requires admin scope for managed-worktree dispatch", async () => {
+    type RegisteredMethod = {
+      handler: Parameters<OpenClawPluginApi["registerGatewayMethod"]>[1];
+      opts: Parameters<OpenClawPluginApi["registerGatewayMethod"]>[2];
+    };
+    const methods = new Map<string, RegisteredMethod>();
+    const run = vi.fn().mockResolvedValue({ runId: "run-card" });
+    const createWorktree = vi.fn().mockResolvedValue({
+      id: "managed-id",
+      path: "/state/worktrees/fingerprint/wb-card",
+      branch: "openclaw/wb-card",
+    });
+    const api = {
+      runtime: {
+        subagent: { run },
+        worktrees: {
+          create: createWorktree,
+          release: vi.fn(),
+          removeIfLossless: vi.fn(),
+        },
+      },
+      registerGatewayMethod: vi.fn(
+        (method: string, handler: RegisteredMethod["handler"], opts: RegisteredMethod["opts"]) => {
+          methods.set(method, { handler, opts });
+        },
+      ),
+    } as unknown as OpenClawPluginApi;
+    const store = new WorkboardStore(createMemoryStore());
+    const denied = await store.create({
+      title: "Denied checkout",
+      status: "ready",
+      workspace: { kind: "worktree", path: "/repo-denied" },
+    });
+    registerWorkboardGatewayMethods({ api, store });
+    const handler = methods.get("workboard.cards.dispatch")?.handler;
+
+    const deniedRespond = vi.fn();
+    await handler?.({
+      client: { connect: { scopes: ["operator.write"] } },
+      respond: deniedRespond,
+    } as never);
+
+    expect(createWorktree).not.toHaveBeenCalled();
+    expect(deniedRespond.mock.calls[0]?.[1]).toMatchObject({
+      startFailures: [
+        expect.objectContaining({
+          cardId: denied.id,
+          error: "managed worktree dispatch requires operator.admin",
+        }),
+      ],
+    });
+    await expect(store.get(denied.id)).resolves.toMatchObject({ status: "ready" });
+    await store.update(denied.id, { status: "blocked" });
+
+    const allowed = await store.create({
+      title: "Allowed checkout",
+      status: "ready",
+      workspace: { kind: "worktree", path: "/repo-allowed" },
+    });
+    await handler?.({
+      client: { connect: { scopes: ["operator.admin"] } },
+      respond: vi.fn(),
+    } as never);
+
+    expect(createWorktree).toHaveBeenCalledWith(
+      expect.objectContaining({ repoRoot: "/repo-allowed", ownerId: allowed.id }),
+    );
+    expect(run).toHaveBeenCalledOnce();
   });
 
   it("claims, heartbeats, and bulk-updates cards through gateway methods", async () => {

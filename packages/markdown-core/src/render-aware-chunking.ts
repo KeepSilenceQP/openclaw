@@ -56,11 +56,14 @@ export function renderMarkdownIRChunksWithinLimit<TRendered>(
   }
 
   const normalizedLimit = resolveIntegerOption(options.limit, 1, { min: 1 });
-  const pending = chunkMarkdownIR(options.ir, normalizedLimit);
+  // Treat the pending worklist as a stack so each dequeue/enqueue stays O(1).
+  // The initial reverse keeps the final order stable while avoiding shift/unshift
+  // moving every remaining chunk for long messages.
+  const pending = chunkMarkdownIR(options.ir, normalizedLimit).toReversed();
   const finalized: MarkdownIR[] = [];
 
   while (pending.length > 0) {
-    const chunk = pending.shift();
+    const chunk = pending.pop();
     if (!chunk) {
       continue;
     }
@@ -77,7 +80,12 @@ export function renderMarkdownIRChunksWithinLimit<TRendered>(
       finalized.push(chunk);
       continue;
     }
-    pending.unshift(...split);
+    for (let index = split.length - 1; index >= 0; index -= 1) {
+      const next = split[index];
+      if (next) {
+        pending.push(next);
+      }
+    }
   }
 
   return coalesceWhitespaceOnlyMarkdownIRChunks(finalized, normalizedLimit, options).map(
@@ -154,7 +162,7 @@ function findMarkdownIRPreservedSplitIndex(text: string, start: number, limit: n
   let sawNonWhitespace = false;
 
   for (let index = start; index < maxEnd; index += 1) {
-    const char = text[index];
+    const char = text.charAt(index);
     // Parenthesized text often carries rewritten file/link references; prefer
     // keeping it intact unless no outside break exists in the current window.
     if (char === "(") {

@@ -4,9 +4,9 @@ import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+import { createDeferred } from "../test-utils/deferred.js";
 import { withEnv } from "../test-utils/env.js";
 import {
-  applySessionStoreEntryPatch,
   buildGroupDisplayName,
   deriveSessionKey,
   loadSessionStore,
@@ -536,34 +536,6 @@ describe("sessions", () => {
     expect(store[sessionKey]?.reasoningLevel).toBe("on");
   });
 
-  it("applySessionStoreEntryPatch applies a precomputed patch without a callback", async () => {
-    const sessionKey = "agent:main:main";
-    const { storePath } = await createSessionStoreFixture({
-      prefix: "applySessionStoreEntryPatch",
-      entries: {
-        [sessionKey]: {
-          sessionId: "sess-1",
-          updatedAt: 100,
-          reasoningLevel: "on",
-        },
-      },
-    });
-
-    const result = await applySessionStoreEntryPatch({
-      storePath,
-      sessionKey,
-      patch: {
-        updatedAt: 200,
-        thinkingLevel: "high",
-      },
-    });
-
-    expect(result?.thinkingLevel).toBe("high");
-    const store = loadSessionStore(storePath);
-    expect(store[sessionKey]?.updatedAt).toBeGreaterThanOrEqual(200);
-    expect(store[sessionKey]?.reasoningLevel).toBe("on");
-  });
-
   it("updateSessionStoreEntry returns null when session key does not exist", async () => {
     const { storePath } = await createSessionStoreFixture({
       prefix: "updateSessionStoreEntry-missing",
@@ -988,20 +960,8 @@ describe("sessions", () => {
       },
     });
 
-    const createDeferred = <T>() => {
-      let resolve: ((value: T | PromiseLike<T>) => void) | undefined;
-      let reject: ((reason?: unknown) => void) | undefined;
-      const promise = new Promise<T>((res, rej) => {
-        resolve = res;
-        reject = rej;
-      });
-      if (!resolve || !reject) {
-        throw new Error("Expected deferred callbacks to be initialized");
-      }
-      return { promise, resolve, reject };
-    };
-    const firstStarted = createDeferred<void>();
-    const releaseFirst = createDeferred<void>();
+    const firstStarted = createDeferred();
+    const releaseFirst = createDeferred();
 
     const p1 = updateSessionStoreEntry({
       storePath,

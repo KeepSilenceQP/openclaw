@@ -2,15 +2,21 @@
 import fs from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import { expectDefined } from "@openclaw/normalization-core";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { OpenClawConfig } from "../../../config/config.js";
 import {
   collectDoctorPreviewNotes,
   collectChannelBoundMessageToolPolicyWarnings,
-  collectDoctorPreviewWarnings,
   collectProfileConfiguredToolSectionWarnings,
   collectVisibleReplyToolPolicyWarnings,
 } from "./preview-warnings.js";
+
+async function collectDoctorPreviewWarnings(
+  params: Parameters<typeof collectDoctorPreviewNotes>[0],
+): Promise<string[]> {
+  return (await collectDoctorPreviewNotes(params)).warningNotes;
+}
 
 type TestManifestRecord = {
   id: string;
@@ -30,6 +36,10 @@ const manifestState = vi.hoisted(
 );
 
 const staleOAuthShadowState = vi.hoisted(() => ({
+  warnings: [] as string[],
+}));
+
+const staleAuthOrderState = vi.hoisted(() => ({
   warnings: [] as string[],
 }));
 
@@ -257,6 +267,10 @@ vi.mock("./stale-oauth-profile-shadows.js", () => ({
     hits.map((hit) => hit.warning),
 }));
 
+vi.mock("./stale-auth-order.js", () => ({
+  collectStaleConfiguredAuthOrderWarnings: () => staleAuthOrderState.warnings,
+}));
+
 vi.mock("./active-tool-schema-warnings.js", () => ({
   collectActiveToolSchemaProjectionWarnings: () => activeToolSchemaState.warnings,
 }));
@@ -297,7 +311,7 @@ function expectSingleWarningContaining(warnings: string[], text: string): string
   expect(warnings).toHaveLength(1);
   const warning = warnings[0];
   expect(warning).toContain(text);
-  return warning;
+  return expectDefined(warning, "warning test invariant");
 }
 
 function expectWarningsContaining(warnings: string[], texts: string[]): void {
@@ -312,6 +326,7 @@ describe("doctor preview warnings", () => {
     manifestState.plugins = [manifest("discord")];
     manifestState.diagnostics = [];
     staleOAuthShadowState.warnings = [];
+    staleAuthOrderState.warnings = [];
     activeToolSchemaState.warnings = [];
     commandSecretState.targetIds = new Set<string>();
     commandSecretState.resolvedConfig = undefined;
@@ -576,6 +591,22 @@ describe("doctor preview warnings", () => {
     });
 
     expectSingleWarningContaining(warnings, "stale OAuth auth profile openai-codex:default");
+  });
+
+  it("includes stale configured auth-order warnings", async () => {
+    staleAuthOrderState.warnings = [
+      "- auth.order.anthropic references only missing profiles while compatible stored credentials exist; run openclaw doctor --fix to remove the stale override and restore automatic selection.",
+    ];
+
+    const warnings = await collectDoctorPreviewWarnings({
+      cfg: {},
+      doctorFixCommand: "openclaw doctor --fix",
+    });
+
+    expectSingleWarningContaining(
+      warnings,
+      "auth.order.anthropic references only missing profiles",
+    );
   });
 
   it("includes active tool schema projection warnings", async () => {
@@ -997,6 +1028,43 @@ describe("doctor preview warnings", () => {
         },
       },
     });
+
+    expect(warnings).toStrictEqual([]);
+  });
+
+  it("does not warn for configured tool sections when the profile id is unknown", () => {
+    const malformedConfig = {
+      tools: {
+        profile: "custom-profile",
+        exec: {
+          security: "allowlist",
+        },
+        byProvider: {
+          openai: {
+            profile: "custom-provider-profile",
+          },
+        },
+      },
+      agents: {
+        list: [
+          {
+            id: "sage",
+            tools: {
+              exec: {
+                security: "allowlist",
+              },
+              byProvider: {
+                openai: {
+                  profile: "custom-agent-provider-profile",
+                },
+              },
+            },
+          },
+        ],
+      },
+    } as unknown as Parameters<typeof collectProfileConfiguredToolSectionWarnings>[0];
+
+    const warnings = collectProfileConfiguredToolSectionWarnings(malformedConfig);
 
     expect(warnings).toStrictEqual([]);
   });

@@ -3,13 +3,14 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { setTimeout as sleep } from "node:timers/promises";
 import { resolvePreferredOpenClawTmpDir } from "openclaw/plugin-sdk/temp-path";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import {
   formatMatrixQaCliCommand,
   redactMatrixQaCliOutput,
   resolveMatrixQaOpenClawCliEntryPath,
   runMatrixQaOpenClawCli,
   startMatrixQaOpenClawCli,
+  testing,
 } from "./scenario-runtime-cli.js";
 
 function isProcessRunning(pid: number): boolean {
@@ -21,17 +22,30 @@ function isProcessRunning(pid: number): boolean {
   }
 }
 
-async function waitForFile(pathToCheck: string, timeoutMs: number): Promise<void> {
+async function waitForPidFile(pathToCheck: string, timeoutMs: number): Promise<number> {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
     try {
-      await readFile(pathToCheck, "utf8");
-      return;
-    } catch {
-      await sleep(25);
-    }
+      const value = (await readFile(pathToCheck, "utf8")).trim();
+      const pid = Number(value);
+      if (/^[1-9]\d*$/u.test(value) && Number.isSafeInteger(pid)) {
+        return pid;
+      }
+    } catch {}
+    await sleep(25);
   }
-  throw new Error(`Timed out waiting for ${pathToCheck}`);
+  throw new Error(`Timed out waiting for a PID in ${pathToCheck}`);
+}
+
+async function waitForProcessExit(pid: number, timeoutMs: number): Promise<void> {
+  const deadline = Date.now() + timeoutMs;
+  while (Date.now() < deadline) {
+    if (!isProcessRunning(pid)) {
+      return;
+    }
+    await sleep(25);
+  }
+  throw new Error(`Timed out waiting for process ${pid} to exit`);
 }
 
 describe("Matrix QA CLI runtime", () => {
@@ -58,6 +72,53 @@ describe("Matrix QA CLI runtime", () => {
     expect(
       redactMatrixQaCliOutput("GET /_matrix/client/v3/sync?access_token=abcdef1234567890ghij"),
     ).toBe("GET /_matrix/client/v3/sync?access_token=abcdef…ghij");
+  });
+
+  it("force-kills Windows CLI process trees when graceful taskkill fails", () => {
+    const platformDescriptor = Object.getOwnPropertyDescriptor(process, "platform");
+    const originalSystemRoot = process.env.SystemRoot;
+    const originalWindir = process.env.WINDIR;
+    Object.defineProperty(process, "platform", { value: "win32", configurable: true });
+    process.env.SystemRoot = "C:\\Windows";
+    delete process.env.WINDIR;
+    try {
+      const killMock = vi.fn();
+      const child = {
+        pid: 12345,
+        kill: killMock,
+      } as unknown as Parameters<typeof testing.killMatrixQaCliChild>[0];
+      const runTaskkill = vi
+        .fn()
+        .mockReturnValueOnce({ status: 1 })
+        .mockReturnValueOnce({ status: 0 });
+
+      testing.killMatrixQaCliChild(child, "SIGTERM", runTaskkill);
+
+      const taskkillPath = path.win32.join("C:\\Windows", "System32", "taskkill.exe");
+      expect(runTaskkill).toHaveBeenNthCalledWith(1, taskkillPath, ["/PID", "12345", "/T"], {
+        stdio: "ignore",
+        windowsHide: true,
+      });
+      expect(runTaskkill).toHaveBeenNthCalledWith(2, taskkillPath, ["/PID", "12345", "/T", "/F"], {
+        stdio: "ignore",
+        windowsHide: true,
+      });
+      expect(killMock).not.toHaveBeenCalled();
+    } finally {
+      if (platformDescriptor) {
+        Object.defineProperty(process, "platform", platformDescriptor);
+      }
+      if (originalSystemRoot === undefined) {
+        delete process.env.SystemRoot;
+      } else {
+        process.env.SystemRoot = originalSystemRoot;
+      }
+      if (originalWindir === undefined) {
+        delete process.env.WINDIR;
+      } else {
+        process.env.WINDIR = originalWindir;
+      }
+    }
   });
 
   it("prefers the ESM OpenClaw CLI entrypoint when present", async () => {
@@ -187,15 +248,9 @@ describe("Matrix QA CLI runtime", () => {
           env: process.env,
           timeoutMs: 250,
         }),
-      ).rejects.toThrow(/stdout:\nwaiting for verification/);
-      await expect(
-        runMatrixQaOpenClawCli({
-          args: ["matrix", "verify", "self"],
-          cwd: root,
-          env: process.env,
-          timeoutMs: 250,
-        }),
-      ).rejects.toThrow(/stderr:\nmatrix sdk still syncing/);
+      ).rejects.toThrow(
+        /stderr:\nmatrix sdk still syncing[\s\S]*stdout:\nwaiting for verification/u,
+      );
     } finally {
       await rm(root, { force: true, recursive: true });
     }
@@ -264,12 +319,12 @@ describe("Matrix QA CLI runtime", () => {
         env: process.env,
         timeoutMs: 500,
       });
-      await sleep(850);
+      childPid = await waitForPidFile(pidPath, 2_000);
+      await waitForProcessExit(childPid, 2_000);
 
       await expect(session.wait()).rejects.toThrow(/timed out after 500ms/u);
       await expect(session.wait()).rejects.toThrow(/late wait timeout marker/u);
 
-      childPid = Number(await readFile(pidPath, "utf8"));
       expect(isProcessRunning(childPid)).toBe(false);
     } finally {
       if (childPid && isProcessRunning(childPid)) {
@@ -361,12 +416,11 @@ describe("Matrix QA CLI runtime", () => {
         env: process.env,
         timeoutMs: 500,
       });
-      await waitForFile(grandchildPidPath, 2_000);
+      grandchildPid = await waitForPidFile(grandchildPidPath, 2_000);
 
       await expect(run).rejects.toThrow(/timed out after 500ms/u);
 
-      childPid = Number(await readFile(childPidPath, "utf8"));
-      grandchildPid = Number(await readFile(grandchildPidPath, "utf8"));
+      childPid = await waitForPidFile(childPidPath, 2_000);
       expect(isProcessRunning(childPid)).toBe(false);
       expect(isProcessRunning(grandchildPid)).toBe(false);
     } finally {
@@ -412,14 +466,17 @@ describe("Matrix QA CLI runtime", () => {
         env: process.env,
         timeoutMs: 10_000,
       });
-      await waitForFile(grandchildPidPath, 2_000);
-      await sleep(300);
+      childPid = await waitForPidFile(childPidPath, 2_000);
+      grandchildPid = await waitForPidFile(grandchildPidPath, 2_000);
 
+      const sessionExit = session.wait().catch(() => undefined);
       session.kill();
-      await sleep(500);
 
-      childPid = Number(await readFile(childPidPath, "utf8"));
-      grandchildPid = Number(await readFile(grandchildPidPath, "utf8"));
+      await Promise.all([
+        waitForProcessExit(childPid, 2_000),
+        waitForProcessExit(grandchildPid, 2_000),
+      ]);
+      await sessionExit;
       expect(isProcessRunning(childPid)).toBe(false);
       expect(isProcessRunning(grandchildPid)).toBe(false);
     } finally {

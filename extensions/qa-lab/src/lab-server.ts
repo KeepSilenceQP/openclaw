@@ -10,6 +10,7 @@ import {
 import {
   closeQaHttpServer,
   handleQaBusRequest,
+  isQaMalformedJsonBodyError,
   readQaJsonBody,
   writeError,
   writeJson,
@@ -72,8 +73,12 @@ export type {
   QaLabServerStartParams,
 } from "./lab-server.types.js";
 
-export function writeQaLabServerError(res: Parameters<typeof writeError>[0], error: unknown): void {
+function writeQaLabServerError(res: Parameters<typeof writeError>[0], error: unknown): void {
   if (writeQaRequestBodyLimitError(res, error)) {
+    return;
+  }
+  if (isQaMalformedJsonBodyError(error)) {
+    writeError(res, 400, error.message);
     return;
   }
   if (error instanceof QaEvidenceGalleryError) {
@@ -99,6 +104,17 @@ function withQaLabRunCounts(run: Omit<QaLabScenarioRun, "counts">): QaLabScenari
     ...run,
     counts: countQaLabScenarioRun(run.scenarios),
   };
+}
+
+function parseQaEvidenceArtifactIndexText(value: string): number {
+  if (!/^(0|[1-9]\d*)$/.test(value)) {
+    throw new QaEvidenceGalleryError("Evidence artifact index is invalid.", 400);
+  }
+  const index = Number(value);
+  if (!Number.isSafeInteger(index) || String(index) !== value) {
+    throw new QaEvidenceGalleryError("Evidence artifact index is invalid.", 400);
+  }
+  return index;
 }
 
 function injectKickoffMessage(params: {
@@ -435,7 +451,7 @@ export async function startQaLabServer(
             "content-type": "application/json; charset=utf-8",
             "cache-control": "no-store",
           });
-          res.end(JSON.stringify({ version: resolveUiAssetVersion(params?.uiDistDir) }));
+          res.end(JSON.stringify({ version: resolveUiAssetVersion(params?.uiDistDir, repoRoot) }));
           return;
         }
         if (req.method === "GET" && url.pathname === "/api/outcomes") {
@@ -471,8 +487,8 @@ export async function startQaLabServer(
           const evidencePath = url.searchParams.get("evidencePath")?.trim();
           const artifactPath = url.searchParams.get("artifactPath")?.trim();
           const producerFile = url.searchParams.get("producerFile")?.trim();
-          const entryIndexText = url.searchParams.get("entryIndex")?.trim();
-          const artifactIndexText = url.searchParams.get("artifactIndex")?.trim();
+          const entryIndexText = url.searchParams.get("entryIndex");
+          const artifactIndexText = url.searchParams.get("artifactIndex");
           if (
             !evidencePath ||
             (!artifactPath && !producerFile && (!entryIndexText || !artifactIndexText))
@@ -493,8 +509,8 @@ export async function startQaLabServer(
                   repoRoot,
                 })
               : await resolveQaEvidenceArtifactFileByIndex({
-                  artifactIndex: Number(artifactIndexText),
-                  entryIndex: Number(entryIndexText),
+                  artifactIndex: parseQaEvidenceArtifactIndexText(artifactIndexText!),
+                  entryIndex: parseQaEvidenceArtifactIndexText(entryIndexText!),
                   evidencePath,
                   repoRoot,
                 });

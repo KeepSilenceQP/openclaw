@@ -11,6 +11,7 @@ type CapturedReplyPayload = {
   isError?: boolean;
   mediaUrl?: string;
   mediaUrls?: string[];
+  replyToId?: string | null;
 };
 
 type CapturedDispatchParams = {
@@ -311,7 +312,7 @@ function unacceptedDeliveryResult() {
 
 async function dispatchBufferedReply(overrides: Partial<BufferedReplyParams> = {}) {
   const params: BufferedReplyParams = {
-    cfg: { channels: { whatsapp: { blockStreaming: true } } } as never,
+    cfg: { channels: { whatsapp: { streaming: { block: { enabled: true } } } } } as never,
     connectionId: "conn",
     context: { Body: "hi" },
     deliverReply: async () => acceptedDeliveryResult(),
@@ -349,6 +350,7 @@ describe("whatsapp inbound dispatch", () => {
       msg: makeMsg({
         admission: groupAdmission("123@g.us"),
         event: { timestamp: 1737158400000 },
+        groupMention: { wasMentioned: false, requireMention: false },
         platform: {
           senderName: "Alice",
           senderJid: "alice@s.whatsapp.net",
@@ -377,6 +379,8 @@ describe("whatsapp inbound dispatch", () => {
       SenderE164: "+15550002222",
       OriginatingChannel: "whatsapp",
       OriginatingTo: "123@g.us",
+      WasMentioned: false,
+      GroupRequireMention: false,
     });
   });
 
@@ -720,6 +724,7 @@ describe("whatsapp inbound dispatch", () => {
       agentId: "main",
       to: "+1000",
       info: { kind: "final" },
+      replyToId: null,
     });
     expectRecordFields(requireRecord(durableParams.payload, "durable payload"), {
       text: "final payload",
@@ -732,6 +737,69 @@ describe("whatsapp inbound dispatch", () => {
       combinedBody: "incoming",
       combinedBodySessionKey: "agent:main:whatsapp:+15551234567",
     });
+  });
+
+  it.each([
+    {
+      name: "uses resolved final payload reply targets",
+      payload: { text: "final payload", replyToId: "trigger-message" },
+      expectedReplyToId: "trigger-message",
+    },
+    {
+      name: "quotes the current user follow-up without falling back to the quoted bot message",
+      payload: { text: "final payload" },
+      expectedReplyToId: "trigger-message",
+    },
+    {
+      name: "preserves explicit null reply targets",
+      payload: { text: "final payload", replyToId: null },
+      expectedReplyToId: null,
+    },
+  ] satisfies Array<{
+    name: string;
+    payload: CapturedReplyPayload;
+    expectedReplyToId: string | null;
+  }>)("$name while preserving quoted WhatsApp context", async ({ payload, expectedReplyToId }) => {
+    deliverInboundReplyWithMessageSendContextMock.mockResolvedValueOnce({
+      status: "handled_visible",
+      delivery: {
+        messageIds: ["wa-1"],
+        visibleReplySent: true,
+      },
+    });
+    const deliverReply = vi.fn(async () => acceptedDeliveryResult());
+
+    await dispatchBufferedReply({
+      context: {
+        Body: "incoming",
+        ReplyToId: "quoted-bot-message",
+        ReplyToBody: "Earlier bot reply",
+        ReplyToSender: "OpenClaw",
+      },
+      deliverReply,
+      msg: makeMsg({
+        event: { id: "trigger-message" },
+      }),
+    });
+
+    const deliver = getCapturedDeliver();
+    await deliver?.(payload, { kind: "final" });
+
+    const durableParams = requireMockArg(
+      deliverInboundReplyWithMessageSendContextMock,
+      0,
+      0,
+      "durable delivery params",
+    );
+    expectRecordFields(durableParams, {
+      replyToId: expectedReplyToId,
+    });
+    expectRecordFields(requireRecord(durableParams.ctxPayload, "durable context"), {
+      ReplyToId: "quoted-bot-message",
+      ReplyToBody: "Earlier bot reply",
+      ReplyToSender: "OpenClaw",
+    });
+    expect(deliverReply).not.toHaveBeenCalled();
   });
 
   it("does not fall back when durable WhatsApp delivery suppresses a send", async () => {
@@ -1040,21 +1108,21 @@ describe("whatsapp inbound dispatch", () => {
     expect(rememberSentText).not.toHaveBeenCalled();
   });
 
-  it("maps WhatsApp blockStreaming=true to disableBlockStreaming=false", async () => {
+  it("maps WhatsApp streaming.block.enabled=true to disableBlockStreaming=false", async () => {
     await dispatchBufferedReply();
 
     expect(getCapturedReplyOptions()?.disableBlockStreaming).toBe(false);
   });
 
-  it("maps WhatsApp blockStreaming=false to disableBlockStreaming=true", async () => {
+  it("maps WhatsApp streaming.block.enabled=false to disableBlockStreaming=true", async () => {
     await dispatchBufferedReply({
-      cfg: { channels: { whatsapp: { blockStreaming: false } } } as never,
+      cfg: { channels: { whatsapp: { streaming: { block: { enabled: false } } } } } as never,
     });
 
     expect(getCapturedReplyOptions()?.disableBlockStreaming).toBe(true);
   });
 
-  it("leaves disableBlockStreaming undefined when WhatsApp blockStreaming is unset", async () => {
+  it("leaves disableBlockStreaming undefined when WhatsApp block streaming is unset", async () => {
     await dispatchBufferedReply({
       cfg: { channels: { whatsapp: {} } } as never,
     });
@@ -1087,7 +1155,7 @@ describe("whatsapp inbound dispatch", () => {
   it("delivers authorized WhatsApp group text slash command replies visibly", async () => {
     await dispatchBufferedReply({
       cfg: {
-        channels: { whatsapp: { blockStreaming: true } },
+        channels: { whatsapp: { streaming: { block: { enabled: true } } } },
         messages: { groupChat: { visibleReplies: "message_tool" } },
       } as never,
       context: {
@@ -1112,7 +1180,7 @@ describe("whatsapp inbound dispatch", () => {
   it("honors automatic visible replies for WhatsApp groups", async () => {
     await dispatchBufferedReply({
       cfg: {
-        channels: { whatsapp: { blockStreaming: true } },
+        channels: { whatsapp: { streaming: { block: { enabled: true } } } },
         messages: { groupChat: { visibleReplies: "automatic" } },
       } as never,
       context: { Body: "hi", ChatType: "group" },
@@ -1259,7 +1327,7 @@ describe("whatsapp inbound dispatch", () => {
 
     await expect(
       dispatchWhatsAppBufferedReply({
-        cfg: { channels: { whatsapp: { blockStreaming: true } } } as never,
+        cfg: { channels: { whatsapp: { streaming: { block: { enabled: true } } } } } as never,
         connectionId: "conn",
         context: { Body: "hi" },
         deliverReply,

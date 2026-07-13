@@ -3,17 +3,22 @@
 // timeout handling, and grouped CI output.
 import { spawn } from "node:child_process";
 import { performance } from "node:perf_hooks";
+import pMap from "p-map";
+import prettyMilliseconds from "pretty-ms";
 
 const DEFAULT_CHECK_TIMEOUT_MS = 10 * 60 * 1000;
 const DEFAULT_OUTPUT_MAX_BYTES = 512 * 1024;
-const TIMEOUT_KILL_GRACE_MS = 5_000;
+// Boundary checks are disposable subprocesses; bound descendant cleanup after timeout.
+const TIMEOUT_KILL_GRACE_MS = 250;
 const PROCESS_GROUP_EXIT_POLL_MS = 25;
-const POST_FORCE_KILL_WAIT_MS = 1_000;
+const POST_FORCE_KILL_WAIT_MS = 250;
+const MAX_TIMER_TIMEOUT_MS = 2_147_000_000;
 
 /** Ordered list of supplemental boundary checks used by CI sharding. */
 export const BOUNDARY_CHECKS = [
   ["prompt:snapshots:check", "pnpm", ["prompt:snapshots:check"]],
   ["plugin-extension-boundary", "pnpm", ["run", "lint:plugins:no-extension-imports"]],
+  ["lint:docker-e2e", "pnpm", ["run", "lint:docker-e2e"]],
   ["lint:tmp:no-random-messaging", "pnpm", ["run", "lint:tmp:no-random-messaging"]],
   ["lint:tmp:channel-agnostic-boundaries", "pnpm", ["run", "lint:tmp:channel-agnostic-boundaries"]],
   ["lint:tmp:tsgo-core-boundary", "pnpm", ["run", "lint:tmp:tsgo-core-boundary"]],
@@ -94,6 +99,14 @@ export function resolvePositiveInteger(value, fallback, label = "value") {
     throw new Error(`${label} must be a positive integer; got: ${value}`);
   }
   return parsed;
+}
+
+function resolveTimerTimeoutMs(valueMs) {
+  const value = Number(valueMs);
+  if (!Number.isFinite(value)) {
+    return MAX_TIMER_TIMEOUT_MS;
+  }
+  return Math.min(Math.max(Math.floor(value), 1), MAX_TIMER_TIMEOUT_MS);
 }
 
 /**
@@ -359,6 +372,7 @@ export function runSingleCheck(
   },
 ) {
   return new Promise((resolve) => {
+    const resolvedCheckTimeoutMs = resolveTimerTimeoutMs(checkTimeoutMs);
     const startedAt = performance.now();
     const child = spawn(check.command, check.args, {
       cwd,
@@ -398,7 +412,7 @@ export function runSingleCheck(
     const timeout = setTimeout(() => {
       timedOut = true;
       output.append(
-        `\n[boundary-check] ${check.label} timed out after ${formatDuration(checkTimeoutMs)}; terminating process group\n`,
+        `\n[boundary-check] ${check.label} timed out after ${formatDuration(resolvedCheckTimeoutMs)}; terminating process group\n`,
       );
       terminateChild(child, "SIGTERM");
       forceKillTimer = setTimeout(() => {
@@ -408,7 +422,7 @@ export function runSingleCheck(
         terminateChild(child, "SIGKILL");
       }, TIMEOUT_KILL_GRACE_MS);
       forceKillTimer.unref?.();
-    }, checkTimeoutMs);
+    }, resolvedCheckTimeoutMs);
     timeout.unref?.();
 
     child.stdout.setEncoding("utf8");
@@ -433,10 +447,12 @@ function formatDuration(ms) {
   if (!Number.isFinite(ms)) {
     return "";
   }
-  if (ms < 1000) {
-    return `${ms}ms`;
-  }
-  return `${(ms / 1000).toFixed(1)}s`;
+  const roundedMs = ms < 1000 ? Math.round(ms) : Math.round(ms / 100) * 100;
+  return prettyMilliseconds(Math.max(0, roundedMs), {
+    millisecondsDecimalDigits: 0,
+    secondsDecimalDigits: 1,
+    unitCount: 1,
+  });
 }
 
 function writeGroupedResult(result, output) {
@@ -484,43 +500,23 @@ export async function runChecks(
     outputMaxBytes = DEFAULT_OUTPUT_MAX_BYTES,
   } = {},
 ) {
-  const results = Array.from({ length: checks.length });
   const activeChildren = new Set();
   const removeActiveChildCleanup = installActiveChildCleanup(activeChildren);
-  let nextIndex = 0;
-  let active = 0;
+  let results;
 
   try {
-    await new Promise((resolve) => {
-      const launch = () => {
-        if (nextIndex >= checks.length && active === 0) {
-          resolve();
-          return;
-        }
-
-        while (active < concurrency && nextIndex < checks.length) {
-          const index = nextIndex;
-          const check = checks[nextIndex++];
-          active += 1;
-          void runSingleCheck(check, {
-            activeChildren,
-            checkTimeoutMs,
-            cwd,
-            env,
-            outputMaxBytes,
-          })
-            .then((result) => {
-              results[index] = result;
-            })
-            .finally(() => {
-              active -= 1;
-              launch();
-            });
-        }
-      };
-
-      launch();
-    });
+    results = await pMap(
+      checks,
+      (check) =>
+        runSingleCheck(check, {
+          activeChildren,
+          checkTimeoutMs,
+          cwd,
+          env,
+          outputMaxBytes,
+        }),
+      { concurrency, stopOnError: true },
+    );
   } finally {
     removeActiveChildCleanup();
   }
@@ -558,7 +554,7 @@ export function parseCliArgs(args, env = process.env) {
     }
     if (arg === "--shard") {
       const value = args[index + 1];
-      if (!value || value.startsWith("--")) {
+      if (!value || value.startsWith("-")) {
         throw new Error("--shard requires a value");
       }
       shardSpec = value;

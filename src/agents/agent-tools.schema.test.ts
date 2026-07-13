@@ -1,3 +1,5 @@
+import { normalizeToolParameterSchema } from "@openclaw/ai/internal/openai";
+import { expectDefined } from "@openclaw/normalization-core";
 /**
  * Tests provider-compatible tool schema normalization.
  * Protects caching, ref inlining, OpenAPI keyword cleanup, and no-parameter
@@ -12,11 +14,7 @@ import {
   testing as beforeToolCallTesting,
   wrapToolWithBeforeToolCallHook,
 } from "./agent-tools.before-tool-call.js";
-import {
-  cleanToolSchemaForGemini,
-  normalizeToolParameterSchema,
-  normalizeToolParameters,
-} from "./agent-tools.schema.js";
+import { normalizeToolParameters } from "./agent-tools.schema.js";
 import type { AnyAgentTool } from "./agent-tools.types.js";
 
 const TEST_USAGE = {
@@ -44,6 +42,93 @@ describe("normalizeToolParameterSchema", () => {
     expect(second).toBe(first);
     expect(providerSpecific).not.toBe(first);
     expect(providerSpecific).toEqual(first);
+  });
+
+  it("uses Gemini cleanup for OpenAI-compatible providers when the model id is Gemini", () => {
+    const schema = {
+      type: "object",
+      properties: {
+        sessionKey: {
+          description: "Explicit session key, or null to clear it",
+          anyOf: [{ type: "string" }, { type: "null" }],
+        },
+      },
+    };
+
+    expect(
+      normalizeToolParameterSchema(schema, {
+        modelProvider: "jjcc",
+        modelId: "gemini-3.1-pro-preview",
+      }),
+    ).toEqual({
+      type: "object",
+      properties: {
+        sessionKey: {
+          type: "string",
+          description: "Explicit session key, or null to clear it",
+        },
+      },
+    });
+    expect(
+      normalizeToolParameterSchema(schema, {
+        modelProvider: "stepfun",
+        modelId: "step-router-v1",
+      }),
+    ).toEqual(schema);
+  });
+
+  it("keeps normalized tool-schema profile behavior aligned with the cache key", () => {
+    const schema = {
+      type: "object",
+      properties: {
+        sessionKey: {
+          anyOf: [{ type: "string" }, { type: "null" }],
+        },
+      },
+    };
+
+    const defaultSchema = normalizeToolParameterSchema(schema, {
+      modelProvider: "openai-compatible",
+      modelId: "custom-model",
+    });
+    const mixedCaseGeminiProfileSchema = normalizeToolParameterSchema(schema, {
+      modelProvider: "openai-compatible",
+      modelId: "custom-model",
+      modelCompat: { toolSchemaProfile: "Gemini" },
+    });
+
+    expect(defaultSchema).toEqual(schema);
+    expect(mixedCaseGeminiProfileSchema).toEqual({
+      type: "object",
+      properties: {
+        sessionKey: { type: "string" },
+      },
+    });
+  });
+
+  it("applies explicit unsupported keyword stripping after Gemini cleanup", () => {
+    expect(
+      normalizeToolParameterSchema(
+        {
+          type: "object",
+          properties: {
+            count: {
+              anyOf: [{ type: "integer", vendorOnly: true }, { type: "null" }],
+            },
+          },
+        },
+        {
+          modelProvider: "jjcc",
+          modelId: "gemini-3.1-pro-preview",
+          modelCompat: { unsupportedToolSchemaKeywords: ["vendorOnly"] },
+        },
+      ),
+    ).toEqual({
+      type: "object",
+      properties: {
+        count: { type: "integer" },
+      },
+    });
   });
 
   it("normalizes truly empty schemas to type:object with properties:{}", () => {
@@ -136,15 +221,18 @@ describe("normalizeToolParameterSchema", () => {
   });
 
   it("inlines local $ref before removing unsupported keywords", () => {
-    const cleaned = cleanToolSchemaForGemini({
-      type: "object",
-      properties: {
-        foo: { $ref: "#/$defs/Foo" },
+    const cleaned = normalizeToolParameterSchema(
+      {
+        type: "object",
+        properties: {
+          foo: { $ref: "#/$defs/Foo" },
+        },
+        $defs: {
+          Foo: { type: "string", enum: ["a", "b"] },
+        },
       },
-      $defs: {
-        Foo: { type: "string", enum: ["a", "b"] },
-      },
-    }) as {
+      { modelProvider: "gemini" },
+    ) as {
       $defs?: unknown;
       properties?: Record<string, unknown>;
     };
@@ -600,18 +688,21 @@ describe("normalizeToolParameterSchema", () => {
   });
 
   it("cleans tuple items schemas", () => {
-    const cleaned = cleanToolSchemaForGemini({
-      type: "object",
-      properties: {
-        tuples: {
-          type: "array",
-          items: [
-            { type: "string", format: "uuid" },
-            { type: "number", minimum: 1 },
-          ],
+    const cleaned = normalizeToolParameterSchema(
+      {
+        type: "object",
+        properties: {
+          tuples: {
+            type: "array",
+            items: [
+              { type: "string", format: "uuid" },
+              { type: "number", minimum: 1 },
+            ],
+          },
         },
       },
-    }) as {
+      { modelProvider: "gemini" },
+    ) as {
       properties?: Record<string, unknown>;
     };
 
@@ -625,13 +716,16 @@ describe("normalizeToolParameterSchema", () => {
   });
 
   it("drops null-only union variants without flattening other unions", () => {
-    const cleaned = cleanToolSchemaForGemini({
-      type: "object",
-      properties: {
-        parentId: { anyOf: [{ type: "string" }, { type: "null" }] },
-        count: { oneOf: [{ type: "string" }, { type: "number" }] },
+    const cleaned = normalizeToolParameterSchema(
+      {
+        type: "object",
+        properties: {
+          parentId: { anyOf: [{ type: "string" }, { type: "null" }] },
+          count: { oneOf: [{ type: "string" }, { type: "number" }] },
+        },
       },
-    }) as {
+      { modelProvider: "gemini" },
+    ) as {
       properties?: Record<string, unknown>;
     };
 
@@ -992,13 +1086,16 @@ describe("normalizeToolParameters", () => {
       required?: string[];
       properties?: Record<string, Record<string, unknown>>;
     };
+    const properties = expectDefined(parameters.properties, "normalized schema properties");
+    const count = expectDefined(properties.count, "normalized count property");
+    const query = expectDefined(properties.query, "normalized query property");
 
     expect(parameters.required).toEqual(["count"]);
-    expect(parameters.properties?.count.minimum).toBeUndefined();
-    expect(parameters.properties?.count.maximum).toBeUndefined();
-    expect(parameters.properties?.count.type).toBe("integer");
-    expect(parameters.properties?.query.minLength).toBeUndefined();
-    expect(parameters.properties?.query.type).toBe("string");
+    expect(count.minimum).toBeUndefined();
+    expect(count.maximum).toBeUndefined();
+    expect(count.type).toBe("integer");
+    expect(query.minLength).toBeUndefined();
+    expect(query.type).toBe("string");
   });
 
   it("omits empty array items when model compat requires it", () => {

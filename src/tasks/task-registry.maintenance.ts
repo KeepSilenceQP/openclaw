@@ -1,8 +1,5 @@
 // Reconciles stale or lost task registry records during maintenance passes.
-import {
-  normalizeLowercaseStringOrEmpty,
-  normalizeOptionalString,
-} from "@openclaw/normalization-core/string-coerce";
+import { normalizeOptionalString } from "@openclaw/normalization-core/string-coerce";
 import { isAcpTurnActive } from "../acp/control-plane/active-turns.js";
 import { getAcpSessionManager } from "../acp/control-plane/manager.js";
 import {
@@ -14,8 +11,12 @@ import {
   formatSubagentRecoveryWedgedReason,
   isSubagentRecoveryWedgedEntry,
 } from "../agents/subagent-recovery-state.js";
-import { loadSessionStore, resolveStorePath } from "../config/sessions.js";
+import { resolveStorePath } from "../config/sessions.js";
 import type { SessionEntry } from "../config/sessions.js";
+import {
+  listSessionEntries,
+  type SessionEntrySummary,
+} from "../config/sessions/session-accessor.js";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { isCronJobActive } from "../cron/active-jobs.js";
 import { readCronRunLogEntriesSync } from "../cron/run-log.js";
@@ -30,19 +31,21 @@ import {
   isPluginStateDatabaseOpen,
   sweepExpiredPluginStateEntries,
 } from "../plugin-state/plugin-state-store.js";
+import { runWithGatewayIndependentRootWorkAdmission } from "../process/gateway-work-admission.js";
 import { parseAgentSessionKey } from "../routing/session-key.js";
 import {
   deriveSessionChatTypeFromKey,
   type SessionKeyChatType,
 } from "../sessions/session-chat-type-shared.js";
-import {
-  CODEX_NATIVE_SUBAGENT_STALE_ERROR,
-  isChildlessCodexNativeSubagentTask,
-} from "./codex-native-subagent-task.js";
+import { CODEX_NATIVE_SUBAGENT_STALE_ERROR } from "./codex-native-subagent-task.js";
 import {
   getDetachedTaskLifecycleRuntime,
   tryRecoverTaskBeforeMarkLost,
 } from "./detached-task-runtime.js";
+import {
+  isChildlessNativeSubagentTask,
+  resolveChildlessNativeSubagentTaskDefinition,
+} from "./native-subagent-task.js";
 import {
   deleteTaskRecordById,
   ensureTaskRegistryReady,
@@ -63,6 +66,7 @@ import {
 import type { TaskAuditFinding, TaskAuditSummary } from "./task-registry.audit.js";
 import { summarizeTaskRecords } from "./task-registry.summary.js";
 import type { TaskRecord, TaskRegistrySummary, TaskStatus } from "./task-registry.types.js";
+import type { ActiveTaskRestartBlocker } from "./task-restart-blocker.js";
 import {
   resolveEffectiveTaskCleanupAfter,
   resolveTaskCleanupAfter,
@@ -71,7 +75,7 @@ import {
 
 const log = createSubsystemLogger("tasks/task-registry-maintenance");
 const TASK_RECONCILE_GRACE_MS = 5 * 60_000;
-const CHILDLESS_CODEX_NATIVE_RECONCILE_GRACE_MS = 30 * 60_000;
+const CHILDLESS_NATIVE_SUBAGENT_RECONCILE_GRACE_MS = 30 * 60_000;
 const TASK_STALE_RUNNING_MS = 30 * 60_000;
 const TASK_SWEEP_INTERVAL_MS = 60_000;
 
@@ -97,7 +101,7 @@ type TaskRegistryMaintenanceRuntime = {
   }) => Promise<void>;
   listSessionBindingsBySession?: ReturnType<typeof getSessionBindingService>["listBySession"];
   unbindSessionBindings?: ReturnType<typeof getSessionBindingService>["unbind"];
-  loadSessionStore: typeof loadSessionStore;
+  listSessionEntries: typeof listSessionEntries;
   resolveStorePath: typeof resolveStorePath;
   deriveSessionChatTypeFromKey?: typeof deriveSessionChatTypeFromKey;
   isCronJobActive: typeof isCronJobActive;
@@ -137,7 +141,7 @@ const defaultTaskRegistryMaintenanceRuntime: TaskRegistryMaintenanceRuntime = {
   listSessionBindingsBySession: (sessionKey) =>
     getSessionBindingService().listBySession(sessionKey),
   unbindSessionBindings: (input) => getSessionBindingService().unbind(input),
-  loadSessionStore,
+  listSessionEntries,
   resolveStorePath,
   deriveSessionChatTypeFromKey,
   isCronJobActive,
@@ -212,13 +216,12 @@ type CronRecoveryContext = {
   runLogsByJobId: Map<string, CronRunLogEntry[]>;
 };
 
-type SessionStoreLookup = {
-  store: Record<string, SessionEntry>;
-  normalizedEntries?: Map<string, SessionEntry>;
+type SessionEntryLookup = {
+  entriesByKey: Map<string, SessionEntry>;
 };
 
 type BackingSessionLookupContext = {
-  sessionStoresByPath: Map<string, SessionStoreLookup>;
+  sessionEntriesByPath: Map<string, SessionEntryLookup>;
   sessionChatTypesByKey: Map<string, SessionKeyChatType>;
 };
 
@@ -231,58 +234,42 @@ function createCronRecoveryContext(): CronRecoveryContext {
 
 function createBackingSessionLookupContext(): BackingSessionLookupContext {
   return {
-    sessionStoresByPath: new Map<string, SessionStoreLookup>(),
+    sessionEntriesByPath: new Map<string, SessionEntryLookup>(),
     sessionChatTypesByKey: new Map<string, SessionKeyChatType>(),
   };
 }
 
-function getSessionStoreLookup(
+function buildSessionEntryLookup(entries: SessionEntrySummary[]): SessionEntryLookup {
+  return {
+    entriesByKey: new Map(entries.map(({ sessionKey, entry }) => [sessionKey, entry])),
+  };
+}
+
+function getSessionEntryLookup(
   storePath: string,
   context?: BackingSessionLookupContext,
-): SessionStoreLookup {
+): SessionEntryLookup {
   if (!context) {
-    return {
-      store: taskRegistryMaintenanceRuntime.loadSessionStore(storePath, { clone: false }),
-    };
+    return buildSessionEntryLookup(
+      taskRegistryMaintenanceRuntime.listSessionEntries({ storePath }),
+    );
   }
-  const cached = context.sessionStoresByPath.get(storePath);
+  const cached = context.sessionEntriesByPath.get(storePath);
   if (cached) {
     return cached;
   }
-  const lookup = {
-    store: taskRegistryMaintenanceRuntime.loadSessionStore(storePath, { clone: false }),
-  };
-  context.sessionStoresByPath.set(storePath, lookup);
+  const lookup = buildSessionEntryLookup(
+    taskRegistryMaintenanceRuntime.listSessionEntries({ storePath }),
+  );
+  context.sessionEntriesByPath.set(storePath, lookup);
   return lookup;
 }
 
-function getNormalizedSessionEntries(lookup: SessionStoreLookup): Map<string, SessionEntry> {
-  if (lookup.normalizedEntries) {
-    return lookup.normalizedEntries;
-  }
-  const entries = new Map<string, SessionEntry>();
-  for (const [key, entry] of Object.entries(lookup.store)) {
-    if (entry) {
-      entries.set(normalizeLowercaseStringOrEmpty(key), entry);
-    }
-  }
-  lookup.normalizedEntries = entries;
-  return entries;
-}
-
 function findSessionEntryByKey(
-  lookup: SessionStoreLookup,
+  lookup: SessionEntryLookup,
   sessionKey: string,
 ): SessionEntry | undefined {
-  const direct = lookup.store[sessionKey];
-  if (direct) {
-    return direct;
-  }
-  const normalized = normalizeLowercaseStringOrEmpty(sessionKey);
-  if (!normalized) {
-    return undefined;
-  }
-  return getNormalizedSessionEntries(lookup).get(normalized);
+  return lookup.entriesByKey.get(sessionKey);
 }
 
 function resolveSessionChatType(
@@ -313,7 +300,7 @@ function findTaskSessionEntry(
   }
   const agentId = taskRegistryMaintenanceRuntime.parseAgentSessionKey(childSessionKey)?.agentId;
   const storePath = taskRegistryMaintenanceRuntime.resolveStorePath(undefined, { agentId });
-  return findSessionEntryByKey(getSessionStoreLookup(storePath, context), childSessionKey);
+  return findSessionEntryByKey(getSessionEntryLookup(storePath, context), childSessionKey);
 }
 
 function isActiveTask(task: TaskRecord): boolean {
@@ -326,8 +313,8 @@ function isTerminalTask(task: TaskRecord): boolean {
 
 function hasLostGraceExpired(task: TaskRecord, now: number): boolean {
   const referenceAt = task.lastEventAt ?? task.startedAt ?? task.createdAt;
-  const graceMs = isChildlessCodexNativeSubagentTask(task)
-    ? CHILDLESS_CODEX_NATIVE_RECONCILE_GRACE_MS
+  const graceMs = isChildlessNativeSubagentTask(task)
+    ? CHILDLESS_NATIVE_SUBAGENT_RECONCILE_GRACE_MS
     : TASK_RECONCILE_GRACE_MS;
   return now - referenceAt >= graceMs;
 }
@@ -354,6 +341,14 @@ function parseCronExecutionId(task: TaskRecord): CronExecutionId | undefined {
 
 function isTimeoutCronError(error: string | undefined): boolean {
   return error === "cron: job execution timed out";
+}
+
+function isRecoverableLostCronTask(task: TaskRecord): boolean {
+  if (task.status !== "lost") {
+    return false;
+  }
+  const error = task.error?.trim().toLowerCase();
+  return Boolean(error?.includes("backing session missing"));
 }
 
 function mapCronTerminalStatus(status: unknown, error?: string): CronTerminalRecovery["status"] {
@@ -453,7 +448,7 @@ function resolveDurableCronTaskRecovery(
   task: TaskRecord,
   context: CronRecoveryContext,
 ): CronTerminalRecovery | undefined {
-  if (task.runtime !== "cron" || !isActiveTask(task)) {
+  if (task.runtime !== "cron" || (!isActiveTask(task) && !isRecoverableLostCronTask(task))) {
     return undefined;
   }
   const execution = parseCronExecutionId(task);
@@ -498,7 +493,7 @@ function hasBackingSession(task: TaskRecord, context?: BackingSessionLookupConte
 
   const childSessionKey = task.childSessionKey?.trim();
   if (!childSessionKey) {
-    return !isChildlessCodexNativeSubagentTask(task);
+    return !isChildlessNativeSubagentTask(task);
   }
   if (task.runtime === "acp") {
     // The live-turn map is process-local; only the gateway owns it. A standalone CLI
@@ -527,8 +522,11 @@ function hasBackingSession(task: TaskRecord, context?: BackingSessionLookupConte
 }
 
 function resolveTaskLostError(task: TaskRecord, context?: BackingSessionLookupContext): string {
-  if (isChildlessCodexNativeSubagentTask(task)) {
-    return CODEX_NATIVE_SUBAGENT_STALE_ERROR;
+  const nativeDefinition = resolveChildlessNativeSubagentTaskDefinition(task);
+  if (nativeDefinition) {
+    return nativeDefinition.taskKind === "codex-native"
+      ? CODEX_NATIVE_SUBAGENT_STALE_ERROR
+      : "Native subagent stopped reporting progress";
   }
   if (task.runtime === "subagent") {
     const entry = findTaskSessionEntry(task, context);
@@ -804,7 +802,7 @@ function markTaskRecovered(task: TaskRecord, recovery: CronTerminalRecovery): Ta
       status: recovery.status,
       endedAt: recovery.endedAt,
       lastEventAt: recovery.lastEventAt,
-      ...(recovery.error !== undefined ? { error: recovery.error } : {}),
+      error: recovery.error,
       ...(recovery.terminalSummary !== undefined
         ? { terminalSummary: recovery.terminalSummary }
         : {}),
@@ -819,11 +817,14 @@ function projectTaskRecovered(task: TaskRecord, recovery: CronTerminalRecovery):
     status: recovery.status,
     endedAt: recovery.endedAt,
     lastEventAt: recovery.lastEventAt,
-    ...(recovery.error !== undefined ? { error: recovery.error } : {}),
+    error: recovery.error,
     ...(recovery.terminalSummary !== undefined
       ? { terminalSummary: recovery.terminalSummary }
       : {}),
   };
+  if (recovery.error === undefined) {
+    delete projected.error;
+  }
   return {
     ...projected,
     ...(typeof projected.cleanupAfter === "number"
@@ -868,7 +869,7 @@ function reconcileTaskRecordForOperatorInspectionWithContexts(
   return projectTaskLost(task, now, backingSessionContext);
 }
 
-export function reconcileTaskRecordForOperatorInspection(
+function reconcileTaskRecordForOperatorInspection(
   task: TaskRecord,
   context: CronRecoveryContext = createCronRecoveryContext(),
 ): TaskRecord {
@@ -895,15 +896,6 @@ export function reconcileInspectableTasks(): TaskRecord[] {
 }
 
 configureTaskAuditTaskProvider(reconcileInspectableTasks);
-
-export type ActiveTaskRestartBlocker = {
-  taskId: string;
-  status: Extract<TaskStatus, "running">;
-  runtime: TaskRecord["runtime"];
-  runId?: string;
-  label?: string;
-  title?: string;
-};
 
 function isActiveTaskRestartBlockerStatus(
   status: TaskStatus,
@@ -1085,7 +1077,9 @@ function startScheduledSweep() {
   const clearSweepInProgress = () => {
     sweepInProgress = false;
   };
-  sweepTaskRegistry().then(clearSweepInProgress, clearSweepInProgress);
+  void runWithGatewayIndependentRootWorkAdmission(async () => {
+    await sweepTaskRegistry();
+  }).then(clearSweepInProgress, clearSweepInProgress);
 }
 
 export async function runTaskRegistryMaintenance(): Promise<TaskRegistryMaintenanceSummary> {

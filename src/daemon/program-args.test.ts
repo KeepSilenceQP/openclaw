@@ -2,10 +2,6 @@
 import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const childProcessMocks = vi.hoisted(() => ({
-  execFileSync: vi.fn(),
-}));
-
 const fsMocks = vi.hoisted(() => ({
   access: vi.fn(),
   realpath: vi.fn(),
@@ -28,21 +24,14 @@ vi.mock("node:fs/promises", async () => {
   };
 });
 
-vi.mock("node:child_process", async () => {
-  const actual = await vi.importActual<typeof import("node:child_process")>("node:child_process");
-  return {
-    ...actual,
-    execFileSync: childProcessMocks.execFileSync,
-  };
-});
-
-import { resolveGatewayProgramArguments } from "./program-args.js";
+import { resolveGatewayProgramArguments, resolveNodeProgramArguments } from "./program-args.js";
 
 const originalArgv = [...process.argv];
 
 afterEach(() => {
   process.argv = [...originalArgv];
   vi.resetAllMocks();
+  vi.unstubAllEnvs();
 });
 
 describe("resolveGatewayProgramArguments", () => {
@@ -155,22 +144,24 @@ describe("resolveGatewayProgramArguments", () => {
     ]);
   });
 
-  it("uses src/entry.ts for bun dev mode", async () => {
+  it("uses Node with tsx for source-checkout dev mode", async () => {
     const repoIndexPath = path.resolve("/repo/src/index.ts");
     const repoEntryPath = path.resolve("/repo/src/entry.ts");
     process.argv = ["/usr/local/bin/node", repoIndexPath];
     fsMocks.realpath.mockResolvedValue(repoIndexPath);
     fsMocks.access.mockResolvedValue(undefined);
-    childProcessMocks.execFileSync.mockReturnValue("/usr/local/bin/bun\n");
 
     const result = await resolveGatewayProgramArguments({
       dev: true,
       port: 18789,
-      runtime: "bun",
+      runtime: "node",
+      nodePath: "/usr/local/bin/node",
     });
 
     expect(result.programArguments).toEqual([
-      "/usr/local/bin/bun",
+      "/usr/local/bin/node",
+      "--import",
+      "tsx",
       repoEntryPath,
       "gateway",
       "--port",
@@ -204,5 +195,33 @@ describe("resolveGatewayProgramArguments", () => {
         wrapperPath,
       }),
     ).rejects.toThrow("OPENCLAW_WRAPPER must point to an executable file");
+  });
+});
+
+describe("resolveNodeProgramArguments", () => {
+  it("carries an explicit plaintext selection into the managed node command", async () => {
+    const entryPath = path.resolve("/opt/openclaw/dist/entry.js");
+    const indexPath = path.resolve("/opt/openclaw/dist/index.js");
+    process.argv = ["node", entryPath];
+    fsMocks.realpath.mockResolvedValue(entryPath);
+    fsMocks.access.mockResolvedValue(undefined);
+
+    const result = await resolveNodeProgramArguments({
+      host: "gateway.example",
+      port: 18789,
+      tls: false,
+    });
+
+    expect(result.programArguments).toEqual([
+      process.execPath,
+      indexPath,
+      "node",
+      "run",
+      "--host",
+      "gateway.example",
+      "--port",
+      "18789",
+      "--no-tls",
+    ]);
   });
 });

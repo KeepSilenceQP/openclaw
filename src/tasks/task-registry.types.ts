@@ -139,13 +139,12 @@ export type TaskRecord = {
   endedAt?: number;
   lastEventAt?: number;
   cleanupAfter?: number;
+  /** Tool invocations observed on this run's agent-event stream. */
+  toolUseCount?: number;
+  /** Name of the most recent tool invocation observed for this run. */
+  lastToolName?: string;
   error?: string;
   progressSummary?: string;
   terminalSummary?: string;
   terminalOutcome?: TaskTerminalOutcome;
-};
-
-export type TaskRegistrySnapshot = {
-  tasks: TaskRecord[];
-  deliveryStates: TaskDeliveryState[];
 };
