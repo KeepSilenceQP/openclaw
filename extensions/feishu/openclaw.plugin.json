@@ -6,6 +6,16 @@
     "onStartup": false
   },
   "channels": ["feishu"],
+  "channelConfigs": {
+    "feishu": {
+      "label": "Feishu",
+      "description": "Feishu/Lark channel plugin for chats and workplace tools.",
+      "schema": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    }
+  },
   "contracts": {
     "tools": [
       "feishu_app_scopes",
