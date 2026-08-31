@@ -1,10 +1,7 @@
 // QA Lab tests cover deterministic static-SSH worker provider behavior.
 import type { WorkerProfile } from "openclaw/plugin-sdk/plugin-entry";
 import { describe, expect, it } from "vitest";
-import {
-  createStaticSshWorkerProvider,
-  STATIC_SSH_WORKER_PROVIDER_ID,
-} from "./static-ssh-worker-provider.js";
+import { createStaticSshWorkerProvider } from "./static-ssh-worker-provider.js";
 
 const KEY_REF = {
   source: "file" as const,
@@ -32,9 +29,11 @@ describe("QA Lab static-SSH worker provider", () => {
     const first = await provider.provision(profile, "operation-123");
     const replay = await provider.provision(profile, "operation-123");
 
-    expect(provider.id).toBe(STATIC_SSH_WORKER_PROVIDER_ID);
+    expect(provider.id).toBe("static-ssh");
+    expect(provider.supportedExecutionModes).toEqual(["remote-exec"]);
     expect(first).toStrictEqual({
       leaseId: "static-ssh:operation-123",
+      sharedHost: true,
       ssh: {
         host: "worker.example.test",
         port: 22,
@@ -44,6 +43,12 @@ describe("QA Lab static-SSH worker provider", () => {
       },
     });
     expect(replay).toStrictEqual(first);
+    // Cleanup needs only the logical operation identity, even without usable SSH settings.
+    const allocation = await provider.resolveAllocation({}, "operation-123");
+    expect(allocation).toEqual({ leaseId: first.leaseId, sharedHost: true });
+    await expect(
+      provider.destroy({ leaseId: allocation.leaseId, profile: {} }),
+    ).resolves.toBeUndefined();
   });
 
   it("preserves an explicit positive SSH port", async () => {
@@ -155,6 +160,7 @@ describe("QA Lab static-SSH worker provider", () => {
       provider.inspect({ leaseId: "static-ssh:operation-123", profile: PROFILE }),
     ).resolves.toStrictEqual({
       status: "active",
+      sharedHost: true,
     });
     await expect(
       provider.inspect({ leaseId: "static-ssh:", profile: PROFILE }),

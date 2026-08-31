@@ -1,10 +1,10 @@
 import path from "node:path";
 import type { OpenClawConfig } from "../config/types.openclaw.js";
 import { formatErrorMessage } from "../infra/errors.js";
+import { createLazyRuntimeModule } from "../shared/lazy-runtime.js";
 import { resolveUserPath } from "../utils.js";
 import { emitPluginAgentEvent } from "./agent-event-emission.js";
 import { buildPluginApi } from "./api-builder.js";
-import { sendPluginSessionAttachment } from "./host-hook-attachments.js";
 import {
   clearPluginRunContext,
   getPluginRunContext,
@@ -14,7 +14,6 @@ import {
   schedulePluginSessionTurn,
   unschedulePluginSessionTurnsByTag,
 } from "./host-hook-scheduled-turns.js";
-import { enqueuePluginNextTurnInjection } from "./host-hook-state.js";
 import { isPluginRegistryActivated, isPluginRegistryRetired } from "./registry-lifecycle.js";
 import type { PluginRegistrars } from "./registry-registrars.js";
 import type { PluginRuntimeResolver } from "./registry-runtime.js";
@@ -25,8 +24,11 @@ import {
   type PluginSideEffectGuard,
 } from "./registry-state.js";
 import type { PluginRecord } from "./registry-types.js";
-import { getActivePluginRegistry } from "./runtime.js";
 import type { OpenClawPluginApi, PluginLogger, PluginRegistrationMode } from "./types.js";
+
+// Registration exposes these async operations without loading session storage or delivery.
+const loadAttachments = createLazyRuntimeModule(() => import("./host-hook-attachments.js"));
+const loadHookState = createLazyRuntimeModule(() => import("./host-hook-state.js"));
 
 function normalizeLogger(logger: PluginLogger): PluginLogger {
   return {
@@ -57,6 +59,7 @@ export function createPluginApiFactory(
     registerHook,
     registerHttpRoute,
     registerHostedMediaResolver,
+    registerMcpServerConnectionResolver,
     registerProvider,
     registerWorkerProvider,
     registerModelCatalogProvider,
@@ -83,6 +86,7 @@ export function createPluginApiFactory(
     registerReload,
     registerNodeHostCommand,
     registerNodeInvokePolicy,
+    registerWidgetPresenter,
     registerSecurityAuditCollector,
     registerInteractiveHandler,
     registerConversationBindingResolvedHandler,
@@ -95,22 +99,21 @@ export function createPluginApiFactory(
     registerTrustedToolPolicy,
     registerToolMetadata,
     registerControlUiDescriptor,
+    registerBoardWidgetContentKind,
     registerRuntimeLifecycle,
     registerAgentEventSubscription,
     registerSessionSchedulerJob,
     registerSessionAction,
     registerTypedHook,
     registerMemoryCapability,
-    registerMemoryPromptSection,
     registerMemoryPromptSupplement,
+    registerMemoryPromptPreparation,
     registerMemoryCorpusSupplement,
-    registerMemoryFlushPlan,
-    registerMemoryRuntime,
-    registerMemoryEmbeddingProvider,
     registerCli,
     registerChannel,
   } = registrars;
-  const { resolvePluginRuntime, setPluginRuntimeRecord } = runtimeResolver;
+  const { resolvePluginRuntime, resolveRegisteredChannelRuntime, setPluginRuntimeRecord } =
+    runtimeResolver;
 
   const createPluginSideEffectGuard = (pluginId: string): PluginSideEffectGuard => {
     const guard = { active: true };
@@ -146,8 +149,11 @@ export function createPluginApiFactory(
     const sideEffectGuard = createPluginSideEffectGuard(record.id);
     const isLoadedRecordInRegistry = () =>
       registry.plugins.some((plugin) => plugin.id === record.id && plugin.status === "loaded");
-    const isLoadedRecordInActiveRegistry = () =>
-      getActivePluginRegistry() === registry && isLoadedRecordInRegistry();
+    const isLoadedRecordInLiveRegistry = () =>
+      sideEffectGuard.active &&
+      isPluginRegistryActivated(registry) &&
+      !isPluginRegistryRetired(registry) &&
+      isLoadedRecordInRegistry();
     const isActivatingLoadedRecord = () =>
       registryParams.activateGlobalSideEffects !== false &&
       record.enabled &&
@@ -180,12 +186,15 @@ export function createPluginApiFactory(
               registerHttpRoute: (routeParams) => registerHttpRoute(record, routeParams),
               registerHostedMediaResolver: (resolver) =>
                 registerHostedMediaResolver(record, resolver),
+              registerMcpServerConnectionResolver: (resolver) =>
+                registerMcpServerConnectionResolver(record, resolver),
               registerProvider: (provider) => registerProvider(record, provider),
               registerWorkerProvider: (provider) => registerWorkerProvider(record, provider),
               registerModelCatalogProvider: (provider) =>
                 registerModelCatalogProvider(record, provider),
               registerEmbeddingProvider: (provider) => registerEmbeddingProvider(record, provider),
-              registerAgentHarness: (harness) => registerAgentHarness(record, harness),
+              registerAgentHarness: (harness, options) =>
+                registerAgentHarness(record, harness, options),
               registerDetachedTaskRuntime: (runtime) =>
                 registerDetachedTaskRuntime(record, runtime),
               registerSpeechProvider: (provider) => registerSpeechProvider(record, provider),
@@ -218,6 +227,7 @@ export function createPluginApiFactory(
               registerNodeHostCommand: (command) => registerNodeHostCommand(record, command),
               registerNodeInvokePolicy: (policy) =>
                 registerNodeInvokePolicy(record, policy, params.pluginConfig),
+              registerWidgetPresenter: (presenter) => registerWidgetPresenter(record, presenter),
               registerSecurityAuditCollector: (collector) =>
                 registerSecurityAuditCollector(record, collector),
               registerInteractiveHandler: (registration) =>
@@ -233,10 +243,10 @@ export function createPluginApiFactory(
                 registerCodexAppServerExtensionFactory(record, factory);
               },
               registerAgentToolResultMiddleware: (handler, options) => {
-                registerAgentToolResultMiddleware(record, handler, options);
+                registerAgentToolResultMiddleware(record, handler, options, params.hookPolicy);
               },
               registerSessionExtension: (extension) => registerSessionExtension(record, extension),
-              enqueueNextTurnInjection: (injection) => {
+              enqueueNextTurnInjection: async (injection) => {
                 if (params.hookPolicy?.allowPromptInjection === false) {
                   pushDiagnostic({
                     level: "warn",
@@ -244,12 +254,13 @@ export function createPluginApiFactory(
                     source: record.source,
                     message: `next-turn injection blocked by plugins.entries.${record.id}.hooks.allowPromptInjection=false`,
                   });
-                  return Promise.resolve({
+                  return {
                     enqueued: false,
                     id: "",
                     sessionKey: injection.sessionKey,
-                  });
+                  };
                 }
+                const { enqueuePluginNextTurnInjection } = await loadHookState();
                 return enqueuePluginNextTurnInjection({
                   cfg: registryParams.runtime.config.current() as OpenClawConfig,
                   pluginId: record.id,
@@ -261,6 +272,8 @@ export function createPluginApiFactory(
               registerToolMetadata: (metadata) => registerToolMetadata(record, metadata),
               registerControlUiDescriptor: (descriptor) =>
                 registerControlUiDescriptor(record, descriptor),
+              registerBoardWidgetContentKind: (definition) =>
+                registerBoardWidgetContentKind(record, definition),
               registerRuntimeLifecycle: (lifecycle) => registerRuntimeLifecycle(record, lifecycle),
               registerAgentEventSubscription: (subscription) =>
                 registerAgentEventSubscription(record, subscription),
@@ -283,7 +296,11 @@ export function createPluginApiFactory(
                 shouldCommitWorkflowSideEffect()
                   ? setPluginRunContext({ pluginId: record.id, patch })
                   : false,
-              getRunContext: (get) => getPluginRunContext({ pluginId: record.id, get }),
+              getRunContext: (get) =>
+                registryParams.activateGlobalSideEffects !== false &&
+                shouldCommitWorkflowSideEffect()
+                  ? getPluginRunContext({ pluginId: record.id, get })
+                  : undefined,
               clearRunContext: (paramsLocal) => {
                 if (
                   registryParams.activateGlobalSideEffects === false ||
@@ -304,7 +321,8 @@ export function createPluginApiFactory(
                   return { ok: false, error: "global side effects disabled" };
                 }
                 try {
-                  if (!isLoadedRecordInActiveRegistry()) {
+                  const { sendPluginSessionAttachment } = await loadAttachments();
+                  if (!isLoadedRecordInLiveRegistry()) {
                     return { ok: false, error: "plugin is not loaded" };
                   }
                   const runtimeConfig =
@@ -333,7 +351,7 @@ export function createPluginApiFactory(
                   origin: record.origin,
                   schedule,
                   cron: getHostCronService(),
-                  shouldCommit: isLoadedRecordInActiveRegistry,
+                  shouldCommit: isLoadedRecordInLiveRegistry,
                   ownerRegistry: registry,
                 });
               },
@@ -342,7 +360,7 @@ export function createPluginApiFactory(
                   return { removed: 0, failed: 0 };
                 }
                 await Promise.resolve();
-                if (!isLoadedRecordInActiveRegistry()) {
+                if (!isLoadedRecordInLiveRegistry()) {
                   return { removed: 0, failed: 0 };
                 }
                 return unschedulePluginSessionTurnsByTag({
@@ -354,16 +372,12 @@ export function createPluginApiFactory(
               },
               registerMemoryCapability: (capability) =>
                 registerMemoryCapability(record, capability),
-              registerMemoryPromptSection: (builder) =>
-                registerMemoryPromptSection(record, builder),
               registerMemoryPromptSupplement: (builder) =>
                 registerMemoryPromptSupplement(record, builder),
+              registerMemoryPromptPreparation: (prepare) =>
+                registerMemoryPromptPreparation(record, prepare),
               registerMemoryCorpusSupplement: (supplement) =>
                 registerMemoryCorpusSupplement(record, supplement),
-              registerMemoryFlushPlan: (resolver) => registerMemoryFlushPlan(record, resolver),
-              registerMemoryRuntime: (runtime) => registerMemoryRuntime(record, runtime),
-              registerMemoryEmbeddingProvider: (adapter) =>
-                registerMemoryEmbeddingProvider(record, adapter),
               on: (hookName, handler, opts) =>
                 registerTypedHook(record, hookName, handler, opts, params.hookPolicy),
             }
@@ -379,7 +393,15 @@ export function createPluginApiFactory(
         // Allow setup-only/setup-runtime paths to surface parse-time CLI metadata
         // without opting into the wider full-registration surface.
         registerCli: (registrar, opts) => registerCli(record, registrar, opts),
-        registerChannel: (registration) => registerChannel(record, registration, registrationMode),
+        registerChannel: (registration) =>
+          registerChannel(
+            record,
+            registration,
+            registrationMode,
+            registrationCapabilities.runtimeChannel
+              ? () => resolveRegisteredChannelRuntime(record)
+              : undefined,
+          ),
       },
     });
   };

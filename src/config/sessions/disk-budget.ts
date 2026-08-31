@@ -1,6 +1,7 @@
 // Session disk-budget enforcement prunes orphaned artifacts before deleting store entries.
 import fs from "node:fs";
 import path from "node:path";
+import { err, ok, type Result } from "@openclaw/normalization-core/result";
 import {
   normalizeLowercaseStringOrEmpty,
   normalizeOptionalLowercaseString,
@@ -12,20 +13,24 @@ import {
 import { runTasksWithConcurrency } from "../../utils/run-with-concurrency.js";
 import {
   isCompactionCheckpointTranscriptFileName,
+  isMigrationArchiveArtifactName,
   isPrimarySessionTranscriptFileName,
+  isRetainedSessionTranscriptArchiveName,
   isSessionArchiveArtifactName,
   isSessionStoreTempArtifactName,
   SESSION_STORE_TEMP_STALE_MS,
   isTrajectorySessionArtifactName,
 } from "./artifacts.js";
-import { resolveSessionFilePath } from "./paths.js";
+import { resolveSessionFilePathCore } from "./paths.js";
+import { listDurableSqliteTargetPathsForSessionStorePath } from "./session-sqlite-target.js";
 import { projectSessionStoreForPersistence } from "./skill-prompt-blobs.js";
 import { shouldPreserveMaintenanceEntry } from "./store-maintenance.js";
 import type { SessionEntry } from "./types.js";
 
-export type SessionDiskBudgetConfig = {
+type SessionDiskBudgetConfig = {
   maxDiskBytes: number | null;
   highWaterBytes: number | null;
+  preserveRecentMs?: number | null;
 };
 
 export type SessionDiskBudgetSweepResult = {
@@ -46,7 +51,14 @@ export type SessionUnreferencedArtifactSweepResult = {
   olderThanMs: number;
 };
 
-export type SessionDiskBudgetLogger = {
+export type SessionPhysicalDiskUsage = {
+  databaseMainBytes: number;
+  databaseWalBytes: number;
+  sessionFilesBytes: number;
+  totalBytes: number;
+};
+
+type SessionDiskBudgetLogger = {
   warn: (message: string, context?: Record<string, unknown>) => void;
   info: (message: string, context?: Record<string, unknown>) => void;
 };
@@ -141,7 +153,7 @@ function resolveSessionTranscriptPathForEntry(params: {
     return null;
   }
   try {
-    const resolved = resolveSessionFilePath(params.entry.sessionId, params.entry, {
+    const resolved = resolveSessionFilePathCore(params.entry.sessionId, params.entry, {
       sessionsDir: params.sessionsDir,
     });
     const resolvedSessionsDir = canonicalizePathForComparison(params.sessionsDir);
@@ -223,11 +235,9 @@ async function readSessionsDirFiles(sessionsDir: string): Promise<SessionsDirFil
   const dirEntries = await fs.promises
     .readdir(sessionsDir, { withFileTypes: true })
     .catch(() => []);
-  // Stat concurrently: the budget sweep stats every session file, and serial
-  // stats turn one sweep into per-file latency round trips on networked
-  // filesystems.
+  // Skip rollback archives before concurrent stats so retained bytes cannot evict live sessions.
   const tasks = dirEntries
-    .filter((dirent) => dirent.isFile())
+    .filter((dirent) => dirent.isFile() && !isMigrationArchiveArtifactName(dirent.name))
     .map((dirent) => async (): Promise<SessionsDirFileStat | null> => {
       const filePath = path.join(sessionsDir, dirent.name);
       const stat = await fs.promises.stat(filePath).catch(() => null);
@@ -247,6 +257,95 @@ async function readSessionsDirFiles(sessionsDir: string): Promise<SessionsDirFil
     limit: SESSIONS_DIR_STAT_CONCURRENCY,
   });
   return results.filter((file): file is SessionsDirFileStat => Boolean(file));
+}
+
+async function readSqliteDatabaseFiles(storePath: string): Promise<SessionsDirFileStat[]> {
+  const files: SessionsDirFileStat[] = [];
+  for (const databasePath of listDurableSqliteTargetPathsForSessionStorePath(storePath)) {
+    for (const filePath of [databasePath, `${databasePath}-wal`]) {
+      const stat = await fs.promises.stat(filePath).catch(() => null);
+      if (!stat?.isFile()) {
+        continue;
+      }
+      files.push({
+        path: filePath,
+        canonicalPath: canonicalizePathForComparison(filePath),
+        name: path.basename(filePath),
+        size: stat.size,
+        mtimeMs: stat.mtimeMs,
+      });
+    }
+  }
+  return files;
+}
+
+/** Measures current physical session artifacts plus the agent SQLite main file and WAL. */
+export async function measureSessionPhysicalDiskUsage(
+  storePath: string,
+): Promise<SessionPhysicalDiskUsage> {
+  const sessionsDirFiles = await readSessionsDirFiles(path.dirname(storePath));
+  const promptBlobFiles = await readSessionPromptBlobFiles(path.dirname(storePath));
+  const databaseFiles = await readSqliteDatabaseFiles(storePath);
+  const databaseMainPaths = new Set(
+    databaseFiles.filter((file) => !file.path.endsWith("-wal")).map((file) => file.canonicalPath),
+  );
+  const databaseWalPaths = new Set(
+    databaseFiles.filter((file) => file.path.endsWith("-wal")).map((file) => file.canonicalPath),
+  );
+  const uniqueFiles = new Map<string, SessionsDirFileStat>();
+  for (const file of [...sessionsDirFiles, ...promptBlobFiles, ...databaseFiles]) {
+    uniqueFiles.set(file.canonicalPath, file);
+  }
+  const databaseMainBytes = [...databaseMainPaths].reduce(
+    (sum, databasePath) => sum + (uniqueFiles.get(databasePath)?.size ?? 0),
+    0,
+  );
+  const databaseWalBytes = [...databaseWalPaths].reduce(
+    (sum, databasePath) => sum + (uniqueFiles.get(databasePath)?.size ?? 0),
+    0,
+  );
+  const totalBytes = [...uniqueFiles.values()].reduce((sum, file) => sum + file.size, 0);
+  return {
+    databaseMainBytes,
+    databaseWalBytes,
+    sessionFilesBytes: totalBytes - databaseMainBytes - databaseWalBytes,
+    totalBytes,
+  };
+}
+
+export async function hasRetainedSessionTranscriptArchives(storePath: string): Promise<boolean> {
+  const files = await readSessionsDirFiles(path.dirname(storePath));
+  return files.some((file) => isRetainedSessionTranscriptArchiveName(file.name));
+}
+
+/** Removes oldest retained archives and legacy compact backups, remeasuring after each file. */
+export async function pruneSessionTranscriptArchivesToHighWater(params: {
+  excludeNames?: ReadonlySet<string>;
+  highWaterBytes: number;
+  storePath: string;
+}): Promise<{ removedFiles: number; usage: SessionPhysicalDiskUsage }> {
+  // Oldest-first is the hard-cap sacrifice order: under extreme pressure this
+  // may prune an archive the current pass just extracted, which is preferred
+  // over evicting additional sessions' searchable rows to spare a copy.
+  const files = (await readSessionsDirFiles(path.dirname(params.storePath)))
+    .filter(
+      (file) =>
+        isRetainedSessionTranscriptArchiveName(file.name) && !params.excludeNames?.has(file.name),
+    )
+    .toSorted((left, right) => left.mtimeMs - right.mtimeMs);
+  let usage = await measureSessionPhysicalDiskUsage(params.storePath);
+  let removedFiles = 0;
+  for (const file of files) {
+    if (usage.totalBytes <= params.highWaterBytes) {
+      break;
+    }
+    if (!(await removeFileIfExists(file.path)).ok) {
+      continue;
+    }
+    removedFiles += 1;
+    usage = await measureSessionPhysicalDiskUsage(params.storePath);
+  }
+  return { removedFiles, usage };
 }
 
 async function readSessionPromptBlobFiles(sessionsDir: string): Promise<SessionsDirFileStat[]> {
@@ -361,13 +460,19 @@ function isDiskBudgetRemovableSessionFile(
   );
 }
 
-async function removeFileIfExists(filePath: string): Promise<number> {
+// A removed empty file is success; bytes alone cannot signal removal.
+type FileRemovalResult = Result<number, "not-removed">;
+
+async function removeFileIfExists(filePath: string): Promise<FileRemovalResult> {
   const stat = await fs.promises.stat(filePath).catch(() => null);
   if (!stat?.isFile()) {
-    return 0;
+    return err("not-removed");
   }
-  await fs.promises.rm(filePath, { force: true }).catch(() => undefined);
-  return stat.size;
+  // Forced removal would count paths another cleanup already removed after stat.
+  return fs.promises.rm(filePath).then(
+    () => ok(stat.size),
+    () => err("not-removed"),
+  );
 }
 
 async function removeFileForBudget(params: {
@@ -377,28 +482,28 @@ async function removeFileForBudget(params: {
   fileSizesByPath: Map<string, number>;
   simulatedRemovedPaths: Set<string>;
   onRemovedPath?: (canonicalPath: string) => void;
-}): Promise<number> {
+}): Promise<FileRemovalResult> {
   const resolvedPath = path.resolve(params.filePath);
   const canonicalPath = params.canonicalPath ?? canonicalizePathForComparison(resolvedPath);
   if (params.dryRun) {
     // Dry-run deletion is path-deduped so a transcript and pointer alias cannot count the same
     // artifact twice against the simulated budget.
     if (params.simulatedRemovedPaths.has(canonicalPath)) {
-      return 0;
+      return err("not-removed");
     }
-    const size = params.fileSizesByPath.get(canonicalPath) ?? 0;
-    if (size <= 0) {
-      return 0;
+    const size = params.fileSizesByPath.get(canonicalPath);
+    if (size === undefined) {
+      return err("not-removed");
     }
     params.simulatedRemovedPaths.add(canonicalPath);
     params.onRemovedPath?.(canonicalPath);
-    return size;
+    return ok(size);
   }
-  const size = await removeFileIfExists(resolvedPath);
-  if (size > 0) {
+  const removal = await removeFileIfExists(resolvedPath);
+  if (removal.ok) {
     params.onRemovedPath?.(canonicalPath);
   }
-  return size;
+  return removal;
 }
 
 async function removePromptBlobFileForBudget(params: {
@@ -410,12 +515,12 @@ async function removePromptBlobFileForBudget(params: {
   fileSizesByPath: Map<string, number>;
   simulatedRemovedPaths: Set<string>;
   onRemovedPath?: (canonicalPath: string) => void;
-}): Promise<number> {
+}): Promise<FileRemovalResult> {
   let file = params.file;
   if (!params.dryRun) {
     const stat = await fs.promises.stat(file.path).catch(() => null);
     if (!stat?.isFile()) {
-      return 0;
+      return err("not-removed");
     }
     file = {
       ...file,
@@ -431,7 +536,7 @@ async function removePromptBlobFileForBudget(params: {
       params.tempCutoffMs,
     )
   ) {
-    return 0;
+    return err("not-removed");
   }
   return await removeFileForBudget({
     filePath: file.path,
@@ -511,7 +616,7 @@ export async function pruneUnreferencedSessionArtifacts(params: {
   let freedBytes = 0;
   const dryRun = params.dryRun === true;
   for (const item of removableFiles) {
-    const deletedBytes =
+    const removal =
       item.kind === "promptBlob"
         ? await removePromptBlobFileForBudget({
             file: item.file,
@@ -529,11 +634,11 @@ export async function pruneUnreferencedSessionArtifacts(params: {
             fileSizesByPath,
             simulatedRemovedPaths,
           });
-    if (deletedBytes <= 0) {
+    if (!removal.ok) {
       continue;
     }
     removedFiles += 1;
-    freedBytes += deletedBytes;
+    freedBytes += removal.value;
   }
 
   return {
@@ -554,6 +659,7 @@ export async function enforceSessionDiskBudget(params: {
   dryRun?: boolean;
   log?: SessionDiskBudgetLogger;
   onRemoveFile?: (canonicalPath: string) => void;
+  commitEvictedIndex?: () => Promise<void>;
 }): Promise<SessionDiskBudgetSweepResult | null> {
   const maxBytes = params.maintenance.maxDiskBytes;
   const highWaterBytes = params.maintenance.highWaterBytes;
@@ -638,6 +744,7 @@ export async function enforceSessionDiskBudget(params: {
   let removedFiles = 0;
   let removedEntries = 0;
   let freedBytes = 0;
+  const commitEvictedIndex = params.commitEvictedIndex;
 
   const referencedPaths = resolveReferencedSessionArtifactPaths({
     sessionsDir,
@@ -661,7 +768,7 @@ export async function enforceSessionDiskBudget(params: {
     if (total <= highWaterBytes) {
       break;
     }
-    const deletedBytes = await removePromptBlobFileForBudget({
+    const removal = await removePromptBlobFileForBudget({
       file,
       projectedPromptBlobRefCounts,
       promptBlobCutoffMs: promptBlobOrphanCutoffMs,
@@ -671,11 +778,11 @@ export async function enforceSessionDiskBudget(params: {
       simulatedRemovedPaths,
       onRemovedPath: params.onRemoveFile,
     });
-    if (deletedBytes <= 0) {
+    if (!removal.ok) {
       continue;
     }
-    total -= deletedBytes;
-    freedBytes += deletedBytes;
+    total -= removal.value;
+    freedBytes += removal.value;
     removedFiles += 1;
   }
 
@@ -689,7 +796,7 @@ export async function enforceSessionDiskBudget(params: {
     if (total <= highWaterBytes) {
       break;
     }
-    const deletedBytes = await removeFileForBudget({
+    const removal = await removeFileForBudget({
       filePath: file.path,
       canonicalPath: file.canonicalPath,
       dryRun,
@@ -697,11 +804,11 @@ export async function enforceSessionDiskBudget(params: {
       simulatedRemovedPaths,
       onRemovedPath: params.onRemoveFile,
     });
-    if (deletedBytes <= 0) {
+    if (!removal.ok) {
       continue;
     }
-    total -= deletedBytes;
-    freedBytes += deletedBytes;
+    total -= removal.value;
+    freedBytes += removal.value;
     removedFiles += 1;
   }
 
@@ -726,7 +833,14 @@ export async function enforceSessionDiskBudget(params: {
       if (!entry) {
         continue;
       }
-      if (shouldPreserveMaintenanceEntry({ key, entry, preserveKeys: params.preserveKeys })) {
+      if (
+        shouldPreserveMaintenanceEntry({
+          key,
+          entry,
+          preserveKeys: params.preserveKeys,
+          preserveRecentMs: params.maintenance.preserveRecentMs,
+        })
+      ) {
         continue;
       }
       const previousProjectedBytes = projectedStoreBytes;
@@ -743,6 +857,22 @@ export async function enforceSessionDiskBudget(params: {
         projectedStoreBytes = measureStoreBytes(projectedStore);
       }
       total += projectedStoreBytes - previousProjectedBytes;
+      removedEntries += 1;
+      // Commit each reduced index before unlinking its victim's artifacts. Only
+      // actual reclamation can stop eviction; a failed unlink leaves pressure.
+      if (!dryRun && commitEvictedIndex) {
+        await commitEvictedIndex();
+        if (projectedPromptBlobBytesByHash.size > 0) {
+          // Persistence can materialize remaining entries' projected blobs. Those
+          // bytes now belong to files and cannot later be credited as unwritten.
+          for (const file of await readSessionPromptBlobFiles(sessionsDir)) {
+            const hash = resolvePromptBlobFileHash(file);
+            if (hash && projectedPromptBlobBytesByHash.delete(hash)) {
+              existingPromptBlobFilesByHash.set(hash, file);
+            }
+          }
+        }
+      }
       if (promptBlobHash) {
         const nextRefCount = (projectedPromptBlobRefCounts.get(promptBlobHash) ?? 1) - 1;
         if (nextRefCount > 0) {
@@ -752,18 +882,11 @@ export async function enforceSessionDiskBudget(params: {
           const virtualBlobBytes = projectedPromptBlobBytesByHash.get(promptBlobHash) ?? 0;
           if (virtualBlobBytes > 0) {
             total -= virtualBlobBytes;
+            projectedPromptBlobBytesByHash.delete(promptBlobHash);
           } else {
             const blobFile = existingPromptBlobFilesByHash.get(promptBlobHash);
-            if (
-              blobFile &&
-              isPromptBlobArtifactRemovable(
-                blobFile,
-                projectedPromptBlobRefCounts,
-                promptBlobOrphanCutoffMs,
-                tempStaleCutoffMs,
-              )
-            ) {
-              const deletedBytes = await removePromptBlobFileForBudget({
+            if (blobFile && (dryRun || commitEvictedIndex)) {
+              const removal = await removePromptBlobFileForBudget({
                 file: blobFile,
                 projectedPromptBlobRefCounts,
                 promptBlobCutoffMs: promptBlobOrphanCutoffMs,
@@ -771,19 +894,17 @@ export async function enforceSessionDiskBudget(params: {
                 dryRun,
                 fileSizesByPath,
                 simulatedRemovedPaths,
-                onRemovedPath: params.onRemoveFile,
+                onRemovedPath: dryRun ? undefined : params.onRemoveFile,
               });
-              if (deletedBytes > 0) {
-                total -= deletedBytes;
-                freedBytes += deletedBytes;
+              if (removal.ok) {
+                total -= removal.value;
+                freedBytes += removal.value;
                 removedFiles += 1;
               }
             }
           }
         }
       }
-      removedEntries += 1;
-
       const sessionId = entry.sessionId;
       if (!sessionId) {
         continue;
@@ -794,19 +915,23 @@ export async function enforceSessionDiskBudget(params: {
         continue;
       }
       sessionIdRefCounts.delete(sessionId);
+      // Without a durable commit boundary, retain evicted artifacts as orphans.
+      if (!dryRun && !commitEvictedIndex) {
+        continue;
+      }
       for (const artifactPath of resolveSessionArtifactPathsForEntry({ sessionsDir, entry })) {
-        const deletedBytes = await removeFileForBudget({
+        const removal = await removeFileForBudget({
           filePath: artifactPath,
           dryRun,
           fileSizesByPath,
           simulatedRemovedPaths,
-          onRemovedPath: params.onRemoveFile,
+          onRemovedPath: dryRun ? undefined : params.onRemoveFile,
         });
-        if (deletedBytes <= 0) {
+        if (!removal.ok) {
           continue;
         }
-        total -= deletedBytes;
-        freedBytes += deletedBytes;
+        total -= removal.value;
+        freedBytes += removal.value;
         removedFiles += 1;
       }
     }
@@ -846,3 +971,4 @@ export async function enforceSessionDiskBudget(params: {
     overBudget: true,
   };
 }
+/* oxlint-disable max-lines -- TODO: split this grandfathered oversized file. */

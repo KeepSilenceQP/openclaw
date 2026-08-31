@@ -20,12 +20,17 @@ struct GatewayConnectionTests {
 
     private func makeSession(
         helloDelayMs: Int = 0,
-        serverCapabilities: [String] = []) -> GatewayTestWebSocketSession
+        serverCapabilities: [String] = [],
+        connectIncludesDeviceHandler: @escaping @Sendable (Bool) -> Void = { _ in })
+        -> GatewayTestWebSocketSession
     {
         GatewayTestWebSocketSession(
             taskFactory: {
                 GatewayTestWebSocketTask(
                     sendHook: { task, message, sendIndex in
+                        if let params = GatewayWebSocketTestSupport.connectRequestParams(from: message) {
+                            connectIncludesDeviceHandler(params["device"] != nil)
+                        }
                         guard sendIndex > 0 else { return }
                         guard let id = GatewayWebSocketTestSupport.requestID(from: message) else { return }
                         let response = GatewayWebSocketTestSupport.okResponseData(id: id)
@@ -39,25 +44,11 @@ struct GatewayConnectionTests {
                             try await Task.sleep(nanoseconds: UInt64(helloDelayMs) * 1_000_000)
                         }
                         let id = task.snapshotConnectRequestID() ?? "connect"
-                        return .data(Self.connectOkData(id: id, capabilities: serverCapabilities))
+                        return .data(GatewayWebSocketTestSupport.connectOkData(
+                            id: id,
+                            capabilities: serverCapabilities))
                     })
             })
-    }
-
-    private static func connectOkData(id: String, capabilities: [String]) -> Data {
-        let encodedCapabilities = capabilities.map { "\"\($0)\"" }.joined(separator: ",")
-        return Data(
-            """
-            {
-              "type":"res","id":"\(id)","ok":true,"payload":{
-                "type":"hello-ok","protocol":4,
-                "server":{"version":"test","connId":"test"},
-                "features":{"methods":[],"events":[],"capabilities":[\(encodedCapabilities)]},
-                "snapshot":{"presence":[],"health":{},"stateVersion":{"presence":0,"health":0},"uptimeMs":0},
-                "auth":{},"policy":{}
-              }
-            }
-            """.utf8)
     }
 
     private final class ConfigSource: @unchecked Sendable {
@@ -88,14 +79,27 @@ struct GatewayConnectionTests {
         #expect(session.snapshotCancelCount() == 0)
     }
 
+    @Test func `mock connection omits device identity`() async throws {
+        let connectIncludesDevice = OSAllocatedUnfairLock<Bool?>(initialState: nil)
+        let session = self.makeSession(connectIncludesDeviceHandler: { includesDevice in
+            connectIncludesDevice.withLock { $0 = includesDevice }
+        })
+        let (conn, _) = try self.makeConnection(session: session)
+
+        _ = try await conn.request(method: "status", params: nil)
+
+        #expect(connectIncludesDevice.withLock { $0 } == false)
+        await conn.shutdown()
+    }
+
     @Test func `first connection admits hello capabilities before lease readiness`() async throws {
-        let session = self.makeSession(serverCapabilities: ["crestodian-setup-model-ref"])
+        let session = self.makeSession(serverCapabilities: ["openclaw-setup-model-ref"])
         let (conn, _) = try makeConnection(session: session)
 
         let lease = try await conn.acquireServerLease()
 
         #expect(await conn.supportsServerCapability(
-            .crestodianSetupModelRef,
+            .systemAgentSetupModelRef,
             ifCurrentServerLease: lease) == true)
         #expect(await conn.cachedGatewayVersion() == "test")
         #expect(session.snapshotMakeCount() == 1)
@@ -104,24 +108,56 @@ struct GatewayConnectionTests {
         await conn.shutdown()
     }
 
-    @Test func `disconnected server lease rejects before dispatch`() async throws {
-        let session = self.makeSession(serverCapabilities: ["crestodian-setup-model-ref"])
-        let (conn, _) = try makeConnection(session: session)
+    @Test(arguments: ["disconnected", "endpoint-before", "endpoint-after", "send-cancelled", "success"])
+    func `server lease preserves dispatch certainty`(outcome: String) async throws {
+        let cfg = ConfigSource(token: "initial-test-token")
+        let session = GatewayTestWebSocketSession(taskFactory: {
+            GatewayTestWebSocketTask(sendHook: { task, message, sendIndex in
+                guard sendIndex > 0,
+                      let id = GatewayWebSocketTestSupport.requestID(from: message)
+                else { return }
+                // Connect and health precede the bound request under test.
+                if sendIndex == 2 {
+                    if outcome == "send-cancelled" {
+                        throw CancellationError()
+                    }
+                    if outcome == "endpoint-after" {
+                        cfg.setToken("replacement-test-token")
+                    }
+                }
+                task.emitReceiveSuccess(.data(GatewayWebSocketTestSupport.okResponseData(id: id)))
+            })
+        })
+        let url = try #require(URL(string: "ws://example.invalid"))
+        let conn = GatewayConnection(
+            configProvider: { (url: url, token: cfg.snapshotToken(), password: nil) },
+            sessionBox: WebSocketSessionBox(session: session))
         let lease = try await conn.acquireServerLease()
 
-        await conn._test_handleDisconnect(socketGeneration: 1)
+        if outcome == "disconnected" {
+            await conn._test_handleDisconnect(socketGeneration: lease.socketGeneration)
+        } else if outcome == "endpoint-before" {
+            cfg.setToken("replacement-test-token")
+        }
+        let refusedBeforeDispatch = outcome == "disconnected" || outcome == "endpoint-before"
         do {
-            _ = try await conn.request(
-                method: "crestodian.setup.detect",
+            let data = try await conn.request(
+                method: "openclaw.setup.activate",
                 params: [:],
                 ifCurrentServerLease: lease)
-            Issue.record("expected disconnected server lease rejection")
-        } catch is OpenClawChatTransportSendError {} catch {
-            Issue.record("unexpected disconnected lease error: \(error)")
+            #expect(outcome == "success")
+            #expect(!data.isEmpty)
+        } catch OpenClawChatTransportSendError.notDispatched {
+            #expect(refusedBeforeDispatch)
+        } catch is CancellationError {
+            #expect(outcome == "endpoint-after" || outcome == "send-cancelled")
+        } catch {
+            Issue.record("unexpected server lease error: \(error)")
         }
 
+        #expect(!Task.isCancelled)
         #expect(session.snapshotMakeCount() == 1)
-        #expect(session.latestTask()?.snapshotSendCount() == 2)
+        #expect(session.latestTask()?.snapshotSendCount() == (refusedBeforeDispatch ? 2 : 3))
         await conn.shutdown()
     }
 
@@ -144,16 +180,16 @@ struct GatewayConnectionTests {
                             return .data(GatewayWebSocketTestSupport.connectChallengeData())
                         }
                         let id = task.snapshotConnectRequestID() ?? "connect"
-                        return .data(Self.connectOkData(
+                        return .data(GatewayWebSocketTestSupport.connectOkData(
                             id: id,
-                            capabilities: ["crestodian-setup-model-ref"]))
+                            capabilities: ["openclaw-setup-model-ref"]))
                     })
             })
         let (conn, _) = try makeConnection(session: session)
         let lease = try await conn.acquireServerLease()
         let request = Task {
             try await conn.request(
-                method: "crestodian.setup.activate",
+                method: "openclaw.setup.activate",
                 params: [:],
                 timeoutMs: 5000,
                 ifCurrentServerLease: lease)

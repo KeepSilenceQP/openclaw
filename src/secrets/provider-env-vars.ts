@@ -205,13 +205,6 @@ function resolveManifestProviderAuthEnvVarCandidatesFromSnapshot(
     if (!shouldUsePluginProviderEnvVars(plugin, params)) {
       continue;
     }
-    if (plugin.providerAuthEnvVars) {
-      for (const [providerId, keys] of Object.entries(plugin.providerAuthEnvVars).toSorted(
-        ([left], [right]) => left.localeCompare(right),
-      )) {
-        appendUniqueEnvVarCandidates(candidates, providerId, keys);
-      }
-    }
     for (const provider of plugin.setup?.providers ?? []) {
       appendUniqueEnvVarCandidates(candidates, provider.id, provider.envVars ?? []);
     }
@@ -227,35 +220,39 @@ function resolveManifestProviderAuthEnvVarCandidatesFromSnapshot(
   return candidates;
 }
 
-function resolveManifestProviderAuthEvidence(
-  params?: ProviderEnvVarLookupParams,
-): Record<string, ProviderAuthEvidence[]> {
-  const snapshot = resolveProviderMetadataSnapshot(params);
-  const aliases = resolveProviderAuthAliasMap({
-    ...params,
-    metadataSnapshot: snapshot,
-  });
-  return resolveManifestProviderAuthEvidenceFromSnapshot(params, snapshot, aliases);
-}
-
-function resolveManifestProviderAuthEvidenceFromSnapshot(
+function resolveManifestRuntimeAuthFacts(
   params: ProviderEnvVarLookupParams | undefined,
   snapshot: PluginMetadataSnapshot,
   aliases: Readonly<Record<string, string>>,
-): Record<string, ProviderAuthEvidence[]> {
+) {
   const evidenceByProvider: Record<string, ProviderAuthEvidence[]> = {};
+  const refs = new Set<string>();
   for (const plugin of snapshot.plugins) {
+    const evidenceProviders = (plugin.setup?.providers ?? []).filter(
+      (provider) => provider.authEvidence?.length,
+    );
+    const fallbackProviders =
+      plugin.setup?.requiresRuntime !== false && (plugin.setup?.providers || plugin.providers)
+        ? listSetupProviderIds(plugin)
+        : [];
+    if (evidenceProviders.length === 0 && fallbackProviders.length === 0) {
+      continue;
+    }
+    // Package contributions are fixed, but their eligibility follows current config.
+    // Evaluate each contributing owner once without narrowing credential-scrubbing hints.
     if (
       snapshot.index.plugins.length > 0 &&
       !isInstalledPluginEnabled(snapshot.index, plugin.id, params?.config)
     ) {
       continue;
     }
-    if (!shouldUsePluginProviderAuthEvidence(plugin, params)) {
-      continue;
+    if (shouldUsePluginProviderAuthEvidence(plugin, params)) {
+      for (const provider of evidenceProviders) {
+        appendUniqueAuthEvidence(evidenceByProvider, provider.id, provider.authEvidence ?? []);
+      }
     }
-    for (const provider of plugin.setup?.providers ?? []) {
-      appendUniqueAuthEvidence(evidenceByProvider, provider.id, provider.authEvidence ?? []);
+    for (const providerId of fallbackProviders) {
+      appendUniqueProviderRef(refs, providerId);
     }
   }
   for (const [alias, target] of Object.entries(aliases).toSorted(([left], [right]) =>
@@ -266,39 +263,15 @@ function resolveManifestProviderAuthEvidenceFromSnapshot(
       appendUniqueAuthEvidence(evidenceByProvider, alias, evidence);
     }
   }
-  return evidenceByProvider;
-}
-
-function resolveManifestSetupProviderFallbackRefsFromSnapshot(
-  params: ProviderEnvVarLookupParams | undefined,
-  snapshot: PluginMetadataSnapshot,
-  aliases: Readonly<Record<string, string>>,
-): string[] {
-  const refs = new Set<string>();
-  for (const plugin of snapshot.plugins) {
-    if (
-      snapshot.index.plugins.length > 0 &&
-      !isInstalledPluginEnabled(snapshot.index, plugin.id, params?.config)
-    ) {
-      continue;
-    }
-    if (plugin.setup?.requiresRuntime === false) {
-      continue;
-    }
-    // Setup fallback refs are only useful for providers that may be reached at runtime.
-    if (plugin.setup?.providers === undefined && plugin.providers === undefined) {
-      continue;
-    }
-    for (const providerId of listSetupProviderIds(plugin)) {
-      appendUniqueProviderRef(refs, providerId);
-    }
-  }
   for (const [alias, target] of Object.entries(aliases)) {
     if (refs.has(target)) {
       appendUniqueProviderRef(refs, alias);
     }
   }
-  return [...refs].toSorted((a, b) => a.localeCompare(b));
+  return {
+    authEvidenceMap: evidenceByProvider,
+    setupProviderFallbackRefs: [...refs].toSorted((a, b) => a.localeCompare(b)),
+  };
 }
 
 /** Resolves provider env-var candidates used by generic auth lookup. */
@@ -310,13 +283,6 @@ export function resolveProviderAuthEnvVarCandidates(
     ...resolveManifestProviderAuthEnvVarCandidates(params),
     ...CORE_PROVIDER_AUTH_ENV_VAR_CANDIDATES,
   };
-}
-
-/** Resolves non-env evidence that provider auth may already be configured. */
-export function resolveProviderAuthEvidence(
-  params?: ProviderEnvVarLookupParams,
-): Record<string, readonly ProviderAuthEvidence[]> {
-  return resolveManifestProviderAuthEvidence(params);
 }
 
 /** Resolves all provider auth lookup maps from a single metadata snapshot. */
@@ -335,12 +301,7 @@ export function resolveProviderAuthLookupMaps(
       ...resolveManifestProviderAuthEnvVarCandidatesFromSnapshot(params, snapshot, aliasMap),
       ...CORE_PROVIDER_AUTH_ENV_VAR_CANDIDATES,
     },
-    authEvidenceMap: resolveManifestProviderAuthEvidenceFromSnapshot(params, snapshot, aliasMap),
-    setupProviderFallbackRefs: resolveManifestSetupProviderFallbackRefsFromSnapshot(
-      params,
-      snapshot,
-      aliasMap,
-    ),
+    ...resolveManifestRuntimeAuthFacts(params, snapshot, aliasMap),
   };
 }
 
@@ -354,15 +315,10 @@ function resolveProviderEnvVars(
   };
 }
 
-const lazyRecordCacheResetters = new Set<() => void>();
-
 function createLazyReadonlyRecord(
   resolve: () => Record<string, readonly string[]>,
 ): Record<string, readonly string[]> {
   let cached: Record<string, readonly string[]> | undefined;
-  lazyRecordCacheResetters.add(() => {
-    cached = undefined;
-  });
   const getResolved = (): Record<string, readonly string[]> => {
     cached ??= resolve();
     return cached;
@@ -400,17 +356,6 @@ function createLazyReadonlyRecord(
 }
 
 /**
- * Provider auth env candidates used by generic auth resolution.
- *
- * Order matters: the first non-empty value wins for helpers such as
- * `resolveEnvApiKey()`. Bundled providers source this from plugin manifest
- * metadata so auth probes do not need to load plugin runtime.
- */
-export const PROVIDER_AUTH_ENV_VAR_CANDIDATES = createLazyReadonlyRecord(() =>
-  resolveProviderAuthEnvVarCandidates(),
-);
-
-/**
  * Provider env vars used for setup/default secret refs and broad secret
  * scrubbing. This can include non-model providers and may intentionally choose
  * a different preferred first env var than auth resolution.
@@ -419,15 +364,7 @@ export const PROVIDER_AUTH_ENV_VAR_CANDIDATES = createLazyReadonlyRecord(() =>
  * is only for true core/non-plugin providers and a few setup-specific ordering
  * overrides where generic onboarding wants a different preferred env var.
  */
-export const PROVIDER_ENV_VARS = createLazyReadonlyRecord(() => resolveProviderEnvVars());
-
-export const testing = {
-  resetProviderEnvVarCachesForTests(): void {
-    for (const reset of lazyRecordCacheResetters) {
-      reset();
-    }
-  },
-};
+const PROVIDER_ENV_VARS = createLazyReadonlyRecord(() => resolveProviderEnvVars());
 
 /** Returns known env var candidates for a provider id or alias. */
 export function getProviderEnvVars(

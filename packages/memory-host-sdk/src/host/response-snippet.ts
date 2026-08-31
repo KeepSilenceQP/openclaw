@@ -85,7 +85,7 @@ async function readChunkWithAbort(
     return await reader.read();
   }
   if (signal.aborted) {
-    await reader.cancel().catch(() => undefined);
+    void reader.cancel().catch(() => undefined);
     throw toAbortError(signal, fallbackMessage);
   }
 
@@ -144,7 +144,8 @@ async function readResponsePrefix(
           length += remaining;
         }
         truncated = true;
-        await reader.cancel().catch(() => undefined);
+        // A capture tee can retain cancellation until the request owner releases.
+        void reader.cancel().catch(() => undefined);
         break;
       }
 
@@ -191,7 +192,7 @@ async function readResponseTextWithLimit(
 
       const nextLength = length + value.length;
       if (nextLength > maxBytes) {
-        await reader.cancel().catch(() => undefined);
+        void reader.cancel().catch(() => undefined);
         throw responseTooLarge(errorPrefix, nextLength, maxBytes);
       }
 
@@ -204,7 +205,7 @@ async function readResponseTextWithLimit(
     } catch {}
   }
 
-  return new TextDecoder().decode(joinChunks(chunks, length));
+  return new TextDecoder("utf-8", { fatal: true }).decode(joinChunks(chunks, length));
 }
 
 async function cancelResponseBody(res: Response): Promise<void> {
@@ -212,7 +213,7 @@ async function cancelResponseBody(res: Response): Promise<void> {
   if (!body || typeof body.cancel !== "function") {
     return;
   }
-  await body.cancel().catch(() => undefined);
+  void body.cancel().catch(() => undefined);
 }
 
 function parseContentLength(raw: string | null, errorPrefix: string): number | undefined {
@@ -220,7 +221,7 @@ function parseContentLength(raw: string | null, errorPrefix: string): number | u
   if (!trimmed) {
     return undefined;
   }
-  if (!/^(0|[1-9]\d*)$/.test(trimmed)) {
+  if (!/^\d+$/.test(trimmed)) {
     throw new Error(`${errorPrefix}: invalid content-length header: ${raw}`);
   }
   const value = Number(trimmed);

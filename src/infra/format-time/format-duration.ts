@@ -9,6 +9,8 @@ export type FormatDurationSecondsOptions = {
 };
 
 export type FormatDurationCompactOptions = {
+  /** Show year units instead of folding them into days. Default: false */
+  showYears?: boolean;
   /** Add space between units: "2m 5s" instead of "2m5s". Default: false */
   spaced?: boolean;
 };
@@ -38,7 +40,7 @@ export function formatDurationPrecise(
   }
   const roundedMs = Math.max(0, Math.round(ms));
   if (roundedMs < 1000) {
-    return prettyMilliseconds(roundedMs, { millisecondsDecimalDigits: 0 });
+    return prettyMilliseconds(roundedMs);
   }
   return formatDurationSeconds(ms, {
     decimals: options.decimals ?? 2,
@@ -61,11 +63,10 @@ export function formatDurationCompact(
   }
   const roundedMs = Math.round(ms);
   if (roundedMs < 1000) {
-    return prettyMilliseconds(roundedMs, { millisecondsDecimalDigits: 0 });
+    return prettyMilliseconds(roundedMs);
   }
   const formatted = prettyMilliseconds(Math.round(ms / 1000) * 1000, {
-    hideYear: true,
-    secondsDecimalDigits: 0,
+    hideYear: options?.showYears !== true,
     unitCount: 2,
   });
   return options?.spaced ? formatted : formatted.replaceAll(" ", "");

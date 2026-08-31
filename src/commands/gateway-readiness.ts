@@ -124,7 +124,11 @@ function gatewayLooksStopped(status: DaemonStatus): boolean {
 }
 
 function gatewayServiceIsInstalled(status: DaemonStatus): boolean {
-  return Boolean(status.service.command || status.service.loaded);
+  return Boolean(status.service.command || status.service.loadState.status === "loaded");
+}
+
+function nativeServiceTargetsGateway(status: DaemonStatus): boolean {
+  return status.service.targetRole !== "diagnostic-only";
 }
 
 function readinessFailureReason(status: DaemonStatus): string {
@@ -136,9 +140,19 @@ function readinessFailureReason(status: DaemonStatus): string {
     : "Gateway is not healthy.";
 }
 
-function printGatewayNotReadyHints(runtime: RuntimeEnv, reason: string): void {
+function printGatewayNotReadyHints(
+  runtime: RuntimeEnv,
+  reason: string,
+  nativeServiceCanRecover = true,
+): void {
   runtime.log(reason);
   runtime.log("Run `openclaw gateway status --deep` for details.");
+  if (!nativeServiceCanRecover) {
+    runtime.log(
+      "Use the owning environment or supervisor to start or repair the selected Gateway.",
+    );
+    return;
+  }
   runtime.log("Run `openclaw gateway start` to start a managed gateway.");
   runtime.log("Run `openclaw gateway run` for a foreground gateway.");
 }
@@ -209,8 +223,9 @@ export async function ensureGatewayReadyForOperation(
   }
 
   const reason = readinessFailureReason(initialStatus);
-  if (!gatewayLooksStopped(initialStatus)) {
-    printGatewayNotReadyHints(options.runtime, reason);
+  const nativeServiceCanRecover = nativeServiceTargetsGateway(initialStatus);
+  if (!gatewayLooksStopped(initialStatus) || !nativeServiceCanRecover) {
+    printGatewayNotReadyHints(options.runtime, reason, nativeServiceCanRecover);
     return { ready: false, status: initialStatus, reason, recoverable: false };
   }
 
@@ -222,8 +237,8 @@ export async function ensureGatewayReadyForOperation(
   }
 
   const prompt = shouldInstall
-    ? `Gateway is not installed. Install and start it now so OpenClaw can ${options.operation}?`
-    : `Gateway is not running. Start it now so OpenClaw can ${options.operation}?`;
+    ? `No background Gateway service was detected for this profile. Install and start one to ${options.operation}?`
+    : `The background Gateway service is not running. Start it to ${options.operation}?`;
   const approved = await confirmRecovery({
     message: prompt,
     yes: options.yes,
@@ -250,7 +265,11 @@ export async function ensureGatewayReadyForOperation(
   }
 
   const recoveredReason = readinessFailureReason(recoveredStatus);
-  printGatewayNotReadyHints(options.runtime, recoveredReason);
+  printGatewayNotReadyHints(
+    options.runtime,
+    recoveredReason,
+    nativeServiceTargetsGateway(recoveredStatus),
+  );
   return {
     ready: false,
     status: recoveredStatus,

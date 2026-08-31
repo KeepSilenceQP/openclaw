@@ -3,24 +3,27 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import acpCorePackageJson from "../../packages/acp-core/package.json" with { type: "json" };
-import { pluginSdkSubpaths } from "../../scripts/lib/plugin-sdk-entries.mjs";
+import normalizationCorePackageJson from "../../packages/normalization-core/package.json" with { type: "json" };
+import { pluginSdkSubpaths } from "../../scripts/lib/plugin-sdk-entries.mts";
 import privateLocalOnlyPluginSdkSubpaths from "../../scripts/lib/plugin-sdk-private-local-only-subpaths.json" with { type: "json" };
+import { createStateSchemaInlinePlugin } from "../../scripts/lib/state-schema-inline-plugin.mts";
 import {
   detectVitestHostInfo as detectVitestHostInfoImpl,
   isCiLikeEnv,
-  resolveLocalVitestMaxWorkers as resolveLocalVitestMaxWorkersImpl,
   resolveLocalVitestScheduling as resolveLocalVitestSchedulingImpl,
-} from "../../scripts/lib/vitest-local-scheduling.mjs";
+} from "../../scripts/lib/vitest-local-scheduling.mts";
 import type {
   LocalVitestScheduling,
   VitestHostInfo,
-} from "../../scripts/lib/vitest-local-scheduling.mjs";
+} from "../../scripts/lib/vitest-local-scheduling.mts";
 import {
   BUNDLED_PLUGIN_ROOT_DIR,
   BUNDLED_PLUGIN_TEST_GLOB,
 } from "./vitest.bundled-plugin-paths.ts";
 import { loadVitestExperimentalConfig } from "./vitest.performance-config.ts";
 import { shouldPrintVitestThrottle } from "./vitest.system-load.ts";
+import { DEFAULT_VITEST_TEST_TIMEOUT_MS } from "./vitest.timeouts.ts";
+import { compiledSubprocessesPlugin } from "./vitest.worker-artifacts.ts";
 
 export type OpenClawVitestPool = "forks" | "threads";
 
@@ -30,7 +33,7 @@ export const jsdomOptimizedDeps = {
   optimizer: {
     web: {
       enabled: true,
-      include: ["lit", "lit-html", "@lit/reactive-element", "marked"] as string[],
+      include: ["lit", "lit-html", "@lit/reactive-element"] as string[],
     },
   },
 };
@@ -44,7 +47,7 @@ export function resolveLocalVitestMaxWorkers(
   system: VitestHostInfo = detectVitestHostInfo(),
   pool: OpenClawVitestPool = resolveDefaultVitestPool(env),
 ): number {
-  return resolveLocalVitestMaxWorkersImpl(env, system, pool);
+  return resolveLocalVitestSchedulingImpl(env, system, pool).maxWorkers;
 }
 
 export function resolveLocalVitestScheduling(
@@ -158,8 +161,23 @@ if (!isCI && localScheduling.throttledBySystem && shouldPrintVitestThrottle(proc
 export const sharedVitestConfig = {
   root: repoRoot,
   envDir: false as const,
+  plugins: [createStateSchemaInlinePlugin(repoRoot), compiledSubprocessesPlugin()],
   resolve: {
     alias: [
+      {
+        // Route bare `zod` through a runtime shim (same pattern as the
+        // discord-api-types shims below): zod's own entry re-exports `z` as a
+        // namespace binding, which Bun's linker drops under Vitest's loader
+        // hooks. The shim exposes the identical surface on Node and Bun.
+        find: /^zod$/u,
+        replacement: path.join(repoRoot, "test", "vitest", "zod-runtime.ts"),
+      },
+      {
+        // Bypass Bun's bare-undici builtin (MockAgent is a stub) while keeping
+        // package resolution relative to the importer and its installed version.
+        find: /^undici$/u,
+        replacement: "undici/index.js",
+      },
       {
         find: "discord-api-types/v10",
         replacement: path.join(repoRoot, "test", "vitest", "discord-api-types-v10-runtime.ts"),
@@ -174,16 +192,20 @@ export const sharedVitestConfig = {
         ),
       },
       {
-        find: "openclaw/extension-api",
-        replacement: path.join(repoRoot, "src", "extensionAPI.ts"),
-      },
-      {
         find: "@openclaw/qa-channel/api.js",
         replacement: path.join(repoRoot, "extensions", "qa-channel", "api.ts"),
       },
       {
         find: "@openclaw/discord/api.js",
         replacement: path.join(repoRoot, "extensions", "discord", "api.ts"),
+      },
+      {
+        find: "@openclaw/matrix/test-api.js",
+        replacement: path.join(repoRoot, "extensions", "matrix", "test-api.ts"),
+      },
+      {
+        find: "@openclaw/memory-core/api.js",
+        replacement: path.join(repoRoot, "extensions", "memory-core", "api.ts"),
       },
       {
         find: "@openclaw/slack/api.js",
@@ -202,8 +224,16 @@ export const sharedVitestConfig = {
         replacement: path.join(repoRoot, "packages", "gateway-client", "src", "readiness.ts"),
       },
       {
+        find: "@openclaw/gateway-client/scope-upgrade",
+        replacement: path.join(repoRoot, "packages", "gateway-client", "src", "scope-upgrade.ts"),
+      },
+      {
         find: "@openclaw/gateway-client/timeouts",
         replacement: path.join(repoRoot, "packages", "gateway-client", "src", "timeouts.ts"),
+      },
+      {
+        find: "@openclaw/gateway-client/websocket-data",
+        replacement: path.join(repoRoot, "packages", "gateway-client", "src", "websocket-data.ts"),
       },
       {
         find: "@openclaw/gateway-client",
@@ -226,6 +256,16 @@ export const sharedVitestConfig = {
       {
         find: "@openclaw/gateway-protocol/frame-guards",
         replacement: path.join(repoRoot, "packages", "gateway-protocol", "src", "frame-guards.ts"),
+      },
+      {
+        find: "@openclaw/gateway-protocol/gateway-error-details",
+        replacement: path.join(
+          repoRoot,
+          "packages",
+          "gateway-protocol",
+          "src",
+          "gateway-error-details.ts",
+        ),
       },
       {
         find: "@openclaw/gateway-protocol/schema",
@@ -327,6 +367,7 @@ export const sharedVitestConfig = {
           "model-catalog-normalize.ts",
         ),
       },
+      sourcePackageAlias("model-catalog-core", "model-catalog-pricing"),
       {
         find: "@openclaw/model-catalog-core/model-catalog-types",
         replacement: path.join(
@@ -395,84 +436,13 @@ export const sharedVitestConfig = {
         find: "@openclaw/net-policy",
         replacement: path.join(repoRoot, "packages", "net-policy", "src", "index.ts"),
       },
-      {
-        find: "@openclaw/normalization-core/agent-id",
-        replacement: path.join(repoRoot, "packages", "normalization-core", "src", "agent-id.ts"),
-      },
-      {
-        find: "@openclaw/normalization-core/boolean-coercion",
-        replacement: path.join(
-          repoRoot,
-          "packages",
-          "normalization-core",
-          "src",
-          "boolean-coercion.ts",
-        ),
-      },
-      {
-        find: "@openclaw/normalization-core/error-coercion",
-        replacement: path.join(
-          repoRoot,
-          "packages",
-          "normalization-core",
-          "src",
-          "error-coercion.ts",
-        ),
-      },
-      {
-        find: "@openclaw/normalization-core/number-coercion",
-        replacement: path.join(
-          repoRoot,
-          "packages",
-          "normalization-core",
-          "src",
-          "number-coercion.ts",
-        ),
-      },
-      {
-        find: "@openclaw/normalization-core/record-coerce",
-        replacement: path.join(
-          repoRoot,
-          "packages",
-          "normalization-core",
-          "src",
-          "record-coerce.ts",
-        ),
-      },
-      {
-        find: "@openclaw/normalization-core/result",
-        replacement: path.join(repoRoot, "packages", "normalization-core", "src", "result.ts"),
-      },
-      {
-        find: "@openclaw/normalization-core/string-coerce",
-        replacement: path.join(
-          repoRoot,
-          "packages",
-          "normalization-core",
-          "src",
-          "string-coerce.ts",
-        ),
-      },
-      {
-        find: "@openclaw/normalization-core/string-normalization",
-        replacement: path.join(
-          repoRoot,
-          "packages",
-          "normalization-core",
-          "src",
-          "string-normalization.ts",
-        ),
-      },
-      {
-        find: "@openclaw/normalization-core/utf16-slice",
-        replacement: path.join(repoRoot, "packages", "normalization-core", "src", "utf16-slice.ts"),
-      },
-      {
-        find: /^@openclaw\/normalization-core$/u,
-        replacement: path.join(repoRoot, "packages", "normalization-core", "src", "index.ts"),
-      },
+      ...sourcePackageAliasesFromExports(
+        "normalization-core",
+        normalizationCorePackageJson.exports,
+      ),
       sourcePackageAlias("markdown-core", "code-spans"),
       sourcePackageAlias("markdown-core", "fences"),
+      sourcePackageAlias("media-core", "attachment-classify"),
       sourcePackageAlias("media-core", "base64"),
       sourcePackageAlias("media-core", "constants"),
       sourcePackageAlias("media-core", "content-length"),
@@ -484,6 +454,10 @@ export const sharedVitestConfig = {
       sourcePackageAlias("media-core", "read-byte-stream-with-limit"),
       sourcePackageAlias("media-core"),
       sourcePackageAlias("retry"),
+      sourcePackageAlias("session-url-contract", "parse"),
+      sourcePackageAlias("session-url-contract", "share-build"),
+      sourcePackageAlias("session-url-contract"),
+      sourcePackageAlias("workboard-contract"),
       ...sourcePackageAliasesFromExports("acp-core", acpCorePackageJson.exports),
       ...sourcePluginSdkSubpaths.map((subpath) => ({
         find: `openclaw/plugin-sdk/${subpath}`,
@@ -493,16 +467,16 @@ export const sharedVitestConfig = {
         find: `@openclaw/plugin-sdk/${subpath}`,
         replacement: path.join(repoRoot, "packages", "plugin-sdk", "src", `${subpath}.ts`),
       })),
-      {
-        find: "openclaw/plugin-sdk",
-        replacement: path.join(repoRoot, "src", "plugin-sdk", "index.ts"),
-      },
     ],
   },
   test: {
     dir: repoRoot,
-    testTimeout: 120_000,
-    hookTimeout: isWindows ? 180_000 : 120_000,
+    // Emit completed cases even under agent detection so healthy runs feed the output watchdog.
+    reporters: ["verbose", ...(process.env.GITHUB_ACTIONS === "true" ? ["github-actions"] : [])],
+    testTimeout: DEFAULT_VITEST_TEST_TIMEOUT_MS,
+    // 180s on every platform: GitHub-hosted 4-core fallback runners (Blacksmith
+    // outage breaker) push e2e beforeAll hooks past 120s; Windows always needed it.
+    hookTimeout: 180_000,
     unstubEnvs: true,
     unstubGlobals: true,
     isolate: false,
@@ -589,7 +563,6 @@ export const sharedVitestConfig = {
         "src/agents/sandbox.ts",
         "src/agents/agent-tool-definition-adapter.ts",
         "src/agents/tools/discord-actions*.ts",
-        "src/infra/state-migrations.ts",
         "src/infra/update-check.ts",
         "src/infra/ports-inspect.ts",
         "src/infra/outbound/outbound-session.ts",
@@ -613,6 +586,6 @@ export const sharedVitestConfig = {
         "src/infra/tailscale.ts",
       ],
     },
-    ...loadVitestExperimentalConfig(),
+    ...loadVitestExperimentalConfig(process.env, process.platform, repoRoot),
   },
 };

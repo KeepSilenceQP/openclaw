@@ -2,18 +2,44 @@ import fs from "node:fs";
 import path from "node:path";
 import type { DatabaseSync, SQLInputValue } from "node:sqlite";
 import { expectDefined } from "@openclaw/normalization-core";
-import type { ChannelLegacyStateMigrationPlan } from "../channels/plugins/types.core.js";
+import { asSafeIntegerInRange } from "@openclaw/normalization-core/number-coercion";
+import {
+  copyPluginInstallRecordMap,
+  createPluginInstallRecordMap,
+  getPluginInstallRecordMapEntry,
+  parsePluginInstallRecordMap,
+  serializePluginInstallRecordMap,
+  setPluginInstallRecordMapEntry,
+} from "../config/plugin-install-record-map.js";
+import type { PluginInstallRecord } from "../config/types.plugins.js";
 import { parseInstalledPluginIndex } from "../plugins/installed-plugin-index-store.js";
 import {
   INSTALLED_PLUGIN_INDEX_MIGRATION_VERSION,
   INSTALLED_PLUGIN_INDEX_VERSION,
   type InstalledPluginIndex,
 } from "../plugins/installed-plugin-index.js";
-import { parseAgentSessionKey } from "../routing/session-key.js";
 import { runOpenClawStateWriteTransaction } from "../state/openclaw-state-db.js";
-import { requireNodeSqlite } from "./node-sqlite.js";
+import { deliveryQueueMetadata } from "./delivery-queue-sqlite-bound.js";
+import {
+  inferDeliveryQueueFailureRetention,
+  projectDeliveryQueueTerminalEntry,
+} from "./delivery-queue-sqlite.types.js";
+import { openNodeSqliteDatabase } from "./node-sqlite.js";
 import { parseRegistryNpmSpec } from "./npm-registry-spec.js";
-import { fileExists, safeReadDir } from "./state-migrations.fs.js";
+import { migrationFileExists, safeReadDir } from "./state-migrations.fs.js";
+import {
+  insertTaskDeliveryRowSql,
+  insertTaskRunRowSql,
+  legacyBindValue,
+  listSqliteColumns,
+  normalizeLegacySqliteInteger,
+  pickLegacyColumn,
+  readLegacyTaskDeliveryRows,
+  readLegacyTaskRows,
+  type SqliteBindRow,
+} from "./state-migrations.task-sidecar-rows.js";
+
+export { normalizeLegacySqliteInteger };
 
 export type LegacyPluginStateSidecarRow = {
   plugin_id: string;
@@ -24,13 +50,11 @@ export type LegacyPluginStateSidecarRow = {
   expires_at: number | bigint | null;
 };
 
-type SqliteBindRow = Record<string, SQLInputValue>;
-
 // Move the canonical database first so a partial archive never leaves a
 // readable database separated from committed WAL rows. Pending sidecars are
 // detected and archived without reopening the migrated database.
 export const PLUGIN_STATE_SQLITE_SIDECAR_SUFFIXES = ["", "-shm", "-wal", "-journal"] as const;
-export const TASK_STATE_SQLITE_SIDECAR_SUFFIXES = ["", "-shm", "-wal", "-journal"] as const;
+export const TASK_STATE_SQLITE_SIDECAR_SUFFIXES = PLUGIN_STATE_SQLITE_SIDECAR_SUFFIXES;
 const LEGACY_DELIVERY_QUEUE_DIRS = [
   { label: "outbound delivery queue", queueName: "outbound", dirName: "delivery-queue" },
   { label: "session delivery queue", queueName: "session", dirName: "session-delivery-queue" },
@@ -44,13 +68,6 @@ class LegacyTaskStateSidecarConflictError extends Error {
   constructor(readonly conflictedKeys: string[]) {
     super("legacy task-state sidecar conflicts with shared state");
   }
-}
-
-export function buildLegacyMigrationPreview(plan: ChannelLegacyStateMigrationPlan): string {
-  if (plan.kind === "plugin-state-import") {
-    return plan.preview ?? `- ${plan.label}: ${plan.sourcePath}`;
-  }
-  return `- ${plan.label}: ${plan.sourcePath} → ${plan.targetPath}`;
 }
 
 export function resolveLegacyPluginStateSidecarPath(stateDir: string): string {
@@ -68,8 +85,7 @@ export function resolveLegacyFlowRunsSidecarPath(stateDir: string): string {
 export function readLegacyPluginStateSidecarRows(
   sourcePath: string,
 ): LegacyPluginStateSidecarRow[] {
-  const sqlite = requireNodeSqlite();
-  const db = new sqlite.DatabaseSync(sourcePath, { readOnly: true });
+  const db = openNodeSqliteDatabase(sourcePath, { readOnly: true });
   try {
     return db
       .prepare(
@@ -83,13 +99,6 @@ export function readLegacyPluginStateSidecarRows(
   } finally {
     db.close();
   }
-}
-
-export function normalizeLegacySqliteInteger(value: number | bigint | null): number | null {
-  if (typeof value === "bigint") {
-    return Number(value);
-  }
-  return value;
 }
 
 export function legacyPluginStateRowsMatch(
@@ -118,9 +127,9 @@ export function hasPendingSqliteSidecarArchive(
   suffixes: readonly string[],
 ): boolean {
   return (
-    !fileExists(sourcePath) &&
-    fileExists(`${sourcePath}.migrated`) &&
-    suffixes.some((suffix) => suffix !== "" && fileExists(`${sourcePath}${suffix}`))
+    !migrationFileExists(sourcePath) &&
+    migrationFileExists(`${sourcePath}.migrated`) &&
+    suffixes.some((suffix) => suffix !== "" && migrationFileExists(`${sourcePath}${suffix}`))
   );
 }
 
@@ -146,7 +155,7 @@ function archiveLegacyFileSource(params: {
 }): LegacyArchiveResolution | null {
   const archivedPath = `${params.sourcePath}.migrated`;
   try {
-    if (fileExists(archivedPath)) {
+    if (migrationFileExists(archivedPath)) {
       // Import has already committed before archival. Identical archive bytes
       // preserve the same snapshot, so the leftover source can be removed.
       if (fs.readFileSync(params.sourcePath).equals(fs.readFileSync(archivedPath))) {
@@ -179,14 +188,15 @@ function recordArchiveCollisionResolutions(
   }
 }
 
-export function archiveLegacyPluginStateSidecar(params: {
+function archiveLegacySqliteSidecar(params: {
   sourcePath: string;
+  label: string;
   changes: string[];
   warnings: string[];
 }): void {
   const existingSources = PLUGIN_STATE_SQLITE_SIDECAR_SUFFIXES.map(
     (suffix) => `${params.sourcePath}${suffix}`,
-  ).filter(fileExists);
+  ).filter(migrationFileExists);
   if (existingSources.length === 0) {
     return;
   }
@@ -195,7 +205,7 @@ export function archiveLegacyPluginStateSidecar(params: {
   for (const sourcePath of existingSources) {
     const resolution = archiveLegacyFileSource({
       sourcePath,
-      label: "plugin-state sidecar",
+      label: `${params.label} sidecar`,
       warnings: params.warnings,
     });
     if (!resolution) {
@@ -211,11 +221,19 @@ export function archiveLegacyPluginStateSidecar(params: {
     )
   ) {
     params.changes.push(
-      `Archived plugin-state sidecar legacy source → ${params.sourcePath}.migrated`,
+      `Archived ${params.label} sidecar legacy source → ${params.sourcePath}.migrated`,
     );
   } else {
-    recordArchiveCollisionResolutions(params.changes, "plugin-state sidecar", resolutions);
+    recordArchiveCollisionResolutions(params.changes, `${params.label} sidecar`, resolutions);
   }
+}
+
+export function archiveLegacyPluginStateSidecar(params: {
+  sourcePath: string;
+  changes: string[];
+  warnings: string[];
+}): void {
+  archiveLegacySqliteSidecar({ ...params, label: "plugin-state" });
 }
 
 export function readLegacyInstalledPluginIndex(sourcePath: string): InstalledPluginIndex | null {
@@ -225,9 +243,12 @@ export function readLegacyInstalledPluginIndex(sourcePath: string): InstalledPlu
     if (current) {
       return current;
     }
+    const topLevelInstallRecords = readLegacyTopLevelInstallRecords(parsed);
     const installRecords =
-      readLegacyTopLevelInstallRecords(parsed) ?? readLegacyEmbeddedInstallRecords(parsed);
-    if (!installRecords || typeof installRecords !== "object" || Array.isArray(installRecords)) {
+      topLevelInstallRecords === undefined
+        ? readLegacyEmbeddedInstallRecords(parsed)
+        : topLevelInstallRecords;
+    if (!installRecords) {
       return null;
     }
     return parseInstalledPluginIndex({
@@ -246,15 +267,24 @@ export function readLegacyInstalledPluginIndex(sourcePath: string): InstalledPlu
   }
 }
 
-function readLegacyTopLevelInstallRecords(parsed: unknown): unknown {
+function readLegacyTopLevelInstallRecords(
+  parsed: unknown,
+): Record<string, PluginInstallRecord> | null | undefined {
   if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
     return null;
   }
-  const legacy = parsed as { installRecords?: unknown; records?: unknown };
-  return legacy.installRecords ?? legacy.records;
+  const legacy = parsed as Record<string, unknown>;
+  const key = Object.hasOwn(legacy, "installRecords")
+    ? "installRecords"
+    : Object.hasOwn(legacy, "records")
+      ? "records"
+      : undefined;
+  return key ? parsePluginInstallRecordMap(legacy[key]) : undefined;
 }
 
-function readLegacyEmbeddedInstallRecords(parsed: unknown): Record<string, unknown> | null {
+function readLegacyEmbeddedInstallRecords(
+  parsed: unknown,
+): Record<string, PluginInstallRecord> | null {
   if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
     return null;
   }
@@ -262,24 +292,24 @@ function readLegacyEmbeddedInstallRecords(parsed: unknown): Record<string, unkno
   if (!Array.isArray(plugins)) {
     return null;
   }
-  const records: Record<string, unknown> = {};
+  const records = createPluginInstallRecordMap<unknown>();
+  let found = false;
   for (const plugin of plugins) {
     if (!plugin || typeof plugin !== "object" || Array.isArray(plugin)) {
+      return null;
+    }
+    if (!Object.hasOwn(plugin, "installRecord")) {
       continue;
     }
     const pluginId = (plugin as { pluginId?: unknown }).pluginId;
     const installRecord = (plugin as { installRecord?: unknown }).installRecord;
-    if (
-      typeof pluginId === "string" &&
-      pluginId.trim() &&
-      installRecord &&
-      typeof installRecord === "object" &&
-      !Array.isArray(installRecord)
-    ) {
-      records[pluginId] = installRecord;
+    if (typeof pluginId !== "string" || !pluginId.trim()) {
+      return null;
     }
+    setPluginInstallRecordMapEntry(records, pluginId, installRecord);
+    found = true;
   }
-  return Object.keys(records).length > 0 ? records : null;
+  return found ? parsePluginInstallRecordMap(records) : null;
 }
 
 export function legacyInstalledPluginIndexMatches(
@@ -287,7 +317,8 @@ export function legacyInstalledPluginIndexMatches(
   legacy: InstalledPluginIndex,
 ): boolean {
   return (
-    JSON.stringify(current.installRecords) === JSON.stringify(legacy.installRecords) &&
+    serializePluginInstallRecordMap(current.installRecords) ===
+      serializePluginInstallRecordMap(legacy.installRecords) &&
     JSON.stringify(current.plugins) === JSON.stringify(legacy.plugins) &&
     JSON.stringify(current.diagnostics) === JSON.stringify(legacy.diagnostics)
   );
@@ -393,13 +424,13 @@ export function mergeLegacyInstalledPluginIndexRecords(
   current: InstalledPluginIndex,
   legacy: InstalledPluginIndex,
 ): { merged: InstalledPluginIndex; addedCount: number; conflicts: string[] } {
-  const installRecords = { ...current.installRecords };
+  const installRecords = copyPluginInstallRecordMap(current.installRecords);
   const conflicts: string[] = [];
   let addedCount = 0;
   for (const [pluginId, legacyRecord] of Object.entries(legacy.installRecords)) {
-    const currentRecord = installRecords[pluginId];
+    const currentRecord = getPluginInstallRecordMapEntry(installRecords, pluginId);
     if (!currentRecord) {
-      installRecords[pluginId] = legacyRecord;
+      setPluginInstallRecordMapEntry(installRecords, pluginId, legacyRecord);
       addedCount += 1;
       continue;
     }
@@ -435,45 +466,6 @@ export function archiveLegacyInstalledPluginIndex(params: {
       ? `Removed already-archived plugin install index legacy source ${params.sourcePath}`
       : `Archived plugin install index legacy source → ${resolution.targetPath}`,
   );
-}
-
-function archiveLegacyTaskStateSidecar(params: {
-  sourcePath: string;
-  label: string;
-  changes: string[];
-  warnings: string[];
-}): void {
-  const existingSources = TASK_STATE_SQLITE_SIDECAR_SUFFIXES.map(
-    (suffix) => `${params.sourcePath}${suffix}`,
-  ).filter(fileExists);
-  if (existingSources.length === 0) {
-    return;
-  }
-  const resolutions: LegacyArchiveResolution[] = [];
-  for (const sourcePath of existingSources) {
-    const resolution = archiveLegacyFileSource({
-      sourcePath,
-      label: `${params.label} sidecar`,
-      warnings: params.warnings,
-    });
-    if (!resolution) {
-      return;
-    }
-    resolutions.push(resolution);
-  }
-  if (
-    resolutions.every(
-      (resolution) =>
-        resolution.action === "archived" &&
-        resolution.targetPath === `${resolution.sourcePath}.migrated`,
-    )
-  ) {
-    params.changes.push(
-      `Archived ${params.label} sidecar legacy source → ${params.sourcePath}.migrated`,
-    );
-  } else {
-    recordArchiveCollisionResolutions(params.changes, `${params.label} sidecar`, resolutions);
-  }
 }
 
 function hardenLegacyImportSource(params: {
@@ -523,32 +515,6 @@ export function archiveLegacyImportSource(params: {
   );
 }
 
-function listSqliteColumns(db: DatabaseSync, table: string): Set<string> {
-  const rows = db.prepare(`PRAGMA table_info(${table})`).all() as Array<{ name?: string }>;
-  return new Set(rows.flatMap((row) => (row.name ? [row.name] : [])));
-}
-
-function pickLegacyColumn(columns: Set<string>, name: string, fallbackSql = "NULL"): string {
-  return columns.has(name) ? name : `${fallbackSql} AS ${name}`;
-}
-
-function legacyBindValue(value: unknown): SQLInputValue {
-  if (
-    value == null ||
-    typeof value === "string" ||
-    typeof value === "number" ||
-    typeof value === "bigint" ||
-    value instanceof Uint8Array
-  ) {
-    return value ?? null;
-  }
-  return JSON.stringify(value);
-}
-
-function legacyStringValue(value: unknown): string {
-  return typeof value === "string" ? value : "";
-}
-
 function legacyKeyValue(value: SQLInputValue): string {
   if (typeof value === "string") {
     return value;
@@ -557,62 +523,6 @@ function legacyKeyValue(value: SQLInputValue): string {
     return `${value}`;
   }
   return "";
-}
-
-function normalizeLegacyTaskRow(row: Record<string, unknown>): SqliteBindRow {
-  const runtime = legacyStringValue(row.runtime);
-  const sourceId = typeof row.source_id === "string" ? row.source_id : "";
-  const taskId = legacyStringValue(row.task_id);
-  const ownerRaw = typeof row.owner_key === "string" ? row.owner_key.trim() : "";
-  const requesterRaw =
-    typeof row.requester_session_key === "string" ? row.requester_session_key.trim() : "";
-  const ownerKey = ownerRaw || requesterRaw || `system:${runtime}:${sourceId || taskId}`;
-  const scopeRaw = typeof row.scope_kind === "string" ? row.scope_kind : "";
-  const scopeKind = scopeRaw === "system" || ownerKey.startsWith("system:") ? "system" : "session";
-  const childSessionKey =
-    typeof row.child_session_key === "string" ? row.child_session_key.trim() : "";
-  const persistedAgentId = typeof row.agent_id === "string" ? row.agent_id.trim() : "";
-  const isSpawnRuntime = runtime === "subagent" || runtime === "acp";
-  const childAgentId = isSpawnRuntime ? parseAgentSessionKey(childSessionKey)?.agentId : undefined;
-  const requesterAgentId =
-    (typeof row.requester_agent_id === "string" ? row.requester_agent_id.trim() : "") ||
-    (isSpawnRuntime
-      ? (parseAgentSessionKey(ownerKey)?.agentId ??
-        parseAgentSessionKey(requesterRaw)?.agentId ??
-        (childAgentId && persistedAgentId !== childAgentId ? persistedAgentId : ""))
-      : "");
-  const executorAgentId = requesterAgentId ? childAgentId || persistedAgentId : persistedAgentId;
-  const deliveryStatus =
-    row.delivery_status === "not-requested" ? "not_applicable" : row.delivery_status;
-  return {
-    task_id: taskId,
-    runtime,
-    task_kind: legacyBindValue(row.task_kind),
-    source_id: legacyBindValue(row.source_id),
-    requester_session_key: scopeKind === "system" ? "" : requesterRaw || ownerKey,
-    owner_key: ownerKey,
-    scope_kind: scopeKind,
-    child_session_key: childSessionKey || null,
-    parent_flow_id: legacyBindValue(row.parent_flow_id),
-    parent_task_id: legacyBindValue(row.parent_task_id),
-    agent_id: executorAgentId || null,
-    requester_agent_id: requesterAgentId || null,
-    run_id: legacyBindValue(row.run_id),
-    label: legacyBindValue(row.label),
-    task: legacyBindValue(row.task ?? ""),
-    status: legacyBindValue(row.status ?? ""),
-    delivery_status: legacyBindValue(deliveryStatus ?? ""),
-    notify_policy: legacyBindValue(row.notify_policy ?? ""),
-    created_at: normalizeLegacySqliteInteger(row.created_at as number | bigint | null) ?? 0,
-    started_at: normalizeLegacySqliteInteger(row.started_at as number | bigint | null),
-    ended_at: normalizeLegacySqliteInteger(row.ended_at as number | bigint | null),
-    last_event_at: normalizeLegacySqliteInteger(row.last_event_at as number | bigint | null),
-    cleanup_after: normalizeLegacySqliteInteger(row.cleanup_after as number | bigint | null),
-    error: legacyBindValue(row.error),
-    progress_summary: legacyBindValue(row.progress_summary),
-    terminal_summary: legacyBindValue(row.terminal_summary),
-    terminal_outcome: legacyBindValue(row.terminal_outcome),
-  };
 }
 
 function normalizeLegacyFlowRow(row: Record<string, unknown>): SqliteBindRow {
@@ -667,75 +577,8 @@ function legacyRowsMatch(
   );
 }
 
-function readLegacyTaskRows(sourcePath: string): SqliteBindRow[] {
-  const sqlite = requireNodeSqlite();
-  const db = new sqlite.DatabaseSync(sourcePath, { readOnly: true });
-  try {
-    const columns = listSqliteColumns(db, "task_runs");
-    if (columns.size === 0) {
-      return [];
-    }
-    const selectColumns = [
-      "task_id",
-      "runtime",
-      pickLegacyColumn(columns, "task_kind"),
-      pickLegacyColumn(columns, "source_id"),
-      pickLegacyColumn(columns, "requester_session_key"),
-      pickLegacyColumn(columns, "owner_key"),
-      pickLegacyColumn(columns, "scope_kind"),
-      pickLegacyColumn(columns, "child_session_key"),
-      pickLegacyColumn(columns, "parent_flow_id"),
-      pickLegacyColumn(columns, "parent_task_id"),
-      pickLegacyColumn(columns, "agent_id"),
-      pickLegacyColumn(columns, "requester_agent_id"),
-      pickLegacyColumn(columns, "run_id"),
-      pickLegacyColumn(columns, "label"),
-      "task",
-      "status",
-      "delivery_status",
-      "notify_policy",
-      "created_at",
-      pickLegacyColumn(columns, "started_at"),
-      pickLegacyColumn(columns, "ended_at"),
-      pickLegacyColumn(columns, "last_event_at"),
-      pickLegacyColumn(columns, "cleanup_after"),
-      pickLegacyColumn(columns, "error"),
-      pickLegacyColumn(columns, "progress_summary"),
-      pickLegacyColumn(columns, "terminal_summary"),
-      pickLegacyColumn(columns, "terminal_outcome"),
-    ];
-    return db
-      .prepare(
-        `SELECT ${selectColumns.join(", ")} FROM task_runs ORDER BY created_at ASC, task_id ASC`,
-      )
-      .all()
-      .map((row) => normalizeLegacyTaskRow(row as Record<string, unknown>));
-  } finally {
-    db.close();
-  }
-}
-
-function readLegacyTaskDeliveryRows(sourcePath: string): SqliteBindRow[] {
-  const sqlite = requireNodeSqlite();
-  const db = new sqlite.DatabaseSync(sourcePath, { readOnly: true });
-  try {
-    const columns = listSqliteColumns(db, "task_delivery_state");
-    if (columns.size === 0) {
-      return [];
-    }
-    return db
-      .prepare(
-        `SELECT task_id, requester_origin_json, last_notified_event_at FROM task_delivery_state ORDER BY task_id ASC`,
-      )
-      .all() as SqliteBindRow[];
-  } finally {
-    db.close();
-  }
-}
-
 function readLegacyFlowRows(sourcePath: string): SqliteBindRow[] {
-  const sqlite = requireNodeSqlite();
-  const db = new sqlite.DatabaseSync(sourcePath, { readOnly: true });
+  const db = openNodeSqliteDatabase(sourcePath, { readOnly: true });
   try {
     const columns = listSqliteColumns(db, "flow_runs");
     if (columns.size === 0) {
@@ -774,37 +617,6 @@ function readLegacyFlowRows(sourcePath: string): SqliteBindRow[] {
   }
 }
 
-function insertTaskRunRowSql(db: DatabaseSync, row: SqliteBindRow): void {
-  db.prepare(
-    `
-      INSERT INTO task_runs (
-        task_id, runtime, task_kind, source_id, requester_session_key, owner_key, scope_kind,
-        child_session_key, parent_flow_id, parent_task_id, agent_id, requester_agent_id, run_id,
-        label, task, status, delivery_status, notify_policy, created_at, started_at, ended_at,
-        last_event_at, cleanup_after, error, progress_summary, terminal_summary, terminal_outcome
-      ) VALUES (
-        @task_id, @runtime, @task_kind, @source_id, @requester_session_key, @owner_key,
-        @scope_kind, @child_session_key, @parent_flow_id, @parent_task_id, @agent_id,
-        @requester_agent_id, @run_id, @label, @task, @status, @delivery_status, @notify_policy,
-        @created_at, @started_at, @ended_at, @last_event_at, @cleanup_after, @error,
-        @progress_summary, @terminal_summary, @terminal_outcome
-      )
-    `,
-  ).run(row);
-}
-
-function insertTaskDeliveryRowSql(db: DatabaseSync, row: SqliteBindRow): void {
-  db.prepare(
-    `
-      INSERT INTO task_delivery_state (
-        task_id, requester_origin_json, last_notified_event_at
-      ) VALUES (
-        @task_id, @requester_origin_json, @last_notified_event_at
-      )
-    `,
-  ).run(row);
-}
-
 function insertFlowRunRowSql(db: DatabaseSync, row: SqliteBindRow): void {
   db.prepare(
     `
@@ -826,11 +638,11 @@ async function migrateLegacyTaskRunsSidecar(params: {
   stateDir: string;
 }): Promise<{ changes: string[]; warnings: string[] }> {
   const sourcePath = resolveLegacyTaskRunsSidecarPath(params.stateDir);
-  if (!fileExists(sourcePath)) {
+  if (!migrationFileExists(sourcePath)) {
     const changes: string[] = [];
     const warnings: string[] = [];
     if (hasPendingSqliteSidecarArchive(sourcePath, TASK_STATE_SQLITE_SIDECAR_SUFFIXES)) {
-      archiveLegacyTaskStateSidecar({ sourcePath, label: "task registry", changes, warnings });
+      archiveLegacySqliteSidecar({ sourcePath, label: "task registry", changes, warnings });
     }
     return { changes, warnings };
   }
@@ -882,6 +694,7 @@ async function migrateLegacyTaskRunsSidecar(params: {
           "progress_summary",
           "terminal_summary",
           "terminal_outcome",
+          "detail_json",
         ];
         for (const row of taskRows) {
           const taskId = legacyKeyValue(expectDefined(row.task_id, "task migration row key"));
@@ -955,7 +768,7 @@ async function migrateLegacyTaskRunsSidecar(params: {
     };
   }
 
-  archiveLegacyTaskStateSidecar({ sourcePath, label: "task registry", changes, warnings });
+  archiveLegacySqliteSidecar({ sourcePath, label: "task registry", changes, warnings });
   return { changes, warnings };
 }
 
@@ -963,11 +776,11 @@ async function migrateLegacyFlowRunsSidecar(params: {
   stateDir: string;
 }): Promise<{ changes: string[]; warnings: string[] }> {
   const sourcePath = resolveLegacyFlowRunsSidecarPath(params.stateDir);
-  if (!fileExists(sourcePath)) {
+  if (!migrationFileExists(sourcePath)) {
     const changes: string[] = [];
     const warnings: string[] = [];
     if (hasPendingSqliteSidecarArchive(sourcePath, TASK_STATE_SQLITE_SIDECAR_SUFFIXES)) {
-      archiveLegacyTaskStateSidecar({ sourcePath, label: "task flow", changes, warnings });
+      archiveLegacySqliteSidecar({ sourcePath, label: "task flow", changes, warnings });
     }
     return { changes, warnings };
   }
@@ -1048,7 +861,7 @@ async function migrateLegacyFlowRunsSidecar(params: {
     };
   }
 
-  archiveLegacyTaskStateSidecar({ sourcePath, label: "task flow", changes, warnings });
+  archiveLegacySqliteSidecar({ sourcePath, label: "task flow", changes, warnings });
   return { changes, warnings };
 }
 
@@ -1098,73 +911,78 @@ function readLegacyDeliveryQueueEntry(sourcePath: string): Record<string, unknow
   }
 }
 
-function legacyQueueMetadata(entry: Record<string, unknown>): {
-  entryKind: string | null;
-  sessionKey: string | null;
-  channel: string | null;
-  target: string | null;
-  accountId: string | null;
-} {
-  const session = entry.session as { key?: unknown } | undefined;
-  const route = entry.route as { channel?: unknown; to?: unknown; accountId?: unknown } | undefined;
-  const deliveryContext = entry.deliveryContext as
-    | { channel?: unknown; to?: unknown; accountId?: unknown }
-    | undefined;
-  const stringOrNull = (value: unknown) => (typeof value === "string" ? value : null);
-  return {
-    entryKind: stringOrNull(entry.kind) ?? "outbound",
-    sessionKey: stringOrNull(entry.sessionKey) ?? stringOrNull(session?.key),
-    channel:
-      stringOrNull(entry.channel) ??
-      stringOrNull(route?.channel) ??
-      stringOrNull(deliveryContext?.channel),
-    target: stringOrNull(entry.to) ?? stringOrNull(route?.to) ?? stringOrNull(deliveryContext?.to),
-    accountId:
-      stringOrNull(entry.accountId) ??
-      stringOrNull(route?.accountId) ??
-      stringOrNull(deliveryContext?.accountId),
-  };
-}
-
 function buildLegacyDeliveryQueueRow(params: {
   queueName: string;
   id: string;
   status: "pending" | "failed";
   entry: Record<string, unknown>;
   now: number;
-}): SqliteBindRow {
-  const enqueuedAt =
-    typeof params.entry.enqueuedAt === "number" ? params.entry.enqueuedAt : params.now;
-  const retryCount = typeof params.entry.retryCount === "number" ? params.entry.retryCount : 0;
-  const failedAt =
-    params.status === "failed"
-      ? typeof params.entry.failedAt === "number"
-        ? params.entry.failedAt
-        : typeof params.entry.lastAttemptAt === "number"
-          ? params.entry.lastAttemptAt
-          : enqueuedAt
-      : null;
-  const meta = legacyQueueMetadata(params.entry);
+}): SqliteBindRow | null {
+  const originalEnqueuedAt =
+    asSafeIntegerInRange(params.entry.enqueuedAt, { min: 0 }) ?? params.now;
+  const retryCount = asSafeIntegerInRange(params.entry.retryCount, { min: 0 }) ?? 0;
+  const lastAttemptAt = asSafeIntegerInRange(params.entry.lastAttemptAt, { min: 0 });
+  const platformSendStartedAt = asSafeIntegerInRange(params.entry.platformSendStartedAt, {
+    min: 0,
+  });
+  const failed = params.status === "failed";
+  const retention = failed
+    ? inferDeliveryQueueFailureRetention(params.entry, params.id, params.queueName)
+    : undefined;
+  if (failed && !retention) {
+    return null;
+  }
+  const failedAt = failed
+    ? (asSafeIntegerInRange(params.entry.failedAt, { min: 0 }) ??
+      lastAttemptAt ??
+      originalEnqueuedAt)
+    : null;
+  const enqueuedAt = failedAt ?? originalEnqueuedAt;
+  const meta = failed ? undefined : deliveryQueueMetadata(params.queueName, params.entry);
+  const retainedEntry: Record<string, unknown> = {
+    ...params.entry,
+    id: params.id,
+    enqueuedAt,
+    retryCount,
+  };
+  if (lastAttemptAt === undefined) {
+    delete retainedEntry.lastAttemptAt;
+  } else {
+    retainedEntry.lastAttemptAt = lastAttemptAt;
+  }
+  if (platformSendStartedAt === undefined) {
+    delete retainedEntry.platformSendStartedAt;
+  } else {
+    retainedEntry.platformSendStartedAt = platformSendStartedAt;
+  }
+  const failedEntry = failed
+    ? projectDeliveryQueueTerminalEntry(
+        { id: params.id, retryCount },
+        enqueuedAt,
+        "failed",
+        retention,
+      )
+    : undefined;
   return {
     queue_name: params.queueName,
     id: params.id,
     status: params.status,
-    entry_kind: meta.entryKind,
-    session_key: meta.sessionKey,
-    channel: meta.channel,
-    target: meta.target,
-    account_id: meta.accountId,
+    entry_kind: meta?.entryKind ?? null,
+    session_key: meta?.sessionKey ?? null,
+    channel: meta?.channel ?? null,
+    target: meta?.target ?? null,
+    account_id: meta?.accountId ?? null,
     retry_count: retryCount,
-    last_attempt_at:
-      typeof params.entry.lastAttemptAt === "number" ? params.entry.lastAttemptAt : null,
-    last_error: typeof params.entry.lastError === "string" ? params.entry.lastError : null,
-    recovery_state:
-      typeof params.entry.recoveryState === "string" ? params.entry.recoveryState : null,
-    platform_send_started_at:
-      typeof params.entry.platformSendStartedAt === "number"
-        ? params.entry.platformSendStartedAt
+    last_attempt_at: !failed ? (lastAttemptAt ?? null) : null,
+    last_error:
+      !failed && typeof params.entry.lastError === "string" ? params.entry.lastError : null,
+    recovery_state: failed
+      ? (failedEntry?.recoveryState ?? null)
+      : typeof params.entry.recoveryState === "string"
+        ? params.entry.recoveryState
         : null,
-    entry_json: JSON.stringify({ ...params.entry, id: params.id, enqueuedAt, retryCount }),
+    platform_send_started_at: !failed ? (platformSendStartedAt ?? null) : null,
+    entry_json: JSON.stringify(failedEntry ?? retainedEntry),
     enqueued_at: enqueuedAt,
     updated_at: params.now,
     failed_at: failedAt,
@@ -1282,6 +1100,9 @@ export async function migrateLegacyDeliveryQueues(params: {
               entry,
               now,
             });
+            if (!row) {
+              continue;
+            }
             const existing = db
               .prepare(
                 `
@@ -1340,3 +1161,4 @@ export async function migrateLegacyDeliveryQueues(params: {
   }
   return { changes, warnings };
 }
+/* oxlint-disable max-lines -- TODO: split this grandfathered oversized file. */

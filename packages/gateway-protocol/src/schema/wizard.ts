@@ -16,6 +16,12 @@ const WizardRunStatusSchema = Type.Union([
 export const WizardStartParamsSchema = closedObject({
   mode: Type.Optional(Type.Union([Type.Literal("local"), Type.Literal("remote")])),
   workspace: Type.Optional(Type.String()),
+  installDaemon: Type.Optional(Type.Boolean()),
+  // "setup" (default) runs full onboarding; "channels" runs the guided
+  // channel-setup flow (openclaw channels add) over the same step protocol.
+  flow: Type.Optional(Type.Union([Type.Literal("setup"), Type.Literal("channels")])),
+  // Preselected channel id for flow "channels" (e.g. "telegram").
+  channel: Type.Optional(NonEmptyString),
 });
 
 /** Client answer payload for the current wizard step. */
@@ -42,7 +48,7 @@ export const WizardCancelParamsSchema = WizardSessionIdParamsSchema;
 export const WizardStatusParamsSchema = WizardSessionIdParamsSchema;
 
 /** Selectable value shown in a choice-based wizard step. */
-export const WizardStepOptionSchema = closedObject({
+const WizardStepOptionSchema = closedObject({
   value: Type.Unknown(),
   label: NonEmptyString,
   hint: Type.Optional(Type.String()),
@@ -78,12 +84,35 @@ export const WizardStepSchema = closedObject({
   deviceCode: Type.Optional(WizardDeviceCodeSchema),
 });
 
+/** Channel/account pair the channels flow actually configured. */
+const WizardConfiguredAccountSchema = closedObject({
+  channel: NonEmptyString,
+  accountId: NonEmptyString,
+});
+
 /** Common response fields for start and next calls. */
 const WizardResultFields = {
   done: Type.Boolean(),
   step: Type.Optional(WizardStepSchema),
   status: Type.Optional(WizardRunStatusSchema),
   error: Type.Optional(Type.String()),
+  // What the flow actually configured; set on the terminal result of
+  // wizard.start flow "channels" sessions so clients run channel-specific
+  // completion (e.g. WhatsApp QR linking for the right account) from the
+  // real outcome rather than the preselection.
+  channels: Type.Optional(Type.Array(NonEmptyString)),
+  accounts: Type.Optional(Type.Array(WizardConfiguredAccountSchema)),
+  // Exact model prepared by provider-owned setup. Clients must still run the
+  // live activation step before presenting the route as ready.
+  preparedModelRef: Type.Optional(NonEmptyString),
+  // Successful terminal auth flows report the exact live-verified activation;
+  // provider sign-in or model preparation alone does not establish readiness.
+  modelActivation: Type.Optional(
+    closedObject({
+      modelRef: NonEmptyString,
+      gatewayRestartRequired: Type.Optional(Type.Literal(true)),
+    }),
+  ),
 };
 
 /** Result after advancing a wizard session. */
@@ -104,6 +133,7 @@ export const WizardStatusResultSchema = closedObject({
 // Wire types derive directly from local schema consts so public d.ts graphs never
 // pull in the ProtocolSchemas registry.
 export type WizardStartParams = Static<typeof WizardStartParamsSchema>;
+export type WizardAnswer = Static<typeof WizardAnswerSchema>;
 export type WizardNextParams = Static<typeof WizardNextParamsSchema>;
 export type WizardCancelParams = Static<typeof WizardCancelParamsSchema>;
 export type WizardStatusParams = Static<typeof WizardStatusParamsSchema>;

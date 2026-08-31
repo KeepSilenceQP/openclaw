@@ -30,10 +30,10 @@ describe("stripHtmlFromTeamsMessage", () => {
     expect(stripHtmlFromTeamsMessage("<p>Hello <b>world</b></p>")).toBe("Hello world");
   });
 
-  it("decodes common HTML entities", () => {
-    expect(stripHtmlFromTeamsMessage("&amp; &lt;b&gt; &quot;x&quot; &#39;y&#39; &nbsp;z")).toBe(
-      "& <b> \"x\" 'y' z",
-    );
+  it("decodes HTML5 entities", () => {
+    expect(
+      stripHtmlFromTeamsMessage("&amp; &lt;b&gt; &quot;x&quot; &#39;y&#39; &nbsp;z &copy;"),
+    ).toBe("& <b> \"x\" 'y' z ©");
   });
 
   it("does not double-decode escaped entities (decodes &amp; last)", () => {
@@ -74,7 +74,7 @@ describe("fetchChannelMessage", () => {
     expect(result).toEqual(mockMsg);
     expect(fetchGraphJson).toHaveBeenCalledWith({
       token: "tok",
-      path: "/teams/group-1/channels/channel-1/messages/msg-1?$select=id,from,body,createdDateTime",
+      path: "/teams/group-1/channels/channel-1/messages/msg-1",
     });
   });
 
@@ -92,7 +92,7 @@ describe("fetchChannelMessage", () => {
 
     expect(fetchGraphJson).toHaveBeenCalledWith({
       token: "tok",
-      path: "/teams/g%2F1/channels/c%2F2/messages/m%2F3?$select=id,from,body,createdDateTime",
+      path: "/teams/g%2F1/channels/c%2F2/messages/m%2F3",
     });
   });
 });
@@ -176,7 +176,7 @@ describe("fetchThreadReplies", () => {
     expect(result).toHaveLength(2);
     expect(fetchGraphJson).toHaveBeenCalledWith({
       token: "tok",
-      path: "/teams/group-1/channels/channel-1/messages/msg-1/replies?$top=50&$select=id,from,body,createdDateTime",
+      path: "/teams/group-1/channels/channel-1/messages/msg-1/replies?$top=50",
     });
   });
 

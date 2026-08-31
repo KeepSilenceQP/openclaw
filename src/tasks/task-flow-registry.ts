@@ -9,11 +9,12 @@ import {
   resetTaskFlowRegistryRuntimeForTests,
   type TaskFlowRegistryObserverEvent,
 } from "./task-flow-registry.store.js";
-import type {
-  TaskFlowRecord,
-  TaskFlowStatus,
-  TaskFlowSyncMode,
-  JsonValue,
+import {
+  isTerminalTaskFlow,
+  type JsonValue,
+  type TaskFlowRecord,
+  type TaskFlowStatus,
+  type TaskFlowSyncMode,
 } from "./task-flow-registry.types.js";
 import type { TaskNotifyPolicy, TaskRecord } from "./task-registry.types.js";
 
@@ -468,7 +469,7 @@ function writeFlowRecord(next: TaskFlowRecord, previous?: TaskFlowRecord): TaskF
   return cloneFlowRecord(next);
 }
 
-export function createFlowRecord(params: CreateFlowRecordParams): TaskFlowRecord | null {
+function createFlowRecord(params: CreateFlowRecordParams): TaskFlowRecord | null {
   ensureTaskFlowRegistryReady();
   const record = buildFlowRecord(params);
   return writeFlowRecord(record);
@@ -756,13 +757,6 @@ export function syncFlowFromTaskResult(
   return { ok: true, flow: updated };
 }
 
-export function syncFlowFromTask(
-  task: Parameters<typeof syncFlowFromTaskResult>[0],
-): TaskFlowRecord | null {
-  const result = syncFlowFromTaskResult(task);
-  return result.ok ? result.flow : null;
-}
-
 export function getTaskFlowById(flowId: string): TaskFlowRecord | undefined {
   ensureTaskFlowRegistryReady();
   const flow = flows.get(flowId);
@@ -782,8 +776,14 @@ export function listTaskFlowsForOwnerKey(ownerKey: string): TaskFlowRecord[] {
 }
 
 export function findLatestTaskFlowForOwnerKey(ownerKey: string): TaskFlowRecord | undefined {
-  const flow = listTaskFlowsForOwnerKey(ownerKey)[0];
-  return flow ? cloneFlowRecord(flow) : undefined;
+  return listTaskFlowsForOwnerKey(ownerKey)[0];
+}
+
+// Owner-key actions must target live work before retained terminal history;
+// otherwise `show` and `cancel` silently act on a completed flow.
+export function findTaskFlowForOwnerLookup(ownerKey: string): TaskFlowRecord | undefined {
+  const ownerFlows = listTaskFlowsForOwnerKey(ownerKey);
+  return ownerFlows.find((flow) => !isTerminalTaskFlow(flow)) ?? ownerFlows[0];
 }
 
 export function resolveTaskFlowForLookupToken(token: string): TaskFlowRecord | undefined {
@@ -791,7 +791,7 @@ export function resolveTaskFlowForLookupToken(token: string): TaskFlowRecord | u
   if (!lookup) {
     return undefined;
   }
-  return getTaskFlowById(lookup) ?? findLatestTaskFlowForOwnerKey(lookup);
+  return getTaskFlowById(lookup) ?? findTaskFlowForOwnerLookup(lookup);
 }
 
 export function listTaskFlowRecords(): TaskFlowRecord[] {
@@ -819,7 +819,7 @@ export function deleteTaskFlowRecordById(flowId: string): boolean {
   return true;
 }
 
-export function resetTaskFlowRegistryForTests(opts?: { persist?: boolean }) {
+function resetTaskFlowRegistryForTests(opts?: { persist?: boolean }) {
   flows = new Map();
   taskFlowRegistryRestoreState = { status: "uninitialized" };
   resetTaskFlowRegistryRuntimeForTests();
@@ -828,3 +828,11 @@ export function resetTaskFlowRegistryForTests(opts?: { persist?: boolean }) {
   }
   getTaskFlowRegistryStore().close?.();
 }
+
+if (process.env.VITEST || process.env.NODE_ENV === "test") {
+  (globalThis as Record<PropertyKey, unknown>)[Symbol.for("openclaw.taskFlowRegistryTestApi")] = {
+    createFlowRecord,
+    resetTaskFlowRegistryForTests,
+  };
+}
+/* oxlint-disable max-lines -- TODO: split this grandfathered oversized file. */

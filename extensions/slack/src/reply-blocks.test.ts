@@ -3,12 +3,13 @@ import {
   type MessagePresentation,
 } from "openclaw/plugin-sdk/interactive-runtime";
 import { describe, expect, it } from "vitest";
-import { resolveSlackReplyBlockResolution, resolveSlackReplyText } from "./reply-blocks.js";
+import { renderSlackMessagePresentationFallbackText } from "./presentation-fallback.js";
+import { resolveSlackReplyBlockResolution } from "./reply-blocks.js";
 
-describe("resolveSlackReplyText", () => {
+describe("renderSlackMessagePresentationFallbackText", () => {
   it("includes complete portable table data in Slack accessibility text", () => {
     expect(
-      resolveSlackReplyText({
+      renderSlackMessagePresentationFallbackText({
         text: "Pipeline summary",
         presentation: {
           blocks: [
@@ -31,7 +32,7 @@ describe("resolveSlackReplyText", () => {
 
   it("keeps raw table values literal without changing authored Slack text", () => {
     expect(
-      resolveSlackReplyText({
+      renderSlackMessagePresentationFallbackText({
         text: "Intentional <!here>",
         presentation: {
           title: "Report <@U999>",
@@ -52,7 +53,7 @@ describe("resolveSlackReplyText", () => {
 
   it("keeps plain-text controls literal when they accompany structured data", () => {
     expect(
-      resolveSlackReplyText({
+      renderSlackMessagePresentationFallbackText({
         presentation: {
           blocks: [
             { type: "table", caption: "Data", headers: ["Value"], rows: [[1]] },
@@ -92,7 +93,7 @@ describe("resolveSlackReplyText", () => {
   });
 
   it("marks command fallbacks with backticks as not copyable", () => {
-    const rendered = resolveSlackReplyText({
+    const rendered = renderSlackMessagePresentationFallbackText({
       presentation: {
         blocks: [
           {
@@ -121,7 +122,7 @@ describe("resolveSlackReplyText", () => {
 
   it("keeps safe command fallback bytes exact", () => {
     expect(
-      resolveSlackReplyText({
+      renderSlackMessagePresentationFallbackText({
         presentation: {
           blocks: [
             {
@@ -251,7 +252,7 @@ describe("resolveSlackReplyText", () => {
         },
       ],
     });
-    expect(resolveSlackReplyText(payload)).toContain("- Account: account-99");
+    expect(renderSlackMessagePresentationFallbackText(payload)).toContain("- Account: account-99");
   });
 
   it("coalesces adjacent fallbacks without changing their authored order", () => {
@@ -520,6 +521,31 @@ describe("resolveSlackReplyText", () => {
     });
   });
 
+  it.each(["interactive", "presentation"] as const)(
+    "preserves %s text across Slack's 50-block message boundary",
+    (surface) => {
+      const text = "x".repeat(3_000 * 50 + 1);
+      const payload =
+        surface === "interactive"
+          ? { interactive: { blocks: [{ type: "text" as const, text }] } }
+          : { presentation: { blocks: [{ type: "text" as const, text }] } };
+      const { segments } = resolveSlackReplyBlockResolution(payload);
+      const blockSegments = segments.flatMap((segment) =>
+        segment.kind === "blocks" ? [segment.blocks] : [],
+      );
+      const delivered = blockSegments.flatMap((blocks) =>
+        blocks.flatMap((block) =>
+          block.type === "section" && "text" in block && block.text?.type === "mrkdwn"
+            ? [block.text.text]
+            : [],
+        ),
+      );
+
+      expect(blockSegments.map((blocks) => blocks.length)).toEqual([50, 1]);
+      expect(delivered.join("")).toBe(text);
+    },
+  );
+
   it("subtracts exact legacy mirrors for every typed action family", () => {
     const presentation = {
       blocks: [
@@ -538,6 +564,14 @@ describe("resolveSlackReplyText", () => {
                 approvalId: "plugin:req-1",
                 approvalKind: "plugin",
                 decision: "allow-once",
+              },
+            },
+            {
+              label: "Question",
+              action: {
+                type: "question",
+                questionId: "ask_0123456789abcdef0123456789abcdef",
+                optionValue: "Question",
               },
             },
             { label: "URL", action: { type: "url", url: "https://example.com/docs" } },
@@ -566,6 +600,12 @@ describe("resolveSlackReplyText", () => {
     } satisfies MessagePresentation;
 
     const { segments } = resolveSlackReplyBlockResolution({
+      channelData: {
+        askUser: {
+          questionId: "ask_0123456789abcdef0123456789abcdef",
+          optionValues: ["Question", "Unused"],
+        },
+      },
       presentation,
       interactive: presentationToInteractiveControlsReply(presentation),
     });
@@ -584,8 +624,9 @@ describe("resolveSlackReplyText", () => {
       "openclaw:reply_button:1:1",
       "openclaw:callback_button:1:2",
       "openclaw:approval_button:1:3",
-      "openclaw:reply_link:1:4",
+      "openclaw:question_button:1:4",
       "openclaw:reply_link:1:5",
+      "openclaw:reply_link:1:6",
       "openclaw:reply_select:1",
       "openclaw:callback_select:2",
     ]);

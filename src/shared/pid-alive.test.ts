@@ -10,8 +10,18 @@ import {
   isPidDefinitelyDead,
 } from "./pid-alive.js";
 
+const readWindowsProcessStartTimeSyncMock = vi.hoisted(() =>
+  vi.fn<(pid: number) => number | null>(() => null),
+);
+
+vi.mock("../infra/windows-process-start.js", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("../infra/windows-process-start.js")>()),
+  readWindowsProcessStartTimeSync: readWindowsProcessStartTimeSyncMock,
+}));
+
 afterEach(() => {
   vi.restoreAllMocks();
+  readWindowsProcessStartTimeSyncMock.mockReset();
 });
 
 function mockProcReads(entries: Record<string, string>) {
@@ -40,6 +50,45 @@ describe("isPidAlive", () => {
     expect(isPidAlive(1.5)).toBe(false);
     expect(isPidAlive(Number.NaN)).toBe(false);
     expect(isPidAlive(Number.POSITIVE_INFINITY)).toBe(false);
+  });
+
+  it("returns true when process probing reports EPERM", () => {
+    const error = Object.assign(new Error("permission denied"), { code: "EPERM" });
+    vi.spyOn(process, "kill").mockImplementation(() => {
+      throw error;
+    });
+    mockProcReads({
+      "/proc/42/status": "Name:\tnode\nState:\tS (sleeping)\nPid:\t42\n",
+    });
+
+    expect(isPidAlive(42)).toBe(true);
+    expect(process["kill"]).toHaveBeenCalledWith(42, 0);
+  });
+
+  it("returns false for Linux zombies even when probing reports EPERM", async () => {
+    const error = Object.assign(new Error("permission denied"), { code: "EPERM" });
+    vi.spyOn(process, "kill").mockImplementation(() => {
+      throw error;
+    });
+    mockProcReads({
+      "/proc/42/status": "Name:\tnode\nUmask:\t0022\nState:\tZ (zombie)\nTgid:\t42\nPid:\t42\n",
+    });
+
+    await withMockedPlatform("linux", async () => {
+      expect(isPidAlive(42)).toBe(false);
+    });
+
+    expect(process["kill"]).toHaveBeenCalledWith(42, 0);
+  });
+
+  it("returns false when process probing reports ESRCH", () => {
+    const error = Object.assign(new Error("missing process"), { code: "ESRCH" });
+    vi.spyOn(process, "kill").mockImplementation(() => {
+      throw error;
+    });
+
+    expect(isPidAlive(42)).toBe(false);
+    expect(process["kill"]).toHaveBeenCalledWith(42, 0);
   });
 
   it("returns false for zombie processes on Linux", async () => {
@@ -165,14 +214,18 @@ describe("process start times", () => {
         expect.objectContaining({
           encoding: "utf8",
           env: expect.objectContaining({ LC_ALL: "C", TZ: "UTC" }),
+          timeout: 1000,
         }),
       );
     });
   });
 
-  it("returns null for unavailable Darwin file-lock start times", () => {
+  it("fails conservatively when the Darwin file-lock start-time probe times out", () => {
     vi.spyOn(childProcess, "execFileSync").mockImplementation(() => {
-      throw new Error("missing process");
+      throw Object.assign(new Error("spawnSync /bin/ps ETIMEDOUT"), {
+        code: "ETIMEDOUT",
+        signal: "SIGTERM",
+      });
     });
 
     return withMockedPlatform("darwin", async () => {
@@ -180,8 +233,45 @@ describe("process start times", () => {
     });
   });
 
-  it("returns null on unsupported platforms", () => {
+  it("reads Windows file-lock identity through the canonical reader", () => {
+    readWindowsProcessStartTimeSyncMock.mockReturnValue(1_752_000_000_123);
+
     return withMockedPlatform("win32", async () => {
+      expect(getProcessStartTime(42)).toBeNull();
+      expect(getFileLockProcessStartTime(42)).toBe(1_752_000_000_123);
+      expect(readWindowsProcessStartTimeSyncMock).toHaveBeenCalledWith(42);
+    });
+  });
+
+  it("reuses a successful Windows identity for the running process", () => {
+    readWindowsProcessStartTimeSyncMock.mockReturnValue(1_752_000_000_123);
+
+    return withMockedPlatform("win32", async () => {
+      expect(getFileLockProcessStartTime(process.pid)).toBe(1_752_000_000_123);
+      expect(getFileLockProcessStartTime(process.pid)).toBe(1_752_000_000_123);
+      expect(readWindowsProcessStartTimeSyncMock).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it("re-reads foreign Windows identities so PID reuse stays observable", () => {
+    readWindowsProcessStartTimeSyncMock.mockReturnValueOnce(111).mockReturnValueOnce(222);
+
+    return withMockedPlatform("win32", async () => {
+      expect(getFileLockProcessStartTime(42)).toBe(111);
+      expect(getFileLockProcessStartTime(42)).toBe(222);
+    });
+  });
+
+  it("fails closed when the Windows identity reader finds nothing", () => {
+    readWindowsProcessStartTimeSyncMock.mockReturnValue(null);
+
+    return withMockedPlatform("win32", async () => {
+      expect(getFileLockProcessStartTime(42)).toBeNull();
+    });
+  });
+
+  it("returns null on unsupported platforms", () => {
+    return withMockedPlatform("freebsd", async () => {
       expect(getProcessStartTime(process.pid)).toBeNull();
       expect(getFileLockProcessStartTime(process.pid)).toBeNull();
     });

@@ -1,7 +1,7 @@
 // Builds approval prompt view models from request and resolution events.
-import { resolveApprovalRequestKind } from "./approval-types.js";
+import { summarizeApprovalScope } from "./approval-scope.js";
+import { normalizeApprovalRequest } from "./approval-types.js";
 import type {
-  ApprovalActionView,
   ApprovalMetadataView,
   ApprovalRequest,
   ApprovalResolved,
@@ -10,7 +10,6 @@ import type {
   PendingApprovalView,
   PluginApprovalViewBase,
   ResolvedApprovalView,
-  TypedApprovalActionView,
 } from "./approval-view-model.types.js";
 import { resolveExecApprovalCommandDisplay } from "./exec-approval-command-display.js";
 import { buildTypedApprovalActionDescriptors } from "./exec-approval-reply.js";
@@ -22,15 +21,6 @@ import { resolveCanonicalPluginApprovalRequestAllowedDecisions } from "./plugin-
 import type { PluginApprovalRequest } from "./plugin-approvals.js";
 
 type ApprovalPhase = "pending" | "resolved" | "expired";
-
-export { resolveApprovalRequestKind } from "./approval-types.js";
-
-/** Narrow a public compatibility action to the host-built typed approval shape. */
-export function isTypedApprovalActionView(
-  action: ApprovalActionView,
-): action is TypedApprovalActionView {
-  return action.action?.type === "approval" && action.action.decision === action.decision;
-}
 
 function buildExecMetadata(request: ExecApprovalRequest): ApprovalMetadataView[] {
   const metadata: ApprovalMetadataView[] = [];
@@ -45,6 +35,9 @@ function buildExecMetadata(request: ExecApprovalRequest): ApprovalMetadataView[]
   }
   if (Array.isArray(request.request.envKeys) && request.request.envKeys.length > 0) {
     metadata.push({ label: "Env Overrides", value: request.request.envKeys.join(", ") });
+  }
+  if (request.request.scope) {
+    metadata.push({ label: "Scope", value: summarizeApprovalScope(request.request.scope) });
   }
   return metadata;
 }
@@ -64,6 +57,9 @@ function buildPluginMetadata(request: PluginApprovalRequest): ApprovalMetadataVi
   }
   if (request.request.agentId) {
     metadata.push({ label: "Agent", value: request.request.agentId });
+  }
+  if (request.request.scope) {
+    metadata.push({ label: "Scope", value: summarizeApprovalScope(request.request.scope) });
   }
   return metadata;
 }
@@ -90,6 +86,7 @@ function buildExecViewBase<TPhase extends ApprovalPhase>(
     envKeys: request.request.envKeys ?? undefined,
     host: request.request.host ?? null,
     nodeId: request.request.nodeId ?? null,
+    ...(request.request.scope ? { scope: request.request.scope } : {}),
     sessionKey: request.request.sessionKey ?? null,
   };
 }
@@ -107,6 +104,7 @@ function buildPluginViewBase<TPhase extends ApprovalPhase>(
     metadata: buildPluginMetadata(request),
     agentId: request.request.agentId ?? null,
     pluginId: request.request.pluginId ?? null,
+    ...(request.request.scope ? { scope: request.request.scope } : {}),
     toolName: request.request.toolName ?? null,
     severity: request.request.severity ?? "warning",
   };
@@ -114,31 +112,29 @@ function buildPluginViewBase<TPhase extends ApprovalPhase>(
 
 /** Builds the presentation model for an unresolved exec or plugin approval. */
 export function buildPendingApprovalView(request: ApprovalRequest): PendingApprovalView {
-  const approvalKind = resolveApprovalRequestKind(request);
-  if (approvalKind === "plugin") {
-    const pluginRequest = request as PluginApprovalRequest;
+  const normalizedRequest = normalizeApprovalRequest(request);
+  if (normalizedRequest.approvalKind === "plugin") {
     return {
-      ...buildPluginViewBase(pluginRequest, "pending"),
+      ...buildPluginViewBase(normalizedRequest, "pending"),
       actions: buildTypedApprovalActionDescriptors({
-        approvalCommandId: pluginRequest.id,
-        approvalKind,
+        approvalCommandId: normalizedRequest.id,
+        approvalKind: normalizedRequest.approvalKind,
         allowedDecisions: resolveCanonicalPluginApprovalRequestAllowedDecisions(
-          pluginRequest.request,
+          normalizedRequest.request,
         ),
       }),
-      expiresAtMs: pluginRequest.expiresAtMs,
+      expiresAtMs: normalizedRequest.expiresAtMs,
     };
   }
-  const execRequest = request as ExecApprovalRequest;
   return {
-    ...buildExecViewBase(execRequest, "pending"),
+    ...buildExecViewBase(normalizedRequest, "pending"),
     actions: buildTypedApprovalActionDescriptors({
-      approvalCommandId: execRequest.id,
-      approvalKind,
-      ask: execRequest.request.ask,
-      allowedDecisions: resolveExecApprovalRequestAllowedDecisions(execRequest.request),
+      approvalCommandId: normalizedRequest.id,
+      approvalKind: normalizedRequest.approvalKind,
+      ask: normalizedRequest.request.ask,
+      allowedDecisions: resolveExecApprovalRequestAllowedDecisions(normalizedRequest.request),
     }),
-    expiresAtMs: execRequest.expiresAtMs,
+    expiresAtMs: normalizedRequest.expiresAtMs,
   };
 }
 
@@ -147,18 +143,16 @@ export function buildResolvedApprovalView(
   request: ApprovalRequest,
   resolved: ApprovalResolved,
 ): ResolvedApprovalView {
-  const approvalKind = resolveApprovalRequestKind(request);
-  if (approvalKind === "plugin") {
-    const pluginRequest = request as PluginApprovalRequest;
+  const normalizedRequest = normalizeApprovalRequest(request);
+  if (normalizedRequest.approvalKind === "plugin") {
     return {
-      ...buildPluginViewBase(pluginRequest, "resolved"),
+      ...buildPluginViewBase(normalizedRequest, "resolved"),
       decision: resolved.decision,
       resolvedBy: resolved.resolvedBy,
     };
   }
-  const execRequest = request as ExecApprovalRequest;
   return {
-    ...buildExecViewBase(execRequest, "resolved"),
+    ...buildExecViewBase(normalizedRequest, "resolved"),
     decision: resolved.decision,
     resolvedBy: resolved.resolvedBy,
   };
@@ -166,9 +160,9 @@ export function buildResolvedApprovalView(
 
 /** Builds the presentation model shown when an approval can no longer be acted on. */
 export function buildExpiredApprovalView(request: ApprovalRequest): ExpiredApprovalView {
-  const approvalKind = resolveApprovalRequestKind(request);
-  if (approvalKind === "plugin") {
-    return buildPluginViewBase(request as PluginApprovalRequest, "expired");
+  const normalizedRequest = normalizeApprovalRequest(request);
+  if (normalizedRequest.approvalKind === "plugin") {
+    return buildPluginViewBase(normalizedRequest, "expired");
   }
-  return buildExecViewBase(request as ExecApprovalRequest, "expired");
+  return buildExecViewBase(normalizedRequest, "expired");
 }

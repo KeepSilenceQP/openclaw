@@ -1,8 +1,9 @@
 import { consumeRootOptionToken } from "../infra/cli-root-options.js";
-import { getCommandPathWithRootOptions, hasFlag } from "./argv.js";
+import { getCommandPathWithRootOptions, isSimpleCommandHelpInvocation } from "./argv.js";
 import type { RootHelpRenderOptions } from "./program/root-help.js";
 
 type PrecomputedSubcommandHelpName =
+  | "config"
   | "doctor"
   | "gateway"
   | "models"
@@ -12,6 +13,8 @@ type PrecomputedSubcommandHelpName =
 
 type PrecomputedCommandHelpName = "browser" | "secrets" | "nodes";
 type OutputPrecomputedHelpText = () => boolean;
+
+const PRECOMPUTED_COMMAND_HELP_NAMES = new Set<string>(["browser", "secrets", "nodes"]);
 
 export type PrecomputedCommandHelpDeps = {
   outputPrecomputedBrowserHelpText?: OutputPrecomputedHelpText;
@@ -25,6 +28,7 @@ export type PrecomputedCommandHelpDeps = {
 };
 
 const PRECOMPUTED_SUBCOMMAND_HELP_COMMANDS = new Set<PrecomputedSubcommandHelpName>([
+  "config",
   "doctor",
   "gateway",
   "models",
@@ -42,7 +46,7 @@ function isPrecomputedSubcommandHelpName(value: string): value is PrecomputedSub
   return PRECOMPUTED_SUBCOMMAND_HELP_COMMANDS.has(value as PrecomputedSubcommandHelpName);
 }
 
-export function resolvePrecomputedSubcommandHelpCommand(
+function resolvePrecomputedSubcommandHelpCommand(
   argv: string[],
 ): PrecomputedSubcommandHelpName | null {
   const args = argv.slice(2);
@@ -80,7 +84,7 @@ export function resolvePrecomputedSubcommandHelpCommand(
 }
 
 function resolvePrecomputedCommandHelpName(argv: string[]): PrecomputedCommandHelpName | null {
-  if (!hasFlag(argv, "--help") && !hasFlag(argv, "-h")) {
+  if (!isSimpleCommandHelpInvocation(argv, PRECOMPUTED_COMMAND_HELP_NAMES)) {
     return null;
   }
   const commandPath = getCommandPathWithRootOptions(argv, 2);

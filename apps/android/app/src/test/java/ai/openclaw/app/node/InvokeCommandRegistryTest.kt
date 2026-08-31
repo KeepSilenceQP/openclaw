@@ -7,6 +7,7 @@ import ai.openclaw.app.protocol.OpenClawCapability
 import ai.openclaw.app.protocol.OpenClawContactsCommand
 import ai.openclaw.app.protocol.OpenClawDeviceCommand
 import ai.openclaw.app.protocol.OpenClawLocationCommand
+import ai.openclaw.app.protocol.OpenClawMobileUiCommand
 import ai.openclaw.app.protocol.OpenClawMotionCommand
 import ai.openclaw.app.protocol.OpenClawNotificationsCommand
 import ai.openclaw.app.protocol.OpenClawPhotosCommand
@@ -23,7 +24,6 @@ import org.junit.Test
 class InvokeCommandRegistryTest {
   private val coreCapabilities =
     setOf(
-      OpenClawCapability.Canvas.rawValue,
       OpenClawCapability.Device.rawValue,
       OpenClawCapability.Notifications.rawValue,
       OpenClawCapability.System.rawValue,
@@ -40,6 +40,8 @@ class InvokeCommandRegistryTest {
       OpenClawCapability.CallLog.rawValue,
       OpenClawCapability.Motion.rawValue,
       OpenClawCapability.Photos.rawValue,
+      OpenClawCapability.VoiceWake.rawValue,
+      OpenClawCapability.MobileUI.rawValue,
     )
 
   private val coreCommands =
@@ -73,6 +75,8 @@ class InvokeCommandRegistryTest {
       OpenClawSmsCommand.Search.rawValue,
       OpenClawCallLogCommand.Search.rawValue,
       OpenClawPhotosCommand.Latest.rawValue,
+      OpenClawMobileUiCommand.Observe.rawValue,
+      OpenClawMobileUiCommand.Act.rawValue,
     )
 
   private val debugCommands = setOf("debug.logs", "debug.ed25519")
@@ -99,6 +103,8 @@ class InvokeCommandRegistryTest {
           photosAvailable = true,
           motionActivityAvailable = true,
           motionPedometerAvailable = true,
+          voiceWakeEnabled = true,
+          mobileUiAvailable = true,
         ),
       )
 
@@ -137,6 +143,7 @@ class InvokeCommandRegistryTest {
           motionActivityAvailable = true,
           motionPedometerAvailable = true,
           debugBuild = true,
+          mobileUiAvailable = true,
         ),
       )
 
@@ -273,6 +280,8 @@ class InvokeCommandRegistryTest {
     motionPedometerAvailable: Boolean = false,
     installedAppsSharingEnabled: Boolean = false,
     debugBuild: Boolean = false,
+    voiceWakeEnabled: Boolean = false,
+    mobileUiAvailable: Boolean = false,
   ): NodeRuntimeFlags =
     NodeRuntimeFlags(
       cameraEnabled = cameraEnabled,
@@ -286,6 +295,8 @@ class InvokeCommandRegistryTest {
       motionPedometerAvailable = motionPedometerAvailable,
       installedAppsSharingEnabled = installedAppsSharingEnabled,
       debugBuild = debugBuild,
+      voiceWakeEnabled = voiceWakeEnabled,
+      mobileUiAvailable = mobileUiAvailable,
     )
 
   private fun assertContainsAll(

@@ -1,26 +1,29 @@
 // Control UI view renders the gateway connection settings content.
 import { html } from "lit";
+import type { SystemInfoResult } from "../../../../packages/gateway-protocol/src/index.js";
 import type { GatewayHelloOk } from "../../api/gateway.ts";
-import { resolveGatewayTokenForUrlEdit, type UiSettings } from "../../app/settings.ts";
-import "../../components/tooltip.ts";
-import { icons } from "../../components/icons.ts";
+import type { UiSettings } from "../../app/settings.ts";
 import {
   renderSettingsPage,
   renderSettingsRow,
+  renderSettingsSecretInput,
   renderSettingsSection,
   renderSettingsStatus,
   renderSettingsValue,
 } from "../../components/settings-ui.ts";
 import { t } from "../../i18n/index.ts";
-import { formatDurationHuman, formatRelativeTimestamp } from "../../lib/format.ts";
+import { formatRelativeTimestamp } from "../../lib/format.ts";
+import { renderSystemSection } from "./system-section.ts";
 
-export type ConnectionProps = {
+type ConnectionProps = {
   connected: boolean;
   hello: GatewayHelloOk | null;
   settings: UiSettings;
   password: string;
   lastError: string | null;
   lastChannelsRefresh: number | null;
+  systemInfo: SystemInfoResult | null;
+  systemInfoUnavailable: boolean;
   showGatewayToken: boolean;
   showGatewayPassword: boolean;
   onConnectionChange: (patch: Partial<Pick<UiSettings, "gatewayUrl" | "token">>) => void;
@@ -43,41 +46,19 @@ function renderSecretRow(params: {
   onInput: (next: string) => void;
   onToggle: () => void;
 }) {
+  const { label, ...secret } = params;
   return renderSettingsRow({
-    title: params.label,
-    control: html`
-      <input
-        class="settings-input"
-        type=${params.visible ? "text" : "password"}
-        autocomplete="off"
-        spellcheck="false"
-        .value=${params.value}
-        @input=${(e: Event) => params.onInput((e.target as HTMLInputElement).value)}
-        placeholder=${params.placeholder}
-      />
-      <openclaw-tooltip .content=${params.visible ? params.hideLabel : params.showLabel}>
-        <button
-          type="button"
-          class="btn btn--icon ${params.visible ? "active" : ""}"
-          aria-label=${params.toggleLabel}
-          aria-pressed=${params.visible}
-          @click=${params.onToggle}
-        >
-          ${params.visible ? icons.eye : icons.eyeOff}
-        </button>
-      </openclaw-tooltip>
-    `,
+    title: label,
+    control: renderSettingsSecretInput({ ...secret, ariaLabel: label }),
   });
 }
 
 export function renderConnection(props: ConnectionProps) {
   const snapshot = props.hello?.snapshot as
     | {
-        uptimeMs?: number;
         authMode?: "none" | "token" | "password" | "trusted-proxy";
       }
     | undefined;
-  const uptime = snapshot?.uptimeMs ? formatDurationHuman(snapshot.uptimeMs) : t("common.na");
   const tickIntervalMs = props.hello?.policy?.tickIntervalMs;
   const tick = tickIntervalMs
     ? `${(tickIntervalMs / 1000).toFixed(tickIntervalMs % 1000 === 0 ? 0 : 1)}s`
@@ -90,14 +71,11 @@ export function renderConnection(props: ConnectionProps) {
       control: html`
         <input
           class="settings-input"
+          aria-label=${t("connection.access.wsUrl")}
           .value=${props.settings.gatewayUrl}
           @input=${(e: Event) => {
-            const settings = props.settings;
             const v = (e.target as HTMLInputElement).value;
-            props.onConnectionChange({
-              gatewayUrl: v,
-              token: resolveGatewayTokenForUrlEdit(settings.gatewayUrl, v, settings.token),
-            });
+            props.onConnectionChange({ gatewayUrl: v });
           }}
           placeholder="ws://100.x.y.z:18789"
         />
@@ -134,6 +112,7 @@ export function renderConnection(props: ConnectionProps) {
       control: html`
         <input
           class="settings-input"
+          aria-label=${t("connection.access.sessionKey")}
           .value=${props.settings.sessionKey}
           @input=${(e: Event) => props.onSessionKeyChange((e.target as HTMLInputElement).value)}
         />
@@ -163,10 +142,6 @@ export function renderConnection(props: ConnectionProps) {
       }),
     })}
     ${renderSettingsRow({
-      title: t("connection.snapshot.uptime"),
-      control: renderSettingsValue(uptime),
-    })}
-    ${renderSettingsRow({
       title: t("connection.snapshot.tickInterval"),
       control: renderSettingsValue(tick),
     })}
@@ -194,6 +169,7 @@ export function renderConnection(props: ConnectionProps) {
       { title: t("connection.access.title"), description: t("connection.access.subtitle") },
       accessRows,
     ),
+    renderSystemSection(props),
     renderSettingsSection(
       { title: t("connection.snapshot.title"), description: t("connection.snapshot.subtitle") },
       snapshotRows,

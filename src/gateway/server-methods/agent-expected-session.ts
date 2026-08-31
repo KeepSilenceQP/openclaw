@@ -5,7 +5,7 @@ import {
   type SessionWorkAdmissionLease,
 } from "../../sessions/session-lifecycle-admission.js";
 
-type ExpectedExistingSessionConstraint = {
+export type ExpectedExistingSessionConstraint = {
   handoffId?: string;
   sessionId: string;
 };
@@ -69,7 +69,7 @@ export function assertExpectedExistingSession(params: {
 export function consumeExpectedSessionWorkAdmission(params: {
   constraint?: ExpectedExistingSessionConstraint;
   identities: Iterable<string | undefined>;
-  onInterrupt: () => void;
+  onInterrupt: (reason?: Error) => void;
   scope: string;
 }): SessionWorkAdmissionLease | undefined {
   const handoffId = params.constraint?.handoffId;

@@ -1,26 +1,10 @@
 // Control UI tests cover collapsed tool-group summary labels.
 import { describe, expect, it } from "vitest";
-import { summarizeToolGroup, type ToolGroupSummaryInput } from "./tool-call-grouping.ts";
+import { summarizeToolGroup } from "./tool-call-grouping.ts";
+
+type ToolGroupSummaryInput = Parameters<typeof summarizeToolGroup>[0][number];
 
 describe("summarizeToolGroup", () => {
-  it("builds a capitalized multi-segment label with a failure suffix", () => {
-    const cards: ToolGroupSummaryInput[] = [
-      { name: "bash", args: { command: "ls" } },
-      { name: "bash", args: { command: "pwd" }, isError: true },
-      { name: "read", args: { path: "/repo/a.ts" } },
-      { name: "read", args: { path: "/repo/b.ts" } },
-      { name: "edit", args: { path: "/repo/a.ts", oldText: "x", newText: "y" } },
-      { name: "edit", args: { path: "/repo/a.ts", oldText: "y", newText: "z" } },
-      { name: "write", args: { path: "/repo/new.ts", content: "hi" } },
-      { name: "grep", args: { pattern: "TODO" } },
-      { name: "web_fetch", args: { url: "https://x.dev" } },
-    ];
-
-    expect(summarizeToolGroup(cards)).toBe(
-      "Ran 2 commands, read 2 files, edited a file, created a file, ran a search, fetched a page · 1 failed",
-    );
-  });
-
   it.each<[string, ToolGroupSummaryInput[], string]>([
     ["a single command", [{ name: "bash", args: { command: "ls" } }], "Ran a command"],
     [
@@ -81,7 +65,7 @@ describe("summarizeToolGroup", () => {
         { name: "str_replace_editor", args: { path: "/repo/a.ts" } },
         { name: "str_replace_based_edit_tool", args: { command: "rename" } },
       ],
-      "Used str_replace_editor, str_replace_based_edit_tool",
+      "Used Str Replace Editor, Str Replace Based Edit Tool",
     ],
     [
       "multi-file apply_patch targets",
@@ -102,7 +86,7 @@ describe("summarizeToolGroup", () => {
           },
         },
       ],
-      "Edited 2 files",
+      "Edited a file, created a file",
     ],
     [
       "structured Codex change targets",
@@ -117,13 +101,25 @@ describe("summarizeToolGroup", () => {
           },
         },
       ],
-      "Edited 2 files",
+      "Edited a file, created a file",
     ],
-    ["one generic tool by name", [{ name: "mcp__linear" }], "Used mcp__linear"],
+    [
+      "deleted Codex targets",
+      [
+        {
+          name: "apply_patch",
+          args: {
+            changes: [{ path: "src/obsolete.ts", kind: { type: "delete" } }],
+          },
+        },
+      ],
+      "Deleted a file",
+    ],
+    ["one generic tool by name", [{ name: "mcp__linear" }], "Used Mcp Linear"],
     [
       "repeat generic tool with a multiplier",
-      [{ name: "mcp__linear" }, { name: "mcp__linear" }],
-      "Used mcp__linear ×2",
+      [{ name: "heartbeat_respond" }, { name: "heartbeat_respond" }],
+      "Used Heartbeat Respond ×2",
     ],
     [
       "many distinct generic tools as a count",

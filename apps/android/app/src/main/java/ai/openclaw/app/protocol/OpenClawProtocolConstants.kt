@@ -17,34 +17,8 @@ enum class OpenClawCapability(
   Calendar("calendar"),
   Motion("motion"),
   CallLog("callLog"),
-}
-
-enum class OpenClawCanvasCommand(
-  val rawValue: String,
-) {
-  Present("canvas.present"),
-  Hide("canvas.hide"),
-  Navigate("canvas.navigate"),
-  Eval("canvas.eval"),
-  Snapshot("canvas.snapshot"),
-  ;
-
-  companion object {
-    const val NamespacePrefix: String = "canvas."
-  }
-}
-
-enum class OpenClawCanvasA2UICommand(
-  val rawValue: String,
-) {
-  Push("canvas.a2ui.push"),
-  PushJSONL("canvas.a2ui.pushJSONL"),
-  Reset("canvas.a2ui.reset"),
-  ;
-
-  companion object {
-    const val NamespacePrefix: String = "canvas.a2ui."
-  }
+  VoiceWake("voiceWake"),
+  MobileUI("mobileUI"),
 }
 
 enum class OpenClawCameraCommand(
@@ -190,5 +164,17 @@ enum class OpenClawCallLogCommand(
 
   companion object {
     const val NamespacePrefix: String = "callLog."
+  }
+}
+
+enum class OpenClawMobileUiCommand(
+  val rawValue: String,
+) {
+  Observe("mobile.ui.observe"),
+  Act("mobile.ui.act"),
+  ;
+
+  companion object {
+    const val NamespacePrefix: String = "mobile.ui."
   }
 }

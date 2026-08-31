@@ -40,16 +40,6 @@ const messageRuntimeLoader = createLazyPromiseLoader(
   () => import("../channels/message/runtime.js"),
   { cacheRejections: true },
 );
-
-function resetSessionMaintenanceWarningForTests() {
-  warnedContexts.clear();
-  messageRuntimeLoader.clear();
-}
-
-export const testing = {
-  resetSessionMaintenanceWarningForTests,
-} as const;
-
 const loadDeliverRuntime = messageRuntimeLoader.load;
 
 function shouldSendWarning(): boolean {
@@ -131,12 +121,12 @@ export async function deliverSessionMaintenanceWarning(params: WarningParams): P
   }
 
   try {
-    const { sendDurableMessageBatch } = await loadDeliverRuntime();
+    const { sendDurableMessageBatchCore } = await loadDeliverRuntime();
     const outboundSession = buildOutboundSessionContext({
       cfg: params.cfg,
       sessionKey: params.sessionKey,
     });
-    const send = await sendDurableMessageBatch({
+    const send = await sendDurableMessageBatchCore({
       cfg: params.cfg,
       channel,
       to: target.to,
@@ -153,4 +143,3 @@ export async function deliverSessionMaintenanceWarning(params: WarningParams): P
     enqueueSystemEvent(text, { sessionKey: params.sessionKey });
   }
 }
-export { testing as __testing };

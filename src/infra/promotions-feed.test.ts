@@ -1,23 +1,18 @@
 // Covers the promotions feed cache: refresh cadence, 304 revalidation,
 // sequence monotonicity, notified markers, and claim provenance.
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import type { DB as OpenClawStateKyselyDatabase } from "../state/openclaw-state-db.generated.js";
-import {
-  closeOpenClawStateDatabaseForTest,
-  runOpenClawStateWriteTransaction,
-} from "../state/openclaw-state-db.js";
+import { updateConfigMachineState } from "../state/config-machine-state.js";
+import { closeOpenClawStateDatabaseForTest } from "../state/openclaw-state-db.js";
 import { useMockHttp } from "../test-utils/mock-http.js";
 import {
   createOpenClawTestState,
   type OpenClawTestState,
 } from "../test-utils/openclaw-test-state.js";
-import { executeSqliteQuerySync, getNodeSqliteKysely } from "./kysely-sync.js";
 import {
   listLivePromotionEntries,
   markPromotionSlugsNotified,
   maybeRefreshPromotionsFeed,
   readPromotionClaims,
-  readPromotionsFeedState,
   recordPromotionClaim,
 } from "./promotions-feed.js";
 
@@ -64,35 +59,23 @@ describe("promotions feed state", () => {
     await testState.cleanup();
   });
 
-  it("caches a fetched snapshot and round-trips it from storage", async () => {
+  it("round-trips a fetched snapshot while the last check is fresh", async () => {
     mockHttp.intercept({
       url: FEED_URL,
       reply: { json: feedPayload(), headers: { etag: '"v4"' } },
     });
-    const state = await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
-    expect(mockHttp.requests()).toHaveLength(1);
-    expect(state.sequence).toBe(4);
-    expect(state.etag).toBe('"v4"');
-    expect(state.expiresAtMs).toBe(Date.parse("2026-07-06T00:00:00.000Z"));
-    expect(state.entries).toHaveLength(1);
-
-    const persisted = readPromotionsFeedState();
-    expect(persisted.sequence).toBe(4);
-    expect(persisted.expiresAtMs).toBe(Date.parse("2026-07-06T00:00:00.000Z"));
-    expect(persisted.entries[0]?.slug).toBe("example-models-launch");
-    expect(listLivePromotionEntries(persisted, NOW)).toHaveLength(1);
-    expect(listLivePromotionEntries(persisted, NOW + 3 * 86_400_000)).toHaveLength(0);
-  });
-
-  it("skips the network while the last check is fresh", async () => {
-    mockHttp.intercept({ url: FEED_URL, reply: { json: feedPayload() } });
     await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
     const second = await maybeRefreshPromotionsFeed({
       nowMs: NOW + 60_000,
       fetchImpl: globalThis.fetch,
     });
     expect(mockHttp.requests()).toHaveLength(1);
-    expect(second.entries).toHaveLength(1);
+    expect(second.sequence).toBe(4);
+    expect(second.etag).toBe('"v4"');
+    expect(second.expiresAtMs).toBe(Date.parse("2026-07-06T00:00:00.000Z"));
+    expect(second.entries[0]?.slug).toBe("example-models-launch");
+    expect(listLivePromotionEntries(second, NOW)).toHaveLength(1);
+    expect(listLivePromotionEntries(second, NOW + 3 * 86_400_000)).toHaveLength(0);
   });
 
   it("refreshes at feed expiry and keeps an expired 304 snapshot hidden without retrying", async () => {
@@ -101,7 +84,11 @@ describe("promotions feed state", () => {
       url: FEED_URL,
       reply: { json: feedPayload({ expiresAt }), headers: { etag: '"v4"' } },
     });
-    mockHttp.intercept({ url: FEED_URL, reply: { status: 304 } });
+    mockHttp.intercept({
+      url: FEED_URL,
+      requestHeaders: { "if-none-match": '"v4"' },
+      reply: { status: 304 },
+    });
     await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
 
     const expired = await maybeRefreshPromotionsFeed({
@@ -116,6 +103,7 @@ describe("promotions feed state", () => {
       fetchImpl: globalThis.fetch,
     });
     expect(mockHttp.requests()).toHaveLength(2);
+    expect(cached.lastCheckedAtMs).toBe(NOW + 60_000);
     expect(listLivePromotionEntries(cached, NOW + 61_000)).toHaveLength(0);
   });
 
@@ -163,27 +151,6 @@ describe("promotions feed state", () => {
     expect(listLivePromotionEntries(refreshed, NOW + 60_000)).toHaveLength(1);
   });
 
-  it("revalidates with If-None-Match and keeps the cache on 304", async () => {
-    mockHttp.intercept({
-      url: FEED_URL,
-      reply: { json: feedPayload(), headers: { etag: '"v4"' } },
-    });
-    mockHttp.intercept({
-      url: FEED_URL,
-      requestHeaders: { "if-none-match": '"v4"' },
-      reply: { status: 304 },
-    });
-    await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
-    const state = await maybeRefreshPromotionsFeed({
-      nowMs: NOW + 60_000,
-      force: true,
-      fetchImpl: globalThis.fetch,
-    });
-    expect(mockHttp.requests()).toHaveLength(2);
-    expect(state.entries).toHaveLength(1);
-    expect(readPromotionsFeedState().lastCheckedAtMs).toBe(NOW + 60_000);
-  });
-
   it("drops a stale validator when the cached payload is invalid", async () => {
     mockHttp.intercept({
       url: FEED_URL,
@@ -196,17 +163,10 @@ describe("promotions feed state", () => {
       reply: { json: feedPayload({ sequence: 5 }), headers: { etag: '"v5"' } },
     });
     await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
-    runOpenClawStateWriteTransaction(({ db }) => {
-      const kysely =
-        getNodeSqliteKysely<Pick<OpenClawStateKyselyDatabase, "clawhub_promotions_feed_state">>(db);
-      executeSqliteQuerySync(
-        db,
-        kysely
-          .updateTable("clawhub_promotions_feed_state")
-          .set({ payload_json: "{invalid" })
-          .where("state_key", "=", "default"),
-      );
-    });
+    updateConfigMachineState<Record<string, unknown>>("clawhub.promotionsFeed", (current) => ({
+      ...current,
+      payloadJson: "{invalid",
+    }));
 
     const state = await maybeRefreshPromotionsFeed({
       nowMs: NOW + 60_000,
@@ -249,13 +209,88 @@ describe("promotions feed state", () => {
     expect(state.lastCheckedAtMs).toBe(NOW + 60_000);
   });
 
-  it("persists notified slugs across reads", () => {
+  it("keeps the cached snapshot when a refresh contains malformed UTF-8", async () => {
+    mockHttp.intercept({
+      url: FEED_URL,
+      reply: { json: feedPayload(), headers: { etag: '"v4"' } },
+    });
+    const nextPayload = JSON.stringify(feedPayload({ sequence: 5 }));
+    const [prefix, suffix] = nextPayload.split("Free Example models");
+    if (prefix === undefined || suffix === undefined) {
+      throw new Error("Expected promotion title in feed fixture");
+    }
+    mockHttp.intercept({
+      url: FEED_URL,
+      requestHeaders: { "if-none-match": '"v4"' },
+      reply: {
+        body: Buffer.concat([Buffer.from(prefix), Buffer.from([0xff]), Buffer.from(suffix)]),
+        headers: { etag: '"v5"' },
+      },
+    });
+    await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
+
+    await maybeRefreshPromotionsFeed({
+      nowMs: NOW + 60_000,
+      force: true,
+      fetchImpl: globalThis.fetch,
+    });
+    const state = await maybeRefreshPromotionsFeed({
+      nowMs: NOW + 61_000,
+      fetchImpl: globalThis.fetch,
+    });
+
+    expect(mockHttp.requests()).toHaveLength(2);
+    expect(state.sequence).toBe(4);
+    expect(state.etag).toBe('"v4"');
+    expect(state.entries[0]?.title).toBe("Free Example models");
+    expect(state.lastCheckedAtMs).toBe(NOW + 60_000);
+  });
+
+  it("keeps the cached snapshot when a refresh has calendar-invalid timestamps", async () => {
+    mockHttp.intercept({
+      url: FEED_URL,
+      reply: { json: feedPayload(), headers: { etag: '"v4"' } },
+    });
+    mockHttp.intercept({
+      url: FEED_URL,
+      reply: {
+        json: feedPayload({
+          generatedAt: "2026-02-30T00:00:00.000Z",
+          sequence: 5,
+          entries: [],
+        }),
+        headers: { etag: '"v5"' },
+      },
+    });
+    await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
+
+    const rejected = await maybeRefreshPromotionsFeed({
+      nowMs: NOW + 60_000,
+      force: true,
+      fetchImpl: globalThis.fetch,
+    });
+    expect(rejected.sequence).toBe(4);
+    expect(rejected.etag).toBe('"v4"');
+    expect(rejected.entries).toHaveLength(1);
+
+    const cached = await maybeRefreshPromotionsFeed({
+      nowMs: NOW + 61_000,
+      fetchImpl: globalThis.fetch,
+    });
+    expect(mockHttp.requests()).toHaveLength(2);
+    expect(cached.sequence).toBe(4);
+    expect(cached.etag).toBe('"v4"');
+    expect(cached.entries).toHaveLength(1);
+  });
+
+  it("persists and deduplicates notified promotion slugs", async () => {
     markPromotionSlugsNotified(["example-models-launch", "second-offer"]);
     markPromotionSlugsNotified(["example-models-launch"]);
-    expect([...readPromotionsFeedState().notifiedSlugs].toSorted()).toEqual([
-      "example-models-launch",
-      "second-offer",
-    ]);
+    mockHttp.intercept({ url: FEED_URL, reply: { json: feedPayload() } });
+
+    const state = await maybeRefreshPromotionsFeed({ nowMs: NOW, fetchImpl: globalThis.fetch });
+
+    expect([...state.notifiedSlugs].toSorted()).toEqual(["example-models-launch", "second-offer"]);
   });
 
   it("round-trips claim provenance and upserts by slug", () => {

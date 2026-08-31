@@ -1,7 +1,7 @@
 import { expectDefined } from "@openclaw/normalization-core";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import "../../../styles.css";
-import type { FileSidebarContent } from "./chat-sidebar.ts";
+import "../../../styles/chat.css";
 import "./chat-sidebar.ts";
 
 // The root jsdom ui shard also collects *.browser.test.ts files; CodeMirror
@@ -9,6 +9,28 @@ import "./chat-sidebar.ts";
 // Importing vitest/browser statically would throw during jsdom collection.
 const browserMode = "__vitest_browser__" in globalThis;
 let userEvent: (typeof import("vitest/browser"))["userEvent"];
+
+type FileSidebarContent = {
+  kind: "file";
+  path: string;
+  name: string;
+  content: string;
+  draftKey?: string;
+  language?: string;
+  line?: number | null;
+  edit?: {
+    hash: string;
+    save: (params: {
+      content: string;
+      expectedHash: string;
+    }) => Promise<
+      | { ok: true; hash: string }
+      | { ok: false; code: "conflict"; latest: { content: string; hash: string } }
+      | { ok: false; code: "error"; message: string }
+    >;
+    fetchLatest: () => Promise<{ content: string; hash: string; editable: boolean } | null>;
+  };
+};
 
 beforeAll(async () => {
   if (browserMode) {
@@ -21,15 +43,25 @@ type DetailPanel = HTMLElement & {
   updateComplete: Promise<unknown>;
 };
 
-const mounted: DetailPanel[] = [];
+const mounted: HTMLElement[] = [];
 
-async function mountFile(content: FileSidebarContent): Promise<DetailPanel> {
+async function mountFile(content: FileSidebarContent, width?: number): Promise<DetailPanel> {
   const panel = document.createElement("openclaw-chat-detail-panel") as DetailPanel;
   panel.content = content;
-  document.body.append(panel);
-  mounted.push(panel);
+  if (width === undefined) {
+    document.body.append(panel);
+    mounted.push(panel);
+  } else {
+    const container = document.createElement("div");
+    container.className = "side-panel__panel";
+    container.style.cssText = `display:flex;width:${width}px;height:320px;`;
+    panel.className = "chat-sidebar";
+    container.append(panel);
+    document.body.append(container);
+    mounted.push(container);
+  }
   await panel.updateComplete;
-  await expect.poll(() => panel.querySelector(".cm-editor")).not.toBeNull();
+  await expect.poll(() => panel.querySelector(".cm-editor"), { timeout: 5_000 }).not.toBeNull();
   return panel;
 }
 
@@ -51,6 +83,26 @@ afterEach(() => {
 });
 
 describe.runIf(browserMode)("chat file editor", () => {
+  it("keeps long lines inside Review and gives horizontal scroll to the editor", async () => {
+    const panel = await mountFile(
+      {
+        kind: "file",
+        path: "src/long-line.ts",
+        name: "long-line.ts",
+        content: `export const value = "${"long-content-".repeat(80)}";`,
+      },
+      320,
+    );
+
+    const fileView = panel.querySelector<HTMLElement>(".file-view")!;
+    const scroller = panel.querySelector<HTMLElement>(".cm-scroller")!;
+    await expect.poll(() => fileView.clientWidth).toBeGreaterThan(0);
+    expect(fileView.clientWidth).toBeLessThanOrEqual(panel.parentElement!.clientWidth);
+    expect(fileView.scrollWidth).toBe(fileView.clientWidth);
+    expect(scroller.scrollWidth).toBeGreaterThan(scroller.clientWidth);
+    expect(getComputedStyle(scroller).overflowX).toBe("auto");
+  });
+
   it("renders content and decorates the requested line", async () => {
     const panel = await mountFile({
       kind: "file",

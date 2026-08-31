@@ -1,7 +1,8 @@
 // Diagnostic log event tests cover structured events written to diagnostic logs.
 import { expectDefined } from "@openclaw/normalization-core";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
+  onDiagnosticEvent,
   onInternalDiagnosticEvent,
   resetDiagnosticEventsForTest,
   type DiagnosticEventMetadata,
@@ -9,7 +10,6 @@ import {
 } from "../infra/diagnostic-events.js";
 import {
   createDiagnosticTraceContext,
-  resetDiagnosticTraceContextForTest,
   runWithDiagnosticTraceContext,
 } from "../infra/diagnostic-trace-context.js";
 import { getChildLogger, resetLogger, setLoggerOverride } from "./logger.js";
@@ -32,12 +32,25 @@ beforeEach(() => {
 
 afterEach(() => {
   resetDiagnosticEventsForTest();
-  resetDiagnosticTraceContextForTest();
   setLoggerOverride(null);
   resetLogger();
+  vi.restoreAllMocks();
 });
 
 describe("diagnostic log events", () => {
+  it("does not build or queue log records for a public-only listener", async () => {
+    const listener = vi.fn();
+    const unsubscribe = onDiagnosticEvent(listener);
+    const structuredCloneSpy = vi.spyOn(globalThis, "structuredClone");
+
+    getChildLogger({ subsystem: "diagnostic" }).info("public listener ignores this log");
+    await flushDiagnosticEvents();
+    unsubscribe();
+
+    expect(listener).not.toHaveBeenCalled();
+    expect(structuredCloneSpy).not.toHaveBeenCalled();
+  });
+
   it("emits structured log records through diagnostics", async () => {
     const received: Array<{
       event: Extract<DiagnosticEventPayload, { type: "log.record" }>;

@@ -150,6 +150,21 @@ describe("nextcloud-talk inbound behavior", () => {
     warnMissingProviderGroupPolicyFallbackOnceMock.mockReturnValue(undefined);
   });
 
+  it("logs the drop when an inbound message has an empty body", async () => {
+    const runtime = createRuntimeEnv();
+    await handleNextcloudTalkInbound({
+      message: createMessage({ text: "", mediaType: "application/pdf" }),
+      account: createAccount(),
+      config: { channels: { "nextcloud-talk": {} } } as CoreConfig,
+      runtime,
+    });
+
+    expect(runtime.log).toHaveBeenCalledWith(
+      "nextcloud-talk: drop empty message body (mediaType=application/pdf) target=user-1",
+    );
+    expect(sendMessageNextcloudTalkMock).not.toHaveBeenCalled();
+  });
+
   it("issues a DM pairing challenge and sends the challenge text", async () => {
     const issueChallenge = vi.fn(
       async (params: { sendPairingReply: (text: string) => Promise<void> }) => {
@@ -306,6 +321,52 @@ describe("nextcloud-talk inbound behavior", () => {
       "Nextcloud Talk assembled request",
     ) as { replyPipeline?: unknown };
     expect(assembledRequest.replyPipeline).toEqual({});
+  });
+
+  it("binds durable ingress adoption into reply options", async () => {
+    const coreRuntime = createPluginRuntimeMock();
+    setNextcloudTalkRuntime(coreRuntime as unknown as PluginRuntime);
+    createChannelPairingControllerMock.mockReturnValue({
+      readStoreForDmPolicy: vi.fn(async () => []),
+      issueChallenge: vi.fn(),
+    });
+    const lifecycle = {
+      abortSignal: new AbortController().signal,
+      onAdopted: vi.fn(async () => {}),
+      onDeferred: vi.fn(),
+      onAdoptionFinalizing: vi.fn(),
+      onAbandoned: vi.fn(async () => {}),
+    };
+
+    await handleNextcloudTalkInbound({
+      message: createMessage(),
+      account: createAccount({
+        config: {
+          dmPolicy: "allowlist",
+          allowFrom: ["user-1"],
+          groupPolicy: "allowlist",
+          groupAllowFrom: [],
+        },
+      }),
+      config: { channels: { "nextcloud-talk": {} } } as CoreConfig,
+      runtime: createRuntimeEnv(),
+      turnAdoptionLifecycle: lifecycle,
+    });
+
+    const request = requireFirstMockArg(
+      coreRuntime.channel.inbound.dispatchReply as ReturnType<typeof vi.fn>,
+      "Nextcloud Talk assembled request",
+    ) as {
+      replyOptions?: {
+        turnAdoptionLifecycle?: {
+          admission?: string;
+          onAdopted?: () => void | Promise<void>;
+        };
+      };
+    };
+    expect(request.replyOptions?.turnAdoptionLifecycle).toEqual(
+      expect.objectContaining({ admission: "exclusive", onAdopted: lifecycle.onAdopted }),
+    );
   });
 
   it("sanitizes inbound replies before local delivery while preserving transport fields", async () => {

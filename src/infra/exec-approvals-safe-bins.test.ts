@@ -6,7 +6,7 @@ import {
   makeMockCommandResolution,
   makeMockExecutableResolution,
   makePathEnv,
-  makeTempDir,
+  makeExecApprovalsTempDir,
 } from "./exec-approvals-test-helpers.js";
 import {
   evaluateExecAllowlist,
@@ -15,11 +15,7 @@ import {
   normalizeSafeBins,
   resolveSafeBins,
 } from "./exec-approvals.js";
-import {
-  SAFE_BIN_PROFILE_FIXTURES,
-  SAFE_BIN_PROFILES,
-  resolveSafeBinProfiles,
-} from "./exec-safe-bin-policy.js";
+import { resolveSafeBinProfiles } from "./exec-safe-bin-policy.js";
 import { getTrustedSafeBinDirs } from "./exec-safe-bin-trust.js";
 
 describe("exec approvals safe bins", () => {
@@ -390,13 +386,14 @@ describe("exec approvals safe bins", () => {
   ];
 
   it.runIf(process.platform !== "win32").each(cases)("$name", (testCase) => {
-    const cwd = testCase.cwd ?? makeTempDir();
+    const cwd = testCase.cwd ?? makeExecApprovalsTempDir();
     testCase.setup?.(cwd);
     const executableName = testCase.executableName ?? "jq";
     const rawExecutable = testCase.rawExecutable ?? executableName;
     const ok = isSafeBinUsage({
       argv: testCase.argv,
       resolution: {
+        kind: "executable",
         rawExecutable,
         resolvedPath: testCase.resolvedPath,
         executableName,
@@ -416,6 +413,7 @@ describe("exec approvals safe bins", () => {
     const ok = isSafeBinUsage({
       argv: ["head", "-n", "1"],
       resolution: {
+        kind: "executable",
         rawExecutable: "head",
         resolvedPath: "/custom/bin/head",
         executableName: "head",
@@ -431,6 +429,7 @@ describe("exec approvals safe bins", () => {
       return;
     }
     const resolution = {
+      kind: "executable" as const,
       rawExecutable: "head",
       resolvedPath: "/opt/homebrew/bin/head",
       resolvedRealPath: "/opt/homebrew/Cellar/coreutils/9.5/bin/head",
@@ -469,6 +468,7 @@ describe("exec approvals safe bins", () => {
     const ok = isSafeBinUsage({
       argv: ["head", "-n", "1"],
       resolution: {
+        kind: "executable",
         rawExecutable: "head",
         resolvedPath: "/usr/bin/head",
         executableName: "head",
@@ -486,6 +486,7 @@ describe("exec approvals safe bins", () => {
     const baseParams = {
       argv: ["head", "-n", "1"],
       resolution: {
+        kind: "executable" as const,
         rawExecutable: "head",
         resolvedPath: "/tmp/custom/head",
         executableName: "head",
@@ -504,23 +505,6 @@ describe("exec approvals safe bins", () => {
         isTrustedSafeBinPathFn: () => false,
       }),
     ).toBe(false);
-  });
-
-  it("keeps safe-bin profile fixtures aligned with compiled profiles", () => {
-    for (const [name, fixture] of Object.entries(SAFE_BIN_PROFILE_FIXTURES)) {
-      const profile = SAFE_BIN_PROFILES[name];
-      if (profile === undefined) {
-        throw new Error(`missing compiled safe-bin profile fixture ${name}`);
-      }
-      const fixtureDeniedFlags = fixture.deniedFlags ?? [];
-      const compiledDeniedFlags = profile.deniedFlags ?? new Set<string>();
-      for (const deniedFlag of fixtureDeniedFlags) {
-        expect(compiledDeniedFlags.has(deniedFlag)).toBe(true);
-      }
-      expect(Array.from(compiledDeniedFlags).toSorted()).toEqual(
-        [...fixtureDeniedFlags].toSorted(),
-      );
-    }
   });
 
   it("does not include sort/grep in default safeBins", () => {
@@ -556,6 +540,7 @@ describe("exec approvals safe bins", () => {
     const allow = isSafeBinUsage({
       argv: ["echo", "hello"],
       resolution: {
+        kind: "executable",
         rawExecutable: "echo",
         resolvedPath: "/opt/openclaw-test/bin/echo",
         executableName: "echo",
@@ -567,6 +552,7 @@ describe("exec approvals safe bins", () => {
     const deny = isSafeBinUsage({
       argv: ["echo", "hello", "world"],
       resolution: {
+        kind: "executable",
         rawExecutable: "echo",
         resolvedPath: "/opt/openclaw-test/bin/echo",
         executableName: "echo",
@@ -583,9 +569,10 @@ describe("exec approvals safe bins", () => {
     if (process.platform === "win32") {
       return;
     }
-    const cwd = makeTempDir();
+    const cwd = makeExecApprovalsTempDir();
     fs.writeFileSync(path.join(cwd, "existing.txt"), "x");
     const resolution = {
+      kind: "executable" as const,
       rawExecutable: "sort",
       resolvedPath: "/usr/bin/sort",
       executableName: "sort",
@@ -654,7 +641,7 @@ describe("exec approvals safe bins", () => {
     if (process.platform === "win32") {
       return;
     }
-    const tmp = makeTempDir();
+    const tmp = makeExecApprovalsTempDir();
     const fakeDir = path.join(tmp, "fake-bin");
     fs.mkdirSync(fakeDir, { recursive: true });
     const fakeHead = path.join(fakeDir, "head");

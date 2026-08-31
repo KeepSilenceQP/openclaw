@@ -3,8 +3,10 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { clearPluginCommands, registerPluginCommand } from "../../plugins/commands.js";
 import { buildCliAgentSystemPrompt } from "./helpers.js";
 
-vi.mock("../../tts/tts.js", () => ({
+vi.mock("../../tts/tts-settings.js", () => ({
   buildTtsSystemPromptHint: vi.fn(() => undefined),
+  resolveModelOverridePolicy: vi.fn(),
+  setTtsMachinePrefsPathResolver: vi.fn(),
 }));
 
 describe("buildCliAgentSystemPrompt", () => {
@@ -29,8 +31,7 @@ describe("buildCliAgentSystemPrompt", () => {
       modelDisplay: "test/model",
     });
 
-    expect(prompt).toContain("## Sub-Agent Delegation");
-    expect(prompt).toContain("Mode: prefer");
+    expect(prompt).toContain("## Delegation");
     expect(prompt).not.toContain("For long waits, avoid rapid poll loops");
     expect(prompt).not.toContain("Larger work: use `sessions_spawn`");
     expect(prompt).not.toContain("Do not poll `subagents list` / `sessions_list` in a loop");
@@ -39,6 +40,7 @@ describe("buildCliAgentSystemPrompt", () => {
   it("uses CLI backend tool fallback instead of OpenClaw tool assumptions", () => {
     const prompt = buildCliAgentSystemPrompt({
       workspaceDir: "/tmp/openclaw",
+      docsPath: "/tmp/openclaw/docs",
       tools: [],
       modelDisplay: "test/model",
     });
@@ -49,6 +51,10 @@ describe("buildCliAgentSystemPrompt", () => {
     expect(prompt).not.toContain("Larger work: use `sessions_spawn`");
     expect(prompt).not.toContain("Do not poll `subagents list` / `sessions_list` in a loop");
     expect(prompt).toContain("No OpenClaw tool list is injected");
+    expect(prompt).toContain("docs first via `read`");
+    expect(prompt).not.toContain("exec approval-pending");
+    expect(prompt).not.toContain("Config read: `gateway`");
+    expect(prompt).not.toContain("`gateway(config.schema.lookup)`");
   });
 
   it("describes bundled exec as synchronous node execution", () => {
@@ -150,33 +156,38 @@ describe("buildCliAgentSystemPrompt", () => {
   it("includes session identity in runtime when provided", () => {
     const prompt = buildCliAgentSystemPrompt({
       workspaceDir: "/tmp/openclaw",
+      config: {
+        agents: {
+          entries: {
+            "Team Ops": { identity: { name: "Ops Navigator" } },
+          },
+        },
+      },
       tools: [],
       modelDisplay: "test/model",
-      agentId: "main",
-      sessionKey: "agent:main:telegram:direct:peer",
+      agentId: "team-ops",
+      sessionKey: "agent:team-ops:telegram:direct:peer",
       sessionId: "session-123",
     });
 
-    expect(prompt).toContain("agent=main");
-    expect(prompt).toContain("session=agent:main:telegram:direct:peer");
+    expect(prompt).toContain(
+      "Runtime: name=Ops Navigator | agent=team-ops | session=agent:team-ops:telegram:direct:peer",
+    );
     expect(prompt).toContain("sessionId=session-123");
   });
 
-  it("includes Telegram rich text guidance for CLI final replies", () => {
+  it("includes Telegram channel context for CLI final replies without core rich guidance", () => {
     const prompt = buildCliAgentSystemPrompt({
       workspaceDir: "/tmp/openclaw",
       tools: [],
       modelDisplay: "anthropic/claude-opus-4-8",
       runtimeChannel: "telegram",
       runtimeChatType: "direct",
-      runtimeCapabilities: ["richText"],
     });
 
-    expect(prompt).toContain("Telegram rich ON");
-    expect(prompt).toContain("headings, tables");
-    expect(prompt).toContain("media tags block-only");
-    expect(prompt).toContain("Not MarkdownV2/parse_mode");
     expect(prompt).toContain("channel=telegram");
+    expect(prompt).not.toContain("Telegram rich ON");
+    expect(prompt).not.toContain("Telegram rich OFF");
     expect(prompt).not.toContain("### message tool");
   });
 

@@ -5,13 +5,19 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { ErrorCodes } from "../../../packages/gateway-protocol/src/index.js";
 import type { SessionEntry } from "../../config/sessions.js";
 import {
-  resetGatewaySuspendCoordinatorForTest,
+  resetGatewaySuspendCoordinatorForLifecycleRestart,
   resumeGatewaySuspend,
 } from "../../infra/gateway-suspend-coordinator.js";
-import { resetGatewayWorkAdmission } from "../../process/gateway-work-admission.js";
-import { withTempDir } from "../../test-helpers/temp-dir.js";
+import {
+  getActiveGatewayRootWorkCount,
+  resetGatewayWorkAdmission,
+} from "../../process/gateway-work-admission.js";
+import { withTestDir } from "../../test-helpers/temp-dir.js";
+import { createSyntheticPluginRuntimeClient } from "../server-plugin-runtime-client.js";
+import { registerSubagentCompletionToolHandoff } from "../subagent-completion-tool-handoff.js";
 import {
   getAgentTestMocks,
+  operatorWriteCliClient,
   makeContext,
   type AgentHandlerArgs,
   type AgentParams,
@@ -47,16 +53,16 @@ const mocks = getAgentTestMocks();
 describe("gateway agent handler", () => {
   afterEach(describe0AfterEach0);
 
-  it("recovers a failed session when its default transcript exists", async () => {
+  it("recovers a failed session when its SQLite transcript exists", async () => {
     const now = Date.parse("2026-05-18T09:49:00.000Z");
     vi.useFakeTimers({ toFake: ["Date"] });
     setDateOnlyFakeClockActive(true);
     vi.setSystemTime(now);
 
-    await withTempDir({ prefix: "openclaw-gateway-failed-default-session-file-" }, async (root) => {
+    await withTestDir({ prefix: "openclaw-gateway-failed-default-session-file-" }, async (root) => {
       const sessionsDir = `${root}/sessions`;
       await fs.mkdir(sessionsDir, { recursive: true });
-      await fs.writeFile(`${sessionsDir}/failed-present-default-session-id.jsonl`, "", "utf8");
+      mocks.readTranscriptStatsSync.mockReturnValue({ eventCount: 1, maxSeq: 1, sizeBytes: 32 });
       const failedEntryWithDefaultTranscript = {
         sessionId: "failed-present-default-session-id",
         status: "failed",
@@ -93,14 +99,14 @@ describe("gateway agent handler", () => {
 
   it.each([
     {
-      name: "default transcript",
+      name: "SQLite transcript",
       sessionKey: "agent:main:telegram:group:stale-failed",
       sessionId: "stale-failed-session-id",
-      configureTranscript: async (params: { sessionId: string; sessionsDir: string }) => {
-        await fs.writeFile(`${params.sessionsDir}/${params.sessionId}.jsonl`, "", "utf8");
+      configureTranscript: async () => {
+        mocks.readTranscriptStatsSync.mockReturnValue({ eventCount: 1, maxSeq: 1, sizeBytes: 32 });
         return {};
       },
-      expectsSqliteStats: false,
+      expectsSqliteStats: true,
     },
     {
       name: "SQLite transcript marker",
@@ -122,13 +128,12 @@ describe("gateway agent handler", () => {
     setDateOnlyFakeClockActive(true);
     vi.setSystemTime(now);
 
-    await withTempDir({ prefix: "openclaw-gateway-stale-failed-session-" }, async (root) => {
+    await withTestDir({ prefix: "openclaw-gateway-stale-failed-session-" }, async (root) => {
       const sessionsDir = `${root}/sessions`;
       const storePath = `${sessionsDir}/sessions.json`;
       await fs.mkdir(sessionsDir, { recursive: true });
       const transcriptFields = await scenario.configureTranscript({
         sessionId: scenario.sessionId,
-        sessionsDir,
         storePath,
       });
       const failedEntryWithStaleActivity = {
@@ -193,19 +198,18 @@ describe("gateway agent handler", () => {
     });
   });
 
-  it("recovers a failed session when its relative transcript resolves and exists", async () => {
+  it("recovers a failed session when its SQLite transcript rows exist", async () => {
     const now = Date.parse("2026-05-18T09:50:00.000Z");
     vi.useFakeTimers({ toFake: ["Date"] });
     setDateOnlyFakeClockActive(true);
     vi.setSystemTime(now);
 
-    await withTempDir({ prefix: "openclaw-gateway-failed-session-file-" }, async (root) => {
+    await withTestDir({ prefix: "openclaw-gateway-failed-session-file-" }, async (root) => {
       const sessionsDir = `${root}/sessions`;
       await fs.mkdir(sessionsDir, { recursive: true });
-      await fs.writeFile(`${sessionsDir}/relative-present.jsonl`, "", "utf8");
+      mocks.readTranscriptStatsSync.mockReturnValue({ eventCount: 1, maxSeq: 1, sizeBytes: 32 });
       const failedEntryWithResolvedTranscript = {
         sessionId: "failed-present-session-id",
-        sessionFile: "relative-present.jsonl",
         status: "failed",
         startedAt: now - 1_000,
         endedAt: now,
@@ -377,16 +381,143 @@ describe("gateway agent handler", () => {
         idempotencyKey: "plugin-runtime-owner",
       },
       {
-        client: {
-          internal: {
-            pluginRuntimeOwnerId: "memory-core",
-          },
-        } as never,
+        client: createSyntheticPluginRuntimeClient({ pluginRuntimeOwnerId: "memory-core" }),
       },
     );
 
     expect(mocks.updateSessionStore).toHaveBeenCalled();
     expect(capturedEntry?.pluginOwnerId).toBe("memory-core");
+  });
+
+  it("forwards plugin-owned additive tools only for tracked plugin subagent runs", async () => {
+    primeMainAgentRun();
+
+    await invokeAgent(
+      {
+        message: "finish the workboard card",
+        sessionKey: "agent:main:subagent:workboard-card",
+        idempotencyKey: "plugin-tools-also-allow",
+      },
+      {
+        client: createSyntheticPluginRuntimeClient({
+          agentRunTracking: "plugin_subagent",
+          pluginRuntimeOwnerId: "workboard",
+          runtimePluginToolGrant: {
+            pluginId: "workboard",
+            toolNames: ["workboard_heartbeat", "workboard_complete"],
+          },
+        }),
+      },
+    );
+
+    const call = await waitForAgentCommandCall<{
+      runtimePluginToolGrant?: { pluginId: string; toolNames: readonly string[] };
+    }>();
+    expect(call.runtimePluginToolGrant).toEqual({
+      pluginId: "workboard",
+      toolNames: ["workboard_heartbeat", "workboard_complete"],
+    });
+  });
+
+  it("forwards a tracked plugin subagent exact empty tool cap", async () => {
+    primeMainAgentRun();
+
+    await invokeAgent(
+      {
+        message: "write a tool-free narrative",
+        sessionKey: "agent:main:subagent:dreaming-narrative",
+        idempotencyKey: "plugin-tools-disabled",
+      },
+      {
+        client: createSyntheticPluginRuntimeClient({
+          agentRunTracking: "plugin_subagent",
+          pluginRuntimeOwnerId: "memory-core",
+          pluginSubagentToolsAllow: [],
+        }),
+      },
+    );
+
+    const call = await waitForAgentCommandCall<{ toolsAllow?: string[] }>();
+    expect(call.toolsAllow).toEqual([]);
+  });
+
+  it("forwards trusted delegated policy handoffs only from internal client metadata", async () => {
+    primeMainAgentRun();
+    const handoffId = registerSubagentCompletionToolHandoff({
+      sourceSessionKey: "agent:main:subagent:child",
+      sourceSessionId: "child-session-id",
+      targetSessionKey: "agent:main:main",
+      targetSessionId: "existing-session-id",
+      idempotencyKey: "delegated-policy-handoff",
+    });
+
+    await invokeAgent(
+      {
+        message: "child completed",
+        sessionKey: "agent:main:main",
+        idempotencyKey: "delegated-policy-handoff",
+        inputProvenance: {
+          kind: "inter_session",
+          sourceSessionKey: "agent:main:subagent:child",
+          sourceTool: "subagent_announce",
+        },
+        internalEvents: [
+          {
+            type: "task_completion",
+            source: "subagent",
+            childSessionKey: "agent:main:subagent:child",
+            childSessionId: "child-session-id",
+            announceType: "subagent task",
+            taskLabel: "work",
+            status: "ok",
+            statusLabel: "completed",
+            result: "child completed",
+            replyInstruction: "Continue from this result.",
+          },
+        ],
+      },
+      {
+        client: {
+          internal: {
+            delegatedToolPolicyHandoffId: handoffId,
+          },
+        } as never,
+      },
+    );
+
+    const call = await waitForAgentCommandCall<{
+      onActiveModelSelected?: (selection: { provider: string; model: string }) => Promise<void>;
+      trustedInternalHandoff?: {
+        kind: string;
+        sourceSessionKey: string;
+        sourceSessionId?: string;
+        targetSessionKey: string;
+        targetSessionId: string;
+        provider: string;
+        model: string;
+      };
+    }>();
+    const trustedInternalHandoff = expectDefined(
+      call.trustedInternalHandoff,
+      "trusted completion handoff test invariant",
+    );
+    await expectDefined(
+      call.onActiveModelSelected,
+      "model-selection callback test invariant",
+    )({
+      provider: "anthropic",
+      model: "sonnet-4.6",
+    });
+    expect(call.trustedInternalHandoff).toBe(trustedInternalHandoff);
+    expect(call.trustedInternalHandoff).toMatchObject({
+      kind: "subagent-completion",
+      sourceSessionKey: "agent:main:subagent:child",
+      sourceSessionId: "child-session-id",
+      targetSessionKey: "agent:main:main",
+      targetSessionId: "existing-session-id",
+      provider: "anthropic",
+      model: "sonnet-4.6",
+    });
   });
 
   it("does not claim stale pre-existing sessions for plugin runtime cleanup", async () => {
@@ -425,11 +556,7 @@ describe("gateway agent handler", () => {
         idempotencyKey: "plugin-runtime-existing-owner",
       },
       {
-        client: {
-          internal: {
-            pluginRuntimeOwnerId: "memory-core",
-          },
-        } as never,
+        client: createSyntheticPluginRuntimeClient({ pluginRuntimeOwnerId: "memory-core" }),
       },
     );
 
@@ -450,11 +577,7 @@ describe("gateway agent handler", () => {
       },
       {
         reqId: "test-idem-model-override",
-        client: {
-          connect: {
-            scopes: ["operator.admin"],
-          },
-        } as AgentHandlerArgs["client"],
+        client: operatorWriteCliClient(["operator.admin"]),
       },
     );
 
@@ -565,11 +688,7 @@ describe("gateway agent handler", () => {
       },
       {
         reqId: "test-idem-model-override-write",
-        client: {
-          connect: {
-            scopes: ["operator.write"],
-          },
-        } as AgentHandlerArgs["client"],
+        client: operatorWriteCliClient(["operator.write"]),
         respond,
       },
     );
@@ -595,9 +714,7 @@ describe("gateway agent handler", () => {
       {
         reqId: "test-idem-model-override-internal",
         client: {
-          connect: {
-            scopes: ["operator.write"],
-          },
+          ...operatorWriteCliClient(["operator.write"]),
           internal: {
             allowModelOverride: true,
           },
@@ -811,12 +928,12 @@ describe("gateway agent handler", () => {
     expect(mocks.agentCommand).not.toHaveBeenCalled();
   });
 
-  it("recovers terminal failed agent API sessions without rotating the session id", async () => {
+  it("recovers terminal failed agent API sessions with SQLite transcript rows", async () => {
     const sessionId = "failed-agent-session";
-    await withTempDir({ prefix: "openclaw-gateway-terminal-recovery-" }, async (root) => {
+    await withTestDir({ prefix: "openclaw-gateway-terminal-recovery-" }, async (root) => {
       const sessionsDir = `${root}/sessions`;
       await fs.mkdir(sessionsDir, { recursive: true });
-      await fs.writeFile(`${sessionsDir}/${sessionId}.jsonl`, "", "utf8");
+      mocks.readTranscriptStatsSync.mockReturnValue({ eventCount: 1, maxSeq: 1, sizeBytes: 32 });
       mocks.loadSessionEntry.mockReturnValue({
         cfg: {},
         storePath: `${sessionsDir}/sessions.json`,
@@ -1018,9 +1135,12 @@ describe("gateway agent handler", () => {
       task: "initial task",
       cleanup: "keep" as const,
       createdAt: 1,
-      startedAt: 2,
-      endedAt: 3,
-      outcome: { status: "ok" as const },
+      execution: {
+        status: "terminal" as const,
+        startedAt: 2,
+        endedAt: 3,
+        outcome: { status: "ok" as const },
+      },
     };
 
     mocks.loadSessionEntry.mockReturnValue({
@@ -1044,6 +1164,10 @@ describe("gateway agent handler", () => {
     mocks.getLatestSubagentRunByChildSessionKey.mockReturnValueOnce(completedRun);
     mocks.replaceSubagentRunAfterSteer.mockReturnValueOnce(true);
     mocks.loadGatewaySessionRow.mockReturnValueOnce({
+      key: childSessionKey,
+      kind: "direct",
+      updatedAt,
+      sessionId: "sess-followup",
       status: "running",
       startedAt: 123,
       endedAt: undefined,
@@ -1088,6 +1212,7 @@ describe("gateway agent handler", () => {
       broadcastToConnIds,
       completedRun,
       childSessionKey,
+      status: "running",
       task: "follow-up",
     });
   });
@@ -1120,6 +1245,10 @@ describe("gateway agent handler", () => {
       return await updater(store);
     });
     mocks.loadGatewaySessionRow.mockReturnValue({
+      key: "agent:main:main",
+      kind: "direct",
+      updatedAt,
+      sessionId: "sess-main",
       spawnedBy: "agent:main:main",
       spawnedWorkspaceDir: "/tmp/subagent",
       forkedFromParent: true,
@@ -1180,7 +1309,11 @@ describe("gateway agent handler", () => {
       status: "running",
     });
     expect(mockCallArg(broadcastToConnIds, 0, 2)).toEqual(new Set(["conn-1"]));
-    expect(mockCallArg(broadcastToConnIds, 0, 3)).toEqual({ dropIfSlow: true });
+    expect(mockCallArg(broadcastToConnIds, 0, 3)).toEqual({
+      agentId: "main",
+      dropIfSlow: true,
+      sessionKeys: ["agent:main:main"],
+    });
   });
 
   it("passes the raw user message to agentCommand for LLM-boundary timestamping", async () => {
@@ -1316,6 +1449,13 @@ describe("gateway agent handler", () => {
         basePersisted: true,
         toolsAllow: ["image_generate", "write"],
         toolsAllowIsDefault: true,
+        scheduledToolPolicy: { version: 1, mode: "trusted" },
+        toolsAllowExecTarget: { version: 1, host: "gateway", ask: "always" },
+        toolsAllowExecTargetRequirement: {
+          version: 1,
+          target: { version: 1, host: "gateway", ask: "always" },
+          grantIndex: 1,
+        },
         cliSessionBindingFacts: {
           sourceReplyDeliveryMode: "automatic" as const,
           requireExplicitMessageTarget: true,
@@ -1360,6 +1500,11 @@ describe("gateway agent handler", () => {
       sessionId?: string;
       toolsAllow?: string[];
       toolsAllowIsDefault?: boolean;
+      scheduledToolPolicy?: {
+        version: 1;
+        mode: "trusted";
+        execTarget?: { host: "gateway"; ask?: "always" };
+      };
       requireExplicitMessageTarget?: boolean;
       sourceReplyDeliveryMode?: string;
       cliSessionBindingFacts?: {
@@ -1374,8 +1519,13 @@ describe("gateway agent handler", () => {
     expect(callArgs.model).toBe("claude-opus-4-8");
     expect(callArgs.thinking).toBe("high");
     expect(callArgs.bootstrapContextRunKind).toBe("cron");
-    expect(callArgs.toolsAllow).toEqual(["image_generate", "write"]);
+    expect(callArgs.toolsAllow).toEqual(["image_generate", "exec", "write"]);
     expect(callArgs.toolsAllowIsDefault).toBe(true);
+    expect(callArgs.scheduledToolPolicy).toEqual({
+      version: 1,
+      mode: "trusted",
+      execTarget: { host: "gateway", ask: "always" },
+    });
     expect(callArgs.requireExplicitMessageTarget).toBe(true);
     expect(callArgs.sourceReplyDeliveryMode).toBe("automatic");
     expect(callArgs.cliSessionBindingFacts).toEqual({
@@ -1431,6 +1581,15 @@ describe("gateway agent handler", () => {
       basePersisted: false,
       code: ErrorCodes.INVALID_REQUEST,
     },
+    {
+      name: "when its required exec pin is missing",
+      client: "continuation" as const,
+      phase: "ready" as const,
+      freshRevision: "revision-1",
+      basePersisted: true,
+      damagedExecPin: true,
+      code: ErrorCodes.UNAVAILABLE,
+    },
   ])("rejects a cron media continuation $name", async (testCase) => {
     mocks.agentCommand.mockClear();
     const sessionKey = "agent:main:cron:job-1:run:run-1";
@@ -1446,6 +1605,16 @@ describe("gateway agent handler", () => {
           "basePersisted" in testCase ? testCase.basePersisted : testCase.phase === "ready",
         ...("ownerLifecycleGeneration" in testCase
           ? { ownerLifecycleGeneration: testCase.ownerLifecycleGeneration }
+          : {}),
+        ...("damagedExecPin" in testCase
+          ? {
+              toolsAllow: ["image_generate", "write"],
+              toolsAllowExecTargetRequirement: {
+                version: 1,
+                target: { version: 1, host: "gateway", ask: "always" },
+                grantIndex: 1,
+              },
+            }
           : {}),
       },
     };
@@ -1791,7 +1960,7 @@ describe("gateway agent handler", () => {
 
   it("recovers a continuation release after reporting a durable write failure", async () => {
     vi.useFakeTimers();
-    resetGatewaySuspendCoordinatorForTest();
+    resetGatewaySuspendCoordinatorForLifecycleRestart();
     resetGatewayWorkAdmission();
     try {
       mocks.agentCommand.mockClear();
@@ -1862,6 +2031,7 @@ describe("gateway agent handler", () => {
         phase: "ready",
         basePersisted: true,
       });
+      await vi.waitFor(() => expect(getActiveGatewayRootWorkCount()).toBe(0));
       const readyPrepare = await invokeGatewaySuspendPrepare(
         context,
         "cron-media-release-recovered",
@@ -1887,7 +2057,7 @@ describe("gateway agent handler", () => {
       );
       expect(mocks.agentCommand).toHaveBeenCalledOnce();
     } finally {
-      resetGatewaySuspendCoordinatorForTest();
+      resetGatewaySuspendCoordinatorForLifecycleRestart();
       resetGatewayWorkAdmission();
       vi.useRealTimers();
     }
@@ -1895,7 +2065,7 @@ describe("gateway agent handler", () => {
 
   it("releases suspension admission after continuation recovery exhausts", async () => {
     vi.useFakeTimers();
-    resetGatewaySuspendCoordinatorForTest();
+    resetGatewaySuspendCoordinatorForLifecycleRestart();
     resetGatewayWorkAdmission();
     try {
       const { sessionKey, store } = setupCronContinuationReleaseFixture();
@@ -1950,6 +2120,7 @@ describe("gateway agent handler", () => {
       expect(context.logGateway.warn).toHaveBeenCalledWith(
         "cron continuation release recovery exhausted for cron-media-release-exhausts",
       );
+      await vi.waitFor(() => expect(getActiveGatewayRootWorkCount()).toBe(0));
       const readyPrepare = await invokeGatewaySuspendPrepare(
         context,
         "cron-media-release-exhausted",
@@ -1963,9 +2134,10 @@ describe("gateway agent handler", () => {
         status: "running",
       });
     } finally {
-      resetGatewaySuspendCoordinatorForTest();
+      resetGatewaySuspendCoordinatorForLifecycleRestart();
       resetGatewayWorkAdmission();
       vi.useRealTimers();
     }
   });
 });
+/* oxlint-disable max-lines -- TODO: split this grandfathered oversized file. */

@@ -1,8 +1,9 @@
-import { execFile } from "node:child_process";
 import { randomBytes } from "node:crypto";
 import { mkdtempSync, realpathSync, rmSync, statSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import type { ContainerConfig } from "@microsoft/mxc-sdk";
+import { isPathInside } from "openclaw/plugin-sdk/file-access-runtime";
+import { runCommandBuffered } from "openclaw/plugin-sdk/process-runtime";
 import { resolvePreferredOpenClawTmpDir } from "openclaw/plugin-sdk/sandbox";
 import type {
   SandboxBackendHandle,
@@ -89,8 +90,7 @@ function createSandboxTempDir(hostEnv: BaselineHostEnv): string {
 function assertWorkdirInsideWorkspace(workspaceDir: string, workdir: string): string {
   const workspace = realpathForExistingPath(workspaceDir, "sandbox workspace");
   const candidate = realpathForPotentialPath(workdir);
-  const relative = path.relative(workspace, candidate);
-  if (relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative))) {
+  if (isPathInside(workspace, candidate)) {
     return candidate;
   }
   throw new Error(
@@ -106,7 +106,7 @@ function resolveWorkdirInsideWorkspace(workspaceDir: string, workdir: string): s
       return candidate;
     }
   } catch (err) {
-    if (isNodeError(err) && err.code === "ENOENT") {
+    if (isMissingPathError(err)) {
       throw new Error(`MXC sandbox workdir ${workdir} does not exist.`, { cause: err });
     }
     throw err;
@@ -118,7 +118,7 @@ function realpathForExistingPath(value: string, label: string): string {
   try {
     return realpathSync(path.resolve(value));
   } catch (err) {
-    if (isNodeError(err) && err.code === "ENOENT") {
+    if (isMissingPathError(err)) {
       throw new Error(`MXC ${label} ${value} does not exist.`, { cause: err });
     }
     throw err;
@@ -130,7 +130,7 @@ function realpathForPotentialPath(value: string): string {
   try {
     return realpathSync(resolved);
   } catch (err) {
-    if (!isNodeError(err) || err.code !== "ENOENT") {
+    if (!isMissingPathError(err)) {
       throw err;
     }
     const parent = path.dirname(resolved);
@@ -143,6 +143,13 @@ function realpathForPotentialPath(value: string): string {
 
 function isNodeError(err: unknown): err is NodeJS.ErrnoException {
   return err instanceof Error && "code" in err;
+}
+
+// ENOTDIR means a parent component is a file, so the path can never resolve to a
+// directory. Classifying it alongside ENOENT keeps validateWorkdir's "return null
+// for unusable workdirs" contract intact instead of leaking a raw filesystem error.
+function isMissingPathError(err: unknown): boolean {
+  return isNodeError(err) && (err.code === "ENOENT" || err.code === "ENOTDIR");
 }
 
 function buildMxcLauncherOptions(config: MxcConfig, usePty: boolean): MxcLauncherOptions {
@@ -194,6 +201,17 @@ export function createMxcSandboxBackendHandle(params: {
     runtimeId: params.runtimeId,
     runtimeLabel: params.runtimeId,
     workdir: params.workdir,
+    workdirValidation: "backend",
+    async validateWorkdir(workdir) {
+      try {
+        return resolveWorkdirInsideWorkspace(params.workdir, workdir);
+      } catch (err) {
+        if (err instanceof Error && err.message.startsWith("MXC sandbox workdir")) {
+          return null;
+        }
+        throw err;
+      }
+    },
     capabilities: {},
 
     async buildExecSpec({ command, workdir, env, usePty }): Promise<SandboxBackendExecSpec> {
@@ -297,33 +315,36 @@ export function createMxcSandboxBackendHandle(params: {
           sandboxTempDir,
         );
         const argv = buildMxcLauncherArgv(payloadFile.payloadFile);
-        const [binaryPath, ...args] = argv;
         try {
-          return await execFileBuffered(binaryPath, args, {
-            env: buildLauncherEnv(),
+          const result = await runCommandBuffered(argv, {
+            baseEnv: buildLauncherEnv(),
             input: execInput,
-            timeout: 30_000,
-            maxBuffer: 10 * 1024 * 1024,
+            maxOutputBytes: { stdout: 10 * 1024 * 1024, stderr: 10 * 1024 * 1024 },
             signal: cmdParams.signal,
+            timeoutMs: 30_000,
           });
-        } catch (err: unknown) {
-          if (isAbortError(err)) {
-            throw err;
+          if (cmdParams.signal?.aborted) {
+            throw cmdParams.signal.reason instanceof Error
+              ? cmdParams.signal.reason
+              : (result.error ?? new Error("MXC command aborted"));
           }
-          const execErr = err as {
-            stdout?: Buffer | string;
-            stderr?: Buffer | string;
-            status?: number;
-            code?: number;
-          };
-          if (cmdParams.allowFailure) {
-            return {
-              stdout: toOptionalBuffer(execErr.stdout),
-              stderr: toOptionalBuffer(execErr.stderr),
-              code: execErr.status ?? execErr.code ?? 1,
-            };
+          const { stdout, stderr } = result;
+          const code = result.termination === "exit" ? (result.code ?? 1) : 1;
+          if ((result.termination !== "exit" || code !== 0) && !cmdParams.allowFailure) {
+            const commandError =
+              result.error ??
+              new Error(
+                result.termination === "exit"
+                  ? `MXC command exited with code ${code}`
+                  : `MXC command terminated: ${result.termination}`,
+              );
+            throw Object.assign(commandError, {
+              stdout,
+              stderr,
+              status: code,
+            });
           }
-          throw err;
+          return { stdout, stderr, code };
         } finally {
           cleanupLauncherPayloadFile(payloadFile);
         }
@@ -333,69 +354,6 @@ export function createMxcSandboxBackendHandle(params: {
       }
     },
   };
-}
-
-function execFileBuffered(
-  binaryPath: string,
-  args: readonly string[],
-  options: {
-    env: NodeJS.ProcessEnv;
-    input: Buffer;
-    timeout: number;
-    maxBuffer: number;
-    signal?: AbortSignal;
-  },
-): Promise<SandboxBackendCommandResult> {
-  return new Promise((resolve, reject) => {
-    const child = execFile(
-      binaryPath,
-      [...args],
-      {
-        encoding: "buffer",
-        env: options.env,
-        timeout: options.timeout,
-        maxBuffer: options.maxBuffer,
-        signal: options.signal,
-      },
-      (error, stdout, stderr) => {
-        const stdoutBuffer = toOptionalBuffer(stdout);
-        const stderrBuffer = toOptionalBuffer(stderr);
-        if (error) {
-          const errorStatus = (error as { status?: unknown }).status;
-          const status =
-            typeof error.code === "number"
-              ? error.code
-              : typeof errorStatus === "number"
-                ? errorStatus
-                : 1;
-          const rejection: Error = Object.assign(error, {
-            stdout: stdoutBuffer,
-            stderr: stderrBuffer,
-            status,
-          });
-          reject(rejection);
-          return;
-        }
-        resolve({ stdout: stdoutBuffer, stderr: stderrBuffer, code: 0 });
-      },
-    );
-    child.stdin?.end(options.input);
-  });
-}
-
-function isAbortError(err: unknown): boolean {
-  return (
-    err instanceof Error &&
-    (err.name === "AbortError" ||
-      ("code" in err && (err as { code?: unknown }).code === "ABORT_ERR"))
-  );
-}
-
-function toOptionalBuffer(value: Buffer | string | undefined): Buffer {
-  if (value === undefined) {
-    return Buffer.alloc(0);
-  }
-  return toBuffer(value);
 }
 
 function toBuffer(value: Buffer | string): Buffer {

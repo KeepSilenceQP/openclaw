@@ -45,6 +45,11 @@ function dmRoomPeer(id = "!dm:example.org"): RoutePeer {
   return { kind: "channel", id };
 }
 
+const threadCfg = {
+  ...baseCfg,
+  bindings: [matrixBinding("main")],
+} satisfies OpenClawConfig;
+
 function resolveDmRoute(
   cfg: OpenClawConfig,
   opts: {
@@ -158,48 +163,95 @@ describe("resolveMatrixInboundRoute", () => {
     expect(route.lastRoutePolicy).toBe("session");
   });
 
-  it("lets runtime conversation bindings override both sender and room route matches", () => {
-    const touch = vi.fn();
+  it.each(["agent:bound:session-1", "global"])(
+    "lets runtime binding %s override sender and room routes",
+    (targetSessionKey) => {
+      const touch = vi.fn();
+      registerSessionBindingAdapter({
+        channel: "matrix",
+        accountId: "ops",
+        listBySession: () => [],
+        resolveByConversation: (ref) =>
+          ref.conversationId === "!dm:example.org"
+            ? {
+                bindingId: "ops:!dm:example.org",
+                targetSessionKey,
+                targetKind: "session",
+                conversation: {
+                  channel: "matrix",
+                  accountId: "ops",
+                  conversationId: "!dm:example.org",
+                },
+                status: "active",
+                boundAt: Date.now(),
+                metadata: { boundBy: "user-1", agentId: "bound" },
+              }
+            : null,
+        touch,
+      });
+
+      const cfg = {
+        ...baseCfg,
+        bindings: [
+          matrixBinding("sender-agent", senderPeer()),
+          matrixBinding("room-agent", dmRoomPeer()),
+        ],
+      } satisfies OpenClawConfig;
+
+      const { route, configuredBinding, runtimeBindingId } = resolveDmRoute(cfg);
+
+      expect(configuredBinding).toBeNull();
+      expect(runtimeBindingId).toBe("ops:!dm:example.org");
+      expect(route.agentId).toBe("bound");
+      expect(route.matchedBy).toBe("binding.channel");
+      expect(route.sessionKey).toBe(targetSessionKey);
+      expect(route.lastRoutePolicy).toBe("session");
+      expect(touch).not.toHaveBeenCalled();
+    },
+  );
+
+  it.each([
+    {
+      name: "isolated cron run",
+      targetSessionKey: "agent:bound:cron:job:run:run-1",
+      metadata: undefined,
+      expectedBindingId: null,
+    },
+    {
+      name: "opaque plugin target",
+      targetSessionKey: "plugin-thread-1",
+      metadata: {
+        pluginBindingOwner: "plugin",
+        pluginId: "demo-plugin",
+        pluginRoot: "/tmp/demo-plugin",
+      },
+      expectedBindingId: "ops:!dm:example.org",
+    },
+  ])("keeps the core DM route for $name", ({ targetSessionKey, metadata, expectedBindingId }) => {
     registerSessionBindingAdapter({
       channel: "matrix",
       accountId: "ops",
       listBySession: () => [],
-      resolveByConversation: (ref) =>
-        ref.conversationId === "!dm:example.org"
-          ? {
-              bindingId: "ops:!dm:example.org",
-              targetSessionKey: "agent:bound:session-1",
-              targetKind: "session",
-              conversation: {
-                channel: "matrix",
-                accountId: "ops",
-                conversationId: "!dm:example.org",
-              },
-              status: "active",
-              boundAt: Date.now(),
-              metadata: { boundBy: "user-1" },
-            }
-          : null,
-      touch,
+      resolveByConversation: (conversation) => ({
+        bindingId: "ops:!dm:example.org",
+        targetSessionKey,
+        targetKind: "session",
+        conversation,
+        status: "active",
+        boundAt: Date.now(),
+        metadata,
+      }),
     });
-
     const cfg = {
       ...baseCfg,
-      bindings: [
-        matrixBinding("sender-agent", senderPeer()),
-        matrixBinding("room-agent", dmRoomPeer()),
-      ],
+      bindings: [matrixBinding("sender-agent", senderPeer())],
     } satisfies OpenClawConfig;
 
-    const { route, configuredBinding, runtimeBindingId } = resolveDmRoute(cfg);
+    const { route, runtimeBindingId } = resolveDmRoute(cfg, { dmSessionScope: "per-room" });
 
-    expect(configuredBinding).toBeNull();
-    expect(runtimeBindingId).toBe("ops:!dm:example.org");
-    expect(route.agentId).toBe("bound");
-    expect(route.matchedBy).toBe("binding.channel");
-    expect(route.sessionKey).toBe("agent:bound:session-1");
-    expect(route.lastRoutePolicy).toBe("session");
-    expect(touch).not.toHaveBeenCalled();
+    expect(route.sessionKey).toBe("agent:sender-agent:matrix:channel:!dm:example.org");
+    expect(route.agentId).toBe("sender-agent");
+    expect(runtimeBindingId).toBe(expectedBindingId);
   });
 });
 
@@ -213,7 +265,7 @@ describe("resolveMatrixInboundRoute thread-isolated sessions", () => {
 
   it("scopes session key to thread when a thread id is provided", () => {
     const { route } = resolveMatrixInboundRoute({
-      cfg: baseCfg as never,
+      cfg: threadCfg as never,
       accountId: "ops",
       roomId: "!room:example.org",
       senderId: "@alice:example.org",
@@ -229,7 +281,7 @@ describe("resolveMatrixInboundRoute thread-isolated sessions", () => {
 
   it("preserves mixed-case matrix thread ids in session keys", () => {
     const { route } = resolveMatrixInboundRoute({
-      cfg: baseCfg as never,
+      cfg: threadCfg as never,
       accountId: "ops",
       roomId: "!room:example.org",
       senderId: "@alice:example.org",
@@ -243,7 +295,7 @@ describe("resolveMatrixInboundRoute thread-isolated sessions", () => {
 
   it("does not scope session key when thread id is absent", () => {
     const { route } = resolveMatrixInboundRoute({
-      cfg: baseCfg as never,
+      cfg: threadCfg as never,
       accountId: "ops",
       roomId: "!room:example.org",
       senderId: "@alice:example.org",

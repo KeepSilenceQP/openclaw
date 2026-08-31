@@ -1,6 +1,5 @@
 // Tests command gating rules for ownership, channel, and active session state.
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { isCommandFlagEnabled } from "../../config/commands.js";
 import type { OpenClawConfig } from "../../config/config.js";
 import { REDACTED_SENTINEL } from "../../config/redact-snapshot.js";
 import type { MsgContext } from "../templating.js";
@@ -9,7 +8,7 @@ import { requireGatewayClientScope } from "./command-gates.js";
 import { handleConfigCommand, handleDebugCommand } from "./commands-config.js";
 import type { HandleCommandsParams } from "./commands-types.js";
 import type { ConfigSnapshotMock } from "./commands.test-harness.js";
-import { parseInlineDirectives } from "./directive-handling.parse.js";
+import { parseInlineSessionDirectives } from "./directive-handling.parse.js";
 
 const readConfigFileSnapshotMock = vi.hoisted(() =>
   vi.fn(async () => ({ valid: true, parsed: {} })),
@@ -33,7 +32,8 @@ const resolveConfigWriteDeniedTextMock = vi.hoisted(() =>
 const isInternalMessageChannelMock = vi.hoisted(() => vi.fn(() => false));
 
 vi.mock("../../agents/agent-scope.js", () => ({
-  resolveSessionAgentId: vi.fn(() => "agent:main"),
+  resolveSessionAgentId: vi.fn(() => "main"),
+  resolveAgentDir: vi.fn(() => "/tmp/agent"),
 }));
 
 vi.mock("../../agents/bash-process-registry.js", () => ({
@@ -135,7 +135,7 @@ vi.mock("../../config/runtime-schema.js", async () => {
   const actual =
     await vi.importActual<typeof import("../../config/schema.js")>("../../config/schema.js");
   return {
-    loadGatewayRuntimeConfigSchema: () => actual.buildConfigSchema(),
+    loadGatewayRuntimeConfigSchema: () => actual.buildConfigSchemaCore(),
   };
 });
 
@@ -227,9 +227,10 @@ function buildParams(commandBody: string, cfg: OpenClawConfig): HandleCommandsPa
       from: "user-1",
       to: "bot-1",
     },
-    directives: parseInlineDirectives(""),
+    directives: parseInlineSessionDirectives(""),
     elevated: { enabled: true, allowed: true, failures: [] },
     sessionKey: "agent:main:main",
+    agentId: "main",
     workspaceDir: "/tmp",
     defaultGroupActivation: () => "mention",
     resolvedVerboseLevel: "off",
@@ -619,18 +620,6 @@ describe("command gating", () => {
       shouldContinue: false,
       reply: { text: "You are not authorized to use this command." },
     });
-  });
-
-  it("ignores inherited command flags", () => {
-    const inheritedCommands = Object.create({
-      bash: true,
-      config: true,
-      debug: true,
-    }) as Record<string, unknown>;
-    const cfg = { commands: inheritedCommands as never } as OpenClawConfig;
-    expect(isCommandFlagEnabled(cfg, "bash")).toBe(false);
-    expect(isCommandFlagEnabled(cfg, "config")).toBe(false);
-    expect(isCommandFlagEnabled(cfg, "debug")).toBe(false);
   });
 
   it("blocks disallowed /config set writes", async () => {

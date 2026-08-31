@@ -1,3 +1,4 @@
+import type { IMessageActivityInput } from "@microsoft/teams.api";
 import { createLazyRuntimeModule } from "openclaw/plugin-sdk/lazy-runtime";
 // Msteams plugin module implements sdk proactive behavior.
 import { normalizeBotFrameworkServiceUrl } from "./bot-framework-service-url.js";
@@ -5,6 +6,7 @@ import {
   validateMSTeamsProactiveServiceUrlBoundary,
   type MSTeamsSdkCloudOptions,
 } from "./cloud.js";
+import type { MSTeamsActivityLike } from "./sdk-types.js";
 import type { MSTeamsApp } from "./sdk.js";
 
 type MSTeamsAccountRef = {
@@ -56,24 +58,28 @@ type MSTeamsApiClient = {
   };
 };
 
-type MSTeamsApiClientCtor = new (
-  serviceUrl: string,
-  options?: unknown,
-  apiClientSettings?: unknown,
-) => unknown;
-
-type MSTeamsApiModule = {
-  Client: MSTeamsApiClientCtor;
-};
-
 type MSTeamsProactiveOptions = {
+  quoteActivityId?: string;
   threadActivityId?: string;
   serviceUrlBoundary?: MSTeamsSdkCloudOptions;
 };
 
-const loadMSTeamsApiModule = createLazyRuntimeModule(
-  () => import("@microsoft/teams.api") as unknown as Promise<MSTeamsApiModule>,
-);
+const loadMSTeamsApiModule = createLazyRuntimeModule(() => import("@microsoft/teams.api"));
+
+async function quoteMSTeamsActivity(
+  activity: MSTeamsActivityLike,
+  messageId: string,
+): Promise<unknown> {
+  const { MessageActivityInput } = await loadMSTeamsApiModule();
+  if (typeof activity === "string") {
+    return new MessageActivityInput(activity).prependQuote(messageId);
+  }
+  if (activity.type !== "message") {
+    return activity;
+  }
+  // SAFETY: the message discriminator narrows this structural outbound input to the SDK shape.
+  return MessageActivityInput.from(activity as IMessageActivityInput).prependQuote(messageId);
+}
 
 function resolveThreadedConversationId(conversationId: string, threadActivityId?: string): string {
   if (!threadActivityId) {
@@ -180,8 +186,8 @@ async function getApiClientForReference(
   }
 
   const appInternals = app as unknown as {
-    client?: unknown;
-    api?: { http?: unknown };
+    client?: ConstructorParameters<typeof import("@microsoft/teams.api").Client>[1];
+    api?: { http?: ConstructorParameters<typeof import("@microsoft/teams.api").Client>[1] };
   };
   const httpClient = appInternals.api?.http ?? appInternals.client;
 
@@ -190,7 +196,7 @@ async function getApiClientForReference(
   }
 
   const { Client } = await loadMSTeamsApiModule();
-  return new Client(ref.serviceUrl, httpClient) as MSTeamsApiClient;
+  return new Client(ref.serviceUrl, httpClient) as unknown as MSTeamsApiClient;
 }
 
 function mergeReferenceIntoActivity(
@@ -236,13 +242,16 @@ function mergeReferenceIntoActivity(
 export async function sendMSTeamsActivityWithReference(
   app: MSTeamsApp,
   source: MSTeamsSdkReferenceSource,
-  activity: unknown,
+  activity: MSTeamsActivityLike,
   options?: MSTeamsProactiveOptions,
 ): Promise<{ id?: string }> {
   const ref = buildSdkConversationReference(source, options);
   const api = await getApiClientForReference(app, ref);
   const activities = api.conversations.activities(ref.conversation.id);
-  const activityWithRef = mergeReferenceIntoActivity(activity, ref);
+  const quotedActivity = options?.quoteActivityId
+    ? await quoteMSTeamsActivity(activity, options.quoteActivityId)
+    : activity;
+  const activityWithRef = mergeReferenceIntoActivity(quotedActivity, ref);
   const isTargeted =
     (activityWithRef.recipient as { isTargeted?: unknown } | undefined)?.isTargeted === true;
   if (isTargeted && ref.conversation.conversationType === "personal") {

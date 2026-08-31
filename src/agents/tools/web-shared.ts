@@ -8,10 +8,8 @@ import {
   asDateTimestampMs,
   MAX_TIMER_TIMEOUT_SECONDS,
   resolveExpiresAtMsFromDurationMs,
-  resolveTimerTimeoutMs,
 } from "@openclaw/normalization-core/number-coercion";
-import { normalizeLowercaseStringOrEmpty } from "@openclaw/normalization-core/string-coerce";
-
+import { pruneMapToMaxSize } from "../../infra/map-size.js";
 export type CacheEntry<T> = {
   value: T;
   expiresAt: number;
@@ -40,23 +38,27 @@ export function resolveCacheTtlMs(value: unknown, fallbackMinutes: number): numb
 }
 
 export function normalizeCacheKey(value: string): string {
-  return normalizeLowercaseStringOrEmpty(value);
+  // Request paths and query values can be case-sensitive; only surrounding
+  // whitespace is non-semantic when callers compose cache keys.
+  return value.trim();
 }
 
 export function readCache<T>(
   cache: Map<string, CacheEntry<T>>,
   key: string,
+  ttlMs = Infinity,
 ): { value: T; cached: boolean } | null {
   const entry = cache.get(key);
-  if (!entry) {
+  if (!entry || ttlMs <= 0) {
     return null;
   }
   const now = asDateTimestampMs(Date.now());
-  if (now === undefined || now > entry.expiresAt) {
+  if (now === undefined || now >= entry.expiresAt) {
     cache.delete(key);
     return null;
   }
-  return { value: entry.value, cached: true };
+  // A caller can shorten reuse without evicting an entry still valid for others.
+  return now - entry.insertedAt < ttlMs ? { value: entry.value, cached: true } : null;
 }
 
 export function writeCache<T>(
@@ -73,12 +75,7 @@ export function writeCache<T>(
   if (expiresAt === undefined) {
     return;
   }
-  if (cache.size >= DEFAULT_CACHE_MAX_ENTRIES) {
-    const oldest = cache.keys().next();
-    if (!oldest.done) {
-      cache.delete(oldest.value);
-    }
-  }
+  pruneMapToMaxSize(cache, DEFAULT_CACHE_MAX_ENTRIES - 1);
   cache.set(key, {
     value,
     expiresAt,
@@ -86,33 +83,7 @@ export function writeCache<T>(
   });
 }
 
-export function withTimeout(signal: AbortSignal | undefined, timeoutMs: number): AbortSignal {
-  if (timeoutMs <= 0) {
-    return signal ?? new AbortController().signal;
-  }
-  const controller = new AbortController();
-  const timer = setTimeout(controller.abort.bind(controller), resolveTimerTimeoutMs(timeoutMs, 1));
-  if (signal) {
-    signal.addEventListener(
-      "abort",
-      () => {
-        clearTimeout(timer);
-        controller.abort();
-      },
-      { once: true },
-    );
-  }
-  controller.signal.addEventListener(
-    "abort",
-    () => {
-      clearTimeout(timer);
-    },
-    { once: true },
-  );
-  return controller.signal;
-}
-
-export type ReadResponseTextResult = {
+type ReadResponseTextResult = {
   text: string;
   truncated: boolean;
   bytesRead: number;
@@ -169,8 +140,9 @@ function sniffCharset(contentType: string | null, bytes: Uint8Array): string | u
   if (bytes[0] === 0xfe && bytes[1] === 0xff) {
     return "utf-16be";
   }
-  if (!shouldSniffDocumentCharset(contentType)) {
-    return undefined;
+  const declaredCharset = readCharsetParam(contentType);
+  if (declaredCharset || !shouldSniffDocumentCharset(contentType)) {
+    return declaredCharset;
   }
 
   const head = latin1Decoder.decode(
@@ -217,7 +189,7 @@ function responseContentType(res: Response): string | null {
 
 function decodeResponseBytes(res: Response, bytes: Uint8Array, truncated = false): string {
   const contentType = responseContentType(res);
-  const charset = readCharsetParam(contentType) ?? sniffCharset(contentType, bytes);
+  const charset = sniffCharset(contentType, bytes);
   try {
     return decodeTextPrefix(bytes, { encoding: charset ?? "utf-8", truncated });
   } catch {
@@ -235,7 +207,7 @@ export async function readResponseText(
       ? Math.floor(maxBytesRaw)
       : undefined;
 
-  const body = (res as unknown as { body?: unknown }).body;
+  const body = res.body;
   if (
     maxBytes &&
     body &&

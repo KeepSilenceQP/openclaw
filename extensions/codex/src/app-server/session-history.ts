@@ -9,38 +9,71 @@ import {
   buildSessionContext,
   migrateSessionEntries,
   parseSessionEntries,
+  SessionManager,
 } from "openclaw/plugin-sdk/agent-sessions";
+import { readCodexSessionTranscriptEventsBeforeAdmission } from "openclaw/plugin-sdk/codex-session-transcript-runtime";
 import {
-  listSessionEntries,
+  getSessionEntry,
   parseSqliteSessionFileMarker,
+  resolveTranscriptSessionKeyBySessionId,
   type SqliteSessionFileMarker,
 } from "openclaw/plugin-sdk/session-store-runtime";
-import { readSessionTranscriptEvents } from "openclaw/plugin-sdk/session-transcript-runtime";
+import {
+  readSessionTranscriptEvents,
+  type TranscriptTurnAdmission,
+  type SessionTranscriptTargetParams,
+} from "openclaw/plugin-sdk/session-transcript-runtime";
 import { sanitizeCodexHistoryImagePayloads } from "./image-payload-sanitizer.js";
 
 function isMissingFileError(error: unknown): boolean {
   return Boolean(error && typeof error === "object" && "code" in error && error.code === "ENOENT");
 }
 
-type CodexMirroredSessionHistoryTarget = {
+export type CodexMirroredSessionHistoryTarget = {
   agentId?: string;
   sessionFile: string;
   sessionId: string;
   sessionKey?: string;
+  sessionTarget?: Partial<SessionTranscriptTargetParams>;
 };
 
 /** Returns sanitized session-context messages for a Codex mirrored session file. */
 export async function readCodexMirroredSessionHistoryMessages(
   target: CodexMirroredSessionHistoryTarget,
+  admission?: TranscriptTurnAdmission,
+  view: "native-evidence" | "model-context" = "native-evidence",
 ): Promise<AgentMessage[] | undefined> {
   try {
-    const entries = await readCodexMirroredSessionEntries(target);
+    const loaded = await readCodexMirroredSessionEntries(target, admission, view);
+    if (!Array.isArray(loaded)) {
+      if (loaded.getHeader()?.id !== target.sessionId) {
+        return [];
+      }
+      return sanitizeCodexHistoryImagePayloads(
+        loaded.buildSessionContext().messages,
+        "codex mirrored model context",
+      );
+    }
+    const entries = loaded;
     if (entries.length === 0) {
       return [];
     }
     const firstEntry = entries[0] as { type?: unknown; id?: unknown } | undefined;
-    if (firstEntry?.type !== "session" || typeof firstEntry.id !== "string") {
+    if (firstEntry?.type !== "session") {
+      // A well-formed transcript that does not open with a `session` marker is
+      // simply not a Codex-mirrored session (e.g. a non-Codex model run reusing
+      // this hook) — an empty mirror, not a read failure, so callers must not
+      // warn. `undefined` stays reserved for genuine failures: read/parse errors
+      // (caught below) and malformed `session` headers (next check).
+      return [];
+    }
+    if (typeof firstEntry.id !== "string") {
+      // A `session` header without a string id is a corrupted Codex transcript,
+      // not a foreign one — keep it on the warn path.
       return undefined;
+    }
+    if (firstEntry.id !== target.sessionId) {
+      return [];
     }
     migrateSessionEntries(entries);
     const sessionEntries = entries.filter((entry): entry is SessionEntry => {
@@ -66,7 +99,40 @@ export async function readCodexMirroredSessionHistoryMessages(
 
 async function readCodexMirroredSessionEntries(
   target: CodexMirroredSessionHistoryTarget,
-): Promise<SessionEntry[]> {
+  admission: TranscriptTurnAdmission | undefined,
+  view: "native-evidence" | "model-context",
+): Promise<SessionEntry[] | SessionManager> {
+  const readTarget = async (
+    transcriptTarget: Required<
+      Pick<SessionTranscriptTargetParams, "agentId" | "sessionId" | "sessionKey" | "storePath">
+    >,
+  ) =>
+    view === "model-context"
+      ? SessionManager.openModelContext(transcriptTarget, { admission })
+      : ((await (admission
+          ? readCodexSessionTranscriptEventsBeforeAdmission(transcriptTarget, admission)
+          : readSessionTranscriptEvents(transcriptTarget))) as SessionEntry[]);
+  if (target.sessionTarget) {
+    const { agentId, sessionId, sessionKey, storePath } = target.sessionTarget;
+    if (
+      !agentId ||
+      !sessionId ||
+      !sessionKey ||
+      !storePath ||
+      sessionId !== target.sessionId ||
+      (target.agentId !== undefined && agentId !== target.agentId) ||
+      (target.sessionKey !== undefined && sessionKey !== target.sessionKey)
+    ) {
+      return [];
+    }
+    const transcriptTarget = {
+      agentId,
+      sessionId,
+      sessionKey,
+      storePath,
+    };
+    return readTarget(transcriptTarget);
+  }
   const sqliteMarker = parseSqliteSessionFileMarker(target.sessionFile);
   if (sqliteMarker) {
     if (
@@ -79,12 +145,28 @@ async function readCodexMirroredSessionEntries(
     if (!sessionKey) {
       return [];
     }
-    return (await readSessionTranscriptEvents({
+    const transcriptTarget = {
       agentId: sqliteMarker.agentId,
       sessionId: sqliteMarker.sessionId,
       sessionKey,
       storePath: sqliteMarker.storePath,
-    })) as SessionEntry[];
+    };
+    return readTarget(transcriptTarget);
+  }
+  if (admission) {
+    if (
+      admission.sessionId !== target.sessionId ||
+      (target.agentId !== undefined && admission.agentId !== target.agentId) ||
+      (target.sessionKey !== undefined && admission.sessionKey !== target.sessionKey)
+    ) {
+      return [];
+    }
+    return readTarget({
+      agentId: admission.agentId,
+      sessionId: admission.sessionId,
+      sessionKey: admission.sessionKey,
+      storePath: admission.storePath,
+    });
   }
   return parseSessionEntries(await fs.readFile(target.sessionFile, "utf-8")) as SessionEntry[];
 }
@@ -95,19 +177,19 @@ function resolveSqliteMarkerSessionKey(
 ): string | undefined {
   const explicitSessionKey = target.sessionKey?.trim();
   if (explicitSessionKey) {
-    return explicitSessionKey;
+    // The SDK exact-entry accessor uses a read-only database handle.
+    const explicitEntry = getSessionEntry({
+      agentId: marker.agentId,
+      sessionKey: explicitSessionKey,
+      storePath: marker.storePath,
+    });
+    if (explicitEntry) {
+      return explicitEntry.sessionId === marker.sessionId ? explicitSessionKey : undefined;
+    }
   }
-  const entries = listSessionEntries({
+  return resolveTranscriptSessionKeyBySessionId({
     agentId: marker.agentId,
+    sessionId: marker.sessionId,
     storePath: marker.storePath,
   });
-  const exactEntry = entries.find(({ entry }) => {
-    return entry.sessionId === marker.sessionId && entry.sessionFile === target.sessionFile;
-  });
-  const sessionEntry =
-    exactEntry ??
-    entries.find(({ entry }) => {
-      return entry.sessionId === marker.sessionId;
-    });
-  return sessionEntry?.sessionKey;
 }
