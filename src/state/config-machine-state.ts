@@ -1,20 +1,113 @@
 // Machine-owned values retired from openclaw.json live in the shared state database.
+import type { DatabaseSync } from "node:sqlite";
+import { isMainThread } from "node:worker_threads";
+import { isRecord } from "@openclaw/normalization-core/record-coerce";
+import { executeSqliteQueryTakeFirstSync, getNodeSqliteKysely } from "../infra/kysely-sync.js";
 import {
-  executeSqliteQuerySync,
-  executeSqliteQueryTakeFirstSync,
-  getNodeSqliteKysely,
-} from "../infra/kysely-sync.js";
-import { withExistingOpenClawStateDatabaseReadOnly } from "./openclaw-state-db-readonly.js";
+  getOrLoadSqliteDatabaseAdmissionForPath,
+  getSqliteDatabaseAdmission,
+  publishSqliteDatabaseAdmission,
+  type SqliteDatabaseAdmissionKey,
+} from "../infra/sqlite-database-admission.js";
+import { getAdmittedSqliteSchemaFacts } from "../infra/sqlite-schema-facts.js";
+import type { OpenClawStateDatabaseOptions } from "./openclaw-state-db-contract.js";
+import {
+  withExistingOpenClawStateDatabaseArtifactPreservingReadOnly,
+  withExistingOpenClawStateDatabaseReadOnly,
+} from "./openclaw-state-db-readonly.js";
 import { tableExists } from "./openclaw-state-db-schema-helpers.js";
 import type { DB as OpenClawStateKyselyDatabase } from "./openclaw-state-db.generated.js";
-import {
-  runOpenClawStateWriteTransaction,
-  type OpenClawStateDatabaseOptions,
-} from "./openclaw-state-db.js";
+import type {
+  OpenClawStateReadCommand,
+  OpenClawStateReadResult,
+} from "./openclaw-state-read.types.js";
 
-type ConfigMachineStateDatabase = Pick<OpenClawStateKyselyDatabase, "config_machine_state">;
+type ConfigMachineStateReadCommand = Extract<
+  OpenClawStateReadCommand,
+  {
+    type:
+      | "nodeHost.config"
+      | "operator.channelPolicy"
+      | "tts.prefsPath"
+      | "voicewake.triggers"
+      | "voicewake.routing";
+  }
+>;
 
-function normalizeStateKey(key: string): string {
+export function isConfigMachineStateReadCommand(
+  command: OpenClawStateReadCommand,
+): command is ConfigMachineStateReadCommand {
+  return (
+    command.type === "nodeHost.config" ||
+    command.type === "operator.channelPolicy" ||
+    command.type === "tts.prefsPath" ||
+    command.type === "voicewake.triggers" ||
+    command.type === "voicewake.routing"
+  );
+}
+
+export function readConfigMachineStateCommandInDatabase(
+  database: DatabaseSync,
+  command: ConfigMachineStateReadCommand,
+): Extract<OpenClawStateReadResult, { type: ConfigMachineStateReadCommand["type"] }> {
+  return {
+    type: command.type,
+    // Activation may precede deferred publication; never issue authority before v19.
+    row:
+      command.type === "operator.channelPolicy" &&
+      (getAdmittedSqliteSchemaFacts(database)?.userVersion ?? 0) < 19
+        ? undefined
+        : readConfigMachineStateRowInDatabase(database, command.type),
+  };
+}
+
+export type ConfigMachineStateDatabase = Pick<OpenClawStateKyselyDatabase, "config_machine_state">;
+
+type ConfigMachineStateRow = { value_json: string; updated_at_ms: number };
+type ConfigMachineStateRowAdmission = { row: ConfigMachineStateRow | undefined };
+const ttsPathAdmission: SqliteDatabaseAdmissionKey<ConfigMachineStateRowAdmission> = {
+  name: "state.tts-prefs-path",
+  read(value) {
+    if (!isRecord(value)) {
+      return undefined;
+    }
+    const row = value.row;
+    if (row === undefined) {
+      return { row: undefined };
+    }
+    if (
+      isRecord(row) &&
+      typeof row.value_json === "string" &&
+      typeof row.updated_at_ms === "number"
+    ) {
+      return { row: { value_json: row.value_json, updated_at_ms: row.updated_at_ms } };
+    }
+    return undefined;
+  },
+};
+
+/** Only this named key has complete writer coverage; other machine-state owners keep their reads. */
+export function publishConfigMachineStateRow(
+  database: DatabaseSync,
+  key: string,
+  row: ConfigMachineStateRow | undefined,
+): void {
+  if (key === "tts.prefsPath") {
+    publishSqliteDatabaseAdmission(database, ttsPathAdmission, { row });
+  }
+}
+
+/** Host installation is serialized with the synchronous path writer, including absent values. */
+export function getTtsMachinePathAdmission(
+  databasePath: string,
+  load?: () => ConfigMachineStateRow | undefined,
+): ConfigMachineStateRowAdmission | undefined {
+  return getOrLoadSqliteDatabaseAdmissionForPath(databasePath, ttsPathAdmission, () =>
+    load ? { row: load() } : undefined,
+  );
+}
+
+export function normalizeConfigMachineStateKey(key: string): string {
   const normalized = key.trim();
   if (!normalized) {
     throw new Error("config machine state key must not be empty");
@@ -22,190 +115,45 @@ function normalizeStateKey(key: string): string {
   return normalized;
 }
 
-function serializeStateValue(value: unknown): string {
-  const serialized = JSON.stringify(value);
-  if (serialized === undefined) {
-    throw new Error("config machine state value must be JSON-serializable");
-  }
-  return serialized;
-}
-
-// oxlint-disable-next-line typescript/no-unnecessary-type-parameters -- Callers own the JSON shape for open-ended state keys.
-export function readConfigMachineStateWithMetadata<T>(
-  key: string,
-  options: OpenClawStateDatabaseOptions = {},
-): { value: T; updatedAtMs: number } | undefined {
-  return withExistingOpenClawStateDatabaseReadOnly(({ db: database }) => {
-    if (!tableExists(database, "config_machine_state")) {
-      return undefined;
-    }
-    const db = getNodeSqliteKysely<ConfigMachineStateDatabase>(database);
-    const row = executeSqliteQueryTakeFirstSync(
-      database,
-      db
-        .selectFrom("config_machine_state")
-        .select(["value_json", "updated_at_ms"])
-        .where("state_key", "=", normalizeStateKey(key)),
-    );
-    return row
-      ? { value: JSON.parse(row.value_json) as T, updatedAtMs: row.updated_at_ms }
+export function readConfigMachineStateRowInDatabase(database: DatabaseSync, key: string) {
+  const stateKey = normalizeConfigMachineStateKey(key);
+  const admitted =
+    stateKey === "tts.prefsPath"
+      ? getSqliteDatabaseAdmission(database, ttsPathAdmission)
       : undefined;
-  }, options);
+  if (admitted) {
+    return admitted.row;
+  }
+  if (!tableExists(database, "config_machine_state")) {
+    return undefined;
+  }
+  const db = getNodeSqliteKysely<ConfigMachineStateDatabase>(database);
+  const row = executeSqliteQueryTakeFirstSync(
+    database,
+    db
+      .selectFrom("config_machine_state")
+      .select(["value_json", "updated_at_ms"])
+      .where("state_key", "=", stateKey),
+  );
+  // This host read is synchronous; worker results install through getTtsMachinePathAdmission.
+  if (isMainThread) {
+    publishConfigMachineStateRow(database, stateKey, row);
+  }
+  return row;
 }
 
 // oxlint-disable-next-line typescript/no-unnecessary-type-parameters -- Callers own the JSON shape for open-ended state keys.
 export function readConfigMachineState<T>(
   key: string,
   options: OpenClawStateDatabaseOptions = {},
+  behavior: { artifactPreservingReadOnly?: boolean } = {},
 ): T | undefined {
-  return readConfigMachineStateWithMetadata<T>(key, options)?.value;
-}
-
-export function writeConfigMachineState(
-  key: string,
-  value: unknown,
-  options: OpenClawStateDatabaseOptions = {},
-): void {
-  const stateKey = normalizeStateKey(key);
-  const valueJson = serializeStateValue(value);
-  const now = Date.now();
-  runOpenClawStateWriteTransaction(
-    (database) => {
-      const db = getNodeSqliteKysely<ConfigMachineStateDatabase>(database.db);
-      executeSqliteQuerySync(
-        database.db,
-        db
-          .insertInto("config_machine_state")
-          .values({ state_key: stateKey, value_json: valueJson, updated_at_ms: now })
-          .onConflict((conflict) =>
-            conflict.column("state_key").doUpdateSet({ value_json: valueJson, updated_at_ms: now }),
-          ),
-      );
-    },
-    options,
-    { operationLabel: "config-machine-state.write" },
-  );
-}
-
-/** Atomically update one machine-state value from its current database value. */
-export function updateConfigMachineState<T>(
-  key: string,
-  update: (current: T | undefined) => T,
-  options?: OpenClawStateDatabaseOptions,
-): T;
-/** Returning undefined removes the key within the same compare-and-update transaction. */
-export function updateConfigMachineState<T>(
-  key: string,
-  update: (current: T | undefined) => T | undefined,
-  options?: OpenClawStateDatabaseOptions,
-): T | undefined;
-export function updateConfigMachineState<T>(
-  key: string,
-  update: (current: T | undefined) => T | undefined,
-  options: OpenClawStateDatabaseOptions = {},
-): T | undefined {
-  const stateKey = normalizeStateKey(key);
-  const now = Date.now();
-  return runOpenClawStateWriteTransaction(
-    (database) => {
-      const db = getNodeSqliteKysely<ConfigMachineStateDatabase>(database.db);
-      const row = executeSqliteQueryTakeFirstSync(
-        database.db,
-        db
-          .selectFrom("config_machine_state")
-          .select("value_json")
-          .where("state_key", "=", stateKey),
-      );
-      const value = update(row ? (JSON.parse(row.value_json) as T) : undefined);
-      if (value === undefined) {
-        if (row) {
-          executeSqliteQuerySync(
-            database.db,
-            db.deleteFrom("config_machine_state").where("state_key", "=", stateKey),
-          );
-        }
-        return undefined;
-      }
-      const valueJson = serializeStateValue(value);
-      executeSqliteQuerySync(
-        database.db,
-        db
-          .insertInto("config_machine_state")
-          .values({ state_key: stateKey, value_json: valueJson, updated_at_ms: now })
-          .onConflict((conflict) =>
-            conflict.column("state_key").doUpdateSet({ value_json: valueJson, updated_at_ms: now }),
-          ),
-      );
-      return value;
-    },
-    options,
-    { operationLabel: "config-machine-state.update" },
-  );
-}
-
-/** Delete one machine-state value, reporting whether a stored value existed. */
-export function deleteConfigMachineState(
-  key: string,
-  options: OpenClawStateDatabaseOptions = {},
-): boolean {
-  const stateKey = normalizeStateKey(key);
-  return runOpenClawStateWriteTransaction(
-    (database) => {
-      const db = getNodeSqliteKysely<ConfigMachineStateDatabase>(database.db);
-      const result = executeSqliteQuerySync(
-        database.db,
-        db.deleteFrom("config_machine_state").where("state_key", "=", stateKey),
-      );
-      return (result.numAffectedRows ?? 0n) > 0n;
-    },
-    options,
-    { operationLabel: "config-machine-state.delete" },
-  );
-}
-
-/** Import retired config values without replacing newer canonical database state. */
-export function importConfigMachineState(
-  entries: ReadonlyArray<readonly [key: string, value: unknown]>,
-  options: OpenClawStateDatabaseOptions = {},
-): { imported: string[]; kept: string[] } {
-  if (entries.length === 0) {
-    return { imported: [], kept: [] };
-  }
-  const normalized = entries.map(([key, value]) => ({
-    key: normalizeStateKey(key),
-    valueJson: serializeStateValue(value),
-  }));
-  const now = Date.now();
-  return runOpenClawStateWriteTransaction(
-    (database) => {
-      const db = getNodeSqliteKysely<ConfigMachineStateDatabase>(database.db);
-      const imported: string[] = [];
-      const kept: string[] = [];
-      for (const entry of normalized) {
-        const existing = executeSqliteQueryTakeFirstSync(
-          database.db,
-          db
-            .selectFrom("config_machine_state")
-            .select("state_key")
-            .where("state_key", "=", entry.key),
-        );
-        if (existing) {
-          kept.push(entry.key);
-          continue;
-        }
-        executeSqliteQuerySync(
-          database.db,
-          db.insertInto("config_machine_state").values({
-            state_key: entry.key,
-            value_json: entry.valueJson,
-            updated_at_ms: now,
-          }),
-        );
-        imported.push(entry.key);
-      }
-      return { imported, kept };
-    },
-    options,
-    { operationLabel: "config-machine-state.import" },
-  );
+  const read = ({ db: database }: { db: DatabaseSync }) => {
+    const row = readConfigMachineStateRowInDatabase(database, key);
+    // SAFETY: Each key's owner defines its persisted JSON shape.
+    return row ? (JSON.parse(row.value_json) as T) : undefined;
+  };
+  return behavior.artifactPreservingReadOnly
+    ? withExistingOpenClawStateDatabaseArtifactPreservingReadOnly(read, options)
+    : withExistingOpenClawStateDatabaseReadOnly(read, options);
 }

@@ -1,7 +1,11 @@
 import { formatErrorMessage } from "openclaw/plugin-sdk/error-runtime";
 import type { HealthCheck } from "openclaw/plugin-sdk/health";
 import { resolveStateDir } from "openclaw/plugin-sdk/state-paths";
-import { normalizeOptionalLowercaseString } from "openclaw/plugin-sdk/string-coerce-runtime";
+import {
+  asOptionalObjectRecord,
+  normalizeOptionalLowercaseString,
+} from "openclaw/plugin-sdk/string-coerce-runtime";
+import { readDoctorAgentEntries } from "./doctor-agent-config.js";
 import {
   collectVectorProviderFindings,
   type ProviderFailure,
@@ -38,22 +42,26 @@ type MemoryCoreDoctorRegistrationState = Pick<
   "inspectEmbeddingProviderSetup" | "memoryCoreActive"
 >;
 
+type MemoryCoreDoctorCheck = HealthCheck & {
+  readonly defaultEnabled: false;
+};
+
 const registrationsByHost = new WeakMap<
   MemoryCoreDoctorRegistrationHost["registerHealthCheck"],
   {
-    readonly check: HealthCheck & { readonly defaultEnabled: false };
+    readonly check: MemoryCoreDoctorCheck;
     readonly state: MemoryCoreDoctorRegistrationState;
   }
 >();
 
-function resolveSelectedMemoryProvider(
-  config: Parameters<typeof collectVectorProviderFindings>[0]["config"],
-  agentId: string,
-): string | null {
+function resolveSelectedMemoryProvider(config: unknown, agentId: string): string | null {
+  const cfg = asOptionalObjectRecord(config);
+  const { keyed, listed } = readDoctorAgentEntries(config);
   const agent =
-    config.agents?.entries?.[agentId] ?? config.agents?.list?.find((entry) => entry.id === agentId);
-  const defaults = config.memory?.search;
-  const overrides = agent?.memory?.search;
+    asOptionalObjectRecord(keyed?.[agentId]) ??
+    listed.map(asOptionalObjectRecord).find((entry) => entry?.id === agentId);
+  const defaults = asOptionalObjectRecord(asOptionalObjectRecord(cfg?.memory)?.search);
+  const overrides = asOptionalObjectRecord(asOptionalObjectRecord(agent?.memory)?.search);
   if (!(overrides?.enabled ?? defaults?.enabled ?? true)) {
     return null;
   }
@@ -64,7 +72,7 @@ function resolveSelectedMemoryProvider(
 
 function createManagedLocalEmbeddingSetupCheck(
   state: MemoryCoreDoctorRegistrationState,
-): HealthCheck & { readonly defaultEnabled: false } {
+): MemoryCoreDoctorCheck {
   return {
     id: MEMORY_MANAGED_LOCAL_EMBEDDING_SETUP_CHECK_ID,
     kind: "plugin",
@@ -86,9 +94,6 @@ function createManagedLocalEmbeddingSetupCheck(
           },
           async (params) => {
             const provider = resolveSelectedMemoryProvider(params.config, params.agentId);
-            if (!provider || provider === "none") {
-              return null;
-            }
             if (provider !== LOCAL_MEMORY_EMBEDDING_PROVIDER_ID) {
               return null;
             }

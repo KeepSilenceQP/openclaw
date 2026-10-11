@@ -3,57 +3,37 @@
  * allowlists, and display paths. Manifest policies are optional so tests can
  * isolate built-in normalization behavior.
  */
+import type { ProviderModelRef as ModelRef } from "@openclaw/model-catalog-core/model-catalog-refs";
+import { normalizeProviderId } from "@openclaw/model-catalog-core/provider-id";
 import {
-  findNormalizedProviderKey as findNormalizedProviderKeyCore,
-  normalizeProviderId as normalizeProviderIdCore,
-  normalizeProviderIdForAuth as normalizeProviderIdForAuthCore,
-} from "@openclaw/model-catalog-core/provider-id";
-import {
-  collectManifestModelIdNormalizationPolicies,
   normalizeBuiltInProviderModelId,
   normalizeConfiguredProviderCatalogModelRef,
-  type ManifestModelIdNormalizationRecord,
   normalizeStaticProviderModelIdWithPolicies,
   stripSelfProviderModelPrefix,
 } from "@openclaw/model-catalog-core/provider-model-id-normalization";
 import { normalizeLowercaseStringOrEmpty } from "@openclaw/normalization-core/string-coerce";
-import { normalizeProviderModelIdWithManifest } from "../plugins/manifest-model-id-normalization.js";
-import type { PluginManifestRecord } from "../plugins/manifest-registry.js";
+import {
+  resolveManifestModelIdNormalizationPolicies,
+  type ManifestModelIdNormalizationSource,
+} from "../plugins/manifest-model-id-normalization.js";
 import { modelKey } from "../shared/model-key.js";
 import { normalizeProviderModelIdWithRuntime } from "./provider-model-normalization.runtime.js";
+export {
+  findNormalizedProviderKey,
+  normalizeProviderId,
+  normalizeProviderIdForAuth,
+} from "@openclaw/model-catalog-core/provider-id";
 export { modelKey } from "../shared/model-key.js";
 
-export type ModelRef = {
-  provider: string;
-  model: string;
-};
+export type { ProviderModelRef as ModelRef } from "@openclaw/model-catalog-core/model-catalog-refs";
 
 export type ModelManifestNormalizationContext = {
-  manifestPlugins?: readonly Pick<PluginManifestRecord, "modelIdNormalization">[];
+  manifestPlugins?: ManifestModelIdNormalizationSource;
 };
 
-export type ProviderModelIdNormalizationOptions = {
+export type ProviderModelIdNormalizationOptions = ModelManifestNormalizationContext & {
   allowManifestNormalization?: boolean;
-  manifestPlugins?: readonly ManifestModelIdNormalizationRecord[];
 };
-
-/** Normalize a provider ID using the shared catalog rules. */
-export function normalizeProviderId(provider: string): string {
-  return normalizeProviderIdCore(provider);
-}
-
-/** Normalize a provider ID for auth lookup. */
-export function normalizeProviderIdForAuth(provider: string): string {
-  return normalizeProviderIdForAuthCore(provider);
-}
-
-/** Find the original provider key matching a normalized provider ID. */
-export function findNormalizedProviderKey(
-  entries: Record<string, unknown> | undefined,
-  provider: string,
-): string | undefined {
-  return findNormalizedProviderKeyCore(entries, provider);
-}
 
 /** Normalize a static provider model ID with built-in and optional manifest policy. */
 export function normalizeStaticProviderModelId(
@@ -65,22 +45,11 @@ export function normalizeStaticProviderModelId(
   if (options.allowManifestNormalization === false) {
     return normalizeBuiltInProviderModelId(normalizedProvider, model);
   }
-  if (options.manifestPlugins) {
-    return normalizeStaticProviderModelIdWithPolicies(
-      normalizedProvider,
-      model,
-      collectManifestModelIdNormalizationPolicies(options.manifestPlugins),
-    );
-  }
-  const manifestModelId =
-    normalizeProviderModelIdWithManifest({
-      provider: normalizedProvider,
-      context: {
-        provider: normalizedProvider,
-        modelId: model,
-      },
-    }) ?? model;
-  return normalizeBuiltInProviderModelId(normalizedProvider, manifestModelId);
+  return normalizeStaticProviderModelIdWithPolicies(
+    normalizedProvider,
+    model,
+    resolveManifestModelIdNormalizationPolicies({ plugins: options.manifestPlugins }),
+  );
 }
 
 /**
@@ -95,7 +64,9 @@ export function createStaticProviderModelIdNormalizer(
       normalizeBuiltInProviderModelId(normalizeProviderId(provider), model);
   }
   if (options.manifestPlugins) {
-    const policies = collectManifestModelIdNormalizationPolicies(options.manifestPlugins);
+    const policies = resolveManifestModelIdNormalizationPolicies({
+      plugins: options.manifestPlugins,
+    });
     return (provider, model) =>
       normalizeStaticProviderModelIdWithPolicies(normalizeProviderId(provider), model, policies);
   }
@@ -125,7 +96,7 @@ export function createConfiguredProviderCatalogModelIdNormalizer(
     );
 }
 
-type ModelRefNormalizeOptions = ModelManifestNormalizationContext & {
+export type ModelRefNormalizeOptions = ModelManifestNormalizationContext & {
   allowManifestNormalization?: boolean;
   allowPluginNormalization?: boolean;
 };
@@ -143,7 +114,6 @@ function normalizeProviderModelId(
   return (
     normalizeProviderModelIdWithRuntime({
       provider,
-      ...(options?.manifestPlugins ? { plugins: options.manifestPlugins } : {}),
       context: {
         provider,
         modelId: staticModelId,
@@ -175,7 +145,11 @@ export function legacyModelKey(provider: string, model: string): string | null {
   return rawKey === canonicalKey ? null : rawKey;
 }
 
-function parseStaticModelRef(raw: string, defaultProvider: string): ModelRef | null {
+/** Resolve an allowlist entry to a canonical provider/model key. */
+export function resolveStaticAllowlistModelKey(
+  raw: string,
+  defaultProvider: string,
+): string | null {
   const trimmed = raw.trim();
   if (!trimmed) {
     return null;
@@ -187,22 +161,7 @@ function parseStaticModelRef(raw: string, defaultProvider: string): ModelRef | n
     return null;
   }
   const provider = normalizeProviderId(providerRaw);
-  return {
-    provider,
-    model: normalizeStaticProviderModelId(provider, modelRaw),
-  };
-}
-
-/** Resolve an allowlist entry to a canonical provider/model key. */
-export function resolveStaticAllowlistModelKey(
-  raw: string,
-  defaultProvider: string,
-): string | null {
-  const parsed = parseStaticModelRef(raw, defaultProvider);
-  if (!parsed) {
-    return null;
-  }
-  return modelKey(parsed.provider, parsed.model);
+  return modelKey(provider, normalizeStaticProviderModelId(provider, modelRaw));
 }
 
 /** Preserve literal provider/model refs that already include a provider prefix twice. */

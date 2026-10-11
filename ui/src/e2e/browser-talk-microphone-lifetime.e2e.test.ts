@@ -5,7 +5,9 @@ import {
   captureMicrophoneLossProof,
   installMicrophoneLossWebRtcFixture,
   type MicrophoneLossE2eProof,
+  TALK_READY_HISTORY_MESSAGE,
   videoTalkCatalog,
+  waitForTalkReady,
 } from "./browser-talk-start-stop.fixtures.ts";
 import { createControlUiE2eSuite } from "./control-ui-e2e-suite.test-support.ts";
 
@@ -20,6 +22,7 @@ suite.define(() => {
   it("guides a pending microphone request and clears guidance when voice connects", async () => {
     await suite.withPage({ permissions: ["microphone"] }, async ({ page }) => {
       const gateway = await installMockGateway(page, {
+        historyMessages: [TALK_READY_HISTORY_MESSAGE],
         methodResponses: {
           "talk.catalog": videoTalkCatalog("openai"),
           "talk.client.create": {
@@ -45,6 +48,7 @@ suite.define(() => {
         };
       });
       await page.goto(`${suite.server.baseUrl}chat`);
+      await waitForTalkReady(page);
       await page.getByRole("button", { name: "Start voice input" }).click();
       await expect
         .poll(() =>
@@ -56,7 +60,7 @@ suite.define(() => {
         )
         .toBe(true);
       expect(await gateway.getRequests("talk.client.create")).toHaveLength(0);
-      await captureMicrophoneLossProof(page, "prepared-input-pending.png");
+      await captureMicrophoneLossProof(suite, page, "prepared-input-pending.png");
       const guidance = page.locator('.agent-chat__talk-status[role="status"]');
       await expect
         .poll(() => guidance.allTextContents())
@@ -76,7 +80,7 @@ suite.define(() => {
         .toBe(1);
       await expect.poll(() => guidance.count()).toBe(0);
       expect(await gateway.getRequests("talk.client.create")).toHaveLength(1);
-      await captureMicrophoneLossProof(page, "prepared-input-ready.png");
+      await captureMicrophoneLossProof(suite, page, "prepared-input-ready.png");
       await page.getByRole("button", { name: "Stop voice input" }).click();
     });
   });
@@ -84,6 +88,7 @@ suite.define(() => {
   it("surfaces microphone loss and closes native browser call resources", async () => {
     await suite.withPage({ permissions: ["microphone"] }, async ({ page }) => {
       const gateway = await installMockGateway(page, {
+        historyMessages: [TALK_READY_HISTORY_MESSAGE],
         methodResponses: {
           "talk.catalog": videoTalkCatalog("openai"),
           "talk.client.create": {
@@ -96,6 +101,7 @@ suite.define(() => {
       });
       await installMicrophoneLossWebRtcFixture(page);
       await page.goto(`${suite.server.baseUrl}chat`);
+      await waitForTalkReady(page);
       await page.getByRole("button", { name: "Start voice input" }).click();
       try {
         await expect
@@ -120,10 +126,10 @@ suite.define(() => {
           )
           .toMatchObject({ status: "listening" });
       } catch (error) {
-        await captureMicrophoneLossProof(page, "microphone-loss-setup-failure.png");
+        await captureMicrophoneLossProof(suite, page, "microphone-loss-setup-failure.png");
         throw error;
       }
-      await captureMicrophoneLossProof(page, "microphone-loss-before-listening.png");
+      await captureMicrophoneLossProof(suite, page, "microphone-loss-before-listening.png");
 
       await page.evaluate(() => {
         (
@@ -150,7 +156,7 @@ suite.define(() => {
           }),
         )
         .toEqual({ tracksStopped: 1, peerClosed: true, trackState: "ended", audioElements: 0 });
-      await captureMicrophoneLossProof(page, "microphone-loss-after-error.png");
+      await captureMicrophoneLossProof(suite, page, "microphone-loss-after-error.png");
       await gateway.waitForRequest("talk.client.close");
       await page.getByRole("button", { name: "Dismiss voice input error" }).click();
       console.info(

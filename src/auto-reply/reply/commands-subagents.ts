@@ -1,26 +1,7 @@
-// Dispatches subagent inspection commands.
-import { createLazyImportLoader } from "../../shared/lazy-promise.js";
 import { commandReply, defineAuthorizedTextCommand, matchCommandPrefix } from "./command-gates.js";
-import {
-  buildSubagentsHelp,
-  resolveRequesterSessionKey,
-  type SubagentsCommandContext,
-} from "./commands-subagents/shared.js";
+import { resolveCommandSourceSessionKey } from "./command-source-session-key.js";
+import { buildSubagentsHelp } from "./commands-subagents/shared.js";
 import type { CommandHandler } from "./commands-types.js";
-
-const actionAgentsLoader = createLazyImportLoader(
-  () => import("./commands-subagents/action-agents.js"),
-);
-const actionInfoLoader = createLazyImportLoader(
-  () => import("./commands-subagents/action-info.js"),
-);
-const actionListLoader = createLazyImportLoader(
-  () => import("./commands-subagents/action-list.js"),
-);
-const actionLogLoader = createLazyImportLoader(() => import("./commands-subagents/action-log.js"));
-const controlRuntimeLoader = createLazyImportLoader(
-  () => import("../../agents/subagents/registry/subagent-control-scope.js"),
-);
 
 export const handleSubagentsCommand: CommandHandler = defineAuthorizedTextCommand(
   {
@@ -48,31 +29,32 @@ export const handleSubagentsCommand: CommandHandler = defineAuthorizedTextComman
       return commandReply(buildSubagentsHelp());
     }
 
-    const requesterKey = resolveRequesterSessionKey(params);
+    const requesterKey = resolveCommandSourceSessionKey(params);
     if (!requesterKey) {
       return commandReply("⚠️ Missing session key.");
     }
 
-    const ctx: SubagentsCommandContext = {
+    const actionHandler =
+      action === "agents"
+        ? (await import("./commands-subagents/action-agents.js")).handleSubagentsAgentsAction
+        : action === "list"
+          ? (await import("./commands-subagents/action-list.js")).handleSubagentsListAction
+          : action === "info"
+            ? (await import("./commands-subagents/action-info.js")).handleSubagentsInfoAction
+            : (await import("./commands-subagents/action-log.js")).handleSubagentsLogAction;
+    const { buildControlledSubagentRunsReadContext } =
+      await import("../../agents/subagents/registry/subagent-control-scope.js");
+    const readContext = await buildControlledSubagentRunsReadContext(
+      requesterKey,
+      params.agentId,
+      params.cfg,
+    );
+
+    return await actionHandler({
       params,
       requesterKey,
-      runs: (await controlRuntimeLoader.load()).listControlledSubagentRuns(
-        requesterKey,
-        params.agentId,
-        params.cfg,
-      ),
+      readContext,
       restTokens,
-    };
-
-    if (action === "agents") {
-      return (await actionAgentsLoader.load()).handleSubagentsAgentsAction(ctx);
-    }
-    if (action === "list") {
-      return (await actionListLoader.load()).handleSubagentsListAction(ctx);
-    }
-    if (action === "info") {
-      return (await actionInfoLoader.load()).handleSubagentsInfoAction(ctx);
-    }
-    return await (await actionLogLoader.load()).handleSubagentsLogAction(ctx);
+    });
   },
 );

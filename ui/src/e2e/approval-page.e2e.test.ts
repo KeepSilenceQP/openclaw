@@ -1,11 +1,12 @@
-import { copyFile, mkdir, rm } from "node:fs/promises";
+import { copyFile, rm } from "node:fs/promises";
 import path from "node:path";
 import type { Browser, BrowserContext, Page, Video } from "playwright";
-import { afterEach, expect, it } from "vitest";
+import { afterEach, beforeEach, expect, it } from "vitest";
 import type {
   AllowedApprovalSnapshot,
   PendingApprovalSnapshot,
 } from "../../../packages/gateway-protocol/src/index.js";
+import { createControlUiE2eArtifactDir } from "../test-helpers/control-ui-e2e-artifacts.ts";
 import {
   controlUiE2eWaitTimeoutMs,
   installMockGateway,
@@ -21,9 +22,8 @@ const suite = createControlUiE2eSuite({
 
 const APPROVAL_ID = "Approval:Mobile/東京 100% 🦞";
 const APPROVAL_NOW_MS = Date.UTC(2026, 6, 10, 18, 0, 0);
-const ARTIFACT_DIR = path.resolve(".artifacts/control-ui-e2e/approval-page");
+let ARTIFACT_DIR: string;
 const CAPTURE_UI_PROOF = process.env.OPENCLAW_CAPTURE_UI_PROOF === "1";
-const MOBILE_RAW_VIDEO_DIR = path.join(ARTIFACT_DIR, "mobile-raw");
 const MOBILE_VIEWPORT = { height: 844, width: 390 } as const;
 const DESKTOP_VIEWPORT = { height: 800, width: 1200 } as const;
 
@@ -36,7 +36,6 @@ type ApprovalSurface = {
 };
 
 const openContexts = new Set<BrowserContext>();
-const rawVideoDirs = new Set<string>();
 
 function approvalPath(basePath: string): string {
   return `${basePath}/approve/${encodeURIComponent(APPROVAL_ID)}`;
@@ -116,13 +115,10 @@ async function createSurface(params: {
   recordVideo?: boolean;
   viewport: { height: number; width: number };
 }): Promise<ApprovalSurface> {
-  const rawVideoDir = params.recordVideo && CAPTURE_UI_PROOF ? MOBILE_RAW_VIDEO_DIR : undefined;
-  if (rawVideoDir) {
-    await mkdir(ARTIFACT_DIR, { recursive: true });
-    await rm(rawVideoDir, { force: true, recursive: true });
-    await mkdir(rawVideoDir, { recursive: true });
-    rawVideoDirs.add(rawVideoDir);
-  }
+  const rawVideoDir =
+    params.recordVideo && CAPTURE_UI_PROOF
+      ? createControlUiE2eArtifactDir("mobile-raw", ARTIFACT_DIR)
+      : undefined;
   const context = await requireBrowser().newContext({
     colorScheme: "dark",
     hasTouch: params.viewport.width <= MOBILE_VIEWPORT.width,
@@ -158,7 +154,7 @@ async function closeRecordedSurface(surface: ApprovalSurface, targetName: string
   }
   const rawVideoPath = await video.path();
   await copyFile(rawVideoPath, path.join(ARTIFACT_DIR, targetName));
-  rawVideoDirs.delete(surface.rawVideoDir);
+  // Remove raw footage only after the retained named copy succeeds.
   await rm(surface.rawVideoDir, { force: true, recursive: true });
 }
 
@@ -209,7 +205,6 @@ async function captureProof(page: Page, name: string): Promise<void> {
   if (!CAPTURE_UI_PROOF) {
     return;
   }
-  await mkdir(ARTIFACT_DIR, { recursive: true });
   await waitForStableApprovalPaint(page);
   await page.screenshot({ path: path.join(ARTIFACT_DIR, name) });
 }
@@ -218,7 +213,6 @@ async function captureDocumentProof(page: Page, name: string): Promise<void> {
   if (!CAPTURE_UI_PROOF) {
     return;
   }
-  await mkdir(ARTIFACT_DIR, { recursive: true });
   await page.evaluate(async () => {
     await document.fonts.ready;
     await new Promise<void>((resolve) => {
@@ -287,13 +281,14 @@ async function expectMobilePendingLayout(page: Page): Promise<void> {
 }
 
 suite.define(() => {
+  beforeEach(() => {
+    if (CAPTURE_UI_PROOF) {
+      ARTIFACT_DIR = createControlUiE2eArtifactDir("approval-page");
+    }
+  });
   afterEach(async () => {
     await Promise.all([...openContexts].map((context) => context.close().catch(() => {})));
     openContexts.clear();
-    await Promise.all(
-      [...rawVideoDirs].map((rawVideoDir) => rm(rawVideoDir, { force: true, recursive: true })),
-    );
-    rawVideoDirs.clear();
   });
 
   it("keeps one canonical winner across conflicting surfaces and terminal reload", async () => {
@@ -504,7 +499,9 @@ suite.define(() => {
       await captureDocumentProof(surface.page, "after-remote-gateway-confirmation.png");
       await pauseRecordedProof(surface.page);
 
-      await confirmation.getByRole("button", { name: "Confirm", exact: true }).click();
+      await confirmation
+        .getByRole("button", { name: "Switch to remote-gateway.example", exact: true })
+        .click();
       await waitForApprovalPage(surface.page);
       const request = await surface.gateway.waitForRequest("approval.get");
       expect(request.params).toEqual({ id: APPROVAL_ID });
@@ -668,5 +665,38 @@ suite.define(() => {
       .poll(() => surface.page.getByRole("button", { name: "Allow once" }).isEnabled())
       .toBe(true);
     expect(surface.pageErrors).toEqual([]);
+  });
+  it("keeps the approval document and final actions inside app-owned safe areas", async () => {
+    const surface = await createSurface({
+      basePath: "",
+      pending: pendingApproval(""),
+      viewport: { width: 375, height: 500 },
+    });
+    try {
+      await surface.page.goto(approvalUrl(""));
+      await waitForApprovalPage(surface.page);
+      const bounds = await surface.page.evaluate(() => {
+        const root = document.documentElement;
+        root.style.setProperty("--safe-area-top", "34px");
+        root.style.setProperty("--safe-area-right", "20px");
+        root.style.setProperty("--safe-area-bottom", "21px");
+        root.style.setProperty("--safe-area-left", "18px");
+        const page = document.querySelector(".approval-page")!.getBoundingClientRect();
+        return { top: page.top, bottom: page.bottom, left: page.left, right: page.right };
+      });
+      expect(bounds).toEqual({ top: 34, bottom: 479, left: 18, right: 355 });
+      const allow = surface.page.getByRole("button", { name: "Allow once", exact: true });
+      await allow.scrollIntoViewIfNeeded();
+      const action = await allow.boundingBox();
+      expect(action!.y).toBeGreaterThanOrEqual(34);
+      expect(action!.y + action!.height).toBeLessThanOrEqual(479);
+      const back = surface.page.locator(".approval-page__back-link");
+      await back.scrollIntoViewIfNeeded();
+      const link = await back.boundingBox();
+      expect(link!.y + link!.height).toBeLessThanOrEqual(479);
+      expect(surface.pageErrors).toEqual([]);
+    } finally {
+      await closeRecordedSurface(surface, "approval-safe-area.webm");
+    }
   });
 });

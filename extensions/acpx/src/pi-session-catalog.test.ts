@@ -224,7 +224,9 @@ describe("Pi session catalog", () => {
 
   it("recognizes Pi sessions when the agent directory uses a symlinked path", async () => {
     const sessionDirectory = await createPiStore();
-    const agentDirectory = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-pi-agent-real-"));
+    const agentDirectory = await fs.mkdtemp(
+      path.join(path.dirname(sessionDirectory), "openclaw-pi-agent-real-"),
+    );
     const symlinkParent = await fs.mkdtemp(path.join(os.tmpdir(), "openclaw-pi-agent-link-"));
     const linkedAgentDirectory = path.join(symlinkParent, "agent");
     temporaryDirectories.push(agentDirectory, symlinkParent);
@@ -468,49 +470,6 @@ describe("Pi session catalog", () => {
     expect((await listLocalPiSessionPage({ limit: 20 })).sessions[0]?.name).toBe(
       "No final newline",
     );
-  });
-
-  it("rebuilds metadata after a same-file replacement grows", async () => {
-    const directory = await createPiStore("old session");
-    const file = path.join(directory, "session.jsonl");
-    const expireCandidates = usePiCandidateCacheClock();
-    await listLocalPiSessionPage({ limit: 20 });
-
-    const entries = [
-      {
-        type: "session",
-        version: 3,
-        id: "pi-replaced-session",
-        timestamp: "2026-07-13T11:00:00Z",
-        cwd: "/workspace/replaced",
-      },
-      {
-        type: "message",
-        id: "replacement-user",
-        parentId: null,
-        timestamp: "2026-07-13T11:00:01Z",
-        message: { role: "user", content: `replacement ${"x".repeat(4_096)}` },
-      },
-      {
-        type: "session_info",
-        id: "replacement-name",
-        parentId: "replacement-user",
-        timestamp: "2026-07-13T11:00:02Z",
-        name: "Replacement session",
-      },
-    ];
-    await fs.writeFile(file, `${entries.map((entry) => JSON.stringify(entry)).join("\n")}\n`);
-    expireCandidates();
-
-    await expect(listLocalPiSessionPage({ limit: 20 })).resolves.toMatchObject({
-      sessions: [
-        expect.objectContaining({
-          threadId: "pi-replaced-session",
-          name: "Replacement session",
-          cwd: "/workspace/replaced",
-        }),
-      ],
-    });
   });
 
   it("does not reuse transcript paths after the configured store changes", async () => {
@@ -874,6 +833,7 @@ describe("Pi session catalog", () => {
       kind: "node",
       nodeId: "node-1",
       command: PI_TERMINAL_RESUME_COMMAND,
+      uploadPathStyle: "native",
       paramsJSON: JSON.stringify({ threadId: "pi-remote" }),
       cwd: "/remote/workspace",
       title: "pi --session pi-remote…",

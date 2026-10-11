@@ -1,10 +1,14 @@
 import path from "node:path";
+import { runInNewContext } from "node:vm";
 import { afterEach, expect, it, vi } from "vitest";
 import type { RealtimeVoiceBridgeCreateRequest } from "../../src/talk/provider-types.js";
+
+const backend = vi.hoisted(() => ({ onFirstAudio: () => {} }));
 
 const browser = vi.hoisted(() => ({
   close: vi.fn(async () => {}),
   contextClose: vi.fn(async () => {}),
+  googleEvaluate: vi.fn(),
   evaluate: vi.fn(async () => ({
     answerHasAudio: true,
     remoteDescriptionApplied: true,
@@ -23,6 +27,7 @@ vi.mock("playwright", () => ({
   chromium: {
     launch: async () => ({
       close: browser.close,
+      newPage: async () => ({ evaluate: browser.googleEvaluate, close: async () => {} }),
       newContext: async () => ({
         close: browser.contextClose,
         newPage: async () => ({ evaluate: browser.evaluate }),
@@ -31,9 +36,28 @@ vi.mock("playwright", () => ({
   },
 }));
 
+vi.mock("../../extensions/google/realtime-voice-provider.ts", () => ({
+  buildGoogleRealtimeVoiceProvider: () => ({
+    createBrowserSession: async () => ({
+      transport: "provider-websocket",
+      protocol: "google-live-bidi",
+      clientSecret: "synthetic-google-session",
+      websocketUrl: "wss://google.example.test/live",
+      initialMessage: { setup: {} },
+    }),
+  }),
+}));
+
+vi.mock("vite", () => ({
+  createServer: async () => {
+    throw new Error("Synthetic relay smoke unavailable");
+  },
+}));
+
 vi.mock("../../extensions/openai/realtime-voice-provider.ts", () => ({
   buildOpenAIRealtimeVoiceProvider: () => ({
     createBridge: (options: RealtimeVoiceBridgeCreateRequest) => {
+      const onFirstAudio = backend.onFirstAudio;
       let responded = false;
       return {
         connect: async () => {},
@@ -44,6 +68,7 @@ vi.mock("../../extensions/openai/realtime-voice-provider.ts", () => ({
             return;
           }
           responded = true;
+          onFirstAudio();
           options.onAudio(Buffer.alloc(1024));
           options.onTranscript?.("user", "glacier", true);
           options.onTranscript?.("assistant", "glacier", true);
@@ -68,11 +93,69 @@ const originalArgv = process.argv;
 const originalExitCode = process.exitCode;
 
 afterEach(() => {
+  vi.useRealTimers();
+  backend.onFirstAudio = () => {};
   process.argv = originalArgv;
-  process.exitCode = originalExitCode;
+  // oxlint-disable-next-line no-warning-comments -- remove after the upstream Bun exitCode fix ships.
+  // TODO(bun): Bun does not currently clear a nonzero process.exitCode when assigned undefined.
+  process.exitCode = originalExitCode ?? 0;
   vi.unstubAllEnvs();
   vi.unstubAllGlobals();
   vi.restoreAllMocks();
+});
+
+it("reports malformed Google Live frames from the serialized browser callback", async () => {
+  vi.resetModules();
+  vi.clearAllMocks();
+  vi.stubEnv("OPENAI_API_KEY", "");
+  vi.stubEnv("GEMINI_API_KEY", "synthetic-google-key");
+  const output = vi.spyOn(console, "log").mockImplementation(() => {});
+  process.argv = [process.execPath, path.resolve("scripts/dev/realtime-talk-live-smoke.ts")];
+  process.exitCode = 0;
+  vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+  let started!: () => void;
+  const callbackStarted = new Promise<void>((resolve) => {
+    started = resolve;
+  });
+  browser.googleEvaluate.mockImplementation((callback, payload) => {
+    if (typeof callback === "string") {
+      return undefined;
+    }
+    const result = runInNewContext(`(${callback.toString()})(payload)`, {
+      payload,
+      URL,
+      __name: (value: unknown) => value,
+      window: { setTimeout, clearTimeout },
+      WebSocket: class {
+        addEventListener(event: string, listener: (message: { data: string }) => void) {
+          if (event === "message") {
+            queueMicrotask(() => listener({ data: "not-json" }));
+          }
+        }
+        close() {}
+      },
+    });
+    started();
+    return result;
+  });
+  const command = import("../../scripts/dev/realtime-talk-live-smoke.ts");
+  await Promise.race([
+    callbackStarted,
+    command.then(() => {
+      throw new Error("Smoke command completed before the Google browser callback");
+    }),
+  ]);
+  await vi.runAllTimersAsync();
+  await command;
+
+  expect(output).toHaveBeenCalledWith("google-live-browser-ws: failed", {
+    error: process.versions.bun
+      ? 'SyntaxError: JSON Parse error: Unexpected identifier "not"'
+      : "SyntaxError: Unexpected token 'o', \"not-json\" is not valid JSON",
+  });
+  expect(vi.getTimerCount()).toBe(0);
+  expect(process.exitCode).toBe(1);
+  expect(browser.close).toHaveBeenCalledOnce();
 });
 
 it.each([
@@ -153,9 +236,23 @@ it.each([
       path.resolve("scripts/dev/realtime-talk-live-smoke.ts"),
       "--openai-only",
     ];
-    process.exitCode = undefined;
+    process.exitCode = 0;
 
-    await import("../../scripts/dev/realtime-talk-live-smoke.ts");
+    const firstAudio = new Promise<void>((resolve) => {
+      backend.onFirstAudio = () => resolve();
+    });
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    const command = import("../../scripts/dev/realtime-talk-live-smoke.ts");
+    // Let imports reach streaming before advancing the pacing and close-observation timers.
+    await Promise.race([
+      firstAudio,
+      command.then(() => {
+        throw new Error("Smoke command completed before sending backend audio");
+      }),
+    ]);
+    await vi.runAllTimersAsync();
+    await command;
+    expect(vi.getTimerCount()).toBe(0);
 
     expect(output).toHaveBeenCalledWith("openai-backend-bridge: ok", expect.any(Object));
     expect(output).toHaveBeenCalledWith("openai-backend-audio-roundtrip: ok", expect.any(Object));
@@ -163,7 +260,7 @@ it.each([
       `openai-webrtc-browser: ${ok ? "ok" : "failed"}`,
       expect.objectContaining({ protocol: "ga-realtime" }),
     );
-    expect(process.exitCode).toBe(ok ? undefined : 1);
+    expect(process.exitCode).toBe(ok ? 0 : 1);
     expect(browser.contextClose).toHaveBeenCalledOnce();
     expect(browser.close).toHaveBeenCalledOnce();
   },

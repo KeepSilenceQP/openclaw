@@ -72,12 +72,14 @@ test.each(["delete", "archive", "recover"] as const)(
     let serializedReclaim: Promise<unknown> | undefined;
     const moveBarrier = createGatewayWorkerPlacementMoveBarrier({
       placements: { waitForTurnClaimRelease: async () => {} },
+      awaitTurnClaimRelease: (claimSessionId, wait) =>
+        service.awaitTurnClaimRelease(claimSessionId, wait),
       loadSessionRuntime: async () => {
         moveLoading.resolve();
         await releaseMove.promise;
         return {
           managedWorktrees: {
-            findLiveByOwner: () => ({
+            findLiveByOwner: async () => ({
               id: "order-worktree",
               ownerId: sessionKey,
               path: "/fixture/worktree",
@@ -95,41 +97,46 @@ test.each(["delete", "archive", "recover"] as const)(
       },
       revokeSessionAuthority: () => {},
     });
-    const service = coordinateWorkerPlacementDispatch({
-      dispatch: unexpectedPlacementOperation,
-      forceDestroyEnvironment: unexpectedPlacementOperation,
-      reconcile: unexpectedPlacementOperation,
-      reconcileActive: unexpectedPlacementOperation,
-      resumeProvisioning: unexpectedPlacementOperation,
-      move: async () => {
-        await moveBarrier({
-          sessionId,
-          sessionKey,
-          agentId: "main",
-          sourceDisposition: "reconcile",
-          begin: async () => {
-            moveAcquired = true;
-            throw new Error("move preflight rejected");
-          },
-        });
-        throw new Error("test Move preflight unexpectedly completed");
+    const service = coordinateWorkerPlacementDispatch(
+      {
+        dispatch: unexpectedPlacementOperation,
+        forceDestroyEnvironment: unexpectedPlacementOperation,
+        getEnvironmentAttachedSessionIds: () => [],
+        readEnvironmentSessionIds: unexpectedPlacementOperation,
+        reconcile: unexpectedPlacementOperation,
+        reconcileActive: unexpectedPlacementOperation,
+        resumeProvisioning: unexpectedPlacementOperation,
+        move: async () => {
+          await moveBarrier({
+            sessionId,
+            sessionKey,
+            agentId: "main",
+            sourceDisposition: "reconcile",
+            begin: async () => {
+              moveAcquired = true;
+              throw new Error("move preflight rejected");
+            },
+          });
+          throw new Error("test Move preflight unexpectedly completed");
+        },
+        reclaim: async (_request, authorize, beforeDrain, serialize) => {
+          reclaimEntered.resolve();
+          const reclaim = serialize!(async () => {
+            authorize?.();
+            beforeDrain?.();
+            placement = {
+              ...placement,
+              state: "reclaimed",
+              generation: 7,
+            } as WorkerSessionPlacementRecord;
+            return placement as Extract<WorkerSessionPlacementRecord, { state: "reclaimed" }>;
+          });
+          serializedReclaim = reclaim;
+          return await Promise.race([reclaim, cleanupBlockedReclaim.promise]);
+        },
       },
-      reclaim: async (_request, authorize, beforeDrain, serialize) => {
-        reclaimEntered.resolve();
-        const reclaim = serialize!(async () => {
-          authorize?.();
-          beforeDrain?.();
-          placement = {
-            ...placement,
-            state: "reclaimed",
-            generation: 7,
-          } as WorkerSessionPlacementRecord;
-          return placement as Extract<WorkerSessionPlacementRecord, { state: "reclaimed" }>;
-        });
-        serializedReclaim = reclaim;
-        return await Promise.race([reclaim, cleanupBlockedReclaim.promise]);
-      },
-    });
+      (_request, run) => run(),
+    );
     const moving = service
       .move({
         sessionId,

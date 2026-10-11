@@ -1,7 +1,7 @@
 import {
   normalizeToolParameterSchema,
   type ToolParameterSchemaOptions,
-} from "@openclaw/ai/internal/openai";
+} from "@openclaw/ai/internal/tool-schema";
 /**
  * Tool schema normalization wrappers.
  * Applies provider-compatible parameter schema cleanup while preserving
@@ -60,7 +60,7 @@ export function normalizeToolParameters(
   if (!schema) {
     return tool;
   }
-  const parameters = normalizeToolParameterSchema(schema, options);
+  const parameters = normalizeToolParameterSchema(schema, { ...options, toolName: tool.name });
   const normalized = { ...tool, parameters };
   if (isObjectSchemaWithNoRequiredParams(parameters)) {
     normalized.prepareArguments = (args: unknown) => {
