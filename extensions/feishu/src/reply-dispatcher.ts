@@ -653,7 +653,18 @@ export function createFeishuReplyDispatcher(params: CreateFeishuReplyDispatcherP
     if (!trimmed) {
       return false;
     }
-    toolTimeline.push(normalizeQuoteBlock(trimmed));
+    const normalized = normalizeQuoteBlock(trimmed);
+    // Collapse consecutive identical rows into one row with a repeat count so a
+    // tool-heavy turn does not stack a wall of identical lines in the card.
+    const lastIndex = toolTimeline.length - 1;
+    const last = lastIndex >= 0 ? toolTimeline[lastIndex] : undefined;
+    const lastBase = last?.replace(/ \u00d7\d+$/u, "");
+    if (last !== undefined && lastBase === normalized) {
+      const count = Number(last.match(/ \u00d7(\d+)$/u)?.[1] ?? 1) + 1;
+      toolTimeline[lastIndex] = `${normalized} \u00d7${count}`;
+    } else {
+      toolTimeline.push(normalized);
+    }
     startStreaming();
     flushStreamingCardUpdate(buildCombinedStreamText(reasoningText, streamText));
     return false;
@@ -1470,6 +1481,10 @@ export function createFeishuReplyDispatcher(params: CreateFeishuReplyDispatcherP
             args?: Record<string, unknown>;
             detailMode?: "explain" | "raw";
           }) => {
+            // Only the opening phase adds a timeline row; later phases update it.
+            if (payload.phase !== "start") {
+              return false;
+            }
             if (!isChannelProgressDraftWorkToolName(payload.name)) {
               return false;
             }
